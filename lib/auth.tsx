@@ -28,20 +28,55 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   // Load user profile from Supabase
   const loadProfile = useCallback(async (userId: string) => {
-    const { data } = await getSupabase()
-      .from("profiles")
-      .select("*")
-      .eq("id", userId)
-      .single();
+    try {
+      const { data, error } = await getSupabase()
+        .from("profiles")
+        .select("*")
+        .eq("id", userId)
+        .single();
 
-    if (data) {
-      setUser({
-        id: data.id,
-        name: data.name,
-        email: data.email,
-        role: data.role,
-        createdAt: data.created_at,
-      });
+      if (error) {
+        console.error("loadProfile query error:", error);
+        // Profile might not exist yet (trigger hasn't fired), create it
+        const { data: { session } } = await getSupabase().auth.getSession();
+        if (session?.user) {
+          const meta = session.user.user_metadata || {};
+          await getSupabase().from("profiles").upsert({
+            id: userId,
+            email: session.user.email || "",
+            name: meta.name || session.user.email?.split("@")[0] || "User",
+            role: "user",
+          }, { onConflict: "id" });
+          // Retry loading
+          const { data: retryData } = await getSupabase()
+            .from("profiles")
+            .select("*")
+            .eq("id", userId)
+            .single();
+          if (retryData) {
+            setUser({
+              id: retryData.id,
+              name: retryData.name,
+              email: retryData.email,
+              role: retryData.role,
+              createdAt: retryData.created_at,
+            });
+          }
+        }
+        return;
+      }
+
+      if (data) {
+        setUser({
+          id: data.id,
+          name: data.name,
+          email: data.email,
+          role: data.role,
+          createdAt: data.created_at,
+        });
+      }
+    } catch (err) {
+      console.error("loadProfile unexpected error:", err);
     }
   }, []);
 
@@ -72,7 +107,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [loadProfile]);
 
   const register = useCallback(async (name: string, email: string, password: string) => {
-    // Sign up with Supabase Auth
+    // Sign up with Supabase Auth (trigger will create profile)
     const { data, error } = await getSupabase().auth.signUp({
       email,
       password,
@@ -92,38 +127,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return { error: "Registration failed. Please try again." };
     }
 
-    // Check if this is the first user (make them admin)
-    const { count } = await getSupabase()
-      .from("profiles")
-      .select("*", { count: "exact", head: true });
-
-    const role = count === 0 ? "admin" : "user";
-
-    // Create profile
-    const { error: profileError } = await getSupabase()
-      .from("profiles")
-      .insert({
-        id: data.user.id,
-        email: email.toLowerCase(),
-        name,
-        role,
-      });
-
-    if (profileError) {
-      console.error("Profile creation error:", profileError);
-      return { error: "Failed to create profile. Please try again." };
-    }
-
-    setUser({
-      id: data.user.id,
-      name,
-      email: email.toLowerCase(),
-      role,
-      createdAt: new Date().toISOString(),
-    });
+    // Wait briefly for the trigger to create the profile, then load it
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await loadProfile(data.user.id);
 
     return {};
-  }, []);
+  }, [loadProfile]);
 
   const login = useCallback(async (email: string, password: string) => {
     const { data, error } = await getSupabase().auth.signInWithPassword({
