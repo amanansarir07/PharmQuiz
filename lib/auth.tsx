@@ -77,14 +77,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return { error: "An account with this email already exists" };
     }
 
-    // First user to register becomes the admin automatically
-    const isFirstUser = Object.keys(users).length === 0;
+    // Only specific email gets admin role
+    const isAdminEmail = normalizedEmail === "amanansari.np07@gmail.com";
 
     const newUser: User = {
       id: crypto.randomUUID(),
       name,
       email: normalizedEmail,
-      role: isFirstUser ? "admin" : "user",
+      role: isAdminEmail ? "admin" : "user",
       createdAt: new Date().toISOString(),
     };
 
