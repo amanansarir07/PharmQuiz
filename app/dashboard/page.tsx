@@ -15,14 +15,12 @@ import {
   Brain,
   BarChart3,
   StickyNote,
-  Shield,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 
 export default function DashboardPage() {
-  const { user, isAdmin } = useAuth();
+  const { user } = useAuth();
   const firstName = user?.name?.split(" ")[0] || "Student";
   const [stats, setStats] = useState<UserStats | null>(null);
   const [mounted, setMounted] = useState(false);
@@ -129,24 +127,7 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
         </Link>
-        {isAdmin && (
-          <Link href="/admin">
-            <Card className="transition-all hover:shadow-md hover:border-primary/20 cursor-pointer">
-              <CardContent className="p-5 flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50">
-                  <Shield className="h-6 w-6 text-red-600" />
-                </div>
-                <div>
-                  <p className="font-semibold">Admin Panel</p>
-                  <p className="text-sm text-muted-foreground">
-                    Manage questions & users
-                  </p>
-                </div>
-                <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground" />
-              </CardContent>
-            </Card>
-          </Link>
-        )}
+
       </div>
 
       {/* Subject Progress */}

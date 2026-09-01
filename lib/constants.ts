@@ -34,5 +34,4 @@ export const PROTECTED_ROUTES = [
   "/bookmarks",
   "/notes",
   "/analytics",
-  "/admin",
 ];

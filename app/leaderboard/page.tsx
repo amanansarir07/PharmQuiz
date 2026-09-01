@@ -94,7 +94,6 @@ export default function LeaderboardPage() {
                         <div className="flex items-center gap-2">
                           <p className="font-medium truncate">{entry.name}</p>
                           {isCurrentUser && <Badge variant="outline" className="text-xs">You</Badge>}
-                          {entry.isAdmin && <Badge variant="secondary" className="text-xs">Admin</Badge>}
                         </div>
                         <div className="flex items-center gap-3 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1">
