@@ -26,73 +26,67 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Load user profile from Supabase — returns the user or null
+  // Build a User from session data (no DB query needed)
+  const userFromSession = useCallback((session: any): User => {
+    const u = session.user;
+    const meta = u.user_metadata || {};
+    return {
+      id: u.id,
+      name: meta.name || u.email?.split("@")[0] || "User",
+      email: u.email || "",
+      role: (meta.role as "user" | "admin") || "user",
+      createdAt: u.created_at || new Date().toISOString(),
+    };
+  }, []);
+
+  // Load user profile — tries DB first, falls back to session data
   const loadProfile = useCallback(async (userId: string): Promise<User | null> => {
     try {
+      // Try loading from profiles table via RLS
       const { data, error } = await getSupabase()
         .from("profiles")
         .select("*")
         .eq("id", userId)
         .single();
 
-      if (error || !data) {
-        console.error("loadProfile query error:", error);
-
-        // Profile might not exist yet — create it as a fallback
-        const { data: { session } } = await getSupabase().auth.getSession();
-        if (session?.user) {
-          const meta = session.user.user_metadata || {};
-          const { error: insertError } = await getSupabase().from("profiles").upsert({
-            id: userId,
-            email: session.user.email || "",
-            name: meta.name || session.user.email?.split("@")[0] || "User",
-            role: "user",
-          }, { onConflict: "id" });
-
-          if (insertError) {
-            console.error("loadProfile upsert error:", insertError);
-            return null;
-          }
-
-          // Retry loading after upsert
-          const { data: retryData, error: retryError } = await getSupabase()
-            .from("profiles")
-            .select("*")
-            .eq("id", userId)
-            .single();
-
-          if (retryError || !retryData) {
-            console.error("loadProfile retry error:", retryError);
-            return null;
-          }
-
-          const user: User = {
-            id: retryData.id,
-            name: retryData.name,
-            email: retryData.email,
-            role: retryData.role,
-            createdAt: retryData.created_at,
-          };
-          setUser(user);
-          return user;
-        }
-        return null;
+      if (data && !error) {
+        const loadedUser: User = {
+          id: data.id,
+          name: data.name,
+          email: data.email,
+          role: data.role,
+          createdAt: data.created_at,
+        };
+        setUser(loadedUser);
+        return loadedUser;
       }
 
-      const loadedUser: User = {
-        id: data.id,
-        name: data.name,
-        email: data.email,
-        role: data.role,
-        createdAt: data.created_at,
-      };
-      setUser(loadedUser);
-      return loadedUser;
+      console.warn("loadProfile: DB query failed, falling back to session data:", error?.message);
+
+      // Fallback: build user from session (no RLS needed)
+      const { data: { session } } = await getSupabase().auth.getSession();
+      if (session?.user) {
+        const fallbackUser = userFromSession(session);
+        setUser(fallbackUser);
+        return fallbackUser;
+      }
+
+      return null;
     } catch (err) {
       console.error("loadProfile unexpected error:", err);
+
+      // Even on error, try session fallback
+      try {
+        const { data: { session } } = await getSupabase().auth.getSession();
+        if (session?.user) {
+          const fallbackUser = userFromSession(session);
+          setUser(fallbackUser);
+          return fallbackUser;
+        }
+      } catch {}
       return null;
     }
-  }, []);
+  }, [userFromSession]);
 
   // Check for existing session on mount
   useEffect(() => {
@@ -148,8 +142,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return { error: "Registration failed. Please try again." };
     }
 
-    // The database trigger should auto-create the profile.
-    // Wait a moment for it, then load the profile.
+    // Wait briefly for the trigger to create the profile, then load it
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     const loadedUser = await loadProfile(data.user.id);
@@ -176,7 +169,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (data.user) {
       const loadedUser = await loadProfile(data.user.id);
       if (!loadedUser) {
-        return { error: "Login succeeded but could not load profile. Please try again." };
+        return { error: "Login failed. Please try again." };
       }
     }
 
