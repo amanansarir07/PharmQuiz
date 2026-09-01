@@ -84,7 +84,7 @@ export function Navbar() {
           )}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground"
+            className="relative p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground overflow-hidden"
             aria-label="Toggle dark mode"
           >
             <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
