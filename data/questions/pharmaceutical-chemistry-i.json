@@ -191,7 +191,7 @@
   {
     "unit_id": "chem-i-unit-10",
     "question_text": "Iodometry involves:",
-    "options": ["Direct titration with iodine solution", "Indirect titration where iodine is liberated and titrated with thiosulphate", "Titration with potassium permanganate", "Titration with silver nitrate"],
+    "options": ["Direct titration with iodine solution", "Indirect titration with thiosulphate", "Titration with potassium permanganate", "Titration with silver nitrate"],
     "correct_index": 1,
     "explanation": "Iodometry is an indirect (back) titration method where iodine is liberated by reaction with an oxidizing agent, and the liberated iodine is titrated with standardized sodium thiosulphate solution.",
     "difficulty": "medium",

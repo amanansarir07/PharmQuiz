@@ -56,7 +56,7 @@
   {
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "A drug receptor is defined as:",
-    "options": ["Any part of the body", "A macromolecular component that interacts with a drug to produce a response", "An enzyme that metabolizes drugs", "A carrier protein in blood"],
+    "options": ["Any part of the body", "A macromolecular component that binds a drug", "An enzyme that metabolizes drugs", "A carrier protein in blood"],
     "correct_index": 1,
     "explanation": "A drug receptor is a macromolecular component (usually a protein) in the body that specifically binds to a drug and initiates the pharmacological response.",
     "difficulty": "easy",
@@ -173,7 +173,7 @@
   {
     "unit_id": "pharmaco-i-unit-3",
     "question_text": "Allopurinol is used for:",
-    "options": ["Acute gout only", "Chronic gout by reducing uric acid production", "Pain relief", "Reducing inflammation only"],
+    "options": ["Acute gout only", "Chronic gout (urate-lowering therapy)", "Pain relief", "Reducing inflammation only"],
     "correct_index": 1,
     "explanation": "Allopurinol is a xanthine oxidase inhibitor used for chronic gout. It reduces uric acid production by inhibiting the conversion of xanthine to uric acid.",
     "difficulty": "medium",
@@ -182,7 +182,7 @@
   {
     "unit_id": "pharmaco-i-unit-3",
     "question_text": "Methotrexate is used in the treatment of:",
-    "options": ["Only cancer", "Rheumatoid arthritis (as DMARD) and cancer", "Only infection", "Only hypertension"],
+    "options": ["Only cancer", "Rheumatoid arthritis and cancer", "Only infection", "Only hypertension"],
     "correct_index": 1,
     "explanation": "Methotrexate is used as a disease-modifying antirheumatic drug (DMARD) for rheumatoid arthritis at low doses, and as an anticancer agent at high doses.",
     "difficulty": "medium",
@@ -272,7 +272,7 @@
   {
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "Aminophylline is used in asthma because it:",
-    "options": ["Blocks histamine", "Is a methylxanthine that causes bronchodilation", "Is a beta blocker", "Reduces mucus production"],
+    "options": ["Blocks histamine", "Acts as a bronchodilator (methylxanthine)", "Is a beta blocker", "Reduces mucus production"],
     "correct_index": 1,
     "explanation": "Aminophylline is a methylxanthine (theophylline + ethylenediamine) that causes bronchodilation by inhibiting phosphodiesterase (PDE), increasing cAMP levels in bronchial smooth muscle.",
     "difficulty": "medium",
@@ -371,7 +371,7 @@
   {
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Chloroquine acts against malaria by:",
-    "options": ["Killing mosquito larvae", "Inhibiting heme polymerization in the parasite", "Boosting immune response", "Blocking parasite entry into cells"],
+    "options": ["Killing mosquito larvae", "Inhibiting heme polymerization", "Boosting immune response", "Blocking parasite entry into cells"],
     "correct_index": 1,
     "explanation": "Chloroquine accumulates in the food vacuole of the malaria parasite and inhibits the polymerization of toxic heme (ferriprotoporphyrin IX) into hemozoin, killing the parasite.",
     "difficulty": "medium",
@@ -398,7 +398,7 @@
   {
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Antibiotic resistance can develop through all EXCEPT:",
-    "options": ["Mutation", "Gene transfer", "Overuse of antibiotics", "Proper completion of antibiotic course"],
+    "options": ["Mutation", "Gene transfer", "Overuse of antibiotics", "Completing the full antibiotic course"],
     "correct_index": 3,
     "explanation": "Proper completion of the full antibiotic course actually helps prevent resistance. Resistance develops through mutation, gene transfer (plasmids, transposons), and overuse/misuse of antibiotics.",
     "difficulty": "medium",
@@ -407,7 +407,7 @@
   {
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Tetracycline should NOT be given with:",
-    "options": ["Paracetamol", "Milk or antacids containing calcium", "Oral rehydration salts", "Vitamin C"],
+    "options": ["Paracetamol", "Dairy products or calcium supplements", "Oral rehydration salts", "Vitamin C"],
     "correct_index": 1,
     "explanation": "Tetracyclines form insoluble chelates with calcium, iron, aluminum, and magnesium ions present in milk and antacids, reducing their absorption. They should be taken on an empty stomach.",
     "difficulty": "medium",

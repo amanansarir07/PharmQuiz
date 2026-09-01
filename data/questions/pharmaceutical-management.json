@@ -20,7 +20,7 @@
   {
     "unit_id": "mgmt-unit-1",
     "question_text": "The difference between management and administration is that:",
-    "options": ["They are the same thing", "Administration is policy-making; management implements policies", "Management is higher level", "Administration is for businesses only"],
+    "options": ["They are the same thing", "Administration makes policies; management executes them", "Management is higher level", "Administration is for businesses only"],
     "correct_index": 1,
     "explanation": "Administration involves policy-making, decision-making at the top level, while management involves implementing and executing these policies at the operational level.",
     "difficulty": "medium",

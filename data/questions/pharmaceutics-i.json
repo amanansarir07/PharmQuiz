@@ -74,7 +74,7 @@
   {
     "unit_id": "pharm-i-unit-2",
     "question_text": "A monograph in a pharmacopoeia typically contains:",
-    "options": ["Only the chemical formula", "Name, method of preparation, tests, storage, and uses", "Only the price of the drug", "Only the manufacturer details"],
+    "options": ["Only the chemical formula", "Name, preparation, tests, and storage details", "Only the price of the drug", "Only the manufacturer details"],
     "correct_index": 1,
     "explanation": "A pharmacopoeial monograph contains comprehensive information including name (official/generic), molecular formula, method of preparation, description, identification tests, purity tests, assay, storage conditions, and uses.",
     "difficulty": "medium",
@@ -254,7 +254,7 @@
   {
     "unit_id": "pharm-i-unit-6",
     "question_text": "Buffer capacity is defined as:",
-    "options": ["The pH of a buffer solution", "The amount of acid or base that changes pH by 1 unit per litre", "The volume of buffer solution", "The temperature of buffer solution"],
+    "options": ["The pH of a buffer solution", "Amount of acid/base that shifts pH by 1 unit/L", "The volume of buffer solution", "The temperature of buffer solution"],
     "correct_index": 1,
     "explanation": "Buffer capacity (β) is defined as the amount of strong acid or base (in gram equivalents) required to change the pH of 1 litre of buffer solution by 1 unit.",
     "difficulty": "medium",

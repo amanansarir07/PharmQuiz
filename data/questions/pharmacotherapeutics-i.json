@@ -74,7 +74,7 @@
   {
     "unit_id": "thera-unit-4",
     "question_text": "Asthma is a chronic inflammatory disease characterized by:",
-    "options": ["Narrowing of blood vessels", "Reversible airway obstruction and bronchial hyperresponsiveness", "Irreversible lung fibrosis", "Pulmonary embolism"],
+    "options": ["Narrowing of blood vessels", "Reversible airway obstruction", "Irreversible lung fibrosis", "Pulmonary embolism"],
     "correct_index": 1,
     "explanation": "Asthma is a chronic inflammatory disease of the airways characterized by reversible airway obstruction, bronchial hyperresponsiveness, and inflammation with eosinophilic infiltration.",
     "difficulty": "easy",
@@ -92,7 +92,7 @@
   {
     "unit_id": "thera-unit-4",
     "question_text": "Pneumonia is classified etiologically based on:",
-    "options": ["Patient age only", "Causative agent (bacterial, viral, fungal, atypical)", "Location of infection", "Duration of symptoms"],
+    "options": ["Patient age only", "Causative agent type", "Location of infection", "Duration of symptoms"],
     "correct_index": 1,
     "explanation": "Pneumonia is classified by its causative agent: bacterial (most common), viral, atypical, fungal, or aspiration. Treatment depends on the etiological classification.",
     "difficulty": "medium",

@@ -60,26 +60,49 @@ export function getQuestionsForQuiz(
     filtered = filtered.slice(0, numQuestions);
   }
 
-  return filtered.map((q, i) => ({
-    id: `quiz-q-${i}-${Date.now()}`,
-    question: q.question_text,
-    options: q.options,
-    correctIndex: q.correct_index,
-    explanation: q.explanation,
-    difficulty: q.difficulty,
-    unitId: q.unit_id,
-  }));
+  return filtered.map((q, i) => {
+    // Shuffle options using Fisher-Yates and track new correct index
+    const options = [...q.options];
+    const correctIndex = q.correct_index;
+    let newCorrectIndex = correctIndex;
+    for (let j = options.length - 1; j > 0; j--) {
+      const k = Math.floor(Math.random() * (j + 1));
+      [options[j], options[k]] = [options[k], options[j]];
+      // Track where the correct answer moves
+      if (j === newCorrectIndex) newCorrectIndex = k;
+      else if (k === newCorrectIndex) newCorrectIndex = j;
+    }
+    return {
+      id: `quiz-q-${i}-${Date.now()}`,
+      question: q.question_text,
+      options,
+      correctIndex: newCorrectIndex,
+      explanation: q.explanation,
+      difficulty: q.difficulty,
+      unitId: q.unit_id,
+    };
+  });
 }
 
 export function getAllQuestions(): QuizQuestion[] {
   const all: QuizQuestion[] = [];
   for (const questions of Object.values(allQuestionsBySubject)) {
     for (const q of questions) {
+      // Shuffle options using Fisher-Yates and track new correct index
+      const options = [...q.options];
+      const correctIndex = q.correct_index;
+      let newCorrectIndex = correctIndex;
+      for (let j = options.length - 1; j > 0; j--) {
+        const k = Math.floor(Math.random() * (j + 1));
+        [options[j], options[k]] = [options[k], options[j]];
+        if (j === newCorrectIndex) newCorrectIndex = k;
+        else if (k === newCorrectIndex) newCorrectIndex = j;
+      }
       all.push({
         id: q.unit_id + "-" + q.question_text.substring(0, 20),
         question: q.question_text,
-        options: q.options,
-        correctIndex: q.correct_index,
+        options,
+        correctIndex: newCorrectIndex,
         explanation: q.explanation,
         difficulty: q.difficulty,
         unitId: q.unit_id,

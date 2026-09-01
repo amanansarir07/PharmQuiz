@@ -56,7 +56,7 @@
   {
     "unit_id": "phs-unit-3",
     "question_text": "Epidemiology is defined as the study of:",
-    "options": ["Treatment of diseases", "Distribution and determinants of health-related states in populations", "Manufacturing of drugs", "Pharmacology of drugs"],
+    "options": ["Treatment of diseases", "Distribution of health-related states in populations", "Manufacturing of drugs", "Pharmacology of drugs"],
     "correct_index": 1,
     "explanation": "Epidemiology is the study of the distribution (who, where, when) and determinants (why, how) of health-related states and events in defined populations, and the application of this knowledge to control health problems.",
     "difficulty": "easy",
@@ -83,7 +83,7 @@
   {
     "unit_id": "phs-unit-4",
     "question_text": "Water purification by slow sand filtration works mainly by:",
-    "options": ["Chemical treatment only", "Biological action (Schmutzdecke) and physical filtration", "Heating", "Distillation"],
+    "options": ["Chemical treatment only", "Biological and physical filtration", "Heating", "Distillation"],
     "correct_index": 1,
     "explanation": "Slow sand filtration works by both physical filtration through sand and biological action in the Schmutzdecke (biological layer) that develops on top of the sand, which metabolizes organic matter and pathogens.",
     "difficulty": "medium",
@@ -110,7 +110,7 @@
   {
     "unit_id": "phs-unit-4",
     "question_text": "Food adulteration differs from food additives in that:",
-    "options": ["They are the same thing", "Adulteration is illegal addition of inferior substances; additives are approved substances", "Adulteration is always safe", "Food additives are always harmful"],
+    "options": ["They are the same thing", "Adulteration is illegal; additives are approved", "Adulteration is always safe", "Food additives are always harmful"],
     "correct_index": 1,
     "explanation": "Food adulteration involves illegal addition of inferior, harmful, or cheaper substances to food. Food additives are legally approved substances added to improve food quality, safety, or shelf life.",
     "difficulty": "medium",

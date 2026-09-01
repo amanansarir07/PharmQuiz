@@ -56,7 +56,7 @@
   {
     "unit_id": "bio-unit-4",
     "question_text": "Liver Function Tests (LFT) include measurement of:",
-    "options": ["Blood urea and creatinine", "SGOT, SGPT, bilirubin, and alkaline phosphatase", "T3, T4, and TSH", "Hemoglobin and hematocrit"],
+    "options": ["Blood urea and creatinine", "SGOT, SGPT, and bilirubin", "T3, T4, and TSH", "Hemoglobin and hematocrit"],
     "correct_index": 1,
     "explanation": "LFT includes SGOT (AST), SGPT (ALT), bilirubin (total, direct, indirect), alkaline phosphatase, and albumin. These assess liver function and damage.",
     "difficulty": "easy",
@@ -92,7 +92,7 @@
   {
     "unit_id": "micro-unit-2",
     "question_text": "Gram-positive bacteria differ from Gram-negative bacteria in that Gram-positive bacteria:",
-    "options": ["Have a thin peptidoglycan layer", "Have a thick peptidoglycan layer and retain crystal violet stain", "Have an outer membrane", "Are always pathogenic"],
+    "options": ["Have a thin peptidoglycan layer", "Have a thick peptidoglycan layer", "Have an outer membrane", "Are always pathogenic"],
     "correct_index": 1,
     "explanation": "Gram-positive bacteria have a thick peptidoglycan layer (20-80 nm) that retains the crystal violet-iodine complex, appearing purple. Gram-negative have a thin layer and appear pink/red.",
     "difficulty": "easy",

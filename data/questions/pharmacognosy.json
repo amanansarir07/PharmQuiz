@@ -65,7 +65,7 @@
   {
     "unit_id": "pharmaco-unit-5",
     "question_text": "Caffeine is a xanthine alkaloid obtained from:",
-    "options": ["Cinchona", "Coffee beans (Coffea arabica) and Tea leaves", "Rauwolfia", "Belladonna"],
+    "options": ["Cinchona", "Coffee beans and tea leaves", "Rauwolfia", "Belladonna"],
     "correct_index": 1,
     "explanation": "Caffeine (1,3,7-trimethylxanthine) is obtained from coffee beans (Coffea arabica), tea leaves (Camellia sinensis), and cola nuts. It is a CNS stimulant.",
     "difficulty": "easy",
