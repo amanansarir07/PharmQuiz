@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { calculateStats, getSubjectName } from "@/lib/stats";
 import type { UserStats } from "@/lib/stats";
+import { supabase } from "@/lib/supabase/client";
 import {
   BarChart,
   Bar,
@@ -45,30 +46,27 @@ export default function AnalyticsPage() {
     return () => window.removeEventListener("focus", handler);
   }, []);
 
-  function refreshStats() {
-    const s = calculateStats();
+  async function refreshStats() {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return;
+
+    const s = await calculateStats(user.id);
     setStats(s);
 
-    // Build progress history from quiz results
-    const history: { quiz: number; score: number }[] = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith("quiz-results-")) {
-        try {
-          const data = JSON.parse(localStorage.getItem(key) || "{}");
-          if (data.answers && data.questions) {
-            let correct = 0;
-            for (const a of data.answers) {
-              if (a.selected !== null && a.isCorrect) correct++;
-            }
-            const total = data.answers.length;
-            const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
-            history.push({ quiz: history.length + 1, score: pct });
-          }
-        } catch {}
-      }
+    // Build progress history from Supabase
+    const { data: results } = await supabase
+      .from("quiz_results")
+      .select("correct, total")
+      .eq("user_id", user.id)
+      .order("completed_at", { ascending: true });
+
+    if (results) {
+      const history = results.map((r, i) => ({
+        quiz: i + 1,
+        score: r.total > 0 ? Math.round((r.correct / r.total) * 100) : 0,
+      }));
+      setQuizHistory(history);
     }
-    setQuizHistory(history.sort((a, b) => a.quiz - b.quiz));
   }
 
   const s = stats || { quizzesTaken: 0, totalCorrect: 0, totalAttempted: 0, accuracy: 0, currentStreak: 0, totalScore: 0, subjectBreakdown: {} };

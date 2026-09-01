@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useAuth } from "@/lib/auth";
+import { supabase } from "@/lib/supabase/client";
 
 export interface StoredNote {
   id: string;
@@ -12,24 +13,28 @@ export interface StoredNote {
   updatedAt: string;
 }
 
-const NOTES_KEY = "pharmquiz_notes_";
-
-function getStorageKey(userId: string): string {
-  return `${NOTES_KEY}${userId}`;
-}
-
 export function useNotes() {
   const { user } = useAuth();
   const [notes, setNotes] = useState<StoredNote[]>([]);
   const [mounted, setMounted] = useState(false);
 
-  const loadNotes = useCallback(() => {
+  const loadNotes = useCallback(async () => {
     if (!user) { setNotes([]); return; }
-    try {
-      const raw = localStorage.getItem(getStorageKey(user.id));
-      setNotes(raw ? JSON.parse(raw) : []);
-    } catch {
-      setNotes([]);
+    const { data } = await supabase
+      .from("notes")
+      .select("*")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false });
+
+    if (data) {
+      setNotes(data.map((n) => ({
+        id: n.id,
+        title: n.title,
+        content: n.content,
+        subject: n.subject || "",
+        createdAt: n.created_at,
+        updatedAt: n.updated_at,
+      })));
     }
   }, [user]);
 
@@ -38,37 +43,57 @@ export function useNotes() {
     loadNotes();
   }, [loadNotes]);
 
-  const addNote = useCallback((title: string, content: string, subject: string) => {
+  const addNote = useCallback(async (title: string, content: string, subject: string) => {
     if (!user) return;
-    const now = new Date().toISOString();
-    const newNote: StoredNote = {
-      id: `note-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-      title,
-      content,
-      subject,
-      createdAt: now,
-      updatedAt: now,
-    };
-    const updated = [newNote, ...notes];
-    setNotes(updated);
-    localStorage.setItem(getStorageKey(user.id), JSON.stringify(updated));
-  }, [user, notes]);
+    const { data } = await supabase
+      .from("notes")
+      .insert({
+        user_id: user.id,
+        title,
+        content,
+        subject,
+      })
+      .select()
+      .single();
 
-  const updateNote = useCallback((id: string, title: string, content: string, subject: string) => {
+    if (data) {
+      const newNote: StoredNote = {
+        id: data.id,
+        title: data.title,
+        content: data.content,
+        subject: data.subject || "",
+        createdAt: data.created_at,
+        updatedAt: data.updated_at,
+      };
+      setNotes((prev) => [newNote, ...prev]);
+    }
+  }, [user]);
+
+  const updateNote = useCallback(async (id: string, title: string, content: string, subject: string) => {
     if (!user) return;
-    const updated = notes.map((n) =>
-      n.id === id ? { ...n, title, content, subject, updatedAt: new Date().toISOString() } : n
+    await supabase
+      .from("notes")
+      .update({ title, content, subject, updated_at: new Date().toISOString() })
+      .eq("id", id)
+      .eq("user_id", user.id);
+
+    setNotes((prev) =>
+      prev.map((n) =>
+        n.id === id ? { ...n, title, content, subject, updatedAt: new Date().toISOString() } : n
+      )
     );
-    setNotes(updated);
-    localStorage.setItem(getStorageKey(user.id), JSON.stringify(updated));
-  }, [user, notes]);
+  }, [user]);
 
-  const deleteNote = useCallback((id: string) => {
+  const deleteNote = useCallback(async (id: string) => {
     if (!user) return;
-    const updated = notes.filter((n) => n.id !== id);
-    setNotes(updated);
-    localStorage.setItem(getStorageKey(user.id), JSON.stringify(updated));
-  }, [user, notes]);
+    await supabase
+      .from("notes")
+      .delete()
+      .eq("id", id)
+      .eq("user_id", user.id);
+
+    setNotes((prev) => prev.filter((n) => n.id !== id));
+  }, [user]);
 
   return { notes, mounted, addNote, updateNote, deleteNote, refreshNotes: loadNotes };
 }

@@ -29,18 +29,18 @@ export default function DashboardPage() {
 
   useEffect(() => {
     setMounted(true);
-    setStats(calculateStats());
-  }, []);
+    if (user) calculateStats(user.id).then(setStats);
+  }, [user]);
 
   // Re-calculate stats whenever page becomes visible (after quiz completion)
   useEffect(() => {
-    const handler = () => setStats(calculateStats());
+    const handler = () => { if (user) calculateStats(user.id).then(setStats); };
     window.addEventListener("focus", handler);
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "visible") handler();
     });
     return () => window.removeEventListener("focus", handler);
-  }, []);
+  }, [user]);
 
   const s = stats || { quizzesTaken: 0, totalCorrect: 0, totalAttempted: 0, accuracy: 0, currentStreak: 0, totalScore: 0, subjectBreakdown: {} };
 

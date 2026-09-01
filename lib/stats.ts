@@ -1,5 +1,7 @@
 "use client";
 
+import { supabase } from "@/lib/supabase/client";
+
 export interface UserStats {
   quizzesTaken: number;
   totalCorrect: number;
@@ -10,69 +12,47 @@ export interface UserStats {
   subjectBreakdown: Record<string, { correct: number; total: number; accuracy: number }>;
 }
 
-export function calculateStats(): UserStats {
-  if (typeof window === "undefined") {
+export async function calculateStats(userId?: string): Promise<UserStats> {
+  if (!userId) {
+    return { quizzesTaken: 0, totalCorrect: 0, totalAttempted: 0, accuracy: 0, currentStreak: 0, totalScore: 0, subjectBreakdown: {} };
+  }
+
+  const { data: results } = await supabase
+    .from("quiz_results")
+    .select("*")
+    .eq("user_id", userId)
+    .order("completed_at", { ascending: false });
+
+  if (!results || results.length === 0) {
     return { quizzesTaken: 0, totalCorrect: 0, totalAttempted: 0, accuracy: 0, currentStreak: 0, totalScore: 0, subjectBreakdown: {} };
   }
 
   let totalCorrect = 0;
   let totalAttempted = 0;
-  let quizzesTaken = 0;
   const subjectBreakdown: Record<string, { correct: number; total: number; accuracy: number }> = {};
 
-  // Scan all localStorage keys for quiz results
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    if (key && key.startsWith("quiz-results-")) {
-      try {
-        const data = JSON.parse(localStorage.getItem(key) || "{}");
-        if (!data.answers || !data.questions) continue;
+  for (const r of results) {
+    totalCorrect += r.correct;
+    totalAttempted += r.total;
 
-        quizzesTaken++;
-
-        // Count correct and attempted
-        for (const answer of data.answers) {
-          if (answer.selected !== null) {
-            totalAttempted++;
-            if (answer.isCorrect) totalCorrect++;
-          }
-        }
-
-        // Subject breakdown
-        const subjectSlug = data.config?.subject;
-        if (subjectSlug) {
-          if (!subjectBreakdown[subjectSlug]) {
-            subjectBreakdown[subjectSlug] = { correct: 0, total: 0, accuracy: 0 };
-          }
-          for (const answer of data.answers) {
-            if (answer.selected !== null) {
-              subjectBreakdown[subjectSlug].total++;
-              if (answer.isCorrect) subjectBreakdown[subjectSlug].correct++;
-            }
-          }
-        }
-      } catch {
-        // Skip invalid entries
-      }
+    if (!subjectBreakdown[r.subject]) {
+      subjectBreakdown[r.subject] = { correct: 0, total: 0, accuracy: 0 };
     }
+    subjectBreakdown[r.subject].correct += r.correct;
+    subjectBreakdown[r.subject].total += r.total;
   }
 
-  // Calculate accuracy
   const accuracy = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
 
-  // Calculate accuracy per subject
   for (const subject of Object.values(subjectBreakdown)) {
     subject.accuracy = subject.total > 0 ? Math.round((subject.correct / subject.total) * 100) : 0;
   }
 
-  // Calculate score (1 point per correct answer)
   const totalScore = totalCorrect;
-
-  // Calculate streak (simplified: count consecutive days with quizzes)
-  const currentStreak = calculateStreak();
+  const currentStreak = calculateStreakFromResults(results);
 
   return {
-    quizzesTaken,
+    quizzesTaken: results.length,
     totalCorrect,
     totalAttempted,
     accuracy,
@@ -82,29 +62,17 @@ export function calculateStats(): UserStats {
   };
 }
 
-function calculateStreak(): number {
-  const dates: string[] = [];
-
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    if (key && key.startsWith("quiz-results-")) {
-      try {
-        const data = JSON.parse(localStorage.getItem(key) || "{}");
-        if (data.config?.completedAt) {
-          dates.push(data.config.completedAt.split("T")[0]);
-        }
-      } catch {}
-    }
-  }
+function calculateStreakFromResults(results: any[]): number {
+  const dates = results
+    .map((r) => r.completed_at?.split("T")[0])
+    .filter(Boolean);
 
   if (dates.length === 0) return 0;
 
-  // Sort dates descending
   const uniqueDates = [...new Set(dates)].sort().reverse();
   const today = new Date().toISOString().split("T")[0];
   const yesterday = new Date(Date.now() - 86400000).toISOString().split("T")[0];
 
-  // Streak must start from today or yesterday
   if (uniqueDates[0] !== today && uniqueDates[0] !== yesterday) return 0;
 
   let streak = 1;

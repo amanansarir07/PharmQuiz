@@ -22,12 +22,12 @@ export default function LeaderboardPage() {
 
   useEffect(() => {
     setMounted(true);
-    setEntries(getLeaderboard());
+    getLeaderboard().then(setEntries);
   }, []);
 
   // Refresh when page becomes visible
   useEffect(() => {
-    const handler = () => setEntries(getLeaderboard());
+    const handler = () => getLeaderboard().then(setEntries);
     window.addEventListener("focus", handler);
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "visible") handler();

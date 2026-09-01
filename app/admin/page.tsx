@@ -15,6 +15,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { subjects } from "@/data/subjects";
 import { getQuestionCount, getQuestionsForQuiz } from "@/lib/quiz-loader";
+import { supabase } from "@/lib/supabase/client";
 
 export default function AdminPage() {
   const [userCount, setUserCount] = useState(0);
@@ -23,33 +24,31 @@ export default function AdminPage() {
   const [subjectCounts, setSubjectCounts] = useState<Record<string, number>>({});
 
   useEffect(() => {
-    // Count registered users
-    try {
-      const usersRaw = localStorage.getItem("pharmquiz_users");
-      if (usersRaw) {
-        const users = JSON.parse(usersRaw);
-        setUserCount(Object.keys(users).length);
+    async function loadStats() {
+      // Count registered users from Supabase
+      const { count: userCountResult } = await supabase
+        .from("profiles")
+        .select("*", { count: "exact", head: true });
+      setUserCount(userCountResult || 0);
+
+      // Count quizzes taken from Supabase
+      const { count: quizCountResult } = await supabase
+        .from("quiz_results")
+        .select("*", { count: "exact", head: true });
+      setQuizCount(quizCountResult || 0);
+
+      // Count questions from JSON
+      const total = getQuestionCount();
+      setTotalQuestions(total);
+
+      // Count per subject
+      const counts: Record<string, number> = {};
+      for (const s of subjects) {
+        counts[s.slug] = getQuestionsForQuiz(s.slug).length;
       }
-    } catch {}
-
-    // Count quizzes taken
-    let quizzes = 0;
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith("quiz-results-")) quizzes++;
+      setSubjectCounts(counts);
     }
-    setQuizCount(quizzes);
-
-    // Count questions from JSON
-    const total = getQuestionCount();
-    setTotalQuestions(total);
-
-    // Count per subject
-    const counts: Record<string, number> = {};
-    for (const s of subjects) {
-      counts[s.slug] = getQuestionsForQuiz(s.slug).length;
-    }
-    setSubjectCounts(counts);
+    loadStats();
   }, []);
 
   return (

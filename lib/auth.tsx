@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
+import { supabase } from "@/lib/supabase/client";
 
 interface User {
   id: string;
@@ -21,83 +22,132 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const USERS_KEY = "pharmquiz_users";
-const CURRENT_USER_KEY = "pharmquiz_current_user";
-
-function getUsers(): Record<string, { user: User; password: string }> {
-  if (typeof window === "undefined") return {};
-  try {
-    const raw = localStorage.getItem(USERS_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
-
-function saveUsers(users: Record<string, { user: User; password: string }>) {
-  localStorage.setItem(USERS_KEY, JSON.stringify(users));
-}
-
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Load user profile from Supabase
+  const loadProfile = useCallback(async (userId: string) => {
+    const { data } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("id", userId)
+      .single();
+
+    if (data) {
+      setUser({
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        role: data.role,
+        createdAt: data.created_at,
+      });
+    }
+  }, []);
+
+  // Check for existing session on mount
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(CURRENT_USER_KEY);
-      if (raw) {
-        setUser(JSON.parse(raw));
+    const init = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        await loadProfile(session.user.id);
       }
-    } catch {}
-    setIsLoading(false);
+      setIsLoading(false);
+    };
+    init();
+
+    // Listen for auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      async (event, session) => {
+        if (event === "SIGNED_IN" && session?.user) {
+          await loadProfile(session.user.id);
+        } else if (event === "SIGNED_OUT") {
+          setUser(null);
+        }
+        setIsLoading(false);
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, [loadProfile]);
+
+  const register = useCallback(async (name: string, email: string, password: string) => {
+    // Sign up with Supabase Auth
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { name },
+      },
+    });
+
+    if (error) {
+      if (error.message.includes("already registered")) {
+        return { error: "An account with this email already exists" };
+      }
+      return { error: error.message };
+    }
+
+    if (!data.user) {
+      return { error: "Registration failed. Please try again." };
+    }
+
+    // Check if this is the first user (make them admin)
+    const { count } = await supabase
+      .from("profiles")
+      .select("*", { count: "exact", head: true });
+
+    const role = count === 0 ? "admin" : "user";
+
+    // Create profile
+    const { error: profileError } = await supabase
+      .from("profiles")
+      .insert({
+        id: data.user.id,
+        email: email.toLowerCase(),
+        name,
+        role,
+      });
+
+    if (profileError) {
+      console.error("Profile creation error:", profileError);
+      return { error: "Failed to create profile. Please try again." };
+    }
+
+    setUser({
+      id: data.user.id,
+      name,
+      email: email.toLowerCase(),
+      role,
+      createdAt: new Date().toISOString(),
+    });
+
+    return {};
   }, []);
 
   const login = useCallback(async (email: string, password: string) => {
-    const users = getUsers();
-    const entry = users[email.toLowerCase()];
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
-    if (!entry) {
-      return { error: "No account found with this email" };
+    if (error) {
+      if (error.message.includes("Invalid login")) {
+        return { error: "Incorrect email or password" };
+      }
+      return { error: error.message };
     }
 
-    if (entry.password !== password) {
-      return { error: "Incorrect password" };
+    if (data.user) {
+      await loadProfile(data.user.id);
     }
 
-    setUser(entry.user);
-    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(entry.user));
     return {};
-  }, []);
+  }, [loadProfile]);
 
-  const register = useCallback(async (name: string, email: string, password: string) => {
-    const users = getUsers();
-    const normalizedEmail = email.toLowerCase();
-
-    if (users[normalizedEmail]) {
-      return { error: "An account with this email already exists" };
-    }
-
-    // Only specific email gets admin role
-    const isAdminEmail = normalizedEmail === "amanansari.np07@gmail.com";
-
-    const newUser: User = {
-      id: crypto.randomUUID(),
-      name,
-      email: normalizedEmail,
-      role: isAdminEmail ? "admin" : "user",
-      createdAt: new Date().toISOString(),
-    };
-
-    users[normalizedEmail] = { user: newUser, password };
-    saveUsers(users);
-    setUser(newUser);
-    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(newUser));
-    return {};
-  }, []);
-
-  const logout = useCallback(() => {
+  const logout = useCallback(async () => {
+    await supabase.auth.signOut();
     setUser(null);
-    localStorage.removeItem(CURRENT_USER_KEY);
   }, []);
 
   const isAdmin = user?.role === "admin";

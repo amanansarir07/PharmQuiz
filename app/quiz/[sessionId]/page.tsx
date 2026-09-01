@@ -7,6 +7,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { getQuestionsForQuiz, type QuizQuestion } from "@/lib/quiz-loader";
+import { supabase } from "@/lib/supabase/client";
+import { useAuth } from "@/lib/auth";
 import {
   Clock,
   ChevronLeft,
@@ -31,6 +33,7 @@ export default function ActiveQuizPage({
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [quizConfig, setQuizConfig] = useState<any>(null);
   const answersRef = useRef<(number | null)[]>([]);
+  const { user } = useAuth();
 
   useEffect(() => {
     // Read config using the actual session ID from URL
@@ -102,13 +105,22 @@ export default function ActiveQuizPage({
   };
 
   const doSubmit = useCallback(
-    (currentAnswers: (number | null)[]) => {
+    async (currentAnswers: (number | null)[]) => {
       const results = questions.map((q, i) => ({
         questionId: q.id,
         selected: currentAnswers[i],
         correct: q.correctIndex,
         isCorrect: currentAnswers[i] === q.correctIndex,
       }));
+
+      const correct = results.filter((r) => r.isCorrect).length;
+      const total = results.length;
+      const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
+      const timeTaken = quizConfig?.timeLimit
+        ? quizConfig.timeLimit * 60 - (timeLeft || 0)
+        : null;
+
+      // Save to localStorage for results page
       localStorage.setItem(
         `quiz-results-${sessionId}`,
         JSON.stringify({
@@ -118,14 +130,26 @@ export default function ActiveQuizPage({
             ...quizConfig,
             completedAt: new Date().toISOString(),
           },
-          timeTaken: quizConfig?.timeLimit
-            ? quizConfig.timeLimit * 60 - (timeLeft || 0)
-            : null,
+          timeTaken,
         })
       );
+
+      // Save to Supabase for shared stats/leaderboard
+      if (user) {
+        await supabase.from("quiz_results").insert({
+          user_id: user.id,
+          subject: quizConfig?.subject || "unknown",
+          score: correct,
+          total,
+          correct,
+          accuracy,
+          time_taken: timeTaken,
+        });
+      }
+
       router.push(`/quiz/${sessionId}/results`);
     },
-    [questions, quizConfig, timeLeft, router, sessionId]
+    [questions, quizConfig, timeLeft, router, sessionId, user]
   );
 
   const handleSubmit = useCallback(() => {
