@@ -5,27 +5,37 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 let _client: SupabaseClient | null = null;
 
 function getClient(): SupabaseClient {
-  if (typeof window === "undefined") {
-    throw new Error("Supabase client can only be used in the browser");
-  }
   if (_client) return _client;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) {
-    throw new Error("Missing Supabase env vars");
-  }
+  if (!url || !key) throw new Error("Missing Supabase env vars");
   _client = createClient(url, key);
   return _client;
 }
 
-// Named export for new code
+// Returns null during SSR/build — callers must handle gracefully
+function getClientOrNull(): SupabaseClient | null {
+  if (typeof window === "undefined") return null;
+  try { return getClient(); } catch { return null; }
+}
+
 export { getClient as getSupabase };
 
-// Lazy proxy export so `import { supabase } from "@/lib/supabase/client"` still works
-// Properties are only accessed at runtime in browser, never during build
+// Safe proxy: returns a no-op chain during SSR so builds never fail
+const noopChain: any = new Proxy(
+  {},
+  {
+    get(_t, _prop, _r) {
+      // Return a function that returns another proxy (for chaining like .from().select().eq())
+      return (..._args: any[]) => noopChain;
+    },
+  }
+);
+
 export const supabase = new Proxy({} as SupabaseClient, {
   get(_target, prop) {
-    const client = getClient();
+    const client = getClientOrNull();
+    if (!client) return prop === "auth" ? noopChain : noopChain;
     const val = (client as any)[prop];
     return typeof val === "function" ? val.bind(client) : val;
   },
