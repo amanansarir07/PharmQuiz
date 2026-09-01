@@ -1,0 +1,434 @@
+[
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Which of the following is a solid dosage form?",
+    "options": ["Syrups", "Capsules", "Emulsions", "Injections"],
+    "correct_index": 1,
+    "explanation": "Capsules are solid dosage forms. Syrups and emulsions are liquid dosage forms, while injections are also liquid dosage forms administered parenterally.",
+    "difficulty": "easy",
+    "tags": ["dosage forms", "classification"]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Which of the following is NOT a semisolid dosage form?",
+    "options": ["Ointments", "Creams", "Tablets", "Gels"],
+    "correct_index": 2,
+    "explanation": "Tablets are solid dosage forms, not semisolid. Ointments, creams, and gels are all semisolid dosage forms used for topical application.",
+    "difficulty": "easy",
+    "tags": ["dosage forms", "semisolid"]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Aerosols and inhalants belong to which category of dosage forms?",
+    "options": ["Solid", "Liquid", "Semisolid", "Gaseous"],
+    "correct_index": 3,
+    "explanation": "Aerosols and inhalants are gaseous dosage forms. They deliver medication in gaseous or finely divided particle form.",
+    "difficulty": "easy",
+    "tags": ["dosage forms", "gaseous"]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Suppositories and lozenges are classified as:",
+    "options": ["Liquid dosage forms", "Semisolid dosage forms", "Solid dosage forms", "Gaseous dosage forms"],
+    "correct_index": 2,
+    "explanation": "Suppositories and lozenges are solid dosage forms. Suppositories are solid at room temperature but melt at body temperature.",
+    "difficulty": "easy",
+    "tags": ["dosage forms", "solid"]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Injections are an example of which route of administration?",
+    "options": ["Oral", "Parenteral", "Topical", "Inhalational"],
+    "correct_index": 1,
+    "explanation": "Injections are parenteral dosage forms, administered by routes other than the alimentary canal (e.g., intravenous, intramuscular, subcutaneous).",
+    "difficulty": "easy",
+    "tags": ["dosage forms", "parenteral"]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Liniments differ from lotions in that liniments are:",
+    "options": ["Applied to unbroken skin only", "Applied to both broken and unbroken skin", "Always aqueous", "Never contain alcohol"],
+    "correct_index": 0,
+    "explanation": "Liniments are liquid preparations applied to unbroken skin, often containing alcohol or oil as a solvent. They are generally rubbed into the skin.",
+    "difficulty": "medium",
+    "tags": ["dosage forms", "liniments"]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "A pharmacopoeia is defined as:",
+    "options": ["A book of drug prices", "An official book containing standards for drugs", "A collection of prescriptions", "A drug manufacturing manual"],
+    "correct_index": 1,
+    "explanation": "A pharmacopoeia is an official publication containing a list of medicinal drugs with their effects, directions for their identification, and standards of purity and strength.",
+    "difficulty": "easy",
+    "tags": ["pharmacopoeia", "definition"]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "Which of the following is a compendium recognized in Nepal?",
+    "options": ["Only BP", "Only IP", "Both BP and IP", "None of these"],
+    "correct_index": 2,
+    "explanation": "Both British Pharmacopoeia (BP) and Indian Pharmacopoeia (IP) are recognized compendia in Nepal along with others.",
+    "difficulty": "medium",
+    "tags": ["pharmacopoeia", "Nepal"]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "A monograph in a pharmacopoeia typically contains:",
+    "options": ["Only the chemical formula", "Name, method of preparation, tests, storage, and uses", "Only the price of the drug", "Only the manufacturer details"],
+    "correct_index": 1,
+    "explanation": "A pharmacopoeial monograph contains comprehensive information including name (official/generic), molecular formula, method of preparation, description, identification tests, purity tests, assay, storage conditions, and uses.",
+    "difficulty": "medium",
+    "tags": ["monograph", "pharmacopoeia"]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "NNF stands for:",
+    "options": ["National Normal Formulary", "Nepal National Formulary", "New National Formula", "National Nutrition Foundation"],
+    "correct_index": 1,
+    "explanation": "NNF stands for Nepal National Formulary, which is an official formulary used in Nepal containing standards and monographs of drugs.",
+    "difficulty": "easy",
+    "tags": ["NNF", "formulary"]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "The British Pharmaceutical Codex (BPC) is published by:",
+    "options": ["WHO", "Indian Pharmacopoeia Commission", "Pharmaceutical Society of Great Britain", "US FDA"],
+    "correct_index": 2,
+    "explanation": "The British Pharmaceutical Codex was published by the Pharmaceutical Society of Great Britain. It serves as an unofficial companion to the British Pharmacopoeia.",
+    "difficulty": "medium",
+    "tags": ["BPC", "compendia"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Milling is defined as the process of:",
+    "options": ["Mixing two powders", "Reducing the particle size of a solid", "Removing moisture", "Separating particles by size"],
+    "correct_index": 1,
+    "explanation": "Milling (comminution) is the process of reducing the particle size of a solid material by mechanical action. It is used to achieve desired particle size for pharmaceutical processing.",
+    "difficulty": "easy",
+    "tags": ["milling", "definition"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "The Hammer mill works on the principle of:",
+    "options": ["Compression", "Attrition and impact", "Cutting", "Shearing only"],
+    "correct_index": 1,
+    "explanation": "Hammer mill works on the principle of attrition and impact. The material is shattered by the impact of hammers rotating at high speed.",
+    "difficulty": "medium",
+    "tags": ["milling", "hammer mill"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Ball mill is used for:",
+    "options": ["Only wet grinding", "Only dry grinding", "Both wet and dry grinding", "Neither wet nor dry grinding"],
+    "correct_index": 2,
+    "explanation": "Ball mill can be used for both wet and dry grinding. It consists of a rotating cylinder partially filled with balls that grind the material by impact and attrition.",
+    "difficulty": "medium",
+    "tags": ["milling", "ball mill"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Which mill is used for producing very fine particles (colloidal size)?",
+    "options": ["Hammer mill", "Ball mill", "Colloidal mill", "Roller mill"],
+    "correct_index": 2,
+    "explanation": "Colloidal mill is used to reduce particles to colloidal size (1-5 μm). It works on the principle of shearing and is used for emulsions and suspensions.",
+    "difficulty": "medium",
+    "tags": ["milling", "colloidal mill"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "The process of separating particles based on size using sieves is called:",
+    "options": ["Milling", "Filtration", "Size separation (sifting)", "Centrifugation"],
+    "correct_index": 2,
+    "explanation": "Size separation (sifting/screening) is the process of separating particles according to their size using sieves or screens of different mesh sizes.",
+    "difficulty": "easy",
+    "tags": ["size separation", "definition"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "In mixing, the double cone blender is used for:",
+    "options": ["Wet mixing only", "Dry powder blending", "Liquid emulsification", "Sterile mixing only"],
+    "correct_index": 1,
+    "explanation": "Double cone blender is used for dry powder blending. The blender rotates, causing the powders to tumble and mix by diffusion and convection.",
+    "difficulty": "medium",
+    "tags": ["mixing", "double cone blender"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "The theory of filtration is based on:",
+    "options": ["Gravity only", "Pressure difference across a filter medium", "Magnetic attraction", "Centrifugal force only"],
+    "correct_index": 1,
+    "explanation": "Filtration is based on the principle of passing a liquid through a porous medium (filter) under a pressure difference. The pressure can be applied by gravity, vacuum, or positive pressure.",
+    "difficulty": "medium",
+    "tags": ["filtration", "principle"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "A sintered glass filter is used for:",
+    "options": ["Coarse filtration only", "Clarification of liquids and sterile filtration", "Drying of powders", "Mixing of liquids"],
+    "correct_index": 1,
+    "explanation": "Sintered glass filters are used for clarification of liquids and can be used for sterile filtration. They have controlled pore sizes and are chemically resistant.",
+    "difficulty": "medium",
+    "tags": ["filtration", "sintered glass"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "In a tray dryer, the material to be dried is placed in:",
+    "options": ["Rotating drums", "Trays on trolleys in an oven", "A fluidized bed", "A vacuum chamber"],
+    "correct_index": 1,
+    "explanation": "In a tray dryer, the material is spread on trays which are placed on trolleys inside a drying oven. Hot air circulates over the trays to evaporate moisture.",
+    "difficulty": "easy",
+    "tags": ["drying", "tray dryer"]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Freeze drying (lyophilization) involves:",
+    "options": ["Evaporation at room temperature", "Removal of water by sublimation under vacuum", "Boiling at atmospheric pressure", "Spray drying"],
+    "correct_index": 1,
+    "explanation": "Freeze drying involves freezing the material and then removing the water by sublimation (solid to gas) under vacuum. It is used for heat-sensitive materials.",
+    "difficulty": "medium",
+    "tags": ["drying", "freeze dryer"]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "The three methods of heat transfer are:",
+    "options": ["Conduction, convection, radiation", "Absorption, emission, reflection", "Evaporation, condensation, sublimation", "Boiling, freezing, melting"],
+    "correct_index": 0,
+    "explanation": "Heat can be transferred by three methods: conduction (through direct contact), convection (through fluid movement), and radiation (through electromagnetic waves).",
+    "difficulty": "easy",
+    "tags": ["heat transfer", "methods"]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Evaporation differs from distillation in that evaporation:",
+    "options": ["Always collects the vapour", "Does not necessarily collect the vapour", "Uses only vacuum", "Requires a condenser always"],
+    "correct_index": 1,
+    "explanation": "In evaporation, the vapour is generally not collected (it is allowed to escape), whereas in distillation, the vapour is condensed and collected. Both involve converting liquid to vapour.",
+    "difficulty": "medium",
+    "tags": ["evaporation", "distillation"]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Which of the following factors does NOT affect evaporation?",
+    "options": ["Surface area", "Temperature", "Humidity of surrounding air", "Colour of the container"],
+    "correct_index": 3,
+    "explanation": "Factors affecting evaporation include surface area, temperature, humidity of surrounding air, concentration of solute, and air movement. The colour of the container does not directly affect evaporation.",
+    "difficulty": "medium",
+    "tags": ["evaporation", "factors"]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Steam distillation is used for the extraction of:",
+    "options": ["Non-volatile compounds", "Thermolabile volatile oils", "Inorganic salts", "Proteins"],
+    "correct_index": 1,
+    "explanation": "Steam distillation is used for extracting thermolabile volatile oils from plant materials. The steam carries the volatile oil at temperatures below 100°C, preventing decomposition.",
+    "difficulty": "medium",
+    "tags": ["distillation", "steam distillation"]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Fractional distillation is used to separate:",
+    "options": ["A single pure liquid", "Two or more miscible liquids with different boiling points", "Solid from liquid", "Immiscible liquids"],
+    "correct_index": 1,
+    "explanation": "Fractional distillation is used to separate two or more miscible liquids with different boiling points. A fractionating column provides multiple theoretical plates for separation.",
+    "difficulty": "medium",
+    "tags": ["distillation", "fractional"]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Azeotropic distillation is used when:",
+    "options": ["Liquids have very different boiling points", "Liquids form an azeotrope and cannot be separated by simple distillation", "Only one liquid is present", "The liquid is non-volatile"],
+    "correct_index": 1,
+    "explanation": "Azeotropic distillation is used when two or more liquids form an azeotrope (constant boiling mixture) and cannot be separated by simple or fractional distillation. A third component is added to break the azeotrope.",
+    "difficulty": "hard",
+    "tags": ["distillation", "azeotropic"]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Sorensen's pH scale ranges from:",
+    "options": ["0 to 7", "0 to 14", "1 to 14", "-1 to 15"],
+    "correct_index": 1,
+    "explanation": "Sorensen's pH scale ranges from 0 to 14. A pH of 7 is neutral, below 7 is acidic, and above 7 is alkaline (basic).",
+    "difficulty": "easy",
+    "tags": ["pH", "Sorensen"]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Buffer capacity is defined as:",
+    "options": ["The pH of a buffer solution", "The amount of acid or base that changes pH by 1 unit per litre", "The volume of buffer solution", "The temperature of buffer solution"],
+    "correct_index": 1,
+    "explanation": "Buffer capacity (β) is defined as the amount of strong acid or base (in gram equivalents) required to change the pH of 1 litre of buffer solution by 1 unit.",
+    "difficulty": "medium",
+    "tags": ["buffers", "buffer capacity"]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Newtonian fluid follows which relationship?",
+    "options": ["Shear stress ∝ shear rate", "Shear stress ∝ 1/shear rate", "Shear stress ∝ (shear rate)²", "No relationship"],
+    "correct_index": 0,
+    "explanation": "Newtonian fluids follow Newton's law of viscosity where shear stress (τ) is directly proportional to shear rate (γ̇): τ = η × γ̇, where η is viscosity.",
+    "difficulty": "medium",
+    "tags": ["rheology", "Newtonian"]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "A pseudoplastic fluid is also known as:",
+    "options": ["Dilatant", "Bingham plastic", "Shear-thinning fluid", "Ideal fluid"],
+    "correct_index": 2,
+    "explanation": "Pseudoplastic fluids are shear-thinning fluids. Their apparent viscosity decreases with increasing shear rate. Examples include polymer solutions and blood.",
+    "difficulty": "medium",
+    "tags": ["rheology", "pseudoplastic"]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Dilatant fluids are also called:",
+    "options": ["Shear-thinning fluids", "Shear-thickening fluids", "Ideal fluids", "Newtonian fluids"],
+    "correct_index": 1,
+    "explanation": "Dilatant fluids are shear-thickening fluids. Their apparent viscosity increases with increasing shear rate. An example is a paste of starch in water.",
+    "difficulty": "medium",
+    "tags": ["rheology", "dilatant"]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Surface tension can be measured by:",
+    "options": ["Only the capillary method", "Only the drop method", "Both capillary and drop methods", "Neither capillary nor drop method"],
+    "correct_index": 2,
+    "explanation": "Surface tension can be measured by both the capillary rise method and the drop count/drop weight method. Both are commonly used in pharmaceutical laboratories.",
+    "difficulty": "easy",
+    "tags": ["surface tension", "measurement"]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Surfactants are agents that:",
+    "options": ["Increase surface tension", "Decrease surface tension", "Have no effect on surface tension", "Only work at high temperatures"],
+    "correct_index": 1,
+    "explanation": "Surfactants (surface-active agents) decrease the surface tension (or interfacial tension) between two liquids, or between a liquid and a solid. They are amphiphilic molecules.",
+    "difficulty": "easy",
+    "tags": ["surfactants", "surface tension"]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "In a zero-order reaction, the rate of reaction is:",
+    "options": ["Proportional to the first power of concentration", "Independent of concentration", "Proportional to the square of concentration", "Inversely proportional to concentration"],
+    "correct_index": 1,
+    "explanation": "In a zero-order reaction, the rate of reaction is independent of the concentration of the reactant. Rate = k (constant). Example: photodegradation of nifedipine.",
+    "difficulty": "medium",
+    "tags": ["kinetics", "zero order"]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "The shelf life of a drug is related to:",
+    "options": ["Zero-order kinetics only", "First-order kinetics only", "Both zero and first-order kinetics", "Second-order kinetics only"],
+    "correct_index": 2,
+    "explanation": "Drug degradation can follow either zero-order or first-order kinetics. Most pharmaceutical degradation follows first-order kinetics, but some (like photodegradation) follow zero-order.",
+    "difficulty": "medium",
+    "tags": ["kinetics", "shelf life"]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Monophasic liquid dosage forms consist of:",
+    "options": ["Two immiscible liquid phases", "A single liquid phase", "Solid and liquid phases", "Gas and liquid phases"],
+    "correct_index": 1,
+    "explanation": "Monophasic liquid dosage forms consist of a single liquid phase (either aqueous or oily). Examples include syrups, elixirs, lotions, and liniments.",
+    "difficulty": "easy",
+    "tags": ["monophasic", "definition"]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Elixirs differ from syrups in that elixirs:",
+    "options": ["Contain no alcohol", "Are sweetened hydroalcoholic solutions", "Are always colored", "Cannot contain flavoring agents"],
+    "correct_index": 1,
+    "explanation": "Elixirs are clear, sweetened hydroalcoholic solutions intended for oral use. They contain a higher proportion of alcohol than syrups and are less sweet.",
+    "difficulty": "medium",
+    "tags": ["elixirs", "syrups"]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Solubility of a drug can be increased by all EXCEPT:",
+    "options": ["Use of co-solvents", "Particle size reduction", "Increasing the melting point", "Use of surfactants"],
+    "correct_index": 2,
+    "explanation": "Increasing the melting point would decrease solubility (higher lattice energy). Solubility can be increased by reducing particle size, using co-solvents, surfactants, pH adjustment, and complexation.",
+    "difficulty": "medium",
+    "tags": ["solubility", "factors"]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Bioavailability is defined as:",
+    "options": ["Total amount of drug in the body", "Rate and extent of drug absorption from dosage form", "Only the peak plasma concentration", "The half-life of a drug"],
+    "correct_index": 1,
+    "explanation": "Bioavailability is defined as the rate and extent (amount) of absorption of a drug from its dosage form into the systemic circulation.",
+    "difficulty": "easy",
+    "tags": ["bioavailability", "definition"]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Absolute bioavailability is calculated by comparing:",
+    "options": ["Two different oral formulations", "Oral dose with intravenous dose", "Two different routes of administration except IV", "Same route with different doses"],
+    "correct_index": 1,
+    "explanation": "Absolute bioavailability (F) is calculated by comparing the AUC of an oral dose with the AUC of the same drug given intravenously (F = [AUC_oral × Dose_IV] / [AUC_IV × Dose_oral]).",
+    "difficulty": "medium",
+    "tags": ["bioavailability", "absolute"]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "The plasma concentration-time curve for IV bolus shows:",
+    "options": ["Gradual increase then decrease", "Immediate peak then exponential decline", "Constant level", "Linear increase"],
+    "correct_index": 1,
+    "explanation": "After IV bolus administration, there is an immediate peak concentration followed by exponential decline due to distribution and elimination of the drug.",
+    "difficulty": "medium",
+    "tags": ["pharmacokinetics", "IV bolus"]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Volume of Distribution (Vd) is a theoretical volume that:",
+    "options": ["Represents actual body water", "Relates the amount of drug in body to plasma concentration", "Measures renal clearance", "Indicates drug potency"],
+    "correct_index": 1,
+    "explanation": "Volume of Distribution (Vd) is a theoretical volume that relates the total amount of drug in the body to the plasma concentration (Vd = Amount in body / Plasma concentration).",
+    "difficulty": "medium",
+    "tags": ["pharmacokinetics", "Vd"]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Half-life (t½) of a drug is the time required to:",
+    "options": ["Eliminate the drug completely", "Reduce plasma concentration by half", "Reach peak concentration", "Achieve steady state"],
+    "correct_index": 1,
+    "explanation": "Half-life (t½) is the time required for the plasma concentration of a drug to decrease by half (50%). It is calculated as t½ = 0.693/k for first-order kinetics.",
+    "difficulty": "easy",
+    "tags": ["pharmacokinetics", "half-life"]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Steady state concentration (Css) is reached after approximately:",
+    "options": ["1 half-life", "2 half-lives", "4-5 half-lives", "10 half-lives"],
+    "correct_index": 2,
+    "explanation": "Steady state concentration is reached after approximately 4-5 half-lives of repeated dosing. At Css, the rate of drug administration equals the rate of elimination.",
+    "difficulty": "medium",
+    "tags": ["pharmacokinetics", "steady state"]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "1 kilogram is equal to how many pounds?",
+    "options": ["1.5 lbs", "2.2 lbs", "3.0 lbs", "1.0 lbs"],
+    "correct_index": 1,
+    "explanation": "1 kilogram (kg) = 2.20462 pounds (lbs). This is a commonly used conversion in pharmaceutical calculations.",
+    "difficulty": "easy",
+    "tags": ["weight", "conversion"]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "If a solution contains 1 g of drug in 100 mL, its percentage strength w/v is:",
+    "options": ["0.1%", "1%", "10%", "100%"],
+    "correct_index": 1,
+    "explanation": "Percentage strength w/v = (weight of solute in g / volume of solution in mL) × 100 = (1/100) × 100 = 1% w/v.",
+    "difficulty": "easy",
+    "tags": ["calculations", "percentage"]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "The allegation method is used for:",
+    "options": ["Mixing two solutions of different concentrations", "Measuring pH", "Determining boiling point", "Calculating molecular weight"],
+    "correct_index": 0,
+    "explanation": "The allegation method (alligation) is used to calculate the proportions of two solutions of different concentrations needed to prepare a solution of desired concentration.",
+    "difficulty": "medium",
+    "tags": ["calculations", "allegation"]
+  }
+]

@@ -1,69 +1,175 @@
-import Image from "next/image";
+import Link from "next/link";
+import { subjects, getTotalUnits, getTotalSubtopics } from "@/data/subjects";
+import { HeroSection } from "@/components/hero-section";
+import {
+  GraduationCap,
+  BookOpen,
+  Trophy,
+  BarChart3,
+  Brain,
+  Clock,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
+import { getQuestionCount } from "@/lib/quiz-loader";
 
-export default function Home() {
+export default function HomePage() {
+  const questionCount = getQuestionCount();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* Stats Bar */}
+      <section className="border-y bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[
+              { label: "Subjects", value: subjects.length, icon: BookOpen },
+              { label: "Units", value: getTotalUnits(), icon: GraduationCap },
+              { label: "Subtopics", value: getTotalSubtopics(), icon: Brain },
+              { label: "Questions", value: questionCount, icon: Trophy },
+            ].map((stat) => (
+              <div key={stat.label} className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <stat.icon className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-2xl font-bold">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Subjects Preview */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight">
+              All 8 Subjects Covered
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Every unit and subtopic from your syllabus — exam-focused MCQs
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {subjects.map((subject) => (
+              <Link
+                key={subject.id}
+                href={`/subjects/${subject.slug}`}
+                className="group rounded-xl border bg-white p-5 shadow-sm transition-all hover:shadow-md hover:border-primary/20"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">{subject.icon}</span>
+                  <div>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">
+                      {subject.name}
+                    </h3>
+                    <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+                      {subject.description}
+                    </p>
+                    <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
+                      <span>{subject.units.length} units</span>
+                      <span>•</span>
+                      <span>{subject.examMarks} marks</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/subjects"
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              View all subjects
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="border-t bg-muted/30 py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight">
+              Everything You Need to Pass
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: Brain,
+                title: "Custom Quizzes",
+                desc: "Choose subject, units, difficulty, and time limit. Questions are shuffled each time.",
+              },
+              {
+                icon: BookOpen,
+                title: "Full Question Bank",
+                desc: "Browse all MCQs organized by subject and unit. Study mode with detailed explanations.",
+              },
+              {
+                icon: Trophy,
+                title: "Leaderboard",
+                desc: "Compete with classmates. Rankings update as you practice more quizzes.",
+              },
+              {
+                icon: BarChart3,
+                title: "Performance Analytics",
+                desc: "Track accuracy per subject, spot weak areas, and monitor improvement over time.",
+              },
+              {
+                icon: CheckCircle,
+                title: "Bookmarks & Notes",
+                desc: "Save difficult questions and add personal notes for quick revision before exams.",
+              },
+              {
+                icon: Clock,
+                title: "Timed Practice",
+                desc: "Set time limits to simulate real exam conditions and improve your speed.",
+              },
+            ].map((feature) => (
+              <div
+                key={feature.title}
+                className="rounded-xl border bg-white p-6"
+              >
+                <feature.icon className="h-8 w-8 text-primary" />
+                <h3 className="mt-3 font-semibold">{feature.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {feature.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+          <h2 className="text-3xl font-bold tracking-tight">
+            Ready to Start?
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Start practicing now and be fully prepared for your exams
           </p>
+          <div className="mt-8 flex justify-center">
+            <Link
+              href="/quiz"
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all"
+            >
+              Start a Quiz
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
     </div>
   );
 }

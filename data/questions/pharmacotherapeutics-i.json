@@ -1,0 +1,137 @@
+[
+  {
+    "unit_id": "thera-unit-1",
+    "question_text": "GERD (Gastroesophageal Reflux Disease) is primarily treated with:",
+    "options": ["Antibiotics", "Proton pump inhibitors and H2 blockers", "Analgesics", "Antihistamines"],
+    "correct_index": 1,
+    "explanation": "GERD is primarily treated with proton pump inhibitors (e.g., omeprazole) and H2 receptor antagonists (e.g., ranitidine) to reduce gastric acid production and reflux symptoms.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "GERD"]
+  },
+  {
+    "unit_id": "thera-unit-1",
+    "question_text": "Peptic ulcer disease (PUD) is most commonly caused by:",
+    "options": ["Viral infection", "H. pylori infection and NSAID use", "Fungal infection", "Autoimmune disease"],
+    "correct_index": 1,
+    "explanation": "The two most common causes of PUD are Helicobacter pylori infection and NSAID use. Treatment involves H. pylori eradication (triple therapy) and acid suppression.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "PUD"]
+  },
+  {
+    "unit_id": "thera-unit-1",
+    "question_text": "The WHO analgesic ladder for pain management includes:",
+    "options": ["Two steps: mild and severe pain", "Three steps: mild, moderate, and severe pain", "Four steps: various drug combinations", "Five steps: physical therapy included"],
+    "correct_index": 1,
+    "explanation": "The WHO analgesic ladder has three steps: Step 1 (mild pain) — non-opioids; Step 2 (moderate pain) — weak opioids; Step 3 (severe pain) — strong opioids ± adjuvants.",
+    "difficulty": "medium",
+    "tags": ["pharmacotherapeutics", "pain management"]
+  },
+  {
+    "unit_id": "thera-unit-2",
+    "question_text": "Rheumatoid arthritis is primarily treated with:",
+    "options": ["Antibiotics", "DMARDs (Disease-Modifying Antirheumatic Drugs)", "Antivirals", "Antifungals"],
+    "correct_index": 1,
+    "explanation": "Rheumatoid arthritis is treated with DMARDs (e.g., methotrexate, sulfasalazine) to slow disease progression, along with NSAIDs for symptom relief and corticosteroids during flares.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "RA"]
+  },
+  {
+    "unit_id": "thera-unit-2",
+    "question_text": "Gout is caused by:",
+    "options": ["Bacterial infection", "Deposition of monosodium urate crystals due to hyperuricemia", "Viral infection", "Autoimmune response to joint tissue"],
+    "correct_index": 1,
+    "explanation": "Gout is caused by the deposition of monosodium urate crystals in joints due to elevated serum uric acid levels (hyperuricemia). It presents as acute inflammatory arthritis.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "gout"]
+  },
+  {
+    "unit_id": "thera-unit-3",
+    "question_text": "Epilepsy is treated primarily with:",
+    "options": ["Antibiotics", "Antiepileptic drugs (anticonvulsants)", "Antidepressants", "Antihypertensives"],
+    "correct_index": 1,
+    "explanation": "Epilepsy is treated with antiepileptic drugs (AEDs) such as phenytoin, carbamazepine, valproic acid, and lamotrigine. Drug choice depends on seizure type.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "epilepsy"]
+  },
+  {
+    "unit_id": "thera-unit-3",
+    "question_text": "Depression is primarily treated with:",
+    "options": ["Benzodiazepines", "Selective Serotonin Reuptake Inhibitors (SSRIs)", "Antipsychotics", "Beta blockers"],
+    "correct_index": 1,
+    "explanation": "SSRIs (e.g., fluoxetine, sertraline) are first-line drugs for depression. They increase serotonin levels in the synaptic cleft by blocking its reuptake.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "depression"]
+  },
+  {
+    "unit_id": "thera-unit-3",
+    "question_text": "Parkinsonism is characterized by deficiency of which neurotransmitter?",
+    "options": ["Serotonin", "Dopamine", "Acetylcholine", "GABA"],
+    "correct_index": 1,
+    "explanation": "Parkinsonism is caused by degeneration of dopaminergic neurons in the substantia nigra, leading to dopamine deficiency. Treatment includes levodopa/carbidopa to replenish dopamine.",
+    "difficulty": "medium",
+    "tags": ["pharmacotherapeutics", "Parkinsonism"]
+  },
+  {
+    "unit_id": "thera-unit-4",
+    "question_text": "Asthma is a chronic inflammatory disease characterized by:",
+    "options": ["Narrowing of blood vessels", "Reversible airway obstruction and bronchial hyperresponsiveness", "Irreversible lung fibrosis", "Pulmonary embolism"],
+    "correct_index": 1,
+    "explanation": "Asthma is a chronic inflammatory disease of the airways characterized by reversible airway obstruction, bronchial hyperresponsiveness, and inflammation with eosinophilic infiltration.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "asthma"]
+  },
+  {
+    "unit_id": "thera-unit-4",
+    "question_text": "COPD is primarily caused by:",
+    "options": ["Bacterial infection", "Long-term exposure to cigarette smoke", "Allergic reaction", "Viral infection"],
+    "correct_index": 1,
+    "explanation": "COPD (Chronic Obstructive Pulmonary Disease) is primarily caused by long-term cigarette smoking, leading to chronic bronchitis and emphysema with progressive, largely irreversible airflow limitation.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "COPD"]
+  },
+  {
+    "unit_id": "thera-unit-4",
+    "question_text": "Pneumonia is classified etiologically based on:",
+    "options": ["Patient age only", "Causative agent (bacterial, viral, fungal, atypical)", "Location of infection", "Duration of symptoms"],
+    "correct_index": 1,
+    "explanation": "Pneumonia is classified by its causative agent: bacterial (most common), viral, atypical, fungal, or aspiration. Treatment depends on the etiological classification.",
+    "difficulty": "medium",
+    "tags": ["pharmacotherapeutics", "pneumonia"]
+  },
+  {
+    "unit_id": "thera-unit-5",
+    "question_text": "DOTS therapy for tuberculosis includes all EXCEPT:",
+    "options": ["Directly Observed Treatment", "Short-course chemotherapy", "Self-administered medication", "Standardized regimen"],
+    "correct_index": 2,
+    "explanation": "DOTS (Directly Observed Treatment, Short-course) requires directly observed therapy by a health worker, NOT self-administered medication. This ensures compliance and prevents resistance.",
+    "difficulty": "medium",
+    "tags": ["pharmacotherapeutics", "DOTS"]
+  },
+  {
+    "unit_id": "thera-unit-5",
+    "question_text": "HIV/AIDS is treated with:",
+    "options": ["Antibiotics alone", "Antiretroviral therapy (ART)", "Antifungal drugs", "No treatment available"],
+    "correct_index": 1,
+    "explanation": "HIV/AIDS is treated with antiretroviral therapy (ART), which typically includes a combination of drugs (e.g., zidovudine + lamivudine + efavirenz) to suppress viral replication.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "HIV"]
+  },
+  {
+    "unit_id": "thera-unit-5",
+    "question_text": "Malaria is caused by:",
+    "options": ["Bacteria", "Plasmodium species (protozoa)", "Virus", "Fungus"],
+    "correct_index": 1,
+    "explanation": "Malaria is caused by Plasmodium species (P. falciparum, P. vivax, P. ovale, P. malariae) transmitted by female Anopheles mosquito. P. falciparum is the most dangerous.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "malaria"]
+  },
+  {
+    "unit_id": "thera-unit-5",
+    "question_text": "Urinary tract infections (UTI) are most commonly caused by:",
+    "options": ["Virus", "Escherichia coli (E. coli)", "Fungus", "Parasite"],
+    "correct_index": 1,
+    "explanation": "UTIs are most commonly caused by Escherichia coli (E. coli), which accounts for about 80-85% of community-acquired UTIs. Treatment includes antibiotics like nitrofurantoin and trimethoprim.",
+    "difficulty": "easy",
+    "tags": ["pharmacotherapeutics", "UTI"]
+  }
+]

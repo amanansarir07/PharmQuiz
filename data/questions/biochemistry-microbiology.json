@@ -1,0 +1,155 @@
+[
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Glycolysis is the breakdown of glucose to:",
+    "options": ["Pyruvate", "Acetyl CoA", "CO₂ and H₂O", "Lactic acid only"],
+    "correct_index": 0,
+    "explanation": "Glycolysis is the metabolic pathway that converts glucose (6C) into two molecules of pyruvate (3C), producing ATP and NADH. It occurs in the cytoplasm of cells.",
+    "difficulty": "easy",
+    "tags": ["biochemistry", "glycolysis"]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "The Krebs cycle (Citric acid cycle) occurs in:",
+    "options": ["Cytoplasm", "Mitochondrial matrix", "Nucleus", "Cell membrane"],
+    "correct_index": 1,
+    "explanation": "The Krebs cycle (Citric acid cycle / TCA cycle) occurs in the mitochondrial matrix. It is the final common pathway for oxidation of carbohydrates, fats, and amino acids.",
+    "difficulty": "easy",
+    "tags": ["biochemistry", "Krebs cycle"]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Vitamins are defined as:",
+    "options": ["Proteins needed for growth", "Essential organic compounds needed in small amounts", "Mineral elements", "Carbohydrates for energy"],
+    "correct_index": 1,
+    "explanation": "Vitamins are essential organic compounds required in small quantities that cannot be synthesized by the body and must be obtained from the diet.",
+    "difficulty": "easy",
+    "tags": ["vitamins", "definition"]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Enzymes are biologically active:",
+    "options": ["Lipids", "Carbohydrates", "Proteins", "Nucleic acids"],
+    "correct_index": 2,
+    "explanation": "Enzymes are biological catalysts that are proteins in nature. They speed up biochemical reactions by lowering the activation energy without being consumed.",
+    "difficulty": "easy",
+    "tags": ["enzymes", "nature"]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "DNA differs from RNA in that DNA contains:",
+    "options": ["Ribose sugar and uracil", "Deoxyribose sugar and thymine", "Ribose sugar and thymine", "Deoxyribose sugar and uracil"],
+    "correct_index": 1,
+    "explanation": "DNA contains deoxyribose sugar and the base thymine, while RNA contains ribose sugar and the base uracil. Both contain adenine, guanine, and cytosine.",
+    "difficulty": "easy",
+    "tags": ["nucleic acids", "DNA vs RNA"]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "PCR (Polymerase Chain Reaction) is used for:",
+    "options": ["Protein purification", "Amplification of specific DNA sequences", "Cell culture", "Drug extraction"],
+    "correct_index": 1,
+    "explanation": "PCR is a technique used to amplify (make many copies of) specific DNA sequences. It is widely used in molecular biology, diagnostics, and forensic science.",
+    "difficulty": "easy",
+    "tags": ["rDNA", "PCR"]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Liver Function Tests (LFT) include measurement of:",
+    "options": ["Blood urea and creatinine", "SGOT, SGPT, bilirubin, and alkaline phosphatase", "T3, T4, and TSH", "Hemoglobin and hematocrit"],
+    "correct_index": 1,
+    "explanation": "LFT includes SGOT (AST), SGPT (ALT), bilirubin (total, direct, indirect), alkaline phosphatase, and albumin. These assess liver function and damage.",
+    "difficulty": "easy",
+    "tags": ["diagnostic tests", "LFT"]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Kidney Function Tests (KFT) primarily include:",
+    "options": ["SGOT and SGPT", "Blood urea and serum creatinine", "Blood sugar and HbA1c", "T3 and T4"],
+    "correct_index": 1,
+    "explanation": "KFT primarily includes blood urea nitrogen (BUN), serum creatinine, and estimated GFR. These assess kidney function and the ability to filter waste products.",
+    "difficulty": "easy",
+    "tags": ["diagnostic tests", "KFT"]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Antibodies (immunoglobulins) are produced by:",
+    "options": ["T-lymphocytes", "B-lymphocytes (plasma cells)", "Red blood cells", "Platelets"],
+    "correct_index": 1,
+    "explanation": "Antibodies (immunoglobulins) are produced by B-lymphocytes that have differentiated into plasma cells. Each antibody is specific to a particular antigen.",
+    "difficulty": "easy",
+    "tags": ["immunology", "antibodies"]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Vaccines work by:",
+    "options": ["Killing bacteria directly", "Stimulating the immune system to produce antibodies", "Providing passive immunity only", "Replacing damaged immune cells"],
+    "correct_index": 1,
+    "explanation": "Vaccines stimulate the immune system to produce antibodies and memory cells against specific pathogens, providing active immunity without causing the disease.",
+    "difficulty": "easy",
+    "tags": ["immunology", "vaccines"]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Gram-positive bacteria differ from Gram-negative bacteria in that Gram-positive bacteria:",
+    "options": ["Have a thin peptidoglycan layer", "Have a thick peptidoglycan layer and retain crystal violet stain", "Have an outer membrane", "Are always pathogenic"],
+    "correct_index": 1,
+    "explanation": "Gram-positive bacteria have a thick peptidoglycan layer (20-80 nm) that retains the crystal violet-iodine complex, appearing purple. Gram-negative have a thin layer and appear pink/red.",
+    "difficulty": "easy",
+    "tags": ["microbiology", "gram stain"]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "The bacterial growth curve shows which phases in order?",
+    "options": ["Log, Lag, Stationary, Death", "Lag, Log (exponential), Stationary, Death", "Death, Stationary, Log, Lag", "Stationary, Lag, Death, Log"],
+    "correct_index": 1,
+    "explanation": "The bacterial growth curve has four phases: Lag phase (adaptation), Log/Exponential phase (rapid division), Stationary phase (growth = death), and Death phase (decline).",
+    "difficulty": "medium",
+    "tags": ["microbiology", "growth curve"]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "A virus is characterized by:",
+    "options": ["Having its own ribosomes", "Being an obligate intracellular parasite", "Being able to reproduce independently", "Having both DNA and RNA"],
+    "correct_index": 1,
+    "explanation": "Viruses are obligate intracellular parasites — they cannot reproduce independently and require a host cell's machinery for replication. They contain either DNA or RNA, not both.",
+    "difficulty": "easy",
+    "tags": ["microbiology", "virus"]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Autoclaving sterilization uses:",
+    "options": ["Dry heat at 160°C", "Moist heat (steam under pressure) at 121°C for 15-20 minutes", "UV radiation", "Chemical disinfection"],
+    "correct_index": 1,
+    "explanation": "Autoclaving uses moist heat (saturated steam under pressure) at 121°C (15 psi) for 15-20 minutes. It is the most reliable method of sterilization for heat-stable materials.",
+    "difficulty": "easy",
+    "tags": ["sterilization", "autoclave"]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Sterilization differs from disinfection in that sterilization:",
+    "options": ["Kills some pathogens", "Destroys ALL forms of microbial life including spores", "Only reduces microbial count", "Only works on surfaces"],
+    "correct_index": 1,
+    "explanation": "Sterilization destroys ALL forms of microbial life including bacterial spores. Disinfection only reduces or eliminates most pathogenic organisms but may not kill spores.",
+    "difficulty": "easy",
+    "tags": ["sterilization", "definition"]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Membrane filtration is used for sterilization of:",
+    "options": ["Heat-stable materials", "Heat-labile (heat-sensitive) liquids", "Dry powders", "Glassware only"],
+    "correct_index": 1,
+    "explanation": "Membrane filtration (0.22 μm pore size) is used for sterilizing heat-labile liquids such as antibiotics, enzyme solutions, and serum that cannot withstand autoclaving.",
+    "difficulty": "medium",
+    "tags": ["sterilization", "membrane filtration"]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "The Kirby-Bauer disc diffusion method is used to:",
+    "options": ["Count bacteria", "Determine antibiotic sensitivity of bacteria", "Sterilize media", "Identify virus"],
+    "correct_index": 1,
+    "explanation": "The Kirby-Bauer disc diffusion method determines antibiotic susceptibility by placing antibiotic discs on an inoculated agar plate. Zones of inhibition are measured to determine sensitivity.",
+    "difficulty": "easy",
+    "tags": ["microbial assay", "Kirby-Bauer"]
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Management is defined as:",
+    "options": ["Controlling workers only", "Planning, organizing, leading, and controlling resources", "Making products", "Selling products"],
+    "correct_index": 1,
+    "explanation": "Management is the process of planning, organizing, leading (directing), and controlling organizational resources (human, financial, physical, information) to achieve goals efficiently and effectively.",
+    "difficulty": "easy",
+    "tags": ["management", "definition"]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Maslow's hierarchy of needs includes all EXCEPT:",
+    "options": ["Physiological needs", "Safety needs", "Spiritual needs", "Self-actualization"],
+    "correct_index": 2,
+    "explanation": "Maslow's hierarchy has 5 levels: Physiological, Safety, Social (belongingness), Esteem, and Self-actualization. Spiritual needs are not part of Maslow's original hierarchy.",
+    "difficulty": "medium",
+    "tags": ["management", "motivation"]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "The difference between management and administration is that:",
+    "options": ["They are the same thing", "Administration is policy-making; management implements policies", "Management is higher level", "Administration is for businesses only"],
+    "correct_index": 1,
+    "explanation": "Administration involves policy-making, decision-making at the top level, while management involves implementing and executing these policies at the operational level.",
+    "difficulty": "medium",
+    "tags": ["management", "administration"]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Supply chain management in pharmaceuticals involves:",
+    "options": ["Only manufacturing drugs", "From raw material procurement to final delivery to patients", "Only marketing drugs", "Only selling drugs"],
+    "correct_index": 1,
+    "explanation": "Pharmaceutical supply chain management involves the entire process from raw material procurement, manufacturing, quality control, warehousing, distribution, and final delivery to patients.",
+    "difficulty": "easy",
+    "tags": ["supply chain", "definition"]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Vaccines require special storage conditions because they are:",
+    "options": ["Heat stable", "Temperature-sensitive (cold chain required)", "Not affected by light", "Can be stored at room temperature"],
+    "correct_index": 1,
+    "explanation": "Most vaccines are temperature-sensitive and require cold chain storage (2-8°C) from manufacture to administration to maintain their potency and effectiveness.",
+    "difficulty": "easy",
+    "tags": ["supply chain", "cold chain"]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "The 7Ps of marketing mix include all EXCEPT:",
+    "options": ["Product", "Price", "Political", "Promotion"],
+    "correct_index": 2,
+    "explanation": "The 7Ps are: Product, Price, Place, Promotion, People, Process, and Physical evidence. 'Political' is not one of the 7Ps (though it is in PESTLE analysis).",
+    "difficulty": "easy",
+    "tags": ["marketing", "7Ps"]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "SWOT analysis stands for:",
+    "options": ["Strengths, Weaknesses, Opportunities, Threats", "Sales, Wholesale, Operations, Trade", "Strategy, Workforce, Organization, Technology", "Supply, Warehousing, Ordering, Transport"],
+    "correct_index": 0,
+    "explanation": "SWOT analysis is a strategic planning tool that analyzes Strengths (internal positive), Weaknesses (internal negative), Opportunities (external positive), and Threats (external negative).",
+    "difficulty": "easy",
+    "tags": ["marketing", "SWOT"]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Market segmentation involves:",
+    "options": ["Selling to everyone", "Dividing the market into distinct groups of buyers", "Increasing prices", "Reducing product quality"],
+    "correct_index": 1,
+    "explanation": "Market segmentation is the process of dividing a broad market into distinct groups of buyers who have different needs, characteristics, or behaviors, and who might require different products.",
+    "difficulty": "easy",
+    "tags": ["marketing", "segmentation"]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Entrepreneurship in pharmacy involves:",
+    "options": ["Only dispensing medicines", "Starting and managing pharmaceutical businesses", "Only manufacturing drugs", "Only working as an employee"],
+    "correct_index": 1,
+    "explanation": "Pharmaceutical entrepreneurship involves starting and managing businesses in areas like community pharmacy, manufacturing, distribution, or pharmaceutical services with innovation and risk-taking.",
+    "difficulty": "easy",
+    "tags": ["entrepreneurship", "definition"]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Pharmacoeconomics is defined as:",
+    "options": ["Study of drug prices only", "Application of economic theories to evaluate drug therapies", "Counting pills", "Manufacturing cost analysis only"],
+    "correct_index": 1,
+    "explanation": "Pharmacoeconomics is the branch of pharmacology and economics that deals with the evaluation of costs and effects of pharmaceutical products and services to optimize healthcare resource allocation.",
+    "difficulty": "medium",
+    "tags": ["pharmacoeconomics", "definition"]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Inventory management in pharmacy aims to:",
+    "options": ["Maximize stock at all times", "Ensure adequate supply while minimizing costs and waste", "Keep minimum stock always", "Ignore expired products"],
+    "correct_index": 1,
+    "explanation": "Pharmaceutical inventory management aims to ensure adequate availability of medicines while minimizing holding costs, wastage (expiry), and stockouts.",
+    "difficulty": "easy",
+    "tags": ["inventory management"]
+  }
+]

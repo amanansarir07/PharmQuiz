@@ -1,0 +1,425 @@
+[
+  {
+    "unit_id": "pharmaco-i-unit-1",
+    "question_text": "The study of what drugs do to the body is called:",
+    "options": ["Pharmacokinetics", "Pharmacodynamics", "Pharmacognosy", "Pharmacovigilance"],
+    "correct_index": 1,
+    "explanation": "Pharmacodynamics is the study of the biochemical and physiological effects of drugs on the body — 'what the drug does to the body'. Pharmacokinetics is 'what the body does to the drug'.",
+    "difficulty": "easy",
+    "tags": ["general pharmacology", "definition"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-1",
+    "question_text": "The process by which a drug moves from the site of administration to the bloodstream is called:",
+    "options": ["Distribution", "Absorption", "Metabolism", "Excretion"],
+    "correct_index": 1,
+    "explanation": "Absorption is the process by which a drug moves from its site of administration into the systemic circulation. It is the first pharmacokinetic process.",
+    "difficulty": "easy",
+    "tags": ["pharmacokinetics", "absorption"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-1",
+    "question_text": "Which route of drug administration provides 100% bioavailability?",
+    "options": ["Oral", "Sublingual", "Intravenous", "Intramuscular"],
+    "correct_index": 2,
+    "explanation": "Intravenous (IV) administration provides 100% bioavailability because the drug is delivered directly into the bloodstream, bypassing absorption barriers.",
+    "difficulty": "easy",
+    "tags": ["routes", "bioavailability"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-1",
+    "question_text": "LD50 represents the dose that is lethal to:",
+    "options": ["50% of test population", "All test population", "50% of cells", "Only tumor cells"],
+    "correct_index": 0,
+    "explanation": "LD50 (Lethal Dose 50%) is the dose that kills 50% of the test population. It is used to measure the toxicity of a substance.",
+    "difficulty": "easy",
+    "tags": ["terminology", "LD50"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-1",
+    "question_text": "Therapeutic index (TI) is calculated as:",
+    "options": ["ED50/LD50", "LD50/ED50", "ED50 × LD50", "LD50 - ED50"],
+    "correct_index": 1,
+    "explanation": "Therapeutic Index (TI) = LD50/ED50. A higher TI indicates a safer drug because there is a larger margin between the effective and lethal doses.",
+    "difficulty": "medium",
+    "tags": ["terminology", "therapeutic index"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-1",
+    "question_text": "First-pass metabolism occurs with which route?",
+    "options": ["Intravenous", "Oral", "Sublingual", "Topical"],
+    "correct_index": 1,
+    "explanation": "First-pass metabolism occurs with oral administration. The drug absorbed from the GI tract passes through the liver via the portal circulation before reaching systemic circulation.",
+    "difficulty": "medium",
+    "tags": ["pharmacokinetics", "first pass"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-1",
+    "question_text": "A drug receptor is defined as:",
+    "options": ["Any part of the body", "A macromolecular component that interacts with a drug to produce a response", "An enzyme that metabolizes drugs", "A carrier protein in blood"],
+    "correct_index": 1,
+    "explanation": "A drug receptor is a macromolecular component (usually a protein) in the body that specifically binds to a drug and initiates the pharmacological response.",
+    "difficulty": "easy",
+    "tags": ["receptors", "definition"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-1",
+    "question_text": "Potency refers to:",
+    "options": ["Maximum effect a drug can produce", "Amount of drug needed to produce a given effect", "Duration of drug action", "Safety of a drug"],
+    "correct_index": 1,
+    "explanation": "Potency refers to the amount of drug required to produce a given effect. A more potent drug requires a smaller dose to achieve the same effect.",
+    "difficulty": "medium",
+    "tags": ["terminology", "potency"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-1",
+    "question_text": "Bioavailability is affected by all EXCEPT:",
+    "options": ["Route of administration", "Drug formulation", "Patient's blood group", "First-pass metabolism"],
+    "correct_index": 2,
+    "explanation": "Blood group does not affect bioavailability. Factors affecting bioavailability include route of administration, formulation, particle size, GI motility, first-pass metabolism, and drug interactions.",
+    "difficulty": "medium",
+    "tags": ["bioavailability", "factors"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-2",
+    "question_text": "Omeprazole acts by:",
+    "options": ["Blocking H2 receptors", "Irreversibly inhibiting H+/K+ ATPase pump", "Neutralizing gastric acid", "Strengthening mucosal barrier"],
+    "correct_index": 1,
+    "explanation": "Omeprazole is a proton pump inhibitor (PPI) that irreversibly blocks the H+/K+ ATPase enzyme system (proton pump) on parietal cells, reducing gastric acid secretion.",
+    "difficulty": "medium",
+    "tags": ["GI drugs", "omeprazole"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-2",
+    "question_text": "Ranitidine belongs to which class of drugs?",
+    "options": ["Proton pump inhibitors", "H2 receptor antagonists", "Antacids", "Prokinetic agents"],
+    "correct_index": 1,
+    "explanation": "Ranitidine is an H2 receptor antagonist that competitively blocks histamine H2 receptors on gastric parietal cells, reducing acid secretion.",
+    "difficulty": "easy",
+    "tags": ["GI drugs", "ranitidine"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-2",
+    "question_text": "Domperidone is primarily used as:",
+    "options": ["Antacid", "Antiulcer drug", "Prokinetic/Antiemetic", "Antidiarrheal"],
+    "correct_index": 2,
+    "explanation": "Domperidone is a peripheral dopamine D2 receptor antagonist used as a prokinetic and antiemetic agent. It increases gastric motility and prevents vomiting.",
+    "difficulty": "easy",
+    "tags": ["GI drugs", "domperidone"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-2",
+    "question_text": "ORS (Oral Rehydration Solution) works on the principle of:",
+    "options": ["Replacing only water", "Glucose-coupled sodium absorption", "Blocking intestinal secretion", "Killing intestinal bacteria"],
+    "correct_index": 1,
+    "explanation": "ORS works on the principle of glucose-coupled sodium absorption in the small intestine. Sodium-glucose co-transport mechanism pulls water osmotically.",
+    "difficulty": "medium",
+    "tags": ["GI drugs", "ORS"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-2",
+    "question_text": "Loperamide is used as an antidiarrheal because it:",
+    "options": ["Kills intestinal bacteria", "Slows intestinal motility", "Absorbs toxins", "Increases fluid secretion"],
+    "correct_index": 1,
+    "explanation": "Loperamide is an opioid receptor agonist that acts on the myenteric plexus to slow intestinal motility and reduce fecal urgency and frequency.",
+    "difficulty": "medium",
+    "tags": ["GI drugs", "loperamide"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-2",
+    "question_text": "Sucralfate acts by:",
+    "options": ["Neutralizing acid", "Forming a protective barrier over ulcer", "Blocking H2 receptors", "Inhibiting proton pump"],
+    "correct_index": 1,
+    "explanation": "Sucralfate is a protective agent that forms a paste-like complex with acid in the ulcer crater, creating a protective barrier that shields the ulcer from acid, pepsin, and bile salts.",
+    "difficulty": "medium",
+    "tags": ["GI drugs", "sucralfate"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-3",
+    "question_text": "The mechanism of action of most NSAIDs is:",
+    "options": ["Inhibition of COX enzymes", "Blockade of opioid receptors", "Inhibition of proton pump", "Blockade of calcium channels"],
+    "correct_index": 0,
+    "explanation": "Most NSAIDs act by inhibiting cyclooxygenase (COX) enzymes, which reduces the synthesis of prostaglandins and thromboxanes, thereby reducing inflammation, pain, and fever.",
+    "difficulty": "easy",
+    "tags": ["NSAIDs", "mechanism"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-3",
+    "question_text": "Aspirin is unique among NSAIDs because it:",
+    "options": ["Is the most potent NSAID", "Irreversibly inhibits COX", "Has no antipyretic effect", "Only acts on COX-2"],
+    "correct_index": 1,
+    "explanation": "Aspirin (acetylsalicylic acid) irreversibly inhibits COX by acetylating a serine residue in the active site. Other NSAIDs reversibly inhibit COX.",
+    "difficulty": "medium",
+    "tags": ["NSAIDs", "aspirin"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-3",
+    "question_text": "Paracetamol (acetaminophen) primarily acts by:",
+    "options": ["Inhibiting COX-1 in periphery", "Inhibiting COX in CNS", "Blocking prostaglandin synthesis in stomach", "Inhibiting COX-2 selectively"],
+    "correct_index": 1,
+    "explanation": "Paracetamol primarily inhibits COX enzymes in the CNS (central mechanism), which explains its antipyretic and analgesic effects with minimal anti-inflammatory and GI effects.",
+    "difficulty": "medium",
+    "tags": ["paracetamol", "mechanism"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-3",
+    "question_text": "Colchicine is used in the treatment of:",
+    "options": ["Rheumatoid arthritis", "Gout", "Osteoarthritis", "Back pain"],
+    "correct_index": 1,
+    "explanation": "Colchicine is specifically used for acute gout. It works by inhibiting microtubule polymerization, reducing neutrophil migration and phagocytosis at the site of urate crystal deposition.",
+    "difficulty": "easy",
+    "tags": ["colchicine", "gout"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-3",
+    "question_text": "Allopurinol is used for:",
+    "options": ["Acute gout only", "Chronic gout by reducing uric acid production", "Pain relief", "Reducing inflammation only"],
+    "correct_index": 1,
+    "explanation": "Allopurinol is a xanthine oxidase inhibitor used for chronic gout. It reduces uric acid production by inhibiting the conversion of xanthine to uric acid.",
+    "difficulty": "medium",
+    "tags": ["allopurinol", "gout"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-3",
+    "question_text": "Methotrexate is used in the treatment of:",
+    "options": ["Only cancer", "Rheumatoid arthritis (as DMARD) and cancer", "Only infection", "Only hypertension"],
+    "correct_index": 1,
+    "explanation": "Methotrexate is used as a disease-modifying antirheumatic drug (DMARD) for rheumatoid arthritis at low doses, and as an anticancer agent at high doses.",
+    "difficulty": "medium",
+    "tags": ["methotrexate", "RA"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-4",
+    "question_text": "Pilocarpine is a:",
+    "options": ["Anticholinergic drug", "Cholinergic agonist", "Adrenergic agonist", "Beta blocker"],
+    "correct_index": 1,
+    "explanation": "Pilocarpine is a direct-acting cholinergic (muscarinic) agonist. It stimulates muscarinic receptors and is used topically for glaucoma.",
+    "difficulty": "easy",
+    "tags": ["ANS", "pilocarpine"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-4",
+    "question_text": "Atropine is classified as:",
+    "options": ["Cholinergic agonist", "Anticholinergic (muscarinic blocker)", "Adrenergic blocker", "Ganglionic blocker"],
+    "correct_index": 1,
+    "explanation": "Atropine is an anticholinergic (parasympatholytic) drug that competitively blocks muscarinic receptors. It causes mydriasis, dry mouth, tachycardia, and urinary retention.",
+    "difficulty": "easy",
+    "tags": ["ANS", "atropine"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-4",
+    "question_text": "Adrenaline (epinephrine) acts on:",
+    "options": ["Only alpha receptors", "Only beta receptors", "Both alpha and beta receptors", "Muscarinic receptors"],
+    "correct_index": 2,
+    "explanation": "Adrenaline acts on both alpha and beta adrenergic receptors. It is used in emergency situations including anaphylaxis, cardiac arrest, and severe asthma.",
+    "difficulty": "easy",
+    "tags": ["ANS", "adrenaline"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-4",
+    "question_text": "Neostigmine is used in the treatment of:",
+    "options": ["Hypertension", "Myasthenia gravis", "Asthma", "Diabetes"],
+    "correct_index": 1,
+    "explanation": "Neostigmine is a reversible acetylcholinesterase inhibitor used in myasthenia gravis. It increases acetylcholine levels at neuromuscular junctions, improving muscle strength.",
+    "difficulty": "medium",
+    "tags": ["ANS", "neostigmine"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-4",
+    "question_text": "Atenolol and metoprolol are classified as:",
+    "options": ["Non-selective beta blockers", "Selective beta-1 blockers", "Alpha blockers", "Mixed alpha-beta blockers"],
+    "correct_index": 1,
+    "explanation": "Atenolol and metoprolol are cardioselective (beta-1 selective) beta blockers. They preferentially block beta-1 receptors in the heart, reducing heart rate and blood pressure.",
+    "difficulty": "medium",
+    "tags": ["ANS", "beta blockers"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-4",
+    "question_text": "Dopamine in low doses primarily acts on:",
+    "options": ["Alpha receptors", "Beta-1 receptors", "Dopamine receptors in renal vasculature", "Muscarinic receptors"],
+    "correct_index": 2,
+    "explanation": "At low doses, dopamine primarily stimulates dopamine receptors in renal and mesenteric vasculature, causing vasodilation and increased renal blood flow.",
+    "difficulty": "hard",
+    "tags": ["ANS", "dopamine"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-5",
+    "question_text": "Salbutamol is a selective:",
+    "options": ["Alpha-1 agonist", "Beta-2 agonist", "Beta-1 blocker", "Muscarinic antagonist"],
+    "correct_index": 1,
+    "explanation": "Salbutamol (albuterol) is a selective beta-2 adrenergic agonist used in asthma. It causes bronchodilation by relaxing bronchial smooth muscle.",
+    "difficulty": "easy",
+    "tags": ["respiratory", "salbutamol"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-5",
+    "question_text": "Montelukast acts by:",
+    "options": ["Blocking histamine receptors", "Blocking leukotriene receptors", "Inhibiting COX", "Stabilizing mast cells"],
+    "correct_index": 1,
+    "explanation": "Montelukast is a leukotriene receptor antagonist (specifically CysLT1 receptor). It blocks the action of leukotrienes, reducing bronchoconstriction and inflammation in asthma.",
+    "difficulty": "medium",
+    "tags": ["respiratory", "montelukast"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-5",
+    "question_text": "Codeine is used as an antitussive because it:",
+    "options": ["Dilates bronchi", "Suppresses the cough center in the medulla", "Thins the mucus", "Reduces inflammation"],
+    "correct_index": 1,
+    "explanation": "Codeine is an opioid antitussive that acts directly on the cough center in the medulla oblongata, raising the threshold for the cough reflex.",
+    "difficulty": "medium",
+    "tags": ["respiratory", "codeine"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-5",
+    "question_text": "Aminophylline is used in asthma because it:",
+    "options": ["Blocks histamine", "Is a methylxanthine that causes bronchodilation", "Is a beta blocker", "Reduces mucus production"],
+    "correct_index": 1,
+    "explanation": "Aminophylline is a methylxanthine (theophylline + ethylenediamine) that causes bronchodilation by inhibiting phosphodiesterase (PDE), increasing cAMP levels in bronchial smooth muscle.",
+    "difficulty": "medium",
+    "tags": ["respiratory", "aminophylline"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Co-trimoxazole contains which two drugs?",
+    "options": ["Sulfamethoxazole + Trimethoprim", "Sulfadiazine + Dapsone", "Sulfacetamide + Pyrimethamine", "Sulfasalazine + Metronidazole"],
+    "correct_index": 0,
+    "explanation": "Co-trimoxazole (trimethoprim-sulfamethoxazole) contains sulfamethoxazole (a sulfonamide) and trimethoprim in a 5:1 ratio. It provides synergistic blockade of folate synthesis.",
+    "difficulty": "easy",
+    "tags": ["antimicrobials", "co-trimoxazole"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Penicillin acts by inhibiting:",
+    "options": ["Cell membrane synthesis", "Cell wall synthesis (transpeptidation)", "Protein synthesis", "Nucleic acid synthesis"],
+    "correct_index": 1,
+    "explanation": "Penicillins are beta-lactam antibiotics that inhibit bacterial cell wall synthesis by blocking transpeptidase (penicillin-binding protein), preventing cross-linking of peptidoglycan.",
+    "difficulty": "easy",
+    "tags": ["antimicrobials", "penicillin"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Clavulanic acid is used with amoxicillin to:",
+    "options": ["Increase absorption", "Provide synergy against bacteria", "Inhibit beta-lactamase enzymes", "Reduce side effects"],
+    "correct_index": 2,
+    "explanation": "Clavulanic acid is a beta-lactamase inhibitor. It is combined with amoxicillin (Augmentin) to protect amoxicillin from degradation by beta-lactamase enzymes produced by resistant bacteria.",
+    "difficulty": "medium",
+    "tags": ["antimicrobials", "clavulanic acid"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Azithromycin belongs to which class?",
+    "options": ["Tetracyclines", "Macrolides", "Fluoroquinolones", "Aminoglycosides"],
+    "correct_index": 1,
+    "explanation": "Azithromycin is a macrolide antibiotic. Macrolides inhibit bacterial protein synthesis by binding to the 50S ribosomal subunit, blocking translocation.",
+    "difficulty": "easy",
+    "tags": ["antimicrobials", "azithromycin"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "The mechanism of action of fluoroquinolones (e.g., ciprofloxacin) is:",
+    "options": ["Inhibiting cell wall synthesis", "Inhibiting DNA gyrase (topoisomerase II)", "Inhibiting protein synthesis", "Inhibiting folate synthesis"],
+    "correct_index": 1,
+    "explanation": "Fluoroquinolones inhibit DNA gyrase (topoisomerase II) and topoisomerase IV, preventing DNA replication, transcription, and repair in bacteria.",
+    "difficulty": "medium",
+    "tags": ["antimicrobials", "fluoroquinolones"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Isoniazid (INH) is primarily effective against:",
+    "options": ["Gram-positive bacteria", "Mycobacterium tuberculosis", "Fungi", "Viruses"],
+    "correct_index": 1,
+    "explanation": "Isoniazid (INH) is a first-line antitubercular drug that specifically targets Mycobacterium tuberculosis by inhibiting mycolic acid synthesis (cell wall component).",
+    "difficulty": "easy",
+    "tags": ["antitubercular", "INH"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "First-line antitubercular drugs include all EXCEPT:",
+    "options": ["Rifampicin", "Isoniazid", "Cycloserine", "Pyrazinamide"],
+    "correct_index": 2,
+    "explanation": "First-line anti-TB drugs are INH, Rifampicin, Pyrazinamide, Ethambutol, and Streptomycin. Cycloserine is a second-line antitubercular drug.",
+    "difficulty": "medium",
+    "tags": ["antitubercular", "first line"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Dapsone is used in the treatment of:",
+    "options": ["Tuberculosis", "Leprosy", "Malaria", "Fungal infections"],
+    "correct_index": 1,
+    "explanation": "Dapsone (diaminodiphenylsulfone) is a sulfone used primarily in the treatment of leprosy. It inhibits dihydropteroate synthase, blocking folate synthesis in bacteria.",
+    "difficulty": "easy",
+    "tags": ["antileprotic", "dapsone"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Amphotericin B is used for:",
+    "options": ["Bacterial infections", "Viral infections", "Systemic fungal infections", "Parasitic infections"],
+    "correct_index": 2,
+    "explanation": "Amphotericin B is a polyene antifungal used for serious systemic fungal infections (e.g., aspergillosis, cryptococcosis). It binds to ergosterol in fungal cell membranes.",
+    "difficulty": "medium",
+    "tags": ["antifungal", "amphotericin B"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Acyclovir is effective against:",
+    "options": ["Bacteria", "Herpes viruses", "Fungi", "Malaria"],
+    "correct_index": 1,
+    "explanation": "Acyclovir is an antiviral drug effective against herpes simplex virus (HSV) and varicella-zoster virus (VZV). It inhibits viral DNA polymerase.",
+    "difficulty": "easy",
+    "tags": ["antiviral", "acyclovir"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Chloroquine acts against malaria by:",
+    "options": ["Killing mosquito larvae", "Inhibiting heme polymerization in the parasite", "Boosting immune response", "Blocking parasite entry into cells"],
+    "correct_index": 1,
+    "explanation": "Chloroquine accumulates in the food vacuole of the malaria parasite and inhibits the polymerization of toxic heme (ferriprotoporphyrin IX) into hemozoin, killing the parasite.",
+    "difficulty": "medium",
+    "tags": ["antimalarial", "chloroquine"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Metronidazole is primarily used for infections caused by:",
+    "options": ["Gram-positive bacteria", "Anaerobic bacteria and protozoa", "Fungi", "Viruses"],
+    "correct_index": 1,
+    "explanation": "Metronidazole is effective against anaerobic bacteria (e.g., Bacteroides) and protozoa (e.g., Trichomonas, Giardia, Entamoeba). It is activated only in anaerobic conditions.",
+    "difficulty": "easy",
+    "tags": ["antiprotozoal", "metronidazole"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Albendazole is used for:",
+    "options": ["Bacterial infections", "Worm infestations (helminthiasis)", "Viral infections", "Fungal infections"],
+    "correct_index": 1,
+    "explanation": "Albendazole is an anthelmintic (antihelminthic) drug that inhibits tubulin polymerization, blocking glucose uptake by worms, leading to energy depletion and worm death.",
+    "difficulty": "easy",
+    "tags": ["antihelminthic", "albendazole"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Antibiotic resistance can develop through all EXCEPT:",
+    "options": ["Mutation", "Gene transfer", "Overuse of antibiotics", "Proper completion of antibiotic course"],
+    "correct_index": 3,
+    "explanation": "Proper completion of the full antibiotic course actually helps prevent resistance. Resistance develops through mutation, gene transfer (plasmids, transposons), and overuse/misuse of antibiotics.",
+    "difficulty": "medium",
+    "tags": ["antimicrobials", "resistance"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Tetracycline should NOT be given with:",
+    "options": ["Paracetamol", "Milk or antacids containing calcium", "Oral rehydration salts", "Vitamin C"],
+    "correct_index": 1,
+    "explanation": "Tetracyclines form insoluble chelates with calcium, iron, aluminum, and magnesium ions present in milk and antacids, reducing their absorption. They should be taken on an empty stomach.",
+    "difficulty": "medium",
+    "tags": ["tetracycline", "interaction"]
+  },
+  {
+    "unit_id": "pharmaco-i-unit-6",
+    "question_text": "Streptomycin belongs to which class of antibiotics?",
+    "options": ["Macrolides", "Tetracyclines", "Aminoglycosides", "Penicillins"],
+    "correct_index": 2,
+    "explanation": "Streptomycin is an aminoglycoside antibiotic. Aminoglycosides bind to the 30S ribosomal subunit, causing misreading of mRNA and inhibiting protein synthesis.",
+    "difficulty": "easy",
+    "tags": ["aminoglycosides", "streptomycin"]
+  }
+]

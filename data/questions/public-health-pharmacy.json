@@ -1,0 +1,119 @@
+[
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "WHO defines health as:",
+    "options": ["Absence of disease only", "State of complete physical, mental, and social well-being", "Being free from infection", "Having good nutrition"],
+    "correct_index": 1,
+    "explanation": "WHO defines health as 'a state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity.'",
+    "difficulty": "easy",
+    "tags": ["health education", "WHO definition"]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Preventive health services aim to:",
+    "options": ["Treat existing diseases", "Prevent diseases before they occur", "Rehabilitate patients", "Only diagnose diseases"],
+    "correct_index": 1,
+    "explanation": "Preventive health services aim to prevent diseases before they occur through measures like immunization, health education, screening, and environmental sanitation.",
+    "difficulty": "easy",
+    "tags": ["health education", "prevention"]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Health education methods include all EXCEPT:",
+    "options": ["Individual counseling", "Group discussion", "Surgery", "Mass media campaigns"],
+    "correct_index": 2,
+    "explanation": "Health education methods include individual methods (interview, counseling), group methods (discussion, role-play, workshop), and mass methods (lecture, exhibition, media). Surgery is a treatment, not an education method.",
+    "difficulty": "easy",
+    "tags": ["health education", "methods"]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Learning is defined as:",
+    "options": ["Memorizing facts only", "A relatively permanent change in behavior through experience", "Reading textbooks", "Attending lectures only"],
+    "correct_index": 1,
+    "explanation": "Learning is defined as a relatively permanent change in behavior (or behavioral potential) resulting from experience, practice, or training.",
+    "difficulty": "medium",
+    "tags": ["health education", "learning"]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Primary Health Care (PHC) was declared at the:",
+    "options": ["UN General Assembly", "Alma Ata Conference (1978)", "WHO Headquarters", "World Health Assembly"],
+    "correct_index": 1,
+    "explanation": "Primary Health Care was declared at the International Conference on Primary Health Care held at Alma Ata, Kazakhstan (then USSR) in 1978.",
+    "difficulty": "easy",
+    "tags": ["healthcare delivery", "Alma Ata"]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Elements of Primary Health Care include all EXCEPT:",
+    "options": ["Health education", "Safe water supply", "Advanced surgical facilities", "Immunization"],
+    "correct_index": 2,
+    "explanation": "Elements of PHC include health education, safe water, sanitation, immunization, maternal/child health, nutrition, essential drugs, and treatment of common diseases. Advanced surgical facilities are not a PHC element.",
+    "difficulty": "medium",
+    "tags": ["healthcare delivery", "PHC elements"]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Epidemiology is defined as the study of:",
+    "options": ["Treatment of diseases", "Distribution and determinants of health-related states in populations", "Manufacturing of drugs", "Pharmacology of drugs"],
+    "correct_index": 1,
+    "explanation": "Epidemiology is the study of the distribution (who, where, when) and determinants (why, how) of health-related states and events in defined populations, and the application of this knowledge to control health problems.",
+    "difficulty": "easy",
+    "tags": ["epidemiology", "definition"]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "An epidemic differs from endemic in that an epidemic:",
+    "options": ["Always exists in a region", "Occurs in greater numbers than expected in a community at a particular time", "Only affects one person", "Never occurs naturally"],
+    "correct_index": 1,
+    "explanation": "An epidemic is the occurrence of cases of disease in excess of what would normally be expected in a defined community, area, or season. Endemic refers to constant presence of a disease in a population.",
+    "difficulty": "medium",
+    "tags": ["epidemiology", "epidemic"]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Incidence rate measures:",
+    "options": ["Total existing cases at a point in time", "New cases occurring in a population over a period", "Deaths from a disease", "Hospital admissions"],
+    "correct_index": 1,
+    "explanation": "Incidence measures the number of NEW cases of a disease occurring in a population during a specified time period. Prevalence measures existing (old + new) cases at a point in time.",
+    "difficulty": "medium",
+    "tags": ["epidemiology", "incidence"]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Water purification by slow sand filtration works mainly by:",
+    "options": ["Chemical treatment only", "Biological action (Schmutzdecke) and physical filtration", "Heating", "Distillation"],
+    "correct_index": 1,
+    "explanation": "Slow sand filtration works by both physical filtration through sand and biological action in the Schmutzdecke (biological layer) that develops on top of the sand, which metabolizes organic matter and pathogens.",
+    "difficulty": "medium",
+    "tags": ["environmental health", "water purification"]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "The 3R concept in waste management stands for:",
+    "options": ["Run, Rush, Reduce", "Reuse, Reduce, Recycle", "Remove, Replace, Repair", "Read, Remember, Report"],
+    "correct_index": 1,
+    "explanation": "The 3R concept in waste management stands for Reuse (using items again), Reduce (minimizing waste generation), and Recycle (converting waste into new products).",
+    "difficulty": "easy",
+    "tags": ["waste management", "3R"]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Hospital waste segregation uses color-coded bins. Yellow bins are for:",
+    "options": ["General waste", "Infectious/biohazardous waste", "Sharps", "Recyclable waste"],
+    "correct_index": 1,
+    "explanation": "Color-coded waste segregation in hospitals: Yellow = infectious/biohazardous waste, Red = anatomical/pharmaceutical waste, Black/Blue = general waste, Puncture-proof containers = sharps.",
+    "difficulty": "medium",
+    "tags": ["waste management", "hospital waste"]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Food adulteration differs from food additives in that:",
+    "options": ["They are the same thing", "Adulteration is illegal addition of inferior substances; additives are approved substances", "Adulteration is always safe", "Food additives are always harmful"],
+    "correct_index": 1,
+    "explanation": "Food adulteration involves illegal addition of inferior, harmful, or cheaper substances to food. Food additives are legally approved substances added to improve food quality, safety, or shelf life.",
+    "difficulty": "medium",
+    "tags": ["food hygiene", "adulteration"]
+  }
+]

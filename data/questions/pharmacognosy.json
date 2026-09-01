@@ -1,0 +1,155 @@
+[
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Pharmacognosy is defined as the study of:",
+    "options": ["Synthetic drugs", "Drugs from natural sources", "Physical properties of drugs", "Drug interactions"],
+    "correct_index": 1,
+    "explanation": "Pharmacognosy is the branch of pharmaceutical sciences dealing with drugs obtained from natural sources (plants, animals, minerals, and microorganisms).",
+    "difficulty": "easy",
+    "tags": ["pharmacognosy", "definition"]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Crude drugs can be classified morphologically based on:",
+    "options": ["Chemical nature", "Plant part used", "Taxonomical classification", "Pharmacological action"],
+    "correct_index": 1,
+    "explanation": "Morphological classification of crude drugs is based on the plant part used (e.g., bark, root, leaf, flower, fruit, seed).",
+    "difficulty": "easy",
+    "tags": ["classification", "morphological"]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "The biological source of a crude drug refers to:",
+    "options": ["Chemical composition", "The plant or animal species from which the drug is derived", "The method of extraction", "The therapeutic use"],
+    "correct_index": 1,
+    "explanation": "The biological source specifies the scientific name (genus and species), family, part of the organism used, and geographical source of the crude drug.",
+    "difficulty": "easy",
+    "tags": ["biological source"]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Ash value of a crude drug indicates:",
+    "options": ["Moisture content", "Amount of inorganic matter present", "Volatile oil content", "Alkaloid content"],
+    "correct_index": 1,
+    "explanation": "Ash value represents the total amount of inorganic matter (mineral salts, calcium oxalate, silica, etc.) present in a crude drug. It is used for quality control and detection of adulteration.",
+    "difficulty": "medium",
+    "tags": ["evaluation", "ash value"]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Extractive values are used to measure:",
+    "options": ["Ash content", "Amount of chemical constituents extracted by specific solvents", "Moisture content", "Microbial load"],
+    "correct_index": 1,
+    "explanation": "Extractive values measure the amount of chemical constituents extracted by specific solvents (water, alcohol, ether). They help in evaluating the quality and detecting adulteration.",
+    "difficulty": "medium",
+    "tags": ["evaluation", "extractive values"]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Morphine is an alkaloid obtained from:",
+    "options": ["Cinchona bark", "Opium (Papaver somniferum)", "Rauwolfia root", "Nux vomica seeds"],
+    "correct_index": 1,
+    "explanation": "Morphine is the principal alkaloid obtained from the dried latex (opium) of Papaver somniferum. It is a potent analgesic acting on opioid receptors.",
+    "difficulty": "easy",
+    "tags": ["alkaloids", "morphine"]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Quinine is obtained from:",
+    "options": ["Opium", "Cinchona bark", "Rauwolfia", "Ephedra"],
+    "correct_index": 1,
+    "explanation": "Quinine is an alkaloid obtained from the bark of Cinchona species (C. ledgeriana, C. succirubra). It was historically used as an antimalarial drug.",
+    "difficulty": "easy",
+    "tags": ["alkaloids", "quinine"]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Caffeine is a xanthine alkaloid obtained from:",
+    "options": ["Cinchona", "Coffee beans (Coffea arabica) and Tea leaves", "Rauwolfia", "Belladonna"],
+    "correct_index": 1,
+    "explanation": "Caffeine (1,3,7-trimethylxanthine) is obtained from coffee beans (Coffea arabica), tea leaves (Camellia sinensis), and cola nuts. It is a CNS stimulant.",
+    "difficulty": "easy",
+    "tags": ["alkaloids", "caffeine"]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Cardiac glycosides are obtained from:",
+    "options": ["Senna leaves", "Foxglove (Digitalis purpurea)", "Glycyrrhiza root", "Dioscorea"],
+    "correct_index": 1,
+    "explanation": "Cardiac glycosides (e.g., digoxin, digitoxin) are obtained from Digitalis purpurea (foxglove) leaves. They increase the force of cardiac contraction.",
+    "difficulty": "easy",
+    "tags": ["glycosides", "cardiac"]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Senna contains which type of glycosides?",
+    "options": ["Cardiac glycosides", "Anthraquinone glycosides", "Saponin glycosides", "Cyanogenic glycosides"],
+    "correct_index": 1,
+    "explanation": "Senna contains anthraquinone glycosides (sennosides A and B) which act as stimulant laxatives by increasing peristalsis in the large intestine.",
+    "difficulty": "medium",
+    "tags": ["glycosides", "senna"]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Volatile oils are also called:",
+    "options": ["Fixed oils", "Essential oils", "Mineral oils", "Animal oils"],
+    "correct_index": 1,
+    "explanation": "Volatile oils are also called essential oils because they contain the 'essence' (characteristic odor and flavor) of the plant. They are volatile and evaporate at room temperature.",
+    "difficulty": "easy",
+    "tags": ["volatile oils", "definition"]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Volatile oils are primarily extracted by:",
+    "options": ["Cold pressing only", "Steam distillation", "Solvent extraction only", "Supercritical fluid extraction only"],
+    "correct_index": 1,
+    "explanation": "Steam distillation is the most common method for extracting volatile oils. The steam carries the volatile oil at temperatures below 100°C, preventing thermal decomposition.",
+    "difficulty": "easy",
+    "tags": ["volatile oils", "extraction"]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Resins are defined as:",
+    "options": ["Volatile oils", "Solid or semi-solid amorphous products of oxidation of volatile oils", "Fixed oils", "Glycosides"],
+    "correct_index": 1,
+    "explanation": "Resins are solid or semi-solid amorphous products formed by the oxidative decomposition of volatile oils (oleoresins) or by chemical reactions in plant tissues.",
+    "difficulty": "medium",
+    "tags": ["resins", "definition"]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Gums differ from mucilages in that gums:",
+    "options": ["Are soluble in water", "Swell in water but are not truly soluble", "Are soluble in alcohol", "Do not absorb water"],
+    "correct_index": 1,
+    "explanation": "Gums swell in water to form mucilaginous masses but are not truly soluble (they form colloidal dispersions). True gums are exudates from plant wounds.",
+    "difficulty": "medium",
+    "tags": ["gums", "difference"]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "BCG vaccine is used for immunization against:",
+    "options": ["Polio", "Tuberculosis", "Measles", "Tetanus"],
+    "correct_index": 1,
+    "explanation": "BCG (Bacillus Calmette-Guérin) vaccine is a live attenuated vaccine used for immunization against tuberculosis, particularly pulmonary and miliary TB in children.",
+    "difficulty": "easy",
+    "tags": ["biological products", "BCG"]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Papain is obtained from:",
+    "options": ["Pineapple", "Papaya (Carica papaya)", "Ficus species", "Aloe vera"],
+    "correct_index": 1,
+    "explanation": "Papain is a proteolytic enzyme obtained from the latex of unripe papaya fruit (Carica papaya). It is used as a meat tenderizer and in wound debridement.",
+    "difficulty": "easy",
+    "tags": ["enzymes", "papain"]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Drug discovery from natural sources involves:",
+    "options": ["Only synthetic chemistry", "Isolation, identification, and modification of natural compounds", "Only computer modeling", "Only animal testing"],
+    "correct_index": 1,
+    "explanation": "Natural product drug discovery involves ethnobotanical leads, isolation and identification of active compounds, structure elucidation, and structural modification to improve efficacy.",
+    "difficulty": "medium",
+    "tags": ["drug discovery", "natural products"]
+  }
+]
