@@ -45,7 +45,7 @@ export function HeroSection() {
                 </Link>
                 <Link
                   href="/dashboard"
-                  className="inline-flex items-center gap-2 rounded-xl border bg-white px-6 py-3 text-base font-semibold shadow-sm hover:bg-muted transition-all"
+                  className="inline-flex items-center gap-2 rounded-xl border bg-card px-6 py-3 text-base font-semibold shadow-sm hover:bg-muted transition-all"
                 >
                   My Dashboard
                 </Link>
@@ -61,7 +61,7 @@ export function HeroSection() {
                 </Link>
                 <Link
                   href="/auth/register"
-                  className="inline-flex items-center gap-2 rounded-xl border bg-white px-6 py-3 text-base font-semibold shadow-sm hover:bg-muted transition-all"
+                  className="inline-flex items-center gap-2 rounded-xl border bg-card px-6 py-3 text-base font-semibold shadow-sm hover:bg-muted transition-all"
                 >
                   Create Free Account
                 </Link>

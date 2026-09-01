@@ -6,6 +6,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS, APP_NAME } from "@/lib/constants";
 import { useAuth } from "@/lib/auth";
+import { useTheme } from "next-themes";
 import {
   BookOpen,
   GraduationCap,
@@ -14,6 +15,8 @@ import {
   BarChart3,
   Bookmark,
   StickyNote,
+  Sun,
+  Moon,
 } from "lucide-react";
 
 export function Navbar() {
@@ -21,11 +24,12 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const { user, logout } = useAuth();
+  const { theme, setTheme } = useTheme();
   const router = useRouter();
   const isLoggedIn = !!user;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
           <GraduationCap className="h-7 w-7 text-primary" />
@@ -85,7 +89,7 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t bg-white px-4 py-3">
+        <div className="md:hidden border-t bg-background px-4 py-3">
           <nav className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === link.href ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted")}>

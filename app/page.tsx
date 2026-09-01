@@ -22,7 +22,7 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Stats Bar */}
-      <section className="border-y bg-white">
+      <section className="border-y bg-background">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {[
@@ -61,7 +61,7 @@ export default function HomePage() {
               <Link
                 key={subject.id}
                 href={`/subjects/${subject.slug}`}
-                className="group rounded-xl border bg-white p-5 shadow-sm transition-all hover:shadow-md hover:border-primary/20"
+                className="group rounded-xl border bg-card p-5 shadow-sm transition-all hover:shadow-md hover:border-primary/20"
               >
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">{subject.icon}</span>
@@ -137,7 +137,7 @@ export default function HomePage() {
             ].map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border bg-white p-6"
+                className="rounded-xl border bg-card p-6"
               >
                 <feature.icon className="h-8 w-8 text-primary" />
                 <h3 className="mt-3 font-semibold">{feature.title}</h3>

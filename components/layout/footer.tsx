@@ -19,7 +19,7 @@ export function Footer() {
           </p>
 
           {/* Support */}
-          <div className="mt-2 inline-flex items-center gap-3 rounded-lg border bg-white px-5 py-2.5 shadow-sm">
+          <div className="mt-2 inline-flex items-center gap-3 rounded-lg border bg-card px-5 py-2.5 shadow-sm">
             <Coffee className="h-4 w-4 text-primary" />
             <span className="text-xs text-muted-foreground">Like this app? Buy the developer a coffee via</span>
             <span className="text-sm font-bold text-green-700">eSewa</span>
