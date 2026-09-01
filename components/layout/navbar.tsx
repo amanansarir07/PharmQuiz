@@ -82,6 +82,14 @@ export function Navbar() {
               <Link href="/auth/register" className="rounded-lg bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90">Get Started</Link>
             </div>
           )}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground"
+            aria-label="Toggle dark mode"
+          >
+            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          </button>
           <button className="md:hidden p-2 rounded-lg hover:bg-muted" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -102,6 +110,13 @@ export function Navbar() {
                 <Link href="/bookmarks" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted"><Bookmark className="inline h-4 w-4 mr-1" /> Bookmarks</Link>
                 <Link href="/notes" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted"><StickyNote className="inline h-4 w-4 mr-1" /> Notes</Link>
                 <Link href="/analytics" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted"><BarChart3 className="inline h-4 w-4 mr-1" /> Analytics</Link>
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted text-left w-full"
+                >
+                  {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
+                </button>
+                <hr className="my-2" />
                 <hr className="my-2" />
                 <button onClick={() => { logout(); setMobileOpen(false); router.push("/"); }} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted text-left w-full">Sign Out</button>
               </>
