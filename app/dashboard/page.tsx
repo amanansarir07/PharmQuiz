@@ -58,7 +58,7 @@ export default function DashboardPage() {
       {/* Stats */}
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { icon: BookOpen, label: "Quizzes Taken", value: mounted ? String(s.quizzesTaken) : "0", color: "text-blue-600 bg-blue-50" },
+          { icon: BookOpen, label: "MCQs Taken", value: mounted ? String(s.quizzesTaken) : "0", color: "text-blue-600 bg-blue-50" },
           { icon: Target, label: "Accuracy", value: mounted ? (s.totalAttempted > 0 ? `${s.accuracy}%` : "—") : "—", color: "text-green-600 bg-green-50" },
           { icon: Flame, label: "Study Streak", value: mounted ? `${s.currentStreak} day${s.currentStreak !== 1 ? "s" : ""}` : "0 days", color: "text-orange-600 bg-orange-50" },
           { icon: Trophy, label: "Total Score", value: mounted ? String(s.totalScore) : "0", color: "text-yellow-600 bg-yellow-50" },
@@ -88,7 +88,7 @@ export default function DashboardPage() {
                 <Brain className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <p className="font-semibold">Start Quiz</p>
+                <p className="font-semibold">Start MCQs</p>
                 <p className="text-sm text-muted-foreground">
                   Choose subject and start practicing
                 </p>

@@ -106,7 +106,7 @@ export default function HomePage() {
             {[
               {
                 icon: Brain,
-                title: "Custom Quizzes",
+                title: "Custom MCQs",
                 desc: "Choose subject, units, difficulty, and time limit. Questions are shuffled each time.",
               },
               {
@@ -117,7 +117,7 @@ export default function HomePage() {
               {
                 icon: Trophy,
                 title: "Leaderboard",
-                desc: "Compete with classmates. Rankings update as you practice more quizzes.",
+                desc: "Compete with classmates. Rankings update as you practice more MCQs.",
               },
               {
                 icon: BarChart3,
@@ -164,7 +164,7 @@ export default function HomePage() {
               href="/quiz"
               className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all"
             >
-              Start a Quiz
+              Start MCQs
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

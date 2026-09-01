@@ -116,9 +116,9 @@ export default function AnalyticsPage() {
         <div className="text-center py-20">
           <BarChart3 className="h-16 w-16 mx-auto text-muted-foreground/40 mb-4" />
           <h2 className="text-xl font-semibold mb-2">No Data Yet</h2>
-          <p className="text-muted-foreground mb-6">Complete your first quiz to see analytics!</p>
+          <p className="text-muted-foreground mb-6">Complete your first MCQ session to see analytics!</p>
           <Link href="/quiz">
-            <Button>Start a Quiz</Button>
+            <Button>Start MCQs</Button>
           </Link>
         </div>
       ) : (
@@ -128,7 +128,7 @@ export default function AnalyticsPage() {
             {[
               {
                 icon: BookOpen,
-                label: "Quizzes Taken",
+                label: "MCQs Taken",
                 value: String(s.quizzesTaken),
                 change: `${s.totalAttempted} questions attempted`,
                 color: "text-blue-600 bg-blue-50",
@@ -197,7 +197,7 @@ export default function AnalyticsPage() {
                   </div>
                 ) : (
                   <div className="h-[300px] flex items-center justify-center text-muted-foreground text-sm">
-                    Complete quizzes on different subjects to see accuracy
+                    Complete MCQs on different subjects to see accuracy
                   </div>
                 )}
               </CardContent>
@@ -214,7 +214,7 @@ export default function AnalyticsPage() {
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={quizHistory}>
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="quiz" label={{ value: "Quiz #", position: "bottom", offset: -5 }} />
+                        <XAxis dataKey="quiz" label={{ value: "MCQ #", position: "bottom", offset: -5 }} />
                         <YAxis domain={[0, 100]} />
                         <Tooltip formatter={(value: any) => [`${value}%`, "Score"]} />
                         <Line type="monotone" dataKey="score" stroke="#2563eb" strokeWidth={2} dot={{ r: 4 }} />
@@ -223,7 +223,7 @@ export default function AnalyticsPage() {
                   </div>
                 ) : (
                   <div className="h-[300px] flex items-center justify-center text-muted-foreground text-sm">
-                    Complete more quizzes to see your progress trend
+                    Complete more MCQs to see your progress trend
                   </div>
                 )}
               </CardContent>

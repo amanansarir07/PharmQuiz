@@ -31,7 +31,7 @@ export function HeroSection() {
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             {user
               ? "Jump back into your MCQ practice. Pick up where you left off!"
-              : "Practice MCQs covering all 8 subjects of your 2nd year diploma. Timed quizzes, analytics, and a leaderboard to keep you on track."}
+              : "Practice MCQs covering all 8 subjects of your 2nd year diploma. Timed practice, analytics, and a leaderboard to keep you on track."}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             {user ? (
@@ -40,7 +40,7 @@ export function HeroSection() {
                   href="/quiz"
                   className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all"
                 >
-                  Start a Quiz
+                  Start MCQs
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link

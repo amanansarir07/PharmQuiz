@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, use } from "react";
+import { useState, useEffect, useCallback, useRef, use } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -30,6 +30,7 @@ export default function ActiveQuizPage({
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [quizConfig, setQuizConfig] = useState<any>(null);
+  const answersRef = useRef<(number | null)[]>([]);
 
   useEffect(() => {
     // Read config using the actual session ID from URL
@@ -56,13 +57,19 @@ export default function ActiveQuizPage({
     }
   }, [sessionId]);
 
+  // Keep answersRef in sync with answers state
+  useEffect(() => {
+    answersRef.current = answers;
+  }, [answers]);
+
   useEffect(() => {
     if (timeLeft === null || timeLeft <= 0) return;
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev === null || prev <= 1) {
           clearInterval(timer);
-          handleSubmit();
+          // Use ref for fresh answers to avoid stale closure
+          doSubmit(answersRef.current);
           return 0;
         }
         return prev - 1;
@@ -94,35 +101,42 @@ export default function ActiveQuizPage({
     });
   };
 
+  const doSubmit = useCallback(
+    (currentAnswers: (number | null)[]) => {
+      const results = questions.map((q, i) => ({
+        questionId: q.id,
+        selected: currentAnswers[i],
+        correct: q.correctIndex,
+        isCorrect: currentAnswers[i] === q.correctIndex,
+      }));
+      localStorage.setItem(
+        `quiz-results-${sessionId}`,
+        JSON.stringify({
+          answers: results,
+          questions,
+          config: {
+            ...quizConfig,
+            completedAt: new Date().toISOString(),
+          },
+          timeTaken: quizConfig?.timeLimit
+            ? quizConfig.timeLimit * 60 - (timeLeft || 0)
+            : null,
+        })
+      );
+      router.push(`/quiz/${sessionId}/results`);
+    },
+    [questions, quizConfig, timeLeft, router, sessionId]
+  );
+
   const handleSubmit = useCallback(() => {
-    const results = questions.map((q, i) => ({
-      questionId: q.id,
-      selected: answers[i],
-      correct: q.correctIndex,
-      isCorrect: answers[i] === q.correctIndex,
-    }));
-    localStorage.setItem(
-      `quiz-results-${sessionId}`,
-      JSON.stringify({
-        answers: results,
-        questions,
-        config: {
-          ...quizConfig,
-          completedAt: new Date().toISOString(),
-        },
-        timeTaken: quizConfig?.timeLimit
-          ? quizConfig.timeLimit * 60 - (timeLeft || 0)
-          : null,
-      })
-    );
-    router.push(`/quiz/${sessionId}/results`);
-  }, [answers, questions, quizConfig, timeLeft, router, sessionId]);
+    doSubmit(answersRef.current);
+  }, [doSubmit]);
 
   if (questions.length === 0) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
         <div className="text-center">
-          <p className="text-muted-foreground">Loading quiz...</p>
+          <p className="text-muted-foreground">Loading MCQs...</p>
           <Button variant="outline" className="mt-4" onClick={() => router.push("/quiz")}>
             Go Back to Setup
           </Button>
@@ -196,7 +210,7 @@ export default function ActiveQuizPage({
                 ))}
               </div>
               <div className="mt-6 rounded-lg bg-muted/50 p-4 text-sm text-muted-foreground">
-                💡 Explanations will be shown after quiz submission
+                💡 Explanations will be shown after submission
               </div>
             </CardContent>
           </Card>
@@ -214,7 +228,7 @@ export default function ActiveQuizPage({
             {currentIndex === questions.length - 1 ? (
               <Button onClick={() => setShowSubmitConfirm(true)}>
                 <Send className="mr-1 h-4 w-4" />
-                Submit Quiz
+                Submit MCQs
               </Button>
             ) : (
               <Button onClick={() => setCurrentIndex((i) => Math.min(questions.length - 1, i + 1))}>
@@ -281,7 +295,7 @@ export default function ActiveQuizPage({
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="h-6 w-6 text-yellow-500" />
-                <h2 className="text-lg font-semibold">Submit Quiz?</h2>
+                <h2 className="text-lg font-semibold">Submit MCQs?</h2>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
                 You have answered {answeredCount} out of {questions.length} questions.
@@ -293,7 +307,7 @@ export default function ActiveQuizPage({
               )}
               <div className="flex gap-3 justify-end">
                 <Button variant="outline" onClick={() => setShowSubmitConfirm(false)}>
-                  Continue Quiz
+                  Continue MCQs
                 </Button>
                 <Button onClick={handleSubmit}>Confirm Submit</Button>
               </div>

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "pharmacy MCQs",
     "diploma pharmacy",
     "pharmacy practice",
-    "MCQ quiz",
+    "MCQ Practice",
     "Nepal pharmacy exam",
   ],
 };

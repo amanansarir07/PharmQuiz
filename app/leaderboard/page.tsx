@@ -57,7 +57,7 @@ export default function LeaderboardPage() {
             <Users className="mx-auto h-12 w-12 text-muted-foreground/50" />
             <p className="mt-4 text-muted-foreground">No users registered yet</p>
             <p className="text-sm text-muted-foreground">
-              Register an account and start taking quizzes to appear here
+              Register an account and start taking MCQs to appear here
             </p>
           </CardContent>
         </Card>
@@ -99,7 +99,7 @@ export default function LeaderboardPage() {
                         <div className="flex items-center gap-3 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <Target className="h-3 w-3" />
-                            {entry.quizzesTaken} quizzes
+                            {entry.quizzesTaken} MCQs
                           </span>
                           <span>{entry.accuracy}% accuracy</span>
                           {entry.currentStreak > 0 && (
@@ -128,7 +128,7 @@ export default function LeaderboardPage() {
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">
                 <strong>Scoring:</strong> Rankings are based on total correct answers. Ties are
-                broken by accuracy percentage. Complete more quizzes to climb the leaderboard!
+                broken by accuracy percentage. Complete more MCQs to climb the leaderboard!
               </p>
             </CardContent>
           </Card>

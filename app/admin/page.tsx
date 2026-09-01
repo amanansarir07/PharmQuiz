@@ -77,7 +77,7 @@ export default function AdminPage() {
         {[
           { icon: Users, label: "Registered Users", value: String(userCount), color: "text-blue-600 bg-blue-50" },
           { icon: HelpCircle, label: "Total Questions", value: String(totalQuestions), color: "text-green-600 bg-green-50" },
-          { icon: TrendingUp, label: "Quizzes Taken", value: String(quizCount), color: "text-purple-600 bg-purple-50" },
+          { icon: TrendingUp, label: "MCQs Taken", value: String(quizCount), color: "text-purple-600 bg-purple-50" },
           { icon: BookOpen, label: "Subjects", value: String(subjects.length), color: "text-orange-600 bg-orange-50" },
         ].map((stat) => (
           <Card key={stat.label}>

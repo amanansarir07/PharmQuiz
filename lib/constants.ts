@@ -24,7 +24,7 @@ export const DIFFICULTY_OPTIONS = [
 
 export const NAV_LINKS = [
   { href: "/subjects", label: "Subjects" },
-  { href: "/quiz", label: "Quiz" },
+  { href: "/quiz", label: "MCQs" },
   { href: "/leaderboard", label: "Leaderboard" },
 ] as const;
 

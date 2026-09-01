@@ -83,10 +83,10 @@ function QuizSetupInner() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
           <Settings className="h-8 w-8" />
-          Quiz Setup
+          MCQ Setup
         </h1>
         <p className="mt-2 text-muted-foreground">
-          Configure your quiz settings and start practicing
+          Configure your MCQ settings and start practicing
         </p>
       </div>
 
@@ -281,7 +281,7 @@ function QuizSetupInner() {
           disabled={!selectedSubject}
         >
           <Play className="mr-2 h-5 w-5" />
-          Start Quiz
+          Start MCQs
         </Button>
       </div>
     </div>

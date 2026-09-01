@@ -37,9 +37,9 @@ export default function QuizResultsPage({
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
         <div className="text-center">
-          <p className="text-muted-foreground">No quiz results found</p>
+          <p className="text-muted-foreground">No MCQ results found</p>
           <Link href="/quiz">
-            <Button className="mt-4">Start a Quiz</Button>
+            <Button className="mt-4">Start MCQs</Button>
           </Link>
         </div>
       </div>
@@ -125,7 +125,7 @@ export default function QuizResultsPage({
         <Link href="/quiz" className="flex-1">
           <Button variant="outline" className="w-full">
             <RotateCcw className="mr-2 h-4 w-4" />
-            Take Another Quiz
+            Take Another MCQ Set
           </Button>
         </Link>
         <Button

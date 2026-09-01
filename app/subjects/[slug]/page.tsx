@@ -65,7 +65,7 @@ export default async function SubjectPage({
         <div className="mt-6">
           <Link href={`/quiz?subject=${subject.slug}`}>
             <Button size="lg">
-              Start Quiz on {subject.name}
+              Start MCQs on {subject.name}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
