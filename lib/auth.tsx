@@ -26,8 +26,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Load user profile from Supabase
-  const loadProfile = useCallback(async (userId: string) => {
+  // Load user profile from Supabase — returns the user or null
+  const loadProfile = useCallback(async (userId: string): Promise<User | null> => {
     try {
       const { data, error } = await getSupabase()
         .from("profiles")
@@ -35,57 +35,75 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         .eq("id", userId)
         .single();
 
-      if (error) {
+      if (error || !data) {
         console.error("loadProfile query error:", error);
-        // Profile might not exist yet (trigger hasn't fired), create it
+
+        // Profile might not exist yet — create it as a fallback
         const { data: { session } } = await getSupabase().auth.getSession();
         if (session?.user) {
           const meta = session.user.user_metadata || {};
-          await getSupabase().from("profiles").upsert({
+          const { error: insertError } = await getSupabase().from("profiles").upsert({
             id: userId,
             email: session.user.email || "",
             name: meta.name || session.user.email?.split("@")[0] || "User",
             role: "user",
           }, { onConflict: "id" });
-          // Retry loading
-          const { data: retryData } = await getSupabase()
+
+          if (insertError) {
+            console.error("loadProfile upsert error:", insertError);
+            return null;
+          }
+
+          // Retry loading after upsert
+          const { data: retryData, error: retryError } = await getSupabase()
             .from("profiles")
             .select("*")
             .eq("id", userId)
             .single();
-          if (retryData) {
-            setUser({
-              id: retryData.id,
-              name: retryData.name,
-              email: retryData.email,
-              role: retryData.role,
-              createdAt: retryData.created_at,
-            });
+
+          if (retryError || !retryData) {
+            console.error("loadProfile retry error:", retryError);
+            return null;
           }
+
+          const user: User = {
+            id: retryData.id,
+            name: retryData.name,
+            email: retryData.email,
+            role: retryData.role,
+            createdAt: retryData.created_at,
+          };
+          setUser(user);
+          return user;
         }
-        return;
+        return null;
       }
 
-      if (data) {
-        setUser({
-          id: data.id,
-          name: data.name,
-          email: data.email,
-          role: data.role,
-          createdAt: data.created_at,
-        });
-      }
+      const loadedUser: User = {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        role: data.role,
+        createdAt: data.created_at,
+      };
+      setUser(loadedUser);
+      return loadedUser;
     } catch (err) {
       console.error("loadProfile unexpected error:", err);
+      return null;
     }
   }, []);
 
   // Check for existing session on mount
   useEffect(() => {
     const init = async () => {
-      const { data: { session } } = await getSupabase().auth.getSession();
-      if (session?.user) {
-        await loadProfile(session.user.id);
+      try {
+        const { data: { session } } = await getSupabase().auth.getSession();
+        if (session?.user) {
+          await loadProfile(session.user.id);
+        }
+      } catch (err) {
+        console.error("Auth init error:", err);
       }
       setIsLoading(false);
     };
@@ -94,10 +112,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Listen for auth state changes
     const { data: { subscription } } = getSupabase().auth.onAuthStateChange(
       async (event, session) => {
-        if (event === "SIGNED_IN" && session?.user) {
-          await loadProfile(session.user.id);
-        } else if (event === "SIGNED_OUT") {
-          setUser(null);
+        try {
+          if (event === "SIGNED_IN" && session?.user) {
+            await loadProfile(session.user.id);
+          } else if (event === "SIGNED_OUT") {
+            setUser(null);
+          }
+        } catch (err) {
+          console.error("Auth state change error:", err);
         }
         setIsLoading(false);
       }
@@ -107,7 +129,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [loadProfile]);
 
   const register = useCallback(async (name: string, email: string, password: string) => {
-    // Sign up with Supabase Auth (trigger will create profile)
     const { data, error } = await getSupabase().auth.signUp({
       email,
       password,
@@ -127,9 +148,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return { error: "Registration failed. Please try again." };
     }
 
-    // Wait briefly for the trigger to create the profile, then load it
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    await loadProfile(data.user.id);
+    // The database trigger should auto-create the profile.
+    // Wait a moment for it, then load the profile.
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    const loadedUser = await loadProfile(data.user.id);
+    if (!loadedUser) {
+      return { error: "Account created but profile setup failed. Please try logging in." };
+    }
 
     return {};
   }, [loadProfile]);
@@ -148,7 +174,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     if (data.user) {
-      await loadProfile(data.user.id);
+      const loadedUser = await loadProfile(data.user.id);
+      if (!loadedUser) {
+        return { error: "Login succeeded but could not load profile. Please try again." };
+      }
     }
 
     return {};
