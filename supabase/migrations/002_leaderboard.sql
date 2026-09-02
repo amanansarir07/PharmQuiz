@@ -59,7 +59,6 @@ returns table (
   total_correct bigint,
   total_attempted bigint,
   accuracy numeric,
-  avg_accuracy numeric,
   score numeric,
   qualified boolean,
   quizzes_needed bigint
@@ -95,10 +94,6 @@ user_stats as (
       then round(sum(qr.correct)::numeric / sum(qr.total)::numeric * 100, 1)
       else 0
     end as accuracy,
-    case when sum(qr.total) > 0
-      then round(sum(qr.correct)::numeric / sum(qr.total)::numeric * 100, 1)
-      else 0
-    end as avg_accuracy,
     -- Score: (correct * 0.7) + (accuracy% * 0.3) + volume_bonus (capped at 10)
     (sum(qr.correct) * 0.7)
     + (case when sum(qr.total) > 0
@@ -131,7 +126,6 @@ select
   r.total_correct,
   r.total_attempted,
   r.accuracy,
-  r.avg_accuracy,
   round(r.score, 1) as score,
   r.qualified,
   r.quizzes_needed

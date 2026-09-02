@@ -13,7 +13,6 @@ export interface LeaderboardEntry {
   totalCorrect: number;
   totalAttempted: number;
   accuracy: number;
-  avgAccuracy: number;
   score: number;
   qualified: boolean;
   quizzesNeeded: number;
@@ -59,7 +58,6 @@ interface LeaderboardRow {
   total_correct: number;
   total_attempted: number;
   accuracy: number | string;
-  avg_accuracy: number | string;
   score: number | string;
   qualified: boolean;
   quizzes_needed: number;
@@ -100,7 +98,6 @@ export async function getLeaderboard(
     totalCorrect: row.total_correct,
     totalAttempted: row.total_attempted,
     accuracy: Number(row.accuracy),
-    avgAccuracy: Number(row.avg_accuracy),
     score: Number(row.score),
     qualified: row.qualified,
     quizzesNeeded: row.quizzes_needed,
