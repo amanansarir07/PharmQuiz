@@ -3,17 +3,12 @@
 import { useState, useEffect, useCallback } from "react";
 import {
   Trophy,
-  Medal,
-  Target,
   Users,
   RefreshCw,
   Calendar,
   Clock,
   Award,
   Star,
-  TrendingUp,
-  ArrowUp,
-  ChevronRight,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -26,37 +21,24 @@ import {
   type UserLeaderboardPosition,
   PERIOD_LABELS,
   PERIOD_MIN_QUIZZES,
-  PERIOD_DESCRIPTIONS,
 } from "@/lib/leaderboard";
 import { useAuth } from "@/lib/auth";
 import { supabase } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const periods: { key: LeaderboardPeriod; icon: React.ElementType; color: string }[] = [
-  { key: "daily", icon: Calendar, color: "text-blue-500" },
-  { key: "weekly", icon: Clock, color: "text-purple-500" },
-  { key: "monthly", icon: Award, color: "text-emerald-500" },
-  { key: "all_time", icon: Star, color: "text-yellow-500" },
+const periods: { key: LeaderboardPeriod; icon: React.ElementType }[] = [
+  { key: "daily", icon: Calendar },
+  { key: "weekly", icon: Clock },
+  { key: "monthly", icon: Award },
+  { key: "all_time", icon: Star },
 ];
 
-const rankStyles: Record<number, string> = {
-  1: "bg-gradient-to-r from-yellow-500/10 to-yellow-500/5 border-l-4 border-yellow-500",
-  2: "bg-gradient-to-r from-gray-400/10 to-gray-400/5 border-l-4 border-gray-400",
-  3: "bg-gradient-to-r from-amber-500/10 to-amber-500/5 border-l-4 border-amber-500",
-};
-
-const rankTextColors: Record<number, string> = {
-  1: "text-yellow-500",
-  2: "text-gray-400",
-  3: "text-amber-500",
-};
-
-const rankBadgeStyles: Record<number, string> = {
-  1: "bg-yellow-500/10 text-yellow-500 border-yellow-500/30",
-  2: "bg-gray-400/10 text-gray-400 border-gray-400/30",
-  3: "bg-amber-500/10 text-amber-500 border-amber-500/30",
-};
+const podiumConfig = [
+  { bg: "from-yellow-500 to-amber-500", ring: "ring-yellow-500", medal: "🥇", label: "1st", height: "h-28", avatarSize: "h-16 w-16", textSize: "text-2xl" },
+  { bg: "from-gray-300 to-gray-400", ring: "ring-gray-400", medal: "🥈", label: "2nd", height: "h-20", avatarSize: "h-14 w-14", textSize: "text-xl" },
+  { bg: "from-amber-600 to-orange-500", ring: "ring-amber-500", medal: "🥉", label: "3rd", height: "h-16", avatarSize: "h-12 w-12", textSize: "text-lg" },
+];
 
 export default function LeaderboardPage() {
   const [activePeriod, setActivePeriod] = useState<LeaderboardPeriod>("all_time");
@@ -64,30 +46,25 @@ export default function LeaderboardPage() {
   const [mounted, setMounted] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [userPosition, setUserPosition] = useState<UserLeaderboardPosition | null>(null);
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const { user } = useAuth();
 
   const fetchLeaderboard = useCallback(async () => {
     try {
       const data = await getLeaderboard(activePeriod);
       setEntries(data);
-      setLastUpdated(new Date());
     } catch (err) {
-      console.error("Failed to fetch leaderboard:", err);
+      console.error("Leaderboard fetch error:", err);
       setEntries([]);
     }
   }, [activePeriod]);
 
   const fetchUserPosition = useCallback(async () => {
-    if (!user) {
-      setUserPosition(null);
-      return;
-    }
+    if (!user) { setUserPosition(null); return; }
     try {
       const pos = await getUserLeaderboardPosition(user.id, activePeriod);
       setUserPosition(pos);
     } catch (err) {
-      console.error("Failed to fetch user position:", err);
+      console.error("User position error:", err);
       setUserPosition(null);
     }
   }, [activePeriod, user]);
@@ -98,335 +75,234 @@ export default function LeaderboardPage() {
     fetchUserPosition();
   }, [fetchLeaderboard, fetchUserPosition]);
 
-  // Real-time subscription
   useEffect(() => {
     try {
       const channel = supabase
-        .channel(`leaderboard-${activePeriod}`)
-        .on(
-          "postgres_changes",
-          { event: "INSERT", schema: "public", table: "quiz_results" },
-          () => {
-            fetchLeaderboard();
-            fetchUserPosition();
-          }
-        )
+        .channel(`lb-${activePeriod}`)
+        .on("postgres_changes", { event: "INSERT", schema: "public", table: "quiz_results" }, () => {
+          fetchLeaderboard();
+          fetchUserPosition();
+        })
         .subscribe();
-
-      return () => {
-        supabase.removeChannel(channel);
-      };
-    } catch (err) {
-      console.warn("Realtime subscription failed:", err);
-    }
+      return () => { supabase.removeChannel(channel); };
+    } catch {}
   }, [activePeriod, fetchLeaderboard, fetchUserPosition]);
 
-  // Refresh on focus
   useEffect(() => {
-    const handler = () => {
-      fetchLeaderboard();
-      fetchUserPosition();
-    };
-    window.addEventListener("focus", handler);
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "visible") handler();
-    });
-    return () => window.removeEventListener("focus", handler);
+    const h = () => { fetchLeaderboard(); fetchUserPosition(); };
+    window.addEventListener("focus", h);
+    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") h(); });
+    return () => window.removeEventListener("focus", h);
   }, [fetchLeaderboard, fetchUserPosition]);
 
-  const activePeriodInfo = periods.find((p) => p.key === activePeriod)!;
-  const ActiveIcon = activePeriodInfo.icon;
+  const top3 = entries.filter((e) => e.rank <= 3);
+  const rest = entries.filter((e) => e.rank > 3);
+
+  // Reorder for podium display: 2nd, 1st, 3rd
+  const podiumOrder = [top3.find((e) => e.rank === 2), top3.find((e) => e.rank === 1), top3.find((e) => e.rank === 3)].filter(Boolean) as LeaderboardEntry[];
+  const podiumRanks = [2, 1, 3]; // visual order: left, center, right
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-500/10">
-                <Trophy className="h-6 w-6 text-yellow-500" />
-              </div>
-              Leaderboard
-            </h1>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Compete with classmates. Score = Accuracy + Volume + Consistency.
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            {lastUpdated && (
-              <span className="text-xs text-muted-foreground flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-                Live
-              </span>
-            )}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => {
-                setIsRefreshing(true);
-                fetchLeaderboard().finally(() => setIsRefreshing(false));
-                fetchUserPosition();
-              }}
-              disabled={isRefreshing}
-              className="gap-1.5"
-            >
-              <RefreshCw className={cn("h-3.5 w-3.5", isRefreshing && "animate-spin")} />
-              Refresh
-            </Button>
-          </div>
+      <div className="mb-6 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Trophy className="h-6 w-6 text-yellow-500" />
+          <h1 className="text-2xl font-bold tracking-tight">Leaderboard</h1>
         </div>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => { setIsRefreshing(true); fetchLeaderboard().finally(() => setIsRefreshing(false)); fetchUserPosition(); }}
+          disabled={isRefreshing}
+          className="gap-1.5 text-muted-foreground"
+        >
+          <RefreshCw className={cn("h-3.5 w-3.5", isRefreshing && "animate-spin")} />
+          Refresh
+        </Button>
       </div>
 
-      {/* Period Selector */}
-      <div className="mb-6 flex gap-2 p-1 bg-muted/50 rounded-xl w-fit">
-        {periods.map(({ key, icon: PIcon, color }) => (
+      {/* Period Tabs */}
+      <div className="mb-8 flex gap-1 p-1 bg-muted/50 rounded-xl w-fit">
+        {periods.map(({ key, icon: PIcon }) => (
           <button
             key={key}
             onClick={() => setActivePeriod(key)}
             className={cn(
-              "flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all",
+              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
               activePeriod === key
                 ? "bg-background shadow-sm text-foreground"
-                : "text-muted-foreground hover:text-foreground hover:bg-background/50"
+                : "text-muted-foreground hover:text-foreground"
             )}
           >
-            <PIcon className={cn("h-4 w-4", activePeriod === key ? color : "")} />
+            <PIcon className="h-4 w-4" />
             <span className="hidden sm:inline">{PERIOD_LABELS[key]}</span>
           </button>
         ))}
       </div>
 
-      {/* Your Rank Card */}
+      {/* Your Rank */}
       {user && userPosition && (
-        <Card className={cn(
-          "mb-6 overflow-hidden",
+        <div className={cn(
+          "mb-8 flex items-center gap-4 rounded-2xl border p-4",
           userPosition.qualified
-            ? "border-primary/20"
-            : "border-orange-500/20"
+            ? "bg-primary/5 border-primary/20"
+            : "bg-orange-500/5 border-orange-500/20"
         )}>
-          <CardContent className="p-0">
-            <div className="flex items-center gap-4 p-5">
-              <div className={cn(
-                "flex h-12 w-12 items-center justify-center rounded-xl",
-                userPosition.qualified ? "bg-primary/10" : "bg-orange-500/10"
-              )}>
-                <ActiveIcon className={cn("h-6 w-6", activePeriodInfo.color)} />
-              </div>
-              <div className="flex-1">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  Your {PERIOD_LABELS[activePeriod]} Rank
-                </p>
-                {userPosition.qualified ? (
-                  <p className="text-2xl font-bold">
-                    #{userPosition.rank}
-                    <span className="text-sm font-normal text-muted-foreground ml-2">
-                      of {userPosition.totalParticipants} participants
-                    </span>
-                  </p>
-                ) : (
-                  <p className="text-2xl font-bold text-muted-foreground">
-                    Unranked
-                  </p>
-                )}
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="text-center">
-                  <p className="text-lg font-bold">{userPosition.quizzesTaken}</p>
-                  <p className="text-[10px] text-muted-foreground uppercase">Quizzes</p>
-                </div>
-                <div className="h-8 w-px bg-border" />
-                <div className="text-center">
-                  <p className="text-lg font-bold">{userPosition.accuracy}%</p>
-                  <p className="text-[10px] text-muted-foreground uppercase">Accuracy</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-1.5">
-                {userPosition.qualified ? (
-                  <Badge variant="outline" className="bg-green-500/10 text-green-500 border-green-500/30 gap-1">
-                    <TrendingUp className="h-3 w-3" />
-                    Qualified
-                  </Badge>
-                ) : (
-                  <Badge variant="outline" className="bg-orange-500/10 text-orange-500 border-orange-500/30 gap-1">
-                    <ArrowUp className="h-3 w-3" />
-                    {userPosition.quizzesNeeded} more
-                  </Badge>
-                )}
-              </div>
-            </div>
-            <div className="px-5 pb-3">
-              <div className="flex items-center gap-2">
-                <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className={cn(
-                      "h-full rounded-full transition-all",
-                      userPosition.qualified ? "bg-green-500" : "bg-orange-500"
-                    )}
-                    style={{
-                      width: `${Math.min(
-                        100,
-                        (userPosition.quizzesTaken / PERIOD_MIN_QUIZZES[activePeriod]) * 100
-                      )}%`,
-                    }}
-                  />
-                </div>
-                <span className="text-[10px] text-muted-foreground whitespace-nowrap">
-                  {userPosition.quizzesTaken}/{PERIOD_MIN_QUIZZES[activePeriod]} quizzes
-                </span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Leaderboard List */}
-      <Card>
-        <CardContent className="p-0">
-          {!mounted ? (
-            <div className="p-6 space-y-4">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="flex items-center gap-4 animate-pulse">
-                  <div className="w-8 h-5 bg-muted rounded" />
-                  <div className="h-10 w-10 rounded-full bg-muted" />
-                  <div className="flex-1 space-y-2">
-                    <div className="h-4 w-32 bg-muted rounded" />
-                    <div className="h-3 w-48 bg-muted rounded" />
-                  </div>
-                  <div className="h-5 w-16 bg-muted rounded" />
-                </div>
-              ))}
-            </div>
-          ) : entries.length === 0 ? (
-            <div className="p-12 text-center">
-              <Users className="mx-auto h-12 w-12 text-muted-foreground/30 mb-3" />
-              <p className="font-medium text-muted-foreground">No data yet</p>
-              <p className="text-sm text-muted-foreground/70 mt-1">
-                Complete {PERIOD_MIN_QUIZZES[activePeriod]}+ quizzes to appear on the{" "}
-                {PERIOD_LABELS[activePeriod].toLowerCase()} leaderboard
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-sm">
+            {userPosition.qualified ? `#${userPosition.rank}` : "?"}
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-semibold">
+              {userPosition.qualified ? "Your Rank" : "Not ranked yet"}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {userPosition.quizzesTaken} quizzes &middot; {userPosition.accuracy}% accuracy
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-px bg-border" />
+            <div className="text-right">
+              <p className="text-xs text-muted-foreground">
+                {userPosition.qualified
+                  ? `${userPosition.rank}/${userPosition.totalParticipants}`
+                  : `${userPosition.quizzesNeeded} more to qualify`}
               </p>
             </div>
-          ) : (
-            <div className="divide-y">
-              {entries.map((entry, idx) => {
-                const isCurrentUser = user?.email === entry.email;
-                const rank = entry.rank;
-                const isTop3 = rank <= 3;
+          </div>
+        </div>
+      )}
+
+      {!mounted ? (
+        /* Skeleton */
+        <div className="space-y-3">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="flex items-center gap-4 p-4 rounded-xl animate-pulse bg-muted/30">
+              <div className="w-8 h-5 bg-muted rounded" />
+              <div className="h-10 w-10 rounded-full bg-muted" />
+              <div className="flex-1 space-y-2">
+                <div className="h-4 w-28 bg-muted rounded" />
+                <div className="h-3 w-36 bg-muted rounded" />
+              </div>
+              <div className="h-6 w-14 bg-muted rounded" />
+            </div>
+          ))}
+        </div>
+      ) : entries.length === 0 ? (
+        /* Empty state */
+        <div className="py-16 text-center">
+          <Users className="mx-auto h-10 w-10 text-muted-foreground/30 mb-3" />
+          <p className="font-medium text-muted-foreground">No rankings yet</p>
+          <p className="text-sm text-muted-foreground/60 mt-1">
+            Complete {PERIOD_MIN_QUIZZES[activePeriod]}+ quizzes to appear here
+          </p>
+        </div>
+      ) : (
+        <>
+          {/* Top 3 Podium */}
+          {podiumOrder.length >= 3 && (
+            <div className="mb-8 flex items-end justify-center gap-3">
+              {podiumOrder.map((entry, visualIdx) => {
+                const rank = podiumRanks[visualIdx];
+                const cfg = podiumConfig[rank - 1];
+                const isCenter = rank === 1;
+                const isMe = user?.email === entry.email;
 
                 return (
-                  <div
-                    key={entry.user_id}
-                    className={cn(
-                      "flex items-center gap-4 px-5 py-4 transition-colors hover:bg-muted/30",
-                      rankStyles[rank],
-                      isCurrentUser && "bg-primary/5 ring-1 ring-inset ring-primary/20"
-                    )}
-                  >
-                    {/* Rank */}
-                    <div className="w-8 text-center shrink-0">
-                      {isTop3 ? (
-                        <span className={cn("text-lg font-bold", rankTextColors[rank])}>
-                          {rank === 1 ? "🥇" : rank === 2 ? "🥈" : "🥉"}
-                        </span>
-                      ) : (
-                        <span className="text-sm font-semibold text-muted-foreground">
-                          #{rank}
-                        </span>
-                      )}
-                    </div>
-
+                  <div key={entry.user_id} className={cn("flex flex-col items-center", isCenter ? "order-2" : visualIdx === 0 ? "order-1" : "order-3")}>
                     {/* Avatar */}
-                    <Avatar
-                      className={cn(
-                        "h-10 w-10 shrink-0",
-                        isCurrentUser && "ring-2 ring-primary"
-                      )}
-                    >
-                      <AvatarFallback className="text-sm font-semibold bg-muted">
-                        {entry.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")
-                          .toUpperCase()
-                          .slice(0, 2)}
-                      </AvatarFallback>
-                    </Avatar>
-
-                    {/* Name + Stats */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2">
-                        <p className="font-semibold text-sm truncate">
-                          {entry.name}
-                        </p>
-                        {isCurrentUser && (
-                          <Badge
-                            variant="outline"
-                            className="text-[10px] px-1.5 py-0 h-5 bg-primary/10 text-primary border-primary/30"
-                          >
-                            You
-                          </Badge>
-                        )}
-                        {isTop3 && (
-                          <Badge
-                            variant="outline"
-                            className={cn(
-                              "text-[10px] px-1.5 py-0 h-5",
-                              rankBadgeStyles[rank]
-                            )}
-                          >
-                            {rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}
-                          </Badge>
-                        )}
+                    <div className={cn("relative mb-2", isCenter && "-mt-4")}>
+                      <div className={cn("rounded-full ring-2", cfg.ring, cfg.avatarSize, "flex items-center justify-center bg-gradient-to-br", cfg.bg)}>
+                        <Avatar className={cn(cfg.avatarSize, "border-0")}>
+                          <AvatarFallback className={cn("bg-transparent text-white font-bold", cfg.textSize)}>
+                            {entry.name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)}
+                          </AvatarFallback>
+                        </Avatar>
                       </div>
-                      <div className="flex items-center gap-3 mt-0.5 text-xs text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Target className="h-3 w-3" />
-                          {entry.quizzesTaken} quizzes
-                        </span>
-                        <span className="flex items-center gap-1">
-                          {entry.accuracy}%
-                        </span>
-                      </div>
+                      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-lg">
+                        {cfg.medal}
+                      </span>
                     </div>
 
-                    {/* Score */}
-                    <div className="text-right shrink-0">
-                      <p className="text-lg font-bold tabular-nums">
-                        {entry.score}
-                      </p>
-                      <p className="text-[10px] text-muted-foreground">
-                        {entry.totalCorrect}/{entry.totalAttempted} correct
-                      </p>
-                    </div>
+                    {/* Name */}
+                    <p className={cn("font-semibold text-sm text-center max-w-[100px] truncate", isMe && "text-primary")}>
+                      {entry.name}
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      {entry.score} pts
+                    </p>
 
-                    <ChevronRight className="h-4 w-4 text-muted-foreground/50 shrink-0" />
+                    {/* Bar */}
+                    <div className={cn("w-24 rounded-t-lg mt-2 bg-gradient-to-t", cfg.bg, cfg.height, "opacity-80")} />
                   </div>
                 );
               })}
             </div>
           )}
-        </CardContent>
-      </Card>
 
-      {/* How it works */}
-      <div className="mt-6 grid grid-cols-2 gap-3 text-xs text-muted-foreground sm:grid-cols-4">
-        <div className="rounded-lg bg-muted/30 p-3 text-center">
-          <p className="font-semibold text-foreground mb-0.5">Score</p>
-          <p>Correct x 0.7 + Accuracy x 0.3</p>
-        </div>
-        <div className="rounded-lg bg-muted/30 p-3 text-center">
-          <p className="font-semibold text-foreground mb-0.5">Volume Bonus</p>
-          <p>+1 per quiz, up to +10</p>
-        </div>
-        <div className="rounded-lg bg-muted/30 p-3 text-center">
-          <p className="font-semibold text-foreground mb-0.5">Tiebreaker</p>
-          <p>Score &gt; Accuracy &gt; Quizzes</p>
-        </div>
-        <div className="rounded-lg bg-muted/30 p-3 text-center">
-          <p className="font-semibold text-foreground mb-0.5">Minimum</p>
-          <p>Daily: 1 / Weekly: 5 / Monthly: 10 / All: 20</p>
-        </div>
-      </div>
+          {/* Rest of entries */}
+          {rest.length > 0 && (
+            <div className="rounded-xl border divide-y overflow-hidden">
+              {rest.map((entry) => {
+                const isMe = user?.email === entry.email;
+                return (
+                  <div
+                    key={entry.user_id}
+                    className={cn(
+                      "flex items-center gap-3 px-4 py-3 transition-colors hover:bg-muted/30",
+                      isMe && "bg-primary/5"
+                    )}
+                  >
+                    <span className="w-7 text-center text-sm font-semibold text-muted-foreground shrink-0">
+                      #{entry.rank}
+                    </span>
+                    <Avatar className={cn("h-9 w-9 shrink-0", isMe && "ring-2 ring-primary")}>
+                      <AvatarFallback className="text-xs font-semibold bg-muted">
+                        {entry.name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <p className="text-sm font-semibold truncate">{entry.name}</p>
+                        {isMe && (
+                          <Badge variant="outline" className="text-[10px] px-1.5 py-0 h-4 bg-primary/10 text-primary border-primary/30">
+                            You
+                          </Badge>
+                        )}
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        {entry.quizzesTaken} quizzes &middot; {entry.accuracy}%
+                      </p>
+                    </div>
+                    <span className="text-base font-bold tabular-nums shrink-0">
+                      {entry.score}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {/* You at bottom if ranked > 3 */}
+          {user && userPosition && userPosition.qualified && userPosition.rank > 3 && (
+            <div className="mt-3 rounded-xl border bg-primary/5 p-3 flex items-center gap-3">
+              <span className="w-7 text-center text-sm font-bold text-primary shrink-0">
+                #{userPosition.rank}
+              </span>
+              <Avatar className="h-9 w-9 shrink-0 ring-2 ring-primary">
+                <AvatarFallback className="text-xs font-semibold bg-primary/10 text-primary">
+                  {user?.name?.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2) || "?"}
+                </AvatarFallback>
+              </Avatar>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold">{user.name} <Badge variant="outline" className="text-[10px] px-1.5 py-0 h-4 bg-primary/10 text-primary border-primary/30">You</Badge></p>
+                <p className="text-xs text-muted-foreground">{userPosition.quizzesTaken} quizzes &middot; {userPosition.accuracy}%</p>
+              </div>
+              <span className="text-base font-bold tabular-nums shrink-0">—</span>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }
