@@ -2,154 +2,1021 @@
   {
     "unit_id": "bio-unit-2",
     "question_text": "Glycolysis is the breakdown of glucose to:",
-    "options": ["Pyruvate", "Acetyl CoA", "CO₂ and H₂O", "Lactic acid only"],
+    "options": [
+      "Pyruvate",
+      "Acetyl CoA",
+      "CO₂ and H₂O",
+      "Lactic acid only"
+    ],
     "correct_index": 0,
     "explanation": "Glycolysis is the metabolic pathway that converts glucose (6C) into two molecules of pyruvate (3C), producing ATP and NADH. It occurs in the cytoplasm of cells.",
     "difficulty": "easy",
-    "tags": ["biochemistry", "glycolysis"]
+    "tags": [
+      "biochemistry",
+      "glycolysis"
+    ]
   },
   {
     "unit_id": "bio-unit-2",
     "question_text": "The Krebs cycle (Citric acid cycle) occurs in:",
-    "options": ["Cytoplasm", "Mitochondrial matrix", "Nucleus", "Cell membrane"],
+    "options": [
+      "Cytoplasm",
+      "Mitochondrial matrix",
+      "Nucleus",
+      "Cell membrane"
+    ],
     "correct_index": 1,
     "explanation": "The Krebs cycle (Citric acid cycle / TCA cycle) occurs in the mitochondrial matrix. It is the final common pathway for oxidation of carbohydrates, fats, and amino acids.",
     "difficulty": "easy",
-    "tags": ["biochemistry", "Krebs cycle"]
+    "tags": [
+      "biochemistry",
+      "Krebs cycle"
+    ]
   },
   {
     "unit_id": "bio-unit-2",
     "question_text": "Vitamins are defined as:",
-    "options": ["Proteins needed for growth", "Essential organic compounds needed in small amounts", "Mineral elements", "Carbohydrates for energy"],
+    "options": [
+      "Proteins needed for growth",
+      "Essential organic compounds needed in small amounts",
+      "Mineral elements",
+      "Carbohydrates for energy"
+    ],
     "correct_index": 1,
     "explanation": "Vitamins are essential organic compounds required in small quantities that cannot be synthesized by the body and must be obtained from the diet.",
     "difficulty": "easy",
-    "tags": ["vitamins", "definition"]
+    "tags": [
+      "vitamins",
+      "definition"
+    ]
   },
   {
     "unit_id": "bio-unit-2",
     "question_text": "Enzymes are biologically active:",
-    "options": ["Lipids", "Carbohydrates", "Proteins", "Nucleic acids"],
+    "options": [
+      "Lipids",
+      "Carbohydrates",
+      "Proteins",
+      "Nucleic acids"
+    ],
     "correct_index": 2,
     "explanation": "Enzymes are biological catalysts that are proteins in nature. They speed up biochemical reactions by lowering the activation energy without being consumed.",
     "difficulty": "easy",
-    "tags": ["enzymes", "nature"]
+    "tags": [
+      "enzymes",
+      "nature"
+    ]
   },
   {
     "unit_id": "bio-unit-3",
     "question_text": "DNA differs from RNA in that DNA contains:",
-    "options": ["Ribose sugar and uracil", "Deoxyribose sugar and thymine", "Ribose sugar and thymine", "Deoxyribose sugar and uracil"],
+    "options": [
+      "Ribose sugar and uracil",
+      "Deoxyribose sugar and thymine",
+      "Ribose sugar and thymine",
+      "Deoxyribose sugar and uracil"
+    ],
     "correct_index": 1,
     "explanation": "DNA contains deoxyribose sugar and the base thymine, while RNA contains ribose sugar and the base uracil. Both contain adenine, guanine, and cytosine.",
     "difficulty": "easy",
-    "tags": ["nucleic acids", "DNA vs RNA"]
+    "tags": [
+      "nucleic acids",
+      "DNA vs RNA"
+    ]
   },
   {
     "unit_id": "bio-unit-3",
     "question_text": "PCR (Polymerase Chain Reaction) is used for:",
-    "options": ["Protein purification", "Amplification of specific DNA sequences", "Cell culture", "Drug extraction"],
+    "options": [
+      "Protein purification",
+      "Amplification of specific DNA sequences",
+      "Cell culture",
+      "Drug extraction"
+    ],
     "correct_index": 1,
     "explanation": "PCR is a technique used to amplify (make many copies of) specific DNA sequences. It is widely used in molecular biology, diagnostics, and forensic science.",
     "difficulty": "easy",
-    "tags": ["rDNA", "PCR"]
+    "tags": [
+      "rDNA",
+      "PCR"
+    ]
   },
   {
     "unit_id": "bio-unit-4",
     "question_text": "Liver Function Tests (LFT) include measurement of:",
-    "options": ["Blood urea and creatinine", "SGOT, SGPT, and bilirubin", "T3, T4, and TSH", "Hemoglobin and hematocrit"],
+    "options": [
+      "Blood urea and creatinine",
+      "SGOT, SGPT, and bilirubin",
+      "T3, T4, and TSH",
+      "Hemoglobin and hematocrit"
+    ],
     "correct_index": 1,
     "explanation": "LFT includes SGOT (AST), SGPT (ALT), bilirubin (total, direct, indirect), alkaline phosphatase, and albumin. These assess liver function and damage.",
     "difficulty": "easy",
-    "tags": ["diagnostic tests", "LFT"]
+    "tags": [
+      "diagnostic tests",
+      "LFT"
+    ]
   },
   {
     "unit_id": "bio-unit-4",
     "question_text": "Kidney Function Tests (KFT) primarily include:",
-    "options": ["SGOT and SGPT", "Blood urea and serum creatinine", "Blood sugar and HbA1c", "T3 and T4"],
+    "options": [
+      "SGOT and SGPT",
+      "Blood urea and serum creatinine",
+      "Blood sugar and HbA1c",
+      "T3 and T4"
+    ],
     "correct_index": 1,
     "explanation": "KFT primarily includes blood urea nitrogen (BUN), serum creatinine, and estimated GFR. These assess kidney function and the ability to filter waste products.",
     "difficulty": "easy",
-    "tags": ["diagnostic tests", "KFT"]
+    "tags": [
+      "diagnostic tests",
+      "KFT"
+    ]
   },
   {
     "unit_id": "bio-unit-5",
     "question_text": "Antibodies (immunoglobulins) are produced by:",
-    "options": ["T-lymphocytes", "B-lymphocytes (plasma cells)", "Red blood cells", "Platelets"],
+    "options": [
+      "T-lymphocytes",
+      "B-lymphocytes (plasma cells)",
+      "Red blood cells",
+      "Platelets"
+    ],
     "correct_index": 1,
     "explanation": "Antibodies (immunoglobulins) are produced by B-lymphocytes that have differentiated into plasma cells. Each antibody is specific to a particular antigen.",
     "difficulty": "easy",
-    "tags": ["immunology", "antibodies"]
+    "tags": [
+      "immunology",
+      "antibodies"
+    ]
   },
   {
     "unit_id": "bio-unit-5",
     "question_text": "Vaccines work by:",
-    "options": ["Killing bacteria directly", "Stimulating the immune system to produce antibodies", "Providing passive immunity only", "Replacing damaged immune cells"],
+    "options": [
+      "Killing bacteria directly",
+      "Stimulating the immune system to produce antibodies",
+      "Providing passive immunity only",
+      "Replacing damaged immune cells"
+    ],
     "correct_index": 1,
     "explanation": "Vaccines stimulate the immune system to produce antibodies and memory cells against specific pathogens, providing active immunity without causing the disease.",
     "difficulty": "easy",
-    "tags": ["immunology", "vaccines"]
+    "tags": [
+      "immunology",
+      "vaccines"
+    ]
   },
   {
     "unit_id": "micro-unit-2",
     "question_text": "Gram-positive bacteria differ from Gram-negative bacteria in that Gram-positive bacteria:",
-    "options": ["Have a thin peptidoglycan layer", "Have a thick peptidoglycan layer", "Have an outer membrane", "Are always pathogenic"],
+    "options": [
+      "Have a thin peptidoglycan layer",
+      "Have a thick peptidoglycan layer",
+      "Have an outer membrane",
+      "Are always pathogenic"
+    ],
     "correct_index": 1,
     "explanation": "Gram-positive bacteria have a thick peptidoglycan layer (20-80 nm) that retains the crystal violet-iodine complex, appearing purple. Gram-negative have a thin layer and appear pink/red.",
     "difficulty": "easy",
-    "tags": ["microbiology", "gram stain"]
+    "tags": [
+      "microbiology",
+      "gram stain"
+    ]
   },
   {
     "unit_id": "micro-unit-2",
     "question_text": "The bacterial growth curve shows which phases in order?",
-    "options": ["Log, Lag, Stationary, Death", "Lag, Log (exponential), Stationary, Death", "Death, Stationary, Log, Lag", "Stationary, Lag, Death, Log"],
+    "options": [
+      "Log, Lag, Stationary, Death",
+      "Lag, Log (exponential), Stationary, Death",
+      "Death, Stationary, Log, Lag",
+      "Stationary, Lag, Death, Log"
+    ],
     "correct_index": 1,
     "explanation": "The bacterial growth curve has four phases: Lag phase (adaptation), Log/Exponential phase (rapid division), Stationary phase (growth = death), and Death phase (decline).",
     "difficulty": "medium",
-    "tags": ["microbiology", "growth curve"]
+    "tags": [
+      "microbiology",
+      "growth curve"
+    ]
   },
   {
     "unit_id": "micro-unit-2",
     "question_text": "A virus is characterized by:",
-    "options": ["Having its own ribosomes", "Being an obligate intracellular parasite", "Being able to reproduce independently", "Having both DNA and RNA"],
+    "options": [
+      "Having its own ribosomes",
+      "Being an obligate intracellular parasite",
+      "Being able to reproduce independently",
+      "Having both DNA and RNA"
+    ],
     "correct_index": 1,
     "explanation": "Viruses are obligate intracellular parasites — they cannot reproduce independently and require a host cell's machinery for replication. They contain either DNA or RNA, not both.",
     "difficulty": "easy",
-    "tags": ["microbiology", "virus"]
+    "tags": [
+      "microbiology",
+      "virus"
+    ]
   },
   {
     "unit_id": "micro-unit-4",
     "question_text": "Autoclaving sterilization uses:",
-    "options": ["Dry heat at 160°C", "Moist heat (steam under pressure) at 121°C for 15-20 minutes", "UV radiation", "Chemical disinfection"],
+    "options": [
+      "Dry heat at 160°C",
+      "Moist heat (steam under pressure) at 121°C for 15-20 minutes",
+      "UV radiation",
+      "Chemical disinfection"
+    ],
     "correct_index": 1,
     "explanation": "Autoclaving uses moist heat (saturated steam under pressure) at 121°C (15 psi) for 15-20 minutes. It is the most reliable method of sterilization for heat-stable materials.",
     "difficulty": "easy",
-    "tags": ["sterilization", "autoclave"]
+    "tags": [
+      "sterilization",
+      "autoclave"
+    ]
   },
   {
     "unit_id": "micro-unit-4",
     "question_text": "Sterilization differs from disinfection in that sterilization:",
-    "options": ["Kills some pathogens", "Destroys ALL forms of microbial life including spores", "Only reduces microbial count", "Only works on surfaces"],
+    "options": [
+      "Kills some pathogens",
+      "Destroys ALL forms of microbial life including spores",
+      "Only reduces microbial count",
+      "Only works on surfaces"
+    ],
     "correct_index": 1,
     "explanation": "Sterilization destroys ALL forms of microbial life including bacterial spores. Disinfection only reduces or eliminates most pathogenic organisms but may not kill spores.",
     "difficulty": "easy",
-    "tags": ["sterilization", "definition"]
+    "tags": [
+      "sterilization",
+      "definition"
+    ]
   },
   {
     "unit_id": "micro-unit-4",
     "question_text": "Membrane filtration is used for sterilization of:",
-    "options": ["Heat-stable materials", "Heat-labile (heat-sensitive) liquids", "Dry powders", "Glassware only"],
+    "options": [
+      "Heat-stable materials",
+      "Heat-labile (heat-sensitive) liquids",
+      "Dry powders",
+      "Glassware only"
+    ],
     "correct_index": 1,
     "explanation": "Membrane filtration (0.22 μm pore size) is used for sterilizing heat-labile liquids such as antibiotics, enzyme solutions, and serum that cannot withstand autoclaving.",
     "difficulty": "medium",
-    "tags": ["sterilization", "membrane filtration"]
+    "tags": [
+      "sterilization",
+      "membrane filtration"
+    ]
   },
   {
     "unit_id": "micro-unit-5",
     "question_text": "The Kirby-Bauer disc diffusion method is used to:",
-    "options": ["Count bacteria", "Determine antibiotic sensitivity of bacteria", "Sterilize media", "Identify virus"],
+    "options": [
+      "Count bacteria",
+      "Determine antibiotic sensitivity of bacteria",
+      "Sterilize media",
+      "Identify virus"
+    ],
     "correct_index": 1,
     "explanation": "The Kirby-Bauer disc diffusion method determines antibiotic susceptibility by placing antibiotic discs on an inoculated agar plate. Zones of inhibition are measured to determine sensitivity.",
     "difficulty": "easy",
-    "tags": ["microbial assay", "Kirby-Bauer"]
+    "tags": [
+      "microbial assay",
+      "Kirby-Bauer"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Glycolysis occurs in:",
+    "options": [
+      "Mitochondria",
+      "Cytoplasm",
+      "Nucleus",
+      "Endoplasmic reticulum"
+    ],
+    "correct_index": 1,
+    "explanation": "Glycolysis (Embden-Meyerhof pathway) occurs in the cytoplasm, converting glucose to pyruvate.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "glycolysis"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "The end product of glycolysis is:",
+    "options": [
+      "Acetyl CoA",
+      "Pyruvate",
+      "Citric acid",
+      "Oxaloacetate"
+    ],
+    "correct_index": 1,
+    "explanation": "Glycolysis converts one molecule of glucose into two molecules of pyruvate.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "glycolysis"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Krebs cycle (TCA cycle) takes place in:",
+    "options": [
+      "Cytoplasm",
+      "Mitochondrial matrix",
+      "Cell membrane",
+      "Nucleus"
+    ],
+    "correct_index": 1,
+    "explanation": "The Krebs cycle occurs in the mitochondrial matrix, oxidizing acetyl CoA to CO2 and generating NADH/FADH2.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "Krebs cycle"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Essential amino acids are:",
+    "options": [
+      "Amino acids synthesized by the body",
+      "Amino acids that must be obtained from diet",
+      "Only non-polar amino acids",
+      "Only acidic amino acids"
+    ],
+    "correct_index": 1,
+    "explanation": "Essential amino acids (9 in humans) cannot be synthesized by the body and must be obtained from the diet.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "amino acids"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Proteins are polymers of:",
+    "options": [
+      "Fatty acids",
+      "Amino acids",
+      "Nucleotides",
+      "Monosaccharides"
+    ],
+    "correct_index": 1,
+    "explanation": "Proteins are polymers of amino acids linked by peptide bonds (-CO-NH-).",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "proteins"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Beta-oxidation of fatty acids occurs in:",
+    "options": [
+      "Cytoplasm",
+      "Mitochondrial matrix",
+      "Nucleus",
+      "Ribosomes"
+    ],
+    "correct_index": 1,
+    "explanation": "Beta-oxidation (breakdown of fatty acids) occurs in the mitochondrial matrix, producing acetyl CoA units.",
+    "difficulty": "medium",
+    "tags": [
+      "biochemistry",
+      "beta-oxidation"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Vitamin C (ascorbic acid) deficiency causes:",
+    "options": [
+      "Rickets",
+      "Scurvy",
+      "Beriberi",
+      "Pellagra"
+    ],
+    "correct_index": 1,
+    "explanation": "Scurvy is caused by Vitamin C deficiency, characterized by bleeding gums, poor wound healing, and bruising.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "vitamins"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Vitamin D deficiency causes:",
+    "options": [
+      "Scurvy",
+      "Rickets in children and osteomalacia in adults",
+      "Beriberi",
+      "Night blindness"
+    ],
+    "correct_index": 1,
+    "explanation": "Vitamin D deficiency impairs calcium absorption, causing rickets (children) and osteomalacia (adults).",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "vitamins"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Enzymes are:",
+    "options": [
+      "Lipids",
+      "Biological catalysts (usually proteins)",
+      "Nucleic acids",
+      "Carbohydrates"
+    ],
+    "correct_index": 1,
+    "explanation": "Enzymes are biological catalysts that speed up chemical reactions without being consumed in the process.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "enzymes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Coenzymes are:",
+    "options": [
+      "Inorganic metal ions",
+      "Organic non-protein molecules that assist enzyme function",
+      "The protein part of enzymes",
+      "Substrate molecules"
+    ],
+    "correct_index": 1,
+    "explanation": "Coenzymes are organic non-protein helpers (often derived from vitamins) that assist enzyme catalytic activity.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "coenzymes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "LDH (Lactate Dehydrogenase) is an example of:",
+    "options": [
+      "A hormone",
+      "An isoenzyme",
+      "A vitamin",
+      "A mineral"
+    ],
+    "correct_index": 1,
+    "explanation": "LDH exists as five isoenzymes (LDH-1 to LDH-5) found in different tissues, used in diagnosis of tissue damage.",
+    "difficulty": "medium",
+    "tags": [
+      "biochemistry",
+      "isoenzymes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "DNA contains the sugar:",
+    "options": [
+      "Ribose",
+      "Deoxyribose",
+      "Glucose",
+      "Fructose"
+    ],
+    "correct_index": 1,
+    "explanation": "DNA (Deoxyribonucleic acid) contains deoxyribose sugar. RNA contains ribose sugar.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "DNA"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "RNA contains the base:",
+    "options": [
+      "Thymine",
+      "Uracil",
+      "Only purines",
+      "Methylcytosine"
+    ],
+    "correct_index": 1,
+    "explanation": "RNA contains uracil instead of thymine. Both DNA and RNA contain adenine, guanine, and cytosine.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "RNA"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "DNA replication is:",
+    "options": [
+      "Conservative",
+      "Semi-conservative",
+      "Dispersive",
+      "Non-conservative"
+    ],
+    "correct_index": 1,
+    "explanation": "DNA replication is semi-conservative: each new DNA molecule has one old strand and one newly synthesized strand.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "replication"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "Translation is the process of:",
+    "options": [
+      "Copying DNA to DNA",
+      "Copying DNA to RNA",
+      "Synthesizing proteins from mRNA template",
+      "Breaking down proteins"
+    ],
+    "correct_index": 2,
+    "explanation": "Translation is protein synthesis where ribosomes read mRNA codons and assemble amino acids into polypeptides.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "translation"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "Transcription involves synthesis of:",
+    "options": [
+      "DNA from DNA",
+      "mRNA from DNA template",
+      "Protein from mRNA",
+      "DNA from RNA"
+    ],
+    "correct_index": 1,
+    "explanation": "Transcription is the synthesis of mRNA from a DNA template by RNA polymerase in the nucleus.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "transcription"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "rDNA (recombinant DNA) technology involves:",
+    "options": [
+      "Only studying natural DNA",
+      "Combining DNA from different sources to create new genetic combinations",
+      "Breaking down DNA",
+      "Measuring DNA concentration"
+    ],
+    "correct_index": 1,
+    "explanation": "rDNA technology combines DNA from different sources using restriction enzymes and ligases to create recombinant molecules.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "rDNA"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Antibodies are produced by:",
+    "options": [
+      "Red blood cells",
+      "B-lymphocytes (plasma cells)",
+      "T-lymphocytes",
+      "Platelets"
+    ],
+    "correct_index": 1,
+    "explanation": "B-lymphocytes differentiate into plasma cells that produce and secrete antibodies (immunoglobulins).",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "antibodies"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "IgG is:",
+    "options": [
+      "Found only in saliva",
+      "The most abundant immunoglobulin in blood, crosses placenta",
+      "Present only in breast milk",
+      "The largest antibody"
+    ],
+    "correct_index": 1,
+    "explanation": "IgG is the most abundant (75-80%) immunoglobulin in serum, crosses the placenta, and provides long-term immunity.",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "IgG"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "IgE is associated with:",
+    "options": [
+      "Bacterial infections",
+      "Allergic reactions and parasitic infections",
+      "Viral infections",
+      "Autoimmune diseases"
+    ],
+    "correct_index": 1,
+    "explanation": "IgE mediates type I hypersensitivity (allergic) reactions and provides defense against parasitic worms.",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "IgE"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Vaccination provides:",
+    "options": [
+      "Passive immunity only",
+      "Active immunity by stimulating the body's own immune response",
+      "No immunity",
+      "Artificial passive immunity only"
+    ],
+    "correct_index": 1,
+    "explanation": "Vaccination stimulates the body's own immune system to produce antibodies and memory cells (active immunity).",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "vaccination"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "T-lymphocytes are primarily responsible for:",
+    "options": [
+      "Antibody production",
+      "Cell-mediated immunity",
+      "Complement activation",
+      "Inflammation only"
+    ],
+    "correct_index": 1,
+    "explanation": "T-lymphocytes mediate cell-mediated immunity, including cytotoxic T cells and helper T cells.",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "T cells"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Antigen is defined as:",
+    "options": [
+      "A substance that produces antibodies",
+      "Any substance that can trigger an immune response",
+      "Only a protein",
+      "Only a carbohydrate"
+    ],
+    "correct_index": 1,
+    "explanation": "An antigen is any substance (protein, carbohydrate, lipid, nucleic acid) that can trigger an immune response.",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "antigen"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Gram-positive bacteria stain:",
+    "options": [
+      "Pink/red",
+      "Purple/blue",
+      "Colorless",
+      "Yellow"
+    ],
+    "correct_index": 1,
+    "explanation": "Gram-positive bacteria retain the crystal violet stain and appear purple/blue due to thick peptidoglycan layer.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "gram stain"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Gram-negative bacteria stain:",
+    "options": [
+      "Purple/blue",
+      "Pink/red",
+      "Colorless",
+      "Green"
+    ],
+    "correct_index": 1,
+    "explanation": "Gram-negative bacteria lose crystal violet and take up counterstain (safranin), appearing pink/red.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "gram stain"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Bacteria reproduce by:",
+    "options": [
+      "Meiosis",
+      "Binary fission",
+      "Mitosis",
+      "Budding only"
+    ],
+    "correct_index": 1,
+    "explanation": "Bacteria reproduce asexually by binary fission, where one cell divides into two identical daughter cells.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "reproduction"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Bacterial cell wall is primarily composed of:",
+    "options": [
+      "Lipids",
+      "Peptidoglycan (murein)",
+      "Nucleic acids",
+      "Proteins only"
+    ],
+    "correct_index": 1,
+    "explanation": "Bacterial cell walls contain peptidoglycan, a polymer of sugars and amino acids that provides structural support.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "cell wall"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Viruses are:",
+    "options": [
+      "Cellular organisms",
+      "Obligate intracellular parasites (acellular)",
+      "Always pathogenic",
+      "Free-living organisms"
+    ],
+    "correct_index": 1,
+    "explanation": "Viruses are acellular, obligate intracellular parasites that can only replicate inside living host cells.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "viruses"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Fungi are classified as:",
+    "options": [
+      "Prokaryotes",
+      "Eukaryotes",
+      "Viruses",
+      "Prions"
+    ],
+    "correct_index": 1,
+    "explanation": "Fungi are eukaryotic organisms with membrane-bound nuclei, including yeasts (unicellular) and molds (multicellular).",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "fungi"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "The bacterial growth curve has how many phases:",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct_index": 2,
+    "explanation": "The bacterial growth curve has 4 phases: Lag, Log (exponential), Stationary, and Death (decline) phase.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "growth curve"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "MacConkey agar is a:",
+    "options": [
+      "Blood agar",
+      "Selective and differential culture medium for gram-negative bacteria",
+      "Enriched medium for all bacteria",
+      "Anaerobic medium"
+    ],
+    "correct_index": 1,
+    "explanation": "MacConkey agar selects for gram-negative bacteria and differentiates lactose fermenters (pink colonies) from non-fermenters.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "culture media"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Hot air oven sterilization requires:",
+    "options": [
+      "100°C for 30 minutes",
+      "160-170°C for 1-2 hours",
+      "80°C for 1 hour",
+      "200°C for 5 minutes"
+    ],
+    "correct_index": 1,
+    "explanation": "Hot air oven uses dry heat at 160-170°C for 1-2 hours for sterilization of glassware and instruments.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "hot air oven"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Membrane filtration (0.22 micron) is used for:",
+    "options": [
+      "Sterilization of heat-sensitive liquids",
+      "Sterilization of glassware only",
+      "Sterilization of powders",
+      "Sterilization of oils only"
+    ],
+    "correct_index": 0,
+    "explanation": "Membrane filters (0.22 um) remove bacteria from heat-sensitive solutions like antibiotics and sera.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "membrane filtration"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "UV radiation is used for:",
+    "options": [
+      "Sterilization of liquids",
+      "Surface disinfection of air and surfaces",
+      "Sterilization of surgical instruments",
+      "Injectable solutions sterilization"
+    ],
+    "correct_index": 1,
+    "explanation": "UV radiation (254 nm) is used for surface and air disinfection in operation theatres and laboratories.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "UV"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Ethylene oxide is used for:",
+    "options": [
+      "Water sterilization",
+      "Sterilization of heat-sensitive medical devices and plastics",
+      "Food preservation",
+      "Air purification only"
+    ],
+    "correct_index": 1,
+    "explanation": "Ethylene oxide gas penetrates materials and kills all microorganisms, used for heat-sensitive equipment like catheters.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "ethylene oxide"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Tyndallization involves:",
+    "options": [
+      "Single autoclaving",
+      "Intermittent sterilization by heating at 100°C for 30 minutes on 3 consecutive days",
+      "Dry heat sterilization",
+      "Chemical sterilization"
+    ],
+    "correct_index": 1,
+    "explanation": "Tyndallization (fractional sterilization) uses repeated heating at 100°C to kill vegetative forms, then spores germinate and are killed on subsequent days.",
+    "difficulty": "medium",
+    "tags": [
+      "sterilization",
+      "tyndallization"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "CBC stands for:",
+    "options": [
+      "Complete Blood Count",
+      "Central Blood Collection",
+      "Clinical Blood Chemistry",
+      "Cell-Based Culture"
+    ],
+    "correct_index": 0,
+    "explanation": "CBC (Complete Blood Count) measures RBC, WBC, hemoglobin, hematocrit, and platelet count.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "CBC"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Normal blood glucose level (fasting) is:",
+    "options": [
+      "50-70 mg/dL",
+      "70-100 mg/dL",
+      "150-200 mg/dL",
+      "200-250 mg/dL"
+    ],
+    "correct_index": 1,
+    "explanation": "Normal fasting blood glucose is 70-100 mg/dL. Values above 126 mg/dL fasting indicate diabetes.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "blood glucose"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "LFT stands for:",
+    "options": [
+      "Low Fat Diet",
+      "Liver Function Test",
+      "Left Femur Test",
+      "Long-term Follow-up"
+    ],
+    "correct_index": 1,
+    "explanation": "LFT (Liver Function Test) includes bilirubin, ALT, AST, ALP, albumin, and prothrombin time.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "LFT"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "KFT stands for:",
+    "options": [
+      "Kidney Function Test",
+      "Knee Fracture Test",
+      "Ketone Fat Test",
+      "Key Function Test"
+    ],
+    "correct_index": 0,
+    "explanation": "KFT (Kidney Function Test) includes blood urea, serum creatinine, and electrolytes to assess renal function.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "KFT"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Normal flora refers to:",
+    "options": [
+      "Pathogenic bacteria causing disease",
+      "Microorganisms that normally inhabit the body without causing disease",
+      "Bacteria used in lab experiments",
+      "Antibiotic-resistant bacteria"
+    ],
+    "correct_index": 1,
+    "explanation": "Normal flora (microbiota) are commensal/symbiotic microorganisms that normally colonize the body without causing disease.",
+    "difficulty": "easy",
+    "tags": [
+      "normal flora",
+      "definition"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "E. coli is normal flora of:",
+    "options": [
+      "Skin only",
+      "Gastrointestinal tract",
+      "Respiratory tract only",
+      "Urinary tract only"
+    ],
+    "correct_index": 1,
+    "explanation": "E. coli is a normal inhabitant of the large intestine, where it aids in vitamin K production.",
+    "difficulty": "easy",
+    "tags": [
+      "normal flora",
+      "E. coli"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "Disc diffusion method (Kirby-Bauer) is used for:",
+    "options": [
+      "Measuring drug concentration",
+      "Testing antibiotic susceptibility of bacteria",
+      "Counting bacteria",
+      "Isolating viruses"
+    ],
+    "correct_index": 1,
+    "explanation": "The Kirby-Bauer disc diffusion method determines antibiotic susceptibility by measuring zones of inhibition around antibiotic discs.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiological assay",
+      "disc diffusion"
+    ]
   }
 ]

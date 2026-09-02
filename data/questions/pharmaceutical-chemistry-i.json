@@ -2,217 +2,953 @@
   {
     "unit_id": "chem-i-unit-1",
     "question_text": "A pharmacopoeial monograph includes all of the following EXCEPT:",
-    "options": ["Method of preparation", "Quality control tests", "Drug price", "Storage conditions"],
+    "options": [
+      "Method of preparation",
+      "Quality control tests",
+      "Drug price",
+      "Storage conditions"
+    ],
     "correct_index": 2,
     "explanation": "A pharmacopoeial monograph includes name, molecular formula, method of preparation, physical/chemical properties, identification tests, purity tests, assay, storage, and uses — not drug price.",
     "difficulty": "easy",
-    "tags": ["monograph"]
+    "tags": [
+      "monograph"
+    ]
   },
   {
     "unit_id": "chem-i-unit-2",
     "question_text": "According to the Brønsted-Lowry concept, an acid is defined as:",
-    "options": ["An electron pair acceptor", "A proton (H+) donor", "An OH- donor", "An electron pair donor"],
+    "options": [
+      "An electron pair acceptor",
+      "A proton (H+) donor",
+      "An OH- donor",
+      "An electron pair donor"
+    ],
     "correct_index": 1,
     "explanation": "According to the Brønsted-Lowry concept, an acid is a proton (H+) donor and a base is a proton acceptor.",
     "difficulty": "easy",
-    "tags": ["acids", "bronsted-lowry"]
+    "tags": [
+      "acids",
+      "bronsted-lowry"
+    ]
   },
   {
     "unit_id": "chem-i-unit-2",
     "question_text": "Boric acid is used as:",
-    "options": ["Internal antiseptic", "Mild antiseptic/eye wash", "Systemic analgesic", "Antifungal systemic drug"],
+    "options": [
+      "Internal antiseptic",
+      "Mild antiseptic/eye wash",
+      "Systemic analgesic",
+      "Antifungal systemic drug"
+    ],
     "correct_index": 1,
     "explanation": "Boric acid is used as a mild antiseptic, particularly as an eye wash (1-4% solution) and for minor skin infections. It is not used systemically due to toxicity.",
     "difficulty": "easy",
-    "tags": ["boric acid", "uses"]
+    "tags": [
+      "boric acid",
+      "uses"
+    ]
   },
   {
     "unit_id": "chem-i-unit-2",
     "question_text": "Sodium benzoate is primarily used as:",
-    "options": ["Antioxidant", "Preservative", "Buffer", "Analgesic"],
+    "options": [
+      "Antioxidant",
+      "Preservative",
+      "Buffer",
+      "Analgesic"
+    ],
     "correct_index": 1,
     "explanation": "Sodium benzoate is a widely used preservative in pharmaceutical and food products. It is effective in acidic media (pH below 4.5) where it converts to benzoic acid.",
     "difficulty": "easy",
-    "tags": ["preservatives", "sodium benzoate"]
+    "tags": [
+      "preservatives",
+      "sodium benzoate"
+    ]
   },
   {
     "unit_id": "chem-i-unit-2",
     "question_text": "BHA and BHT are classified as:",
-    "options": ["Preservatives", "Antioxidants", "Buffers", "Sweetening agents"],
+    "options": [
+      "Preservatives",
+      "Antioxidants",
+      "Buffers",
+      "Sweetening agents"
+    ],
     "correct_index": 1,
     "explanation": "Butylated hydroxyanisole (BHA) and butylated hydroxytoluene (BHT) are synthetic antioxidants used to prevent oxidative degradation of fats and oils in pharmaceutical preparations.",
     "difficulty": "easy",
-    "tags": ["antioxidants", "BHA", "BHT"]
+    "tags": [
+      "antioxidants",
+      "BHA",
+      "BHT"
+    ]
   },
   {
     "unit_id": "chem-i-unit-3",
     "question_text": "Aluminum hydroxide gel is classified as:",
-    "options": ["Antacid and absorbent", "Laxative", "Antiemetic", "Analgesic"],
+    "options": [
+      "Antacid and absorbent",
+      "Laxative",
+      "Antiemetic",
+      "Analgesic"
+    ],
     "correct_index": 0,
     "explanation": "Aluminum hydroxide gel is an antacid that neutralizes gastric acid. It also has absorbent properties. It may cause constipation, so it is often combined with magnesium hydroxide.",
     "difficulty": "easy",
-    "tags": ["antacids", "aluminum hydroxide"]
+    "tags": [
+      "antacids",
+      "aluminum hydroxide"
+    ]
   },
   {
     "unit_id": "chem-i-unit-3",
     "question_text": "Magnesium trisilicate acts as an antacid by:",
-    "options": ["Absorbing acid only", "Neutralizing gastric acid and forming a protective coating", "Stimulating acid secretion", "Blocking H2 receptors"],
+    "options": [
+      "Absorbing acid only",
+      "Neutralizing gastric acid and forming a protective coating",
+      "Stimulating acid secretion",
+      "Blocking H2 receptors"
+    ],
     "correct_index": 1,
     "explanation": "Magnesium trisilicate neutralizes gastric acid and forms a protective coating of hydrated magnesium silicate over the gastric mucosa.",
     "difficulty": "medium",
-    "tags": ["antacids", "magnesium trisilicate"]
+    "tags": [
+      "antacids",
+      "magnesium trisilicate"
+    ]
   },
   {
     "unit_id": "chem-i-unit-3",
     "question_text": "Magnesium sulphate is used as:",
-    "options": ["Antacid", "Purgative laxative", "Emollient", "Astringent"],
+    "options": [
+      "Antacid",
+      "Purgative laxative",
+      "Emollient",
+      "Astringent"
+    ],
     "correct_index": 1,
     "explanation": "Magnesium sulphate (Epsom salt) is used as a purgative laxative. When taken orally, it draws water into the intestine osmotically, promoting bowel movements.",
     "difficulty": "easy",
-    "tags": ["laxatives", "magnesium sulphate"]
+    "tags": [
+      "laxatives",
+      "magnesium sulphate"
+    ]
   },
   {
     "unit_id": "chem-i-unit-4",
     "question_text": "Calamine is primarily used as:",
-    "options": ["Internal antiseptic", "Protective and anti-itch agent", "Astringent only", "Antifungal agent"],
+    "options": [
+      "Internal antiseptic",
+      "Protective and anti-itch agent",
+      "Astringent only",
+      "Antifungal agent"
+    ],
     "correct_index": 1,
     "explanation": "Calamine (zinc oxide with ferric oxide) is used as a protective agent and for its anti-pruritic (anti-itch) properties in skin conditions like sunburn, insect bites, and poison ivy.",
     "difficulty": "easy",
-    "tags": ["topical", "calamine"]
+    "tags": [
+      "topical",
+      "calamine"
+    ]
   },
   {
     "unit_id": "chem-i-unit-4",
     "question_text": "Hydrogen peroxide (H₂O₂) acts as an antimicrobial agent by:",
-    "options": ["Inhibiting cell wall synthesis", "Releasing nascent oxygen", "Blocking protein synthesis", "Inhibiting DNA replication"],
+    "options": [
+      "Inhibiting cell wall synthesis",
+      "Releasing nascent oxygen",
+      "Blocking protein synthesis",
+      "Inhibiting DNA replication"
+    ],
     "correct_index": 1,
     "explanation": "Hydrogen peroxide releases nascent oxygen (O) upon contact with catalase in tissues, which is a powerful oxidizing agent that kills microorganisms.",
     "difficulty": "medium",
-    "tags": ["topical", "hydrogen peroxide"]
+    "tags": [
+      "topical",
+      "hydrogen peroxide"
+    ]
   },
   {
     "unit_id": "chem-i-unit-5",
     "question_text": "Sodium fluoride is used in dentistry as:",
-    "options": ["Astringent", "Anti-caries agent", "Denture adhesive", "Tooth whitener"],
+    "options": [
+      "Astringent",
+      "Anti-caries agent",
+      "Denture adhesive",
+      "Tooth whitener"
+    ],
     "correct_index": 1,
     "explanation": "Sodium fluoride is used as an anti-caries agent. It incorporates into tooth enamel forming fluorapatite, which is more resistant to acid demineralization.",
     "difficulty": "easy",
-    "tags": ["dentistry", "sodium fluoride"]
+    "tags": [
+      "dentistry",
+      "sodium fluoride"
+    ]
   },
   {
     "unit_id": "chem-i-unit-6",
     "question_text": "Ammonium chloride is used as:",
-    "options": ["Antacid", "Expectorant", "Analgesic", "Laxative"],
+    "options": [
+      "Antacid",
+      "Expectorant",
+      "Analgesic",
+      "Laxative"
+    ],
     "correct_index": 1,
     "explanation": "Ammonium chloride is used as an expectorant. It irritates the gastric mucosa reflexly increasing respiratory tract secretions, helping to thin mucus.",
     "difficulty": "easy",
-    "tags": ["miscellaneous", "ammonium chloride"]
+    "tags": [
+      "miscellaneous",
+      "ammonium chloride"
+    ]
   },
   {
     "unit_id": "chem-i-unit-6",
     "question_text": "Activated charcoal is used as an antidote because it:",
-    "options": ["Neutralizes acids", "Adsorbs toxins in the GI tract", "Kills bacteria", "Promotes vomiting"],
+    "options": [
+      "Neutralizes acids",
+      "Adsorbs toxins in the GI tract",
+      "Kills bacteria",
+      "Promotes vomiting"
+    ],
     "correct_index": 1,
     "explanation": "Activated charcoal has a large surface area that adsorbs most ingested toxins and drugs in the GI tract, preventing their absorption into the bloodstream.",
     "difficulty": "easy",
-    "tags": ["antidotes", "activated charcoal"]
+    "tags": [
+      "antidotes",
+      "activated charcoal"
+    ]
   },
   {
     "unit_id": "chem-i-unit-6",
     "question_text": "Ferrous fumarate is classified as a:",
-    "options": ["Antacid", "Hematinic (antianemic)", "Laxative", "Antiseptic"],
+    "options": [
+      "Antacid",
+      "Hematinic (antianemic)",
+      "Laxative",
+      "Antiseptic"
+    ],
     "correct_index": 1,
     "explanation": "Ferrous fumarate is a hematinic agent used to treat and prevent iron-deficiency anemia. It provides iron for hemoglobin synthesis.",
     "difficulty": "easy",
-    "tags": ["hematinics", "ferrous fumarate"]
+    "tags": [
+      "hematinics",
+      "ferrous fumarate"
+    ]
   },
   {
     "unit_id": "chem-i-unit-7",
     "question_text": "ORS (Oral Rehydration Salts) contain primarily:",
-    "options": ["Calcium and iron", "Sodium chloride, potassium chloride, glucose, and sodium citrate", "Only glucose", "Only sodium chloride"],
+    "options": [
+      "Calcium and iron",
+      "Sodium chloride, potassium chloride, glucose, and sodium citrate",
+      "Only glucose",
+      "Only sodium chloride"
+    ],
     "correct_index": 1,
     "explanation": "ORS contains sodium chloride, potassium chloride, glucose (or glycine), and trisodium citrate (or sodium bicarbonate) to replace water and electrolytes lost in diarrheal dehydration.",
     "difficulty": "easy",
-    "tags": ["electrolytes", "ORS"]
+    "tags": [
+      "electrolytes",
+      "ORS"
+    ]
   },
   {
     "unit_id": "chem-i-unit-7",
     "question_text": "Ringer Lactate solution is used for:",
-    "options": ["Oral rehydration", "Intravenous fluid replacement", "Eye irrigation", "Wound cleaning"],
+    "options": [
+      "Oral rehydration",
+      "Intravenous fluid replacement",
+      "Eye irrigation",
+      "Wound cleaning"
+    ],
     "correct_index": 1,
     "explanation": "Ringer Lactate (Hartmann's solution) is an intravenous crystalloid solution used for fluid and electrolyte replacement, particularly in burns, surgery, and dehydration.",
     "difficulty": "easy",
-    "tags": ["electrolytes", "Ringer Lactate"]
+    "tags": [
+      "electrolytes",
+      "Ringer Lactate"
+    ]
   },
   {
     "unit_id": "chem-i-unit-8",
     "question_text": "Barium sulphate is used as:",
-    "options": ["Internal contrast medium", "Radio-opaque contrast media for GI imaging", "Radioactive isotope", "Antacid"],
+    "options": [
+      "Internal contrast medium",
+      "Radio-opaque contrast media for GI imaging",
+      "Radioactive isotope",
+      "Antacid"
+    ],
     "correct_index": 1,
     "explanation": "Barium sulphate is used as a radio-opaque contrast medium for imaging the gastrointestinal tract (barium meal, barium swallow). It is not absorbed from the GI tract.",
     "difficulty": "medium",
-    "tags": ["contrast media", "barium sulphate"]
+    "tags": [
+      "contrast media",
+      "barium sulphate"
+    ]
   },
   {
     "unit_id": "chem-i-unit-9",
     "question_text": "The limit test for chloride is based on the reaction of chloride ions with:",
-    "options": ["Silver nitrate to form white precipitate of AgCl", "Barium chloride", "Ammonium molybdate", "Sodium hydroxide"],
+    "options": [
+      "Silver nitrate to form white precipitate of AgCl",
+      "Barium chloride",
+      "Ammonium molybdate",
+      "Sodium hydroxide"
+    ],
     "correct_index": 0,
     "explanation": "The limit test for chloride involves the reaction of chloride ions with silver nitrate in the presence of dilute nitric acid to form a white precipitate of silver chloride (AgCl).",
     "difficulty": "medium",
-    "tags": ["limit tests", "chloride"]
+    "tags": [
+      "limit tests",
+      "chloride"
+    ]
   },
   {
     "unit_id": "chem-i-unit-9",
     "question_text": "A primary standard should have all EXCEPT:",
-    "options": ["High purity", "Stability in air", "Hygroscopic nature", "High molecular weight"],
+    "options": [
+      "High purity",
+      "Stability in air",
+      "Hygroscopic nature",
+      "High molecular weight"
+    ],
     "correct_index": 2,
     "explanation": "A primary standard should NOT be hygroscopic. It should have high purity, stability in air, non-toxicity, high molecular weight, and be readily available at low cost.",
     "difficulty": "medium",
-    "tags": ["volumetric analysis", "primary standard"]
+    "tags": [
+      "volumetric analysis",
+      "primary standard"
+    ]
   },
   {
     "unit_id": "chem-i-unit-9",
     "question_text": "1 M (Molar) solution contains:",
-    "options": ["1 gram of solute per litre", "1 mole of solute per litre", "1 equivalent per litre", "1 millimole per litre"],
+    "options": [
+      "1 gram of solute per litre",
+      "1 mole of solute per litre",
+      "1 equivalent per litre",
+      "1 millimole per litre"
+    ],
     "correct_index": 1,
     "explanation": "A 1 M (molar) solution contains 1 mole of solute dissolved in 1 litre of solution. Molarity (M) = moles of solute / litres of solution.",
     "difficulty": "easy",
-    "tags": ["molarity", "concentration"]
+    "tags": [
+      "molarity",
+      "concentration"
+    ]
   },
   {
     "unit_id": "chem-i-unit-10",
     "question_text": "In an acid-base titration, methyl orange indicator changes color from:",
-    "options": ["Blue to colorless", "Red to yellow (or vice versa)", "Colorless to pink", "Yellow to blue"],
+    "options": [
+      "Blue to colorless",
+      "Red to yellow (or vice versa)",
+      "Colorless to pink",
+      "Yellow to blue"
+    ],
     "correct_index": 1,
     "explanation": "Methyl orange changes color from red (in acid, pH < 3.1) to yellow (in base, pH > 4.4). It is used as an indicator in strong acid-weak base titrations.",
     "difficulty": "medium",
-    "tags": ["titration", "indicators"]
+    "tags": [
+      "titration",
+      "indicators"
+    ]
   },
   {
     "unit_id": "chem-i-unit-10",
     "question_text": "Iodometry involves:",
-    "options": ["Direct titration with iodine solution", "Indirect titration with thiosulphate", "Titration with potassium permanganate", "Titration with silver nitrate"],
+    "options": [
+      "Direct titration with iodine solution",
+      "Indirect titration with thiosulphate",
+      "Titration with potassium permanganate",
+      "Titration with silver nitrate"
+    ],
     "correct_index": 1,
     "explanation": "Iodometry is an indirect (back) titration method where iodine is liberated by reaction with an oxidizing agent, and the liberated iodine is titrated with standardized sodium thiosulphate solution.",
     "difficulty": "medium",
-    "tags": ["titration", "iodometry"]
+    "tags": [
+      "titration",
+      "iodometry"
+    ]
   },
   {
     "unit_id": "chem-i-unit-11",
     "question_text": "Column chromatography separates compounds based on:",
-    "options": ["Molecular weight only", "Differential adsorption between stationary and mobile phase", "Boiling point", "Density"],
+    "options": [
+      "Molecular weight only",
+      "Differential adsorption between stationary and mobile phase",
+      "Boiling point",
+      "Density"
+    ],
     "correct_index": 1,
     "explanation": "Column chromatography separates compounds based on differential adsorption. Components with weaker adsorption to the stationary phase elute first, while strongly adsorbed components elute later.",
     "difficulty": "medium",
-    "tags": ["chromatography", "column"]
+    "tags": [
+      "chromatography",
+      "column"
+    ]
   },
   {
     "unit_id": "chem-i-unit-11",
     "question_text": "HPLC stands for:",
-    "options": ["High Pressure Liquid Chromatography", "High Performance Liquid Chromatography", "High Precision Liquid Chromatography", "High Phase Liquid Chromatography"],
+    "options": [
+      "High Pressure Liquid Chromatography",
+      "High Performance Liquid Chromatography",
+      "High Precision Liquid Chromatography",
+      "High Phase Liquid Chromatography"
+    ],
     "correct_index": 1,
     "explanation": "HPLC stands for High Performance Liquid Chromatography. It is an analytical technique used for separating, identifying, and quantifying components in a mixture.",
     "difficulty": "easy",
-    "tags": ["chromatography", "HPLC"]
+    "tags": [
+      "chromatography",
+      "HPLC"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-2",
+    "question_text": "Bronsted-Lowry acid is a:",
+    "options": [
+      "Proton acceptor",
+      "Proton donor",
+      "Electron donor",
+      "Electron acceptor"
+    ],
+    "correct_index": 1,
+    "explanation": "A Bronsted-Lowry acid is a substance that donates a proton (H+).",
+    "difficulty": "easy",
+    "tags": [
+      "acids bases",
+      "bronsted"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-2",
+    "question_text": "Sodium bicarbonate is used as:",
+    "options": [
+      "Antacid and acidifying agent",
+      "Only preservative",
+      "Only antioxidant",
+      "Only flavoring agent"
+    ],
+    "correct_index": 0,
+    "explanation": "Sodium bicarbonate (NaHCO3) is an antacid that neutralizes stomach acid and can also be used as a buffering agent.",
+    "difficulty": "easy",
+    "tags": [
+      "acids bases",
+      "NaHCO3"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-2",
+    "question_text": "Buffer capacity depends on:",
+    "options": [
+      "pH only",
+      "Concentration of buffer components and their ratio",
+      "Temperature only",
+      "Volume only"
+    ],
+    "correct_index": 1,
+    "explanation": "Buffer capacity depends on the absolute concentrations of buffer components and the ratio of acid to conjugate base.",
+    "difficulty": "medium",
+    "tags": [
+      "buffers",
+      "capacity"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-2",
+    "question_text": "Sodium metabisulphite is used as:",
+    "options": [
+      "Antimicrobial preservative",
+      "Antioxidant",
+      "Sweetener",
+      "Coloring agent"
+    ],
+    "correct_index": 1,
+    "explanation": "Sodium metabisulphite is a common antioxidant used to prevent oxidation in pharmaceutical preparations.",
+    "difficulty": "easy",
+    "tags": [
+      "preservatives antioxidants",
+      "metabisulphite"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-2",
+    "question_text": "Methylparaben is classified as:",
+    "options": [
+      "Antioxidant",
+      "Antimicrobial preservative",
+      "Buffer",
+      "Surfactant"
+    ],
+    "correct_index": 1,
+    "explanation": "Methylparaben (and propylparaben) are antimicrobial preservatives used to prevent microbial growth in formulations.",
+    "difficulty": "easy",
+    "tags": [
+      "preservatives",
+      "parabens"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-3",
+    "question_text": "Aluminum hydroxide gel is used as:",
+    "options": [
+      "Laxative only",
+      "Antacid",
+      "Diuretic",
+      "Analgesic"
+    ],
+    "correct_index": 1,
+    "explanation": "Al(OH)3 is a non-systemic antacid that neutralizes gastric acid and has a constipating effect.",
+    "difficulty": "easy",
+    "tags": [
+      "GI agents",
+      "antacid"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-3",
+    "question_text": "Magnesium hydroxide has:",
+    "options": [
+      "Constipating effect only",
+      "Purgative (laxative) effect",
+      "Diuretic effect",
+      "Analgesic effect"
+    ],
+    "correct_index": 1,
+    "explanation": "Mg(OH)2 (milk of magnesia) has an osmotic laxative effect, drawing water into the intestine.",
+    "difficulty": "easy",
+    "tags": [
+      "GI agents",
+      "Mg(OH)2"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-3",
+    "question_text": "Magnesium trisilicate is used as:",
+    "options": [
+      "Laxative",
+      "Antacid with slow and prolonged action",
+      "Diuretic",
+      "Analgesic"
+    ],
+    "correct_index": 1,
+    "explanation": "Magnesium trisilicate acts as a slow, prolonged-acting antacid by reacting with HCl to form MgCl2 and silicic acid.",
+    "difficulty": "medium",
+    "tags": [
+      "GI agents",
+      "trisilicate"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-3",
+    "question_text": "Light kaolin is used as:",
+    "options": [
+      "Laxative",
+      "Protective and adsorbent for diarrhea",
+      "Antacid",
+      "Analgesic"
+    ],
+    "correct_index": 1,
+    "explanation": "Light kaolin is an adsorbent that adsorbs toxins and bacteria in diarrhea, providing protective and adsorbent action.",
+    "difficulty": "easy",
+    "tags": [
+      "GI agents",
+      "kaolin"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-3",
+    "question_text": "Calcium carbonate is an:",
+    "options": [
+      "Antiemetic",
+      "Antacid and calcium supplement",
+      "Diuretic",
+      "Laxative"
+    ],
+    "correct_index": 1,
+    "explanation": "CaCO3 is a non-systemic antacid that also serves as a dietary calcium supplement.",
+    "difficulty": "easy",
+    "tags": [
+      "GI agents",
+      "CaCO3"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-4",
+    "question_text": "Zinc oxide is used as:",
+    "options": [
+      "Internal antiseptic",
+      "Protective and mild astringent for skin",
+      "Analgesic",
+      "Laxative"
+    ],
+    "correct_index": 1,
+    "explanation": "Zinc oxide is a protective and mild astringent used in ointments, pastes, and dusting powders for skin protection.",
+    "difficulty": "easy",
+    "tags": [
+      "topical agents",
+      "zinc oxide"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-4",
+    "question_text": "Calamine is:",
+    "options": [
+      "An internal medicine",
+      "A protective and anti-itch (antipruritic) preparation",
+      "An injectable solution",
+      "An oral suspension"
+    ],
+    "correct_index": 1,
+    "explanation": "Calamine (zinc oxide with iron oxide) is a protective and antipruritic preparation used for skin irritations.",
+    "difficulty": "easy",
+    "tags": [
+      "topical agents",
+      "calamine"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-4",
+    "question_text": "Povidone iodine is classified as:",
+    "options": [
+      "Astringent",
+      "Antimicrobial agent (broad-spectrum)",
+      "Protective agent",
+      "Keratolytic"
+    ],
+    "correct_index": 1,
+    "explanation": "Povidone iodine is a broad-spectrum antimicrobial agent effective against bacteria, fungi, viruses, and spores.",
+    "difficulty": "easy",
+    "tags": [
+      "topical agents",
+      "povidone iodine"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-4",
+    "question_text": "Talc is used in pharmacy as:",
+    "options": [
+      "Antiseptic",
+      "Protective dusting powder base",
+      "Laxative",
+      "Analgesic"
+    ],
+    "correct_index": 1,
+    "explanation": "Talc (Mg3Si4O10(OH)2) is a very fine, soft mineral used as a protective dusting powder and tablet dusting agent.",
+    "difficulty": "easy",
+    "tags": [
+      "topical agents",
+      "talc"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-4",
+    "question_text": "Silver nitrate is used as:",
+    "options": [
+      "Antacid",
+      "Caustic agent and antimicrobial",
+      "Laxative",
+      "Diuretic"
+    ],
+    "correct_index": 1,
+    "explanation": "AgNO3 is used as a caustic agent (for warts) and antimicrobial (prophylaxis of neonatal ophthalmia).",
+    "difficulty": "medium",
+    "tags": [
+      "topical agents",
+      "silver nitrate"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-6",
+    "question_text": "Activated charcoal is used as:",
+    "options": [
+      "Antacid",
+      "Adsorbent antidote for poisoning",
+      "Laxative only",
+      "Analgesic"
+    ],
+    "correct_index": 1,
+    "explanation": "Activated charcoal has a large surface area that adsorbs most ingested poisons, used as an emergency antidote.",
+    "difficulty": "easy",
+    "tags": [
+      "miscellaneous",
+      "activated charcoal"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-6",
+    "question_text": "Ferrous fumarate is a:",
+    "options": [
+      "Antacid",
+      "Hematinic (iron supplement for anemia)",
+      "Laxative",
+      "Analgesic"
+    ],
+    "correct_index": 1,
+    "explanation": "Ferrous fumarate is an iron preparation used to treat and prevent iron deficiency anemia.",
+    "difficulty": "easy",
+    "tags": [
+      "miscellaneous",
+      "iron supplement"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-7",
+    "question_text": "ORS contains all EXCEPT:",
+    "options": [
+      "Sodium chloride",
+      "Potassium chloride",
+      "Calcium chloride",
+      "Trisodium citrate"
+    ],
+    "correct_index": 2,
+    "explanation": "ORS contains NaCl, KCl, glucose, and trisodium citrate. It does NOT contain CaCl2.",
+    "difficulty": "easy",
+    "tags": [
+      "electrolytes",
+      "ORS"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-7",
+    "question_text": "Calcium gluconate is used for:",
+    "options": [
+      "Hypertension",
+      "Calcium deficiency and hyperkalemia emergency",
+      "Diabetes",
+      "Asthma"
+    ],
+    "correct_index": 1,
+    "explanation": "Calcium gluconate treats hypocalcemia and is an antidote for hyperkalemia (protects the heart).",
+    "difficulty": "medium",
+    "tags": [
+      "electrolytes",
+      "calcium gluconate"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-7",
+    "question_text": "Potassium chloride supplements are given for:",
+    "options": [
+      "Hyperkalemia",
+      "Hypokalemia (low potassium)",
+      "Hypernatremia",
+      "Hypercalcemia"
+    ],
+    "correct_index": 1,
+    "explanation": "KCl supplements treat hypokalemia, which can occur from diuretic use or poor dietary intake.",
+    "difficulty": "easy",
+    "tags": [
+      "electrolytes",
+      "KCl"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-7",
+    "question_text": "Sodium bicarbonate is used in:",
+    "options": [
+      "Treating metabolic acidosis",
+      "Treating metabolic alkalosis only",
+      "Treating hyperkalemia only",
+      "Treating hypocalcemia"
+    ],
+    "correct_index": 0,
+    "explanation": "NaHCO3 is used to treat metabolic acidosis by buffering excess acid and raising blood pH.",
+    "difficulty": "medium",
+    "tags": [
+      "electrolytes",
+      "NaHCO3"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-10",
+    "question_text": "In acid-base titration, the endpoint is:",
+    "options": [
+      "The point where moles of acid equal moles of base",
+      "The point where indicator changes color",
+      "The start of titration",
+      "The boiling point"
+    ],
+    "correct_index": 1,
+    "explanation": "The endpoint is the point at which the indicator changes color, ideally matching the equivalence point.",
+    "difficulty": "easy",
+    "tags": [
+      "titration",
+      "endpoint"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-10",
+    "question_text": "Molarity is defined as:",
+    "options": [
+      "Grams of solute per liter of solution",
+      "Moles of solute per liter of solution",
+      "Moles of solute per kg of solvent",
+      "Grams of solute per 100 mL"
+    ],
+    "correct_index": 1,
+    "explanation": "Molarity (M) = moles of solute / liters of solution. It is the most commonly used concentration unit in pharmacy.",
+    "difficulty": "easy",
+    "tags": [
+      "titration",
+      "molarity"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-10",
+    "question_text": "Phenolphthalein changes color in the range:",
+    "options": [
+      "pH 1-3",
+      "pH 8.2-10",
+      "pH 5-7",
+      "pH 12-14"
+    ],
+    "correct_index": 1,
+    "explanation": "Phenolphthalein is colorless below pH 8.2 and pink above pH 10, used as an indicator in strong acid-strong base titrations.",
+    "difficulty": "easy",
+    "tags": [
+      "titration",
+      "indicators"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-10",
+    "question_text": "Iodometric titration involves:",
+    "options": [
+      "Direct titration with iodine",
+      "Titration of liberated iodine with sodium thiosulfate",
+      "Titration with chlorine",
+      "Titration with bromine"
+    ],
+    "correct_index": 1,
+    "explanation": "Iodometric titration involves liberating iodine from iodide by an oxidizing agent, then titrating the liberated iodine with Na2S2O3.",
+    "difficulty": "medium",
+    "tags": [
+      "titration",
+      "iodometry"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-11",
+    "question_text": "In column chromatography, the mobile phase is called:",
+    "options": [
+      "Stationary phase",
+      "Eluent",
+      "Adsorbent",
+      "Developer"
+    ],
+    "correct_index": 1,
+    "explanation": "The mobile phase (eluent) moves through the stationary phase, carrying components at different rates for separation.",
+    "difficulty": "easy",
+    "tags": [
+      "chromatography",
+      "column"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-11",
+    "question_text": "Rf value in TLC is:",
+    "options": [
+      "Ratio of solvent front to spot",
+      "Distance moved by solute / distance moved by solvent front",
+      "Total distance / spot distance",
+      "Solvent distance only"
+    ],
+    "correct_index": 1,
+    "explanation": "Rf = distance moved by solute / distance moved by solvent front. Rf values help identify compounds in TLC.",
+    "difficulty": "easy",
+    "tags": [
+      "chromatography",
+      "TLC"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-9",
+    "question_text": "Limit test for chloride involves:",
+    "options": [
+      "Titration",
+      "Formation of white turbidity with silver nitrate in dilute nitric acid",
+      "Colorimetric measurement",
+      "Gravimetric analysis"
+    ],
+    "correct_index": 1,
+    "explanation": "Chloride limit test: add dilute HNO3 and AgNO3. White turbidity indicates chloride; compare with standard turbidity.",
+    "difficulty": "easy",
+    "tags": [
+      "quality control",
+      "limit test"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-9",
+    "question_text": "Limit test for sulphate uses:",
+    "options": [
+      "Silver nitrate",
+      "Barium chloride in dilute HCl",
+      "Sodium hydroxide",
+      "Potassium permanganate"
+    ],
+    "correct_index": 1,
+    "explanation": "Sulphate limit test: add dilute HCl and BaCl2. White turbidity of BaSO4 indicates sulphate presence.",
+    "difficulty": "easy",
+    "tags": [
+      "quality control",
+      "limit test"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-9",
+    "question_text": "Identification test for iron involves:",
+    "options": [
+      "Adding NaOH",
+      "Adding ammonium thiocyanate solution producing blood-red color",
+      "Adding HCl",
+      "Adding Na2CO3"
+    ],
+    "correct_index": 1,
+    "explanation": "Iron is identified by adding ammonium thiocyanate, which forms a deep blood-red colored complex with Fe3+ ions.",
+    "difficulty": "easy",
+    "tags": [
+      "quality control",
+      "identification"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-9",
+    "question_text": "Melting point determination is used for:",
+    "options": [
+      "Purity assessment and identification of solid drugs",
+      "Measuring drug potency",
+      "Testing sterility",
+      "Measuring pH"
+    ],
+    "correct_index": 0,
+    "explanation": "Melting point indicates purity (impurities lower the melting point) and helps identify solid crystalline drugs.",
+    "difficulty": "easy",
+    "tags": [
+      "quality control",
+      "melting point"
+    ]
+  },
+  {
+    "unit_id": "chem-i-unit-9",
+    "question_text": "Precision in analytical chemistry refers to:",
+    "options": [
+      "Closeness to true value",
+      "Closeness of multiple measurements to each other",
+      "Maximum value",
+      "Average value"
+    ],
+    "correct_index": 1,
+    "explanation": "Precision is the reproducibility/closeness of repeated measurements to each other, independent of accuracy.",
+    "difficulty": "easy",
+    "tags": [
+      "quality control",
+      "precision"
+    ]
   }
 ]
