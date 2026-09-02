@@ -1,29 +1,61 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Trophy, Medal, Target, Users, RefreshCw, Calendar, Clock, Award, Star, TrendingUp, ArrowUp } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Trophy,
+  Medal,
+  Target,
+  Users,
+  RefreshCw,
+  Calendar,
+  Clock,
+  Award,
+  Star,
+  TrendingUp,
+  ArrowUp,
+  ChevronRight,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { getLeaderboard, getUserLeaderboardPosition, type LeaderboardEntry, type LeaderboardPeriod, type UserLeaderboardPosition, PERIOD_LABELS, PERIOD_MIN_QUIZZES, PERIOD_DESCRIPTIONS } from "@/lib/leaderboard";
+import {
+  getLeaderboard,
+  getUserLeaderboardPosition,
+  type LeaderboardEntry,
+  type LeaderboardPeriod,
+  type UserLeaderboardPosition,
+  PERIOD_LABELS,
+  PERIOD_MIN_QUIZZES,
+  PERIOD_DESCRIPTIONS,
+} from "@/lib/leaderboard";
 import { useAuth } from "@/lib/auth";
 import { supabase } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const periodIconMap: Record<LeaderboardPeriod, React.ElementType> = {
-  daily: Calendar,
-  weekly: Clock,
-  monthly: Award,
-  all_time: Star,
+const periods: { key: LeaderboardPeriod; icon: React.ElementType; color: string }[] = [
+  { key: "daily", icon: Calendar, color: "text-blue-500" },
+  { key: "weekly", icon: Clock, color: "text-purple-500" },
+  { key: "monthly", icon: Award, color: "text-emerald-500" },
+  { key: "all_time", icon: Star, color: "text-yellow-500" },
+];
+
+const rankStyles: Record<number, string> = {
+  1: "bg-gradient-to-r from-yellow-500/10 to-yellow-500/5 border-l-4 border-yellow-500",
+  2: "bg-gradient-to-r from-gray-400/10 to-gray-400/5 border-l-4 border-gray-400",
+  3: "bg-gradient-to-r from-amber-500/10 to-amber-500/5 border-l-4 border-amber-500",
 };
 
-const periodColors: Record<LeaderboardPeriod, string> = {
-  daily: "bg-blue-500",
-  weekly: "bg-purple-500",
-  monthly: "bg-emerald-500",
-  all_time: "bg-yellow-500",
+const rankTextColors: Record<number, string> = {
+  1: "text-yellow-500",
+  2: "text-gray-400",
+  3: "text-amber-500",
+};
+
+const rankBadgeStyles: Record<number, string> = {
+  1: "bg-yellow-500/10 text-yellow-500 border-yellow-500/30",
+  2: "bg-gray-400/10 text-gray-400 border-gray-400/30",
+  3: "bg-amber-500/10 text-amber-500 border-amber-500/30",
 };
 
 export default function LeaderboardPage() {
@@ -36,9 +68,14 @@ export default function LeaderboardPage() {
   const { user } = useAuth();
 
   const fetchLeaderboard = useCallback(async () => {
-    const data = await getLeaderboard(activePeriod);
-    setEntries(data);
-    setLastUpdated(new Date());
+    try {
+      const data = await getLeaderboard(activePeriod);
+      setEntries(data);
+      setLastUpdated(new Date());
+    } catch (err) {
+      console.error("Failed to fetch leaderboard:", err);
+      setEntries([]);
+    }
   }, [activePeriod]);
 
   const fetchUserPosition = useCallback(async () => {
@@ -46,8 +83,13 @@ export default function LeaderboardPage() {
       setUserPosition(null);
       return;
     }
-    const pos = await getUserLeaderboardPosition(user.id, activePeriod);
-    setUserPosition(pos);
+    try {
+      const pos = await getUserLeaderboardPosition(user.id, activePeriod);
+      setUserPosition(pos);
+    } catch (err) {
+      console.error("Failed to fetch user position:", err);
+      setUserPosition(null);
+    }
   }, [activePeriod, user]);
 
   useEffect(() => {
@@ -56,30 +98,30 @@ export default function LeaderboardPage() {
     fetchUserPosition();
   }, [fetchLeaderboard, fetchUserPosition]);
 
-  // Real-time subscription to quiz_results table
+  // Real-time subscription
   useEffect(() => {
-    const channel = supabase
-      .channel(`leaderboard-${activePeriod}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "INSERT",
-          schema: "public",
-          table: "quiz_results",
-        },
-        () => {
-          fetchLeaderboard();
-          fetchUserPosition();
-        }
-      )
-      .subscribe();
+    try {
+      const channel = supabase
+        .channel(`leaderboard-${activePeriod}`)
+        .on(
+          "postgres_changes",
+          { event: "INSERT", schema: "public", table: "quiz_results" },
+          () => {
+            fetchLeaderboard();
+            fetchUserPosition();
+          }
+        )
+        .subscribe();
 
-    return () => {
-      supabase.removeChannel(channel);
-    };
+      return () => {
+        supabase.removeChannel(channel);
+      };
+    } catch (err) {
+      console.warn("Realtime subscription failed:", err);
+    }
   }, [activePeriod, fetchLeaderboard, fetchUserPosition]);
 
-  // Refresh when page becomes visible
+  // Refresh on focus
   useEffect(() => {
     const handler = () => {
       fetchLeaderboard();
@@ -89,399 +131,302 @@ export default function LeaderboardPage() {
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "visible") handler();
     });
-    return () => {
-      window.removeEventListener("focus", handler);
-    };
+    return () => window.removeEventListener("focus", handler);
   }, [fetchLeaderboard, fetchUserPosition]);
 
-  const Icon = periodIconMap[activePeriod];
-  const periodColor = periodColors[activePeriod];
+  const activePeriodInfo = periods.find((p) => p.key === activePeriod)!;
+  const ActiveIcon = activePeriodInfo.icon;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       {/* Header */}
       <div className="mb-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
-              <Trophy className="h-9 w-9 text-yellow-500" />
+            <h1 className="text-3xl font-bold tracking-tight flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-500/10">
+                <Trophy className="h-6 w-6 text-yellow-500" />
+              </div>
               Leaderboard
             </h1>
-            <p className="mt-2 text-muted-foreground max-w-xl">
-              Compete with classmates across different time periods. Rankings are based on a fair score combining accuracy, correct answers, and quiz volume.
+            <p className="mt-2 text-sm text-muted-foreground">
+              Compete with classmates. Score = Accuracy + Volume + Consistency.
             </p>
           </div>
           <div className="flex items-center gap-3">
             {lastUpdated && (
-              <span className="text-xs text-muted-foreground flex items-center gap-1">
+              <span className="text-xs text-muted-foreground flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-                Updated {lastUpdated.toLocaleTimeString()}
+                Live
               </span>
             )}
             <Button
-              variant="outline"
+              variant="ghost"
               size="sm"
-              onClick={() => { setIsRefreshing(true); fetchLeaderboard().finally(() => setIsRefreshing(false)); fetchUserPosition(); }}
+              onClick={() => {
+                setIsRefreshing(true);
+                fetchLeaderboard().finally(() => setIsRefreshing(false));
+                fetchUserPosition();
+              }}
               disabled={isRefreshing}
-              className="gap-2"
+              className="gap-1.5"
             >
-              <RefreshCw className={`h-4 w-4 ${isRefreshing ? "animate-spin" : ""}`} />
+              <RefreshCw className={cn("h-3.5 w-3.5", isRefreshing && "animate-spin")} />
               Refresh
             </Button>
           </div>
         </div>
-
       </div>
 
-      {/* User Position Card */}
+      {/* Period Selector */}
+      <div className="mb-6 flex gap-2 p-1 bg-muted/50 rounded-xl w-fit">
+        {periods.map(({ key, icon: PIcon, color }) => (
+          <button
+            key={key}
+            onClick={() => setActivePeriod(key)}
+            className={cn(
+              "flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all",
+              activePeriod === key
+                ? "bg-background shadow-sm text-foreground"
+                : "text-muted-foreground hover:text-foreground hover:bg-background/50"
+            )}
+          >
+            <PIcon className={cn("h-4 w-4", activePeriod === key ? color : "")} />
+            <span className="hidden sm:inline">{PERIOD_LABELS[key]}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Your Rank Card */}
       {user && userPosition && (
-        <Card className={cn("mb-6 transition-all duration-300", userPosition.qualified 
-          ? "border-primary/20 bg-gradient-to-r from-primary/5 to-transparent dark:from-primary/10" 
-          : "border-orange-200 dark:border-orange-800 bg-gradient-to-r from-orange-50 to-transparent dark:from-orange-950/30"
+        <Card className={cn(
+          "mb-6 overflow-hidden",
+          userPosition.qualified
+            ? "border-primary/20"
+            : "border-orange-500/20"
         )}>
-          <CardContent className="p-5">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className={cn("flex h-14 w-14 items-center justify-center rounded-2xl", periodColor + "/10")}>
-                  <Icon className="h-7 w-7" style={{ color: `var(--${periodColor})` }} />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">
-                    Your {PERIOD_LABELS[activePeriod]} Rank
+          <CardContent className="p-0">
+            <div className="flex items-center gap-4 p-5">
+              <div className={cn(
+                "flex h-12 w-12 items-center justify-center rounded-xl",
+                userPosition.qualified ? "bg-primary/10" : "bg-orange-500/10"
+              )}>
+                <ActiveIcon className={cn("h-6 w-6", activePeriodInfo.color)} />
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  Your {PERIOD_LABELS[activePeriod]} Rank
+                </p>
+                {userPosition.qualified ? (
+                  <p className="text-2xl font-bold">
+                    #{userPosition.rank}
+                    <span className="text-sm font-normal text-muted-foreground ml-2">
+                      of {userPosition.totalParticipants} participants
+                    </span>
                   </p>
-                  {userPosition.qualified ? (
-                    <p className="text-3xl font-bold text-primary flex items-center gap-2">
-                      <span>#{userPosition.rank}</span>
-                      <span className="text-lg font-normal text-muted-foreground">/ {userPosition.totalParticipants}</span>
-                    </p>
-                  ) : (
-                    <p className="text-3xl font-bold text-muted-foreground flex items-center gap-2">
-                      Unranked
-                      <span className="text-lg font-normal text-orange-500">({userPosition.quizzesTaken}/{PERIOD_MIN_QUIZZES[activePeriod]})</span>
-                    </p>
-                  )}
+                ) : (
+                  <p className="text-2xl font-bold text-muted-foreground">
+                    Unranked
+                  </p>
+                )}
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="text-center">
+                  <p className="text-lg font-bold">{userPosition.quizzesTaken}</p>
+                  <p className="text-[10px] text-muted-foreground uppercase">Quizzes</p>
+                </div>
+                <div className="h-8 w-px bg-border" />
+                <div className="text-center">
+                  <p className="text-lg font-bold">{userPosition.accuracy}%</p>
+                  <p className="text-[10px] text-muted-foreground uppercase">Accuracy</p>
                 </div>
               </div>
-              <div className="flex flex-wrap items-center gap-3 text-sm">
-                <div className={cn("flex items-center gap-2 px-3 py-1.5 rounded-full", userPosition.qualified ? "bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300" : "bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300")}>
-                  <div className="flex items-center gap-1">
-                    <Target className="h-3.5 w-3.5" />
-                    <span>{userPosition.quizzesTaken} / {PERIOD_MIN_QUIZZES[activePeriod]} MCQs</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted">
-                  <Award className="h-3.5 w-3.5" />
-                  <span>{userPosition.accuracy}% accuracy</span>
-                </div>
-                {!userPosition.qualified && (
-                  <Badge variant="outline" className="text-orange-600 border-orange-300 gap-1">
-                    <ArrowUp className="h-3 w-3" />
-                    Need {userPosition.quizzesNeeded} more
-                  </Badge>
-                )}
-                {userPosition.qualified && (
-                  <Badge variant="default" className="text-green-600 bg-green-50 border-green-200 gap-1">
+              <div className="flex items-center gap-1.5">
+                {userPosition.qualified ? (
+                  <Badge variant="outline" className="bg-green-500/10 text-green-500 border-green-500/30 gap-1">
                     <TrendingUp className="h-3 w-3" />
                     Qualified
                   </Badge>
+                ) : (
+                  <Badge variant="outline" className="bg-orange-500/10 text-orange-500 border-orange-500/30 gap-1">
+                    <ArrowUp className="h-3 w-3" />
+                    {userPosition.quizzesNeeded} more
+                  </Badge>
                 )}
               </div>
             </div>
-            <p className="mt-3 text-xs text-muted-foreground">{PERIOD_DESCRIPTIONS[activePeriod]}</p>
+            <div className="px-5 pb-3">
+              <div className="flex items-center gap-2">
+                <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
+                  <div
+                    className={cn(
+                      "h-full rounded-full transition-all",
+                      userPosition.qualified ? "bg-green-500" : "bg-orange-500"
+                    )}
+                    style={{
+                      width: `${Math.min(
+                        100,
+                        (userPosition.quizzesTaken / PERIOD_MIN_QUIZZES[activePeriod]) * 100
+                      )}%`,
+                    }}
+                  />
+                </div>
+                <span className="text-[10px] text-muted-foreground whitespace-nowrap">
+                  {userPosition.quizzesTaken}/{PERIOD_MIN_QUIZZES[activePeriod]} quizzes
+                </span>
+              </div>
+            </div>
           </CardContent>
         </Card>
       )}
 
-      {/* Leaderboard Content */}
-            <Tabs value={activePeriod} onValueChange={setActivePeriod} className="w-full">
-        <TabsList className="grid w-full grid-cols-4 gap-1 bg-muted p-1 rounded-xl">
-                    {(["daily", "weekly", "monthly", "all_time"] as LeaderboardPeriod[]).map((period) => (
-                      <TabsTrigger
-                        key={period}
-                        value={period}
-                        className={cn(
-                          "relative flex flex-col items-center gap-1.5 py-3 px-2 text-sm transition-all",
-                          "data-[state=active]:shadow-md data-[state=active]:bg-background"
+      {/* Leaderboard List */}
+      <Card>
+        <CardContent className="p-0">
+          {!mounted ? (
+            <div className="p-6 space-y-4">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="flex items-center gap-4 animate-pulse">
+                  <div className="w-8 h-5 bg-muted rounded" />
+                  <div className="h-10 w-10 rounded-full bg-muted" />
+                  <div className="flex-1 space-y-2">
+                    <div className="h-4 w-32 bg-muted rounded" />
+                    <div className="h-3 w-48 bg-muted rounded" />
+                  </div>
+                  <div className="h-5 w-16 bg-muted rounded" />
+                </div>
+              ))}
+            </div>
+          ) : entries.length === 0 ? (
+            <div className="p-12 text-center">
+              <Users className="mx-auto h-12 w-12 text-muted-foreground/30 mb-3" />
+              <p className="font-medium text-muted-foreground">No data yet</p>
+              <p className="text-sm text-muted-foreground/70 mt-1">
+                Complete {PERIOD_MIN_QUIZZES[activePeriod]}+ quizzes to appear on the{" "}
+                {PERIOD_LABELS[activePeriod].toLowerCase()} leaderboard
+              </p>
+            </div>
+          ) : (
+            <div className="divide-y">
+              {entries.map((entry, idx) => {
+                const isCurrentUser = user?.email === entry.email;
+                const rank = entry.rank;
+                const isTop3 = rank <= 3;
+
+                return (
+                  <div
+                    key={entry.user_id}
+                    className={cn(
+                      "flex items-center gap-4 px-5 py-4 transition-colors hover:bg-muted/30",
+                      rankStyles[rank],
+                      isCurrentUser && "bg-primary/5 ring-1 ring-inset ring-primary/20"
+                    )}
+                  >
+                    {/* Rank */}
+                    <div className="w-8 text-center shrink-0">
+                      {isTop3 ? (
+                        <span className={cn("text-lg font-bold", rankTextColors[rank])}>
+                          {rank === 1 ? "🥇" : rank === 2 ? "🥈" : "🥉"}
+                        </span>
+                      ) : (
+                        <span className="text-sm font-semibold text-muted-foreground">
+                          #{rank}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Avatar */}
+                    <Avatar
+                      className={cn(
+                        "h-10 w-10 shrink-0",
+                        isCurrentUser && "ring-2 ring-primary"
+                      )}
+                    >
+                      <AvatarFallback className="text-sm font-semibold bg-muted">
+                        {entry.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")
+                          .toUpperCase()
+                          .slice(0, 2)}
+                      </AvatarFallback>
+                    </Avatar>
+
+                    {/* Name + Stats */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <p className="font-semibold text-sm truncate">
+                          {entry.name}
+                        </p>
+                        {isCurrentUser && (
+                          <Badge
+                            variant="outline"
+                            className="text-[10px] px-1.5 py-0 h-5 bg-primary/10 text-primary border-primary/30"
+                          >
+                            You
+                          </Badge>
                         )}
-                      >
-                        <div className="flex items-center gap-1.5">
-                          {(() => { const Icon = periodIconMap[period]; return <Icon className="h-4 w-4" />; })()}
-                          <span className="font-medium">{PERIOD_LABELS[period]}</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                        {isTop3 && (
+                          <Badge
+                            variant="outline"
+                            className={cn(
+                              "text-[10px] px-1.5 py-0 h-5",
+                              rankBadgeStyles[rank]
+                            )}
+                          >
+                            {rank === 1 ? "1st" : rank === 2 ? "2nd" : "3rd"}
+                          </Badge>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-3 mt-0.5 text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1">
                           <Target className="h-3 w-3" />
-                          <span>Min: {PERIOD_MIN_QUIZZES[period]}</span>
-                        </div>
-                        {activePeriod === period && (
-                          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-8 rounded-full bg-primary" />
-                        )}
-                      </TabsTrigger>
-                    ))}
-                  </TabsList>
+                          {entry.quizzesTaken} quizzes
+                        </span>
+                        <span className="flex items-center gap-1">
+                          {entry.accuracy}%
+                        </span>
+                      </div>
+                    </div>
 
-<TabsContent value="daily" className="space-y-4">
-        <LeaderboardContent entries={entries} user={user} period="daily" isMounted={mounted} />
-      </TabsContent>
-      <TabsContent value="weekly" className="space-y-4">
-        <LeaderboardContent entries={entries} user={user} period="weekly" isMounted={mounted} />
-      </TabsContent>
-      <TabsContent value="monthly" className="space-y-4">
-        <LeaderboardContent entries={entries} user={user} period="monthly" isMounted={mounted} />
-      </TabsContent>
-      <TabsContent value="all_time" className="space-y-4">
-        <LeaderboardContent entries={entries} user={user} period="all_time" isMounted={mounted} />
-      </TabsContent>
-      </Tabs>
+                    {/* Score */}
+                    <div className="text-right shrink-0">
+                      <p className="text-lg font-bold tabular-nums">
+                        {entry.score}
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        {entry.totalCorrect}/{entry.totalAttempted} correct
+                      </p>
+                    </div>
 
-      {/* Scoring Info */}
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2">
-            <Award className="h-5 w-5" />
-            How Ranking Works
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="grid sm:grid-cols-2 gap-4 text-sm">
-            <div className="p-3 rounded-lg bg-muted/50">
-              <p className="font-medium mb-1">Score Formula</p>
-              <p className="text-muted-foreground text-xs">
-                (Correct × 0.7) + (Accuracy% × 0.3) + (Volume Bonus up to 10)
-              </p>
+                    <ChevronRight className="h-4 w-4 text-muted-foreground/50 shrink-0" />
+                  </div>
+                );
+              })}
             </div>
-            <div className="p-3 rounded-lg bg-muted/50">
-              <p className="font-medium mb-1">Tiebreakers</p>
-              <p className="text-muted-foreground text-xs">
-                1. Higher Score → 2. Higher Accuracy → 3. More Quizzes
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-            <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/50 dark:text-blue-300 dark:border-blue-800">
-              Daily: 1+ quiz
-            </Badge>
-            <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/50 dark:text-purple-300 dark:border-purple-800">
-              Weekly: 5+ quizzes
-            </Badge>
-            <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/50 dark:text-emerald-300 dark:border-emerald-800">
-              Monthly: 10+ quizzes
-            </Badge>
-            <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200 dark:bg-yellow-950/50 dark:text-yellow-300 dark:border-yellow-800">
-              All-Time: 20+ quizzes
-            </Badge>
-          </div>
-          <p className="text-xs text-muted-foreground">{PERIOD_DESCRIPTIONS[activePeriod]}</p>
-        </CardContent>
-      </Card>
-    </div>
-  );
-}
-
-function LeaderboardContent({
-  entries,
-  user,
-  period,
-  isMounted,
-}: {
-  entries: LeaderboardEntry[];
-  user: { id: string; email: string; name: string } | null;
-  period: LeaderboardPeriod;
-  isMounted: boolean;
-}) {
-  const qualifiedEntries = entries.filter(e => e.qualified);
-  const unqualifiedEntries = entries.filter(e => !e.qualified);
-
-  if (!isMounted) {
-    return (
-      <Card>
-        <CardContent className="p-8">
-          <div className="space-y-3 max-h-64 overflow-y-auto">
-            {[...Array(5)].map((_, i) => (
-              <LeaderboardSkeleton key={i} />
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
-
-  if (entries.length === 0) {
-    return (
-      <Card>
-        <CardContent className="p-12 text-center">
-          <Users className="mx-auto h-14 w-14 text-muted-foreground/50 mb-4" />
-          <p className="text-lg font-medium mb-1">No data yet for {PERIOD_LABELS[period].toLowerCase()}</p>
-          <p className="text-sm text-muted-foreground mb-4">
-            Complete MCQs to appear on the leaderboard
-          </p>
-          <div className="text-xs text-muted-foreground">
-            Minimum {PERIOD_MIN_QUIZZES[period]} quiz{PERIOD_MIN_QUIZZES[period] !== 1 ? "s" : ""} required
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
-
-  return (
-    <>
-      {qualifiedEntries.length > 0 && (
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-lg flex items-center gap-2">
-              <Trophy className="h-5 w-5 text-yellow-500" />
-              Qualified Rankings <span className="text-normal font-normal text-muted-foreground">({qualifiedEntries.length})</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-0">
-            <div className="divide-y max-h-[500px] overflow-y-auto">
-              {qualifiedEntries.map((entry, index) => (
-                  <LeaderboardRow
-                    key={entry.user_id}
-                    entry={entry}
-                    isCurrentUser={user?.email === entry.email}
-                    showRank={true}
-                    index={index}
-                  />
-                ))}
-              </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {unqualifiedEntries.length > 0 && (
-        <Card className="border-orange-100">
-          <CardHeader className="pb-2">
-            <CardTitle className="text-lg flex items-center gap-2">
-              <Award className="h-5 w-5 text-orange-500" />
-              Working Towards Ranking <span className="text-normal font-normal text-muted-foreground">({unqualifiedEntries.length})</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-0">
-            <div className="divide-y max-h-[300px] overflow-y-auto">
-              {unqualifiedEntries.map((entry, index) => (
-                  <LeaderboardRow
-                    key={entry.user_id}
-                    entry={entry}
-                    isCurrentUser={user?.email === entry.email}
-                    showRank={false}
-                    index={index}
-                  />
-                ))}
-              </div>
-          </CardContent>
-        </Card>
-      )}
-    </>
-  );
-}
-
-function LeaderboardRow({
-  entry,
-  isCurrentUser,
-  showRank,
-  index,
-}: {
-  entry: LeaderboardEntry;
-  isCurrentUser: boolean;
-  showRank: boolean;
-  index: number;
-}) {
-
-  return (
-    <div
-      className={cn(
-        "flex items-center gap-4 px-5 py-4 transition-all duration-200",
-        "hover:bg-muted/30",
-        entry.rank === 1 && "bg-yellow-50 dark:bg-yellow-950/30 border-l-4 border-yellow-500",
-        entry.rank === 2 && "bg-gray-50 dark:bg-gray-800/50 border-l-4 border-gray-400",
-        entry.rank === 3 && "bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500",
-        isCurrentUser && "bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 ring-1 ring-blue-200 dark:ring-blue-800",
-        !showRank && "opacity-60"
-      )}
-    >
-      <div className="w-10 flex justify-center">
-        {showRank ? (
-          <span className={cn(
-            "font-bold text-sm",
-            entry.rank === 1 && "text-yellow-600",
-            entry.rank === 2 && "text-gray-500",
-            entry.rank === 3 && "text-amber-600"
-          )}>
-            #{entry.rank}
-          </span>
-        ) : (
-          <span className="text-sm text-muted-foreground font-medium">—</span>
-        )}
-      </div>
-
-      <Avatar className={cn("h-10 w-10 shrink-0", isCurrentUser && "ring-2 ring-blue-500")}>
-        <AvatarFallback className="text-sm font-medium">
-          {entry.name
-            .split(" ")
-            .map((n) => n[0])
-            .join("")
-            .toUpperCase()}
-        </AvatarFallback>
-      </Avatar>
-
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 flex-wrap">
-          <p className="font-medium truncate">{entry.name}</p>
-          {isCurrentUser && <Badge variant="secondary" className="text-xs gap-1"><Star className="h-3 w-3" /> You</Badge>}
-          {entry.rank === 1 && <Badge variant="default" className="text-xs gap-1 bg-yellow-500 text-yellow-900"><Trophy className="h-3 w-3" /> 1st</Badge>}
-          {entry.rank === 2 && <Badge variant="secondary" className="text-xs gap-1 bg-gray-400"><Medal className="h-3 w-3" /> 2nd</Badge>}
-          {entry.rank === 3 && <Badge variant="secondary" className="text-xs gap-1 bg-amber-500"><Medal className="h-3 w-3" /> 3rd</Badge>}
-          {!showRank && !entry.qualified && (
-            <Badge variant="outline" className="text-xs text-orange-600 border-orange-300">
-              Unranked
-            </Badge>
           )}
-        </div>
-        <div className="flex flex-wrap items-center gap-3 mt-1.5 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-muted">
-            <Target className="h-3 w-3" />
-            {entry.quizzesTaken} MCQs
-          </span>
-          <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-muted">
-            <Award className="h-3 w-3" />
-            {entry.accuracy}% acc
-          </span>
-          <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-            <TrendingUp className="h-3 w-3" />
-            Score: {entry.score}
-          </span>
-          {!entry.qualified && (
-            <Badge variant="secondary" className="ml-auto text-xs gap-1">
-              <ArrowUp className="h-3 w-3" />
-              Need {entry.quizzesNeeded} more
-            </Badge>
-          )}
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-      <div className="text-right shrink-0 w-28">
-        <p className="font-bold text-lg tabular-nums">{entry.totalCorrect}</p>
-        <p className="text-xs text-muted-foreground">correct</p>
-        <p className="text-xs text-muted-foreground">/ {entry.totalAttempted} total</p>
-      </div>
-    </div>
-  );
-}
-
-function LeaderboardSkeleton() {
-  return (
-    <div className="flex items-center gap-4 px-5 py-4 animate-pulse">
-      <div className="h-5 w-8 bg-muted rounded" />
-      <div className="h-10 w-10 rounded-full bg-muted" />
-      <div className="flex-1 space-y-2">
-        <div className="h-4 w-32 bg-muted rounded" />
-        <div className="flex gap-2">
-          <div className="h-3 w-20 bg-muted rounded" />
-          <div className="h-3 w-24 bg-muted rounded" />
-          <div className="h-3 w-28 bg-muted rounded" />
+      {/* How it works */}
+      <div className="mt-6 grid grid-cols-2 gap-3 text-xs text-muted-foreground sm:grid-cols-4">
+        <div className="rounded-lg bg-muted/30 p-3 text-center">
+          <p className="font-semibold text-foreground mb-0.5">Score</p>
+          <p>Correct x 0.7 + Accuracy x 0.3</p>
+        </div>
+        <div className="rounded-lg bg-muted/30 p-3 text-center">
+          <p className="font-semibold text-foreground mb-0.5">Volume Bonus</p>
+          <p>+1 per quiz, up to +10</p>
+        </div>
+        <div className="rounded-lg bg-muted/30 p-3 text-center">
+          <p className="font-semibold text-foreground mb-0.5">Tiebreaker</p>
+          <p>Score &gt; Accuracy &gt; Quizzes</p>
+        </div>
+        <div className="rounded-lg bg-muted/30 p-3 text-center">
+          <p className="font-semibold text-foreground mb-0.5">Minimum</p>
+          <p>Daily: 1 / Weekly: 5 / Monthly: 10 / All: 20</p>
         </div>
       </div>
-      <div className="h-6 w-16 bg-muted rounded" />
     </div>
   );
 }
