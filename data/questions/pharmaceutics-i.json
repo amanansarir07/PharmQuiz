@@ -1511,5 +1511,1807 @@
       "heat transfer",
       "evaporation"
     ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Solid dosage forms include all EXCEPT:",
+    "options": [
+      "Tablets",
+      "Capsules",
+      "Syrups",
+      "Powders"
+    ],
+    "correct_index": 2,
+    "explanation": "Syrups are liquid dosage forms. Tablets, capsules, powders, granules, and suppositories are solid dosage forms.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "solid"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Liquid dosage forms include:",
+    "options": [
+      "Tablets and capsules",
+      "Solutions, syrups, elixirs, suspensions, emulsions",
+      "Ointments and creams",
+      "Suppositories and pessaries"
+    ],
+    "correct_index": 1,
+    "explanation": "Liquid dosage forms include solutions, syrups, elixirs, suspensions, emulsions, lotions, liniments, and injections.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "liquid"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Semisolid dosage forms include:",
+    "options": [
+      "Tablets and pills",
+      "Ointments, creams, pastes, gels",
+      "Solutions and syrups",
+      "Inhalers and aerosols"
+    ],
+    "correct_index": 1,
+    "explanation": "Semisolid dosage forms include ointments, creams, pastes, gels, and poultices for topical application.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "semisolid"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Gaseous dosage forms include:",
+    "options": [
+      "Capsules only",
+      "Aerosols and inhalants",
+      "Suppositories",
+      "Lozenges"
+    ],
+    "correct_index": 1,
+    "explanation": "Gaseous dosage forms include aerosols, inhalants, and medical gases for respiratory administration.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "gaseous"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Nepal Pharmacopoeia (NP) is the official drug standard of:",
+    "options": [
+      "India",
+      "Nepal",
+      "China",
+      "Bangladesh"
+    ],
+    "correct_index": 1,
+    "explanation": "Nepal Pharmacopoeia (NP) is the official pharmacopoeia of Nepal, published by the Department of Drug Administration.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeias",
+      "NP"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "IP is published by:",
+    "options": [
+      "WHO",
+      "Indian Pharmacopoeia Commission",
+      "US FDA",
+      "British Pharmacopoeia Commission"
+    ],
+    "correct_index": 1,
+    "explanation": "IP (Indian Pharmacopoeia) is published by the Indian Pharmacopoeia Commission (IPC) at Ghaziabad, India.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeias",
+      "IP publisher"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "A pharmacopoeial monograph typically contains:",
+    "options": [
+      "Only drug price",
+      "Official name, synonym, formula, description, identification tests, purity tests, assay, storage",
+      "Only chemical formula",
+      "Only manufacturing process"
+    ],
+    "correct_index": 1,
+    "explanation": "A monograph contains official name, synonym, chemical formula, description, identification tests, tests of purity, assay, and storage conditions.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeias",
+      "monograph"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "EP stands for:",
+    "options": [
+      "European Pharmacopoeia",
+      "Eastern Pharmacopoeia",
+      "Essential Pharmacopoeia",
+      "Emergency Pharmacopoeia"
+    ],
+    "correct_index": 0,
+    "explanation": "EP (European Pharmacopoeia) is published by the European Directorate for the Quality of Medicines (EDQM).",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeias",
+      "EP"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "JP stands for:",
+    "options": [
+      "Japanese Pharmacopoeia",
+      "Journal of Pharmacy",
+      "Joint Pharmacopoeia",
+      "Junior Pharmacopoeia"
+    ],
+    "correct_index": 0,
+    "explanation": "JP (Japanese Pharmacopoeia) is the official pharmacopoeia of Japan, published by the Ministry of Health, Labour and Welfare.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeias",
+      "JP"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "WHO publishes:",
+    "options": [
+      "Its own pharmacopoeia for all countries",
+      "International Pharmacopoeia (recommended standards for member countries)",
+      "Only guidelines",
+      "Only drug pricing lists"
+    ],
+    "correct_index": 1,
+    "explanation": "WHO publishes the International Pharmacopoeia which provides recommended specifications for medicines, especially for developing countries.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeias",
+      "WHO"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Colloidal mill is used for:",
+    "options": [
+      "Dry powder grinding",
+      "Reducing particle size of suspensions and emulsions by shearing",
+      "Sieving powders",
+      "Sterilizing solutions"
+    ],
+    "correct_index": 1,
+    "explanation": "Colloidal mill reduces particle size of suspensions, emulsions, and pastes by high-speed shearing between rotor and stator.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "colloidal mill"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Hammer mill produces particles of size:",
+    "options": [
+      "Very coarse only",
+      "Medium to fine particles (depending on screen size)",
+      "Only very fine particles",
+      "Only nano-sized particles"
+    ],
+    "correct_index": 1,
+    "explanation": "Hammer mill produces medium to fine particles depending on the screen size used. Commonly used for size reduction in pharmacy.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "hammer mill"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Wet grinding in a ball mill uses:",
+    "options": [
+      "Dry powder only",
+      "Liquid (water, solvent) as grinding medium along with balls",
+      "Only balls without any medium",
+      "Only liquid without balls"
+    ],
+    "correct_index": 1,
+    "explanation": "Wet grinding uses a liquid medium (water or solvent) along with grinding balls, producing finer particles and reducing dust.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "wet grinding"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "In filtration, the filter medium is:",
+    "options": [
+      "The substance being filtered",
+      "The material through which the liquid passes (filter paper, membrane)",
+      "The collected residue",
+      "The container holding the mixture"
+    ],
+    "correct_index": 1,
+    "explanation": "The filter medium (filter paper, cloth, sintered glass, membrane) allows liquid (filtrate) to pass while retaining solid particles.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "filtration"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Graham's (condensing) coil evaporator is used for:",
+    "options": [
+      "Distillation of volatile oils",
+      "Evaporation of heat-sensitive solutions",
+      "Milling of solids",
+      "Filtration of suspensions"
+    ],
+    "correct_index": 1,
+    "explanation": "Graham's coil evaporator uses a coiled tube in a vacuum for gentle evaporation of heat-sensitive pharmaceutical solutions.",
+    "difficulty": "medium",
+    "tags": [
+      "unit operations",
+      "evaporator"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Pug mill is used in pharmacy for:",
+    "options": [
+      "Size reduction of solids",
+      "Kneading and mixing of wet masses (for pill and tablet masses)",
+      "Distillation",
+      "Sterilization"
+    ],
+    "correct_index": 1,
+    "explanation": "Pug mill kneads and mixes wet masses uniformly, used in preparing tablet granulations and pill masses.",
+    "difficulty": "medium",
+    "tags": [
+      "unit operations",
+      "pug mill"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Shaking sieve shaker is used for:",
+    "options": [
+      "Mixing two powders",
+      "Particle size analysis by sieving (determining particle size distribution)",
+      "Sterilization",
+      "Emulsification"
+    ],
+    "correct_index": 1,
+    "explanation": "Sieve shakers vibrate a stack of standard sieves to separate particles by size, used for particle size analysis.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "sieve shaker"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Spray dryer is used for:",
+    "options": [
+      "Milling only",
+      "Converting liquid feed into dry powder by atomizing in hot air",
+      "Filtration",
+      "Crystallization only"
+    ],
+    "correct_index": 1,
+    "explanation": "Spray dryer atomizes liquid into fine droplets in a hot air stream, producing dry powder particles (used for milk powder, extract powders).",
+    "difficulty": "medium",
+    "tags": [
+      "unit operations",
+      "spray dryer"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Spray drying produces particles that are typically:",
+    "options": [
+      "Irregular and coarse",
+      "Hollow, spherical, and fine",
+      "Needle-shaped only",
+      "Plate-shaped only"
+    ],
+    "correct_index": 1,
+    "explanation": "Spray-dried particles are typically hollow, spherical, and free-flowing with uniform size distribution.",
+    "difficulty": "medium",
+    "tags": [
+      "unit operations",
+      "spray drying"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "The Blaine apparatus is used to measure:",
+    "options": [
+      "Particle size by sieving",
+      "Specific surface area of fine powders",
+      "Melting point",
+      "pH of solutions"
+    ],
+    "correct_index": 1,
+    "explanation": "Blaine air permeability apparatus measures specific surface area of fine powders (like cement, pharmaceutical powders) by air flow resistance.",
+    "difficulty": "medium",
+    "tags": [
+      "unit operations",
+      "Blaine"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Percolation in pharmacy involves:",
+    "options": [
+      "Filtration of solutions",
+      "Passage of solvent through packed bed of crude drug to extract soluble matter",
+      "Distillation of liquids",
+      "Evaporation of solvents"
+    ],
+    "correct_index": 1,
+    "explanation": "Percolation involves continuous passage of solvent through a packed column of powdered crude drug to extract active constituents.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "percolation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Maceration differs from percolation because:",
+    "options": [
+      "Maceration uses pressure",
+      "Maceration involves soaking in closed vessel without continuous solvent flow",
+      "Maceration is faster",
+      "Maceration uses heat"
+    ],
+    "correct_index": 1,
+    "explanation": "Maceration involves soaking the drug in solvent in a closed container for a period, while percolation uses continuous flow through the drug bed.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "maceration"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Convection in heat transfer involves:",
+    "options": [
+      "Direct molecular conduction",
+      "Heat transfer through movement of fluid (liquid or gas) particles",
+      "Radiation of electromagnetic waves",
+      "No heat transfer"
+    ],
+    "correct_index": 1,
+    "explanation": "Convection involves heat transfer by the bulk movement of fluid particles, transferring heat from one place to another.",
+    "difficulty": "easy",
+    "tags": [
+      "heat transfer",
+      "convection"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Radiation heat transfer requires:",
+    "options": [
+      "Direct contact between objects",
+      "No medium (heat travels as electromagnetic waves through vacuum)",
+      "A liquid medium only",
+      "A solid medium only"
+    ],
+    "correct_index": 1,
+    "explanation": "Radiation transfers heat as electromagnetic waves and does not require any medium (works through vacuum, like solar energy).",
+    "difficulty": "easy",
+    "tags": [
+      "heat transfer",
+      "radiation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "In evaporation, the boiling point of the liquid can be lowered by:",
+    "options": [
+      "Increasing pressure",
+      "Decreasing pressure (vacuum evaporation)",
+      "Increasing temperature only",
+      "Adding more solute"
+    ],
+    "correct_index": 1,
+    "explanation": "Reducing pressure lowers the boiling point, allowing evaporation at lower temperatures (vacuum evaporation protects heat-sensitive materials).",
+    "difficulty": "easy",
+    "tags": [
+      "evaporation",
+      "vacuum"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "The principle of a water bath (thermostatically controlled) is:",
+    "options": [
+      "Direct heating with flame",
+      "Heating by immersion in water at controlled temperature",
+      "Dry heat sterilization",
+      "Microwave heating"
+    ],
+    "correct_index": 1,
+    "explanation": "Water baths provide gentle, uniform heating at controlled temperatures (below 100°C) for evaporation, dissolution, and sterility testing.",
+    "difficulty": "easy",
+    "tags": [
+      "heat transfer",
+      "water bath"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "In steam distillation, the volatile oil distills:",
+    "options": [
+      "At its normal boiling point",
+      "At a temperature below 100°C (below the boiling point of water)",
+      "At very high temperatures above 200°C",
+      "Only at room temperature"
+    ],
+    "correct_index": 1,
+    "explanation": "In steam distillation, volatile oils distill below 100°C because the total vapor pressure equals atmospheric pressure when oil vapor + water vapor combine.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "steam"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Molecular distillation is carried out under:",
+    "options": [
+      "Atmospheric pressure",
+      "Very high vacuum (10^-4 to 10^-6 mm Hg)",
+      "High temperature only",
+      "No vacuum needed"
+    ],
+    "correct_index": 1,
+    "explanation": "Molecular distillation operates under extremely high vacuum, where the mean free path of molecules is greater than the distance between evaporator and condenser.",
+    "difficulty": "hard",
+    "tags": [
+      "distillation",
+      "molecular"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "The purpose of a fractionating column in fractional distillation is to:",
+    "options": [
+      "Cool the vapor",
+      "Provide multiple theoretical plates for repeated condensation-vaporization cycles, improving separation",
+      "Heat the mixture",
+      "Filter impurities"
+    ],
+    "correct_index": 1,
+    "explanation": "A fractionating column provides surface area for repeated condensation and vaporization, effectively performing multiple simple distillations in one apparatus.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "fractionating column"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Dilatant (shear-thickening) fluids show:",
+    "options": [
+      "Decreasing viscosity with shear rate",
+      "Increasing viscosity with increasing shear rate",
+      "Constant viscosity",
+      "Zero viscosity"
+    ],
+    "correct_index": 1,
+    "explanation": "Dilatant fluids (e.g., starch suspension, bentonite) become thicker when stirred or sheared (shear-thickening behavior).",
+    "difficulty": "medium",
+    "tags": [
+      "rheology",
+      "dilatant"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Pseudoplastic (shear-thinning) fluids show:",
+    "options": [
+      "Increasing viscosity with shear rate",
+      "Decreasing viscosity with increasing shear rate (become thinner when stirred)",
+      "Constant viscosity",
+      "No flow"
+    ],
+    "correct_index": 1,
+    "explanation": "Pseudoplastic fluids (e.g., methylcellulose solutions, blood) become thinner when stirred or poured (shear-thinning).",
+    "difficulty": "medium",
+    "tags": [
+      "rheology",
+      "pseudoplastic"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Thixotropy is:",
+    "options": [
+      "Permanently reduced viscosity",
+      "Reversible gel-to-sol transition on shaking (gel becomes liquid, then returns to gel at rest)",
+      "Irreversible viscosity change",
+      "Temperature-dependent viscosity only"
+    ],
+    "correct_index": 1,
+    "explanation": "Thixotropy is the reversible property where a gel structure breaks down on shaking (liquefies) and rebuilds at rest (re-gelation).",
+    "difficulty": "medium",
+    "tags": [
+      "rheology",
+      "thixotropy"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Bingham plastic fluids:",
+    "options": [
+      "Flow immediately upon any shear",
+      "Require a minimum yield stress before they start flowing",
+      "Have zero yield stress",
+      "Are always Newtonian"
+    ],
+    "correct_index": 1,
+    "explanation": "Bingham plastics (e.g., toothpaste, ointments) require a minimum applied stress (yield value) before they begin to flow.",
+    "difficulty": "medium",
+    "tags": [
+      "rheology",
+      "Bingham plastic"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Viscosity is measured using:",
+    "options": [
+      "Barometer",
+      "Viscometer (Ostwald, Brookfield, capillary)",
+      "Spectrophotometer",
+      "pH meter"
+    ],
+    "correct_index": 1,
+    "explanation": "Viscosity is measured with viscometers: Ostwald (capillary), Brookfield (rotational), falling sphere, or cup-and-bob types.",
+    "difficulty": "easy",
+    "tags": [
+      "rheology",
+      "viscosity"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Micelles are formed when surfactant concentration exceeds:",
+    "options": [
+      "Any concentration",
+      "Critical micelle concentration (CMC)",
+      "Zero concentration",
+      "Half saturation"
+    ],
+    "correct_index": 1,
+    "explanation": "At CMC, surfactant molecules spontaneously aggregate into micelles with hydrophilic heads facing outward and hydrophobic tails inward.",
+    "difficulty": "easy",
+    "tags": [
+      "surface phenomena",
+      "micelles"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Contact angle measures:",
+    "options": [
+      "Temperature of surface",
+      "Wettability of a surface (low angle = good wetting, high angle = poor wetting)",
+      "Surface area",
+      "pH of solution"
+    ],
+    "correct_index": 1,
+    "explanation": "Contact angle indicates wettability: <90° means good wetting (hydrophilic surface), >90° means poor wetting (hydrophobic surface).",
+    "difficulty": "medium",
+    "tags": [
+      "surface phenomena",
+      "contact angle"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Tyndall effect is observed in:",
+    "options": [
+      "True solutions",
+      "Colloidal solutions (scattering of light by colloidal particles)",
+      "Gases",
+      "Pure liquids"
+    ],
+    "correct_index": 1,
+    "explanation": "Tyndall effect: colloidal particles scatter light, making a visible beam when light passes through the colloidal solution.",
+    "difficulty": "easy",
+    "tags": [
+      "colloids",
+      "Tyndall effect"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Brownian motion in colloids refers to:",
+    "options": [
+      "Color change",
+      "Random zigzag motion of colloidal particles due to bombardment by molecules of dispersion medium",
+      "Settling of particles",
+      "Evaporation of solvent"
+    ],
+    "correct_index": 1,
+    "explanation": "Brownian motion is the continuous random movement of colloidal particles caused by collision with molecules of the dispersion medium.",
+    "difficulty": "easy",
+    "tags": [
+      "colloids",
+      "Brownian motion"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Zeta potential measures:",
+    "options": [
+      "Particle size of colloids",
+      "Surface charge on colloidal particles (determines stability)",
+      "Temperature of colloids",
+      "pH of colloids"
+    ],
+    "correct_index": 1,
+    "explanation": "Zeta potential is the electrical potential at the slipping plane of a colloidal particle. Higher zeta potential = more stable colloidal system.",
+    "difficulty": "medium",
+    "tags": [
+      "colloids",
+      "zeta potential"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Creaming in an emulsion means:",
+    "options": [
+      "Emulsion breaking completely",
+      "Rising of oil droplets (or sedimentation of water droplets) to form a layer (reversible)",
+      "Irreversible phase separation",
+      "Color change"
+    ],
+    "correct_index": 1,
+    "explanation": "Creaming is the reversible upward movement of dispersed phase droplets due to density difference. It can be reversed by shaking.",
+    "difficulty": "easy",
+    "tags": [
+      "emulsions",
+      "creaming"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Coalescence in emulsions means:",
+    "options": [
+      "Droplets merging to form larger droplets (irreversible breaking)",
+      "Droplets becoming smaller",
+      "Creaming only",
+      "Reversible separation"
+    ],
+    "correct_index": 0,
+    "explanation": "Coalescence is the irreversible merging of small droplets into larger ones, eventually leading to complete phase separation (emulsion breaking).",
+    "difficulty": "medium",
+    "tags": [
+      "emulsions",
+      "coalescence"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Linctuses are:",
+    "options": [
+      "Liquid preparations for oral use, viscous, used for cough",
+      "Liquid preparations for external use",
+      "Semisolid preparations",
+      "Solid preparations"
+    ],
+    "correct_index": 0,
+    "explanation": "Linctuses are viscous, liquid oral preparations containing high concentration of sugar (80% w/w), used for cough relief.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "linctuses"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Gargles are:",
+    "options": [
+      "Swallowed preparations",
+      "Aqueous solutions used for gargling to treat throat conditions",
+      "Injected preparations",
+      "Applied to skin only"
+    ],
+    "correct_index": 1,
+    "explanation": "Gargles are aqueous solutions containing antiseptics, astringents, or anti-inflammatory agents, used by gargling for throat conditions.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "gargles"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Mouthwashes differ from gargles because:",
+    "options": [
+      "They are swallowed",
+      "They are used for rinsing the mouth (not held in throat)",
+      "They are always medicated",
+      "They contain alcohol only"
+    ],
+    "correct_index": 1,
+    "explanation": "Mouthwashes are used for rinsing the oral cavity; gargles are held in the throat. Both are for external use only.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "mouthwashes"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Ear drops are:",
+    "options": [
+      "Oral preparations",
+      "Liquid preparations for instillation into the ear canal",
+      "Eye preparations",
+      "Nasal preparations"
+    ],
+    "correct_index": 1,
+    "explanation": "Ear drops are sterile or non-sterile liquid preparations designed for instillation into the external auditory canal.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "ear drops"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Nasal drops are used for:",
+    "options": [
+      "Treating ear infections",
+      "Decongestion and treatment of nasal conditions",
+      "Treating eye infections",
+      "Treating throat infections"
+    ],
+    "correct_index": 1,
+    "explanation": "Nasal drops contain decongestants (xylometazoline), corticosteroids, or saline for treating nasal congestion and rhinitis.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "nasal drops"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Rate of drug absorption depends on all EXCEPT:",
+    "options": [
+      "Drug solubility",
+      "Membrane permeability",
+      "Patient's height",
+      "Particle size of drug"
+    ],
+    "correct_index": 2,
+    "explanation": "Height does not affect drug absorption. Solubility, permeability, particle size, formulation, and GI motility all affect absorption rate.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "absorption factors"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Volume of distribution (Vd) of a drug that stays mostly in plasma is:",
+    "options": [
+      "Very large",
+      "Small (close to plasma volume ~3-5L)",
+      "Infinite",
+      "Zero"
+    ],
+    "correct_index": 1,
+    "explanation": "Small Vd (3-5L) means the drug is largely confined to plasma. Large Vd means drug distributes extensively into tissues.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "Vd"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Clearance refers to:",
+    "options": [
+      "Volume of drug in blood",
+      "Volume of plasma completely cleared of drug per unit time",
+      "Concentration of drug in plasma",
+      "Total amount of drug in body"
+    ],
+    "correct_index": 1,
+    "explanation": "Clearance (Cl) is the volume of plasma from which drug is completely removed per unit time (mL/min or L/hr).",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "clearance"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Half-life (t1/2) of a drug is directly proportional to:",
+    "options": [
+      "Clearance",
+      "Volume of distribution and inversely to clearance (Vd/Cl)",
+      "Dose administered",
+      "Drug concentration"
+    ],
+    "correct_index": 1,
+    "explanation": "t1/2 = 0.693 × Vd / Cl. Half-life increases with larger Vd and decreases with higher clearance.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "half-life"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Steady state concentration (Css) is reached after:",
+    "options": [
+      "1 half-life",
+      "2-3 half-lives",
+      "4-5 half-lives",
+      "10 half-lives"
+    ],
+    "correct_index": 2,
+    "explanation": "Css is achieved after approximately 4-5 half-lives of repeated dosing, when rate of administration equals rate of elimination.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "steady state"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Loading dose is calculated using:",
+    "options": [
+      "Clearance and Css",
+      "Volume of distribution and target Css (LD = Vd x Css / F)",
+      "Only half-life",
+      "Only body weight"
+    ],
+    "correct_index": 1,
+    "explanation": "Loading dose = (Vd x Css) / F, where F is bioavailability. It depends on Vd, not clearance.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "loading dose"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Maintenance dose is calculated using:",
+    "options": [
+      "Volume of distribution",
+      "Clearance, Css, dosing interval, and bioavailability (MD = Cl x Css x tau / F)",
+      "Only weight",
+      "Only age"
+    ],
+    "correct_index": 1,
+    "explanation": "Maintenance dose = (Cl x Css x tau) / F, where tau is dosing interval. It depends on clearance, not Vd.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "maintenance dose"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "GI motility affects drug absorption by:",
+    "options": [
+      "Not affecting it at all",
+      "Faster motility reduces absorption time (decreased absorption for some drugs)",
+      "Always increasing absorption",
+      "Only affecting IV drugs"
+    ],
+    "correct_index": 1,
+    "explanation": "Increased GI motility reduces contact time between drug and absorption site, potentially decreasing absorption of slowly absorbed drugs.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "GI motility"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Food in the stomach can:",
+    "options": [
+      "Always increase drug absorption",
+      "May increase or decrease absorption depending on the drug",
+      "Always decrease absorption",
+      "Have no effect on absorption"
+    ],
+    "correct_index": 1,
+    "explanation": "Food can increase absorption (fatty meals for lipophilic drugs), decrease absorption (chelation with tetracyclines), or delay absorption.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "food effect"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "1 tablespoon (tbsp) equals approximately:",
+    "options": [
+      "1 mL",
+      "5 mL",
+      "10 mL",
+      "15 mL"
+    ],
+    "correct_index": 3,
+    "explanation": "1 tablespoon (tbsp) = 15 mL. 1 teaspoon (tsp) = 5 mL. 1 dessertspoon = 10 mL.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "volume"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "1 fluid ounce (fl oz) equals approximately:",
+    "options": [
+      "5 mL",
+      "15 mL",
+      "30 mL",
+      "60 mL"
+    ],
+    "correct_index": 2,
+    "explanation": "1 US fluid ounce ≈ 29.57 mL (approximately 30 mL). 1 UK fluid ounce ≈ 28.4 mL.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "volume"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "1 grain (gr) is approximately equal to:",
+    "options": [
+      "10 mg",
+      "60 mg",
+      "100 mg",
+      "500 mg"
+    ],
+    "correct_index": 1,
+    "explanation": "1 grain ≈ 60 mg (actually 64.8 mg). This is a commonly used apothecary unit conversion.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "weight"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "1 dram (dr) equals:",
+    "options": [
+      "1 g",
+      "4 g (approx 60 grains)",
+      "10 g",
+      "100 g"
+    ],
+    "correct_index": 1,
+    "explanation": "1 dram ≈ 3.89 g (approximately 4 g). 1 ounce (oz) ≈ 31.1 g. 1 pound (lb) ≈ 453.6 g.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "weight"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "To convert mg to g, you:",
+    "options": [
+      "Multiply by 1000",
+      "Divide by 1000",
+      "Divide by 100",
+      "Multiply by 100"
+    ],
+    "correct_index": 1,
+    "explanation": "1 g = 1000 mg. To convert mg to g, divide by 1000 (e.g., 500 mg = 0.5 g).",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "conversion"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "A 5% w/v solution contains:",
+    "options": [
+      "5 g of drug in 100 mL of solution",
+      "5 mg of drug in 100 mL",
+      "5 g of drug in 100 g",
+      "5 mL of drug in 100 mL"
+    ],
+    "correct_index": 0,
+    "explanation": "% w/v means grams per 100 mL of solution. 5% w/v = 5 g drug in 100 mL total solution.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "concentration"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "A 1:1000 w/v solution means:",
+    "options": [
+      "1 g in 100 mL",
+      "1 g in 1000 mL (1 L)",
+      "1 mg in 1 mL",
+      "1000 g in 1 L"
+    ],
+    "correct_index": 1,
+    "explanation": "1:1000 w/v means 1 g of drug in 1000 mL (1 liter) of solution, equivalent to 0.1% w/v or 1 mg/mL.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "ratio strength"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Allegation medial is used when:",
+    "options": [
+      "Mixing two solutions of different strengths",
+      "Finding the proportion of two ingredients to produce a desired concentration",
+      "Calculating dose from body weight",
+      "Determining bioavailability"
+    ],
+    "correct_index": 1,
+    "explanation": "Alligation medial calculates the mean concentration when two or more ingredients of known strength are mixed in known proportions.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "alligation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Alligation alternate is used when:",
+    "options": [
+      "Finding average concentration",
+      "Determining amounts of two ingredients of different strengths needed to produce a desired concentration",
+      "Calculating half-life",
+      "Measuring pH"
+    ],
+    "correct_index": 1,
+    "explanation": "Alligation alternate determines the proportions of two ingredients (one stronger, one weaker) needed to prepare a desired intermediate strength.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "alligation alternate"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Dose for a child can be calculated by Young's rule:",
+    "options": [
+      "Adult dose x (age / 12)",
+      "Adult dose x (age / (age + 12))",
+      "Adult dose x weight / 70",
+      "Adult dose / 2"
+    ],
+    "correct_index": 1,
+    "explanation": "Young's rule: Child dose = Adult dose x [age / (age + 12)]. Used for children 2-12 years old.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "pediatric dose"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Clark's rule calculates child dose based on:",
+    "options": [
+      "Age only",
+      "Body weight (Child dose = Adult dose x weight in lbs / 150)",
+      "Height only",
+      "Body surface area only"
+    ],
+    "correct_index": 1,
+    "explanation": "Clark's rule: Child dose = Adult dose x (child's weight in lbs / 150). Based on weight ratio to average adult weight.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "Clark's rule"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Fried's rule is used for:",
+    "options": [
+      "Adult dosing",
+      "Infant dosing (up to 2 years): Adult dose x (age in months / 150)",
+      "Elderly dosing",
+      "Pregnancy dosing"
+    ],
+    "correct_index": 1,
+    "explanation": "Fried's rule: Infant dose = Adult dose x (infant age in months / 150). Used for children under 2 years.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "Fried's rule"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Body surface area (BSA) method of dosing is considered most accurate for:",
+    "options": [
+      "Adults only",
+      "Pediatric and oncology patients",
+      "Geriatric patients only",
+      "Neonates only"
+    ],
+    "correct_index": 1,
+    "explanation": "BSA-based dosing is considered the most accurate method, especially for pediatric patients and cytotoxic drugs.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "BSA dosing"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Falling ball viscometer measures viscosity based on:",
+    "options": [
+      "Time for ball to fall through liquid (Stokes' law)",
+      "Flow through capillary",
+      "Rotation of spindle",
+      "Pressure difference"
+    ],
+    "correct_index": 0,
+    "explanation": "Falling ball viscometer uses Stokes' law: viscosity is proportional to the time a sphere takes to fall through the liquid.",
+    "difficulty": "medium",
+    "tags": [
+      "unit operations",
+      "falling ball viscometer"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Emulsions are thermodynamically:",
+    "options": [
+      "Stable",
+      "Unstable (tend to separate over time)",
+      "Always stable with emulsifiers",
+      "More stable than suspensions"
+    ],
+    "correct_index": 1,
+    "explanation": "Emulsions are thermodynamically unstable and tend to separate (cream, crack). Emulsifiers slow this process by reducing interfacial tension.",
+    "difficulty": "easy",
+    "tags": [
+      "emulsions",
+      "stability"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "HLB (Hydrophilic-Lipophilic Balance) value helps in:",
+    "options": [
+      "Measuring viscosity",
+      "Selecting appropriate emulsifier for oil-in-water or water-in-oil emulsions",
+      "Measuring pH",
+      "Measuring particle size"
+    ],
+    "correct_index": 1,
+    "explanation": "HLB scale (0-20) indicates the emulsifier's affinity. High HLB (8-18) = O/W emulsifier; Low HLB (3-6) = W/O emulsifier.",
+    "difficulty": "medium",
+    "tags": [
+      "emulsions",
+      "HLB"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "For O/W emulsions, HLB value of emulsifier should be:",
+    "options": [
+      "3-6",
+      "8-18",
+      "0-2",
+      "20-25"
+    ],
+    "correct_index": 1,
+    "explanation": "O/W emulsifiers have high HLB (8-18) because they are more hydrophilic, stabilizing oil droplets in water continuous phase.",
+    "difficulty": "medium",
+    "tags": [
+      "emulsions",
+      "HLB O/W"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Fluid energy mill (micronizer) produces:",
+    "options": [
+      "Coarse particles",
+      "Ultrafine particles (5-20 microns) using high-velocity air jets",
+      "Tablets only",
+      "Capsules only"
+    ],
+    "correct_index": 1,
+    "explanation": "Fluid energy mill uses high-velocity compressed air to collide particles against each other, producing ultrafine particles.",
+    "difficulty": "medium",
+    "tags": [
+      "unit operations",
+      "fluid energy mill"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Zero-order drug release means:",
+    "options": [
+      "Drug released proportionally to concentration",
+      "Drug released at a constant rate regardless of concentration",
+      "No drug released",
+      "Drug released exponentially"
+    ],
+    "correct_index": 1,
+    "explanation": "Zero-order release: constant amount of drug released per unit time (e.g., transdermal patches, osmotic pumps).",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "zero order release"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "First-order drug release means:",
+    "options": [
+      "Constant rate of release",
+      "Release rate proportional to remaining drug concentration",
+      "No release",
+      "Only initial burst release"
+    ],
+    "correct_index": 1,
+    "explanation": "First-order release: rate of release is proportional to the amount of drug remaining, producing an exponential decline.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "first order release"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "The British Pharmaceutical Codex (BPC) provides:",
+    "options": [
+      "Legal standards for drugs only",
+      "Supplementary standards and monographs not covered in BP",
+      "Only veterinary drugs",
+      "Only herbal medicines"
+    ],
+    "correct_index": 1,
+    "explanation": "BPC provides supplementary information to BP, including additional monographs, pharmaceutical data, and preparation details.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeias",
+      "BPC"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Dialysis is used to:",
+    "options": [
+      "Increase viscosity of colloids",
+      "Remove crystalloids (small molecules) from colloidal solutions (purification)",
+      "Increase particle size",
+      "Sterilize solutions"
+    ],
+    "correct_index": 1,
+    "explanation": "Dialysis purifies colloidal solutions by removing small crystalloid molecules through a semi-permeable membrane while retaining colloidal particles.",
+    "difficulty": "medium",
+    "tags": [
+      "colloids",
+      "dialysis"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Electrophoresis is the movement of colloidal particles under:",
+    "options": [
+      "Gravity only",
+      "Influence of electric field (toward oppositely charged electrode)",
+      "Magnetic field",
+      "Centrifugal force"
+    ],
+    "correct_index": 1,
+    "explanation": "Electrophoresis: colloidal particles migrate toward the electrode of opposite charge when an electric field is applied.",
+    "difficulty": "easy",
+    "tags": [
+      "colloids",
+      "electrophoresis"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "What is 2.5% w/v expressed as ratio strength?",
+    "options": [
+      "1:25",
+      "1:40",
+      "1:250",
+      "1:400"
+    ],
+    "correct_index": 1,
+    "explanation": "2.5% w/v = 2.5 g per 100 mL = 1 g per 40 mL = 1:40 ratio strength.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "ratio strength"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Lyophilization (freeze drying) is used to prepare:",
+    "options": [
+      "Ointments",
+      "Thermolabile (heat-sensitive) parenteral preparations",
+      "Tablets only",
+      "Suppositories only"
+    ],
+    "correct_index": 1,
+    "explanation": "Lyophilization removes water by sublimation under vacuum, preserving heat-sensitive materials like vaccines, antibiotics, and blood products.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "lyophilization"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Planetary ball mill works by:",
+    "options": [
+      "Only rotation",
+      "Cylinders rotating around central axis AND on their own axis simultaneously",
+      "Vibration only",
+      "Impact only"
+    ],
+    "correct_index": 1,
+    "explanation": "Planetary ball mill has jars rotating on their own axis while orbiting a central axis, creating high-energy collisions for fine grinding.",
+    "difficulty": "medium",
+    "tags": [
+      "unit operations",
+      "planetary ball mill"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Sedimentation in suspensions is caused by:",
+    "options": [
+      "Chemical reaction",
+      "Gravity acting on particles denser than dispersion medium",
+      "Evaporation",
+      "Temperature change"
+    ],
+    "correct_index": 1,
+    "explanation": "Sedimentation occurs when particles denser than the dispersion medium settle under gravity, reduced by adding suspending agents.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "sedimentation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Cyclone separator separates particles based on:",
+    "options": [
+      "Size only",
+      "Density and particle size using centrifugal force",
+      "Color",
+      "Chemical composition"
+    ],
+    "correct_index": 1,
+    "explanation": "Cyclone separators use centrifugal force to separate particles based on their size and density from air or gas streams.",
+    "difficulty": "medium",
+    "tags": [
+      "unit operations",
+      "cyclone"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Flocculation in suspensions means:",
+    "options": [
+      "Complete settling of all particles",
+      "Loose aggregation of particles into open structures (re-suspendable)",
+      "Irreversible clumping",
+      "Dissolution of particles"
+    ],
+    "correct_index": 1,
+    "explanation": "Flocculation: particles form loose, open aggregates (flocs) that can be easily re-suspended by gentle shaking, preferred over deflocculated systems.",
+    "difficulty": "medium",
+    "tags": [
+      "suspensions",
+      "flocculation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Deflocculated suspensions tend to:",
+    "options": [
+      "Re-suspend easily",
+      "Cake (form hard sediment that is difficult to redisperse)",
+      "Have lower viscosity",
+      "Be more stable than flocculated systems"
+    ],
+    "correct_index": 1,
+    "explanation": "In deflocculated suspensions, particles settle individually forming a dense, hard-to-redisperse cake at the bottom.",
+    "difficulty": "medium",
+    "tags": [
+      "suspensions",
+      "deflocculated"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Oral bioavailability of a drug can be increased by all EXCEPT:",
+    "options": [
+      "Using micronized particles (increased surface area)",
+      "Prodrug approach",
+      "Increasing particle size",
+      "Using lipid-based formulations for lipophilic drugs"
+    ],
+    "correct_index": 2,
+    "explanation": "Increasing particle size reduces dissolution rate and surface area, DECREASING absorption and bioavailability.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "bioavailability"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Gastroretentive drug delivery systems are designed to:",
+    "options": [
+      "Release drug in the colon",
+      "Remain in the stomach for extended periods for local or systemic action",
+      "Be absorbed in the intestine only",
+      "Be excreted immediately"
+    ],
+    "correct_index": 1,
+    "explanation": "Gastroretentive systems (floating, bioadhesive, expandable) stay in the stomach longer, useful for drugs absorbed from stomach or acting locally.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "gastroretentive"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Sustained-release dosage forms aim to:",
+    "options": [
+      "Release drug all at once immediately",
+      "Maintain therapeutic drug levels over an extended period with reduced dosing frequency",
+      "Release drug only in the colon",
+      "Dissolve faster than conventional tablets"
+    ],
+    "correct_index": 1,
+    "explanation": "Sustained-release (SR) forms release drug slowly over 8-12+ hours, maintaining steady plasma levels and reducing dosing frequency.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "sustained release"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Enteric-coated tablets are designed to:",
+    "options": [
+      "Dissolve in the stomach",
+      "Resist stomach acid and dissolve in the alkaline intestine",
+      "Be absorbed through the cheek",
+      "Be given rectally"
+    ],
+    "correct_index": 1,
+    "explanation": "Enteric coatings (shellac, HPMCP, cellulose acetate phthalate) resist gastric acid and dissolve at intestinal pH, protecting drug or stomach.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "enteric coating"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "To convert a percentage concentration to ratio strength: 5% w/v =",
+    "options": [
+      "1:5",
+      "1:20",
+      "1:50",
+      "1:100"
+    ],
+    "correct_index": 1,
+    "explanation": "5% w/v = 5g/100mL = 1g/20mL = 1:20 ratio strength.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "ratio conversion"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "If a dose of 250 mg is to be given and the stock solution is 125 mg/mL, how many mL should be administered?",
+    "options": [
+      "0.5 mL",
+      "1 mL",
+      "2 mL",
+      "4 mL"
+    ],
+    "correct_index": 2,
+    "explanation": "Volume = Dose / Concentration = 250 mg / 125 mg/mL = 2 mL.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "dose calculation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Isotonicity of a solution means it has the same osmotic pressure as:",
+    "options": [
+      "Pure water",
+      "Blood plasma/tears/other body fluids",
+      "Ethanol",
+      "Concentrated salt solution"
+    ],
+    "correct_index": 1,
+    "explanation": "Isotonic solutions have the same osmotic pressure as body fluids (e.g., 0.9% NaCl is isotonic with blood).",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "isotonicity"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Freezing point depression method for isotonicity: NaCl solution that freezes at -0.52°C is:",
+    "options": [
+      "Hypotonic",
+      "Isotonic (0.9% NaCl freezes at -0.52°C)",
+      "Hypertonic",
+      "Cannot be determined"
+    ],
+    "correct_index": 1,
+    "explanation": "0.9% NaCl (normal saline) freezes at -0.52°C, which equals the freezing point of blood plasma, making it isotonic.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "freezing point"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "In simple distillation, the thermometer bulb should be placed:",
+    "options": [
+      "In the boiling liquid",
+      "At the branch of the distillation flask (where vapor enters condenser)",
+      "At the bottom of the flask",
+      "At the top of the condenser"
+    ],
+    "correct_index": 1,
+    "explanation": "The thermometer bulb is placed at the branch (side arm) to measure the temperature of vapor entering the condenser = boiling point of distillate.",
+    "difficulty": "easy",
+    "tags": [
+      "distillation",
+      "thermometer placement"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Condenser in distillation apparatus serves to:",
+    "options": [
+      "Heat the liquid",
+      "Cool and condense hot vapors back into liquid",
+      "Filter impurities",
+      "Measure temperature"
+    ],
+    "correct_index": 1,
+    "explanation": "The condenser cools hot vapors using cold water flowing around an inner tube, converting them back to liquid (distillate).",
+    "difficulty": "easy",
+    "tags": [
+      "distillation",
+      "condenser"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "The abbreviation BPC stands for:",
+    "options": [
+      "British Pharmacopoeia Commission",
+      "British Pharmaceutical Codex",
+      "Basic Pharmacy Course",
+      "Biological Products Commission"
+    ],
+    "correct_index": 1,
+    "explanation": "BPC = British Pharmaceutical Codex, a companion to the British Pharmacopoeia providing supplementary drug information.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeias",
+      "BPC"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Reflux condenser is used during:",
+    "options": [
+      "Distillation of volatile oils",
+      "Extraction of drugs by boiling solvent without losing solvent (continuous extraction)",
+      "Filtration of solutions",
+      "Sterilization of equipment"
+    ],
+    "correct_index": 1,
+    "explanation": "Reflux condenser returns evaporated solvent back to the extraction vessel, allowing prolonged boiling without solvent loss (Soxhlet extraction).",
+    "difficulty": "medium",
+    "tags": [
+      "heat process",
+      "reflux"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Lotions are applied to the skin using:",
+    "options": [
+      "Fingers only",
+      "Cotton swab, gauze, or by pouring/spraying",
+      "Injection",
+      "Inhalation"
+    ],
+    "correct_index": 1,
+    "explanation": "Lotions are applied externally using cotton, gauze, or sprayers. They are pourable liquids, thinner than creams but thicker than solutions.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "lotions"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Liniments are:",
+    "options": [
+      "Always aqueous preparations",
+      "Alcoholic or oily preparations rubbed into the skin for counter-irritant effect",
+      "Oral preparations",
+      "Eye preparations"
+    ],
+    "correct_index": 1,
+    "explanation": "Liniments are medicated oily/alcoholic preparations applied by rubbing into the skin, acting as counter-irritants or rubefacients.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "liniments"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "History of pharmacy in Nepal includes establishment of:",
+    "options": [
+      "Only modern pharmacies",
+      "Traditional healers (Jhankri/Baidhya) and later modern pharmacy practice",
+      "Only government hospitals",
+      "Only manufacturing units"
+    ],
+    "correct_index": 1,
+    "explanation": "Nepal's pharmacy history began with traditional healers, evolved to traditional medicine (Ayurveda), and later adopted modern pharmaceutical practice.",
+    "difficulty": "easy",
+    "tags": [
+      "history",
+      "Nepal"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Noyes-Whitney equation describes:",
+    "options": [
+      "Viscosity of liquids",
+      "Rate of dissolution of a solid drug in a liquid",
+      "Rate of chemical reaction",
+      "Rate of filtration"
+    ],
+    "correct_index": 1,
+    "explanation": "Noyes-Whitney equation: dC/dt = D x A x (Cs - C) / h. Dissolution rate depends on diffusion coefficient, surface area, concentration gradient, and diffusion layer thickness.",
+    "difficulty": "medium",
+    "tags": [
+      "dissolution",
+      "Noyes-Whitney"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Nernst diffusion layer (h) in dissolution is:",
+    "options": [
+      "The entire vessel thickness",
+      "A thin, stagnant layer of solvent surrounding the dissolving particle",
+      "The filter paper thickness",
+      "The container wall"
+    ],
+    "correct_index": 1,
+    "explanation": "The Nernst diffusion layer is a thin, stationary layer of solvent at the solid-liquid interface through which dissolved drug must diffuse.",
+    "difficulty": "medium",
+    "tags": [
+      "dissolution",
+      "Nernst layer"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "The term 'bioequivalence' means:",
+    "options": [
+      "Two drugs have different absorption rates",
+      "Two formulations deliver the same rate and extent of drug absorption",
+      "Two drugs are chemically identical",
+      "Two drugs have same price"
+    ],
+    "correct_index": 1,
+    "explanation": "Bioequivalence means two formulations (e.g., generic vs brand) deliver drug to the site of action at the same rate and extent.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "bioequivalence"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Cosseting in pharmaceutical manufacturing involves:",
+    "options": [
+      "Final product testing",
+      "Applying a thin coat of sugar or other substance onto granules or cores",
+      "Packaging medicines",
+      "Labeling products"
+    ],
+    "correct_index": 1,
+    "explanation": "Cosseting (coating) applies thin layers of sugar, film, or enteric coating onto granules, pellets, or tablet cores for protection or taste masking.",
+    "difficulty": "easy",
+    "tags": [
+      "unit operations",
+      "coating"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "One troy ounce is approximately equal to:",
+    "options": [
+      "28.35 g (avoirdupois ounce)",
+      "31.1 g",
+      "100 g",
+      "10 g"
+    ],
+    "correct_index": 1,
+    "explanation": "1 troy ounce ≈ 31.1 g, used for precious metals and sometimes for pharmacy calculations (different from avoirdupois ounce = 28.35g).",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "troy ounce"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Sedimentation volume in a suspension is the ratio of:",
+    "options": [
+      "Height of sediment to total height of suspension",
+      "Weight of sediment to total weight",
+      "Volume of supernatant to total volume",
+      "Particle size to vessel size"
+    ],
+    "correct_index": 0,
+    "explanation": "Sedimentation volume (F) = height of sediment / total height of suspension. F close to 1 indicates good suspension stability.",
+    "difficulty": "medium",
+    "tags": [
+      "suspensions",
+      "sedimentation volume"
+    ]
   }
 ]
