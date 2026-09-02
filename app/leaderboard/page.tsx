@@ -163,8 +163,8 @@ export default function LeaderboardPage() {
       {/* User Position Card */}
       {user && userPosition && (
         <Card className={cn("mb-6 transition-all duration-300", userPosition.qualified 
-          ? "border-primary/20 bg-gradient-to-r from-primary/5 to-transparent" 
-          : "border-orange-200 bg-gradient-to-r from-orange-50 to-transparent"
+          ? "border-primary/20 bg-gradient-to-r from-primary/5 to-transparent dark:from-primary/10" 
+          : "border-orange-200 dark:border-orange-800 bg-gradient-to-r from-orange-50 to-transparent dark:from-orange-950/30"
         )}>
           <CardContent className="p-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -190,7 +190,7 @@ export default function LeaderboardPage() {
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-3 text-sm">
-                <div className={cn("flex items-center gap-2 px-3 py-1.5 rounded-full", userPosition.qualified ? "bg-green-100 text-green-700" : "bg-orange-100 text-orange-700")}>
+                <div className={cn("flex items-center gap-2 px-3 py-1.5 rounded-full", userPosition.qualified ? "bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300" : "bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300")}>
                   <div className="flex items-center gap-1">
                     <Target className="h-3.5 w-3.5" />
                     <span>{userPosition.quizzesTaken} / {PERIOD_MIN_QUIZZES[activePeriod]} MCQs</span>
@@ -257,16 +257,16 @@ export default function LeaderboardPage() {
             </div>
           </div>
           <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-            <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+            <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/50 dark:text-blue-300 dark:border-blue-800">
               Daily: 1+ quiz
             </Badge>
-            <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
+            <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/50 dark:text-purple-300 dark:border-purple-800">
               Weekly: 5+ quizzes
             </Badge>
-            <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200">
+            <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/50 dark:text-emerald-300 dark:border-emerald-800">
               Monthly: 10+ quizzes
             </Badge>
-            <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
+            <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200 dark:bg-yellow-950/50 dark:text-yellow-300 dark:border-yellow-800">
               All-Time: 20+ quizzes
             </Badge>
           </div>
@@ -392,10 +392,10 @@ function LeaderboardRow({
       className={cn(
         "flex items-center gap-4 px-5 py-4 transition-all duration-200",
         "hover:bg-muted/30",
-        entry.rank === 1 && "bg-yellow-50/50 border-l-4 border-yellow-500",
-        entry.rank === 2 && "bg-gray-50/50 border-l-4 border-gray-400",
-        entry.rank === 3 && "bg-amber-50/50 border-l-4 border-amber-500",
-        isCurrentUser && "bg-blue-50/50 border-l-4 border-blue-500 ring-1 ring-blue-200",
+        entry.rank === 1 && "bg-yellow-50 dark:bg-yellow-950/30 border-l-4 border-yellow-500",
+        entry.rank === 2 && "bg-gray-50 dark:bg-gray-800/50 border-l-4 border-gray-400",
+        entry.rank === 3 && "bg-amber-50 dark:bg-amber-950/30 border-l-4 border-amber-500",
+        isCurrentUser && "bg-blue-50 dark:bg-blue-950/30 border-l-4 border-blue-500 ring-1 ring-blue-200 dark:ring-blue-800",
         !showRank && "opacity-60"
       )}
     >

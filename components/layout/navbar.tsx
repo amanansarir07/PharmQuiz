@@ -117,7 +117,6 @@ export function Navbar() {
                   {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
                 </button>
                 <hr className="my-2" />
-                <hr className="my-2" />
                 <button onClick={() => { logout(); setMobileOpen(false); router.push("/"); }} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted text-left w-full">Sign Out</button>
               </>
             ) : (
