@@ -1,0 +1,1712 @@
+import json
+
+def add(filename, qs):
+    with open(filename, 'r', encoding='utf-8') as f:
+        existing = json.load(f)
+    texts = {q['question_text'] for q in existing}
+    added = 0
+    for q in qs:
+        if q['question_text'] not in texts:
+            existing.append(q)
+            texts.add(q['question_text'])
+            added += 1
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(existing, f, indent=2, ensure_ascii=False)
+    print(f"Added {added} questions. Total: {len(existing)}")
+
+questions = [
+    {
+        "question_text": "What is pharmacognosy?",
+        "options": {"a": "Study of synthetic drugs", "b": "The study of drugs obtained from natural sources (plants, animals, minerals)", "c": "Study of drug interactions", "d": "Study of drug pricing"},
+        "correct_option": "b",
+        "explanation": "Pharmacognosy is the branch of pharmacology dealing with natural drugs obtained from plants, animals, minerals, and microorganisms, including their chemistry, cultivation, and uses.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["definition", "introduction"]
+    },
+    {
+        "question_text": "What are crude drugs?",
+        "options": {"a": "Pure chemical compounds", "b": "Naturally obtained drugs that have not yet been processed into pure chemical form", "c": "Synthetic drugs", "d": "Patented drugs"},
+        "correct_option": "b",
+        "explanation": "Crude drugs are natural drugs obtained from plant, animal, or mineral sources that haven't undergone purification to isolate active chemical constituents.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["definition", "crude drugs"]
+    },
+    {
+        "question_text": "What is the biological source of opium?",
+        "options": {"a": "Cannabis sativa", "b": "Dried latex obtained from unripe capsules of Papaver somniferum", "c": "Rauwolfia serpentina", "d": "Digitalis purpurea"},
+        "correct_option": "b",
+        "explanation": "Opium is the dried latex (oleoresin) obtained by incising the unripe capsules of Papaver somniferum (opium poppy), belonging to family Papaveraceae.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["opium", "Papaveraceae"]
+    },
+    {
+        "question_text": "Which alkaloid is the chief constituent of opium?",
+        "options": {"a": "Caffeine", "b": "Morphine", "c": "Quinine", "d": "Strychnine"},
+        "correct_option": "b",
+        "explanation": "Morphine is the principal alkaloid of opium (5-15%), responsible for its potent analgesic, antitussive, and antidiarrheal properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["opium", "morphine", "alkaloids"]
+    },
+    {
+        "question_text": "What is the biological source of digitalis?",
+        "options": {"a": "Thevetia peruviana", "b": "Dried leaves of Digitalis purpurea (foxglove)", "c": "Strophanthus kombe", "d": "Nerium oleander"},
+        "correct_option": "b",
+        "explanation": "Digitalis consists of dried leaves of Digitalis purpurea Linn. (family Plantaginaceae/Scrophulariaceae), collected from plants during the second year of growth.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["digitalis", "cardiac glycosides"]
+    },
+    {
+        "question_text": "Which glycoside is the primary active constituent of digitalis?",
+        "options": {"a": "Digoxin", "b": "Digitoxin", "c": "Both digoxin and digitoxin", "d": "Strophanthin"},
+        "correct_option": "b",
+        "explanation": "Digitoxin is the primary glycoside in Digitalis purpurea. Digoxin is obtained from Digitalis lanata. Both are cardiac glycosides used in heart failure treatment.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["digitalis", "cardiac glycosides"]
+    },
+    {
+        "question_text": "What are the four main types of phytochemical constituents in crude drugs?",
+        "options": {"a": "Acids, bases, salts, water", "b": "Alkaloids, glycosides, volatile oils, and tannins", "c": "Proteins, fats, carbohydrates, vitamins", "d": "Enzymes, hormones, vitamins, minerals"},
+        "correct_option": "b",
+        "explanation": "The main phytochemical groups are: alkaloids (nitrogenous bases), glycosides (sugar-bound compounds), volatile oils (aromatic), tannins (phenolic), plus resins, fats, and carbohydrates.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["phytochemistry", "classification"]
+    },
+    {
+        "question_text": "What are alkaloids?",
+        "options": {"a": "Sugars found in plants", "b": "Nitrogen-containing organic compounds of plant origin with pronounced physiological effects", "c": "Fatty acids", "d": "Vitamins from plants"},
+        "correct_option": "b",
+        "explanation": "Alkaloids are naturally occurring nitrogenous compounds (usually basic) with potent pharmacological effects. Examples: morphine, quinine, atropine, caffeine, nicotine.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["alkaloids"]
+    },
+    {
+        "question_text": "What is the biological source of cinchona bark?",
+        "options": {"a": "Cinchona ledgeriana", "b": "Dried bark of Cinchona calisaya, C. ledgeriana, C. officinalis, or C. pubescens", "c": "Cinchona succirubra only", "d": "Cinchona nitida"},
+        "correct_option": "b",
+        "explanation": "Cinchona bark is obtained from various Cinchona species (family Rubiaceae). C. ledgeriana contains the highest quinine content (up to 13%).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["cinchona", "quinine"]
+    },
+    {
+        "question_text": "Which alkaloid from cinchona bark is used to treat malaria?",
+        "options": {"a": "Caffeine", "b": "Quinine", "c": "Morphine", "d": "Atropine"},
+        "correct_option": "b",
+        "explanation": "Quinine is the principal alkaloid of cinchona bark (5-8%) and has been used for centuries as an antimalarial agent, especially for Plasmodium falciparum malaria.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["cinchona", "quinine", "malaria"]
+    },
+    {
+        "question_text": "What is the biological source of belladonna?",
+        "options": {"a": "Atropa belladonna - dried leaves and flowering tops", "b": "Datura stramonium leaves", "c": "Hyoscyamus niger leaves", "d": "Duboisia myoporoides leaves"},
+        "correct_option": "a",
+        "explanation": "Belladonna consists of dried leaves and flowering tops of Atropa belladonna Linn. (family Solanaceae), containing tropane alkaloids like atropine, hyoscyamine, and scopolamine.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["belladonna", "tropane alkaloids"]
+    },
+    {
+        "question_text": "Which alkaloid is the main active constituent of belladonna?",
+        "options": {"a": "Morphine", "b": "Atropine", "c": "Quinine", "d": "Strychnine"},
+        "correct_option": "b",
+        "explanation": "Atropine (a racemic mixture of hyoscyamine) is the primary alkaloid of belladonna. It is an anticholinergic used for pupil dilation, bradycardia, and as pre-anaesthetic medication.",
+        "subject": "pharmacognososy",
+        "difficulty": "easy",
+        "tags": ["belladonna", "atropine"]
+    },
+    {
+        "question_text": "What is the biological source of ipecacuanha?",
+        "options": {"a": "Cephaelis ipecacuanha - dried rhizome and roots", "b": "Cinchona bark", "c": "Digitalis leaves", "d": "Nux vomica seeds"},
+        "correct_option": "a",
+        "explanation": "Ipecacuanha (Ipecac) is obtained from Cephaelis ipecacuanha (family Rubiaceae), dried rhizome and roots. It contains emetine and cephaeline as chief alkaloids.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ipecac", "emetine"]
+    },
+    {
+        "question_text": "What is the therapeutic use of emetine from ipecacuanha?",
+        "options": {"a": "Analgesic", "b": "Emetic and anti-amoebic agent", "c": "Antimalarial", "d": "Cardiac tonic"},
+        "correct_option": "b",
+        "explanation": "Emetine is used as an emetic (in syrup of ipecac) and as an anti-amoebic agent for treating amoebic dysentery and liver abscess.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ipecac", "emetine"]
+    },
+    {
+        "question_text": "What is the biological source of nux vomica?",
+        "options": {"a": "Strychnos nux-vomica - dried seeds", "b": "Strychnos ignatii - dried seeds", "c": "Nux vomica bark only", "d": "Strychnos toxifera"},
+        "correct_option": "a",
+        "explanation": "Nux vomica consists of dried seeds of Strychnos nux-vomica Linn. (family Loganiaceae), containing strychnine and brucine as chief alkaloids.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["nux vomica", "strychnine"]
+    },
+    {
+        "question_text": "What is the chief alkaloid of nux vomica?",
+        "options": {"a": "Brucine", "b": "Strychnine", "c": "Colchicine", "d": "Reserpine"},
+        "correct_option": "b",
+        "explanation": "Strychnine (1.2-1.4%) is the chief alkaloid of nux vomica. It is a powerful CNS stimulant, especially of spinal cord reflexes, and is highly toxic in overdose.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["nux vomica", "strychnine"]
+    },
+    {
+        "question_text": "What is the biological source of rauwolfia?",
+        "options": {"a": "Rauwolfia serpentina - dried roots", "b": "Catharanthus roseus - dried leaves", "c": "Vinca minor - dried herb", "d": "Alstonia scholaris - dried bark"},
+        "correct_option": "a",
+        "explanation": "Rauwolfia consists of dried roots and rootlets of Rauwolfia serpentina Benth. (family Apocynaceae), containing reserpine as the primary alkaloid.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["rauwolfia", "reserpine"]
+    },
+    {
+        "question_text": "Which alkaloid from rauwolfia is used as an antihypertensive?",
+        "options": {"a": "Yohimbine", "b": "Reserpine", "c": "Pilocarpine", "d": "Physostigmine"},
+        "correct_option": "b",
+        "explanation": "Reserpine depletes catecholamines (norepinephrine, dopamine) from nerve terminals, producing a hypotensive and sedative effect. It was one of the first antihypertensive drugs.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["rauwolfia", "reserpine"]
+    },
+    {
+        "question_text": "What is the biological source of ergot?",
+        "options": {"a": "Claviceps purpurea - sclerotia", "b": "Secale cereale - seeds", "c": "Aspergillus fumigatus - mycelium", "d": "Penicillium chrysogenum"},
+        "correct_option": "a",
+        "explanation": "Ergot is the dried sclerotium of Claviceps purpurea (family Clavicipitaceae), a fungus that grows on rye and other cereals. It contains ergotamine and ergometrine.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ergot", "fungal drugs"]
+    },
+    {
+        "question_text": "Which alkaloid from ergot is used to control postpartum hemorrhage?",
+        "options": {"a": "Ergotamine", "b": "Ergometrine (ergonovine)", "c": "Lysergic acid", "d": "Bromocriptine"},
+        "correct_option": "b",
+        "explanation": "Ergometrine causes sustained uterine contraction and is used to prevent/treat postpartum hemorrhage. Ergotamine is used for migraine, not for uterine effects.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ergot", "ergometrine"]
+    },
+    {
+        "question_text": "What is the biological source of ephedra (ma huang)?",
+        "options": {"a": "Ephedra sinica - dried stems", "b": "Catha edulis - dried leaves", "c": "Cola nitida - seeds", "d": "Paullinia cupana - seeds"},
+        "correct_option": "a",
+        "explanation": "Ephedra (Ma Huang) consists of dried stems of Ephedra sinica (family Ephedraceae) containing ephedrine alkaloid, used as a bronchodilator and nasal decongestant.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ephedra", "ephedrine"]
+    },
+    {
+        "question_text": "What is the biological source of cascara sagrada?",
+        "options": {"a": "Rhamnus purshiana - dried bark", "b": "Cassia fistula - dried pulp", "c": "Aloe vera - dried latex", "d": "Rheum palmatum - dried rhizome"},
+        "correct_option": "a",
+        "explanation": "Cascara sagrada is the dried bark of Rhamnus purshiana (family Rhamnaceae), used as a stimulant laxative. It contains anthraquinone glycosides.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["cascara", "laxatives"]
+    },
+    {
+        "question_text": "What class of chemical compounds in cascara sagrada is responsible for laxative action?",
+        "options": {"a": "Tannins", "b": "Anthraquinone glycosides", "c": "Steroidal saponins", "d": "Alkaloids"},
+        "correct_option": "b",
+        "explanation": "Cascara sagrada contains anthraquinone glycosides (chrysophanol, emodin) that stimulate intestinal peristalsis and produce a laxative effect.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["cascara", "anthraquinones"]
+    },
+    {
+        "question_text": "What is the biological source of senna?",
+        "options": {"a": "Cassia angustifolia or C. acutifolia - dried leaflets", "b": "Cassia fistula - dried fruit pulp", "c": "Cassia tora - dried seeds", "d": "Cassia siamea - dried leaves"},
+        "correct_option": "a",
+        "explanation": "Senna leaflets are obtained from Cassia angustifolia (Tinnevelly senna) or C. acutifolia (Alexandria senna), family Fabaceae. They contain sennosides A and B.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["senna", "laxatives"]
+    },
+    {
+        "question_text": "Which sennosides are the main active principles of senna?",
+        "options": {"a": "Sennoside C and D", "b": "Sennoside A and B", "c": "Aloe-emodin", "d": "Rhein only"},
+        "correct_option": "b",
+        "explanation": "Sennosides A and B are the primary anthraquinone glycosides in senna responsible for its laxative effect by stimulating colonic peristalsis.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["senna", "sennosides"]
+    },
+    {
+        "question_text": "What is the biological source of digitalis lanata?",
+        "options": {"a": "Dried leaves of Digitalis lanata (woolly foxglove)", "b": "Dried flowers of Digitalis purpurea", "c": "Dried roots of Digitalis ferruginea", "d": "Dried seeds of Digitalis grandiflora"},
+        "correct_option": "a",
+        "explanation": "Digitalis lanata (family Plantaginaceae) leaves are the source of digoxin, a cardiac glycoside used for heart failure and atrial fibrillation.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["digitalis", "digoxin"]
+    },
+    {
+        "question_text": "What is the primary chemical group of cardiac glycosides found in digitalis?",
+        "options": {"a": "Flavonoid glycosides", "b": "Steroidal glycosides (cardenolides)", "c": "Triterpenoid glycosides", "d": "Phenolic glycosides"},
+        "correct_option": "b",
+        "explanation": "Cardiac glycosides like digitoxin and digoxin are steroidal glycosides (cardenolides) containing a steroid nucleus linked to a five-membered lactone ring and sugar molecules.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["cardiac glycosides", "chemistry"]
+    },
+    {
+        "question_text": "What is the biological source of opium poppy (besides the latex for opium)?",
+        "options": {"a": "Seeds are used as food", "b": "Poppy seeds contain negligible alkaloids and are used as food/flavoring", "c": "Leaves contain more alkaloids than the latex", "d": "Roots contain morphine"},
+        "correct_option": "b",
+        "explanation": "Poppy seeds from Papaver somniferum contain negligible amounts of alkaloids and are used safely as food ingredient (bread, pastries). The alkaloid-rich latex is from the capsule.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["opium poppy"]
+    },
+    {
+        "question_text": "What are volatile oils (essential oils)?",
+        "options": {"a": "Fixed fatty oils from seeds", "b": "Aromatic, volatile, odorous liquid principles isolated from plants by distillation or expression", "c": "Heavy non-volatile oils", "d": "Mineral oils from petroleum"},
+        "correct_option": "b",
+        "explanation": "Volatile (essential) oils are complex mixtures of volatile aromatic compounds obtained by steam distillation, expression, or solvent extraction from plant materials.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["volatile oils"]
+    },
+    {
+        "question_text": "What is the biological source of peppermint oil?",
+        "options": {"a": "Mentha spicata - leaves", "b": "Mentha piperita - fresh leaves by steam distillation", "c": "Mentha arvensis - dried herb", "d": "Mentha aquatica - flowers"},
+        "correct_option": "b",
+        "explanation": "Peppermint oil is obtained from fresh leaves of Mentha piperita Linn. (family Lamiaceae) by steam distillation. Its chief constituent is menthol (30-50%).",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["peppermint", "menthol"]
+    },
+    {
+        "question_text": "What is the chief constituent of peppermint oil?",
+        "options": {"a": "Eugenol", "b": "Menthol", "c": "Thymol", "d": "Camphor"},
+        "correct_option": "b",
+        "explanation": "Menthol (30-50%) is the chief constituent of peppermint oil. It has carminative, antispasmodic, analgesic, and counter-irritant properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["peppermint", "menthol"]
+    },
+    {
+        "question_text": "What is the biological source of clove oil?",
+        "options": {"a": "Syzygium aromaticum - flower buds by steam distillation", "b": "Cinnamomum zeylanicum - bark", "c": "Elettaria cardamomum - seeds", "d": "Coriandrum sativum - fruits"},
+        "correct_option": "a",
+        "explanation": "Clove oil is obtained from dried flower buds of Syzygium aromaticum (family Myrtaceae). Its chief constituent is eugenol (70-90%), used as a dental analgesic.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["clove", "eugenol"]
+    },
+    {
+        "question_text": "What is the chief constituent of clove oil?",
+        "options": {"a": "Menthol", "b": "Eugenol", "c": "Thymol", "d": "Limonene"},
+        "correct_option": "b",
+        "explanation": "Eugenol (70-90%) is the chief constituent of clove oil. It has analgesic, antiseptic, and anti-inflammatory properties, widely used in dentistry for toothache relief.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["clove", "eugenol"]
+    },
+    {
+        "question_text": "What is the biological source of cinnamon bark?",
+        "options": {"a": "Cinnamomum verum (C. zeylanicum) - dried inner bark", "b": "Cinnamomum cassia - dried bark only", "c": "Cinnamomum camphora - bark", "d": "Cinnamomum burmannii - leaves"},
+        "correct_option": "a",
+        "explanation": "Ceylon cinnamon (true cinnamon) is obtained from Cinnamomum verum (family Lauraceae) dried inner bark. Cassia cinnamon comes from C. cassia and has higher coumarin content.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["cinnamon"]
+    },
+    {
+        "question_text": "What is the biological source of cardamom?",
+        "options": {"a": "Elettaria cardamomum - dried seeds and fruit", "b": "Amomum subulatum - dried fruit", "c": "Myristica fragrans - dried seeds", "d": "Pimenta dioica - dried berries"},
+        "correct_option": "a",
+        "explanation": "Cardamom (Elettaria cardamomum Maton., family Zingiberaceae) seeds are used as a carminative, flavoring agent, and traditional medicine.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["cardamom"]
+    },
+    {
+        "question_text": "What is the biological source of ginger?",
+        "options": {"a": "Zingiber officinale - dried or fresh rhizome", "b": "Curcuma longa - dried rhizome", "c": "Alpinia galanga - dried rhizome", "d": "Amomum subulatum - seeds"},
+        "correct_option": "a",
+        "explanation": "Ginger is the dried or fresh rhizome of Zingiber officinale Roscoe (family Zingiberaceae). It contains gingerols and shogaols as active constituents.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["ginger", "Zingiberaceae"]
+    },
+    {
+        "question_text": "What are the chief chemical constituents of ginger?",
+        "options": {"a": "Eugenol and cinnamaldehyde", "b": "Gingerols and shogaols (pungent principles)", "c": "Curcumin and turmerone", "d": "Menthol and menthone"},
+        "correct_option": "b",
+        "explanation": "Ginger contains pungent principles gingerols (especially 6-gingerol) and shogaols (dehydration products of gingerols), plus volatile oil (1-3%).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ginger", "chemistry"]
+    },
+    {
+        "question_text": "What is the biological source of turmeric?",
+        "options": {"a": "Zingiber officinale - rhizome", "b": "Curcuma longa - dried rhizome", "c": "Curcuma aromatica - fresh rhizome", "d": "Curcuma zedoaria - dried rhizome"},
+        "correct_option": "b",
+        "explanation": "Turmeric consists of dried rhizomes and tubers of Curcuma longa Linn. (family Zingiberaceae). Its chief constituent is curcumin (yellow pigment, 2-5%).",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["turmeric", "curcumin"]
+    },
+    {
+        "question_text": "What is the chief active compound of turmeric?",
+        "options": {"a": "Gingerol", "b": "Curcumin", "c": "Eugenol", "d": "Camphor"},
+        "correct_option": "b",
+        "explanation": "Curcumin (diferuloylmethane) is the principal curcuminoid (2-5%) of turmeric, having anti-inflammatory, antioxidant, and anticancer properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["turmeric", "curcumin"]
+    },
+    {
+        "question_text": "What is the biological source of neem?",
+        "options": {"a": "Azadirachta indica - leaves, bark, and seeds", "b": "Melia azedarach - leaves only", "c": "Azadirachta indica - only seeds", "d": "Tinospora cordifolia - stem"},
+        "correct_option": "a",
+        "explanation": "Neem (Azadirachta indica A. Juss., family Meliaceae) is used from leaves, bark, seeds, and flowers. Its key compound is azadirachtin from seeds, with insecticidal properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["neem"]
+    },
+    {
+        "question_text": "What is the medicinal importance of neem?",
+        "options": {"a": "Cardiac tonic only", "b": "Antibacterial, antifungal, antiparasitic, anti-inflammatory, and insecticidal properties", "c": "Laxative only", "d": "Analgesic only"},
+        "correct_option": "b",
+        "explanation": "Neem has broad therapeutic uses: antibacterial, antifungal, antiviral, anti-inflammatory, antipyretic, antidiabetic, and insecticidal (azadirachtin) properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["neem", "therapeutic uses"]
+    },
+    {
+        "question_text": "What is the biological source of aloe?",
+        "options": {"a": "Aloe vera - fresh leaf gel", "b": "Aloe barbadensis (A. vera) - dried latex from pericyclic cells", "c": "Aloe ferox - leaves only", "d": "Aloe perryi - dried leaf gel"},
+        "correct_option": "b",
+        "explanation": "Pharmacological aloe is the dried latex (juice) from pericyclic cells of Aloe barbadensis leaves. Aloe vera gel (from parenchyma) is used topically for burns.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["aloe", "laxatives"]
+    },
+    {
+        "question_text": "What is the chief constituent of aloe responsible for laxative action?",
+        "options": {"a": "Aloe-emodin (anthraquinone glycoside)", "b": "Aloin (barbaloin)", "c": "Both aloin and aloe-emodin", "d": "Aloe vera gel polysaccharides"},
+        "correct_option": "c",
+        "explanation": "Aloin (barbaloin) is the main anthraquinone glycoside (20-40%) responsible for the purgative action. Aloe-emodin is an aglycone present in smaller amounts.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["aloe", "anthraquinones"]
+    },
+    {
+        "question_text": "What is the biological source of benzoin?",
+        "options": {"a": "Styrax benzoin - balsam from incised trunk", "b": "Boswellia serrata - oleo-gum-resin", "c": "Commiphora myrrha - dried resin", "d": "Shorea robusta - resin"},
+        "correct_option": "a",
+        "explanation": "Benzoin is a balsamic resin obtained from Styrax benzoin (Siam benzoin) or Styrax paralleloneurum (Sumatra benzoin), family Styracaceae. It contains benzoic acid and cinnamic acid esters.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["benzoin", "resins"]
+    },
+    {
+        "question_text": "What is the biological source of frankincense (olibanum)?",
+        "options": {"a": "Commiphora myrrha - dried resin", "b": "Boswellia serrata/frereana - oleo-gum-resin from incised bark", "c": "Pinus palustris - oleoresin", "d": "Styrax benzoin - balsam"},
+        "correct_option": "b",
+        "explanation": "Frankincense (Olibanum) is an oleo-gum-resin from Boswellia serrata or B. frereana (family Burseraceae). It contains boswellic acids with anti-inflammatory properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["frankincense", "boswellia"]
+    },
+    {
+        "question_text": "What is the biological source of myrrh?",
+        "options": {"a": "Boswellia serrata - gum-resin", "b": "Commiphora molmol/myrrha - dried oleo-gum-resin", "c": "Styrax benzoin - balsam", "d": "Pistacia lentiscus - resin"},
+        "correct_option": "b",
+        "explanation": "Myrrh is the dried oleo-gum-resin from Commiphora molmol or C. myrrha (family Burseraceae). It is used as an antiseptic mouthwash and wound healer.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["myrrh", "resins"]
+    },
+    {
+        "question_text": "What is the biological source of guggul?",
+        "options": {"a": "Commiphora wightii - oleo-gum-resin", "b": "Boswellia serrata - gum-resin", "c": "Zingiber officinale - rhizome", "d": "Curcuma longa - rhizome"},
+        "correct_option": "a",
+        "explanation": "Guggul is an oleo-gum-resin from Commiphora wightii (family Burseraceae). It contains guggulsterones, which have hypolipidemic and anti-inflammatory properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["guggul", "resins"]
+    },
+    {
+        "question_text": "What are tannins in pharmacognosy?",
+        "options": {"a": "Nitrogenous alkaloids", "b": "Water-soluble polyphenolic compounds that precipitate proteins and have astringent properties", "c": "Volatile aromatic oils", "d": "Steroidal glycosides"},
+        "correct_option": "b",
+        "explanation": "Tannins are complex phenolic compounds (high molecular weight) that precipitate proteins. They have astringent, antimicrobial, and anti-inflammatory properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["tannins"]
+    },
+    {
+        "question_text": "What is the biological source of tea?",
+        "options": {"a": "Camellia sinensis - dried leaves", "b": "Thea sinensis - dried flowers", "c": "Camellia japonica - dried fruits", "d": "Camellia oleifera - dried seeds"},
+        "correct_option": "a",
+        "explanation": "Tea is obtained from dried young leaves and leaf buds of Camellia sinensis (family Theaceae). It contains caffeine (1-5%), tannins (catechins), and volatile oil.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["tea", "caffeine"]
+    },
+    {
+        "question_text": "What is the chief alkaloid of tea?",
+        "options": {"a": "Theobromine", "b": "Caffeine (theine)", "c": "Theophylline", "d": "Theobromine and caffeine equally"},
+        "correct_option": "b",
+        "explanation": "Caffeine (1-5%) is the chief alkaloid of tea, also known as theine. It is a CNS stimulant, diuretic, and cardiac stimulant.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["tea", "caffeine"]
+    },
+    {
+        "question_text": "What is the biological source of coffee?",
+        "options": {"a": "Coffea arabica - dried seeds (beans)", "b": "Coffea canephora - dried leaves", "c": "Coffea liberica - dried fruits", "d": "Coffea arabica - dried flowers"},
+        "correct_option": "a",
+        "explanation": "Coffee is obtained from dried seeds (beans) of Coffea arabica or C. canephora (Robusta) (family Rubiaceae). Caffeine content is 1-2% (arabica) and 2-4% (robusta).",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["coffee", "caffeine"]
+    },
+    {
+        "question_text": "What is the biological source of cocoa?",
+        "options": {"a": "Theobroma cacao - dried seeds", "b": "Coffea arabica - dried seeds", "c": "Cola nitida - dried seeds", "d": "Ilex paraguariensis - dried leaves"},
+        "correct_option": "a",
+        "explanation": "Cocoa is obtained from dried seeds of Theobroma cacao Linn. (family Sterculiaceae). It contains theobromine (1-3%) as the chief alkaloid, along with caffeine and tannins.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["cocoa", "theobromine"]
+    },
+    {
+        "question_text": "What is the chief alkaloid of cocoa?",
+        "options": {"a": "Caffeine", "b": "Theobromine", "c": "Theophylline", "d": "Colchicine"},
+        "correct_option": "b",
+        "explanation": "Theobromine (1-3%) is the chief alkaloid of cocoa, with mild CNS stimulant, cardiac stimulant, and diuretic properties. It has less stimulant effect than caffeine.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["cocoa", "theobromine"]
+    },
+    {
+        "question_text": "What is the biological source of cinchona bark?",
+        "options": {"a": "Cinchona calisaya, C. ledgeriana, or related species - dried bark", "b": "Cinchona officinalis - dried leaves only", "c": "Alstonia scholaris - dried bark", "d": "Rauwolfia serpentina - dried roots"},
+        "correct_option": "a",
+        "explanation": "Cinchona bark comes from various Cinchona species (family Rubiaceae). Quinine content varies: C. ledgeriana (up to 13%), C. calisaya (7-8%), C. succirubra (5-6%).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["cinchona", "quinine"]
+    },
+    {
+        "question_text": "What are the chief alkaloids of cinchona bark?",
+        "options": {"a": "Quinine, quinidine, cinchonine, cinchonidine", "b": "Morphine, codeine, papaverine", "c": "Atropine, hyoscyamine, scopolamine", "d": "Strychnine, brucine"},
+        "correct_option": "a",
+        "explanation": "Cinchona contains 4 main alkaloids: quinine (antimalarial), quinidine (antiarrhythmic), cinchonine, and cinchonidine. Total alkaloid content is 5-10%.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["cinchona", "alkaloids"]
+    },
+    {
+        "question_text": "What is the biological source of khair (Acacia catechu)?",
+        "options": {"a": "Heartwood of Acacia catechu - aqueous extract (cutch/khair)", "b": "Bark of Acacia arabica", "c": "Leaves of Acacia nilotica", "d": "Seeds of Acacia senegal"},
+        "correct_option": "a",
+        "explanation": "Khair (Cutch) is the aqueous extract of heartwood of Acacia catechu (family Fabaceae). It is rich in catechu tannins and used in diarrhea and throat infections.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["khair", "tannins"]
+    },
+    {
+        "question_text": "What is the biological source of arjuna bark?",
+        "options": {"a": "Terminalia arjuna - dried stem bark", "b": "Terminalia chebula - dried fruits", "c": "Terminalia bellirica - dried fruits", "d": "Terminalia catappa - dried leaves"},
+        "correct_option": "a",
+        "explanation": "Arjuna bark is from Terminalia arjuna (family Combretaceae). It contains tannins, triterpenoids, and flavonoids, and is used traditionally as a cardiac tonic.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["arjuna", "cardiac tonic"]
+    },
+    {
+        "question_text": "What is the biological source of guduchi/giloy?",
+        "options": {"a": "Tinospora cordifolia - dried stem", "b": "Withania somnifera - dried roots", "c": "Bacopa monnieri - whole plant", "d": "Centella asiatica - whole plant"},
+        "correct_option": "a",
+        "explanation": "Guduchi (Giloy) is the dried stem of Tinospora cordifolia (family Menispermaceae). It contains tinosporin, tinosporide, and has immunomodulatory properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["guduchi", "immunomodulator"]
+    },
+    {
+        "question_text": "What is the biological source of ashwagandha?",
+        "options": {"a": "Withania somnifera - dried roots", "b": "Bacopa monnieri - whole plant", "c": "Centella asiatica - leaves", "d": "Mucuna pruriens - seeds"},
+        "correct_option": "a",
+        "explanation": "Ashwagandha is the dried root of Withania somnifera Dunal (family Solanaceae). It contains withanolides and is used as an adaptogen and rasayana in Ayurveda.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["ashwagandha", "adaptogen"]
+    },
+    {
+        "question_text": "Which class of compounds is responsible for the therapeutic activity of ashwagandha?",
+        "options": {"a": "Alkaloids only", "b": "Withanolides (steroidal lactones)", "c": "Tannins", "d": "Volatile oils"},
+        "correct_option": "b",
+        "explanation": "Withanolides (steroidal lactones) are the primary active compounds in ashwagandha responsible for its adaptogenic, anti-inflammatory, and immunomodulatory activities.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ashwagandha", "withanolides"]
+    },
+    {
+        "question_text": "What is the biological source of brahmi?",
+        "options": {"a": "Bacopa monnieri - whole plant", "b": "Centella asiatica - whole plant", "c": "Convolvulus pluricaulis - whole plant", "d": "Nardostachys jatamansi - rhizome"},
+        "correct_option": "a",
+        "explanation": "Brahmi is the whole plant of Bacopa monnieri Wettst. (family Plantaginaceae). It contains bacosides (triterpenoid saponins) and is used as a brain tonic and adaptogen.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["brahmi", "nootropic"]
+    },
+    {
+        "question_text": "Which active constituents of brahmi are responsible for its nootropic activity?",
+        "options": {"a": "Withanolides", "b": "Bacosides A and B (triterpenoid saponins)", "c": "Curcumin", "d": "Gingerols"},
+        "correct_option": "b",
+        "explanation": "Bacosides A and B are dammarane-type triterpenoid saponins responsible for Brahmi's memory-enhancing, antioxidant, and neuroprotective properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["brahmi", "bacosides"]
+    },
+    {
+        "question_text": "What is the biological source of shankhpushpi?",
+        "options": {"a": "Convolvulus pluricaulis - whole plant", "b": "Bacopa monnieri - whole plant", "c": "Centella asiatica - whole plant", "d": "Evolvulus alsinoides - whole plant"},
+        "correct_option": "a",
+        "explanation": "Shankhpushpi is primarily Convolvulus pluricaulis (family Convolvulaceae). It is used in Ayurveda as a brain tonic for improving memory, intelligence, and reducing anxiety.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["shankhpushpi"]
+    },
+    {
+        "question_text": "What is the biological source of gotu kola?",
+        "options": {"a": "Centella asiatica - whole plant or leaves", "b": "Bacopa monnieri - whole plant", "c": "Convolvulus pluricaulis - whole plant", "d": "Clitoria ternatea - flowers"},
+        "correct_option": "a",
+        "explanation": "Gotu kola is Centella asiatica (L.) Urban (family Apiaceae), also called mandukparni. It contains asiaticoside and madecassoside (triterpenoid saponins) for wound healing.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["gotu kola", "wound healing"]
+    },
+    {
+        "question_text": "What is the biological source of shatavari?",
+        "options": {"a": "Asparagus racemosus - dried tuberous roots", "b": "Withania somnifera - dried roots", "c": "Solanum nigrum - dried berries", "d": "Terminalia chebula - dried fruits"},
+        "correct_option": "a",
+        "explanation": "Shatavari is the dried tuberous roots of Asparagus racemosus Willd. (family Asparagaceae). It is a galactagogue and adaptogen used in women's health.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["shatavari"]
+    },
+    {
+        "question_text": "What is the biological source of haritaki?",
+        "options": {"a": "Terminalia bellirica - dried fruits", "b": "Terminalia chebula - dried fruits", "c": "Emblica officinalis - dried fruits", "d": "Terminalia arjuna - dried bark"},
+        "correct_option": "b",
+        "explanation": "Haritaki is the dried fruit of Terminalia chebula Retz. (family Combretaceae). It contains chebulic acid, chebulinic acid, and tannins, used as a laxative and rejuvenative.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["haritaki", "Triphala"]
+    },
+    {
+        "question_text": "What is the biological source of vibhitaki?",
+        "options": {"a": "Terminalia chebula - dried fruits", "b": "Terminalia bellirica - dried fruits", "c": "Emblica officinalis - dried fruits", "d": "Terminalia arjuna - dried bark"},
+        "correct_option": "b",
+        "explanation": "Vibhitaki is the dried fruit of Terminalia bellirica (Gaertn.) Roxb. (family Combretaceae). It is one of the three ingredients of Triphala.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["vibhitaki", "Triphala"]
+    },
+    {
+        "question_text": "What is the biological source of amalaki (Indian gooseberry)?",
+        "options": {"a": "Terminalia chebula - fruits", "b": "Terminalia bellirica - fruits", "c": "Emblica officinalis (Phyllanthus emblica) - dried fruits", "d": "Garcinia cambogia - dried rind"},
+        "correct_option": "c",
+        "explanation": "Amalaki is the dried fruit of Emblica officinalis Gaertn. (family Phyllanthaceae). It is the richest natural source of vitamin C and is one of the Triphala ingredients.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["amalaki", "Triphala"]
+    },
+    {
+        "question_text": "What is Triphala?",
+        "options": {"a": "A single herb", "b": "An Ayurvedic formulation containing equal parts of haritaki, vibhitaki, and amalaki", "c": "A mineral drug", "d": "An animal product"},
+        "correct_option": "b",
+        "explanation": "Triphala is a classical Ayurvedic preparation containing equal proportions of three fruits: Haritaki (Terminalia chebula), Vibhitaki (T. bellirica), and Amalaki (Emblica officinalis).",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["Triphala"]
+    },
+    {
+        "question_text": "What are the therapeutic uses of Triphala?",
+        "options": {"a": "Only laxative", "b": "Laxative, antioxidant, anti-inflammatory, immunomodulatory, and adaptogenic", "c": "Analgesic only", "d": "Antimalarial only"},
+        "correct_option": "b",
+        "explanation": "Triphala has multiple therapeutic properties: mild laxative, potent antioxidant, anti-inflammatory, immunomodulatory, adaptogenic, and anti-diabetic activities.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["Triphala"]
+    },
+    {
+        "question_text": "What is the biological source of guggulu?",
+        "options": {"a": "Boswellia serrata - gum-resin", "b": "Commiphora wightii - oleo-gum-resin", "c": "Commiphora molmol - oleo-gum-resin", "d": "Shorea robusta - resin"},
+        "correct_option": "b",
+        "explanation": "Guggulu is the oleo-gum-resin from Commiphora wightii (Arnott) Bhandari (family Burseraceae). It contains guggulsterones used for hypolipidemic and anti-inflammatory effects.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["guggulu"]
+    },
+    {
+        "question_text": "What is the biological source of valerian?",
+        "options": {"a": "Valeriana officinalis - dried rhizome and roots", "b": "Valeriana wallichii - dried flowers", "c": "Passiflora incarnata - dried whole plant", "d": "Matricaria chamomilla - dried flowers"},
+        "correct_option": "a",
+        "explanation": "Valerian is the dried rhizome and roots of Valeriana officinalis Linn. (family Caprifoliaceae). It contains valerenic acid and is used as a sedative and anxiolytic.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["valerian", "sedative"]
+    },
+    {
+        "question_text": "What is the biological source of sarsaparilla?",
+        "options": {"a": "Smilax ornata - dried rhizome and roots", "b": "Smilax regelii - dried leaves", "c": "Dioscorea villosa - dried rhizome", "d": "Rheum palmatum - dried rhizome"},
+        "correct_option": "a",
+        "explanation": "Sarsaparilla is the dried rhizome and roots of Smilax ornata (or S. regelii, S. febrifuga) family Smilacaceae. It contains steroidal saponins used in skin diseases and as diuretic.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["sarsaparilla"]
+    },
+    {
+        "question_text": "What is the biological source of licorice?",
+        "options": {"a": "Glycyrrhiza glabra - dried rhizome and roots", "b": "Glycyrrhiza uralensis - dried leaves", "c": "Glycyrrhiza inflata - dried fruits", "d": "Glycyrrhiza echinata - dried seeds"},
+        "correct_option": "a",
+        "explanation": "Licorice is the dried rhizome and roots of Glycyrrhiza glabra Linn. (family Fabaceae). Its chief constituent is glycyrrhizin (sweet taste, 2-14%).",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["licorice", "expectorant"]
+    },
+    {
+        "question_text": "What is the chief constituent of licorice?",
+        "options": {"a": "Glycyrrhizin (glycyrrhizic acid)", "b": "Glabridin", "c": "Liquiritin", "d": "Isoliquiritigenin"},
+        "correct_option": "a",
+        "explanation": "Glycyrrhizin (glycyrrhizic acid, 2-14%) is the chief constituent of licorice, 50 times sweeter than sugar. It has anti-inflammatory, antitussive, and hepatoprotective properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["licorice", "glycyrrhizin"]
+    },
+    {
+        "question_text": "What is the biological source of ephedra (ma huang)?",
+        "options": {"a": "Ephedra sinica - dried stems", "b": "Ephedra intermedia - dried roots", "c": "Ephedra gerardiana - dried leaves", "d": "Ephedra distachya - dried seeds"},
+        "correct_option": "a",
+        "explanation": "Ephedra consists of dried stems of Ephedra sinica (E. intermedia, E. gerardiana) (family Ephedraceae). It contains ephedrine alkaloids (0.5-3%).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ephedra", "ephedrine"]
+    },
+    {
+        "question_text": "What is the chief alkaloid of ephedra?",
+        "options": {"a": "Pseudoephedrine", "b": "Ephedrine", "c": "Methylephedrine", "d": "Norephedrine"},
+        "correct_option": "b",
+        "explanation": "Ephedrine is the chief alkaloid of ephedra (0.5-3%), a sympathomimetic amine used as a bronchodilator, nasal decongestant, and pressor agent.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["ephedra", "ephedrine"]
+    },
+    {
+        "question_text": "What is the biological source of mustard?",
+        "options": {"a": "Brassica nigra (black mustard) - dried seeds", "b": "Brassica campestris (yellow mustard) - dried seeds", "c": "Both A and B are sources of mustard", "d": "Sinapis alba - dried leaves"},
+        "correct_option": "c",
+        "explanation": "Mustard is obtained from dried seeds of Brassica nigra (black mustard) or B. campestris (yellow/white mustard), family Brassicaceae. It contains sinigrin (glucosinolate).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["mustard"]
+    },
+    {
+        "question_text": "What is the biological source of digitalis (foxglove)?",
+        "options": {"a": "Digitalis lanata - dried leaves", "b": "Digitalis purpurea - dried leaves", "c": "Digitalis grandiflora - dried flowers", "d": "Digitalis ferruginea - dried seeds"},
+        "correct_option": "b",
+        "explanation": "Digitalis is from Digitalis purpurea Linn. (family Plantaginaceae). D. lanata is a separate species source for digoxin. D. purpurea primarily yields digitoxin.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["digitalis"]
+    },
+    {
+        "question_text": "What is the biological source of stramonium?",
+        "options": {"a": "Atropa belladonna - leaves", "b": "Datura stramonium - dried seeds and leaves", "c": "Hyoscyamus niger - dried leaves", "d": "Mandragora officinarum - dried roots"},
+        "correct_option": "b",
+        "explanation": "Stramonium consists of dried leaves and seeds of Datura stramonium Linn. (family Solanaceae). It contains hyoscyamine and scopolamine (tropane alkaloids).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["stramonium"]
+    },
+    {
+        "question_text": "What is the biological source of henbane?",
+        "options": {"a": "Atropa belladonna - leaves", "b": "Datura stramonium - leaves", "c": "Hyoscyamus niger - dried leaves and flowering tops", "d": "Conium maculatum - dried leaves"},
+        "correct_option": "c",
+        "explanation": "Henbane is the dried leaves and flowering tops of Hyoscyamus niger Linn. (family Solanaceae). It contains hyoscyamine and scopolamine as chief alkaloids.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["henbane"]
+    },
+    {
+        "question_text": "What is the biological source of podophyllum?",
+        "options": {"a": "Podophyllum peltatum (May apple) - dried rhizome and roots", "b": "Berberis vulgaris - dried bark", "c": "Hydrastis canadensis - dried rhizome", "d": "Coptis chinensis - dried rhizome"},
+        "correct_option": "a",
+        "explanation": "Podophyllum is the dried rhizome and roots of Podophyllum peltatum (family Berberidaceae). It contains podophyllotoxin, used topically for warts and as a precursor for anticancer drugs.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["podophyllum", "anticancer"]
+    },
+    {
+        "question_text": "What is podophyllotoxin used for?",
+        "options": {"a": "Oral laxative", "b": "Topical treatment of warts and condylomata; precursor for anticancer drugs (etoposide)", "c": "Antimalarial", "d": "Antihypertensive"},
+        "correct_option": "b",
+        "explanation": "Podophyllotoxin is used topically to treat genital warts (condyloma acuminatum) and is the chemical precursor for the anticancer drugs etoposide and teniposide.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["podophyllum", "anticancer"]
+    },
+    {
+        "question_text": "What is the biological source of goldenseal?",
+        "options": {"a": "Hydrastis canadensis - dried rhizome and roots", "b": "Berberis aristata - dried bark", "c": "Coptis chinensis - dried rhizome", "d": "Mahonia aquifolium - dried bark"},
+        "correct_option": "a",
+        "explanation": "Goldenseal is the dried rhizome and roots of Hydrastis canadensis Linn. (family Ranunculaceae). It contains berberine (yellow alkaloid) with antimicrobial properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["goldenseal", "berberine"]
+    },
+    {
+        "question_text": "What is the chief alkaloid of goldenseal?",
+        "options": {"a": "Palmatine", "b": "Berberine", "c": "Hydrastine", "d": "Canadine"},
+        "correct_option": "b",
+        "explanation": "Berberine is the principal alkaloid of goldenseal (3-5%), an isoquinoline alkaloid with antimicrobial, anti-inflammatory, and antidiabetic properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["goldenseal", "berberine"]
+    },
+    {
+        "question_text": "What is the biological source ofSt. John's wort?",
+        "options": {"a": "Hypericum perforatum - dried flowering tops", "b": "Hypericum hirsutum - dried leaves", "c": "Hypericum calycinum - dried flowers", "d": "Hypericum androsaemum - dried fruits"},
+        "correct_option": "a",
+        "explanation": "St. John's Wort is the dried flowering tops of Hypericum perforatum Linn. (family Hypericaceae). It contains hypericin and hyperforin, used for mild-to-moderate depression.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["St. John's wort", "antidepressant"]
+    },
+    {
+        "question_text": "Which compounds in St. John's wort are responsible for antidepressant activity?",
+        "options": {"a": "Quercetin and kaempferol", "b": "Hypericin and hyperforin", "c": "Hyperoside and rutin", "d": "Chlorogenic acid and caffeic acid"},
+        "correct_option": "b",
+        "explanation": "Hypericin and hyperforin are the principal active compounds. Hyperforin inhibits reuptake of serotonin, norepinephrine, and dopamine, producing an antidepressant effect.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["St. John's wort", "hyperforin"]
+    },
+    {
+        "question_text": "What is the biological source of skullcap?",
+        "options": {"a": "Scutellaria lateriflora - dried whole plant", "b": "Scutellaria baicalensis - dried root", "c": "Scutellaria galericulata - dried leaves", "d": "Both A and B"},
+        "correct_option": "d",
+        "explanation": "Skullcap is from Scutellaria lateriflora (American skullcap, whole plant) or S. baicalensis (Chinese skullcap, root). Both contain flavonoids (baicalin, wogonin) with sedative effects.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["skullcap", "sedative"]
+    },
+    {
+        "question_text": "What is the biological source of valerian?",
+        "options": {"a": "Valeriana officinalis - dried rhizome and roots", "b": "Valeriana wallichii - dried flowers", "c": "Passiflora incarnata - dried whole plant", "d": "Matricaria chamomilla - dried flowers"},
+        "correct_option": "a",
+        "explanation": "Valerian is from Valeriana officinalis Linn. (family Caprifoliaceae), dried rhizome and roots. Contains isovaleric acid, valerenic acid with sedative activity.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["valerian"]
+    },
+    {
+        "question_text": "What is the biological source of ginkgo?",
+        "options": {"a": "Ginkgo biloba - dried leaves", "b": "Ginkgo biloba - dried seeds", "c": "Ginkgo biloba - dried bark", "d": "Ginkgo biloba - dried roots"},
+        "correct_option": "a",
+        "explanation": "Ginkgo consists of dried leaves of Ginkgo biloba Linn. (family Ginkgoaceae). It contains flavone glycosides (quercetin, kaempferol) and terpene lactones (ginkgolides, bilobalide).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ginkgo"]
+    },
+    {
+        "question_text": "What are the main active constituents of Ginkgo biloba?",
+        "options": {"a": "Ginkgolides and bilobalide (terpene lactones) plus flavone glycosides", "b": "Hypericin and hyperforin", "c": "Withanolides", "d": "Bacosides"},
+        "correct_option": "a",
+        "explanation": "Ginkgo contains flavone glycosides (24%), terpene lactones including ginkgolides A, B, C, J and bilobalide (6%), used for cognitive function and peripheral circulation.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ginkgo", "nootropic"]
+    },
+    {
+        "question_text": "What is the biological source of ginseng?",
+        "options": {"a": "Panax ginseng - dried root", "b": "Panax quinquefolius - dried root (American ginseng)", "c": "Eleutherococcus senticosus - dried root (Siberian ginseng)", "d": "All of the above are called ginseng"},
+        "correct_option": "d",
+        "explanation": "True ginseng is Panax ginseng (Asian) and P. quinquefolius (American). Siberian ginseng (Eleutherococcus) is not true ginseng. All contain ginsenosides as active compounds.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ginseng", "adaptogen"]
+    },
+    {
+        "question_text": "What are the active constituents of ginseng?",
+        "options": {"a": "Ginsenosides (steroidal saponins)", "b": "Withanolides", "c": "Bacosides", "d": "Hyperforin"},
+        "correct_option": "a",
+        "explanation": "Ginsenosides (protopanaxadiol and protopanaxatriol types) are the primary active compounds of ginseng, responsible for adaptogenic, immunomodulatory, and antifatigue effects.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ginseng", "ginsenosides"]
+    },
+    {
+        "question_text": "What is the biological source of papaya?",
+        "options": {"a": "Carica papaya - dried latex from unripe fruit", "b": "Carica papaya - dried ripe fruit", "c": "Carica papaya - dried seeds", "d": "Carica papaya - dried leaves"},
+        "correct_option": "a",
+        "explanation": "Papain is obtained from the dried latex of unripe fruits of Carica papaya Linn. (family Caricaceae). It is a proteolytic enzyme used as a meat tenderizer and digestive aid.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["papaya", "enzymes"]
+    },
+    {
+        "question_text": "What is the enzyme obtained from papaya latex?",
+        "options": {"a": "Bromelain", "b": "Papain", "c": "Pepsin", "d": "Trypsin"},
+        "correct_option": "b",
+        "explanation": "Papain is a cysteine protease enzyme obtained from papaya latex. It has proteolytic, wound healing, and anti-inflammatory properties. Bromelain comes from pineapple.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["papaya", "papain"]
+    },
+    {
+        "question_text": "What is the biological source of digitalis (foxglove)?",
+        "options": {"a": "Digitalis lanata - dried leaves", "b": "Digitalis purpurea - dried leaves", "c": "Digitalis grandiflora - dried flowers", "d": "Digitalis ferruginea - dried seeds"},
+        "correct_option": "b",
+        "explanation": "Digitalis is from Digitalis purpurea Linn. (family Plantaginaceae). D. lanata is a separate species source for digoxin. D. purpurea primarily yields digitoxin.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["digitalis"]
+    },
+    {
+        "question_text": "What is the biological source of senna?",
+        "options": {"a": "Cassia angustifolia (Tinnevelly) or C. acutifolia (Alexandria) - dried leaflets", "b": "Cassia fistula - dried fruit", "c": "Cassia tora - dried seeds", "d": "Cassia siamea - dried leaves"},
+        "correct_option": "a",
+        "explanation": "Senna consists of dried leaflets of Cassia angustifolia (Tinnevelly senna) or C. acutifolia (Alexandria senna), family Fabaceae. Active principles are sennosides A and B.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["senna"]
+    },
+    {
+        "question_text": "What is the biological source of couch grass?",
+        "options": {"a": "Agropyron repens - dried rhizome", "b": "Elymus repens - dried whole plant", "c": "Hordeum vulgare - dried seeds", "d": "Avena sativa - dried seeds"},
+        "correct_option": "a",
+        "explanation": "Couch grass is the dried rhizome of Agropyron repens (L.) P.Beauv. (family Poaceae/Gramineae). It contains triticin and volatile oil, used as a diuretic and demulcent in urinary tract infections.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["couch grass", "diuretic"]
+    },
+    {
+        "question_text": "What is the biological source of buchu?",
+        "options": {"a": "Barosma betulina - dried leaves", "b": "Betula pendula - dried bark", "c": "Uva ursi - dried leaves", "d": "Eucalyptus globulus - dried leaves"},
+        "correct_option": "a",
+        "explanation": "Buchu consists of dried leaves of Barosma betulina (or B. crenulata) (family Rutaceae). It contains diosphenol and volatile oil, used as urinary antiseptic and diuretic.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["buchu", "diuretic"]
+    },
+    {
+        "question_text": "What is the biological source of uva ursi?",
+        "options": {"a": "Arctostaphylos uva-ursi - dried leaves", "b": "Vaccinium vitis-idaea - dried fruits", "c": "Gaultheria procumbens - dried leaves", "d": "Vaccinium macrocarpon - dried fruits"},
+        "correct_option": "a",
+        "explanation": "Uva ursi is the dried leaf of Arctostaphylos uva-ursi (L.) Spreng. (family Ericaceae). It contains arbutin (hydroquinone glycoside) used as urinary antiseptic.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["uva ursi", "urinary antiseptic"]
+    },
+    {
+        "question_text": "What is the chief active constituent of uva ursi?",
+        "options": {"a": "Salicin", "b": "Arbutin (hydroquinone glycoside)", "c": "Hypericin", "d": "Berberine"},
+        "correct_option": "b",
+        "explanation": "Arbutin (hydroquinone-β-D-glucopyranoside, 5-8%) is the chief constituent of uva ursi. It is hydrolyzed in the urinary tract to release hydroquinone with antiseptic action.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["uva ursi", "arbutin"]
+    },
+    {
+        "question_text": "What is the biological source of Ephedra (ma huang)?",
+        "options": {"a": "Ephedra sinica - dried stems", "b": "Ephedra gerardiana - dried stems", "c": "Ephedra intermedia - dried stems", "d": "All of the above species are used"},
+        "correct_option": "d",
+        "explanation": "Ephedra is obtained from dried stems of several Ephedra species: E. sinica (Chinese ephedra), E. gerardiana (Indian ephedra), and E. intermedia (family Ephedraceae).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ephedra"]
+    },
+    {
+        "question_text": "What is the biological source of blue/black cohosh?",
+        "options": {"a": "Actaea racemosa (Cimicifuga racemosa) - dried rhizome", "b": "Caulophyllum thalictroides - dried rhizome", "c": "Atropa belladonna - dried roots", "d": "Hydrastis canadensis - dried rhizome"},
+        "correct_option": "b",
+        "explanation": "Blue cohosh is Caulophyllum thalictroides (L.) Michx. (family Berberidaceae), dried rhizome and roots. It contains caulophylline and is used as emmenagogue and uterine tonic.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["blue cohosh"]
+    },
+    {
+        "question_text": "What is the biological source of motherwort?",
+        "options": {"a": "Leonurus cardiaca - dried aerial parts", "b": "Leonurus japonicus - dried aerial parts", "c": "Both A and B", "d": "Melissa officinalis - dried leaves"},
+        "correct_option": "c",
+        "explanation": "Motherwort is from Leonurus cardiaca (European) or L. japonicus (Chinese), family Lamiaceae. Contains leonurine alkaloid and is used as cardiac tonic and emmenagogue.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["motherwort"]
+    },
+    {
+        "question_text": "What is the biological source of black haw?",
+        "options": {"a": "Viburnum prunifolium - dried bark", "b": "Viburnum opulus - dried bark", "c": "Viburnum dentatum - dried leaves", "d": "Viburnum lantana - dried fruits"},
+        "correct_option": "a",
+        "explanation": "Black haw is the dried bark of Viburnum prunifolium Linn. (family Adoxaceae). It contains scopoletin and is used as uterine antispasmodic.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["black haw"]
+    },
+    {
+        "question_text": "What is the biological source of cramp bark?",
+        "options": {"a": "Viburnum prunifolium - dried bark", "b": "Viburnum opulus - dried bark", "c": "Cornus mas - dried fruits", "d": "Prunus avium - dried bark"},
+        "correct_option": "b",
+        "explanation": "Cramp bark is the dried bark of Viburnum opulus Linn. (family Adoxaceae), also known as guelder rose. It is used as an antispasmodic for muscle cramps and uterine spasms.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["cramp bark"]
+    },
+    {
+        "question_text": "What is the biological source of milk thistle?",
+        "options": {"a": "Silybum marianum - dried seeds", "b": "Cynara scolymus - dried leaves", "c": "Taraxacum officinale - dried roots", "d": "Cnicus benedictus - dried herb"},
+        "correct_option": "a",
+        "explanation": "Milk thistle is the dried ripe seeds of Silybum marianum (L.) Gaertn. (family Asteraceae). It contains silymarin (flavonolignan complex) with hepatoprotective properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["milk thistle", "hepatoprotective"]
+    },
+    {
+        "question_text": "What is the chief active constituent of milk thistle?",
+        "options": {"a": "Curcumin", "b": "Silymarin (especially silybin)", "c": "Ginkgolides", "d": "Hyperforin"},
+        "correct_option": "b",
+        "explanation": "Silymarin is a flavonolignan complex containing silybin (silybinin), silychristin, and silydianin. Silybin is the most pharmacologically active component with hepatoprotective effects.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["milk thistle", "silymarin"]
+    },
+    {
+        "question_text": "What is the biological source of garlic?",
+        "options": {"a": "Allium sativum - fresh or dried bulb", "b": "Allium cepa - dried bulb", "c": "Allium porrum - dried leaves", "d": "Allium schoenoprasum - dried flowers"},
+        "correct_option": "a",
+        "explanation": "Garlic is the fresh or dried bulb of Allium sativum Linn. (family Amaryllidaceae). It contains allicin (formed from alliin by alliinase) with antimicrobial and hypolipidemic properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["garlic", "allicin"]
+    },
+    {
+        "question_text": "What is the chief active principle of garlic?",
+        "options": {"a": "Ajoene", "b": "Allicin (diallyl thiosulfinate)", "c": "Diallyl disulfide", "d": "S-allyl cysteine"},
+        "correct_option": "b",
+        "explanation": "Allicin is the principal bioactive compound of garlic, formed when alliin is cleaved by alliinase enzyme during crushing/chopping. It has antimicrobial, hypolipidemic, and cardiovascular benefits.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["garlic", "allicin"]
+    },
+    {
+        "question_text": "What is the biological source of bitter orange?",
+        "options": {"a": "Citrus aurantium - dried unripe fruit (bergamot)", "b": "Citrus sinensis - fresh fruit", "c": "Citrus limon - dried peel", "d": "Citrus paradisi - fresh fruit"},
+        "correct_option": "a",
+        "explanation": "Bitter orange is the dried unripe fruit of Citrus aurantium Linn. (family Rutaceae). It contains synephrine, octopamine, and volatile oil, used as a digestive and carminative.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["bitter orange"]
+    },
+    {
+        "question_text": "What is the biological source of hyssop?",
+        "options": {"a": "Hyssopus officinalis - dried aerial parts", "b": "Thymus vulgaris - dried aerial parts", "c": "Origanum majorana - dried leaves", "d": "Salvia officinalis - dried leaves"},
+        "correct_option": "a",
+        "explanation": "Hyssop is the dried flowering aerial parts of Hyssopus officinalis Linn. (family Lamiaceae). It contains pinocamphone and is used as an expectorant and carminative.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["hyssop"]
+    },
+    {
+        "question_text": "What is the biological source of thyme?",
+        "options": {"a": "Thymus vulgaris - dried leaves and flowering tops", "b": "Origanum vulgare - dried aerial parts", "c": "Lavandula angustifolia - dried flowers", "d": "Salvia officinalis - dried leaves"},
+        "correct_option": "a",
+        "explanation": "Thyme consists of dried leaves and flowering tops of Thymus vulgaris Linn. (family Lamiaceae). It contains thymol (20-55% of volatile oil) with antiseptic and expectorant properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["thyme", "thymol"]
+    },
+    {
+        "question_text": "What is the chief constituent of thyme volatile oil?",
+        "options": {"a": "Carvacrol", "b": "Thymol", "c": "Linalool", "d": "Eugenol"},
+        "correct_option": "b",
+        "explanation": "Thymol (20-55%) is the chief constituent of thyme volatile oil. It has antiseptic, antifungal, and expectorant properties, used in mouthwashes and cough preparations.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["thyme", "thymol"]
+    },
+    {
+        "question_text": "What is the biological source of chamomile?",
+        "options": {"a": "Matricaria chamomilla (German chamomile) - dried flower heads", "b": "Chamaemelum nobile (Roman chamomile) - dried flower heads", "c": "Both A and B", "d": "Calendula officinalis - dried flowers"},
+        "correct_option": "c",
+        "explanation": "Chamomile comes from Matricaria chamomilla (German) or Chamaemelum nobile (Roman), family Asteraceae. German chamomile contains chamazulene and apigenin (anti-inflammatory).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["chamomile", "anti-inflammatory"]
+    },
+    {
+        "question_text": "What is the chief active compound of German chamomile responsible for blue oil color?",
+        "options": {"a": "Apigenin", "b": "Chamazulene", "c": "Bisabolol", "d": "Quercetin"},
+        "correct_option": "b",
+        "explanation": "Chamazulene is formed during steam distillation of German chamomile from matricine. It gives the characteristic deep blue color to the essential oil and has anti-inflammatory properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["chamomile", "chamazulene"]
+    },
+    {
+        "question_text": "What is the biological source of eucalyptus oil?",
+        "options": {"a": "Eucalyptus globulus - fresh leaves by steam distillation", "b": "Eucalyptus citriodora - dried leaves", "c": "Eucalyptus radiata - dried bark", "d": "Eucalyptus tereticornis - dried seeds"},
+        "correct_option": "a",
+        "explanation": "Eucalyptus oil is obtained from fresh leaves of Eucalyptus globulus Labill. (family Myrtaceae) by steam distillation. Its chief constituent is eucalyptol (cineole, 70-85%).",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["eucalyptus", "cineole"]
+    },
+    {
+        "question_text": "What is the chief constituent of eucalyptus oil?",
+        "options": {"a": "Menthol", "b": "Eucalyptol (1,8-cineole)", "c": "Eugenol", "d": "Thymol"},
+        "correct_option": "b",
+        "explanation": "Eucalyptol (1,8-cineole, 70-85%) is the chief constituent of eucalyptus oil. It has expectorant, anti-inflammatory, and antiseptic properties, used in cough and cold preparations.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["eucalyptus", "cineole"]
+    },
+    {
+        "question_text": "What is the biological source of castor oil?",
+        "options": {"a": "Ricinus communis - cold-pressed seeds", "b": "Ricinus communis - dried leaves", "c": "Ricinus communis - dried bark", "d": "Ricinus communis - dried roots"},
+        "correct_option": "a",
+        "explanation": "Castor oil is obtained from cold-pressed seeds of Ricinus communis Linn. (family Euphorbiaceae). It contains ricinoleic acid (80-90%) as chief fatty acid, used as a purgative.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["castor oil", "purgative"]
+    },
+    {
+        "question_text": "What is the chief fatty acid in castor oil?",
+        "options": {"a": "Oleic acid", "b": "Ricinoleic acid", "c": "Linoleic acid", "d": "Palmitic acid"},
+        "correct_option": "b",
+        "explanation": "Ricinoleic acid (12-hydroxyoleic acid, 80-90%) is the unique chief fatty acid of castor oil, giving it purgative properties by stimulating intestinal peristalsis.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["castor oil", "ricinoleic acid"]
+    },
+    {
+        "question_text": "What is the biological source of linseed/flaxseed oil?",
+        "options": {"a": "Linum usitatissimum - cold-pressed dried seeds", "b": "Linum bienne - dried flowers", "c": "Linum catharticum - dried whole plant", "d": "Linum rigidum - dried seeds"},
+        "correct_option": "a",
+        "explanation": "Linseed (flaxseed) oil is from cold-pressed dried seeds of Linum usitatissimum Linn. (family Linaceae). It is rich in alpha-linolenic acid (omega-3 fatty acid, 45-65%).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["linseed", "omega-3"]
+    },
+    {
+        "question_text": "What is the biological source of cod liver oil?",
+        "options": {"a": "Gadus morhua - fresh liver", "b": "Gadus callarias - dried liver", "c": "Gadus macrocephalus - fresh liver", "d": "All of the above species of Gadus"},
+        "correct_option": "d",
+        "explanation": "Cod liver oil is obtained from the fresh liver of various Gadus species (family Gadidae). It is rich in vitamins A and D and omega-3 fatty acids (EPA and DHA).",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["cod liver oil", "vitamins"]
+    },
+    {
+        "question_text": "What vitamins are present in cod liver oil?",
+        "options": {"a": "Vitamins A and D only", "b": "Vitamins A, D, and E", "c": "Vitamins B complex", "d": "Vitamin C and K"},
+        "correct_option": "a",
+        "explanation": "Cod liver oil is a rich source of vitamins A and D. Vitamin A supports vision and immunity, while vitamin D promotes calcium absorption and bone health.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["cod liver oil", "vitamins"]
+    },
+    {
+        "question_text": "What is the biological source of shark liver oil?",
+        "options": {"a": "Squalus acanthias - fresh liver", "b": "Galeorhinus galeus - dried liver", "c": "Centroscymnus coelepis - fresh liver", "d": "All of the above sharks"},
+        "correct_option": "d",
+        "explanation": "Shark liver oil is obtained from various shark species. It contains high concentrations of squalene (up to 85%) and alkylglycerols with immunomodulatory properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["shark liver oil", "squalene"]
+    },
+    {
+        "question_text": "What is the biological source of lanolin?",
+        "options": {"a": "Fat from sheep's wool (sebaceous glands)", "b": "Butter from sheep's milk", "c": "Fat from pig's skin", "d": "Fat from cow's milk"},
+        "correct_option": "a",
+        "explanation": "Lanolin (wool fat/wool wax) is obtained from the sebaceous glands of sheep, purified from wool washing water. It is used as an emollient and ointment base.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["lanolin", "animal products"]
+    },
+    {
+        "question_text": "What is the biological source of beeswax?",
+        "options": {"a": "Apis mellifera - honeycomb wax", "b": "Apis cerana - honey", "c": "Vespa mandarinia - nest material", "d": "Bombus terrestris - pollen baskets"},
+        "correct_option": "a",
+        "explanation": "Beeswax is the wax secreted by worker honeybees (Apis mellifera, family Apidae) used to build honeycombs. It is used as a stiffening agent, emollient, and ointment base.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["beeswax", "animal products"]
+    },
+    {
+        "question_text": "What is the biological source of shellac?",
+        "options": {"a": "Lac insects (Kerria lacca) on Butea monosperma", "b": "Shellfish from the ocean", "c": "Beetle wings", "d": "Tree bark resin"},
+        "correct_option": "a",
+        "explanation": "Shellac is a resinous secretion of lac insects (Kerria lacca) found on Butea monosperma and other trees. It is used as a coating agent for tablets and enteric coating.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["shellac", "coating agent"]
+    },
+    {
+        "question_text": "What is the biological source of cantharides (Spanish fly)?",
+        "options": {"a": "Cantharis vesicatoria - dried beetle", "b": "Blister beetle (Lytta vesicatoria) - dried insect", "c": "Coccus cacti - dried insect", "d": "Blatta orientalis - dried cockroach"},
+        "correct_option": "b",
+        "explanation": "Cantharides is the dried blister beetle Lytta (Cantharis) vesicatoria containing cantharidin, used topically as a vesicant and for wart removal.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["cantharides"]
+    },
+    {
+        "question_text": "What is the active principle of cantharides?",
+        "options": {"a": "Muscuzine", "b": "Cantharidin (terpenoid)", "c": "Propolis", "d": "Royal jelly"},
+        "correct_option": "b",
+        "explanation": "Cantharidin is a terpenoid vesicant produced by blister beetles. It causes blistering of skin and was historically used as a wart remover and aphrodisiac (dangerously toxic).",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["cantharides", "cantharidin"]
+    },
+    {
+        "question_text": "What is the biological source of honey?",
+        "options": {"a": "Apis mellifera - nectar of flowers processed by bees", "b": "Apis cerana - tree sap", "c": "Vespa orientalis - fruit juice", "d": "Bombus terrestris - leaf extract"},
+        "correct_option": "a",
+        "explanation": "Honey is the sweet substance produced by Apis mellifera (or A. cerana) from flower nectar, stored in honeycombs. It contains glucose, fructose, enzymes, and has antimicrobial properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["honey"]
+    },
+    {
+        "question_text": "What is the biological source of propolis?",
+        "options": {"a": "Apis mellifera - resinous mixture from tree buds", "b": "Apis mellifera - bee venom", "c": "Apis mellifera - royal jelly", "d": "Apis mellifera - beeswax"},
+        "correct_option": "a",
+        "explanation": "Propolis (bee glue) is a resinous mixture collected by honeybees from tree buds and sap flows. It contains flavonoids and has antimicrobial, anti-inflammatory, and wound-healing properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["propolis"]
+    },
+    {
+        "question_text": "What is the biological source of royal jelly?",
+        "options": {"a": "Secretion from hypopharyngeal glands of worker bees fed to queen bee", "b": "Pollen collected by bees", "c": "Honey from wild bees", "d": "Bee venom"},
+        "correct_option": "a",
+        "explanation": "Royal jelly is a milky secretion from hypopharyngeal glands of worker Apis mellifera bees, fed exclusively to the queen. It contains proteins, fatty acids (10-HDA), and vitamins.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["royal jelly"]
+    },
+    {
+        "question_text": "What is the biological source of musk?",
+        "options": {"a": "Moschus moschiferus - dried secretion from preputial gland of male musk deer", "b": "Moschus moschiferus - dried skin", "c": "Moschus moschiferus - dried antlers", "d": "Moschus moschiferus - dried bones"},
+        "correct_option": "a",
+        "explanation": "Musk is the dried secretion from the preputial gland (musking gland) of the male musk deer (Moschus moschiferus, family Moschidae). It contains muscone as chief aromatic compound.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["musk", "animal products"]
+    },
+    {
+        "question_text": "What is the biological source of civet?",
+        "options": {"a": "Viverra civetta - secretion from perineal gland of civet cat", "b": "Viverra zibetha - dried skin", "c": "Paradoxurus hermaphroditus - dried glands", "d": "Felis catus - dried skin"},
+        "correct_option": "a",
+        "explanation": "Civet is the secretion from the perineal gland of the civet cat (Viverra civetta). It contains civetone and is used in perfumery as a fixative.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["civet", "animal products"]
+    },
+    {
+        "question_text": "What is the biological source of ambergris?",
+        "options": {"a": "Secretion from intestines of sperm whale", "b": "Resin from amber trees", "c": "Fossilized tree sap", "d": "Secretion from dolphins"},
+        "correct_option": "a",
+        "explanation": "Ambergris is a waxy substance produced in the intestines of sperm whales (Physeter catodon). It is used as a fixative in perfumery and contains ambrein.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["ambergris", "animal products"]
+    },
+    {
+        "question_text": "What is the biological source of pearl?",
+        "options": {"a": "Pinctada margaritifera or P. vulgari - calcareous concretion from shell", "b": "Haliotis species - dried shell", "c": "Crassostrea gigas - dried meat", "d": "Mytilus edulis - dried shell"},
+        "correct_option": "a",
+        "explanation": "Pearl is a calcareous concretion formed within the shell of Pinctada species (pearl oyster). It contains calcium carbonate, conchiolin, and trace elements, used in traditional medicine.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["pearl", "animal products"]
+    },
+    {
+        "question_text": "What is the biological source of coral?",
+        "options": {"a": "Corallium rubrum - red coral skeleton", "b": "Madrepora species - white coral", "c": "Acropora species - coral branches", "d": "Porites species - coral heads"},
+        "correct_option": "a",
+        "explanation": "Medicinal coral is primarily the skeleton of Corallium rubrum (red coral). It contains calcium carbonate and is used in traditional medicine as an antacid and calcium supplement.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["coral", "animal products"]
+    },
+    {
+        "question_text": "What is the biological source of agar-agar?",
+        "options": {"a": "Gelidium amansii or Gracilaria species - dried seaweed (red algae)", "b": "Laminaria digitata - brown algae", "c": "Chlorella vulgaris - green algae", "d": "Spirulina platensis - blue-green algae"},
+        "correct_option": "a",
+        "explanation": "Agar-agar is obtained from dried red algae (Gelidium, Gracilaria, Eucheuma species). It is a gelatinous substance used as a microbiological culture medium and pharmaceutical excipient.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["agar", "seaweed"]
+    },
+    {
+        "question_text": "What is the biological source of carrageenan?",
+        "options": {"a": "Chondrus crispus (Irish moss) and other red seaweeds", "b": "Laminaria digitata (kelp)", "c": "Fucus vesiculosus (bladderwrack)", "d": "Ulva lactuca (sea lettuce)"},
+        "correct_option": "a",
+        "explanation": "Carrageenan is obtained from red seaweeds (Chondrus crispus, Eucheuma, Kappaphycus species). It is used as a suspending agent, emulsifier, and thickener in pharmaceutical formulations.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["carrageenan", "seaweed"]
+    },
+    {
+        "question_text": "What is the biological source of alginate (sodium alginate)?",
+        "options": {"a": "Laminaria digitata, Macrocystis pyrifera, or other brown seaweeds", "b": "Gelidium amansii - red algae", "c": "Chlorella vulgaris - green algae", "d": "Spirulina platensis - cyanobacteria"},
+        "correct_option": "a",
+        "explanation": "Sodium alginate is extracted from brown seaweeds (Laminaria, Macrocystis, Durvillaea species). It is used as a tablet excipient, emulsifier, and in wound dressings.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["alginate", "seaweed"]
+    },
+    {
+        "question_text": "What is the biological source of ichthammol (black sulfonated shale oil)?",
+        "options": {"a": "Oil shale processed by sulfonation", "b": "Fish liver oil by distillation", "c": "Shark liver oil by sulfonation", "d": "Petroleum by distillation"},
+        "correct_option": "a",
+        "explanation": "Ichthammol is obtained by dry distillation of oil shale (bituminous schist) followed by sulfonation and neutralization with ammonia. It is used in ointments for anti-inflammatory effects.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["ichthammol"]
+    },
+    {
+        "question_text": "What is the biological source of petroleum jelly (petrolatum)?",
+        "options": {"a": "Refined semi-solid mixture of hydrocarbons from petroleum", "b": "Animal fat from rendering", "c": "Plant wax from jojoba", "d": "Mineral oil from limestone"},
+        "correct_option": "a",
+        "explanation": "Petroleum jelly is a semi-solid mixture of hydrocarbons obtained by refining petroleum. It is used as an ointment base, emollient, and protective barrier.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["petroleum jelly"]
+    },
+    {
+        "question_text": "What is the biological source of kaolin?",
+        "options": {"a": "Natural hydrated aluminum silicate (clay mineral)", "b": "Calcium carbonate from seashells", "c": "Magnesium trisilicate from mineral springs", "d": "Zinc oxide from zinc ores"},
+        "correct_option": "a",
+        "explanation": "Kaolin is a naturally occurring hydrated aluminum silicate (clay). It is used as a protective dusting powder, in antidiarrheal mixtures, and as a pharmaceutical adsorbent.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["kaolin", "mineral drugs"]
+    },
+    {
+        "question_text": "What is the biological source of bentonite?",
+        "options": {"a": "Natural colloidal hydrated aluminum silicate (montmorillonite)", "b": "Natural calcium carbonate", "c": "Natural magnesium hydroxide", "d": "Natural sodium bicarbonate"},
+        "correct_option": "a",
+        "explanation": "Bentonite is a native colloidal hydrated aluminum silicate (montmorillonite) that swells in water. It is used as a suspending agent, emulsifying agent, and adsorbent.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["bentonite", "mineral drugs"]
+    },
+    {
+        "question_text": "What is the biological source of kaolin?",
+        "options": {"a": "Natural hydrated aluminum silicate", "b": "Calcium phosphate mineral", "c": "Magnesium hydroxide mineral", "d": "Zinc carbonate mineral"},
+        "correct_option": "a",
+        "explanation": "Kaolin is a native hydrated aluminum silicate (Al₂Si₂O₅(OH)₄) used as a protective powder, adsorbent, and in antidiarrheal preparations.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["kaolin", "mineral"]
+    },
+    {
+        "question_text": "What is the biological source of talc?",
+        "options": {"a": "Natural hydrated magnesium silicate mineral", "b": "Natural calcium sulfate", "c": "Natural sodium chloride", "d": "Natural potassium carbonate"},
+        "correct_option": "a",
+        "explanation": "Talc is a natural hydrated magnesium silicate mineral (Mg₃Si₄O₁₀(OH)₂). It is used as a dusting powder, tablet excipient (glidant), and in cosmetic preparations.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["talc", "mineral drugs"]
+    },
+    {
+        "question_text": "What is the biological source of calcium carbonate (natural chalk)?",
+        "options": {"a": "Natural calcium carbonate from limestone, marble, or shells", "b": "Synthetic calcium hydroxide", "c": "Natural sodium bicarbonate", "d": "Natural magnesium carbonate"},
+        "correct_option": "a",
+        "explanation": "Natural calcium carbonate (CaCO₃) is obtained from limestone, marble, or oyster shells. It is used as an antacid and calcium supplement.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["calcium carbonate", "antacid"]
+    },
+    {
+        "question_text": "What is the biological source of Epsom salt?",
+        "options": {"a": "Natural magnesium sulfate heptahydrate (MgSO₄·7H₂O)", "b": "Natural sodium chloride", "c": "Natural potassium chloride", "d": "Natural calcium sulfate"},
+        "correct_option": "a",
+        "explanation": "Epsom salt is magnesium sulfate heptahydrate, obtained from mineral springs or natural deposits. It is used as a saline purgative and in bath preparations.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["Epsom salt", "mineral drugs"]
+    },
+    {
+        "question_text": "What is the biological source of fuller's earth?",
+        "options": {"a": "Natural hydrated aluminum silicate (bentonite type)", "b": "Natural calcium carbonate", "c": "Natural diatomaceous earth", "d": "Natural kaolin"},
+        "correct_option": "a",
+        "explanation": "Fuller's earth is a natural hydrated aluminum silicate with good adsorptive properties. It is used as a filtering agent, in face packs, and as a protective dusting powder.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["fuller's earth", "mineral drugs"]
+    },
+    {
+        "question_text": "What is the biological source of bentonite?",
+        "options": {"a": "Natural colloidal hydrated aluminum silicate (montmorillonite)", "b": "Natural calcium carbonate", "c": "Natural diatomaceous earth", "d": "Natural pumice"},
+        "correct_option": "a",
+        "explanation": "Bentonite is a native colloidal hydrated aluminum silicate that swells to many times its volume in water. It is used as a suspending/emulsifying agent and in antidiarrheal preparations.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["bentonite"]
+    },
+    {
+        "question_text": "What is the biological source of diatomaceous earth (kieselguhr)?",
+        "options": {"a": "Fossilized remains of diatoms (siliceous algae)", "b": "Crystalline silica from mountains", "c": "Volcanic ash deposits", "d": "Coral reef sediments"},
+        "correct_option": "a",
+        "explanation": "Kieselguhr (diatomaceous earth) consists of fossilized remains of diatoms (siliceous unicellular algae). It is used as a filter aid and as a pharmaceutical extender.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["kieselguhr", "mineral drugs"]
+    },
+    {
+        "question_text": "What is the difference between glycosides and alkaloids?",
+        "options": {"a": "No difference", "b": "Glycosides contain a sugar moiety; alkaloids contain nitrogen and are basic", "c": "Glycosides are always toxic; alkaloids are always safe", "d": "Alkaloids are found in animals; glycosides in plants only"},
+        "correct_option": "b",
+        "explanation": "Glycosides are compounds containing a sugar part (glycone) bound to a non-sugar part (aglycone). Alkaloids are nitrogen-containing, usually basic compounds with physiological effects.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["alkaloids", "glycosides"]
+    },
+    {
+        "question_text": "What are the main types of glycosides based on the aglycone?",
+        "options": {"a": "Sugars and starches", "b": "Cardiac glycosides, anthraquinone glycosides, saponin glycosides, flavonoid glycosides, cyanogenic glycosides", "c": "Alkaloids and vitamins", "d": "Fats and waxes"},
+        "correct_option": "b",
+        "explanation": "Glycosides are classified by their aglycone: cardiac (digitoxin), anthraquinone (sennosides), saponin (diosgenin), flavonoid (rutin), cyanogenic (amygdalin), etc.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["glycosides", "classification"]
+    },
+    {
+        "question_text": "What is a cardiac glycoside?",
+        "options": {"a": "A glycoside affecting the respiratory system", "b": "A glycoside with specific action on the heart, increasing force of contraction", "c": "A glycoside used for diabetes", "d": "A glycoside used as a laxative"},
+        "correct_option": "b",
+        "explanation": "Cardiac glycosides (cardenolides like digoxin, digitoxin) have a specific positive inotropic effect on the heart, increasing the force of myocardial contraction.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["cardiac glycosides"]
+    },
+    {
+        "question_text": "What are the sources of cardiac glycosides?",
+        "options": {"a": "Only from Digitalis species", "b": "Digitalis, Strophanthus, Thevetia, Nerium, and Convallaria species", "c": "Only from animal sources", "d": "Only from synthetic chemistry"},
+        "correct_option": "b",
+        "explanation": "Cardiac glycosides come from multiple plant sources: Digitalis (digitoxin, digoxin), Strophanthus (ouabain), Thevetia (thevetin), Nerium (oleandrin), Convallaria (convallatoxin).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["cardiac glycosides", "sources"]
+    },
+    {
+        "question_text": "What is the Kedde test used for?",
+        "options": {"a": "Testing for alkaloids", "b": "Chemical identification test for cardenolides (cardiac glycosides) using 3,5-dinitrobenzoic acid", "c": "Testing for tannins", "d": "Testing for volatile oils"},
+        "correct_option": "b",
+        "explanation": "The Kedde test is a colorimetric test for cardenolides: the drug extract with 3,5-dinitrobenzoic acid and alkali produces a violet/purple color indicating the unsaturated lactone ring.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["cardiac glycosides", "identification"]
+    },
+    {
+        "question_text": "What is the Keller-Kiliani test used for?",
+        "options": {"a": "Testing for alkaloids", "b": "Identification test for cardenolides containing a 2-deoxy sugar (like digitoxose)", "c": "Testing for tannins", "d": "Testing for saponins"},
+        "correct_option": "b",
+        "explanation": "The Keller-Kiliani test detects 2-deoxy sugars in cardiac glycosides. Glacial acetic acid with ferric chloride and concentrated sulfuric acid produces a blue-green color at the junction.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["cardiac glycosides", "identification"]
+    },
+    {
+        "question_text": "What are saponin glycosides?",
+        "options": {"a": "Glycosides with sweet taste only", "b": "Glycosides that produce soap-like foam in aqueous solution and have hemolytic activity", "c": "Glycosides with bitter taste only", "d": "Glycosides that are always toxic"},
+        "correct_option": "b",
+        "explanation": "Saponins are glycosides that form stable foam (like soap) in aqueous solution and have the ability to lyse red blood cells (hemolysis). They have surfactant properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["saponins"]
+    },
+    {
+        "question_text": "What is a hemolytic test for saponins?",
+        "options": {"a": "Blood group testing", "b": "Adding saponin solution to blood causes lysis of red blood cells (hemolysis)", "c": "Testing blood clotting time", "d": "Measuring blood pressure"},
+        "correct_option": "b",
+        "explanation": "Saponins disrupt cell membranes due to their surfactant nature. When added to blood, they lyse RBCs, causing release of hemoglobin — this is the hemolytic test for saponins.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["saponins", "hemolysis"]
+    },
+    {
+        "question_text": "What is the foaming test for saponins?",
+        "options": {"a": "Testing if water boils", "b": "Shaking an aqueous extract produces stable, persistent foam due to surfactant properties", "c": "Testing for volatile oil", "d": "Testing for alkaloids"},
+        "correct_option": "b",
+        "explanation": "When an aqueous solution containing saponins is shaken, it produces a persistent foam due to the surface-active (surfactant) nature of saponins — this is a simple qualitative test.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["saponins", "identification"]
+    },
+    {
+        "question_text": "What are volatile oils composed of?",
+        "options": {"a": "Pure single compounds", "b": "Complex mixtures of terpenes (monoterpenes, sesquiterpenes), phenylpropanoids, and oxygenated compounds", "c": "Proteins and amino acids", "d": "Simple sugars"},
+        "correct_option": "b",
+        "explanation": "Volatile oils are complex mixtures of hydrocarbons and oxygenated compounds including monoterpenes (limonene), sesquiterpenes (bisabolol), phenylpropanoids (eugenol), and alcohols (menthol).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["volatile oils", "chemistry"]
+    },
+    {
+        "question_text": "What is the Liebermann-Burchard test used for?",
+        "options": {"a": "Testing for alkaloids", "b": "Identification test for steroids and triterpenoids", "c": "Testing for tannins", "d": "Testing for carbohydrates"},
+        "correct_option": "b",
+        "explanation": "The Liebermann-Burchard test uses acetic anhydride and sulfuric acid to produce color changes (blue-green for steroids, pink/violet for triterpenoids) for identification.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["steroids", "identification"]
+    },
+    {
+        "question_text": "What is the Molisch test used for?",
+        "options": {"a": "Testing for alkaloids", "b": "General identification test for carbohydrates (all types)", "c": "Testing for proteins", "d": "Testing for lipids"},
+        "correct_option": "b",
+        "explanation": "Molisch test uses α-naphthol in alcohol with sulfuric acid. A violet/purple ring at the junction indicates the presence of carbohydrates (monosaccharides, disaccharides, polysaccharides).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["carbohydrates", "identification"]
+    },
+    {
+        "question_text": "What is the identification test for alkaloids using Dragendorff's reagent?",
+        "options": {"a": "Green color", "b": "Orange-red to brown precipitate", "c": "Blue color", "d": "White precipitate"},
+        "correct_option": "b",
+        "explanation": "Dragendorff's reagent (potassium bismuth iodide) produces an orange-red to brown precipitate with most alkaloids. It is a general confirmatory test for alkaloids.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["alkaloids", "identification"]
+    },
+    {
+        "question_text": "What is the Mayer's reagent used for?",
+        "options": {"a": "Testing for carbohydrates", "b": "Identification test for alkaloids — produces a white/cream precipitate", "c": "Testing for tannins", "d": "Testing for glycosides"},
+        "correct_option": "b",
+        "explanation": "Mayer's reagent (potassium mercuric iodide) produces a white or cream-colored precipitate with alkaloids, serving as a general test for alkaloid detection.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["alkaloids", "identification"]
+    },
+    {
+        "question_text": "What is the ferric chloride test used for?",
+        "options": {"a": "Testing for alkaloids", "b": "Identification test for phenolic compounds and tannins (produces blue-black or green color)", "c": "Testing for carbohydrates", "d": "Testing for volatile oils"},
+        "correct_option": "b",
+        "explanation": "Ferric chloride (FeCl₃) test produces blue-black, green, or violet colors with phenolic compounds and tannins, helping identify these groups in crude drugs.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["tannins", "identification"]
+    },
+    {
+        "question_text": "What is the vanillin-sulfuric acid test used for?",
+        "options": {"a": "Testing for alkaloids", "b": "Identification test for steroids and triterpenoids (various color reactions)", "c": "Testing for carbohydrates", "d": "Testing for tannins"},
+        "correct_option": "b",
+        "explanation": "Vanillin-sulfuric acid reagent produces characteristic colors (red, violet, blue, green) with steroids and triterpenoids, useful for identifying these compound classes.",
+        "subject": "pharmacognosy",
+        "difficulty": "hard",
+        "tags": ["steroids", "identification"]
+    },
+    {
+        "question_text": "What is the significance of thin layer chromatography (TLC) in pharmacognosy?",
+        "options": {"a": "Only for synthetic drugs", "b": "Used for identification, purity testing, and fingerprinting of crude drugs and their extracts", "c": "Only for quantitative analysis", "d": "Only for isolating compounds"},
+        "correct_option": "b",
+        "explanation": "TLC is widely used in pharmacognosy for qualitative identification of active constituents, checking purity, comparing crude drug samples, and creating fingerprints for standardization.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["TLC", "analytical methods"]
+    },
+    {
+        "question_text": "What is the Rf value in TLC?",
+        "options": {"a": "Retardation factor - ratio of distance moved by compound to distance moved by solvent front", "b": "Reflection factor", "c": "Recovery factor", "d": "Retention factor in HPLC"},
+        "correct_option": "a",
+        "explanation": "Rf (Retardation/Retention factor) = Distance moved by compound / Distance moved by solvent front. It is characteristic for a compound under specific conditions and used for identification.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["TLC", "Rf value"]
+    },
+    {
+        "question_text": "What is high-performance liquid chromatography (HPLC) used for in pharmacognosy?",
+        "options": {"a": "Only for separating pigments", "b": "Quantitative analysis and standardization of active constituents in crude drugs and formulations", "c": "Only for qualitative analysis", "d": "Only for purification"},
+        "correct_option": "b",
+        "explanation": "HPLC is used for precise quantification and quality control of active constituents (alkaloids, glycosides, flavonoids) in crude drugs, extracts, and pharmaceutical formulations.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["HPLC", "analytical methods"]
+    },
+    {
+        "question_text": "What is the significance of macroscopic and microscopic evaluation in pharmacognosy?",
+        "options": {"a": "Only for education", "b": "Identifying and authenticating crude drugs through physical characteristics and cellular structure", "c": "Only for chemical analysis", "d": "Only for determining potency"},
+        "correct_option": "b",
+        "explanation": "Macroscopic evaluation examines organoleptic features (color, odor, taste, texture). Microscopic evaluation studies cellular structure, trichomes, starch grains, and crystals for drug authentication.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["drug evaluation"]
+    },
+    {
+        "question_text": "What are trichomes in pharmacognosy?",
+        "options": {"a": "Chemical compounds", "b": "Hair-like outgrowths on plant surfaces used for microscopic identification", "c": "Type of crystals", "d": "Starch grains"},
+        "correct_option": "b",
+        "explanation": "Trichomes are epidermal appendages (hair-like structures) on leaves, stems, and other plant parts. Their type (glandular, non-glandular, unicellular, multicellular) helps identify drugs microscopically.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["trichomes", "microscopy"]
+    },
+    {
+        "question_text": "What are calcium oxalate crystals in pharmacognosy used for?",
+        "options": {"a": "No significance", "b": "Microscopic identification markers for crude drugs — types includeraphides, druses, and prismatic crystals", "c": "Only found in animal drugs", "d": "Only used for chemical analysis"},
+        "correct_option": "b",
+        "explanation": "Calcium oxalate crystals (raphides = needle-shaped, druses = star-shaped, prismatic) are characteristic features in many plant drugs used for microscopic authentication.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["microscopy", "calcium oxalate"]
+    },
+    {
+        "question_text": "What are starch grains used for in drug microscopy?",
+        "options": {"a": "They have no diagnostic value", "b": "Their shape, size, hilum position, and layers help identify specific crude drugs", "c": "They are only found in roots", "d": "They dissolve during sample preparation"},
+        "correct_option": "b",
+        "explanation": "Starch grains vary in shape (round, oval, polygonal), size, hilum position, and striation patterns between species, making them useful microscopic identification markers.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["starch", "microscopy"]
+    },
+    {
+        "question_text": "What is the concept of pharmacognostic evaluation?",
+        "options": {"a": "Only chemical testing", "b": "A systematic approach to evaluate crude drugs using morphological, microscopic, physical, chemical, and biological methods", "c": "Only tasting the drug", "d": "Only measuring weight"},
+        "correct_option": "b",
+        "explanation": "Pharmacognostic evaluation is a comprehensive evaluation including organoleptic, macroscopic, microscopic, physical (ash, moisture, extractive), chemical, and biological parameters for drug standardization.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["evaluation", "standardization"]
+    },
+    {
+        "question_text": "What is total ash value in pharmacognosy?",
+        "options": {"a": "Weight of the drug", "b": "Residue remaining after incineration of drug at 450-600°C, indicating mineral content and purity", "c": "Weight of volatile oil", "d": "Weight of extract"},
+        "correct_option": "b",
+        "explanation": "Total ash is the residue after complete incineration. It indicates mineral content; unusually high values suggest contamination with earth/sand. Determined by official methods.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ash value", "evaluation"]
+    },
+    {
+        "question_text": "What is acid-insoluble ash?",
+        "options": {"a": "Ash that dissolves in acid", "b": "The residue after treating total ash with dilute HCl, indicating silica and siliceous matter (contamination)", "c": "Ash that is acidic in nature", "d": "Ash from acidic plants"},
+        "correct_option": "b",
+        "explanation": "Acid-insoluble ash is the residue after treating total ash with dilute hydrochloric acid. High values indicate contamination with silica (sand, earth) in crude drugs.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ash value", "evaluation"]
+    },
+    {
+        "question_text": "What is water-soluble ash?",
+        "options": {"a": "Ash that dissolves in water", "b": "The difference between total ash and residue after treatment with water, indicating water-soluble inorganic matter", "c": "Ash that absorbs water", "d": "Ash from water plants"},
+        "correct_option": "b",
+        "explanation": "Water-soluble ash = Total ash - Residue after water treatment. It gives information about water-soluble inorganic constituents and can indicate the nature of inorganic material.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["ash value", "evaluation"]
+    },
+    {
+        "question_text": "What is extractive value in pharmacognosy?",
+        "options": {"a": "Weight of the whole drug", "b": "The amount of crude drug extracted by a specific solvent, indicating the amount of soluble constituents", "c": "Weight of residue after burning", "d": "Weight of volatile oil only"},
+        "correct_option": "b",
+        "explanation": "Extractive values (water-soluble, alcohol-soluble, ether-soluble) indicate the nature and amount of chemical constituents. They help assess quality and detect adulteration.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["extractive value", "evaluation"]
+    },
+    {
+        "question_text": "What is moisture content determination important for in pharmacognosy?",
+        "options": {"a": "For taste testing", "b": "To assess quality, shelf life, and prevent microbial growth in crude drugs", "c": "For color measurement", "d": "For odor assessment"},
+        "correct_option": "b",
+        "explanation": "Moisture content affects shelf life, microbial growth, and potency of crude drugs. Excess moisture leads to mold, fermentation, and degradation of active constituents.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["moisture content", "evaluation"]
+    },
+    {
+        "question_text": "What is the volatile oil content determination?",
+        "options": {"a": "Measuring fat content", "b": "Determining the percentage of volatile oil in a crude drug by steam distillation (Clevenger apparatus)", "c": "Measuring alkaloid content", "d": "Measuring glycoside content"},
+        "correct_option": "b",
+        "explanation": "Volatile oil content is determined by steam distillation using a Clevenger apparatus. The drug is distilled and the volume of oil collected is measured. Official limits are specified.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["volatile oil", "evaluation"]
+    },
+    {
+        "question_text": "What is the foreign organic matter in pharmacognosy?",
+        "options": {"a": "Active constituents", "b": "Any material other than the official drug (stems, dirt, insects, other plant parts) that should be limited", "c": "Valuable constituents", "d": "The main drug itself"},
+        "correct_option": "b",
+        "explanation": "Foreign organic matter includes non-drug plant parts, insects, dirt, sand, and other contaminants. Pharmacopoeias set limits (usually not more than 2%) for these impurities.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["evaluation", "purity"]
+    },
+    {
+        "question_text": "What is adulteration in crude drugs?",
+        "options": {"a": "Adding active ingredients", "b": "Intentional or unintentional substitution or addition of inferior, cheaper, or harmful material", "c": "Improving drug quality", "d": "Adding preservatives"},
+        "correct_option": "b",
+        "explanation": "Adulteration is adding inferior/substitute materials to increase bulk or simulate the drug. It can be deliberate (economic fraud) or accidental (poor collection practices).",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["adulteration", "quality control"]
+    },
+    {
+        "question_text": "What is substitution in crude drugs?",
+        "options": {"a": "Using a cheaper excipient", "b": "Replacing a drug with another species (related or unrelated) that may or may not have similar therapeutic action", "c": "Adding more active ingredient", "d": "Changing the package"},
+        "correct_option": "b",
+        "explanation": "Substitution is replacing the official drug with a different plant species. It may be done due to scarcity, cost, or ignorance. The substitute may have different therapeutic properties.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["substitution", "quality control"]
+    },
+    {
+        "question_text": "What is the concept of drug standardization in pharmacognosy?",
+        "options": {"a": "Making all drugs taste the same", "b": "Ensuring crude drugs meet defined quality standards through physical, chemical, and biological parameters", "c": "Making drugs uniform in color", "d": "Packaging drugs in same containers"},
+        "correct_option": "b",
+        "explanation": "Drug standardization ensures uniform quality by specifying limits for identity, purity, and quality parameters including ash values, extractive values, volatile oil content, and active constituent limits.",
+        "subject": "pharmacognosy",
+        "difficulty": "easy",
+        "tags": ["standardization"]
+    },
+    {
+        "question_text": "What is the WHO guideline for quality control of herbal drugs?",
+        "options": {"a": "No guidelines exist", "b": "WHO has published guidelines for assessing safety, efficacy, quality control, and clinical evaluation of herbal medicines", "c": "Only for synthetic drugs", "d": "Only for animal products"},
+        "correct_option": "b",
+        "explanation": "WHO has published comprehensive guidelines for herbal drug quality control covering: botanical identification, chemical standardization, toxicological evaluation, and clinical assessment.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["WHO", "quality control"]
+    },
+    {
+        "question_text": "What is chromatography in pharmacognosy?",
+        "options": {"a": "Color measurement", "b": "A group of techniques for separating mixtures based on differential partitioning between stationary and mobile phases", "c": "A type of distillation", "d": "A type of extraction"},
+        "correct_option": "b",
+        "explanation": "Chromatography (TLC, HPLC, GC, column) separates plant extract components based on their different affinities for stationary phase (solid/liquid) and mobile phase (liquid/gas).",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["chromatography"]
+    },
+    {
+        "question_text": "What is the significance of gas chromatography (GC) in pharmacognosy?",
+        "options": {"a": "Used only for synthetic compounds", "b": "Used for analysis and standardization of volatile oil components", "c": "Used only for alkaloid analysis", "d": "Used only for glycoside analysis"},
+        "correct_option": "b",
+        "explanation": "GC is the preferred method for analyzing volatile oils and essential oils, allowing separation and quantification of individual terpene and phenylpropanoid components.",
+        "subject": "pharmacognosy",
+        "difficulty": "medium",
+        "tags": ["GC", "volatile oils"]
+    }
+]
+
+add("data/questions/pharmacognosy.json", questions)
