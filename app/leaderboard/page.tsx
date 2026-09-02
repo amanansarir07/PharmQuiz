@@ -123,20 +123,20 @@ export default function LeaderboardPage() {
       </div>
 
       {/* Period Tabs */}
-      <div className="mb-8 flex gap-1 p-1 bg-muted/50 rounded-xl w-fit">
+      <div className="mb-8 grid grid-cols-4 gap-1.5 p-1 bg-muted/50 rounded-xl">
         {periods.map(({ key, icon: PIcon }) => (
           <button
             key={key}
             onClick={() => setActivePeriod(key)}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
+              "flex flex-col items-center gap-1 px-2 py-2.5 rounded-lg text-xs font-medium transition-all",
               activePeriod === key
                 ? "bg-background shadow-sm text-foreground"
                 : "text-muted-foreground hover:text-foreground"
             )}
           >
             <PIcon className="h-4 w-4" />
-            <span className="hidden sm:inline">{PERIOD_LABELS[key]}</span>
+            <span>{PERIOD_LABELS[key]}</span>
           </button>
         ))}
       </div>
@@ -201,7 +201,7 @@ export default function LeaderboardPage() {
         <>
           {/* Top 3 Podium */}
           {podiumOrder.length >= 3 && (
-            <div className="mb-8 flex items-end justify-center gap-3">
+            <div className="mb-8 flex items-end justify-center gap-2 sm:gap-4">
               {podiumOrder.map((entry, visualIdx) => {
                 const rank = podiumRanks[visualIdx];
                 const cfg = podiumConfig[rank - 1];
@@ -225,15 +225,15 @@ export default function LeaderboardPage() {
                     </div>
 
                     {/* Name */}
-                    <p className={cn("font-semibold text-sm text-center max-w-[100px] truncate", isMe && "text-primary")}>
+                    <p className={cn("font-semibold text-xs sm:text-sm text-center max-w-[90px] truncate", isMe && "text-primary")}>
                       {entry.name}
                     </p>
-                    <p className="text-xs text-muted-foreground mt-0.5">
+                    <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">
                       {entry.score} pts
                     </p>
 
                     {/* Bar */}
-                    <div className={cn("w-24 rounded-t-lg mt-2 bg-gradient-to-t", cfg.bg, cfg.height, "opacity-80")} />
+                    <div className={cn("w-16 sm:w-24 rounded-t-lg mt-2 bg-gradient-to-t", cfg.bg, cfg.height, "opacity-80")} />
                   </div>
                 );
               })}
