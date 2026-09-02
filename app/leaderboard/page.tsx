@@ -131,33 +131,6 @@ export default function LeaderboardPage() {
           </div>
         </div>
 
-        {/* Period Tabs */}
-        <Tabs value={activePeriod} onValueChange={setActivePeriod} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 gap-1 bg-muted p-1 rounded-xl">
-            {(["daily", "weekly", "monthly", "all_time"] as LeaderboardPeriod[]).map((period) => (
-              <TabsTrigger
-                key={period}
-                value={period}
-                className={cn(
-                  "relative flex flex-col items-center gap-1.5 py-3 px-2 text-sm transition-all",
-                  "data-[state=active]:shadow-md data-[state=active]:bg-background"
-                )}
-              >
-                <div className="flex items-center gap-1.5">
-                  {(() => { const Icon = periodIconMap[period]; return <Icon className="h-4 w-4" />; })()}
-                  <span className="font-medium">{PERIOD_LABELS[period]}</span>
-                </div>
-                <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                  <Target className="h-3 w-3" />
-                  <span>Min: {PERIOD_MIN_QUIZZES[period]}</span>
-                </div>
-                {activePeriod === period && (
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-8 rounded-full bg-primary" />
-                )}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </Tabs>
       </div>
 
       {/* User Position Card */}
@@ -220,7 +193,33 @@ export default function LeaderboardPage() {
       )}
 
       {/* Leaderboard Content */}
-      <TabsContent value="daily" className="space-y-4">
+            <Tabs value={activePeriod} onValueChange={setActivePeriod} className="w-full">
+        <TabsList className="grid w-full grid-cols-4 gap-1 bg-muted p-1 rounded-xl">
+                    {(["daily", "weekly", "monthly", "all_time"] as LeaderboardPeriod[]).map((period) => (
+                      <TabsTrigger
+                        key={period}
+                        value={period}
+                        className={cn(
+                          "relative flex flex-col items-center gap-1.5 py-3 px-2 text-sm transition-all",
+                          "data-[state=active]:shadow-md data-[state=active]:bg-background"
+                        )}
+                      >
+                        <div className="flex items-center gap-1.5">
+                          {(() => { const Icon = periodIconMap[period]; return <Icon className="h-4 w-4" />; })()}
+                          <span className="font-medium">{PERIOD_LABELS[period]}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <Target className="h-3 w-3" />
+                          <span>Min: {PERIOD_MIN_QUIZZES[period]}</span>
+                        </div>
+                        {activePeriod === period && (
+                          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-8 rounded-full bg-primary" />
+                        )}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+
+<TabsContent value="daily" className="space-y-4">
         <LeaderboardContent entries={entries} user={user} period="daily" isMounted={mounted} />
       </TabsContent>
       <TabsContent value="weekly" className="space-y-4">
@@ -232,6 +231,7 @@ export default function LeaderboardPage() {
       <TabsContent value="all_time" className="space-y-4">
         <LeaderboardContent entries={entries} user={user} period="all_time" isMounted={mounted} />
       </TabsContent>
+      </Tabs>
 
       {/* Scoring Info */}
       <Card className="mt-8">
