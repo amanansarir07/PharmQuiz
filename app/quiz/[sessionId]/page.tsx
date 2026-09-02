@@ -120,7 +120,7 @@ export default function ActiveQuizPage({
         ? quizConfig.timeLimit * 60 - (timeLeft || 0)
         : null;
 
-      // Save to localStorage for results page
+      // Save to localStorage for results page AND analytics
       localStorage.setItem(
         `quiz-results-${sessionId}`,
         JSON.stringify({
@@ -134,17 +134,24 @@ export default function ActiveQuizPage({
         })
       );
 
-      // Save to Supabase for shared stats/leaderboard
+      // Save to Supabase for shared stats/leaderboard (non-blocking, best-effort)
       if (user) {
-        await supabase.from("quiz_results").insert({
-          user_id: user.id,
-          subject: quizConfig?.subject || "unknown",
-          score: correct,
-          total,
-          correct,
-          accuracy,
-          time_taken: timeTaken,
-        });
+        try {
+          const { error } = await supabase.from("quiz_results").insert({
+            user_id: user.id,
+            subject: quizConfig?.subject || "unknown",
+            score: correct,
+            total,
+            correct,
+            accuracy,
+            time_taken: timeTaken,
+          });
+          if (error) {
+            console.warn("Supabase insert failed (using localStorage):", error.message);
+          }
+        } catch (err) {
+          console.warn("Supabase insert error (using localStorage):", err);
+        }
       }
 
       router.push(`/quiz/${sessionId}/results`);

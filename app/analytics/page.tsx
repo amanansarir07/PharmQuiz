@@ -40,33 +40,95 @@ export default function AnalyticsPage() {
   useEffect(() => {
     const handler = () => refreshStats();
     window.addEventListener("focus", handler);
-    document.addEventListener("visibilitychange", () => {
+    const visHandler = () => {
       if (document.visibilityState === "visible") handler();
-    });
-    return () => window.removeEventListener("focus", handler);
+    };
+    document.addEventListener("visibilitychange", visHandler);
+    return () => {
+      window.removeEventListener("focus", handler);
+      document.removeEventListener("visibilitychange", visHandler);
+    };
   }, []);
 
   async function refreshStats() {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return;
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      const userId = user?.id;
 
-    const s = await calculateStats(user.id);
-    setStats(s);
+      // Get stats (with localStorage fallback built in)
+      const s = await calculateStats(userId);
+      setStats(s);
 
-    // Build progress history from Supabase
-    const { data: results } = await supabase
-      .from("quiz_results")
-      .select("correct, total")
-      .eq("user_id", user.id)
-      .order("completed_at", { ascending: true });
+      // Build progress history from Supabase, fallback to localStorage
+      let history: { quiz: number; score: number }[] = [];
 
-    if (results) {
-      const history = results.map((r, i) => ({
-        quiz: i + 1,
-        score: r.total > 0 ? Math.round((r.correct / r.total) * 100) : 0,
-      }));
+      if (userId) {
+        try {
+          const { data: results } = await supabase
+            .from("quiz_results")
+            .select("correct, total")
+            .eq("user_id", userId)
+            .order("completed_at", { ascending: true });
+
+          if (results && results.length > 0) {
+            history = results.map((r, i) => ({
+              quiz: i + 1,
+              score: r.total > 0 ? Math.round((r.correct / r.total) * 100) : 0,
+            }));
+          }
+        } catch {
+          // Supabase query failed, fall through to localStorage
+        }
+      }
+
+      // Fallback: load from localStorage if Supabase returned nothing
+      if (history.length === 0 && typeof window !== "undefined") {
+        history = getHistoryFromLocalStorage();
+      }
+
       setQuizHistory(history);
+    } catch (err) {
+      console.error("Error refreshing analytics:", err);
+      // Still try localStorage
+      if (typeof window !== "undefined") {
+        setQuizHistory(getHistoryFromLocalStorage());
+      }
     }
+  }
+
+  function getHistoryFromLocalStorage(): { quiz: number; score: number }[] {
+    const allResults: any[] = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith("quiz-results-")) {
+        try {
+          const raw = JSON.parse(localStorage.getItem(key) || "{}");
+          if (raw && raw.answers && raw.questions) {
+            allResults.push(raw);
+          }
+        } catch {
+          // skip
+        }
+      }
+    }
+
+    if (allResults.length === 0) return [];
+
+    // Sort by completedAt ascending
+    allResults.sort((a, b) => {
+      const ta = a.config?.completedAt || "";
+      const tb = b.config?.completedAt || "";
+      return ta.localeCompare(tb);
+    });
+
+    return allResults.map((result, i) => {
+      const correct = result.answers.filter((a: any) => a.isCorrect).length;
+      const total = result.questions.length;
+      return {
+        quiz: i + 1,
+        score: total > 0 ? Math.round((correct / total) * 100) : 0,
+      };
+    });
   }
 
   const s = stats || { quizzesTaken: 0, totalCorrect: 0, totalAttempted: 0, accuracy: 0, currentStreak: 0, totalScore: 0, subjectBreakdown: {} };
@@ -78,7 +140,7 @@ export default function AnalyticsPage() {
     color: COLORS[i % COLORS.length],
   }));
 
-  // Difficulty data from stats (simplified — we track accuracy tiers)
+  // Difficulty data
   const difficultyData = [
     { name: "Easy", value: s.accuracy > 70 ? Math.min(s.accuracy + 15, 100) : 60, fill: "#22c55e" },
     { name: "Medium", value: s.accuracy || 50, fill: "#eab308" },
