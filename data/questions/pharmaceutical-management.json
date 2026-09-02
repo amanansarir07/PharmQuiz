@@ -2,100 +2,1258 @@
   {
     "unit_id": "mgmt-unit-1",
     "question_text": "Management is defined as:",
-    "options": ["Controlling workers only", "Planning, organizing, leading, and controlling resources", "Making products", "Selling products"],
+    "options": [
+      "Controlling workers only",
+      "Planning, organizing, leading, and controlling resources",
+      "Making products",
+      "Selling products"
+    ],
     "correct_index": 1,
     "explanation": "Management is the process of planning, organizing, leading (directing), and controlling organizational resources (human, financial, physical, information) to achieve goals efficiently and effectively.",
     "difficulty": "easy",
-    "tags": ["management", "definition"]
+    "tags": [
+      "management",
+      "definition"
+    ]
   },
   {
     "unit_id": "mgmt-unit-1",
     "question_text": "Maslow's hierarchy of needs includes all EXCEPT:",
-    "options": ["Physiological needs", "Safety needs", "Spiritual needs", "Self-actualization"],
+    "options": [
+      "Physiological needs",
+      "Safety needs",
+      "Spiritual needs",
+      "Self-actualization"
+    ],
     "correct_index": 2,
     "explanation": "Maslow's hierarchy has 5 levels: Physiological, Safety, Social (belongingness), Esteem, and Self-actualization. Spiritual needs are not part of Maslow's original hierarchy.",
     "difficulty": "medium",
-    "tags": ["management", "motivation"]
+    "tags": [
+      "management",
+      "motivation"
+    ]
   },
   {
     "unit_id": "mgmt-unit-1",
     "question_text": "The difference between management and administration is that:",
-    "options": ["They are the same thing", "Administration makes policies; management executes them", "Management is higher level", "Administration is for businesses only"],
+    "options": [
+      "They are the same thing",
+      "Administration makes policies; management executes them",
+      "Management is higher level",
+      "Administration is for businesses only"
+    ],
     "correct_index": 1,
     "explanation": "Administration involves policy-making, decision-making at the top level, while management involves implementing and executing these policies at the operational level.",
     "difficulty": "medium",
-    "tags": ["management", "administration"]
+    "tags": [
+      "management",
+      "administration"
+    ]
   },
   {
     "unit_id": "mgmt-unit-2",
     "question_text": "Supply chain management in pharmaceuticals involves:",
-    "options": ["Only manufacturing drugs", "From raw material procurement to final delivery to patients", "Only marketing drugs", "Only selling drugs"],
+    "options": [
+      "Only manufacturing drugs",
+      "From raw material procurement to final delivery to patients",
+      "Only marketing drugs",
+      "Only selling drugs"
+    ],
     "correct_index": 1,
     "explanation": "Pharmaceutical supply chain management involves the entire process from raw material procurement, manufacturing, quality control, warehousing, distribution, and final delivery to patients.",
     "difficulty": "easy",
-    "tags": ["supply chain", "definition"]
+    "tags": [
+      "supply chain",
+      "definition"
+    ]
   },
   {
     "unit_id": "mgmt-unit-2",
     "question_text": "Vaccines require special storage conditions because they are:",
-    "options": ["Heat stable", "Temperature-sensitive (cold chain required)", "Not affected by light", "Can be stored at room temperature"],
+    "options": [
+      "Heat stable",
+      "Temperature-sensitive (cold chain required)",
+      "Not affected by light",
+      "Can be stored at room temperature"
+    ],
     "correct_index": 1,
     "explanation": "Most vaccines are temperature-sensitive and require cold chain storage (2-8°C) from manufacture to administration to maintain their potency and effectiveness.",
     "difficulty": "easy",
-    "tags": ["supply chain", "cold chain"]
+    "tags": [
+      "supply chain",
+      "cold chain"
+    ]
   },
   {
     "unit_id": "mgmt-unit-3",
     "question_text": "The 7Ps of marketing mix include all EXCEPT:",
-    "options": ["Product", "Price", "Political", "Promotion"],
+    "options": [
+      "Product",
+      "Price",
+      "Political",
+      "Promotion"
+    ],
     "correct_index": 2,
     "explanation": "The 7Ps are: Product, Price, Place, Promotion, People, Process, and Physical evidence. 'Political' is not one of the 7Ps (though it is in PESTLE analysis).",
     "difficulty": "easy",
-    "tags": ["marketing", "7Ps"]
+    "tags": [
+      "marketing",
+      "7Ps"
+    ]
   },
   {
     "unit_id": "mgmt-unit-3",
     "question_text": "SWOT analysis stands for:",
-    "options": ["Strengths, Weaknesses, Opportunities, Threats", "Sales, Wholesale, Operations, Trade", "Strategy, Workforce, Organization, Technology", "Supply, Warehousing, Ordering, Transport"],
+    "options": [
+      "Strengths, Weaknesses, Opportunities, Threats",
+      "Sales, Wholesale, Operations, Trade",
+      "Strategy, Workforce, Organization, Technology",
+      "Supply, Warehousing, Ordering, Transport"
+    ],
     "correct_index": 0,
     "explanation": "SWOT analysis is a strategic planning tool that analyzes Strengths (internal positive), Weaknesses (internal negative), Opportunities (external positive), and Threats (external negative).",
     "difficulty": "easy",
-    "tags": ["marketing", "SWOT"]
+    "tags": [
+      "marketing",
+      "SWOT"
+    ]
   },
   {
     "unit_id": "mgmt-unit-3",
     "question_text": "Market segmentation involves:",
-    "options": ["Selling to everyone", "Dividing the market into distinct groups of buyers", "Increasing prices", "Reducing product quality"],
+    "options": [
+      "Selling to everyone",
+      "Dividing the market into distinct groups of buyers",
+      "Increasing prices",
+      "Reducing product quality"
+    ],
     "correct_index": 1,
     "explanation": "Market segmentation is the process of dividing a broad market into distinct groups of buyers who have different needs, characteristics, or behaviors, and who might require different products.",
     "difficulty": "easy",
-    "tags": ["marketing", "segmentation"]
+    "tags": [
+      "marketing",
+      "segmentation"
+    ]
   },
   {
     "unit_id": "mgmt-unit-4",
     "question_text": "Entrepreneurship in pharmacy involves:",
-    "options": ["Only dispensing medicines", "Starting and managing pharmaceutical businesses", "Only manufacturing drugs", "Only working as an employee"],
+    "options": [
+      "Only dispensing medicines",
+      "Starting and managing pharmaceutical businesses",
+      "Only manufacturing drugs",
+      "Only working as an employee"
+    ],
     "correct_index": 1,
     "explanation": "Pharmaceutical entrepreneurship involves starting and managing businesses in areas like community pharmacy, manufacturing, distribution, or pharmaceutical services with innovation and risk-taking.",
     "difficulty": "easy",
-    "tags": ["entrepreneurship", "definition"]
+    "tags": [
+      "entrepreneurship",
+      "definition"
+    ]
   },
   {
     "unit_id": "mgmt-unit-5",
     "question_text": "Pharmacoeconomics is defined as:",
-    "options": ["Study of drug prices only", "Application of economic theories to evaluate drug therapies", "Counting pills", "Manufacturing cost analysis only"],
+    "options": [
+      "Study of drug prices only",
+      "Application of economic theories to evaluate drug therapies",
+      "Counting pills",
+      "Manufacturing cost analysis only"
+    ],
     "correct_index": 1,
     "explanation": "Pharmacoeconomics is the branch of pharmacology and economics that deals with the evaluation of costs and effects of pharmaceutical products and services to optimize healthcare resource allocation.",
     "difficulty": "medium",
-    "tags": ["pharmacoeconomics", "definition"]
+    "tags": [
+      "pharmacoeconomics",
+      "definition"
+    ]
   },
   {
     "unit_id": "mgmt-unit-5",
     "question_text": "Inventory management in pharmacy aims to:",
-    "options": ["Maximize stock at all times", "Ensure adequate supply while minimizing costs and waste", "Keep minimum stock always", "Ignore expired products"],
+    "options": [
+      "Maximize stock at all times",
+      "Ensure adequate supply while minimizing costs and waste",
+      "Keep minimum stock always",
+      "Ignore expired products"
+    ],
     "correct_index": 1,
     "explanation": "Pharmaceutical inventory management aims to ensure adequate availability of medicines while minimizing holding costs, wastage (expiry), and stockouts.",
     "difficulty": "easy",
-    "tags": ["inventory management"]
+    "tags": [
+      "inventory management"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "The process of defining goals, establishing strategies, and developing plans to coordinate activities is known as:",
+    "options": [
+      "Organizing",
+      "Planning",
+      "Staffing",
+      "Controlling"
+    ],
+    "correct_index": 1,
+    "explanation": "Planning is the primary function of management that involves setting objectives and determining the best course of action to achieve them.",
+    "difficulty": "easy",
+    "tags": [
+      "management fundamentals",
+      "planning"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Which of the following is NOT a function of management?",
+    "options": [
+      "Planning",
+      "Organizing",
+      "Marketing",
+      "Controlling"
+    ],
+    "correct_index": 2,
+    "explanation": "The five primary functions of management are Planning, Organizing, Staffing, Directing, and Controlling. Marketing is a business function but not a core management function.",
+    "difficulty": "easy",
+    "tags": [
+      "management fundamentals",
+      "functions"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Henri Fayol identified how many principles of management?",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "correct_index": 2,
+    "explanation": "Henri Fayol proposed 14 principles of management including Division of Work, Authority, Discipline, Unity of Command, Unity of Direction, etc.",
+    "difficulty": "medium",
+    "tags": [
+      "management fundamentals",
+      "fayol"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Unity of Command means:",
+    "options": [
+      "Multiple managers for one employee",
+      "An employee should receive orders from one superior only",
+      "One manager for all departments",
+      "Single direction from the CEO"
+    ],
+    "correct_index": 1,
+    "explanation": "Unity of Command states that an employee should receive orders from and be accountable to only one superior, avoiding conflicting instructions.",
+    "difficulty": "easy",
+    "tags": [
+      "management fundamentals",
+      "principles"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Maslow's hierarchy of needs arranges human needs in order of priority. Which need is at the TOP of the pyramid?",
+    "options": [
+      "Safety",
+      "Social belonging",
+      "Self-actualization",
+      "Esteem"
+    ],
+    "correct_index": 2,
+    "explanation": "Self-actualization is the highest level in Maslow's hierarchy, representing the desire to reach one's full potential and achieve personal growth.",
+    "difficulty": "easy",
+    "tags": [
+      "motivation",
+      "maslow"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "According to Herzberg's two-factor theory, which of the following is a hygiene factor?",
+    "options": [
+      "Recognition",
+      "Salary",
+      "Achievement",
+      "Responsibility"
+    ],
+    "correct_index": 1,
+    "explanation": "Salary is a hygiene factor (maintenance factor) in Herzberg's theory. It prevents dissatisfaction but doesn't motivate. Recognition, achievement, and responsibility are motivators.",
+    "difficulty": "medium",
+    "tags": [
+      "motivation",
+      "herzberg"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "The organizational structure where employees report to multiple managers is called:",
+    "options": [
+      "Line organization",
+      "Line and staff organization",
+      "Matrix organization",
+      "Functional organization"
+    ],
+    "correct_index": 2,
+    "explanation": "In a matrix organization, employees have dual reporting relationships — typically to both a functional manager and a project/product manager.",
+    "difficulty": "medium",
+    "tags": [
+      "organizational structure",
+      "matrix"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Taylor is known as the father of:",
+    "options": [
+      "Administrative management",
+      "Scientific management",
+      "Human relations management",
+      "Classical management"
+    ],
+    "correct_index": 1,
+    "explanation": "Frederick Winslow Taylor is known as the father of Scientific Management, which focused on improving economic efficiency and labor productivity.",
+    "difficulty": "easy",
+    "tags": [
+      "management theories",
+      "taylor"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Which leadership style involves making decisions without consulting subordinates?",
+    "options": [
+      "Democratic",
+      "Laissez-faire",
+      "Autocratic",
+      "Participative"
+    ],
+    "correct_index": 2,
+    "explanation": "Autocratic (authoritarian) leadership involves centralized decision-making where the leader makes decisions without consulting team members.",
+    "difficulty": "easy",
+    "tags": [
+      "leadership",
+      "autocratic"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Span of management refers to:",
+    "options": [
+      "The number of departments in an organization",
+      "The number of subordinates a manager can efficiently supervise",
+      "The hierarchy levels in an organization",
+      "The length of a manager's tenure"
+    ],
+    "correct_index": 1,
+    "explanation": "Span of management (span of control) refers to the number of subordinates that a manager or supervisor can effectively direct and control.",
+    "difficulty": "medium",
+    "tags": [
+      "management fundamentals",
+      "span of control"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "HRM stands for:",
+    "options": [
+      "Hospital Resource Management",
+      "Human Resource Management",
+      "Health Regulatory Management",
+      "Hospital Regulatory Management"
+    ],
+    "correct_index": 1,
+    "explanation": "HRM stands for Human Resource Management, which deals with recruiting, managing, and developing the workforce of an organization.",
+    "difficulty": "easy",
+    "tags": [
+      "HRM",
+      "definition"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "The process of selecting the best candidate from a pool of applicants is called:",
+    "options": [
+      "Orientation",
+      "Recruitment",
+      "Selection",
+      "Training"
+    ],
+    "correct_index": 2,
+    "explanation": "Selection is the process of choosing the most suitable candidate from a pool of applicants through various assessment methods.",
+    "difficulty": "easy",
+    "tags": [
+      "HRM",
+      "selection"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Supply chain management in pharmacy primarily deals with:",
+    "options": [
+      "Marketing of pharmaceutical products",
+      "Ensuring timely availability of quality medicines from manufacturer to patient",
+      "Training pharmacy staff",
+      "Research and development of new drugs"
+    ],
+    "correct_index": 1,
+    "explanation": "Pharmaceutical supply chain management ensures the efficient flow of medicines from manufacturers through distributors to pharmacies and ultimately to patients.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "definition"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Which of the following is NOT a component of pharmaceutical supply chain?",
+    "options": [
+      "Procurement",
+      "Storage",
+      "Advertising",
+      "Distribution"
+    ],
+    "correct_index": 2,
+    "explanation": "Advertising is a marketing function, not a supply chain component. The supply chain includes procurement, storage, inventory management, and distribution.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "components"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "First-Expiry-First-Out (FEFO) method in pharmacy storage means:",
+    "options": [
+      "First item received is used first",
+      "Items closest to expiry are used/distributed first",
+      "Items with highest cost are used first",
+      "Items stored last are used first"
+    ],
+    "correct_index": 1,
+    "explanation": "FEFO ensures that medicines closest to their expiry date are dispensed or used first, minimizing wastage due to expired products.",
+    "difficulty": "medium",
+    "tags": [
+      "storage",
+      "FEFO"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "The minimum temperature range for storing most medicines at room temperature is:",
+    "options": [
+      "0-10°C",
+      "15-25°C",
+      "25-35°C",
+      "30-40°C"
+    ],
+    "correct_index": 1,
+    "explanation": "Room temperature storage for most pharmaceuticals is maintained between 15-25°C (59-77°F) unless otherwise specified.",
+    "difficulty": "medium",
+    "tags": [
+      "storage",
+      "temperature"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Cold chain management is essential for the storage and transport of:",
+    "options": [
+      "Tablets",
+      "Capsules",
+      "Vaccines",
+      "Syrups"
+    ],
+    "correct_index": 2,
+    "explanation": "Vaccines and many biologics require cold chain management (2-8°C) to maintain their potency and effectiveness.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "cold chain"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "ABC analysis in inventory management classifies items based on:",
+    "options": [
+      "Alphabetical order",
+      "Annual consumption value",
+      "Physical size",
+      "Date of manufacture"
+    ],
+    "correct_index": 1,
+    "explanation": "ABC analysis classifies inventory based on annual consumption value: A-items (high value, ~20% items, ~80% value), B-items (moderate), C-items (low value, ~50% items, ~5% value).",
+    "difficulty": "medium",
+    "tags": [
+      "inventory",
+      "ABC analysis"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Which of the following is a challenge in pharmaceutical supply chain in Nepal?",
+    "options": [
+      "Excessive warehouses",
+      "Geographical inaccessibility of remote areas",
+      "Overstocking of medicines",
+      "Too many distribution channels"
+    ],
+    "correct_index": 1,
+    "explanation": "Nepal's mountainous terrain makes geographical inaccessibility a major challenge in pharmaceutical supply chain, affecting timely delivery to remote areas.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "Nepal"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Economic Order Quantity (EOQ) is the order size that:",
+    "options": [
+      "Maximizes storage costs",
+      "Minimizes total inventory costs (ordering + carrying costs)",
+      "Maximizes order frequency",
+      "Minimizes product quality"
+    ],
+    "correct_index": 1,
+    "explanation": "EOQ determines the optimal order quantity that minimizes the total cost of inventory management, balancing ordering costs and carrying costs.",
+    "difficulty": "medium",
+    "tags": [
+      "inventory",
+      "EOQ"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Good Distribution Practice (GDP) ensures:",
+    "options": [
+      "Medicines are distributed free of cost",
+      "Medicines maintain their quality throughout the distribution process",
+      "Only branded medicines are distributed",
+      "Distribution is limited to urban areas"
+    ],
+    "correct_index": 1,
+    "explanation": "GDP guidelines ensure that pharmaceutical products are consistently stored, transported, and handled under appropriate conditions to maintain quality.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "GDP"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Pharmacy management software helps in:",
+    "options": [
+      "Only billing",
+      "Inventory tracking, sales recording, expiry management, and billing",
+      "Only inventory management",
+      "Only patient registration"
+    ],
+    "correct_index": 1,
+    "explanation": "Pharmacy management software provides integrated solutions for billing, inventory tracking, expiry date management, sales recording, and regulatory compliance.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacy software",
+      "features"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "The 7Ps of marketing mix include Product, Price, Place, Promotion, People, Process, and:",
+    "options:": [
+      "Profit",
+      "Physical Evidence",
+      "Planning",
+      "Production"
+    ],
+    "correct_index": 1,
+    "explanation": "The extended marketing mix (7Ps) adds People, Process, and Physical Evidence to the traditional 4Ps (Product, Price, Place, Promotion).",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "7Ps"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Digital pharmaceutical marketing includes all EXCEPT:",
+    "options": [
+      "Social media campaigns",
+      "Online pharmaceutical portals",
+      "Door-to-door selling",
+      "Email marketing to healthcare professionals"
+    ],
+    "correct_index": 2,
+    "explanation": "Door-to-door selling is a traditional sales method, not digital marketing. Digital marketing encompasses social media, websites, email campaigns, and online portals.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "digital"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "The difference between sales and marketing is:",
+    "options": [
+      "They are the same thing",
+      "Marketing focuses on customer needs and building relationships; sales focuses on selling existing products",
+      "Sales focuses on advertising; marketing focuses on pricing",
+      "Marketing is done only after sales"
+    ],
+    "correct_index": 1,
+    "explanation": "Marketing is a broader concept focused on understanding customer needs and building long-term relationships, while sales is focused on directly selling products.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "sales vs marketing"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "In pharmaceutical marketing, 'detailing' refers to:",
+    "options": [
+      "Detailed billing of medicines",
+      "Personal selling where a medical representative explains drug details to a doctor",
+      "Detailed record keeping",
+      "Detailed label information on drugs"
+    ],
+    "correct_index": 1,
+    "explanation": "Detailing is a pharmaceutical marketing technique where medical representatives visit doctors to provide detailed information about their company's products.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "detailing"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "A SWOT analysis is used for:",
+    "options": [
+      "Pricing decisions only",
+      "Strategic planning and decision-making",
+      "Manufacturing processes",
+      "Quality control testing"
+    ],
+    "correct_index": 1,
+    "explanation": "SWOT analysis helps organizations in strategic planning by identifying internal strengths and weaknesses, and external opportunities and threats.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "SWOT"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Network marketing in pharmacy involves:",
+    "options": [
+      "Using internet for drug research",
+      "Selling products through a network of independent distributors",
+      "Networking with other pharmacists",
+      "Creating computer networks in pharmacies"
+    ],
+    "correct_index": 1,
+    "explanation": "Network marketing (multi-level marketing) is a business model where products are sold through a network of independent distributors who earn commissions.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "network marketing"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Entrepreneurship in pharmacy refers to:",
+    "options": [
+      "Working as an employee in a hospital",
+      "Starting and managing one's own pharmacy-related business",
+      "Studying pharmacy at a university",
+      "Working in a pharmaceutical factory"
+    ],
+    "correct_index": 1,
+    "explanation": "Entrepreneurship in pharmacy involves identifying business opportunities and starting ventures like pharmacies, drug manufacturing units, or pharmaceutical distribution businesses.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "definition"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Which of the following is a reason for business failure in Nepal's pharmaceutical sector?",
+    "options": [
+      "Too much government support",
+      "Poor financial planning and management",
+      "Excessive customer demand",
+      "Too few competitors"
+    ],
+    "correct_index": 1,
+    "explanation": "Poor financial planning and management is a major cause of business failure in Nepal, along with inadequate market research and poor location selection.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "business failure"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "An entrepreneur in pharmacy must primarily possess:",
+    "options": [
+      "Only technical knowledge",
+      "Risk-taking ability, innovation, and management skills",
+      "Only financial resources",
+      "Only government licenses"
+    ],
+    "correct_index": 1,
+    "explanation": "A successful pharmacy entrepreneur needs a combination of risk-taking ability, innovation, management skills, financial acumen, and technical knowledge.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "qualities"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "A pharmacy entrepreneur in Nepal needs to register with:",
+    "options": [
+      "Only the local municipality",
+      "Nepal Pharmacy Council and Department of Drug Administration",
+      "Only the bank",
+      "Only the tax office"
+    ],
+    "correct_index": 1,
+    "explanation": "Pharmacy entrepreneurs in Nepal must register with Nepal Pharmacy Council for professional registration and Department of Drug Administration for drug license.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "Nepal"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Which of the following is a type of entrepreneur?",
+    "options": [
+      "Innovating",
+      "Imitating",
+      "Fabian",
+      "All of the above"
+    ],
+    "correct_index": 3,
+    "explanation": "Types of entrepreneurs include innovating (introducing new ideas), imitating (copying successful models), Fabian (very cautious and slow), and drone (forced by circumstances).",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "types"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Cost-benefit analysis in pharmacoeconomics compares:",
+    "options": [
+      "Cost of drug vs. profit margin",
+      "Total costs of an intervention vs. total monetary benefits",
+      "Price of branded vs. generic drugs",
+      "Manufacturing cost vs. selling price"
+    ],
+    "correct_index": 1,
+    "explanation": "Cost-benefit analysis (CBA) compares the total costs of a pharmaceutical intervention with its total benefits expressed in monetary terms.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacoeconomics",
+      "CBA"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Which of the following is a direct cost in pharmacoeconomics?",
+    "options": [
+      "Patient's lost wages",
+      "Cost of medication and hospital stay",
+      "Pain and suffering",
+      "Reduced quality of life"
+    ],
+    "correct_index": 1,
+    "explanation": "Direct costs include tangible costs like medication, hospital stay, and medical procedures. Lost wages are indirect costs; pain/suffering are intangible costs.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacoeconomics",
+      "costs"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "The law of demand states that:",
+    "options": [
+      "As price increases, demand increases",
+      "As price decreases, demand increases (other factors being constant)",
+      "Price has no effect on demand",
+      "Supply determines demand"
+    ],
+    "correct_index": 1,
+    "explanation": "The law of demand states that, ceteris paribus (all other factors constant), as the price of a product decreases, the quantity demanded increases, and vice versa.",
+    "difficulty": "easy",
+    "tags": [
+      "economics",
+      "demand"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "QALY stands for:",
+    "options": [
+      "Quality Adjustment of Living Years",
+      "Quality-Adjusted Life Year",
+      "Quantitative Analysis of Life Years",
+      "Quality Assessment of Life Years"
+    ],
+    "correct_index": 1,
+    "explanation": "QALY (Quality-Adjusted Life Year) is a measure that combines quantity and quality of life, where 1 QALY equals one year in perfect health.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacoeconomics",
+      "QALY"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Insurance in healthcare in Nepal primarily helps:",
+    "options": [
+      "Increase drug prices",
+      "Reduce out-of-pocket expenses for patients",
+      "Increase hospital profits",
+      "Replace government funding"
+    ],
+    "correct_index": 1,
+    "explanation": "Healthcare insurance helps reduce out-of-pocket expenses for patients by covering medical costs, making healthcare more accessible and affordable.",
+    "difficulty": "easy",
+    "tags": [
+      "insurance",
+      "healthcare"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "In cost-effectiveness analysis, outcomes are measured in:",
+    "options": [
+      "Dollars",
+      "Natural units (e.g., life years saved, cases prevented)",
+      "Percentage profit",
+      "Number of drugs sold"
+    ],
+    "correct_index": 1,
+    "explanation": "Cost-effectiveness analysis (CEA) measures outcomes in natural or clinical units such as life years gained, cases prevented, or symptoms reduced.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacoeconomics",
+      "CEA"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "The term 'bureaucracy' in organizational theory was best described by:",
+    "options": [
+      "Taylor",
+      "Fayol",
+      "Max Weber",
+      "Elton Mayo"
+    ],
+    "correct_index": 2,
+    "explanation": "Max Weber developed the concept of bureaucracy as an ideal organizational form with clear hierarchy, rules, impersonal relationships, and technical competence.",
+    "difficulty": "medium",
+    "tags": [
+      "management theories",
+      "weber"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Which level of management is responsible for implementing policies decided by top management?",
+    "options": [
+      "Top management",
+      "Middle management",
+      "Lower management",
+      "Non-management staff"
+    ],
+    "correct_index": 1,
+    "explanation": "Middle management translates top management's policies and goals into specific activities for lower management to implement.",
+    "difficulty": "easy",
+    "tags": [
+      "management levels",
+      "middle management"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Which of the following is an example of an intrinsic motivator?",
+    "options": [
+      "Salary bonus",
+      "Job satisfaction",
+      "Paid vacation",
+      "Health insurance"
+    ],
+    "correct_index": 1,
+    "explanation": "Intrinsic motivators come from within the individual, such as job satisfaction, sense of accomplishment, and personal growth. Salary, vacations, and insurance are extrinsic motivators.",
+    "difficulty": "easy",
+    "tags": [
+      "motivation",
+      "intrinsic"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Vaccine storage requires temperature monitoring at:",
+    "options": [
+      "Room temperature (15-25°C)",
+      "Cold chain (2-8°C)",
+      "Freezer (-20°C) only",
+      "No temperature control needed"
+    ],
+    "correct_index": 1,
+    "explanation": "Most vaccines require cold chain storage between 2-8°C. Temperature monitoring is critical to maintain vaccine potency and effectiveness.",
+    "difficulty": "easy",
+    "tags": [
+      "storage",
+      "vaccines"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Which of the following is NOT a type of inventory system?",
+    "options": [
+      "Periodic review system",
+      "Continuous review system (ROP)",
+      "Random review system",
+      "Two-bin system"
+    ],
+    "correct_index": 2,
+    "explanation": "Random review system is not a recognized inventory management method. The standard systems are periodic review, continuous review (ROP), and two-bin system.",
+    "difficulty": "medium",
+    "tags": [
+      "inventory",
+      "systems"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Market positioning refers to:",
+    "options": [
+      "Physical location of a pharmacy",
+      "The place a product occupies in consumers' minds relative to competitors",
+      "Arranging products on shelves",
+      "Setting up a new market"
+    ],
+    "correct_index": 1,
+    "explanation": "Market positioning is the process of creating an image or identity for a product/brand in the minds of the target market relative to competitors.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "positioning"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Product life cycle stages include:",
+    "options": [
+      "Introduction, Growth, Maturity, Decline",
+      "Birth, Growth, Peak, Death",
+      "Planning, Execution, Review, Closure",
+      "Research, Development, Launch, Withdrawal"
+    ],
+    "correct_index": 0,
+    "explanation": "The product life cycle consists of four stages: Introduction (slow sales), Growth (rapid increase), Maturity (peak and stabilization), and Decline (falling sales).",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "product life cycle"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Penetration pricing strategy means:",
+    "options": [
+      "Setting high initial price",
+      "Setting low initial price to capture market share quickly",
+      "Setting price equal to competitors",
+      "Setting price based on cost plus profit"
+    ],
+    "correct_index": 1,
+    "explanation": "Penetration pricing involves setting a low initial price for a new product to attract customers and gain market share quickly.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "pricing"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Which of the following is essential for starting a pharmacy in Nepal?",
+    "options": [
+      "Only a business license",
+      "Drug license from DDA, registration with Nepal Pharmacy Council, and business registration",
+      "Only a medical degree",
+      "Only capital investment"
+    ],
+    "correct_index": 1,
+    "explanation": "Starting a pharmacy in Nepal requires multiple registrations: Drug license from DDA, professional registration with Nepal Pharmacy Council, and business registration with local authorities.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "Nepal pharmacy"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "The break-even point is reached when:",
+    "options": [
+      "Total revenue exceeds total costs",
+      "Total revenue equals total costs (no profit, no loss)",
+      "Total costs exceed total revenue",
+      "Profit is maximum"
+    ],
+    "correct_index": 1,
+    "explanation": "The break-even point is where total revenue equals total costs, meaning the business neither makes a profit nor incurs a loss.",
+    "difficulty": "easy",
+    "tags": [
+      "accounting",
+      "break-even"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Depreciation refers to:",
+    "options": [
+      "Increase in asset value over time",
+      "Decrease in value of an asset over time due to wear and tear",
+      "Sudden loss of all assets",
+      "Increase in product prices"
+    ],
+    "correct_index": 1,
+    "explanation": "Depreciation is the systematic allocation of the cost of a tangible asset over its useful life, reflecting wear and tear, obsolescence, or age.",
+    "difficulty": "easy",
+    "tags": [
+      "accounting",
+      "depreciation"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "GST stands for:",
+    "options": [
+      "General Sales Tax",
+      "Goods and Services Tax",
+      "Government Service Tax",
+      "General Service Tax"
+    ],
+    "correct_index": 1,
+    "explanation": "GST stands for Goods and Services Tax, which is a comprehensive indirect tax on the supply of goods and services.",
+    "difficulty": "easy",
+    "tags": [
+      "taxation",
+      "GST"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Elton Mayo's Hawthorne studies led to the development of:",
+    "options": [
+      "Scientific management",
+      "Human relations movement",
+      "Bureaucratic management",
+      "Classical management"
+    ],
+    "correct_index": 1,
+    "explanation": "The Hawthorne studies (1924-1932) by Elton Mayo revealed the importance of social and psychological factors in the workplace, leading to the human relations movement.",
+    "difficulty": "medium",
+    "tags": [
+      "management theories",
+      "hawthorne"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Decentralization of authority means:",
+    "options": [
+      "All decisions made by top management",
+      "Distribution of decision-making authority to lower levels of management",
+      "Removing all management levels",
+      "Centralizing all resources"
+    ],
+    "correct_index": 1,
+    "explanation": "Decentralization distributes decision-making authority across various levels of management, empowering lower-level managers to make decisions within their areas.",
+    "difficulty": "medium",
+    "tags": [
+      "management",
+      "decentralization"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "What is a tender process in pharmaceutical procurement?",
+    "options": [
+      "Informal purchasing",
+      "A formal competitive bidding process for bulk procurement of medicines",
+      "Direct purchase from one supplier",
+      "Online shopping for medicines"
+    ],
+    "correct_index": 1,
+    "explanation": "A tender process is a formal competitive bidding method where multiple suppliers bid to supply medicines, and the contract is awarded based on predefined criteria (price, quality, delivery).",
+    "difficulty": "medium",
+    "tags": [
+      "supply chain",
+      "tender"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Wastage of medicines in supply chain can be minimized by:",
+    "options": [
+      "Ordering in very large quantities",
+      "Proper demand forecasting, FEFO system, and temperature control",
+      "Storing all medicines together",
+      "Ignoring expiry dates"
+    ],
+    "correct_index": 1,
+    "explanation": "Medicine wastage is minimized through accurate demand forecasting, FEFO inventory management, proper storage conditions, and regular stock monitoring.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "wastage"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Target marketing in pharmacy means:",
+    "options": [
+      "Selling to everyone",
+      "Focusing marketing efforts on a specific group of healthcare professionals or patients",
+      "Targeting competitors",
+      "Marketing only during festivals"
+    ],
+    "correct_index": 1,
+    "explanation": "Target marketing focuses resources on specific segments of the market (e.g., hospitals, clinics, specific patient groups) for more effective marketing outcomes.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "target marketing"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Social entrepreneurship in pharmacy involves:",
+    "options": [
+      "Only making profits",
+      "Using pharmacy business to address social health problems while being financially sustainable",
+      "Operating only on social media",
+      "Donating all profits"
+    ],
+    "correct_index": 1,
+    "explanation": "Social entrepreneurship combines business principles with social mission, using pharmacy ventures to address healthcare access and other social problems.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "social"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Opportunity cost refers to:",
+    "options": [
+      "The cost of opportunities provided by the government",
+      "The value of the next best alternative forgone when making a decision",
+      "The cost of setting up a new opportunity",
+      "The profit earned from an opportunity"
+    ],
+    "correct_index": 1,
+    "explanation": "Opportunity cost is the value of the best alternative that must be forgone when a choice is made. For example, the salary a pharmacist could have earned if not studying.",
+    "difficulty": "medium",
+    "tags": [
+      "economics",
+      "opportunity cost"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Balance sheet shows:",
+    "options": [
+      "Income and expenses over a period",
+      "Financial position (assets, liabilities, equity) at a specific point in time",
+      "Only cash flow",
+      "Only profit and loss"
+    ],
+    "correct_index": 1,
+    "explanation": "A balance sheet provides a snapshot of an organization's financial position at a specific date, showing assets, liabilities, and owner's equity.",
+    "difficulty": "easy",
+    "tags": [
+      "accounting",
+      "balance sheet"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Which management theory emphasizes that workers are motivated by social needs and feeling of belonging?",
+    "options": [
+      "Scientific management",
+      "Classical theory",
+      "Human relations theory",
+      "Administrative theory"
+    ],
+    "correct_index": 2,
+    "explanation": "Human relations theory (from Hawthorne studies) emphasizes that workers are motivated not just by money but by social needs, recognition, and belonging.",
+    "difficulty": "medium",
+    "tags": [
+      "management theories",
+      "human relations"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "What does 'warehousing' mean in pharmaceutical supply chain?",
+    "options": [
+      "Selling medicines directly to patients",
+      "Storage of pharmaceutical products in designated facilities before distribution",
+      "Manufacturing of medicines",
+      "Transportation of medicines"
+    ],
+    "correct_index": 1,
+    "explanation": "Warehousing involves storing pharmaceutical products in controlled conditions (temperature, humidity, security) before they are distributed to pharmacies or hospitals.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "warehousing"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Branding in pharmacy helps to:",
+    "options": [
+      "Increase manufacturing costs",
+      "Build recognition, trust, and differentiation from competitors",
+      "Reduce product quality",
+      "Avoid government regulations"
+    ],
+    "correct_index": 1,
+    "explanation": "Branding creates recognition, builds trust with consumers, differentiates products from competitors, and can justify premium pricing.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "branding"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Inventory carrying cost typically includes:",
+    "options": [
+      "Only purchase price of goods",
+      "Storage costs, insurance, depreciation, obsolescence, and opportunity cost of capital",
+      "Only transportation costs",
+      "Only taxation"
+    ],
+    "correct_index": 1,
+    "explanation": "Carrying costs include storage, insurance, depreciation, obsolescence, spoilage, and the opportunity cost of capital tied up in inventory.",
+    "difficulty": "medium",
+    "tags": [
+      "inventory",
+      "carrying cost"
+    ]
   }
 ]

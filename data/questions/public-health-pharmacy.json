@@ -2,118 +2,1197 @@
   {
     "unit_id": "phs-unit-1",
     "question_text": "WHO defines health as:",
-    "options": ["Absence of disease only", "State of complete physical, mental, and social well-being", "Being free from infection", "Having good nutrition"],
+    "options": [
+      "Absence of disease only",
+      "State of complete physical, mental, and social well-being",
+      "Being free from infection",
+      "Having good nutrition"
+    ],
     "correct_index": 1,
     "explanation": "WHO defines health as 'a state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity.'",
     "difficulty": "easy",
-    "tags": ["health education", "WHO definition"]
+    "tags": [
+      "health education",
+      "WHO definition"
+    ]
   },
   {
     "unit_id": "phs-unit-1",
     "question_text": "Preventive health services aim to:",
-    "options": ["Treat existing diseases", "Prevent diseases before they occur", "Rehabilitate patients", "Only diagnose diseases"],
+    "options": [
+      "Treat existing diseases",
+      "Prevent diseases before they occur",
+      "Rehabilitate patients",
+      "Only diagnose diseases"
+    ],
     "correct_index": 1,
     "explanation": "Preventive health services aim to prevent diseases before they occur through measures like immunization, health education, screening, and environmental sanitation.",
     "difficulty": "easy",
-    "tags": ["health education", "prevention"]
+    "tags": [
+      "health education",
+      "prevention"
+    ]
   },
   {
     "unit_id": "phs-unit-1",
     "question_text": "Health education methods include all EXCEPT:",
-    "options": ["Individual counseling", "Group discussion", "Surgery", "Mass media campaigns"],
+    "options": [
+      "Individual counseling",
+      "Group discussion",
+      "Surgery",
+      "Mass media campaigns"
+    ],
     "correct_index": 2,
     "explanation": "Health education methods include individual methods (interview, counseling), group methods (discussion, role-play, workshop), and mass methods (lecture, exhibition, media). Surgery is a treatment, not an education method.",
     "difficulty": "easy",
-    "tags": ["health education", "methods"]
+    "tags": [
+      "health education",
+      "methods"
+    ]
   },
   {
     "unit_id": "phs-unit-1",
     "question_text": "Learning is defined as:",
-    "options": ["Memorizing facts only", "A relatively permanent change in behavior through experience", "Reading textbooks", "Attending lectures only"],
+    "options": [
+      "Memorizing facts only",
+      "A relatively permanent change in behavior through experience",
+      "Reading textbooks",
+      "Attending lectures only"
+    ],
     "correct_index": 1,
     "explanation": "Learning is defined as a relatively permanent change in behavior (or behavioral potential) resulting from experience, practice, or training.",
     "difficulty": "medium",
-    "tags": ["health education", "learning"]
+    "tags": [
+      "health education",
+      "learning"
+    ]
   },
   {
     "unit_id": "phs-unit-2",
     "question_text": "Primary Health Care (PHC) was declared at the:",
-    "options": ["UN General Assembly", "Alma Ata Conference (1978)", "WHO Headquarters", "World Health Assembly"],
+    "options": [
+      "UN General Assembly",
+      "Alma Ata Conference (1978)",
+      "WHO Headquarters",
+      "World Health Assembly"
+    ],
     "correct_index": 1,
     "explanation": "Primary Health Care was declared at the International Conference on Primary Health Care held at Alma Ata, Kazakhstan (then USSR) in 1978.",
     "difficulty": "easy",
-    "tags": ["healthcare delivery", "Alma Ata"]
+    "tags": [
+      "healthcare delivery",
+      "Alma Ata"
+    ]
   },
   {
     "unit_id": "phs-unit-2",
     "question_text": "Elements of Primary Health Care include all EXCEPT:",
-    "options": ["Health education", "Safe water supply", "Advanced surgical facilities", "Immunization"],
+    "options": [
+      "Health education",
+      "Safe water supply",
+      "Advanced surgical facilities",
+      "Immunization"
+    ],
     "correct_index": 2,
     "explanation": "Elements of PHC include health education, safe water, sanitation, immunization, maternal/child health, nutrition, essential drugs, and treatment of common diseases. Advanced surgical facilities are not a PHC element.",
     "difficulty": "medium",
-    "tags": ["healthcare delivery", "PHC elements"]
+    "tags": [
+      "healthcare delivery",
+      "PHC elements"
+    ]
   },
   {
     "unit_id": "phs-unit-3",
     "question_text": "Epidemiology is defined as the study of:",
-    "options": ["Treatment of diseases", "Distribution of health-related states in populations", "Manufacturing of drugs", "Pharmacology of drugs"],
+    "options": [
+      "Treatment of diseases",
+      "Distribution of health-related states in populations",
+      "Manufacturing of drugs",
+      "Pharmacology of drugs"
+    ],
     "correct_index": 1,
     "explanation": "Epidemiology is the study of the distribution (who, where, when) and determinants (why, how) of health-related states and events in defined populations, and the application of this knowledge to control health problems.",
     "difficulty": "easy",
-    "tags": ["epidemiology", "definition"]
+    "tags": [
+      "epidemiology",
+      "definition"
+    ]
   },
   {
     "unit_id": "phs-unit-3",
     "question_text": "An epidemic differs from endemic in that an epidemic:",
-    "options": ["Always exists in a region", "Occurs in greater numbers than expected in a community at a particular time", "Only affects one person", "Never occurs naturally"],
+    "options": [
+      "Always exists in a region",
+      "Occurs in greater numbers than expected in a community at a particular time",
+      "Only affects one person",
+      "Never occurs naturally"
+    ],
     "correct_index": 1,
     "explanation": "An epidemic is the occurrence of cases of disease in excess of what would normally be expected in a defined community, area, or season. Endemic refers to constant presence of a disease in a population.",
     "difficulty": "medium",
-    "tags": ["epidemiology", "epidemic"]
+    "tags": [
+      "epidemiology",
+      "epidemic"
+    ]
   },
   {
     "unit_id": "phs-unit-3",
     "question_text": "Incidence rate measures:",
-    "options": ["Total existing cases at a point in time", "New cases occurring in a population over a period", "Deaths from a disease", "Hospital admissions"],
+    "options": [
+      "Total existing cases at a point in time",
+      "New cases occurring in a population over a period",
+      "Deaths from a disease",
+      "Hospital admissions"
+    ],
     "correct_index": 1,
     "explanation": "Incidence measures the number of NEW cases of a disease occurring in a population during a specified time period. Prevalence measures existing (old + new) cases at a point in time.",
     "difficulty": "medium",
-    "tags": ["epidemiology", "incidence"]
+    "tags": [
+      "epidemiology",
+      "incidence"
+    ]
   },
   {
     "unit_id": "phs-unit-4",
     "question_text": "Water purification by slow sand filtration works mainly by:",
-    "options": ["Chemical treatment only", "Biological and physical filtration", "Heating", "Distillation"],
+    "options": [
+      "Chemical treatment only",
+      "Biological and physical filtration",
+      "Heating",
+      "Distillation"
+    ],
     "correct_index": 1,
     "explanation": "Slow sand filtration works by both physical filtration through sand and biological action in the Schmutzdecke (biological layer) that develops on top of the sand, which metabolizes organic matter and pathogens.",
     "difficulty": "medium",
-    "tags": ["environmental health", "water purification"]
+    "tags": [
+      "environmental health",
+      "water purification"
+    ]
   },
   {
     "unit_id": "phs-unit-4",
     "question_text": "The 3R concept in waste management stands for:",
-    "options": ["Run, Rush, Reduce", "Reuse, Reduce, Recycle", "Remove, Replace, Repair", "Read, Remember, Report"],
+    "options": [
+      "Run, Rush, Reduce",
+      "Reuse, Reduce, Recycle",
+      "Remove, Replace, Repair",
+      "Read, Remember, Report"
+    ],
     "correct_index": 1,
     "explanation": "The 3R concept in waste management stands for Reuse (using items again), Reduce (minimizing waste generation), and Recycle (converting waste into new products).",
     "difficulty": "easy",
-    "tags": ["waste management", "3R"]
+    "tags": [
+      "waste management",
+      "3R"
+    ]
   },
   {
     "unit_id": "phs-unit-4",
     "question_text": "Hospital waste segregation uses color-coded bins. Yellow bins are for:",
-    "options": ["General waste", "Infectious/biohazardous waste", "Sharps", "Recyclable waste"],
+    "options": [
+      "General waste",
+      "Infectious/biohazardous waste",
+      "Sharps",
+      "Recyclable waste"
+    ],
     "correct_index": 1,
     "explanation": "Color-coded waste segregation in hospitals: Yellow = infectious/biohazardous waste, Red = anatomical/pharmaceutical waste, Black/Blue = general waste, Puncture-proof containers = sharps.",
     "difficulty": "medium",
-    "tags": ["waste management", "hospital waste"]
+    "tags": [
+      "waste management",
+      "hospital waste"
+    ]
   },
   {
     "unit_id": "phs-unit-4",
     "question_text": "Food adulteration differs from food additives in that:",
-    "options": ["They are the same thing", "Adulteration is illegal; additives are approved", "Adulteration is always safe", "Food additives are always harmful"],
+    "options": [
+      "They are the same thing",
+      "Adulteration is illegal; additives are approved",
+      "Adulteration is always safe",
+      "Food additives are always harmful"
+    ],
     "correct_index": 1,
     "explanation": "Food adulteration involves illegal addition of inferior, harmful, or cheaper substances to food. Food additives are legally approved substances added to improve food quality, safety, or shelf life.",
     "difficulty": "medium",
-    "tags": ["food hygiene", "adulteration"]
+    "tags": [
+      "food hygiene",
+      "adulteration"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Health education is defined as:",
+    "options": [
+      "Treating diseases",
+      "A process of providing information to improve health behavior",
+      "Manufacturing medicines",
+      "Running a hospital"
+    ],
+    "correct_index": 1,
+    "explanation": "Health education is a process of providing information and awareness to improve health knowledge, attitudes, and practices.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "definition"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Which of the following is a principle of health education?",
+    "options": [
+      "One-way communication only",
+      "Participation of the community",
+      "Avoiding local culture",
+      "Using only one method"
+    ],
+    "correct_index": 1,
+    "explanation": "Community participation is a key principle of health education.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "principles"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "The health belief model explains:",
+    "options": [
+      "How drugs work in the body",
+      "How people beliefs influence their health behavior",
+      "How hospitals are managed",
+      "How diseases spread"
+    ],
+    "correct_index": 1,
+    "explanation": "The Health Belief Model explains how individual beliefs influence health-related behaviors.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "models"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Which is an individual method of health education?",
+    "options": [
+      "Television campaign",
+      "Health counseling",
+      "Community rally",
+      "Newspaper advertisement"
+    ],
+    "correct_index": 1,
+    "explanation": "Health counseling is an individual method where health information is provided to a single person.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "methods"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Audio-visual aids in health education include all EXCEPT:",
+    "options": [
+      "Charts and models",
+      "Posters and films",
+      "Lectures only",
+      "Television programs"
+    ],
+    "correct_index": 2,
+    "explanation": "Lectures are a verbal/oral method, not an audio-visual aid.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "aids"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Mass method of health education includes:",
+    "options": [
+      "One-on-one counseling",
+      "Television and radio campaigns",
+      "Personal letter",
+      "Bedside teaching"
+    ],
+    "correct_index": 1,
+    "explanation": "Mass methods reach large audiences simultaneously through media.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "mass methods"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "The goal of health education is to:",
+    "options": [
+      "Sell more medicines",
+      "Enable individuals to take control of their health",
+      "Increase hospital admissions",
+      "Replace medical treatment"
+    ],
+    "correct_index": 1,
+    "explanation": "Health education aims to empower individuals to make informed health decisions.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "goal"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Selective perception in learning means:",
+    "options": [
+      "Learning everything equally",
+      "Individuals tend to perceive information aligning with existing beliefs",
+      "Forgetting everything learned",
+      "Learning only from textbooks"
+    ],
+    "correct_index": 1,
+    "explanation": "Selective perception is a cognitive bias where people notice info confirming their beliefs.",
+    "difficulty": "medium",
+    "tags": [
+      "learning",
+      "cognitive bias"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "PHC was declared at which international conference?",
+    "options": [
+      "WHO Geneva 1948",
+      "Alma-Ata Conference 1978",
+      "UN Conference 2000",
+      "Bangkok 2005"
+    ],
+    "correct_index": 1,
+    "explanation": "The Alma-Ata Declaration of 1978 proclaimed PHC as the key to Health for All.",
+    "difficulty": "easy",
+    "tags": [
+      "PHC",
+      "Alma-Ata"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Which is NOT an element of Primary Health Care?",
+    "options": [
+      "Health education",
+      "Safe water supply",
+      "Advanced surgical facilities",
+      "Essential drugs"
+    ],
+    "correct_index": 2,
+    "explanation": "Advanced surgery is secondary/tertiary care, not a PHC element.",
+    "difficulty": "easy",
+    "tags": [
+      "PHC",
+      "elements"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The role of pharmacist in PHC includes:",
+    "options": [
+      "Only dispensing medicines",
+      "Ensuring rational drug use and health education",
+      "Performing surgeries",
+      "Diagnosing diseases"
+    ],
+    "correct_index": 1,
+    "explanation": "Pharmacists in PHC ensure rational drug use, provide health education, and manage community pharmacies.",
+    "difficulty": "easy",
+    "tags": [
+      "PHC",
+      "pharmacist role"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "MDGs were replaced by:",
+    "options": [
+      "Green Development Goals",
+      "Sustainable Development Goals",
+      "Health Development Goals",
+      "Education Development Goals"
+    ],
+    "correct_index": 1,
+    "explanation": "MDGs (2000-2015) were succeeded by SDGs (2015-2030).",
+    "difficulty": "easy",
+    "tags": [
+      "MDGs",
+      "SDGs"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Nepal health care delivery system follows:",
+    "options": [
+      "Single-tier",
+      "Three-tier (primary, secondary, tertiary)",
+      "Two-tier",
+      "Four-tier"
+    ],
+    "correct_index": 1,
+    "explanation": "Nepal follows a three-tier health care delivery system.",
+    "difficulty": "easy",
+    "tags": [
+      "Nepal health system"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The organogram of Nepal health system shows:",
+    "options": [
+      "Only government hospitals",
+      "Hierarchy from central to local health facilities",
+      "Only private clinics",
+      "Only traditional healers"
+    ],
+    "correct_index": 1,
+    "explanation": "Nepal health organogram shows the hierarchy from central to community level.",
+    "difficulty": "easy",
+    "tags": [
+      "Nepal health system"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Elements of PHC include all EXCEPT:",
+    "options": [
+      "Essential drugs",
+      "Immunization",
+      "Complex surgical equipment",
+      "Safe water supply"
+    ],
+    "correct_index": 2,
+    "explanation": "Complex surgical equipment belongs to secondary/tertiary care.",
+    "difficulty": "easy",
+    "tags": [
+      "PHC",
+      "elements"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "SDG Goal 3 aims to:",
+    "options": [
+      "End poverty",
+      "Ensure healthy lives and promote well-being for all",
+      "Provide quality education",
+      "Achieve gender equality"
+    ],
+    "correct_index": 1,
+    "explanation": "SDG Goal 3 covers health and well-being for all ages.",
+    "difficulty": "easy",
+    "tags": [
+      "SDGs",
+      "Goal 3"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Nepal health policy emphasizes:",
+    "options": [
+      "Only urban healthcare",
+      "Equitable access to basic health services for all citizens",
+      "Only traditional medicine",
+      "Only private healthcare"
+    ],
+    "correct_index": 1,
+    "explanation": "Nepal emphasizes equitable access to health services for all citizens.",
+    "difficulty": "easy",
+    "tags": [
+      "Nepal health policy"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Epidemiology is defined as:",
+    "options": [
+      "Study of drugs",
+      "Study of disease distribution and determinants in populations",
+      "Study of hospital management",
+      "Study of medicine manufacturing"
+    ],
+    "correct_index": 1,
+    "explanation": "Epidemiology studies disease distribution and determinants in populations.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "definition"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Prevalence includes:",
+    "options": [
+      "Only new cases",
+      "Only fatal cases",
+      "Both new and existing cases at a given time",
+      "Only cured cases"
+    ],
+    "correct_index": 2,
+    "explanation": "Prevalence includes ALL existing cases at a specific point in time.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "prevalence"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "R0 represents:",
+    "options": [
+      "Total deaths",
+      "Average number of secondary cases from one infected person",
+      "Number of hospitals",
+      "Number of drugs needed"
+    ],
+    "correct_index": 1,
+    "explanation": "R0 is the average secondary infections from one person in a susceptible population.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "R0"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "IMR stands for:",
+    "options": [
+      "International Medical Report",
+      "Infant Mortality Rate",
+      "Internal Medicine Registry",
+      "Infection Monitoring Record"
+    ],
+    "correct_index": 1,
+    "explanation": "IMR is deaths of children under one year per 1,000 live births.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "IMR"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "An epidemic refers to:",
+    "options": [
+      "A disease that always exists",
+      "An unexpected increase in cases above normal levels",
+      "A disease confined to one person",
+      "A disease only in animals"
+    ],
+    "correct_index": 1,
+    "explanation": "An epidemic is an outbreak affecting many people simultaneously.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "epidemic"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Pandemic refers to:",
+    "options": [
+      "A local outbreak",
+      "An epidemic spread over several countries or continents",
+      "A disease in a single household",
+      "A chronic disease"
+    ],
+    "correct_index": 1,
+    "explanation": "A pandemic spans multiple countries or continents globally.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "pandemic"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Case fatality rate =",
+    "options": [
+      "Total cases / population x 100",
+      "Deaths from disease / total cases x 100",
+      "New cases / population x 100",
+      "Recovery rate / total cases x 100"
+    ],
+    "correct_index": 1,
+    "explanation": "CFR = (deaths / total cases) x 100.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "CFR"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Cohort study is also known as:",
+    "options": [
+      "Cross-sectional study",
+      "Prospective/Longitudinal study",
+      "Case report",
+      "Meta-analysis"
+    ],
+    "correct_index": 1,
+    "explanation": "Cohort studies follow groups over time, making them longitudinal.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "study types"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "RR of 2.0 means:",
+    "options": [
+      "Exposure halves the risk",
+      "Exposed group has twice the risk vs unexposed",
+      "No risk",
+      "Disease is rare"
+    ],
+    "correct_index": 1,
+    "explanation": "RR=2.0 means exposed group has double the risk.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "relative risk"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "RCT is considered:",
+    "options": [
+      "Weakest study design",
+      "Gold standard for testing interventions",
+      "Only for laboratory",
+      "Worst type of trial"
+    ],
+    "correct_index": 1,
+    "explanation": "RCTs are the gold standard for evaluating interventions.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "RCT"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Endemic disease means:",
+    "options": [
+      "Occurs suddenly",
+      "Constantly present in a specific geographic area",
+      "Has been eliminated",
+      "Affects only one person"
+    ],
+    "correct_index": 1,
+    "explanation": "Endemic diseases are constantly present in a specific area.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "endemic"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Odds ratio is primarily used in:",
+    "options": [
+      "Cohort studies",
+      "Case-control studies",
+      "Cross-sectional studies",
+      "Case reports"
+    ],
+    "correct_index": 1,
+    "explanation": "OR is primarily used in case-control studies.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "odds ratio"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Specific mortality rate measures deaths:",
+    "options": [
+      "From all causes",
+      "From a specific disease in a specific age/sex group",
+      "Only in hospitals",
+      "Only in urban areas"
+    ],
+    "correct_index": 1,
+    "explanation": "Specific mortality measures deaths from a particular cause in a subgroup.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "specific mortality"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Attributable risk measures:",
+    "options": [
+      "Total disease burden",
+      "Excess risk in exposed vs unexposed group",
+      "Cure rate",
+      "Prevention rate"
+    ],
+    "correct_index": 1,
+    "explanation": "Attributable risk measures excess risk due to exposure.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "attributable risk"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Descriptive epidemiology involves:",
+    "options": [
+      "Testing a new drug",
+      "Describing disease by person, place, and time",
+      "Conducting clinical trials",
+      "Analyzing drug costs"
+    ],
+    "correct_index": 1,
+    "explanation": "Descriptive epi characterizes by person, place, and time.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "descriptive"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Analytical epidemiology:",
+    "options": [
+      "Only observes",
+      "Tests hypotheses about exposure-disease relationships",
+      "Only collects samples",
+      "Only interviews"
+    ],
+    "correct_index": 1,
+    "explanation": "Analytical epi tests hypotheses about disease causation.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "analytical"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Confounding is:",
+    "options": [
+      "A type of treatment",
+      "A variable distorting exposure-outcome association",
+      "A statistical test",
+      "A data collection method"
+    ],
+    "correct_index": 1,
+    "explanation": "Confounders distort the true exposure-outcome relationship.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "confounding"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Incubation period is:",
+    "options": [
+      "Time from recovery to death",
+      "Time between exposure and first symptoms",
+      "Time to treat disease",
+      "Time for drug manufacturing"
+    ],
+    "correct_index": 1,
+    "explanation": "Incubation period is between infection and symptom onset.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "incubation period"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Crude death rate is:",
+    "options": [
+      "Death rate from specific disease",
+      "Total deaths per 1,000 population per year",
+      "Death rate of children only",
+      "Hospital death rate"
+    ],
+    "correct_index": 1,
+    "explanation": "Crude death rate = total deaths per 1,000 population per year.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "death rate"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "SODIS water purification involves:",
+    "options": [
+      "Adding chlorine",
+      "Transparent PET bottles exposed to sunlight 6+ hours",
+      "Boiling 30 minutes",
+      "Electric purifier"
+    ],
+    "correct_index": 1,
+    "explanation": "SODIS uses sunlight and PET bottles for UV water disinfection.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "SODIS"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Hard water contains high:",
+    "options": [
+      "Chlorine",
+      "Calcium and magnesium ions",
+      "Iron only",
+      "Sodium chloride"
+    ],
+    "correct_index": 1,
+    "explanation": "Hard water has elevated calcium and magnesium.",
+    "difficulty": "easy",
+    "tags": [
+      "water quality",
+      "hard water"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Most common household water purification in Nepal:",
+    "options": [
+      "Reverse osmosis",
+      "Boiling",
+      "Solar distillation",
+      "Ozone treatment"
+    ],
+    "correct_index": 1,
+    "explanation": "Boiling is the most accessible method in Nepal.",
+    "difficulty": "easy",
+    "tags": [
+      "water purification"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "WHO requires fecal coliform count of:",
+    "options": [
+      "100 CFU/100ml",
+      "0 CFU/100ml at point of delivery",
+      "1000 CFU/100ml",
+      "50 CFU/100ml"
+    ],
+    "correct_index": 1,
+    "explanation": "WHO requires 0 CFU/100ml E.coli in drinking water.",
+    "difficulty": "medium",
+    "tags": [
+      "water quality",
+      "WHO"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Air pollution primarily causes:",
+    "options": [
+      "Bone fractures",
+      "Respiratory diseases like asthma",
+      "Skin infections",
+      "Eye color change"
+    ],
+    "correct_index": 1,
+    "explanation": "Air pollutants primarily affect the respiratory system.",
+    "difficulty": "easy",
+    "tags": [
+      "air pollution"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "RED bin in hospital waste management is for:",
+    "options": [
+      "General waste",
+      "Infectious/biohazardous waste",
+      "Sharps waste",
+      "Radioactive waste"
+    ],
+    "correct_index": 1,
+    "explanation": "Red bins are for infectious/biohazardous waste.",
+    "difficulty": "medium",
+    "tags": [
+      "waste management",
+      "color codes"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "3R in waste management:",
+    "options": [
+      "Reduce Reuse Recycle",
+      "Report React Recover",
+      "Reject Replace Rotate",
+      "Reduce Repair Restore"
+    ],
+    "correct_index": 0,
+    "explanation": "3R = Reduce, Reuse, Recycle.",
+    "difficulty": "easy",
+    "tags": [
+      "waste management",
+      "3R"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Biological water purification method:",
+    "options": [
+      "Chlorination",
+      "Slow sand filtration",
+      "Boiling",
+      "UV treatment"
+    ],
+    "correct_index": 1,
+    "explanation": "Slow sand filtration uses biological biofilm layer.",
+    "difficulty": "medium",
+    "tags": [
+      "water purification",
+      "biological"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Hospital waste segregation reduces:",
+    "options": [
+      "Waste quantity only",
+      "Infection risk and enables proper disposal",
+      "Costs only",
+      "Waste weight"
+    ],
+    "correct_index": 1,
+    "explanation": "Segregation reduces infection risk and ensures proper treatment.",
+    "difficulty": "easy",
+    "tags": [
+      "waste management"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Incineration disposes of:",
+    "options": [
+      "Recyclable plastics",
+      "Infectious and pathological waste",
+      "Paper",
+      "Food waste"
+    ],
+    "correct_index": 1,
+    "explanation": "Incineration destroys pathogens in infectious/pathological waste.",
+    "difficulty": "easy",
+    "tags": [
+      "waste management",
+      "incineration"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Occupational health in pharmacy deals with:",
+    "options": [
+      "Patient safety only",
+      "Preventing work-related illnesses among pharmacy workers",
+      "Marketing products",
+      "Drug development"
+    ],
+    "correct_index": 1,
+    "explanation": "Occupational health prevents work-related hazards for pharmacy staff.",
+    "difficulty": "easy",
+    "tags": [
+      "occupational health"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Food poisoning is caused by:",
+    "options": [
+      "Eating too much",
+      "Food contaminated with bacteria, viruses, or toxins",
+      "Eating quickly",
+      "Spicy food"
+    ],
+    "correct_index": 1,
+    "explanation": "Food poisoning from pathogenic microorganisms or toxins.",
+    "difficulty": "easy",
+    "tags": [
+      "food hygiene"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Water boiling for safety needs:",
+    "options": [
+      "At least 1 minute",
+      "10 minutes",
+      "30 minutes",
+      "Just reaching boil"
+    ],
+    "correct_index": 0,
+    "explanation": "WHO recommends rolling boil for at least 1 minute.",
+    "difficulty": "medium",
+    "tags": [
+      "water purification",
+      "boiling"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Measles vaccine storage:",
+    "options": [
+      "-20C",
+      "2-8C (cold chain)",
+      "Room temperature",
+      "37C"
+    ],
+    "correct_index": 1,
+    "explanation": "Measles vaccine needs cold chain at 2-8C.",
+    "difficulty": "easy",
+    "tags": [
+      "cold chain",
+      "vaccines"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Cholera spreads primarily through:",
+    "options": [
+      "Air",
+      "Contaminated water and food",
+      "Direct contact",
+      "Mosquitoes"
+    ],
+    "correct_index": 1,
+    "explanation": "Cholera is transmitted through contaminated water/food.",
+    "difficulty": "easy",
+    "tags": [
+      "water-borne disease"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Food fortification means:",
+    "options": [
+      "Adding preservatives",
+      "Adding essential micronutrients to improve nutritional value",
+      "Removing nutrients",
+      "Making food taste better"
+    ],
+    "correct_index": 1,
+    "explanation": "Fortification adds micronutrients to food.",
+    "difficulty": "easy",
+    "tags": [
+      "food hygiene",
+      "fortification"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Composting is:",
+    "options": [
+      "Water purification",
+      "Solid waste disposal through biological decomposition",
+      "Air purification",
+      "Nuclear waste disposal"
+    ],
+    "correct_index": 1,
+    "explanation": "Composting biologically decomposes organic waste into manure.",
+    "difficulty": "easy",
+    "tags": [
+      "waste management",
+      "composting"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "BLUE/WHITE bins are for:",
+    "options": [
+      "General waste",
+      "Infectious waste",
+      "Sharps (needles, blades)",
+      "Food waste"
+    ],
+    "correct_index": 2,
+    "explanation": "Blue/white bins are for sharps waste.",
+    "difficulty": "medium",
+    "tags": [
+      "waste management",
+      "sharps"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Pharmacy occupational diseases commonly involve:",
+    "options": [
+      "Heart disease",
+      "Allergic reactions and respiratory issues",
+      "Bone fractures",
+      "Vision loss"
+    ],
+    "correct_index": 1,
+    "explanation": "Pharmacy workers commonly get allergies from drug exposure.",
+    "difficulty": "easy",
+    "tags": [
+      "occupational health"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Food adulteration means:",
+    "options": [
+      "Improving food quality",
+      "Adding inferior or harmful substances to food",
+      "Cooking properly",
+      "Storing in refrigerators"
+    ],
+    "correct_index": 1,
+    "explanation": "Adulteration is adding harmful/inferior substances to food.",
+    "difficulty": "easy",
+    "tags": [
+      "food hygiene",
+      "adulteration"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Slow sand filtration works through:",
+    "options": [
+      "Chemical reaction only",
+      "Biological activity in biofilm and physical straining",
+      "Heating",
+      "Adding chemicals"
+    ],
+    "correct_index": 1,
+    "explanation": "Slow sand filtration uses biological schmutzdecke layer.",
+    "difficulty": "medium",
+    "tags": [
+      "water purification"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "WHO cold chain range for vaccines:",
+    "options": [
+      "-20 to -10C",
+      "2 to 8C",
+      "15 to 25C",
+      "30 to 40C"
+    ],
+    "correct_index": 1,
+    "explanation": "Standard cold chain for most vaccines is 2-8C.",
+    "difficulty": "easy",
+    "tags": [
+      "cold chain",
+      "vaccines"
+    ]
   }
 ]
