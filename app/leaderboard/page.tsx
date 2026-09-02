@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Trophy, Medal, Flame, Target, Users } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { Trophy, Medal, Flame, Target, Users, RefreshCw } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { getLeaderboard, type LeaderboardEntry } from "@/lib/leaderboard";
 import { useAuth } from "@/lib/auth";
+import { supabase } from "@/lib/supabase/client";
+import { Button } from "@/components/ui/button";
 
 const getRankIcon = (rank: number) => {
   if (rank === 1) return <Trophy className="h-5 w-5 text-yellow-500" />;
@@ -18,16 +20,44 @@ const getRankIcon = (rank: number) => {
 export default function LeaderboardPage() {
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
   const [mounted, setMounted] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const { user } = useAuth();
+
+  const fetchLeaderboard = useCallback(async () => {
+    const data = await getLeaderboard();
+    setEntries(data);
+  }, []);
 
   useEffect(() => {
     setMounted(true);
-    getLeaderboard().then(setEntries);
-  }, []);
+    fetchLeaderboard();
+  }, [fetchLeaderboard]);
+
+  // Real-time subscription to quiz_results table
+  useEffect(() => {
+    const channel = supabase
+      .channel("leaderboard-updates")
+      .on(
+        "postgres_changes",
+        {
+          event: "INSERT",
+          schema: "public",
+          table: "quiz_results",
+        },
+        () => {
+          fetchLeaderboard();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [fetchLeaderboard]);
 
   // Refresh when page becomes visible
   useEffect(() => {
-    const handler = () => getLeaderboard().then(setEntries);
+    const handler = () => fetchLeaderboard();
     window.addEventListener("focus", handler);
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "visible") handler();
@@ -35,18 +65,29 @@ export default function LeaderboardPage() {
     return () => {
       window.removeEventListener("focus", handler);
     };
-  }, []);
+  }, [fetchLeaderboard]);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
-          <Trophy className="h-8 w-8 text-yellow-500" />
-          Leaderboard
-        </h1>
-        <p className="mt-2 text-muted-foreground">
-          See how you rank among your classmates
-        </p>
+      <div className="mb-8 flex items-center justify-between gap-4 flex-wrap">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
+            <Trophy className="h-8 w-8 text-yellow-500" />
+            Leaderboard
+          </h1>
+          <p className="mt-2 text-muted-foreground">
+            See how you rank among your classmates
+          </p>
+        </div>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => { setIsRefreshing(true); fetchLeaderboard().finally(() => setIsRefreshing(false)); }}
+          disabled={isRefreshing}
+        >
+          <RefreshCw className={`mr-2 h-4 w-4 ${isRefreshing ? "animate-spin" : ""}`} />
+          Refresh
+        </Button>
       </div>
 
       {!mounted ? (
