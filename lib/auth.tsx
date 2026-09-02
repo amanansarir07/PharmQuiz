@@ -22,6 +22,17 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// Old localStorage keys from the previous auth system
+const OLD_CURRENT_USER_KEY = "pharmquiz_current_user";
+const OLD_USERS_KEY = "pharmquiz_users";
+
+function clearOldAuthStorage() {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem(OLD_CURRENT_USER_KEY);
+    localStorage.removeItem(OLD_USERS_KEY);
+  }
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -92,6 +103,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const init = async () => {
       try {
+        // Clear any old localStorage-based auth sessions
+        const oldUser = typeof window !== "undefined" ? localStorage.getItem(OLD_CURRENT_USER_KEY) : null;
+        if (oldUser) {
+          console.log("Detected old localStorage auth session — clearing it");
+          clearOldAuthStorage();
+        }
+
         const { data: { session } } = await getSupabase().auth.getSession();
         if (session?.user) {
           await loadProfile(session.user.id);
@@ -178,6 +196,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const logout = useCallback(async () => {
     await getSupabase().auth.signOut();
+    clearOldAuthStorage();
     setUser(null);
   }, []);
 
