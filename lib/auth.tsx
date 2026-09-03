@@ -199,23 +199,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!user) return { error: "Not logged in" };
 
     try {
-      // Update Supabase profiles table
-      const { error: dbError } = await getSupabase()
-        .from("profiles")
-        .update({ name })
-        .eq("id", user.id);
-
-      if (dbError) {
-        console.warn("Profile DB update failed:", dbError.message);
-      }
-
-      // Update Supabase auth metadata
-      const { error: authError } = await getSupabase().auth.updateUser({
-        data: { name },
+      // Use SECURITY DEFINER RPC to bypass RLS (publishable key issue)
+      const { error: rpcError } = await getSupabase().rpc("update_profile", {
+        p_user_id: user.id,
+        p_name: name,
       });
 
-      if (authError) {
-        console.warn("Auth metadata update failed:", authError.message);
+      if (rpcError) {
+        console.warn("RPC update failed, trying direct update:", rpcError.message);
+        // Fallback: try direct updates
+        const { error: dbError } = await getSupabase()
+          .from("profiles")
+          .update({ name })
+          .eq("id", user.id);
+        if (dbError) console.warn("Direct profile update failed:", dbError.message);
+
+        const { error: authError } = await getSupabase().auth.updateUser({ data: { name } });
+        if (authError) console.warn("Auth metadata update failed:", authError.message);
       }
 
       // Update local state
