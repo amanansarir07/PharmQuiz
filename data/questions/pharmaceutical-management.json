@@ -562,18 +562,18 @@
   {
     "unit_id": "mgmt-unit-3",
     "question_text": "The 7Ps of marketing mix include Product, Price, Place, Promotion, People, Process, and:",
-    "options:": [
-      "Profit",
-      "Physical Evidence",
-      "Planning",
-      "Production"
-    ],
     "correct_index": 1,
     "explanation": "The extended marketing mix (7Ps) adds People, Process, and Physical Evidence to the traditional 4Ps (Product, Price, Place, Promotion).",
     "difficulty": "medium",
     "tags": [
       "marketing",
       "7Ps"
+    ],
+    "options": [
+      "Profit",
+      "Physical Evidence",
+      "Planning",
+      "Production"
     ]
   },
   {
