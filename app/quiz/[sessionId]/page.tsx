@@ -32,6 +32,7 @@ export default function ActiveQuizPage({
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [quizConfig, setQuizConfig] = useState<any>(null);
+  const [showExplanation, setShowExplanation] = useState(false);
   const answersRef = useRef<(number | null)[]>([]);
   const { user } = useAuth();
 
@@ -93,7 +94,15 @@ export default function ActiveQuizPage({
       next[currentIndex] = index;
       return next;
     });
+    if (quizConfig?.revisionMode) {
+      setShowExplanation(true);
+    }
   };
+
+  // Reset explanation when navigating
+  useEffect(() => {
+    setShowExplanation(false);
+  }, [currentIndex]);
 
   const toggleMark = () => {
     setMarkedForReview((prev) => {
@@ -114,7 +123,10 @@ export default function ActiveQuizPage({
       }));
 
       const correct = results.filter((r) => r.isCorrect).length;
+      const incorrect = results.filter((r) => !r.isCorrect && r.selected !== null).length;
       const total = results.length;
+      // Apply negative marking: deduct 1 mark per wrong answer (min 0)
+      const score = quizConfig?.negativeMarking ? Math.max(0, correct - incorrect) : correct;
       const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
       const timeTaken = quizConfig?.timeLimit
         ? quizConfig.timeLimit * 60 - (timeLeft || 0)
@@ -130,6 +142,8 @@ export default function ActiveQuizPage({
             ...quizConfig,
             completedAt: new Date().toISOString(),
           },
+          score,
+          incorrect,
           timeTaken,
         })
       );
@@ -141,7 +155,7 @@ export default function ActiveQuizPage({
           const { error: rpcError } = await supabase.rpc("save_quiz_result", {
             p_user_id: user.id,
             p_subject: quizConfig?.subject || "unknown",
-            p_score: correct,
+            p_score: score,
             p_total: total,
             p_correct: correct,
             p_accuracy: accuracy,
@@ -153,7 +167,7 @@ export default function ActiveQuizPage({
             const { error: insertError } = await supabase.from("quiz_results").insert({
               user_id: user.id,
               subject: quizConfig?.subject || "unknown",
-              score: correct,
+              score: score,
               total,
               correct,
               accuracy,
@@ -254,9 +268,29 @@ export default function ActiveQuizPage({
                   </button>
                 ))}
               </div>
-              <div className="mt-6 rounded-lg bg-muted/50 p-4 text-sm text-muted-foreground">
-                💡 Explanations will be shown after submission
-              </div>
+              {/* Revision Mode: show explanation immediately after answering */}
+              {quizConfig?.revisionMode && showExplanation && answers[currentIndex] !== null ? (
+                <div className={`mt-6 rounded-lg p-4 text-sm ${
+                  answers[currentIndex] === currentQuestion.correctIndex
+                    ? "bg-green-50 dark:bg-green-950 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800"
+                    : "bg-red-50 dark:bg-red-950 text-red-800 dark:text-red-300 border border-red-200 dark:border-red-800"
+                }`}>
+                  <div className="flex items-center gap-2 mb-2 font-medium">
+                    {answers[currentIndex] === currentQuestion.correctIndex ? (
+                      <>✅ Correct! Well done.</>
+                    ) : (
+                      <>❌ Incorrect. The correct answer is <strong>{String.fromCharCode(65 + currentQuestion.correctIndex)}. {currentQuestion.options[currentQuestion.correctIndex]}</strong></>
+                    )}
+                  </div>
+                  <div className="mt-2 opacity-90">
+                    💡 <strong>Explanation:</strong> {currentQuestion.explanation}
+                  </div>
+                </div>
+              ) : (
+                <div className="mt-6 rounded-lg bg-muted/50 p-4 text-sm text-muted-foreground">
+                  {quizConfig?.revisionMode ? "💡 Select an answer to see the explanation" : "💡 Explanations will be shown after submission"}
+                </div>
+              )}
             </CardContent>
           </Card>
 

@@ -20,9 +20,8 @@ import {
   ResponsiveContainer,
   LineChart,
   Line,
-  PieChart,
-  Pie,
   Cell,
+
 } from "recharts";
 
 const COLORS = ["#2563eb", "#dc2626", "#16a34a", "#9333ea", "#ea580c", "#0891b2", "#ca8a04", "#be185d"];
@@ -140,12 +139,7 @@ export default function AnalyticsPage() {
     color: COLORS[i % COLORS.length],
   }));
 
-  // Difficulty data
-  const difficultyData = [
-    { name: "Easy", value: s.accuracy > 70 ? Math.min(s.accuracy + 15, 100) : 60, fill: "#22c55e" },
-    { name: "Medium", value: s.accuracy || 50, fill: "#eab308" },
-    { name: "Hard", value: s.accuracy > 30 ? Math.max(s.accuracy - 20, 10) : 30, fill: "#ef4444" },
-  ];
+  // Difficulty data - show empty state since we don't track per-difficulty stats yet
 
   // Weak topics
   const weakTopics = Object.entries(s.subjectBreakdown)
@@ -289,34 +283,7 @@ export default function AnalyticsPage() {
               </CardContent>
             </Card>
 
-            {/* Difficulty Breakdown */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Estimated Accuracy by Difficulty</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-[250px] flex items-center justify-center">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie data={difficultyData} cx="50%" cy="50%" innerRadius={60} outerRadius={90} paddingAngle={5} dataKey="value">
-                        {difficultyData.map((entry, index) => (
-                          <Cell key={index} fill={entry.fill} />
-                        ))}
-                      </Pie>
-                      <Tooltip />
-                    </PieChart>
-                  </ResponsiveContainer>
-                </div>
-                <div className="mt-4 flex justify-center gap-6">
-                  {difficultyData.map((d) => (
-                    <div key={d.name} className="flex items-center gap-2 text-sm">
-                      <span className="h-3 w-3 rounded-full" style={{ backgroundColor: d.fill }} />
-                      {d.name}: {d.value}%
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+
 
             {/* Weak Topics */}
             <Card>

@@ -31,6 +31,7 @@ function QuizSetupInner() {
   const [numQuestions, setNumQuestions] = useState<number>(20);
   const [timeLimit, setTimeLimit] = useState<number | null>(null);
   const [negativeMarking, setNegativeMarking] = useState(false);
+  const [revisionMode, setRevisionMode] = useState(false);
 
   useEffect(() => {
     const subjectParam = searchParams.get("subject");
@@ -70,6 +71,7 @@ function QuizSetupInner() {
       numQuestions,
       timeLimit,
       negativeMarking,
+      revisionMode,
     };
     const sessionId = crypto.randomUUID();
     localStorage.setItem(
@@ -268,6 +270,24 @@ function QuizSetupInner() {
                 <p className="text-sm font-medium">Negative Marking</p>
                 <p className="text-xs text-muted-foreground">
                   Deduct 1 mark for each wrong answer
+                </p>
+              </div>
+            </label>
+          </CardContent>
+        </Card>
+
+        {/* Revision Mode */}
+        <Card>
+          <CardContent className="pt-6">
+            <label className="flex items-center gap-3 cursor-pointer">
+              <Checkbox
+                checked={revisionMode}
+                onCheckedChange={(v) => setRevisionMode(v === true)}
+              />
+              <div>
+                <p className="text-sm font-medium">Revision Mode</p>
+                <p className="text-xs text-muted-foreground">
+                  See the correct answer and explanation after each question
                 </p>
               </div>
             </label>

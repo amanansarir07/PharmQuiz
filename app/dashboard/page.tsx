@@ -4,19 +4,18 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth";
 import { subjects } from "@/data/subjects";
-import { calculateStats, getSubjectName } from "@/lib/stats";
+import { calculateStats } from "@/lib/stats";
 import type { UserStats } from "@/lib/stats";
 import {
   BookOpen,
   Trophy,
   Target,
   Flame,
-  ArrowRight,
   Brain,
-  BarChart3,
-  StickyNote,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 export default function DashboardPage() {
@@ -100,7 +99,7 @@ export default function DashboardPage() {
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">
-          Welcome back, {firstName}! 👋
+          Welcome back, {firstName}!
         </h1>
         <p className="mt-2 text-muted-foreground">
           Continue your pharmacy exam preparation
@@ -131,57 +130,98 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* Quick Actions */}
-      <div className="mb-8 grid gap-4 sm:grid-cols-3">
-        <Link href="/quiz">
-          <Card className="transition-all hover:shadow-md hover:border-primary/20 cursor-pointer">
-            <CardContent className="p-5 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                <Brain className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <p className="font-semibold">Start MCQs</p>
-                <p className="text-sm text-muted-foreground">
-                  Choose subject and start practicing
-                </p>
-              </div>
-              <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground" />
-            </CardContent>
-          </Card>
-        </Link>
-        <Link href="/analytics">
-          <Card className="transition-all hover:shadow-md hover:border-primary/20 cursor-pointer">
-            <CardContent className="p-5 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 dark:bg-purple-950">
-                <BarChart3 className="h-6 w-6 text-purple-600 dark:text-purple-400" />
-              </div>
-              <div>
-                <p className="font-semibold">View Analytics</p>
-                <p className="text-sm text-muted-foreground">
-                  Track your progress
-                </p>
-              </div>
-              <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground" />
-            </CardContent>
-          </Card>
-        </Link>
-        <Link href="/notes">
-          <Card className="transition-all hover:shadow-md hover:border-primary/20 cursor-pointer">
-            <CardContent className="p-5 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-50 dark:bg-yellow-950">
-                <StickyNote className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
-              </div>
-              <div>
-                <p className="font-semibold">My Notes</p>
-                <p className="text-sm text-muted-foreground">
-                  Review your study notes
-                </p>
-              </div>
-              <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground" />
-            </CardContent>
-          </Card>
-        </Link>
+      {/* Recent Activity */}
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-semibold">Recent Activity</h2>
+          <Link href="/history" className="text-sm text-primary hover:underline">
+            View All History
+          </Link>
+        </div>
+        {(() => {
+          const recentResults: Array<{sessionId: string; subject: string; score: number; total: number; accuracy: number; date: string}> = [];
+          for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key?.startsWith("quiz-results-")) {
+              try {
+                const data = JSON.parse(localStorage.getItem(key)!);
+                if (data?.config?.completedAt) {
+                  const correctCount = data.answers?.filter((a: any) => a.isCorrect).length ?? 0;
+                  recentResults.push({
+                    sessionId: key.replace("quiz-results-", ""),
+                    subject: data.config.subject || "unknown",
+                    score: data.score ?? correctCount,
+                    total: data.questions?.length ?? 0,
+                    accuracy: data.questions?.length > 0 ? Math.round((correctCount / data.questions.length) * 100) : 0,
+                    date: data.config.completedAt,
+                  });
+                }
+              } catch {}
+            }
+          }
+          recentResults.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+          const recent = recentResults.slice(0, 5);
 
+          if (recent.length === 0) {
+            return (
+              <Card>
+                <CardContent className="p-8 text-center">
+                  <BookOpen className="mx-auto h-10 w-10 text-muted-foreground mb-3" />
+                  <p className="text-muted-foreground">No quizzes taken yet</p>
+                  <Link href="/quiz">
+                    <Button className="mt-3" size="sm">Start Your First Quiz</Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            );
+          }
+
+          const subjectNames: Record<string, string> = {
+            "pharmacology-i": "Pharmacology I",
+            "pharmaceutics-i": "Pharmaceutics I",
+            "pharmaceutical-management": "Pharmaceutical Management",
+            "public-health-pharmacy": "Public Health Pharmacy",
+            "pharmacognosy": "Pharmacognosy",
+            "biochemistry-microbiology": "Biochemistry & Microbiology",
+            "pharmaceutical-chemistry-i": "Pharmaceutical Chemistry I",
+            "pharmacotherapeutics-i": "Pharmacotherapeutics I",
+          };
+
+          const fmtTime = (dateStr: string) => {
+            const diff = Date.now() - new Date(dateStr).getTime();
+            const mins = Math.floor(diff / 60000);
+            if (mins < 1) return "Just now";
+            if (mins < 60) return mins + "m ago";
+            const hrs = Math.floor(mins / 60);
+            if (hrs < 24) return hrs + "h ago";
+            return Math.floor(hrs / 24) + "d ago";
+          };
+
+          return (
+            <div className="space-y-3">
+              {recent.map((r) => (
+                <Link key={r.sessionId} href={"/quiz/" + r.sessionId + "/results"}>
+                  <Card className="transition-all hover:shadow-md cursor-pointer">
+                    <CardContent className="p-4 flex items-center gap-4">
+                      <div className={"flex h-10 w-10 items-center justify-center rounded-lg " + (r.accuracy >= 70 ? "bg-green-100 dark:bg-green-950 text-green-600 dark:text-green-400" : r.accuracy >= 50 ? "bg-yellow-100 dark:bg-yellow-950 text-yellow-600 dark:text-yellow-400" : "bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400")}>
+                        <Brain className="h-5 w-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-sm truncate">{subjectNames[r.subject] || r.subject}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {r.score}/{r.total} correct · {fmtTime(r.date)}
+                        </p>
+                      </div>
+                      <Badge variant={r.accuracy >= 70 ? "default" : r.accuracy >= 50 ? "secondary" : "destructive"}>
+                        {r.accuracy}%
+                      </Badge>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          );
+        })()}
       </div>
 
       {/* Subject Progress */}
@@ -214,30 +254,6 @@ export default function DashboardPage() {
         })}
       </div>
 
-      {/* Recent Activity */}
-      {mounted && s.quizzesTaken > 0 && (
-        <>
-          <h2 className="text-xl font-semibold mt-8 mb-4">Quick Summary</h2>
-          <Card>
-            <CardContent className="p-5">
-              <div className="grid gap-4 sm:grid-cols-3 text-center">
-                <div>
-                  <p className="text-3xl font-bold text-primary">{s.totalCorrect}</p>
-                  <p className="text-sm text-muted-foreground">Correct Answers</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-red-500 dark:text-red-400">{s.totalAttempted - s.totalCorrect}</p>
-                  <p className="text-sm text-muted-foreground">Incorrect Answers</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-muted-foreground">{Object.keys(s.subjectBreakdown).length}</p>
-                  <p className="text-sm text-muted-foreground">Subjects Covered</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </>
-      )}
     </div>
   );
 }

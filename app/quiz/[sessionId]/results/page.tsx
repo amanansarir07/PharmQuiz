@@ -54,6 +54,8 @@ export default function QuizResultsPage({
     (a: any) => a.selected === null
   ).length;
   const total = results.questions.length;
+  // Use score from saved results if available (accounts for negative marking)
+  const displayScore = results.score ?? correct;
   const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
 
   const formatTime = (seconds: number) => {
@@ -88,7 +90,10 @@ export default function QuizResultsPage({
           <div className="mt-8 grid gap-4 sm:grid-cols-4">
             <div className="rounded-xl bg-primary/5 p-4">
               <p className="text-3xl font-bold text-primary">{percentage}%</p>
-              <p className="text-sm text-muted-foreground">Score</p>
+              <p className="text-sm text-muted-foreground">Accuracy</p>
+              {results.score !== undefined && results.score !== correct && (
+                <p className="mt-1 text-xs text-muted-foreground">Score: {displayScore}/{total} (with negative marking)</p>
+              )}
             </div>
             <div className="rounded-xl bg-green-50 dark:bg-green-950 p-4">
               <p className="text-3xl font-bold text-green-600 dark:text-green-400">{correct}</p>
@@ -122,17 +127,34 @@ export default function QuizResultsPage({
 
       {/* Action Buttons */}
       <div className="mb-8 flex flex-col gap-3 sm:flex-row">
+        <Button
+          className="flex-1"
+          onClick={() => {
+            // Retake: create new session with same config
+            if (results?.config) {
+              const { completedAt, ...config } = results.config;
+              const newSessionId = crypto.randomUUID();
+              localStorage.setItem(`quiz-config-${newSessionId}`, JSON.stringify(config));
+              router.push(`/quiz/${newSessionId}`);
+            } else {
+              router.push("/quiz");
+            }
+          }}
+        >
+          <RotateCcw className="mr-2 h-4 w-4" />
+          Retake Same Quiz
+        </Button>
         <Link href="/quiz" className="flex-1">
           <Button variant="outline" className="w-full">
-            <RotateCcw className="mr-2 h-4 w-4" />
-            Take Another MCQ Set
+            <BookOpen className="mr-2 h-4 w-4" />
+            New Quiz
           </Button>
         </Link>
         <Button
+          variant="outline"
           className="flex-1"
           onClick={() => setShowAnswers(!showAnswers)}
         >
-          <BookOpen className="mr-2 h-4 w-4" />
           {showAnswers ? "Hide" : "Show"} Detailed Review
         </Button>
       </div>
@@ -194,7 +216,7 @@ export default function QuizResultsPage({
                           );
                         })}
                       </div>
-                      <div className="mt-3 rounded-lg bg-blue-50 p-3 text-sm text-blue-800">
+                      <div className="mt-3 rounded-lg bg-blue-50 dark:bg-blue-950 p-3 text-sm text-blue-800 dark:text-blue-300">
                         💡 <strong>Explanation:</strong> {q.explanation}
                       </div>
                     </div>

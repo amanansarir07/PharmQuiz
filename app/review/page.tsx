@@ -132,10 +132,10 @@ export default function ReviewPage() {
                     {unitName && <Badge variant="outline" className="max-w-[200px] truncate">{unitName}</Badge>}
                     <Badge
                       variant={
-                        q.difficulty === "easy"
-                          ? "default"
-                          : q.difficulty === "hard"
+                        q.difficulty === "hard"
                           ? "destructive"
+                          : q.difficulty === "easy"
+                          ? "default"
                           : "secondary"
                       }
                     >

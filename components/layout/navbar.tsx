@@ -19,10 +19,12 @@ import {
   Bookmark,
   StickyNote,
   BookOpen,
+History,
 } from "lucide-react";
 
 const MORE_LINKS = [
   { href: "/review", label: "Review", icon: BookOpen },
+  { href: "/history", label: "History", icon: History },
   { href: "/bookmarks", label: "Bookmarks", icon: Bookmark },
   { href: "/notes", label: "Notes", icon: StickyNote },
   { href: "/analytics", label: "Analytics", icon: BarChart3 },
