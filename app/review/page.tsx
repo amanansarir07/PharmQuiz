@@ -21,9 +21,6 @@ import { BookOpen, Search, Bookmark, BookmarkCheck, Eye, EyeOff } from "lucide-r
 
 export default function ReviewPage() {
   const [searchQuery, setSearchQuery] = useState("");
-
-  // Reset pagination when filters change
-  const resetVisible = () => setVisibleCount(30);
   const [filterSubject, setFilterSubject] = useState("all");
   const [filterDifficulty, setFilterDifficulty] = useState("all");
   const [showAnswers, setShowAnswers] = useState<Set<string>>(new Set());
