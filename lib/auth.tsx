@@ -21,6 +21,7 @@ interface AuthContextType {
   updateProfile: (name: string) => Promise<{ error?: string }>;
   changePassword: (currentPassword: string, newPassword: string) => Promise<{ error?: string }>;
   deleteAccount: (password: string) => Promise<{ error?: string }>;
+  signInWithGoogle: () => Promise<{ error?: string }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -301,6 +302,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, [user]);
 
+  const signInWithGoogle = useCallback(async () => {
+    const { error } = await getSupabase().auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: window.location.origin + "/dashboard",
+      },
+    });
+    if (error) return { error: error.message };
+    return {};
+  }, []);
+
   const logout = useCallback(async () => {
     await getSupabase().auth.signOut();
     clearOldAuthStorage();
@@ -310,7 +322,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const isAdmin = user?.role === "admin";
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, isAdmin, login, register, logout, updateProfile, changePassword, deleteAccount }}>
+    <AuthContext.Provider value={{ user, isLoading, isAdmin, login, register, logout, updateProfile, changePassword, deleteAccount, signInWithGoogle }}>
       {children}
     </AuthContext.Provider>
   );
