@@ -61,50 +61,74 @@ export function getQuestionsForQuiz(
   }
 
   return filtered.map((q, i) => {
+    const options = normalizeOptions(q);
+    const correctIndex = getCorrectIndex(q);
     // Shuffle options using Fisher-Yates and track new correct index
-    const options = [...q.options];
-    const correctIndex = q.correct_index;
+    const shuffled = [...options];
     let newCorrectIndex = correctIndex;
-    for (let j = options.length - 1; j > 0; j--) {
+    for (let j = shuffled.length - 1; j > 0; j--) {
       const k = Math.floor(Math.random() * (j + 1));
-      [options[j], options[k]] = [options[k], options[j]];
-      // Track where the correct answer moves
+      [shuffled[j], shuffled[k]] = [shuffled[k], shuffled[j]];
       if (j === newCorrectIndex) newCorrectIndex = k;
       else if (k === newCorrectIndex) newCorrectIndex = j;
     }
     return {
       id: `quiz-q-${i}-${Date.now()}`,
       question: q.question_text,
-      options,
+      options: shuffled,
       correctIndex: newCorrectIndex,
-      explanation: q.explanation,
-      difficulty: q.difficulty,
+      explanation: q.explanation || "",
+      difficulty: q.difficulty || "medium",
       unitId: q.unit_id,
     };
   });
+}
+
+function normalizeOptions(q: any): string[] {
+  // Handle both array and object formats
+  if (Array.isArray(q.options)) {
+    return q.options;
+  }
+  if (q.options && typeof q.options === "object") {
+    return [q.options.a || "", q.options.b || "", q.options.c || "", q.options.d || ""];
+  }
+  return [];
+}
+
+function getCorrectIndex(q: any): number {
+  // Handle correct_index (number) or correct_option (letter like "a")
+  if (typeof q.correct_index === "number") {
+    return q.correct_index;
+  }
+  if (typeof q.correct_option === "string") {
+    const letterMap: Record<string, number> = { a: 0, b: 1, c: 2, d: 3 };
+    return letterMap[q.correct_option.toLowerCase()] ?? 0;
+  }
+  return 0;
 }
 
 export function getAllQuestions(): QuizQuestion[] {
   const all: QuizQuestion[] = [];
   for (const questions of Object.values(allQuestionsBySubject)) {
     for (const q of questions) {
+      const options = normalizeOptions(q);
+      const correctIndex = getCorrectIndex(q);
       // Shuffle options using Fisher-Yates and track new correct index
-      const options = [...q.options];
-      const correctIndex = q.correct_index;
+      const shuffled = [...options];
       let newCorrectIndex = correctIndex;
-      for (let j = options.length - 1; j > 0; j--) {
+      for (let j = shuffled.length - 1; j > 0; j--) {
         const k = Math.floor(Math.random() * (j + 1));
-        [options[j], options[k]] = [options[k], options[j]];
+        [shuffled[j], shuffled[k]] = [shuffled[k], shuffled[j]];
         if (j === newCorrectIndex) newCorrectIndex = k;
         else if (k === newCorrectIndex) newCorrectIndex = j;
       }
       all.push({
         id: q.unit_id + "-" + q.question_text.substring(0, 20),
         question: q.question_text,
-        options,
+        options: shuffled,
         correctIndex: newCorrectIndex,
-        explanation: q.explanation,
-        difficulty: q.difficulty,
+        explanation: q.explanation || "",
+        difficulty: q.difficulty || "medium",
         unitId: q.unit_id,
       });
     }
