@@ -40,12 +40,12 @@ export default function RegisterPage() {
       setLoading(false);
       return;
     }
-    if (!/^[a-zA-Z]+( [a-zA-Z]+)*$/.test(trimmedName)) {
+    if (!/^[\p{L}]+( [\p{L}]+)*$/u.test(trimmedName)) {
       setError("Name can only contain letters and spaces");
       setLoading(false);
       return;
     }
-    if (!/[a-zA-Z]/.test(trimmedName)) {
+    if (!/\p{L}/u.test(trimmedName)) {
       setError("Name must contain at least one letter");
       setLoading(false);
       return;
@@ -104,7 +104,7 @@ export default function RegisterPage() {
                   value={name}
                   onChange={(e) => {
                     // Allow only letters, spaces, hyphens, apostrophes, periods
-                    const filtered = e.target.value.replace(/[^a-zA-Z ]/g, "");
+                    const filtered = e.target.value.replace(/[^\p{L} ]/gu, "");
                     setName(filtered);
                   }}
                   className="pl-10"
