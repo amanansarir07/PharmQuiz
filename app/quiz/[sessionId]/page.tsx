@@ -135,22 +135,36 @@ export default function ActiveQuizPage({
       );
 
       // Save to Supabase for shared stats/leaderboard (non-blocking, best-effort)
+      // Uses SECURITY DEFINER function to bypass RLS (publishable key can't do auth.uid())
       if (user) {
         try {
-          const { error } = await supabase.from("quiz_results").insert({
-            user_id: user.id,
-            subject: quizConfig?.subject || "unknown",
-            score: correct,
-            total,
-            correct,
-            accuracy,
-            time_taken: timeTaken,
+          const { error: rpcError } = await supabase.rpc("save_quiz_result", {
+            p_user_id: user.id,
+            p_subject: quizConfig?.subject || "unknown",
+            p_score: correct,
+            p_total: total,
+            p_correct: correct,
+            p_accuracy: accuracy,
+            p_time_taken: timeTaken,
           });
-          if (error) {
-            console.warn("Supabase insert failed (using localStorage):", error.message);
+          if (rpcError) {
+            // Fallback: try direct INSERT (may fail due to RLS)
+            console.warn("RPC save failed, trying direct insert:", rpcError.message);
+            const { error: insertError } = await supabase.from("quiz_results").insert({
+              user_id: user.id,
+              subject: quizConfig?.subject || "unknown",
+              score: correct,
+              total,
+              correct,
+              accuracy,
+              time_taken: timeTaken,
+            });
+            if (insertError) {
+              console.warn("Direct insert also failed (localStorage only):", insertError.message);
+            }
           }
         } catch (err) {
-          console.warn("Supabase insert error (using localStorage):", err);
+          console.warn("Supabase save error (using localStorage):", err);
         }
       }
 
