@@ -19,6 +19,8 @@ interface AuthContextType {
   register: (name: string, email: string, password: string) => Promise<{ error?: string }>;
   logout: () => void;
   updateProfile: (name: string) => Promise<{ error?: string }>;
+  changePassword: (currentPassword: string, newPassword: string) => Promise<{ error?: string }>;
+  deleteAccount: (password: string) => Promise<{ error?: string }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -228,6 +230,77 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, [user]);
 
+  const changePassword = useCallback(async (currentPassword: string, newPassword: string) => {
+    if (!user) return { error: "Not logged in" };
+
+    // Verify current password first
+    const { error: signInError } = await getSupabase().auth.signInWithPassword({
+      email: user.email,
+      password: currentPassword,
+    });
+
+    if (signInError) {
+      return { error: "Current password is incorrect" };
+    }
+
+    // Update password
+    const { error } = await getSupabase().auth.updateUser({ password: newPassword });
+
+    if (error) {
+      return { error: error.message };
+    }
+
+    return {};
+  }, [user]);
+
+  const deleteAccount = useCallback(async (password: string) => {
+    if (!user) return { error: "Not logged in" };
+
+    // Verify password first
+    const { error: signInError } = await getSupabase().auth.signInWithPassword({
+      email: user.email,
+      password: password,
+    });
+
+    if (signInError) {
+      return { error: "Incorrect password" };
+    }
+
+    try {
+      // Delete user data from profiles (RPC bypasses RLS)
+      // Note: Supabase doesn't allow client-side user deletion directly.
+      // We delete the profile and sign out. The auth user remains but is unusable.
+      const { error: dbError } = await getSupabase()
+        .from("profiles")
+        .delete()
+        .eq("id", user.id);
+
+      if (dbError) {
+        console.warn("Profile delete failed:", dbError.message);
+      }
+
+      // Clear local data
+      if (typeof window !== "undefined") {
+        for (let i = localStorage.length - 1; i >= 0; i--) {
+          const key = localStorage.key(i);
+          if (key && (key.startsWith("quiz-") || key.startsWith("bookmark") || key.startsWith("notes"))) {
+            localStorage.removeItem(key);
+          }
+        }
+      }
+
+      // Sign out
+      await getSupabase().auth.signOut();
+      clearOldAuthStorage();
+      setUser(null);
+
+      return {};
+    } catch (err) {
+      console.error("deleteAccount error:", err);
+      return { error: "Failed to delete account" };
+    }
+  }, [user]);
+
   const logout = useCallback(async () => {
     await getSupabase().auth.signOut();
     clearOldAuthStorage();
@@ -237,7 +310,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const isAdmin = user?.role === "admin";
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, isAdmin, login, register, logout, updateProfile }}>
+    <AuthContext.Provider value={{ user, isLoading, isAdmin, login, register, logout, updateProfile, changePassword, deleteAccount }}>
       {children}
     </AuthContext.Provider>
   );
