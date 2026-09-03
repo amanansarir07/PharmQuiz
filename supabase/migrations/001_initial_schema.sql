@@ -1,4 +1,4 @@
--- PharmQuiz Database Schema
+-- Bujh Database Schema
 -- Run this in Supabase SQL Editor
 
 -- Profiles table (extends auth.users)

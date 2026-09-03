@@ -1,5 +1,5 @@
 /**
- * Seed script for PharmQuiz
+ * Seed script for Bujh
  *
  * Usage:
  *   1. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local
@@ -41,7 +41,7 @@ interface QuestionData {
 }
 
 async function seed() {
-  console.log("🏥 PharmQuiz Seed Script");
+  console.log("🏥 Bujh Seed Script");
   console.log("========================\n");
 
   // Step 1: Seed subjects
