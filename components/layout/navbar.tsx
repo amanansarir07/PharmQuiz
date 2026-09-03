@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS, APP_NAME } from "@/lib/constants";
 import { useAuth } from "@/lib/auth";
@@ -31,6 +31,19 @@ export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    if (!moreOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [moreOpen]);
 
   const { user, logout } = useAuth();
   const { theme, setTheme } = useTheme();
@@ -63,10 +76,9 @@ export function Navbar() {
             </Link>
           ))}
           {isLoggedIn && (
-            <div className="relative">
+            <div className="relative" ref={moreRef}>
               <button
                 onClick={() => setMoreOpen(!moreOpen)}
-                onBlur={() => setTimeout(() => setMoreOpen(false), 150)}
                 className={cn(
                   "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                   MORE_LINKS.some((l) => pathname === l.href)
@@ -78,11 +90,15 @@ export function Navbar() {
                 <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", moreOpen && "rotate-180")} />
               </button>
               {moreOpen && (
-                <div className="absolute right-0 top-full mt-1 w-44 rounded-xl border bg-popover p-1.5 shadow-lg">
+                <div
+                  onMouseDown={(e) => e.preventDefault()}
+                  className="absolute right-0 top-full mt-1 w-44 rounded-xl border bg-popover p-1.5 shadow-lg"
+                >
                   {MORE_LINKS.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
+                      onClick={() => setMoreOpen(false)}
                       className={cn(
                         "flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                         pathname === link.href
