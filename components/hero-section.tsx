@@ -13,7 +13,7 @@ export function HeroSection() {
         <div className="text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             <Brain className="h-4 w-4" />
-            Diploma in Pharmacy 2nd Year
+            Built for Pharmacy Students in Nepal
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
             {user ? (
@@ -23,15 +23,15 @@ export function HeroSection() {
               </>
             ) : (
               <>
-                Ace Your{" "}
+                Master Your{" "}
                 <span className="text-primary">Pharmacy Exams</span>
               </>
             )}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             {user
-              ? "Jump back into your MCQ practice. Pick up where you left off!"
-              : "Practice MCQs covering all 8 subjects of your 2nd year diploma. Timed practice, analytics, and a leaderboard to keep you on track."}
+              ? "Pick up where you left off and keep your streak going."
+              : "1,500+ practice questions across all 8 subjects. Track your progress, compete on the leaderboard, and walk into your exams confident."}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             {user ? (
@@ -56,14 +56,14 @@ export function HeroSection() {
                   href="/subjects"
                   className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all"
                 >
-                  Start Practicing
+                  Browse Subjects
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/auth/register"
                   className="inline-flex items-center gap-2 rounded-xl border bg-card px-6 py-3 text-base font-semibold shadow-sm hover:bg-muted transition-all"
                 >
-                  Create Free Account
+                  Sign Up Free
                 </Link>
               </>
             )}

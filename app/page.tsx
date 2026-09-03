@@ -50,10 +50,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight">
-              All 8 Subjects Covered
+              Every Subject You Need
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Every unit and subtopic from your syllabus — exam-focused MCQs
+              Comprehensive coverage of the CTEVT 2nd year pharmacy syllabus
             </p>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -91,7 +91,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight">
-              Everything You Need to Pass
+              Why Students Choose Bujh
             </h2>
           </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -99,32 +99,32 @@ export default function HomePage() {
               {
                 icon: Brain,
                 title: "Custom MCQs",
-                desc: "Choose subject, units, difficulty, and time limit. Questions are shuffled each time.",
+                desc: "Pick your subject, select units, set difficulty and timer. Every session is different.",
               },
               {
                 icon: BookOpen,
                 title: "Full Question Bank",
-                desc: "Browse all MCQs organized by subject and unit. Study mode with detailed explanations.",
+                desc: "Search and filter through the full question bank. Study mode shows explanations for every answer.",
               },
               {
                 icon: Trophy,
                 title: "Leaderboard",
-                desc: "Compete with classmates. Rankings update as you practice more MCQs.",
+                desc: "See how you rank against other pharmacy students. Daily, weekly, and all-time rankings.",
               },
               {
                 icon: BarChart3,
                 title: "Performance Analytics",
-                desc: "Track accuracy per subject, spot weak areas, and monitor improvement over time.",
+                desc: "Subject-wise accuracy, progress charts, and weak area detection — know exactly where to focus.",
               },
               {
                 icon: CheckCircle,
                 title: "Bookmarks & Notes",
-                desc: "Save difficult questions and add personal notes for quick revision before exams.",
+                desc: "Bookmark tough questions and jot down notes. Everything in one place for last-minute revision.",
               },
               {
                 icon: Clock,
                 title: "Timed Practice",
-                desc: "Set time limits to simulate real exam conditions and improve your speed.",
+                desc: "Practice under pressure with countdown timers — just like the real exam.",
               },
             ].map((feature) => (
               <div
@@ -146,17 +146,17 @@ export default function HomePage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <h2 className="text-3xl font-bold tracking-tight">
-            Ready to Start?
+            Your Pharmacy Exam Prep Starts Here
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Start practicing now and be fully prepared for your exams
+            Join students who are already using Bujh to ace their exams
           </p>
           <div className="mt-8 flex justify-center">
             <Link
               href="/quiz"
               className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-all"
             >
-              Start MCQs
+              Get Started — It's Free
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
