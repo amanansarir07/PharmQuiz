@@ -33,6 +33,7 @@ export default function ActiveQuizPage({
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [quizConfig, setQuizConfig] = useState<any>(null);
   const [showExplanation, setShowExplanation] = useState(false);
+  const [showResumedBanner, setShowResumedBanner] = useState(false);
   const answersRef = useRef<(number | null)[]>([]);
   const { user } = useAuth();
 
@@ -48,8 +49,34 @@ export default function ActiveQuizPage({
         config.difficulty || "mixed",
         config.numQuestions || 20
       );
-      setQuestions(qs.length > 0 ? qs : getFallbackQuestions());
-      setAnswers(new Array(Math.max(qs.length, 1)).fill(null));
+      const finalQs = qs.length > 0 ? qs : getFallbackQuestions();
+      setQuestions(finalQs);
+
+      // Try to restore saved progress (crash recovery)
+      const savedProgress = localStorage.getItem(`quiz-progress-${sessionId}`);
+      if (savedProgress) {
+        try {
+          const progress = JSON.parse(savedProgress);
+          if (
+            progress.savedAt &&
+            Date.now() - progress.savedAt < 4 * 60 * 60 * 1000 &&
+            progress.answers?.length === finalQs.length
+          ) {
+            setAnswers(progress.answers);
+            setCurrentIndex(progress.currentIndex || 0);
+            setMarkedForReview(new Set(progress.markedForReview || []));
+            if (config.timeLimit && progress.timeLeft != null && progress.timeLeft > 0) {
+              setTimeLeft(progress.timeLeft);
+            } else if (config.timeLimit) {
+              setTimeLeft(config.timeLimit * 60);
+            }
+            return;
+          }
+        } catch {}
+      }
+
+      // Fresh start
+      setAnswers(new Array(Math.max(finalQs.length, 1)).fill(null));
       if (config.timeLimit) {
         setTimeLeft(config.timeLimit * 60);
       }
@@ -65,6 +92,19 @@ export default function ActiveQuizPage({
   useEffect(() => {
     answersRef.current = answers;
   }, [answers]);
+
+  // Save quiz progress to localStorage on every change (crash recovery)
+  useEffect(() => {
+    if (questions.length === 0 || answers.every((a) => a === null)) return;
+    const progress = {
+      answers,
+      currentIndex,
+      markedForReview: Array.from(markedForReview),
+      timeLeft,
+      savedAt: Date.now(),
+    };
+    localStorage.setItem(`quiz-progress-${sessionId}`, JSON.stringify(progress));
+  }, [answers, currentIndex, markedForReview, timeLeft, questions.length, sessionId]);
 
   useEffect(() => {
     if (timeLeft === null || timeLeft <= 0) return;
@@ -103,6 +143,21 @@ export default function ActiveQuizPage({
   useEffect(() => {
     setShowExplanation(false);
   }, [currentIndex]);
+
+  // Check for restored progress on mount
+  useEffect(() => {
+    const saved = localStorage.getItem(`quiz-progress-${sessionId}`);
+    if (saved) {
+      try {
+        const p = JSON.parse(saved);
+        if (p.savedAt && Date.now() - p.savedAt < 4 * 60 * 60 * 1000) {
+          setShowResumedBanner(true);
+          const timer = setTimeout(() => setShowResumedBanner(false), 4000);
+          return () => clearTimeout(timer);
+        }
+      } catch {}
+    }
+  }, [sessionId]);
 
   const toggleMark = () => {
     setMarkedForReview((prev) => {
@@ -182,6 +237,8 @@ export default function ActiveQuizPage({
         }
       }
 
+      // Clear saved progress
+      localStorage.removeItem(`quiz-progress-${sessionId}`);
       router.push(`/quiz/${sessionId}/results`);
     },
     [questions, quizConfig, timeLeft, router, sessionId, user]
@@ -210,6 +267,14 @@ export default function ActiveQuizPage({
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+      {/* Resumed from crash banner */}
+      {showResumedBanner && (
+        <div className="mb-4 rounded-lg border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950 p-3 text-sm text-green-700 dark:text-green-300 flex items-center gap-2">
+          <span>✅</span>
+          <span>Quiz progress restored from where you left off!</span>
+        </div>
+      )}
+
       {/* Top Bar */}
       <div className="mb-6 flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-3">

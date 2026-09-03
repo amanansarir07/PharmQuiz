@@ -21,9 +21,13 @@ import { BookOpen, Search, Bookmark, BookmarkCheck, Eye, EyeOff } from "lucide-r
 
 export default function ReviewPage() {
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Reset pagination when filters change
+  const resetVisible = () => setVisibleCount(30);
   const [filterSubject, setFilterSubject] = useState("all");
   const [filterDifficulty, setFilterDifficulty] = useState("all");
   const [showAnswers, setShowAnswers] = useState<Set<string>>(new Set());
+  const [visibleCount, setVisibleCount] = useState(30);
   const { isBookmarked, toggleBookmark } = useBookmarks();
 
   const allQuestions = getAllQuestions();
@@ -112,12 +116,12 @@ export default function ReviewPage() {
       </div>
 
       <p className="mb-4 text-sm text-muted-foreground">
-        {filtered.length} question(s) found
+        {filtered.length} question(s) found{filtered.length > 30 ? ` (showing ${Math.min(visibleCount, filtered.length)})` : ""}
       </p>
 
       {/* Questions */}
       <div className="space-y-4">
-        {filtered.map((q) => {
+        {filtered.slice(0, visibleCount).map((q) => {
           const subjectForQ = getSubjectForUnit(q.unitId);
           const subjectName = subjects.find((s) => s.slug === subjectForQ)?.name || "";
           const unitName = getUnitName(q.unitId);
@@ -205,6 +209,16 @@ export default function ReviewPage() {
           </Card>
         )}
       </div>
+      {visibleCount < filtered.length && (
+        <div className="mt-6 text-center">
+          <Button
+            variant="outline"
+            onClick={() => setVisibleCount((c) => c + 30)}
+          >
+            Load More ({filtered.length - visibleCount} remaining)
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
