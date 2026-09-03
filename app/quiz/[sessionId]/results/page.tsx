@@ -67,16 +67,16 @@ export default function QuizResultsPage({
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
       {/* Score Card */}
-      <Card className="mb-8">
-        <CardContent className="p-8 text-center">
-          <div className="mb-4">
+      <Card className="mb-6">
+        <CardContent className="p-5 sm:p-8">
+          <div className="flex items-center gap-4 mb-4">
             {percentage >= 70 ? (
-              <Trophy className="mx-auto h-16 w-16 text-yellow-500" />
+              <Trophy className="h-10 w-10 sm:h-16 sm:w-16 shrink-0 text-yellow-500" />
             ) : (
-              <CheckCircle className="mx-auto h-16 w-16 text-primary" />
+              <CheckCircle className="h-10 w-10 sm:h-16 sm:w-16 shrink-0 text-primary" />
             )}
           </div>
-          <h1 className="text-3xl font-bold">
+          <h1 className="text-xl sm:text-3xl font-bold">
             {percentage >= 70
               ? "Great Job! 🎉"
               : percentage >= 50
@@ -87,37 +87,37 @@ export default function QuizResultsPage({
             Here&apos;s how you performed
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-4">
-            <div className="rounded-xl bg-primary/5 p-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4 mb-4">
+            <div className="rounded-xl bg-primary/5 p-3 sm:p-4 text-center">
               <p className="text-3xl font-bold text-primary">{percentage}%</p>
               <p className="text-sm text-muted-foreground">Accuracy</p>
               {results.score !== undefined && results.score !== correct && (
                 <p className="mt-1 text-xs text-muted-foreground">Score: {displayScore}/{total} (with negative marking)</p>
               )}
             </div>
-            <div className="rounded-xl bg-green-50 dark:bg-green-950 p-4">
+            <div className="rounded-xl bg-green-50 dark:bg-green-950 p-3 sm:p-4 text-center">
               <p className="text-3xl font-bold text-green-600 dark:text-green-400">{correct}</p>
               <p className="text-sm text-muted-foreground">Correct</p>
             </div>
-            <div className="rounded-xl bg-red-50 dark:bg-red-950 p-4">
+            <div className="rounded-xl bg-red-50 dark:bg-red-950 p-3 sm:p-4 text-center">
               <p className="text-3xl font-bold text-red-600 dark:text-red-400">{incorrect}</p>
               <p className="text-sm text-muted-foreground">Incorrect</p>
             </div>
-            <div className="rounded-xl bg-muted p-4">
+            <div className="rounded-xl bg-muted p-3 sm:p-4 text-center">
               <p className="text-3xl font-bold">{unattempted}</p>
               <p className="text-sm text-muted-foreground">Unattempted</p>
             </div>
           </div>
 
-          <div className="mt-6">
-            <Progress value={percentage} className="h-3" />
+          <div className="mt-2">
+            <Progress value={percentage} className="h-2" />
             <p className="mt-2 text-sm text-muted-foreground">
               {correct} of {total} correct
             </p>
           </div>
 
           {results.timeTaken !== null && results.timeTaken !== undefined && (
-            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+            <div className="mt-2 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground">
               <Clock className="h-4 w-4" />
               Time taken: {formatTime(results.timeTaken)}
             </div>
@@ -126,7 +126,7 @@ export default function QuizResultsPage({
       </Card>
 
       {/* Action Buttons */}
-      <div className="mb-8 flex flex-col gap-3 sm:flex-row">
+      <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
         <Button
           className="flex-1"
           onClick={() => {
@@ -158,6 +158,28 @@ export default function QuizResultsPage({
           {showAnswers ? "Hide" : "Show"} Detailed Review
         </Button>
       </div>
+
+      {/* Quick Summary */}
+      {!showAnswers && incorrect > 0 && (
+        <Card className="mb-6 border-l-4 border-l-red-500">
+          <CardContent className="p-4">
+            <p className="text-sm font-medium mb-2 text-red-600 dark:text-red-400">
+              {incorrect} incorrect - tap Detailed Review for explanations
+            </p>
+            {results.questions
+              .map((q: any, i: number) => ({ q, answer: results.answers[i], i }))
+              .filter(({ answer }: any) => !answer.isCorrect && answer.selected !== null)
+              .slice(0, 3)
+              .map(({ q, i }: any) => (
+                <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground mb-1">
+                  <XCircle className="h-3 w-3 mt-0.5 shrink-0 text-red-500" />
+                  <span className="line-clamp-1">{q.question}</span>
+                </div>
+              ))}
+            {incorrect > 3 && <p className="text-xs text-muted-foreground mt-1">+{incorrect - 3} more</p>}
+          </CardContent>
+        </Card>
+      )}
 
       {/* Detailed Review */}
       {showAnswers && (

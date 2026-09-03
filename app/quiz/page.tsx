@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { subjects } from "@/data/subjects";
 import { Button } from "@/components/ui/button";
@@ -32,6 +32,12 @@ function QuizSetupInner() {
   const [timeLimit, setTimeLimit] = useState<number | null>(null);
   const [negativeMarking, setNegativeMarking] = useState(false);
   const [revisionMode, setRevisionMode] = useState(false);
+  const unitsRef = useRef<HTMLDivElement>(null);
+  const difficultyRef = useRef<HTMLDivElement>(null);
+  const questionsRef = useRef<HTMLDivElement>(null);
+  const timeRef = useRef<HTMLDivElement>(null);
+  const optionsRef = useRef<HTMLDivElement>(null);
+  const startRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const subjectParam = searchParams.get("subject");
@@ -42,22 +48,35 @@ function QuizSetupInner() {
 
   const subject = subjects.find((s) => s.slug === selectedSubject);
 
+  const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
+    setTimeout(() => {
+      ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 150);
+  };
+
   const handleSubjectChange = (slug: string) => {
     setSelectedSubject(slug);
     setSelectedUnits([]);
+    scrollTo(unitsRef);
   };
 
   const toggleUnit = (unitId: string) => {
-    setSelectedUnits((prev) =>
-      prev.includes(unitId)
+    setSelectedUnits((prev) => {
+      const next = prev.includes(unitId)
         ? prev.filter((id) => id !== unitId)
-        : [...prev, unitId]
-    );
+        : [...prev, unitId];
+      // Auto-scroll to difficulty when first unit is selected
+      if (next.length === 1 && prev.length === 0) {
+        scrollTo(difficultyRef);
+      }
+      return next;
+    });
   };
 
   const selectAllUnits = () => {
     if (subject) {
       setSelectedUnits(subject.units.map((u) => u.id));
+      scrollTo(difficultyRef);
     }
   };
 
@@ -129,7 +148,7 @@ function QuizSetupInner() {
 
         {/* Unit Selection */}
         {subject && (
-          <Card>
+          <Card ref={unitsRef}>
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -178,7 +197,7 @@ function QuizSetupInner() {
         )}
 
         {/* Difficulty */}
-        <Card>
+        <Card ref={difficultyRef}>
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <Gauge className="h-5 w-5" />
@@ -205,7 +224,7 @@ function QuizSetupInner() {
         </Card>
 
         {/* Number of Questions */}
-        <Card>
+        <Card ref={questionsRef}>
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <Hash className="h-5 w-5" />
@@ -232,7 +251,7 @@ function QuizSetupInner() {
         </Card>
 
         {/* Time Limit */}
-        <Card>
+        <Card ref={timeRef}>
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <Clock className="h-5 w-5" />
@@ -259,7 +278,7 @@ function QuizSetupInner() {
         </Card>
 
         {/* Negative Marking */}
-        <Card>
+        <Card ref={optionsRef}>
           <CardContent className="pt-6">
             <label className="flex items-center gap-3 cursor-pointer">
               <Checkbox
@@ -295,6 +314,7 @@ function QuizSetupInner() {
         </Card>
 
         {/* Start Quiz Button */}
+        <div ref={startRef} />
         <Button
           size="lg"
           className="w-full"
