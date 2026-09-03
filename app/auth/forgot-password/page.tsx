@@ -42,8 +42,8 @@ export default function ForgotPasswordPage() {
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
             <GraduationCap className="h-6 w-6 text-primary" />
           </div>
-          <CardTitle className="text-2xl">Reset Password</CardTitle>
-          <CardDescription>Enter your email and we will send you a reset link</CardDescription>
+          <CardTitle className="text-2xl font-bold">Reset Password</CardTitle>
+          <CardDescription>We'll send you a link to reset your password</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           {sent ? (
@@ -66,10 +66,10 @@ export default function ForgotPasswordPage() {
                 <Label htmlFor="email">Email</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <Input id="email" type="email" placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} className="pl-10" required />
+                  <Input id="email" type="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className="pl-10" required />
                 </div>
               </div>
-              <Button type="submit" className="w-full" disabled={loading}>{loading ? "Sending..." : "Send Reset Link"}</Button>
+              <Button type="submit" className="w-full" disabled={loading}>{loading ? "Sending..." : "Send reset link"}</Button>
               <div className="text-center"><Link href="/auth/login" className="text-sm text-muted-foreground hover:text-foreground hover:underline"><ArrowLeft className="inline h-3 w-3 mr-1" /> Back to login</Link></div>
             </form>
           )}

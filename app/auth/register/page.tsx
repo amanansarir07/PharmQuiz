@@ -75,9 +75,9 @@ export default function RegisterPage() {
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
             <GraduationCap className="h-6 w-6 text-primary" />
           </div>
-          <CardTitle className="text-2xl">Create your account</CardTitle>
+          <CardTitle className="text-2xl font-bold">Create your account</CardTitle>
           <CardDescription>
-            Join D. Pharmacy 2nd year students preparing for their CTEVT exams
+            Start practicing MCQs for your CTEVT exams
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
@@ -114,7 +114,7 @@ export default function RegisterPage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-10"
@@ -129,7 +129,7 @@ export default function RegisterPage() {
                 <Input
                   id="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
+                  placeholder="Create a password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="pl-10 pr-10"
@@ -156,7 +156,7 @@ export default function RegisterPage() {
                 <Input
                   id="confirmPassword"
                   type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
+                  placeholder="Create a password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="pl-10"
@@ -168,12 +168,12 @@ export default function RegisterPage() {
           </CardContent>
           <CardFooter className="flex flex-col gap-4">
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Creating account..." : "Create your account"}
+              {loading ? "Creating account..." : "Get started with Bujh"}
             </Button>
             <p className="text-center text-sm text-muted-foreground">
               Already have an account?{" "}
               <Link href="/auth/login" className="text-primary font-medium hover:underline">
-                Sign in
+                Sign in instead
               </Link>
             </p>
           </CardFooter>
