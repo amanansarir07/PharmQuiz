@@ -94,13 +94,13 @@ export default function RegisterPage() {
             )}
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
-              <p className="text-xs text-muted-foreground">Letters and spaces only (e.g. "Aman Ansari")</p>
+              <p className="text-xs text-muted-foreground">Letters and spaces only</p>
               <div className="relative">
                 <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="name"
                   type="text"
-                  placeholder="e.g. Aman Ansari"
+                  placeholder="Enter your full name"
                   value={name}
                   onChange={(e) => {
                     // Allow only letters, spaces, hyphens, apostrophes, periods

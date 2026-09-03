@@ -101,7 +101,7 @@ export default function ProfilePage() {
                   const filtered = e.target.value.replace(/[^\p{L} ]/gu, "");
                   setName(filtered);
                 }}
-                placeholder="e.g. Aman Ansari"
+                placeholder="Enter your full name"
                 maxLength={50}
               />
             </div>
