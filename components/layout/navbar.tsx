@@ -13,6 +13,7 @@ import {
   X,
   Sun,
   Moon,
+  User,
   ChevronDown,
   BarChart3,
   Bookmark,
@@ -120,8 +121,17 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           {isLoggedIn ? (
             <div className="hidden md:flex items-center gap-2">
-              <Link href="/profile" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Hi, {user?.name?.split(" ")[0] || "User"}</Link>
               <Link href="/dashboard" className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">Dashboard</Link>
+              <Link
+                href="/profile"
+                className="flex items-center gap-2 rounded-lg border px-2 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                title="Edit profile"
+              >
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <User className="h-4 w-4" />
+                </div>
+                <span className="max-w-[100px] truncate">{user?.name?.split(" ")[0] || "User"}</span>
+              </Link>
               <button onClick={() => { logout(); router.push("/"); }} className="rounded-lg bg-muted px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">Sign Out</button>
             </div>
           ) : (
