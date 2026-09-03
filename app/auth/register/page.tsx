@@ -40,8 +40,8 @@ export default function RegisterPage() {
       setLoading(false);
       return;
     }
-    if (!/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(trimmedName)) {
-      setError("Name can only contain letters, spaces, hyphens, and apostrophes");
+    if (!/^[a-zA-Z]+( [a-zA-Z]+)*$/.test(trimmedName)) {
+      setError("Name can only contain letters and spaces");
       setLoading(false);
       return;
     }
@@ -94,7 +94,7 @@ export default function RegisterPage() {
             )}
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
-              <p className="text-xs text-muted-foreground">Letters, spaces, hyphens only (e.g. "Aman Ansari")</p>
+              <p className="text-xs text-muted-foreground">Letters and spaces only (e.g. "Aman Ansari")</p>
               <div className="relative">
                 <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
@@ -104,7 +104,7 @@ export default function RegisterPage() {
                   value={name}
                   onChange={(e) => {
                     // Allow only letters, spaces, hyphens, apostrophes, periods
-                    const filtered = e.target.value.replace(/[^a-zA-Z'\s.\-]/g, "");
+                    const filtered = e.target.value.replace(/[^a-zA-Z ]/g, "");
                     setName(filtered);
                   }}
                   className="pl-10"

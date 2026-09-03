@@ -98,7 +98,7 @@ export default function ProfilePage() {
                 id="name"
                 value={name}
                 onChange={(e) => {
-                  const filtered = e.target.value.replace(/[^a-zA-Z'\s.\-]/g, "");
+                  const filtered = e.target.value.replace(/[^a-zA-Z ]/g, "");
                   setName(filtered);
                 }}
                 placeholder="e.g. Aman Ansari"
