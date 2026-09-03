@@ -19,11 +19,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Redirect if already logged in
-  useEffect(() => {
-    if (user) router.push("/dashboard");
-  }, [user, router]);
-
+  // If already logged in, show nothing (AuthGuard handles redirect)
   if (user) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
