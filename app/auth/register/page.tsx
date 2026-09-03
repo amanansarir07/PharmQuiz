@@ -33,6 +33,24 @@ export default function RegisterPage() {
     setLoading(true);
     setError("");
 
+    // Validate name: only letters, spaces, hyphens, apostrophes; min 2 chars; must have a letter
+    const trimmedName = name.trim();
+    if (trimmedName.length < 2) {
+      setError("Name must be at least 2 characters");
+      setLoading(false);
+      return;
+    }
+    if (!/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(trimmedName)) {
+      setError("Name can only contain letters, spaces, hyphens, and apostrophes");
+      setLoading(false);
+      return;
+    }
+    if (!/[a-zA-Z]/.test(trimmedName)) {
+      setError("Name must contain at least one letter");
+      setLoading(false);
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       setLoading(false);
@@ -76,16 +94,22 @@ export default function RegisterPage() {
             )}
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
+              <p className="text-xs text-muted-foreground">Letters, spaces, hyphens only (e.g. "Aman Ansari")</p>
               <div className="relative">
                 <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   id="name"
                   type="text"
-                  placeholder="Your name"
+                  placeholder="e.g. Aman Ansari"
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => {
+                    // Allow only letters, spaces, hyphens, apostrophes, periods
+                    const filtered = e.target.value.replace(/[^a-zA-Z'\s.\-]/g, "");
+                    setName(filtered);
+                  }}
                   className="pl-10"
                   required
+                  maxLength={50}
                 />
               </div>
             </div>

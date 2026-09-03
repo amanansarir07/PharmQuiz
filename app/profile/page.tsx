@@ -29,10 +29,23 @@ export default function ProfilePage() {
       setError("Name cannot be empty");
       return;
     }
+    // Validate name
+    const trimmedName = name.trim();
+    if (trimmedName.length < 2) {
+      setError("Name must be at least 2 characters");
+      setLoading(false);
+      return;
+    }
+    if (!/[a-zA-Z]/.test(trimmedName)) {
+      setError("Name must contain at least one letter");
+      setLoading(false);
+      return;
+    }
+
     setLoading(true);
     setError("");
     setSuccess(false);
-    const result = await updateProfile(name.trim());
+    const result = await updateProfile(trimmedName);
     if (result.error) {
       setError(result.error);
     } else {
@@ -81,7 +94,16 @@ export default function ProfilePage() {
             )}
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
-              <Input id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" />
+              <Input
+                id="name"
+                value={name}
+                onChange={(e) => {
+                  const filtered = e.target.value.replace(/[^a-zA-Z'\s.\-]/g, "");
+                  setName(filtered);
+                }}
+                placeholder="e.g. Aman Ansari"
+                maxLength={50}
+              />
             </div>
             <Button onClick={handleSave} disabled={loading || name.trim() === user.name}>
               {loading ? "Saving..." : "Save Changes"}
