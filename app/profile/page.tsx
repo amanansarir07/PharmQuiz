@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { User, Mail, Calendar, ArrowLeft, CheckCircle, Lock, Eye, EyeOff, Trash2, LogOut, AlertTriangle, Loader2 } from "lucide-react";
+import { User, Mail, Calendar, ArrowLeft, CheckCircle, Lock, Eye, EyeOff, Trash2, LogOut, AlertTriangle, Loader2, ChevronDown, ChevronUp } from "lucide-react";
 
 export default function ProfilePage() {
   const { user, updateProfile, changePassword, deleteAccount, logout } = useAuth();
@@ -33,6 +33,7 @@ export default function ProfilePage() {
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [deleteError, setDeleteError] = useState("");
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   if (!user) {
     return (
@@ -172,8 +173,13 @@ export default function ProfilePage() {
         </Card>
         {/* Change Password */}
         <Card>
-          <CardHeader><CardTitle className="text-lg flex items-center gap-2"><Lock className="h-5 w-5" /> Change Password</CardTitle><CardDescription>Update your account password</CardDescription></CardHeader>
-          <CardContent className="space-y-4">
+          <button onClick={() => setActiveSection(activeSection === "password" ? null : "password")} className="w-full text-left">
+            <CardHeader className="flex flex-row items-center justify-between cursor-pointer hover:bg-muted/30 rounded-t-xl transition-colors">
+              <div><CardTitle className="text-lg flex items-center gap-2"><Lock className="h-5 w-5" /> Change Password</CardTitle><CardDescription>Update your account password</CardDescription></div>
+              {activeSection === "password" ? <ChevronUp className="h-5 w-5 text-muted-foreground shrink-0" /> : <ChevronDown className="h-5 w-5 text-muted-foreground shrink-0" />}
+            </CardHeader>
+          </button>
+          {activeSection === "password" && <CardContent className="space-y-4 pt-0">
             {pwError && <div className="rounded-lg bg-red-50 dark:bg-red-950 p-3 text-sm text-red-600 dark:text-red-400">{pwError}</div>}
             {pwSuccess && <div className="rounded-lg bg-green-50 dark:bg-green-950 p-3 text-sm text-green-600 dark:text-green-400 flex items-center gap-2"><CheckCircle className="h-4 w-4" /> Password changed successfully!</div>}
             <div className="space-y-2"><Label>Current Password</Label><Input type={showPasswords ? "text" : "password"} value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} placeholder="Enter current password" /></div>
@@ -185,7 +191,7 @@ export default function ProfilePage() {
                 {showPasswords ? <><EyeOff className="h-4 w-4" /> Hide</> : <><Eye className="h-4 w-4" /> Show</>}
               </button>
             </div>
-          </CardContent>
+          </CardContent>}
         </Card>
 
         {/* Sign Out */}
@@ -195,8 +201,13 @@ export default function ProfilePage() {
 
         {/* Danger Zone - Delete Account */}
         <Card className="border-red-200 dark:border-red-900">
-          <CardHeader><CardTitle className="text-lg flex items-center gap-2 text-red-600 dark:text-red-400"><Trash2 className="h-5 w-5" /> Delete Account</CardTitle><CardDescription>Permanently delete your account and all associated data. This action cannot be undone.</CardDescription></CardHeader>
-          <CardContent className="space-y-4">
+          <button onClick={() => setActiveSection(activeSection === "delete" ? null : "delete")} className="w-full text-left">
+            <CardHeader className="flex flex-row items-center justify-between cursor-pointer hover:bg-red-50/50 dark:hover:bg-red-950/30 rounded-t-xl transition-colors">
+              <div><CardTitle className="text-lg flex items-center gap-2 text-red-600 dark:text-red-400"><Trash2 className="h-5 w-5" /> Delete Account</CardTitle><CardDescription>Permanently delete your account and all associated data. This action cannot be undone.</CardDescription></div>
+              {activeSection === "delete" ? <ChevronUp className="h-5 w-5 text-muted-foreground shrink-0" /> : <ChevronDown className="h-5 w-5 text-muted-foreground shrink-0" />}
+            </CardHeader>
+          </button>
+          {activeSection === "delete" && <CardContent className="space-y-4 pt-0">
             {!showDeleteConfirm ? (
               <Button variant="destructive" onClick={() => setShowDeleteConfirm(true)}><Trash2 className="mr-2 h-4 w-4" /> Delete My Account</Button>
             ) : (
@@ -210,7 +221,7 @@ export default function ProfilePage() {
                 </div>
               </div>
             )}
-          </CardContent>
+          </CardContent>}
         </Card>
       </div>
     </div>
