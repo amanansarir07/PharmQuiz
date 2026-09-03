@@ -19,6 +19,7 @@ import {
   Hash,
   Gauge,
   CheckSquare,
+  BookOpen,
 } from "lucide-react";
 
 function QuizSetupInner() {
@@ -95,7 +96,7 @@ function QuizSetupInner() {
         <Card>
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <span className="text-xl">📚</span>
+              <BookOpen className="h-5 w-5 text-primary" />
               Select Subject
             </CardTitle>
           </CardHeader>

@@ -36,7 +36,7 @@ const periods: { key: LeaderboardPeriod; icon: React.ElementType }[] = [
 
 const podiumConfig = [
   { bg: "from-yellow-500 to-amber-500", ring: "ring-yellow-500", medal: "🥇", label: "1st", height: "h-28", avatarSize: "h-16 w-16", textSize: "text-2xl" },
-  { bg: "from-gray-300 to-gray-400", ring: "ring-gray-400", medal: "🥈", label: "2nd", height: "h-20", avatarSize: "h-14 w-14", textSize: "text-xl" },
+  { bg: "from-slate-300 to-slate-400", ring: "ring-slate-400", medal: "🥈", label: "2nd", height: "h-20", avatarSize: "h-14 w-14", textSize: "text-xl" },
   { bg: "from-amber-600 to-orange-500", ring: "ring-amber-500", medal: "🥉", label: "3rd", height: "h-16", avatarSize: "h-12 w-12", textSize: "text-lg" },
 ];
 

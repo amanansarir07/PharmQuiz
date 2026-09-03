@@ -90,12 +90,12 @@ export default function QuizResultsPage({
               <p className="text-3xl font-bold text-primary">{percentage}%</p>
               <p className="text-sm text-muted-foreground">Score</p>
             </div>
-            <div className="rounded-xl bg-green-50 p-4">
-              <p className="text-3xl font-bold text-green-600">{correct}</p>
+            <div className="rounded-xl bg-green-50 dark:bg-green-950 p-4">
+              <p className="text-3xl font-bold text-green-600 dark:text-green-400">{correct}</p>
               <p className="text-sm text-muted-foreground">Correct</p>
             </div>
-            <div className="rounded-xl bg-red-50 p-4">
-              <p className="text-3xl font-bold text-red-600">{incorrect}</p>
+            <div className="rounded-xl bg-red-50 dark:bg-red-950 p-4">
+              <p className="text-3xl font-bold text-red-600 dark:text-red-400">{incorrect}</p>
               <p className="text-sm text-muted-foreground">Incorrect</p>
             </div>
             <div className="rounded-xl bg-muted p-4">
@@ -173,16 +173,16 @@ export default function QuizResultsPage({
                               key={j}
                               className={`flex items-center gap-2 rounded-lg p-2 text-sm ${
                                 isOptionCorrect
-                                  ? "bg-green-50 text-green-800"
+                                  ? "bg-green-50 dark:bg-green-950 dark:text-green-300 text-green-800"
                                   : isOptionSelected && !isCorrect
-                                  ? "bg-red-50 text-red-800"
+                                  ? "bg-red-50 dark:bg-red-950 dark:text-red-300 text-red-800"
                                   : ""
                               }`}
                             >
                               {isOptionCorrect ? (
-                                <CheckCircle className="h-4 w-4 text-green-600" />
+                                <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
                               ) : isOptionSelected && !isCorrect ? (
-                                <XCircle className="h-4 w-4 text-red-600" />
+                                <XCircle className="h-4 w-4 text-red-600 dark:text-red-400" />
                               ) : (
                                 <span className="h-4 w-4" />
                               )}

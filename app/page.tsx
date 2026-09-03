@@ -82,15 +82,7 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="mt-8 text-center">
-            <Link
-              href="/subjects"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-            >
-              View all subjects
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+
         </div>
       </section>
 

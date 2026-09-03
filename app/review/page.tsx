@@ -175,7 +175,7 @@ export default function ReviewPage() {
                       key={i}
                       className={`rounded-lg border p-2 text-sm ${
                         showAnswers.has(q.id) && i === q.correctIndex
-                          ? "border-green-500 bg-green-50"
+                          ? "border-green-500 bg-green-50 dark:bg-green-950"
                           : ""
                       }`}
                     >
@@ -187,7 +187,7 @@ export default function ReviewPage() {
                   ))}
                 </div>
                 {showAnswers.has(q.id) && (
-                  <div className="mt-4 rounded-lg bg-blue-50 p-3 text-sm text-blue-800">
+                  <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-950 p-3 text-sm text-blue-800 dark:text-blue-300">
                     <strong>Explanation:</strong> {q.explanation}
                   </div>
                 )}

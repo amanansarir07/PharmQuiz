@@ -191,28 +191,28 @@ export default function AnalyticsPage() {
                 label: "MCQs Taken",
                 value: String(s.quizzesTaken),
                 change: `${s.totalAttempted} questions attempted`,
-                color: "text-blue-600 bg-blue-50",
+                color: "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950",
               },
               {
                 icon: Target,
                 label: "Accuracy",
                 value: `${s.accuracy}%`,
                 change: `${s.totalCorrect} of ${s.totalAttempted} correct`,
-                color: "text-green-600 bg-green-50",
+                color: "text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-950",
               },
               {
                 icon: TrendingUp,
                 label: "Correct Answers",
                 value: String(s.totalCorrect),
                 change: `${s.totalAttempted - s.totalCorrect} incorrect`,
-                color: "text-purple-600 bg-purple-50",
+                color: "text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950",
               },
               {
                 icon: Flame,
                 label: "Current Streak",
                 value: `${s.currentStreak} 🔥`,
                 change: `${Object.keys(s.subjectBreakdown).length} subjects covered`,
-                color: "text-orange-600 bg-orange-50",
+                color: "text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950",
               },
             ].map((stat) => (
               <Card key={stat.label}>

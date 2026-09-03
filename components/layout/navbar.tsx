@@ -8,20 +8,29 @@ import { NAV_LINKS, APP_NAME } from "@/lib/constants";
 import { useAuth } from "@/lib/auth";
 import { useTheme } from "next-themes";
 import {
-  BookOpen,
   GraduationCap,
   Menu,
   X,
+  Sun,
+  Moon,
+  ChevronDown,
   BarChart3,
   Bookmark,
   StickyNote,
-  Sun,
-  Moon,
+  BookOpen,
 } from "lucide-react";
+
+const MORE_LINKS = [
+  { href: "/review", label: "Review", icon: BookOpen },
+  { href: "/bookmarks", label: "Bookmarks", icon: Bookmark },
+  { href: "/notes", label: "Notes", icon: StickyNote },
+  { href: "/analytics", label: "Analytics", icon: BarChart3 },
+];
 
 export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
 
   const { user, logout } = useAuth();
   const { theme, setTheme } = useTheme();
@@ -31,11 +40,13 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-2">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 shrink-0">
           <GraduationCap className="h-7 w-7 text-primary" />
           <span className="text-xl font-bold tracking-tight">{APP_NAME}</span>
         </Link>
 
+        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map((link) => (
             <Link
@@ -52,27 +63,48 @@ export function Navbar() {
             </Link>
           ))}
           {isLoggedIn && (
-            <>
-              <Link href="/review" className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === "/review" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted")}>
-                <BookOpen className="inline h-4 w-4 mr-1" /> Review
-              </Link>
-              <Link href="/bookmarks" className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === "/bookmarks" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted")}>
-                <Bookmark className="inline h-4 w-4 mr-1" /> Bookmarks
-              </Link>
-              <Link href="/notes" className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === "/notes" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted")}>
-                <StickyNote className="inline h-4 w-4 mr-1" /> Notes
-              </Link>
-              <Link href="/analytics" className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === "/analytics" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted")}>
-                <BarChart3 className="inline h-4 w-4 mr-1" /> Analytics
-              </Link>
-            </>
+            <div className="relative">
+              <button
+                onClick={() => setMoreOpen(!moreOpen)}
+                onBlur={() => setTimeout(() => setMoreOpen(false), 150)}
+                className={cn(
+                  "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                  MORE_LINKS.some((l) => pathname === l.href)
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                )}
+              >
+                More
+                <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", moreOpen && "rotate-180")} />
+              </button>
+              {moreOpen && (
+                <div className="absolute right-0 top-full mt-1 w-44 rounded-xl border bg-popover p-1.5 shadow-lg">
+                  {MORE_LINKS.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={cn(
+                        "flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                        pathname === link.href
+                          ? "bg-primary text-primary-foreground"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      )}
+                    >
+                      <link.icon className="h-4 w-4" />
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           )}
         </nav>
 
+        {/* Right Side */}
         <div className="flex items-center gap-2">
           {isLoggedIn ? (
             <div className="hidden md:flex items-center gap-2">
-              <span className="text-sm font-medium text-muted-foreground">Hi, {user?.name?.split(" ")[0] || "User"}</span>
+              <span className="text-sm text-muted-foreground">Hi, {user?.name?.split(" ")[0] || "User"}</span>
               <Link href="/dashboard" className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">Dashboard</Link>
               <button onClick={() => { logout(); router.push("/"); }} className="rounded-lg bg-muted px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">Sign Out</button>
             </div>
@@ -96,34 +128,31 @@ export function Navbar() {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t bg-background px-4 py-3">
+        <div className="md:hidden border-t bg-background px-4 py-3 max-h-[70vh] overflow-y-auto">
           <nav className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === link.href ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted")}>
                 {link.label}
               </Link>
             ))}
-            {isLoggedIn ? (
+            {isLoggedIn && (
               <>
-                <Link href="/review" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted"><BookOpen className="inline h-4 w-4 mr-1" /> Review</Link>
-                <Link href="/bookmarks" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted"><Bookmark className="inline h-4 w-4 mr-1" /> Bookmarks</Link>
-                <Link href="/notes" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted"><StickyNote className="inline h-4 w-4 mr-1" /> Notes</Link>
-                <Link href="/analytics" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted"><BarChart3 className="inline h-4 w-4 mr-1" /> Analytics</Link>
+                {MORE_LINKS.map((link) => (
+                  <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === link.href ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted")}>
+                    <link.icon className="inline h-4 w-4 mr-2" />{link.label}
+                  </Link>
+                ))}
+                <hr className="my-2 border-border" />
+                <Link href="/dashboard" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted">Dashboard</Link>
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted text-left w-full"
                 >
                   {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
                 </button>
-                <hr className="my-2" />
                 <button onClick={() => { logout(); setMobileOpen(false); router.push("/"); }} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted text-left w-full">Sign Out</button>
-              </>
-            ) : (
-              <>
-                <hr className="my-2" />
-                <Link href="/auth/login" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted">Sign In</Link>
-                <Link href="/auth/register" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium bg-primary text-primary-foreground text-center">Get Started</Link>
               </>
             )}
           </nav>

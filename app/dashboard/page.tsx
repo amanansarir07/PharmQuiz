@@ -40,6 +40,60 @@ export default function DashboardPage() {
     return () => window.removeEventListener("focus", handler);
   }, [user]);
 
+  if (!mounted) {
+    return (
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 animate-pulse">
+        <div className="mb-8 space-y-2">
+          <div className="h-8 w-48 bg-muted rounded-lg" />
+          <div className="h-4 w-64 bg-muted rounded" />
+        </div>
+        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="rounded-xl border bg-card p-5">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-lg bg-muted" />
+                <div className="space-y-2">
+                  <div className="h-3 w-16 bg-muted rounded" />
+                  <div className="h-6 w-10 bg-muted rounded" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mb-8 grid gap-4 sm:grid-cols-3">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="rounded-xl border bg-card p-5">
+              <div className="flex items-center gap-4">
+                <div className="h-12 w-12 rounded-xl bg-muted" />
+                <div className="space-y-2">
+                  <div className="h-4 w-24 bg-muted rounded" />
+                  <div className="h-3 w-36 bg-muted rounded" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="space-y-4">
+          <div className="h-5 w-32 bg-muted rounded" />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="rounded-xl border bg-card p-4">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-8 w-8 bg-muted rounded" />
+                  <div className="h-4 w-20 bg-muted rounded" />
+                </div>
+                <div className="space-y-2">
+                  <div className="h-3 w-full bg-muted rounded" />
+                  <div className="h-2 w-full bg-muted rounded" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const s = stats || { quizzesTaken: 0, totalCorrect: 0, totalAttempted: 0, accuracy: 0, currentStreak: 0, totalScore: 0, subjectBreakdown: {} };
 
   return (
@@ -56,10 +110,10 @@ export default function DashboardPage() {
       {/* Stats */}
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { icon: BookOpen, label: "MCQs Taken", value: mounted ? String(s.quizzesTaken) : "0", color: "text-blue-600 bg-blue-50" },
-          { icon: Target, label: "Accuracy", value: mounted ? (s.totalAttempted > 0 ? `${s.accuracy}%` : "—") : "—", color: "text-green-600 bg-green-50" },
-          { icon: Flame, label: "Study Streak", value: mounted ? `${s.currentStreak} day${s.currentStreak !== 1 ? "s" : ""}` : "0 days", color: "text-orange-600 bg-orange-50" },
-          { icon: Trophy, label: "Total Score", value: mounted ? String(s.totalScore) : "0", color: "text-yellow-600 bg-yellow-50" },
+          { icon: BookOpen, label: "MCQs Taken", value: mounted ? String(s.quizzesTaken) : "0", color: "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950" },
+          { icon: Target, label: "Accuracy", value: mounted ? (s.totalAttempted > 0 ? `${s.accuracy}%` : "—") : "—", color: "text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-950" },
+          { icon: Flame, label: "Study Streak", value: mounted ? `${s.currentStreak} day${s.currentStreak !== 1 ? "s" : ""}` : "0 days", color: "text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950" },
+          { icon: Trophy, label: "Total Score", value: mounted ? String(s.totalScore) : "0", color: "text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-950" },
         ].map((stat) => (
           <Card key={stat.label}>
             <CardContent className="p-5">
@@ -98,8 +152,8 @@ export default function DashboardPage() {
         <Link href="/analytics">
           <Card className="transition-all hover:shadow-md hover:border-primary/20 cursor-pointer">
             <CardContent className="p-5 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50">
-                <BarChart3 className="h-6 w-6 text-purple-600" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 dark:bg-purple-950">
+                <BarChart3 className="h-6 w-6 text-purple-600 dark:text-purple-400" />
               </div>
               <div>
                 <p className="font-semibold">View Analytics</p>
@@ -114,8 +168,8 @@ export default function DashboardPage() {
         <Link href="/notes">
           <Card className="transition-all hover:shadow-md hover:border-primary/20 cursor-pointer">
             <CardContent className="p-5 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-50">
-                <StickyNote className="h-6 w-6 text-yellow-600" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-50 dark:bg-yellow-950">
+                <StickyNote className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
               </div>
               <div>
                 <p className="font-semibold">My Notes</p>
@@ -172,7 +226,7 @@ export default function DashboardPage() {
                   <p className="text-sm text-muted-foreground">Correct Answers</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-red-500">{s.totalAttempted - s.totalCorrect}</p>
+                  <p className="text-3xl font-bold text-red-500 dark:text-red-400">{s.totalAttempted - s.totalCorrect}</p>
                   <p className="text-sm text-muted-foreground">Incorrect Answers</p>
                 </div>
                 <div>

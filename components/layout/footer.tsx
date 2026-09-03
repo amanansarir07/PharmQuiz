@@ -19,12 +19,11 @@ export function Footer() {
           </p>
 
           {/* Support */}
-          <div className="mt-2 inline-flex items-center gap-3 rounded-lg border bg-card px-5 py-2.5 shadow-sm">
-            <Coffee className="h-4 w-4 text-primary" />
-            <span className="text-xs text-muted-foreground">Like this app? Buy the developer a coffee via</span>
-            <span className="text-sm font-bold text-green-700">eSewa</span>
-            <span className="text-xs text-muted-foreground">:</span>
-            <span className="text-sm font-mono font-semibold">9703644244</span>
+          <div className="mt-2 inline-flex items-center gap-2 rounded-full border bg-card px-4 py-2">
+            <Coffee className="h-4 w-4 text-muted-foreground" />
+            <span className="text-xs text-muted-foreground">Support the developer</span>
+            <span className="text-xs font-medium text-foreground">eSewa</span>
+            <span className="text-xs font-mono font-semibold text-muted-foreground">9703644244</span>
           </div>
 
           {/* Credits */}
