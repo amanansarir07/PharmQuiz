@@ -22,7 +22,7 @@ export default function ForgotPasswordPage() {
     setError("");
     try {
       const { error } = await getSupabase().auth.resetPasswordForEmail(email, {
-        redirectTo: window.location.origin + "/auth/login",
+        redirectTo: window.location.origin + "/auth/reset-password",
       });
       if (error) {
         setError(error.message);
