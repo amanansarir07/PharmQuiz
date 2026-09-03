@@ -173,6 +173,9 @@ export function Navbar() {
                   </Link>
                 ))}
                 <hr className="my-2 border-border" />
+                <Link href="/profile" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted">
+                  <User className="h-4 w-4" />Profile
+                </Link>
                 <Link href="/dashboard" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted">Dashboard</Link>
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
