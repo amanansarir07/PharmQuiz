@@ -77,7 +77,7 @@ export default function RegisterPage() {
           </div>
           <CardTitle className="text-2xl">Create your account</CardTitle>
           <CardDescription>
-            Join thousands of pharmacy students preparing for their exams
+            Join D. Pharmacy 2nd year students preparing for their CTEVT exams
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>

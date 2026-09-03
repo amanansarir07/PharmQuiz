@@ -13,7 +13,7 @@ export function HeroSection() {
         <div className="text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             <Brain className="h-4 w-4" />
-            Built for Pharmacy Students in Nepal
+            Built for D. Pharmacy 2nd Year Students
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
             {user ? (
@@ -31,7 +31,7 @@ export function HeroSection() {
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             {user
               ? "Pick up where you left off and keep your streak going."
-              : "1,500+ practice questions across all 8 subjects. Track your progress, compete on the leaderboard, and walk into your exams confident."}
+              : "1,500+ practice questions for D. Pharmacy 2nd year. Track your progress, compete on the leaderboard, and walk into your exams confident."}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             {user ? (

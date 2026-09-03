@@ -40,7 +40,7 @@ export function Footer() {
               </Link>
             </p>
             <p className="text-xs text-muted-foreground">
-              For Diploma in Pharmacy 2nd Year students
+              For D. Pharmacy 2nd Year students
             </p>
           </div>
         </div>

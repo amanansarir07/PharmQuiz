@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Bujh — Diploma in Pharmacy 2nd Year MCQ Practice",
+  title: "Bujh — D. Pharmacy 2nd Year MCQ Practice",
   description:
-    "Practice MCQs for Diploma in Pharmacy 2nd Year examinations. Cover Pharmaceutics, Pharmacology, Chemistry, Pharmacognosy, Biochemistry, Microbiology, Pharmacotherapeutics, Management and Public Health Pharmacy.",
+    "Practice MCQs for D. Pharmacy 2nd year CTEVT examinations. Cover Pharmaceutics, Pharmacology, Chemistry, Pharmacognosy, Biochemistry, Microbiology, Pharmacotherapeutics, Management and Public Health Pharmacy.",
   keywords: [
     "pharmacy MCQs",
     "diploma pharmacy",

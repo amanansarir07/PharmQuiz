@@ -10,7 +10,7 @@ export default function SubjectsPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">All Subjects</h1>
         <p className="mt-2 text-muted-foreground">
-          Diploma in Pharmacy 2nd Year — {subjects.length} subjects, {subjects.reduce((a, s) => a + s.units.length, 0)} units
+          D. Pharmacy 2nd Year — {subjects.length} subjects, {subjects.reduce((a, s) => a + s.units.length, 0)} units
         </p>
       </div>
 

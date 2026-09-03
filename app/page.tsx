@@ -53,7 +53,7 @@ export default function HomePage() {
               Every Subject You Need
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Comprehensive coverage of the CTEVT 2nd year pharmacy syllabus
+              Every unit and topic from the D. Pharmacy 2nd year CTEVT syllabus
             </p>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -149,7 +149,7 @@ export default function HomePage() {
             Your Pharmacy Exam Prep Starts Here
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Join students who are already using Bujh to ace their exams
+            Join D. Pharmacy 2nd year students who are already acing their exams with Bujh
           </p>
           <div className="mt-8 flex justify-center">
             <Link

@@ -1,6 +1,6 @@
 export const APP_NAME = "Bujh";
 export const APP_DESCRIPTION =
-  "MCQ Practice Platform for Diploma in Pharmacy 2nd Year — Bujh (understanding) in Nepali";
+  "MCQ Practice Platform for D. Pharmacy 2nd Year — Bujh (understanding) in Nepali";
 
 export const QUIZ_QUESTION_OPTIONS = [10, 20, 30, 50] as const;
 
