@@ -120,7 +120,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           {isLoggedIn ? (
             <div className="hidden md:flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">Hi, {user?.name?.split(" ")[0] || "User"}</span>
+              <Link href="/profile" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Hi, {user?.name?.split(" ")[0] || "User"}</Link>
               <Link href="/dashboard" className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">Dashboard</Link>
               <button onClick={() => { logout(); router.push("/"); }} className="rounded-lg bg-muted px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">Sign Out</button>
             </div>

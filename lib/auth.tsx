@@ -18,6 +18,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<{ error?: string }>;
   register: (name: string, email: string, password: string) => Promise<{ error?: string }>;
   logout: () => void;
+  updateProfile: (name: string) => Promise<{ error?: string }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -194,6 +195,39 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return {};
   }, [loadProfile]);
 
+  const updateProfile = useCallback(async (name: string) => {
+    if (!user) return { error: "Not logged in" };
+
+    try {
+      // Update Supabase profiles table
+      const { error: dbError } = await getSupabase()
+        .from("profiles")
+        .update({ name })
+        .eq("id", user.id);
+
+      if (dbError) {
+        console.warn("Profile DB update failed:", dbError.message);
+      }
+
+      // Update Supabase auth metadata
+      const { error: authError } = await getSupabase().auth.updateUser({
+        data: { name },
+      });
+
+      if (authError) {
+        console.warn("Auth metadata update failed:", authError.message);
+      }
+
+      // Update local state
+      setUser((prev) => prev ? { ...prev, name } : null);
+
+      return {};
+    } catch (err) {
+      console.error("updateProfile error:", err);
+      return { error: "Failed to update profile" };
+    }
+  }, [user]);
+
   const logout = useCallback(async () => {
     await getSupabase().auth.signOut();
     clearOldAuthStorage();
@@ -203,7 +237,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const isAdmin = user?.role === "admin";
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, isAdmin, login, register, logout }}>
+    <AuthContext.Provider value={{ user, isLoading, isAdmin, login, register, logout, updateProfile }}>
       {children}
     </AuthContext.Provider>
   );
