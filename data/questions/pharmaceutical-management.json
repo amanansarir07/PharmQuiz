@@ -38,7 +38,7 @@
     "question_text": "The difference between management and administration is that:",
     "options": [
       "They are the same thing",
-      "Administration makes policies;",
+      "Administration makes policies; management implements them",
       "Management is higher level",
       "Administration is for businesses only"
     ],
@@ -55,7 +55,7 @@
     "question_text": "Supply chain management in pharmaceuticals involves:",
     "options": [
       "Only manufacturing drugs",
-      "From raw material procurement to",
+      "From raw material procurement to final product delivery",
       "Only marketing drugs",
       "Only selling drugs"
     ],
@@ -122,10 +122,10 @@
     "unit_id": "mgmt-unit-3",
     "question_text": "Market segmentation involves:",
     "options": [
-      "Selling to everyone",
-      "Dividing the market into",
-      "Increasing prices",
-      "Reducing product quality"
+      "Selling the product to everyone alike",
+      "Dividing the market into distinct groups of buyers",
+      "Increasing the product price",
+      "Reducing the product quality"
     ],
     "correct_index": 1,
     "explanation": "Market segmentation is the process of dividing a broad market into distinct groups of buyers who have different needs, characteristics, or behaviors, and who might require different products.\n\nAdditional: distinct groups of buyers",
@@ -174,7 +174,7 @@
     "question_text": "Inventory management in pharmacy aims to:",
     "options": [
       "Maximize stock at all times",
-      "Ensure adequate supply while",
+      "Ensure adequate supply while minimizing holding costs",
       "Keep minimum stock always",
       "Ignore expired products"
     ],
@@ -598,12 +598,12 @@
     "question_text": "The difference between sales and marketing is:",
     "options": [
       "They are the same thing",
-      "Marketing focuses on customer needs and building relationships; sales focuses on selling existing products",
+      "Marketing focuses on customer needs and building relationships; sales focuses on transactions",
       "Sales focuses on advertising; marketing focuses on pricing",
       "Marketing is done only after sales"
     ],
     "correct_index": 1,
-    "explanation": "Marketing is a broader concept focused on understanding customer needs and building long-term relationships, while sales is focused on directly selling products.",
+    "explanation": "Marketing is a broader concept focused on understanding customer needs and building long-term relationships, while sales is focused on directly selling products.\n\nNote: sales focuses on selling existing products",
     "difficulty": "medium",
     "tags": [
       "marketing",
@@ -717,7 +717,7 @@
     "question_text": "A pharmacy entrepreneur in Nepal needs to register with:",
     "options": [
       "Only the local municipality",
-      "Nepal Pharmacy Council and",
+      "Nepal Pharmacy Council and local authorities",
       "Only the bank",
       "Only the tax office"
     ],
@@ -751,12 +751,12 @@
     "question_text": "Cost-benefit analysis in pharmacoeconomics compares:",
     "options": [
       "Cost of drug vs. profit margin",
-      "Total costs of an intervention vs. total monetary benefits",
+      "Total costs of an intervention vs.",
       "Price of branded vs. generic drugs",
       "Manufacturing cost vs. selling price"
     ],
     "correct_index": 1,
-    "explanation": "Cost-benefit analysis (CBA) compares the total costs of a pharmaceutical intervention with its total benefits expressed in monetary terms.",
+    "explanation": "Cost-benefit analysis (CBA) compares the total costs of a pharmaceutical intervention with its total benefits expressed in monetary terms.\n\nNote: total monetary benefits",
     "difficulty": "medium",
     "tags": [
       "pharmacoeconomics",
@@ -938,7 +938,7 @@
     "question_text": "Market positioning refers to:",
     "options": [
       "Physical location of a pharmacy",
-      "The place a product occupies in",
+      "The place a product occupies in the minds of consumers",
       "Arranging products on shelves",
       "Setting up a new market"
     ],
@@ -1210,7 +1210,7 @@
     "question_text": "What does 'warehousing' mean in pharmaceutical supply chain?",
     "options": [
       "Selling medicines directly to patients",
-      "Storage of pharmaceutical products in",
+      "Storage of pharmaceutical products in proper conditions",
       "Manufacturing of medicines",
       "Transportation of medicines"
     ],
@@ -1360,10 +1360,10 @@
   {
     "question_text": "What is the reorder level in inventory management?",
     "options": {
-      "a": "Maximum stock level",
-      "b": "The stock level at which a",
-      "c": "Minimum stock level",
-      "d": "Average stock level"
+      "a": "Maximum stock level allowed",
+      "b": "The stock level at which a new order must be placed",
+      "c": "Minimum stock level allowed",
+      "d": "Average stock level over time"
     },
     "correct_option": "b",
     "explanation": "Reorder level is the inventory level at which a new purchase order should be placed to avoid stockout. It is calculated as: (Average daily usage × Lead time) + Safety stock.\n\nAdditional: new order should be placed",
@@ -1446,7 +1446,7 @@
     "question_text": "What is tendering in pharmaceutical procurement?",
     "options": {
       "a": "Direct purchase from one supplier",
-      "b": "A process where suppliers bid to",
+      "b": "A process where suppliers bid to supply goods at competitive prices",
       "c": "Returning damaged goods",
       "d": "Quality testing of drugs"
     },
@@ -1463,7 +1463,7 @@
     "question_text": "What is the difference between a quotation and a tender?",
     "options": {
       "a": "No difference",
-      "b": "Quotation is informal pricing; tender is",
+      "b": "Quotation is informal pricing; tender is formal competitive bidding",
       "c": "Tender is for small purchases only",
       "d": "Quotation is government-mandated"
     },
@@ -1561,10 +1561,10 @@
   {
     "question_text": "What is a standard operating procedure (SOP)?",
     "options": {
-      "a": "A casual guideline",
-      "b": "A detailed written instruction to",
-      "c": "A drug name",
-      "d": "A type of prescription"
+      "a": "A casual guideline for staff",
+      "b": "A detailed written instruction to perform a task consistently",
+      "c": "A drug name in the formulary",
+      "d": "A type of prescription for controlled drugs"
     },
     "correct_option": "b",
     "explanation": "SOPs are detailed written instructions describing step-by-step procedures to ensure consistency and compliance in pharmaceutical operations.\n\nAdditional: achieve uniformity of performance",
@@ -1579,7 +1579,7 @@
     "question_text": "What is a batch record in pharmaceutical manufacturing?",
     "options": {
       "a": "A sales record",
-      "b": "A document containing all details of the",
+      "b": "A document containing all details of a batch's manufacturing process",
       "c": "An employee attendance sheet",
       "d": "A customer complaint form"
     },
@@ -1660,10 +1660,10 @@
   {
     "question_text": "What is cold chain management in pharmaceuticals?",
     "options": {
-      "a": "Storing drugs in a freezer",
-      "b": "Maintaining temperature-controlled storage and",
-      "c": "A type of drug formulation",
-      "d": "Chain pharmacy management"
+      "a": "Storing all drugs in a freezer",
+      "b": "Maintaining temperature-controlled storage and transport of vaccines",
+      "c": "A type of drug formulation process",
+      "d": "Managing a chain of retail pharmacies"
     },
     "correct_option": "b",
     "explanation": "Cold chain management ensures temperature-sensitive products (vaccines, insulin, biologics) are stored and transported within required temperature ranges throughout the supply chain.\n\nAdditional: transport for sensitive products",
@@ -1743,10 +1743,10 @@
   {
     "question_text": "What is the importance of drug information services in a hospital?",
     "options": {
-      "a": "Only for pharmacists",
-      "b": "Provides evidence-based drug information to",
-      "c": "Promotes brand-name drugs",
-      "d": "Replaces clinical judgment"
+      "a": "Only for the benefit of hospital pharmacists",
+      "b": "Provides evidence-based drug information to healthcare professionals",
+      "c": "Promotes brand-name drugs over generics",
+      "d": "Replaces the clinical judgment of doctors"
     },
     "correct_option": "b",
     "explanation": "Drug information services provide reliable, evidence-based information on drug use, interactions, side effects, and therapeutic options to support clinical decision-making.\n\nAdditional: healthcare professionals and patients",
@@ -1811,7 +1811,7 @@
     "question_text": "What is rational drug use?",
     "options": {
       "a": "Using the cheapest drug available",
-      "b": "Patients receive appropriate drug therapy for",
+      "b": "Patients receive appropriate drug therapy for their clinical condition",
       "c": "Using only brand-name drugs",
       "d": "Prescribing maximum number of drugs"
     },
@@ -1911,7 +1911,7 @@
     "question_text": "What is the role of the Drug Advisory Committee in Nepal?",
     "options": {
       "a": "Selling drugs to public",
-      "b": "Advising the government on",
+      "b": "Advising the government on drug regulation and policy",
       "c": "Manufacturing drugs",
       "d": "Exporting drugs"
     },
@@ -2009,10 +2009,10 @@
   {
     "question_text": "What is a medication error?",
     "options": {
-      "a": "A drug with side effects",
-      "b": "Any preventable event that may lead to",
-      "c": "A manufacturing defect",
-      "d": "A natural drug reaction"
+      "a": "A drug with expected side effects",
+      "b": "Any preventable event that may lead to inappropriate medication use",
+      "c": "A manufacturing defect in a batch",
+      "d": "A natural drug reaction in the body"
     },
     "correct_option": "b",
     "explanation": "Medication errors include prescribing errors, dispensing errors, administration errors, and monitoring errors that are preventable.\n\nAdditional: inappropriate medication use or patient harm",
@@ -2092,10 +2092,10 @@
   {
     "question_text": "What is the purpose of a drug interaction checker?",
     "options": {
-      "a": "To count drug inventory",
-      "b": "To identify potential interactions between",
-      "c": "To check drug expiry dates",
-      "d": "To verify drug authenticity"
+      "a": "To count the drugs in the pharmacy inventory",
+      "b": "To identify potential interactions between drugs and other substances",
+      "c": "To check the expiry dates of stored drugs",
+      "d": "To verify the authenticity of purchased drugs"
     },
     "correct_option": "b",
     "explanation": "Drug interaction checkers identify potential pharmacokinetic or pharmacodynamic interactions that could affect efficacy or safety when multiple drugs are used together.\n\nAdditional: two or more medications",
@@ -2126,10 +2126,10 @@
   {
     "question_text": "What is medication reconciliation?",
     "options": {
-      "a": "Reordering drugs from suppliers",
-      "b": "Comparing a patient's medication orders to",
-      "c": "Counting pills in bottles",
-      "d": "Updating drug prices"
+      "a": "Reordering drugs from the suppliers",
+      "b": "Comparing a patient's medication orders to their current medication list",
+      "c": "Counting the pills present in bottles",
+      "d": "Updating the drug price lists"
     },
     "correct_option": "b",
     "explanation": "Medication reconciliation is the process of comparing a patient's current medication list against new orders to identify discrepancies during care transitions.\n\nAdditional: all medications they are actually taking",
@@ -2226,7 +2226,7 @@
     "question_text": "What is the economic order quantity (EOQ)?",
     "options": {
       "a": "The maximum quantity to order",
-      "b": "The optimal order size that",
+      "b": "The optimal order size that minimizes total inventory cost",
       "c": "The minimum quantity to order",
       "d": "The average quantity ordered"
     },
@@ -2242,10 +2242,10 @@
   {
     "question_text": "What is safety stock in inventory management?",
     "options": {
-      "a": "Drugs stored in a safe",
-      "b": "Extra inventory held to prevent stockouts due",
-      "c": "A locked storeroom",
-      "d": "Drugs for emergency use only"
+      "a": "Drugs stored in a locked safe",
+      "b": "Extra inventory held to prevent stockouts due to unexpected demand",
+      "c": "A locked storeroom for controlled drugs",
+      "d": "Drugs reserved for emergency use only"
     },
     "correct_option": "b",
     "explanation": "Safety stock is buffer inventory maintained above the expected demand to protect against fluctuations in demand or supply delays.\n\nAdditional: to demand variability or supply delays",
@@ -2340,10 +2340,10 @@
   {
     "question_text": "What is variable cost in a pharmacy?",
     "options": {
-      "a": "Rent of the pharmacy",
-      "b": "Costs that change directly with",
-      "c": "Insurance premiums",
-      "d": "Fixed staff salaries"
+      "a": "Rent of the pharmacy premises",
+      "b": "Costs that change directly with the volume of output",
+      "c": "Insurance premiums paid yearly",
+      "d": "Fixed staff salaries each month"
     },
     "correct_option": "b",
     "explanation": "Variable costs increase or decrease with business volume — drug purchases, dispensing supplies, and temporary staff wages are examples.\n\nNote: e.g., drug purchases, packaging\n\nAdditional: the volume of business",
@@ -2407,10 +2407,10 @@
   {
     "question_text": "What is narcotic drug as defined legally?",
     "options": {
-      "a": "Any painkiller",
-      "b": "A substance listed in the narcotics schedule that affects",
-      "c": "Any antibiotic",
-      "d": "Any sedative"
+      "a": "Any painkiller sold without a prescription",
+      "b": "A substance listed in the narcotics schedule that affects the central nervous system",
+      "c": "Any antibiotic used for bacterial infections",
+      "d": "Any sedative available in retail pharmacies"
     },
     "correct_option": "b",
     "explanation": "Narcotic drugs are legally defined substances listed in national/international schedules (e.g., Opium Act, NDPS Act) that have analgesic effects and abuse potential.\n\nAdditional: the central nervous system and has potential for dependence",
@@ -2425,7 +2425,7 @@
     "question_text": "What is a psychotropic substance?",
     "options": {
       "a": "A vitamin supplement",
-      "b": "A substance that acts on",
+      "b": "A substance that acts on the central nervous system",
       "c": "An antiseptic",
       "d": "A surgical instrument"
     },
@@ -2458,7 +2458,7 @@
     "question_text": "What is drug registration?",
     "options": {
       "a": "Patient registration for drug delivery",
-      "b": "The process of officially listing a drug in",
+      "b": "The process of officially listing a drug in the national register",
       "c": "Recording drug side effects",
       "d": "Counting drug stock"
     },
@@ -2540,7 +2540,7 @@
     "question_text": "What is a pharmaceutical company's product life cycle?",
     "options": {
       "a": "The shelf life of a product",
-      "b": "The stages a drug goes through from",
+      "b": "The stages a drug goes through from introduction to decline",
       "c": "The time a pharmacist works",
       "d": "The life of a pill"
     },
@@ -2573,10 +2573,10 @@
   {
     "question_text": "What is a pharmaceutical patent?",
     "options": {
-      "a": "A license to sell drugs",
+      "a": "A license to sell drugs in a country",
       "b": "An intellectual property right granting exclusive rights to manufacture",
-      "c": "A prescription for drugs",
-      "d": "A drug formulation method"
+      "c": "A prescription for drugs from a doctor",
+      "d": "A drug formulation method used in production"
     },
     "correct_option": "b",
     "explanation": "A pharmaceutical patent gives the innovator company exclusive rights (usually 20 years) to manufacture and sell the drug, after which generic competition is allowed.\n\nAdditional: and sell a drug for a limited period",
@@ -2590,7 +2590,7 @@
     "question_text": "What is a generic drug?",
     "options": {
       "a": "A fake drug",
-      "b": "A drug marketed after patent expiry containing the",
+      "b": "A drug marketed after patent expiry containing the same active ingredient",
       "c": "A drug only available in government hospitals",
       "d": "A drug with no brand name at all"
     },
@@ -2622,7 +2622,7 @@
     "question_text": "What is the difference between medical representative (MR) and pharmacist?",
     "options": {
       "a": "No difference",
-      "b": "MR promotes drugs to doctors;",
+      "b": "MR promotes drugs to doctors; a pharmacist dispenses and advises on medicines",
       "c": "MR works in hospital; pharmacist works in company",
       "d": "MR is a doctor; pharmacist is a nurse"
     },

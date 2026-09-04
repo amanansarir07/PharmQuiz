@@ -411,10 +411,10 @@
     "unit_id": "bio-unit-2",
     "question_text": "Vitamin D deficiency causes:",
     "options": [
-      "Scurvy",
-      "Rickets in children and",
-      "Beriberi",
-      "Night blindness"
+      "Scurvy from vitamin C deficiency",
+      "Rickets in children and osteomalacia in adults",
+      "Beriberi from thiamine deficiency",
+      "Night blindness from vitamin A deficiency"
     ],
     "correct_index": 1,
     "explanation": "Vitamin D deficiency impairs calcium absorption, causing rickets (children) and osteomalacia (adults).\n\nAdditional: osteomalacia in adults",
@@ -446,7 +446,7 @@
     "question_text": "Coenzymes are:",
     "options": [
       "Inorganic metal ions",
-      "Organic non-protein molecules that",
+      "Organic non-protein molecules that assist enzyme activity",
       "The protein part of enzymes",
       "Substrate molecules"
     ],
@@ -616,7 +616,7 @@
     "question_text": "IgE is associated with:",
     "options": [
       "Bacterial infections",
-      "Allergic reactions and",
+      "Allergic reactions and anaphylaxis",
       "Viral infections",
       "Autoimmune diseases"
     ],
@@ -887,10 +887,10 @@
     "unit_id": "micro-unit-4",
     "question_text": "Tyndallization involves:",
     "options": [
-      "Single autoclaving",
-      "Intermittent sterilization by heating at 100°C for",
-      "Dry heat sterilization",
-      "Chemical sterilization"
+      "Single autoclaving at 121°C",
+      "Intermittent sterilization by heating at 100°C for three consecutive days",
+      "Dry heat sterilization in an oven",
+      "Chemical sterilization with ethylene oxide"
     ],
     "correct_index": 1,
     "explanation": "Tyndallization (fractional sterilization) uses repeated heating at 100°C to kill vegetative forms, then spores germinate and are killed on subsequent days.\n\nAdditional: 30 minutes on 3 consecutive days",
@@ -1023,7 +1023,7 @@
     "question_text": "What is biochemistry?",
     "options": {
       "a": "Study of biological machines",
-      "b": "The study of chemical processes within",
+      "b": "The study of chemical processes within living organisms",
       "c": "Study of cell phones",
       "d": "Study of biomechanics"
     },
@@ -1089,12 +1089,12 @@
     "question_text": "What is the difference between monosaccharides and polysaccharides?",
     "options": {
       "a": "No difference",
-      "b": "Monosaccharides are single sugar units; polysaccharides",
+      "b": "Monosaccharides are single sugar units; polysaccharides are long chains",
       "c": "Polysaccharides are sweeter",
       "d": "Monosaccharides have more carbons"
     },
     "correct_option": "b",
-    "explanation": "Monosaccharides (glucose, fructose) are single sugar units. Polysaccharides (starch, glycogen, cellulose) are polymers of many monosaccharide units linked by glycosidic bonds.\n\nAdditional: are long chains of monosaccharides",
+    "explanation": "Monosaccharides (glucose, fructose) are single sugar units. Polysaccharides (starch, glycogen, cellulose) are polymers of many monosaccharide units linked by glycosidic bonds.\n\nAdditional: are long chains of monosaccharides\n\nNote: polysaccharides",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1157,10 +1157,10 @@
   {
     "question_text": "What are proteins made of?",
     "options": {
-      "a": "Fatty acids",
+      "a": "Fatty acids and glycerol",
       "b": "Amino acids linked by peptide bonds",
-      "c": "Nucleotides",
-      "d": "Monosaccharides"
+      "c": "Nucleotides and bases",
+      "d": "Monosaccharide sugar units"
     },
     "correct_option": "b",
     "explanation": "Proteins are polymers of amino acids (20 types) linked by peptide bonds (–CO–NH–) between the carboxyl group of one amino acid and the amino group of the next.",
@@ -1174,10 +1174,10 @@
   {
     "question_text": "How many essential amino acids are there for humans?",
     "options": {
-      "a": "5",
-      "b": "10 (9 for adults 10",
-      "c": "20",
-      "d": "15"
+      "a": "5 for infants in the first year",
+      "b": "9 for adults and 10 for infants",
+      "c": "20 for all age groups equally",
+      "d": "15 in healthy adults only"
     },
     "correct_option": "b",
     "explanation": "There are 10 essential amino acids (including histidine for infants) that cannot be synthesized by the body and must come from diet: histidine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, valine, and arginine (conditionally).\n\nAdditional: including histidine for infants)",
@@ -1191,10 +1191,10 @@
   {
     "question_text": "What is the primary function of hemoglobin?",
     "options": {
-      "a": "Blood clotting",
+      "a": "Blood clotting in injured vessels",
       "b": "Transport oxygen from lungs to tissues",
-      "c": "Fighting infection",
-      "d": "Hormone transport"
+      "c": "Fighting bacterial infections",
+      "d": "Transporting hormones in blood"
     },
     "correct_option": "b",
     "explanation": "Hemoglobin (Hb) is an iron-containing protein in red blood cells that binds O₂ in lungs (forming oxyhemoglobin) and releases it in tissues, also carrying CO₂ back.\n\nAdditional: and carbon dioxide back to lungs",
@@ -1225,7 +1225,7 @@
     "question_text": "What is the lock-and-key model of enzyme action?",
     "options": {
       "a": "Enzymes are shaped like keys",
-      "b": "The substrate fits perfectly into the active site of",
+      "b": "The substrate fits perfectly into the enzyme's active site",
       "c": "Enzymes lock up substrates",
       "d": "Enzymes are always locked in position"
     },
@@ -1309,10 +1309,10 @@
   {
     "question_text": "What are lipids?",
     "options": {
-      "a": "Water-soluble biomolecules",
-      "b": "A heterogeneous group of naturally occurring molecules that are",
-      "c": "Proteins with lipid coats",
-      "d": "Carbohydrates with fat coatings"
+      "a": "Water-soluble biomolecules stored in cells",
+      "b": "A heterogeneous group of naturally occurring molecules that are insoluble in water",
+      "c": "Proteins wrapped in protective lipid coats",
+      "d": "Carbohydrates coated with fatty materials"
     },
     "correct_option": "b",
     "explanation": "Lipids are a diverse group of hydrophobic molecules (fats, oils, waxes, steroids, phospholipids) that are insoluble in water but soluble in organic solvents like chloroform and ether.\n\nAdditional: insoluble in water but soluble in organic solvents",
@@ -1326,7 +1326,7 @@
     "question_text": "What is the difference between saturated and unsaturated fatty acids?",
     "options": {
       "a": "No difference",
-      "b": "Saturated have no double bonds;",
+      "b": "Saturated fatty acids have no double bonds; unsaturated ones do",
       "c": "Saturated are liquid; unsaturated are solid",
       "d": "Unsaturated have more hydrogen atoms"
     },
@@ -1342,10 +1342,10 @@
   {
     "question_text": "What is the main function of cholesterol?",
     "options": {
-      "a": "Energy storage",
-      "b": "Component of cell membranes precursor for",
-      "c": "Oxygen transport",
-      "d": "DNA synthesis"
+      "a": "Energy storage in adipose tissue stores",
+      "b": "Component of cell membranes and precursor for steroid hormones",
+      "c": "Oxygen transport in red blood cells by hemoglobin",
+      "d": "DNA synthesis in the cell nucleus"
     },
     "correct_option": "b",
     "explanation": "Cholesterol is a sterol that is a vital component of cell membranes (maintaining fluidity) and serves as the precursor for steroid hormones (cortisol, testosterone) and bile acids.\n\nAdditional: steroid hormones and bile acids",
@@ -1359,10 +1359,10 @@
   {
     "question_text": "What are triglycerides (triacylglycerols)?",
     "options": {
-      "a": "Type of protein",
+      "a": "Type of protein with amino acids",
       "b": "Three fatty acids esterified to a glycerol backbone",
-      "c": "Type of sugar",
-      "d": "Type of nucleic acid"
+      "c": "Type of sugar with glucose units",
+      "d": "Type of nucleic acid with nucleotides"
     },
     "correct_option": "b",
     "explanation": "Triglycerides consist of one glycerol molecule esterified with three fatty acids. They are the main form of energy storage in adipose tissue, providing 9 kcal/g.\n\nAdditional: — the main form of fat storage",
@@ -1377,7 +1377,7 @@
     "question_text": "What are the functions of phospholipids?",
     "options": {
       "a": "Energy storage only",
-      "b": "Major component of",
+      "b": "Major component of cell membranes",
       "c": "Carrying oxygen",
       "d": "Catalyzing reactions"
     },
@@ -1410,7 +1410,7 @@
     "question_text": "What is the difference between DNA and RNA?",
     "options": {
       "a": "No difference",
-      "b": "DNA is double-stranded with deoxyribose and thymine;",
+      "b": "DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil",
       "c": "DNA has ribose; RNA has deoxyribose",
       "d": "DNA is single-stranded; RNA is double-stranded"
     },
@@ -1595,7 +1595,7 @@
     "question_text": "What is the difference between lactic acid fermentation and alcoholic fermentation?",
     "options": {
       "a": "No difference",
-      "b": "Lactic acid fermentation reduces pyruvate to lactate;",
+      "b": "Lactic acid fermentation reduces pyruvate to lactate; alcoholic fermentation produces ethanol and CO2",
       "c": "Lactic acid fermentation produces alcohol",
       "d": "Alcoholic fermentation produces lactate"
     },
@@ -1765,7 +1765,7 @@
     "question_text": "What is the structure of a heme group?",
     "options": {
       "a": "A sugar ring",
-      "b": "A porphyrin ring with",
+      "b": "A porphyrin ring with a central iron atom",
       "c": "An amino acid chain",
       "d": "A nucleotide base"
     },
@@ -1799,7 +1799,7 @@
     "question_text": "What causes sickle cell anemia?",
     "options": {
       "a": "Vitamin deficiency",
-      "b": "A point mutation in the",
+      "b": "A point mutation in the beta-globin gene",
       "c": "Bacterial infection",
       "d": "Iron overload"
     },
@@ -1821,7 +1821,7 @@
       "d": "Both produce proteins"
     },
     "correct_option": "b",
-    "explanation": "Replication produces a complete copy of DNA (for cell division). Transcription produces an RNA copy of a gene (for protein synthesis). Both use DNA as template but produce different products.",
+    "explanation": "Replication produces a complete copy of DNA (for cell division). Transcription produces an RNA copy of a gene (for protein synthesis). Both use DNA as template but produce different products.\n\nNote: transcription copies DNA to make RNA",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1851,7 +1851,7 @@
     "question_text": "What is the role of tRNA in protein synthesis?",
     "options": {
       "a": "Carries genetic code",
-      "b": "Transfers specific amino acids to the",
+      "b": "Transfers specific amino acids to the ribosome",
       "c": "Forms ribosomes",
       "d": "Stores genetic information"
     },
@@ -1902,7 +1902,7 @@
     "question_text": "What is the genetic code?",
     "options": {
       "a": "A cipher for decoding messages",
-      "b": "The set of rules by which the nucleotide sequence of a",
+      "b": "The set of rules by which nucleotide sequence encodes amino acids",
       "c": "A type of encryption",
       "d": "A software code"
     },
@@ -1951,10 +1951,10 @@
   {
     "question_text": "What is the difference between prokaryotes and eukaryotes?",
     "options": {
-      "a": "No difference",
-      "b": "Prokaryotes lack membrane-bound nucleus and",
-      "c": "Prokaryotes are larger",
-      "d": "Eukaryotes lack DNA"
+      "a": "No difference between the two cell types",
+      "b": "Prokaryotes lack a membrane-bound nucleus and organelles",
+      "c": "Prokaryotes are larger in size",
+      "d": "Eukaryotes lack DNA in the nucleus"
     },
     "correct_option": "b",
     "explanation": "Prokaryotes (bacteria, archaea) have no membrane-bound nucleus or organelles — their DNA is in the nucleoid region. Eukaryotes (animal, plant, fungal cells) have a true nucleus and membrane-bound organelles.\n\nAdditional: organelles; eukaryotes have them",
@@ -2053,7 +2053,7 @@
     "question_text": "What is the lysogenic cycle of a virus?",
     "options": {
       "a": "Virus immediately lyses the cell",
-      "b": "Viral DNA integrates into the host genome and",
+      "b": "Viral DNA integrates into the host genome and remains latent",
       "c": "Virus is destroyed by the host",
       "d": "Virus cannot enter the cell"
     },
@@ -2069,10 +2069,10 @@
   {
     "question_text": "What is a bacterium?",
     "options": {
-      "a": "A virus",
-      "b": "A single-celled prokaryotic microorganism with a",
-      "c": "A type of fungus",
-      "d": "A type of parasite"
+      "a": "A virus with protein coat",
+      "b": "A single-celled prokaryotic microorganism without a nucleus",
+      "c": "A type of fungus with hyphae",
+      "d": "A type of parasite in blood"
     },
     "correct_option": "b",
     "explanation": "Bacteria are single-celled prokaryotic organisms (0.5-5 μm) with a cell wall (peptidoglycan), circular DNA in the nucleoid region, and no membrane-bound organelles.\n\nAdditional: cell wall no membrane-bound nucleus",
@@ -2085,10 +2085,10 @@
   {
     "question_text": "What is the difference between Gram-positive and Gram-negative bacteria?",
     "options": {
-      "a": "No difference",
-      "b": "Gram-positive have thick peptidoglycan layer; Gram-negative",
-      "c": "Gram-positive are larger",
-      "d": "Gram-negative have no cell wall"
+      "a": "No difference between the two groups",
+      "b": "Gram-positive bacteria have a thick peptidoglycan layer; gram-negative have a thin one",
+      "c": "Gram-positive bacteria are always larger",
+      "d": "Gram-negative bacteria lack any cell wall"
     },
     "correct_option": "b",
     "explanation": "Gram-positive bacteria have a thick peptidoglycan wall that retains crystal violet stain (appear purple). Gram-negative bacteria have a thin peptidoglycan layer and an outer membrane, appearing pink/red after counterstaining.\n\nNote: appear pink\n\nNote: retain crystal violet stain\n\nAdditional: have thin peptidoglycan with outer membrane",
@@ -2102,10 +2102,10 @@
   {
     "question_text": "What is the Gram stain technique?",
     "options": {
-      "a": "A method to count bacteria",
-      "b": "A differential staining method to classify bacteria based",
-      "c": "A method to grow bacteria",
-      "d": "A method to kill bacteria"
+      "a": "A method used to count the number of bacteria",
+      "b": "A differential staining method to classify bacteria based on cell wall properties",
+      "c": "A method used to grow bacteria on culture media",
+      "d": "A method used to kill bacteria with heat"
     },
     "correct_option": "b",
     "explanation": "Gram staining uses crystal violet, iodine, alcohol (decolorizer), and safranin to differentiate bacteria: Gram-positive = purple; Gram-negative = pink/red. It is the most important staining technique in microbiology.\n\nAdditional: on cell wall structure into Gram-positive and Gram-negative",
@@ -2204,10 +2204,10 @@
   {
     "question_text": "What are pili (fimbriae) on bacteria?",
     "options": {
-      "a": "Flagella for movement",
-      "b": "Short hair-like appendages used for",
-      "c": "Cell wall structures",
-      "d": "Internal organelles"
+      "a": "Flagella used for bacterial movement",
+      "b": "Short hair-like appendages used for adhesion and conjugation",
+      "c": "Cell wall structures for protection",
+      "d": "Internal organelles for energy production"
     },
     "correct_option": "b",
     "explanation": "Pili (fimbriae) are short, hair-like protein appendages. Fimbriae aid in attachment to surfaces and host cells. Sex pili (longer) are involved in bacterial conjugation (DNA transfer).\n\nNote: transfer of DNA\n\nAdditional: attachment to surfaces and conjugation",
@@ -2222,7 +2222,7 @@
     "question_text": "What is a capsule in bacteria?",
     "options": {
       "a": "Internal storage granule",
-      "b": "A protective outer layer that helps",
+      "b": "A protective outer layer that helps resist phagocytosis",
       "c": "A cell wall component",
       "d": "A reproductive structure"
     },
@@ -2239,7 +2239,7 @@
     "question_text": "What are bacterial endospores?",
     "options": {
       "a": "Spores for sexual reproduction",
-      "b": "Highly resistant dormant structures formed by some",
+      "b": "Highly resistant dormant structures formed by some bacteria under stress",
       "c": "Toxins released by bacteria",
       "d": "Bacterial reproductive cells"
     },
@@ -2272,10 +2272,10 @@
   {
     "question_text": "What is binary fission?",
     "options": {
-      "a": "Sexual reproduction in bacteria",
-      "b": "The primary method of bacterial reproduction where one",
-      "c": "Viral replication",
-      "d": "Spore formation"
+      "a": "Sexual reproduction in bacterial cells",
+      "b": "The primary method of bacterial reproduction where one cell divides into two",
+      "c": "Replication cycle of viruses",
+      "d": "Formation of bacterial spores"
     },
     "correct_option": "b",
     "explanation": "Binary fission is the main method of bacterial reproduction: the cell duplicates its DNA, elongates, and divides into two genetically identical daughter cells. E. coli divides every 20 minutes.\n\nAdditional: cell divides into two identical daughter cells",
@@ -2289,10 +2289,10 @@
   {
     "question_text": "What is bacterial conjugation?",
     "options": {
-      "a": "Fusion of two bacteria",
-      "b": "Transfer of genetic material between",
-      "c": "Bacterial spore formation",
-      "d": "Bacterial binary fission"
+      "a": "Fusion of two bacterial cells into one",
+      "b": "Transfer of genetic material between bacteria through direct contact",
+      "c": "Bacterial spore formation under harsh conditions",
+      "d": "Bacterial binary fission into two daughter cells"
     },
     "correct_option": "b",
     "explanation": "Conjugation is horizontal gene transfer where genetic material (usually plasmid DNA) is transferred from a donor (F⁺) to a recipient (F⁻) bacterium through a sex pilus.\n\nNote: via sex pilus\n\nAdditional: bacteria through direct cell-to-cell contact",
@@ -2323,10 +2323,10 @@
   {
     "question_text": "What is transformation in bacteria?",
     "options": {
-      "a": "Changing shape",
-      "b": "Uptake of free DNA from the",
-      "c": "Binary fission",
-      "d": "Spore formation"
+      "a": "Changing shape of the bacterial cell",
+      "b": "Uptake of free DNA from the environment",
+      "c": "Binary fission of bacterial cells",
+      "d": "Spore formation under stress"
     },
     "correct_option": "b",
     "explanation": "Transformation is one mechanism of horizontal gene transfer where bacteria take up naked/free DNA from the environment and incorporate it into their genome. Griffith's experiment demonstrated this.\n\nAdditional: environment by competent bacterial cells",
@@ -2340,10 +2340,10 @@
   {
     "question_text": "What is transduction in bacteria?",
     "options": {
-      "a": "Transformation",
-      "b": "Transfer of bacterial DNA from one",
-      "c": "Conjugation",
-      "d": "Spontaneous mutation"
+      "a": "Transformation by uptake of free DNA",
+      "b": "Transfer of bacterial DNA from one bacterium to another via a virus",
+      "c": "Conjugation through a sex pilus",
+      "d": "Spontaneous mutation in the bacterial genome"
     },
     "correct_option": "b",
     "explanation": "Transduction is horizontal gene transfer mediated by bacteriophages. When a phage infects a bacterium, it may accidentally package bacterial DNA and transfer it to the next bacterium it infects.\n\nNote: virus\n\nAdditional: cell to another via a bacteriophage",
@@ -2375,7 +2375,7 @@
     "question_text": "What is Koch's postulate?",
     "options": {
       "a": "Rules for drug manufacturing",
-      "b": "Four criteria to establish that a",
+      "b": "Four criteria to establish that a microbe causes disease",
       "c": "Rules for sterilization",
       "d": "Rules for vaccination"
     },
@@ -2391,7 +2391,7 @@
     "question_text": "What is the difference between pathogenicity and virulence?",
     "options": {
       "a": "Same thing",
-      "b": "Pathogenicity is the ability to cause disease;",
+      "b": "Pathogenicity is the ability to cause disease; virulence is the degree of severity",
       "c": "Virulence is weaker than pathogenicity",
       "d": "Pathogenicity is always severe"
     },
@@ -2441,13 +2441,13 @@
   {
     "question_text": "What is the difference between endotoxins and exotoxins?",
     "options": {
-      "a": "No difference",
-      "b": "Endotoxins are LPS; exotoxins are proteins",
-      "c": "Exotoxins are more common",
-      "d": "Endotoxins are proteins"
+      "a": "No difference between the two toxins",
+      "b": "Endotoxins are LPS components of gram-negative cell walls; exotoxins are secreted proteins",
+      "c": "Exotoxins are more common in practice",
+      "d": "Endotoxins are secreted proteins"
     },
     "correct_option": "b",
-    "explanation": "Endotoxins: LPS, Gram-negative, released on lysis, less specific, fever-causing. Exotoxins: proteins, mostly Gram-positive, secreted, highly specific/potent, can be toxoid for vaccines.\n\nNote: mostly Gram-positive, secreted by living bacteria",
+    "explanation": "Endotoxins: LPS, Gram-negative, released on lysis, less specific, fever-causing. Exotoxins: proteins, mostly Gram-positive, secreted, highly specific/potent, can be toxoid for vaccines.\n\nNote: mostly Gram-positive, secreted by living bacteria\n\nNote: exotoxins are proteins",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2493,7 +2493,7 @@
     "question_text": "What is an opportunistic pathogen?",
     "options": {
       "a": "A highly virulent pathogen",
-      "b": "A microorganism that causes disease only when",
+      "b": "A microorganism that causes disease only when the host is weakened",
       "c": "A pathogen that causes disease in everyone",
       "d": "A non-pathogenic organism"
     },
@@ -2510,7 +2510,7 @@
     "question_text": "What is the normal flora (normal microbiota)?",
     "options": {
       "a": "Pathogenic bacteria on the body",
-      "b": "The community of microorganisms that normally reside on",
+      "b": "The community of microorganisms that normally reside on the body",
       "c": "Bacteria that cause infection",
       "d": "Fungi in the environment"
     },
@@ -2543,7 +2543,7 @@
     "question_text": "What is sterilization?",
     "options": {
       "a": "Reduction of microbial count",
-      "b": "Complete destruction or removal of all",
+      "b": "Complete destruction or removal of all microorganisms including spores",
       "c": "Cleaning with soap",
       "d": "Using hand sanitizer"
     },
@@ -2575,13 +2575,13 @@
   {
     "question_text": "What is the difference between sterilization and disinfection?",
     "options": {
-      "a": "Same thing",
-      "b": "Sterilization kills ALL microorganisms including spores; disinfection",
-      "c": "Disinfection is more complete",
-      "d": "Sterilization is only for surfaces"
+      "a": "Both terms mean the same thing",
+      "b": "Sterilization kills all microorganisms including spores; disinfection reduces but does not kill spores",
+      "c": "Disinfection is more complete than sterilization",
+      "d": "Sterilization applies only to surfaces"
     },
     "correct_option": "b",
-    "explanation": "Sterilization eliminates all life forms (including spores). Disinfection reduces or eliminates most pathogenic microorganisms from surfaces but may not kill bacterial spores.\n\nAdditional: reduces pathogens but may not kill spores",
+    "explanation": "Sterilization eliminates all life forms (including spores). Disinfection reduces or eliminates most pathogenic microorganisms from surfaces but may not kill bacterial spores.\n\nAdditional: reduces pathogens but may not kill spores\n\nNote: disinfection",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2625,12 +2625,12 @@
     "question_text": "What is the difference between bactericidal and bacteriostatic antibiotics?",
     "options": {
       "a": "No difference",
-      "b": "Bactericidal kill bacteria; bacteriostatic inhibit",
+      "b": "Bactericidal agents kill bacteria; bacteriostatic agents only inhibit their growth",
       "c": "Bactericidal are weaker",
       "d": "Bacteriostatic are always better"
     },
     "correct_option": "b",
-    "explanation": "Bactericidal antibiotics (penicillin, gentamicin, ciprofloxacin) kill bacteria. Bacteriostatic antibiotics (tetracycline, erythromycin, chloramphenicol) inhibit growth, relying on immune system to clear the infection.\n\nAdditional: bacterial growth without killing",
+    "explanation": "Bactericidal antibiotics (penicillin, gentamicin, ciprofloxacin) kill bacteria. Bacteriostatic antibiotics (tetracycline, erythromycin, chloramphenicol) inhibit growth, relying on immune system to clear the infection.\n\nAdditional: bacterial growth without killing\n\nNote: bacteriostatic inhibit",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2659,7 +2659,7 @@
     "question_text": "What is the mechanism of action of tetracycline?",
     "options": {
       "a": "Inhibits cell wall synthesis",
-      "b": "Inhibits protein synthesis by binding to",
+      "b": "Inhibits protein synthesis by binding to the 30S ribosome",
       "c": "Inhibits DNA gyrase",
       "d": "Inhibits folic acid synthesis"
     },
@@ -2709,10 +2709,10 @@
   {
     "question_text": "What is antibiotic resistance?",
     "options": {
-      "a": "Allergy to antibiotics",
-      "b": "The ability of bacteria to survive and grow in the",
-      "c": "Antibiotics becoming expired",
-      "d": "Side effects of antibiotics"
+      "a": "Allergy to antibiotic drugs",
+      "b": "The ability of bacteria to survive and grow in the presence of antibiotics",
+      "c": "Antibiotics becoming expired over time",
+      "d": "Side effects caused by antibiotics"
     },
     "correct_option": "b",
     "explanation": "Antibiotic resistance occurs when bacteria evolve mechanisms to resist the effects of antibiotics, making infections harder to treat. It is driven by overuse and misuse of antibiotics.\n\nAdditional: presence of an antibiotic that was previously effective against them",
@@ -2776,10 +2776,10 @@
   {
     "question_text": "What is β-lactamase?",
     "options": {
-      "a": "An antibiotic",
+      "a": "An antibiotic from the penicillin class",
       "b": "An enzyme produced by resistant bacteria that destroys",
-      "c": "A type of bacteria",
-      "d": "A type of virus"
+      "c": "A type of bacteria in the gut",
+      "d": "A type of virus causing respiratory infections"
     },
     "correct_option": "b",
     "explanation": "β-lactamase is an enzyme produced by resistant bacteria that hydrolyzes the β-lactam ring in penicillins and cephalosporins, rendering them inactive. Clavulanic acid is a β-lactamase inhibitor.\n\nAdditional: the β-lactam ring of penicillin and cephalosporins",
@@ -2828,7 +2828,7 @@
     "question_text": "What is a culture medium?",
     "options": {
       "a": "A place to grow plants",
-      "b": "A nutrient substance used to",
+      "b": "A nutrient substance used to grow microorganisms",
       "c": "A type of petri dish",
       "d": "A type of microscope"
     },
@@ -2843,10 +2843,10 @@
   {
     "question_text": "What is the difference between selective and differential media?",
     "options": {
-      "a": "No difference",
-      "b": "Selective media inhibit unwanted organisms and encourage desired ones;",
-      "c": "Selective media are liquid",
-      "d": "Differential media kill bacteria"
+      "a": "No difference between the two media types",
+      "b": "Selective media inhibit unwanted organisms and encourage desired ones; differential media distinguish by appearance",
+      "c": "Selective media are always liquid",
+      "d": "Differential media kill all bacteria"
     },
     "correct_option": "b",
     "explanation": "Selective media (e.g., MacConkey agar, Mannitol Salt Agar) select for specific organisms. Differential media (e.g., Blood agar, MacConkey) distinguish organisms by colony appearance, hemolysis, or biochemical reactions.\n\nAdditional: differential media distinguish between organisms based on colony characteristics",
@@ -2895,7 +2895,7 @@
     "question_text": "What is the minimum inhibitory concentration (MIC)?",
     "options": {
       "a": "The maximum drug concentration",
-      "b": "The lowest concentration of an antibiotic that",
+      "b": "The lowest concentration of an antibiotic that inhibits visible growth",
       "c": "The drug dose given to patients",
       "d": "The concentration that kills all bacteria"
     },
@@ -2911,10 +2911,10 @@
   {
     "question_text": "What is the Kirby-Bauer disk diffusion method?",
     "options": {
-      "a": "A method to count bacteria",
+      "a": "A method to count bacteria in a sample",
       "b": "An antibiotic susceptibility test where paper disks containing antibiotics are placed",
-      "c": "A method to grow bacteria",
-      "d": "A method to stain bacteria"
+      "c": "A method to grow bacteria on agar",
+      "d": "A method to stain bacteria for microscopy"
     },
     "correct_option": "b",
     "explanation": "The Kirby-Bauer method: antibiotic-impregnated paper disks are placed on a bacterial lawn on Mueller-Hinton agar. After incubation, zones of inhibition are measured and compared to standardized tables to determine susceptibility.\n\nAdditional: on an agar plate and zone of inhibition is measured",
@@ -2961,7 +2961,7 @@
     "question_text": "What is innate immunity?",
     "options": {
       "a": "Immunity acquired after infection",
-      "b": "The non-specific defense mechanisms that are",
+      "b": "The non-specific defense mechanisms that are present from birth",
       "c": "Immunity from vaccination only",
       "d": "Antibody-mediated immunity"
     },
@@ -2995,7 +2995,7 @@
     "question_text": "What is the difference between humoral and cell-mediated immunity?",
     "options": {
       "a": "No difference",
-      "b": "Humoral immunity involves B cells and",
+      "b": "Humoral immunity involves B cells and antibodies",
       "c": "Humoral immunity is from animals",
       "d": "Cell-mediated immunity uses antibodies"
     },
@@ -3250,10 +3250,10 @@
   {
     "question_text": "What is the difference between primary and secondary immune response?",
     "options": {
-      "a": "No difference",
-      "b": "Primary response occurs on first exposure to antigen;",
-      "c": "Primary is always stronger",
-      "d": "Secondary produces IgM"
+      "a": "No difference between the two responses",
+      "b": "Primary response occurs on first exposure; secondary response is faster and stronger",
+      "c": "Primary response is always stronger",
+      "d": "Secondary response produces only IgM"
     },
     "correct_option": "b",
     "explanation": "Primary response: first exposure, lag phase 7-10 days, mainly IgM, lower antibody levels. Secondary response: re-exposure, shorter lag (1-3 days), mainly IgG, higher antibody levels, longer lasting (due to memory cells).\n\nNote: mainly IgG\n\nNote: slow, mainly IgM\n\nAdditional: secondary is faster and stronger upon re-exposure",
@@ -3334,7 +3334,7 @@
     "question_text": "What is complement system?",
     "options": {
       "a": "A vitamin supplement",
-      "b": "A group of plasma proteins that enhance the",
+      "b": "A group of plasma proteins that enhance the immune response",
       "c": "A type of antibody",
       "d": "A type of white blood cell"
     },
@@ -3349,10 +3349,10 @@
   {
     "question_text": "What are cytokines?",
     "options": {
-      "a": "Antibodies",
+      "a": "Antibodies produced by B cells",
       "b": "Small signaling proteins released by immune",
-      "c": "Types of bacteria",
-      "d": "Types of viruses"
+      "c": "Types of pathogenic bacteria",
+      "d": "Types of infectious viruses"
     },
     "correct_option": "b",
     "explanation": "Cytokines are small proteins (interleukins, interferons, TNF, chemokines) that act as messengers between immune cells, regulating inflammation, immune cell growth, differentiation, and activation.\n\nNote: and hematopoiesis\n\nAdditional: cells that regulate immune responses inflammation",
@@ -3414,10 +3414,10 @@
   {
     "question_text": "What is HIV?",
     "options": {
-      "a": "A bacterium that causes AIDS",
-      "b": "Human Immunodeficiency Virus — a retrovirus that",
-      "c": "A type of fungus",
-      "d": "A parasite"
+      "a": "A bacterium that causes the disease AIDS",
+      "b": "Human Immunodeficiency Virus — a retrovirus that attacks CD4 cells",
+      "c": "A type of fungus infecting the skin",
+      "d": "A parasite found in blood"
     },
     "correct_option": "b",
     "explanation": "HIV is a retrovirus that targets CD4+ T lymphocytes. It uses reverse transcriptase to convert its RNA to DNA, which integrates into the host genome, gradually destroying the immune system and leading to AIDS.\n\nAdditional: infects CD4+ T cells and causes AIDS",
@@ -3449,7 +3449,7 @@
     "question_text": "What is the difference between HIV and AIDS?",
     "options": {
       "a": "Same thing",
-      "b": "HIV is the virus; AIDS is",
+      "b": "HIV is the virus; AIDS is the resulting disease syndrome",
       "c": "AIDS is a type of HIV",
       "d": "HIV causes only mild illness"
     },
@@ -3499,10 +3499,10 @@
   {
     "question_text": "What is antiretroviral therapy (ART) for HIV?",
     "options": {
-      "a": "A single antibiotic",
+      "a": "A single antibiotic for bacterial infection",
       "b": "Combination of multiple antiretroviral drugs that suppress",
-      "c": "A vaccine for HIV",
-      "d": "A type of surgery"
+      "c": "A vaccine for HIV prevention",
+      "d": "A type of surgery for immune disorders"
     },
     "correct_option": "b",
     "explanation": "ART uses a combination (cocktail) of 3+ antiretroviral drugs from different classes (NRTIs, NNRTIs, protease inhibitors, integrase inhibitors) to suppress viral load, prevent resistance, and preserve immunity.\n\nAdditional: viral replication and preserve immune function",
@@ -3533,10 +3533,10 @@
   {
     "question_text": "What is the difference between epidemic and pandemic?",
     "options": {
-      "a": "No difference",
-      "b": "Epidemic is a disease outbreak in a",
-      "c": "Pandemic is milder",
-      "d": "Epidemic is worldwide"
+      "a": "No difference between the two terms",
+      "b": "Epidemic is a disease outbreak in a specific community",
+      "c": "Pandemic is milder in its effects",
+      "d": "Epidemic spreads worldwide equally"
     },
     "correct_option": "b",
     "explanation": "An epidemic is an unexpected increase in disease cases above normal in a specific area. A pandemic is an epidemic that spreads across multiple countries/continents globally (e.g., COVID-19, influenza pandemics).\n\nAdditional: community/region; pandemic is a worldwide epidemic",
@@ -3566,10 +3566,10 @@
   {
     "question_text": "What is nosocomial (hospital-acquired) infection?",
     "options": {
-      "a": "Infection present at admission",
-      "b": "An infection acquired during or after hospitalization that was",
-      "c": "Infection from community",
-      "d": "Infection before surgery"
+      "a": "Infection already present when the patient is admitted",
+      "b": "An infection acquired during or after hospitalization that was not present on admission",
+      "c": "Infection acquired from the community before admission",
+      "d": "Infection contracted before a planned surgery"
     },
     "correct_option": "b",
     "explanation": "Nosocomial infections (healthcare-associated infections, HAI) are infections acquired in hospitals or healthcare settings, typically 48-72 hours after admission. Common types: UTI, pneumonia, surgical site infections, bloodstream infections.\n\nAdditional: not present or incubating at the time of admission",
@@ -3582,10 +3582,10 @@
   {
     "question_text": "What is the most common cause of nosocomial infections?",
     "options": {
-      "a": "Viruses",
-      "b": "Staphylococcus aureus and other bacteria from",
-      "c": "Fungi only",
-      "d": "Parasites"
+      "a": "Viruses transmitted by blood transfusion",
+      "b": "Staphylococcus aureus and other bacteria from hospital environments",
+      "c": "Fungi from contaminated food sources",
+      "d": "Parasites in contaminated drinking water"
     },
     "correct_option": "b",
     "explanation": "Common nosocomial pathogens include S. aureus (MRSA), E. coli, Klebsiella, Pseudomonas aeruginosa, Enterococcus, and Candida. Many are antibiotic-resistant.\n\nNote: including MRSA\n\nAdditional: normal flora or the hospital environment",

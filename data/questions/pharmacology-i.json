@@ -1023,10 +1023,10 @@
     "unit_id": "pharmaco-i-unit-2",
     "question_text": "Metoclopramide acts as:",
     "options": [
-      "Antacid",
+      "Antacid for gastric acidity",
       "Prokinetic agent and antiemetic",
-      "PPI",
-      "H2 blocker"
+      "PPI for acid suppression",
+      "H2 blocker for peptic ulcer"
     ],
     "correct_index": 1,
     "explanation": "Metoclopramide is a dopamine D2 antagonist with prokinetic and antiemetic properties.",
@@ -1448,10 +1448,10 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Metronidazole is effective against:",
     "options": [
-      "All bacteria",
+      "All bacteria including gram positives",
       "Anaerobic bacteria and protozoa",
-      "Fungi only",
-      "Viruses only"
+      "Fungi like Candida species",
+      "Viruses like influenza virus"
     ],
     "correct_index": 1,
     "explanation": "Metronidazole is activated under anaerobic conditions, making it effective against anaerobes and protozoa.",
@@ -1618,7 +1618,7 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "Tachyphylaxis is:",
     "options": [
-      "Rapid tolerance to drug after",
+      "Rapid tolerance to drug after repeated administration",
       "Slow tolerance development",
       "Drug allergy",
       "Drug idiosyncrasy"
@@ -1653,7 +1653,7 @@
     "question_text": "Plasma protein binding of drugs means:",
     "options": [
       "Drug is inactive",
-      "Drug is bound to albumin and",
+      "Drug is bound to albumin and other plasma proteins",
       "Drug is destroyed",
       "Drug is excreted faster"
     ],
@@ -1687,7 +1687,7 @@
     "question_text": "Prodrug is a drug that:",
     "options": [
       "Is active as administered",
-      "Requires metabolic conversion in the",
+      "Requires metabolic conversion in the body to become active",
       "Cannot be metabolized",
       "Has no side effects"
     ],
@@ -1755,7 +1755,7 @@
     "question_text": "Intrinsic efficacy (intrinsic activity) of a drug is:",
     "options": [
       "Ability to bind receptor",
-      "Ability to activate receptor after binding",
+      "Ability to activate the receptor after binding to it",
       "Dose needed for effect",
       "Speed of absorption"
     ],
@@ -1805,10 +1805,10 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "Inverse agonist produces:",
     "options": [
-      "Same effect as agonist",
-      "Opposite effect to agonist by",
-      "No effect",
-      "Enhanced agonist effect"
+      "Same effect as the agonist itself",
+      "Opposite effect to an agonist by acting on the same receptor",
+      "No effect on the receptor at all",
+      "Enhanced effect beyond full agonist"
     ],
     "correct_index": 1,
     "explanation": "Inverse agonists reduce constitutive (basal) receptor activity, producing effects opposite to agonists.\n\nAdditional: reducing constitutive receptor activity",
@@ -1907,10 +1907,10 @@
     "unit_id": "pharmaco-i-unit-2",
     "question_text": "Misoprostol (a PGE1 analog) is used for:",
     "options": [
-      "Treating ulcers and preventing",
-      "Treating hypertension",
-      "Treating asthma",
-      "Treating diabetes"
+      "Treating ulcers and preventing NSAID-induced gastric injury",
+      "Treating high blood pressure",
+      "Treating acute asthma attacks",
+      "Treating type 2 diabetes mellitus"
     ],
     "correct_index": 0,
     "explanation": "Misoprostol is a prostaglandin E1 analog that inhibits gastric acid secretion and protects gastric mucosa, preventing NSAID-induced ulcers.\n\nAdditional: NSAID-induced gastric ulcers",
@@ -2179,10 +2179,10 @@
     "unit_id": "pharmaco-i-unit-4",
     "question_text": "Bethanechol is a muscarinic agonist used for:",
     "options": [
-      "Hypertension",
+      "Hypertension in elderly patients",
       "Urinary retention and neurogenic bladder",
-      "Asthma",
-      "Migraine"
+      "Asthma in young children",
+      "Migraine in adult patients"
     ],
     "correct_index": 1,
     "explanation": "Bethanechol stimulates muscarinic receptors in the bladder wall and GI tract, promoting urination and GI motility.",
@@ -2231,7 +2231,7 @@
     "question_text": "Sotalol is classified as:",
     "options": [
       "Alpha blocker",
-      "Class III antiarrhythmic with",
+      "Class III antiarrhythmic with beta-blocking activity",
       "Calcium channel blocker",
       "Diuretic"
     ],
@@ -2418,7 +2418,7 @@
     "question_text": "N-acetylcysteine (NAC) is used as a mucolytic because it:",
     "options": [
       "Dilates bronchi",
-      "Breaks disulfide bonds in",
+      "Breaks disulfide bonds in mucus glycoproteins",
       "Blocks histamine",
       "Inhibits leukotrienes"
     ],
@@ -2689,10 +2689,10 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Fluconazole is effective against:",
     "options": [
-      "Bacteria",
+      "Bacteria causing skin infections",
       "Candida and Cryptococcus species",
-      "Viruses",
-      "Parasites"
+      "Viruses causing influenza",
+      "Parasites causing malaria"
     ],
     "correct_index": 1,
     "explanation": "Fluconazole is a triazole antifungal that inhibits ergosterol synthesis, effective against Candida and Cryptococcus.\n\nNote: fungal infections",
@@ -2758,7 +2758,7 @@
     "question_text": "Amphotericin B is known as:",
     "options": [
       "Broad-spectrum antibiotic",
-      "Gold standard antifungal for",
+      "Gold standard antifungal for severe systemic fungal infections",
       "Antiviral drug",
       "Antimalarial drug"
     ],
@@ -2979,7 +2979,7 @@
     "question_text": "Teratogenic drugs cause:",
     "options": [
       "Drug addiction in fetus",
-      "Congenital malformations when",
+      "Congenital malformations when given during pregnancy",
       "Fetal death only",
       "No harm to fetus"
     ],
@@ -2995,10 +2995,10 @@
     "unit_id": "pharmaco-i-unit-2",
     "question_text": "Lactulose is used for:",
     "options": [
-      "Hypertension",
+      "Hypertension in elderly patients",
       "Hepatic encephalopathy and constipation",
-      "Asthma",
-      "Diabetes"
+      "Asthma in young children",
+      "Diabetes mellitus management"
     ],
     "correct_index": 1,
     "explanation": "Lactulose is a synthetic disaccharide that reduces ammonia absorption in the gut, treating hepatic encephalopathy, and acts as an osmotic laxative.",
@@ -3046,10 +3046,10 @@
     "unit_id": "pharmaco-i-unit-2",
     "question_text": "The 'rebound acid hypersecretion' phenomenon is associated with:",
     "options": [
-      "PPIs",
+      "PPIs when taken regularly",
       "H2 blockers when abruptly discontinued",
-      "Antacids",
-      "Prokinetics"
+      "Antacids on an empty stomach",
+      "Prokinetics in diabetic patients"
     ],
     "correct_index": 1,
     "explanation": "Abrupt withdrawal of acid-suppressing drugs (especially after prolonged H2 blocker use) can cause rebound increase in acid secretion.\n\nNote: especially after prolonged use",
@@ -3403,10 +3403,10 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Tigecycline is:",
     "options": [
-      "A beta-lactam",
-      "A glycylcycline effective against",
-      "A macrolide",
-      "A fluoroquinolone"
+      "A beta-lactam like penicillins",
+      "A glycylcycline effective against resistant bacteria including MRSA",
+      "A macrolide like erythromycin",
+      "A fluoroquinolone like ciprofloxacin"
     ],
     "correct_index": 1,
     "explanation": "Tigecycline is a glycylcycline that overcomes tetracycline resistance mechanisms, effective against MRSA, VRE, and MDR gram-negatives.\n\nNote: tetracycline derivative\n\nAdditional: many resistant bacteria",
@@ -3437,10 +3437,10 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Clindamycin is particularly effective against:",
     "options": [
-      "Gram-negative rods",
-      "Anaerobic bacteria and",
-      "Viral infections",
-      "Fungal infections"
+      "Gram-negative rods like E. coli",
+      "Anaerobic bacteria and some gram-positive cocci",
+      "Viral infections like influenza",
+      "Fungal infections like candidiasis"
     ],
     "correct_index": 1,
     "explanation": "Clindamycin has excellent activity against anaerobes and gram-positive bacteria, particularly useful for dental, bone, and joint infections.\n\nNote: including bone/joint infections\n\nAdditional: gram-positive cocci",

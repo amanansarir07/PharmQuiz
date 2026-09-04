@@ -3,10 +3,10 @@
     "unit_id": "thera-unit-1",
     "question_text": "GERD (Gastroesophageal Reflux Disease) is primarily treated with:",
     "options": [
-      "Antibiotics",
+      "Antibiotics for infection",
       "Proton pump inhibitors and H2 blockers",
-      "Analgesics",
-      "Antihistamines"
+      "Analgesics for pain",
+      "Antihistamines for allergy"
     ],
     "correct_index": 1,
     "explanation": "GERD is primarily treated with proton pump inhibitors (e.g., omeprazole) and H2 receptor antagonists (e.g., ranitidine) to reduce gastric acid production and reflux symptoms.",
@@ -105,10 +105,10 @@
     "unit_id": "thera-unit-3",
     "question_text": "Depression is primarily treated with:",
     "options": [
-      "Benzodiazepines",
+      "Benzodiazepines for short-term anxiety",
       "Selective Serotonin Reuptake Inhibitors",
-      "Antipsychotics",
-      "Beta blockers"
+      "Antipsychotics for schizophrenia",
+      "Beta blockers for hypertension"
     ],
     "correct_index": 1,
     "explanation": "SSRIs (e.g., fluoxetine, sertraline) are first-line drugs for depression. They increase serotonin levels in the synaptic cleft by blocking its reuptake.\n\nNote: SSRIs",
@@ -564,10 +564,10 @@
     "unit_id": "thera-unit-3",
     "question_text": "Carbamazepine is used for:",
     "options": [
-      "Depression",
+      "Depression in adults",
       "Trigeminal neuralgia and epilepsy",
-      "Hypertension",
-      "Asthma"
+      "Hypertension in elderly",
+      "Asthma in children"
     ],
     "correct_index": 1,
     "explanation": "Carbamazepine is an anticonvulsant also for trigeminal neuralgia.",
@@ -853,10 +853,10 @@
     "unit_id": "thera-unit-3",
     "question_text": "Haloperidol is primarily used for:",
     "options": [
-      "Depression",
+      "Depression in adults",
       "Psychosis and schizophrenia",
-      "Anxiety",
-      "Insomnia"
+      "Anxiety in young adults",
+      "Insomnia in the elderly"
     ],
     "correct_index": 1,
     "explanation": "Haloperidol is a typical antipsychotic for psychosis and schizophrenia.",
@@ -919,10 +919,10 @@
   {
     "question_text": "What is pharmacotherapy?",
     "options": {
-      "a": "Drug research",
-      "b": "The treatment of disease through",
-      "c": "Drug pricing",
-      "d": "Drug formulation"
+      "a": "Drug research in laboratory settings",
+      "b": "The treatment of disease through the use of drugs",
+      "c": "Drug pricing and market analysis",
+      "d": "Drug formulation in manufacturing plants"
     },
     "correct_option": "b",
     "explanation": "Pharmacotherapy is the use of medicines to treat disease, manage symptoms, or prevent disease progression, based on evidence-based guidelines.\n\nAdditional: the administration of drugs",
@@ -953,7 +953,7 @@
     "question_text": "What is the target blood pressure in hypertensive patients?",
     "options": {
       "a": "140/90 mmHg or below",
-      "b": "130/80 mmHg or below for",
+      "b": "130/80 mmHg or below for most hypertensive patients",
       "c": "120/70 mmHg or below",
       "d": "150/100 mmHg or below"
     },
@@ -970,7 +970,7 @@
     "question_text": "How do ACE inhibitors lower blood pressure?",
     "options": {
       "a": "By blocking calcium channels",
-      "b": "By inhibiting angiotensin-converting enzyme preventing",
+      "b": "By inhibiting angiotensin-converting enzyme, preventing angiotensin II formation",
       "c": "By blocking beta receptors",
       "d": "By increasing sodium excretion only"
     },
@@ -1020,13 +1020,13 @@
   {
     "question_text": "What is the difference between ACE inhibitors and ARBs?",
     "options": {
-      "a": "No difference",
-      "b": "ACE inhibitors block ACE enzyme; ARBs block angiotensin II",
-      "c": "ARBs are always better",
-      "d": "ACE inhibitors don't lower BP"
+      "a": "No difference in their mechanisms",
+      "b": "ACE inhibitors block the ACE enzyme; ARBs block the angiotensin II receptor",
+      "c": "ARBs are always better clinically",
+      "d": "ACE inhibitors do not lower blood pressure"
     },
     "correct_option": "b",
-    "explanation": "ACE inhibitors block ACE (preventing Ang II formation). ARBs (losartan, valsartan) block Ang II at the AT1 receptor. ARBs don't increase bradykinin, so no cough. Used as alternative if ACE inhibitor cough occurs.\n\nAdditional: at AT1 receptor — ARBs don't cause cough",
+    "explanation": "ACE inhibitors block ACE (preventing Ang II formation). ARBs (losartan, valsartan) block Ang II at the AT1 receptor. ARBs don't increase bradykinin, so no cough. Used as alternative if ACE inhibitor cough occurs.\n\nAdditional: at AT1 receptor — ARBs don't cause cough\n\nNote: ARBs block angiotensin II",
     "subject": "pharmacotherapeutics-i",
     "difficulty": "medium",
     "tags": [
@@ -1107,7 +1107,7 @@
     "question_text": "What is the mechanism of action of metformin?",
     "options": {
       "a": "Stimulating insulin release from beta cells",
-      "b": "Decreasing hepatic glucose production and increasing",
+      "b": "Decreasing hepatic glucose production and increasing peripheral glucose uptake",
       "c": "Inhibiting alpha-glucosidase",
       "d": "Inhibiting DPP-4 enzyme"
     },
@@ -1140,10 +1140,10 @@
   {
     "question_text": "What is the major side effect of metformin?",
     "options": {
-      "a": "Hypoglycemia",
+      "a": "Hypoglycemia after each dose",
       "b": "GI disturbances and lactic acidosis",
-      "c": "Weight gain",
-      "d": "Hyperkalemia"
+      "c": "Weight gain on long-term use",
+      "d": "Hyperkalemia in kidney disease"
     },
     "correct_option": "b",
     "explanation": "Common: GI effects (20-30%). Rare but serious: lactic acidosis (especially with renal impairment). Metformin should be stopped before contrast dye procedures and before surgery.\n\nNote: rare but serious\n\nNote: nausea, diarrhea",
@@ -1260,7 +1260,7 @@
     "question_text": "What is the major side effect of statins?",
     "options": {
       "a": "Liver failure",
-      "b": "Myopathy; rarely rhabdomyolysis",
+      "b": "Myopathy (muscle pain and damage)",
       "c": "Kidney failure",
       "d": "Blindness"
     },
@@ -1277,7 +1277,7 @@
     "question_text": "What is the mechanism of action of warfarin?",
     "options": {
       "a": "Inhibiting platelet aggregation directly",
-      "b": "Inhibiting vitamin K epoxide reductase preventing",
+      "b": "Inhibiting vitamin K epoxide reductase, preventing activation of clotting factors",
       "c": "Dissolving blood clots",
       "d": "Inhibiting thrombin directly"
     },
@@ -1310,13 +1310,13 @@
   {
     "question_text": "What is the antidote for warfarin toxicity?",
     "options": {
-      "a": "Vitamin K only",
-      "b": "Vitamin K for mild bleeding; fresh frozen plasma",
-      "c": "Protamine sulfate",
-      "d": "N-acetylcysteine"
+      "a": "Vitamin K tablets only, at any dose",
+      "b": "Vitamin K for mild bleeding; fresh frozen plasma for severe bleeding",
+      "c": "Protamine sulfate for reversal",
+      "d": "N-acetylcysteine given intravenously"
     },
     "correct_option": "b",
-    "explanation": "Warfarin reversal: Vitamin K (IV/PO) for non-urgent reversal (takes 6-24 hours). FFP or 4-factor PCC for urgent/life-threatening bleeding (immediate effect).\n\nNote: phytonadione; FFP; PCC\n\nAdditional: or prothrombin complex concentrate for severe/life-threatening bleeding",
+    "explanation": "Warfarin reversal: Vitamin K (IV/PO) for non-urgent reversal (takes 6-24 hours). FFP or 4-factor PCC for urgent/life-threatening bleeding (immediate effect).\n\nNote: phytonadione; FFP; PCC\n\nAdditional: or prothrombin complex concentrate for severe/life-threatening bleeding\n\nNote: fresh frozen plasma",
     "subject": "pharmacotherapeutics-i",
     "difficulty": "medium",
     "tags": [
@@ -1328,7 +1328,7 @@
     "question_text": "What is the difference between warfarin and heparin?",
     "options": {
       "a": "No difference",
-      "b": "Warfarin works in the liver; heparin works in the",
+      "b": "Warfarin works in the liver; heparin works in the blood",
       "c": "Heparin is oral",
       "d": "Warfarin is for acute treatment only"
     },
@@ -1362,10 +1362,10 @@
   {
     "question_text": "What is dual antiplatelet therapy (DAPT)?",
     "options": {
-      "a": "Two anticoagulants",
-      "b": "Aspirin + a P2Y12 inhibitor used after",
-      "c": "Two antihypertensives",
-      "d": "Two statins"
+      "a": "Two anticoagulants given together daily",
+      "b": "Aspirin + a P2Y12 inhibitor used after coronary stent placement",
+      "c": "Two antihypertensives for blood pressure control",
+      "d": "Two statins for cholesterol lowering"
     },
     "correct_option": "b",
     "explanation": "DAPT = aspirin + P2Y12 inhibitor. Used for: ACS (12 months), PCI with stent (6-12 months for DES, 1-3 months for BMS). Reduces stent thrombosis and recurrent events.\n\nNote: clopidogrel/prasugrel/ticagrelor\n\nAdditional: acute coronary syndromes and stent placement",
@@ -1431,12 +1431,12 @@
     "question_text": "What is the difference between dihydropyridine and non-dihydropyridine CCBs?",
     "options": {
       "a": "No difference",
-      "b": "DHP primarily vasodilate arteries; non-DHP also",
+      "b": "DHP CCBs primarily vasodilate arteries; non-DHP CCBs affect the heart more",
       "c": "Non-DHP are always better",
       "d": "DHP don't affect blood vessels"
     },
     "correct_option": "b",
-    "explanation": "DHP CCBs (amlodipine, nifedipine): primarily arterial vasodilation. Non-DHP (verapamil, diltiazem): also slow heart rate and AV conduction. Non-DHPs are contraindicated in heart block and HFrEF.\n\nNote: amlodipine; verapamil, diltiazem\n\nAdditional: depress cardiac conduction and contractility",
+    "explanation": "DHP CCBs (amlodipine, nifedipine): primarily arterial vasodilation. Non-DHP (verapamil, diltiazem): also slow heart rate and AV conduction. Non-DHPs are contraindicated in heart block and HFrEF.\n\nNote: amlodipine; verapamil, diltiazem\n\nAdditional: depress cardiac conduction and contractility\n\nNote: non-DHP also",
     "subject": "pharmacotherapeutics-i",
     "difficulty": "medium",
     "tags": [
@@ -1447,10 +1447,10 @@
   {
     "question_text": "What is the mechanism of action of aspirin as an antiplatelet?",
     "options": {
-      "a": "Reversible COX-1 inhibition",
-      "b": "Irreversible acetylation of COX-1 in platelets blocking",
-      "c": "Blocking P2Y12 receptors",
-      "d": "Inhibiting thrombin"
+      "a": "Reversible inhibition of COX-1 enzyme",
+      "b": "Irreversible acetylation of COX-1 in platelets, blocking thromboxane A2 formation",
+      "c": "Blocking the P2Y12 receptors on platelets",
+      "d": "Directly inhibiting the thrombin enzyme"
     },
     "correct_option": "b",
     "explanation": "Aspirin irreversibly acetylates COX-1 in platelets, blocking thromboxane A2 (TXA2) synthesis. Since platelets are anucleate (can't make new COX-1), the effect lasts the platelet's 7-10 day lifetime.\n\nNote: Ser530\n\nAdditional: TXA2 synthesis for the platelet's lifetime",
@@ -1481,10 +1481,10 @@
   {
     "question_text": "What is the mechanism of action of warfarin in detail?",
     "options": {
-      "a": "Blocking thrombin directly",
-      "b": "Inhibiting vitamin K epoxide reductase complex 1 preventing regeneration of",
-      "c": "Inhibiting platelet COX-1",
-      "d": "Activating antithrombin III"
+      "a": "Blocking thrombin directly in the blood",
+      "b": "Inhibiting vitamin K epoxide reductase, preventing regeneration of active vitamin K",
+      "c": "Inhibiting platelet COX-1 enzyme",
+      "d": "Activating antithrombin III in plasma"
     },
     "correct_option": "b",
     "explanation": "Warfarin inhibits VKORC1, preventing recycling of vitamin K epoxide to reduced vitamin K. Reduced vitamin K is a cofactor for gamma-glutamyl carboxylase, which activates factors II, VII, IX, X and proteins C, S.\n\nNote: VII, IX, X\n\nAdditional: reduced vitamin K needed for gamma-carboxylation of factors II",
@@ -1567,7 +1567,7 @@
     "question_text": "What is the difference between SABA and LABA?",
     "options": {
       "a": "No difference",
-      "b": "SABA — short-acting used for",
+      "b": "SABA — short-acting, used for quick relief of bronchospasm",
       "c": "LABA is for acute attacks",
       "d": "SABA is for maintenance"
     },
@@ -1652,9 +1652,9 @@
   {
     "question_text": "What is the mechanism of action of insulin glargine?",
     "options": {
-      "a": "Short-acting insulin",
+      "a": "Short-acting insulin for meal coverage",
       "b": "A long-acting insulin analog with a modified amino acid sequence",
-      "c": "An oral insulin",
+      "c": "An oral insulin taken with food",
       "d": "An insulin antagonist"
     },
     "correct_option": "b",
@@ -1685,13 +1685,13 @@
   {
     "question_text": "What is the target HbA1c in diabetic patients?",
     "options": {
-      "a": "<6%",
-      "b": "<7% for most adults; individualized",
-      "c": "<10%",
-      "d": "<5%"
+      "a": "<6% for pregnant women with diabetes",
+      "b": "<7% for most adults; individualized for some patients",
+      "c": "<10% for elderly frail patients",
+      "d": "<5% for all diabetic patients"
     },
     "correct_option": "b",
-    "explanation": "ADA: HbA1c <7% for most adults. Tighter control (<6.5%) for young, newly diagnosed. Less strict (<8%) for elderly, those with comorbidities or hypoglycemia risk.\n\nNote: and hypoglycemia risk\n\nNote: 6.5-8%\n\nAdditional: targets based on age comorbidities",
+    "explanation": "ADA: HbA1c <7% for most adults. Tighter control (<6.5%) for young, newly diagnosed. Less strict (<8%) for elderly, those with comorbidities or hypoglycemia risk.\n\nNote: and hypoglycemia risk\n\nNote: 6.5-8%\n\nAdditional: targets based on age comorbidities\n\nNote: individualized",
     "subject": "pharmacotherapeutics-i",
     "difficulty": "medium",
     "tags": [
@@ -1719,12 +1719,12 @@
     "question_text": "What is the mechanism of action of metformin vs sulfonylureas?",
     "options": {
       "a": "Same mechanism",
-      "b": "Metformin reduces hepatic glucose production; sulfonylureas stimulate",
+      "b": "Metformin reduces hepatic glucose production; sulfonylureas stimulate insulin release",
       "c": "Both stimulate insulin",
       "d": "Both reduce glucose production only"
     },
     "correct_option": "b",
-    "explanation": "Metformin: reduces hepatic glucose output + improves insulin sensitivity (does NOT stimulate insulin → low hypoglycemia risk). Sulfonylureas: close K-ATP channels on beta cells → insulin secretion (risk of hypoglycemia).\n\nNote: does not stimulate insulin\n\nAdditional: insulin release from pancreatic beta cells",
+    "explanation": "Metformin: reduces hepatic glucose output + improves insulin sensitivity (does NOT stimulate insulin → low hypoglycemia risk). Sulfonylureas: close K-ATP channels on beta cells → insulin secretion (risk of hypoglycemia).\n\nNote: does not stimulate insulin\n\nAdditional: insulin release from pancreatic beta cells\n\nNote: sulfonylureas stimulate",
     "subject": "pharmacotherapeutics-i",
     "difficulty": "medium",
     "tags": [
@@ -1786,10 +1786,10 @@
   {
     "question_text": "What is the mechanism of action of omeprazole in detail?",
     "options": {
-      "a": "Blocking histamine H2 receptors",
-      "b": "Irreversibly binding to the H+/K+-ATPase on the luminal surface of",
-      "c": "Neutralizing acid in the stomach",
-      "d": "Coating the gastric mucosa"
+      "a": "Blocking histamine H2 receptors on parietal cells",
+      "b": "Irreversibly binding to the H+/K+-ATPase on the luminal surface of parietal cells",
+      "c": "Neutralizing acid already present in the stomach",
+      "d": "Coating the gastric mucosa as a barrier"
     },
     "correct_option": "b",
     "explanation": "Omeprazole is a prodrug activated in the acidic parietal cell canaliculus. The sulfenamide form covalently binds cysteine residues on H+/K+-ATPase, irreversibly inactivating it. New pumps must be synthesized for acid secretion to resume.\n\nNote: proton pump\n\nAdditional: parietal cells blocking the final step of acid secretion",
@@ -1821,7 +1821,7 @@
     "question_text": "What is the mechanism of action of metronidazole?",
     "options": {
       "a": "Inhibiting cell wall synthesis",
-      "b": "Its reduced metabolites damage DNA causing strand breakage and",
+      "b": "Its reduced metabolites damage DNA causing strand breakage and cell death",
       "c": "Inhibiting protein synthesis",
       "d": "Inhibiting folic acid synthesis"
     },
@@ -1889,7 +1889,7 @@
     "question_text": "What is the difference between amoxicillin and ampicillin?",
     "options": {
       "a": "No difference",
-      "b": "Amoxicillin has better oral bioavailability and",
+      "b": "Amoxicillin has better oral bioavailability and broader spectrum",
       "c": "Ampicillin is always better",
       "d": "Amoxicillin is injected only"
     },
@@ -1905,10 +1905,10 @@
   {
     "question_text": "What is the mechanism of action of ciprofloxacin?",
     "options": {
-      "a": "Inhibiting cell wall synthesis",
-      "b": "Inhibiting DNA gyrase and topoisomerase IV preventing",
-      "c": "Inhibiting protein synthesis",
-      "d": "Inhibiting folate synthesis"
+      "a": "Inhibiting bacterial cell wall synthesis",
+      "b": "Inhibiting DNA gyrase and topoisomerase IV, preventing bacterial DNA replication",
+      "c": "Inhibiting bacterial protein synthesis",
+      "d": "Inhibiting bacterial folate synthesis"
     },
     "correct_option": "b",
     "explanation": "Ciprofloxacin (fluoroquinolone) binds to DNA gyrase and topoisomerase IV, stabilizing the DNA-enzyme complex and causing double-strand DNA breaks. This triggers SOS response and cell death.\n\nNote: topoisomerase II\n\nAdditional: DNA supercoiling and causing double-strand breaks",
@@ -1991,7 +1991,7 @@
     "question_text": "What is the difference between selective COX-2 inhibitors (coxibs) and traditional NSAIDs?",
     "options": {
       "a": "No difference",
-      "b": "Coxibs selectively inhibit COX-2 without inhibiting COX-1 reducing",
+      "b": "Coxibs selectively inhibit COX-2 without inhibiting COX-1, reducing GI toxicity",
       "c": "Coxibs have more GI side effects",
       "d": "Traditional NSAIDs are safer for the heart"
     },
@@ -2060,7 +2060,7 @@
     "question_text": "What is the mechanism of action of amlodipine in detail?",
     "options": {
       "a": "Blocking beta receptors",
-      "b": "Binding to L-type calcium channels in",
+      "b": "Binding to L-type calcium channels in vascular smooth muscle",
       "c": "Inhibiting angiotensin II",
       "d": "Blocking aldosterone"
     },
@@ -2112,7 +2112,7 @@
     "question_text": "What is the mechanism of action of hydrochlorothiazide in detail?",
     "options": {
       "a": "Inhibiting Na-K-2Cl cotransporter",
-      "b": "Inhibiting the NaCl cotransporter in the",
+      "b": "Inhibiting the NaCl cotransporter in the distal convoluted tubule",
       "c": "Blocking aldosterone",
       "d": "Inhibiting ADH"
     },
@@ -2213,10 +2213,10 @@
   {
     "question_text": "What is the antidote for digoxin toxicity?",
     "options": {
-      "a": "Atropine only",
+      "a": "Atropine to raise the heart rate",
       "b": "Digoxin-specific antibody fragments for life-threatening",
-      "c": "N-acetylcysteine",
-      "d": "Vitamin K"
+      "c": "N-acetylcysteine for paracetamol overdose",
+      "d": "Vitamin K to reverse warfarin effect"
     },
     "correct_option": "b",
     "explanation": "Digibind (digoxin-specific Fab) binds free digoxin, reversing toxicity. For mild-moderate toxicity: correct hypokalemia, monitor. For severe (life-threatening arrhythmias, hyperkalemia): Digibind IV.\n\nNote: Digibind/DigiFab\n\nAdditional: toxicity; atropine for bradycardia",
@@ -2247,10 +2247,10 @@
   {
     "question_text": "What is the therapeutic use of theophylline?",
     "options": {
-      "a": "Treating hypertension",
-      "b": "Bronchodilator for asthma and COPD — used as",
-      "c": "Treating diabetes",
-      "d": "Treating infections"
+      "a": "Treating hypertension in adults",
+      "b": "Bronchodilator for asthma and COPD — used as an add-on therapy",
+      "c": "Treating diabetes mellitus",
+      "d": "Treating bacterial infections"
     },
     "correct_option": "b",
     "explanation": "Theophylline (methylxanthine) is a weak bronchodilator used as add-on therapy for asthma/COPD. It also has anti-inflammatory effects at low doses and stimulates respiratory drive in COPD.\n\nAdditional: add-on therapy when inhaled bronchodilators are insufficient",
@@ -2416,10 +2416,10 @@
   {
     "question_text": "What is the clinical significance of metformin's effect on weight?",
     "options": {
-      "a": "It causes weight gain",
-      "b": "Metformin is weight-neutral or causes modest weight loss — an",
-      "c": "It has no effect on weight",
-      "d": "It causes significant weight loss"
+      "a": "It causes significant weight gain",
+      "b": "Metformin is weight-neutral or causes modest weight loss — an advantage over sulfonylureas",
+      "c": "It has no effect on body weight",
+      "d": "It causes significant weight loss in all patients"
     },
     "correct_option": "b",
     "explanation": "Metformin promotes modest weight loss or is weight-neutral (unlike sulfonylureas and insulin which cause weight gain). This is particularly beneficial in overweight/obese T2DM patients.\n\nAdditional: advantage over sulfonylureas and insulin which cause weight gain",
@@ -2468,7 +2468,7 @@
     "question_text": "What is the mechanism of action of acetaminophen (paracetamol)?",
     "options": {
       "a": "Peripheral COX inhibition like ibuprofen",
-      "b": "Primarily central COX inhibition and activation of",
+      "b": "Primarily central COX inhibition and activation of descending inhibitory pathways",
       "c": "Blocking opioid receptors",
       "d": "Blocking GABA receptors"
     },
@@ -2569,10 +2569,10 @@
   {
     "question_text": "What is liposomal amphotericin B (AmBisome)?",
     "options": {
-      "a": "A different antifungal",
+      "a": "A different antifungal from another class",
       "b": "A lipid formulation of amphotericin B with significantly",
-      "c": "A more toxic version",
-      "d": "An oral formulation"
+      "c": "A more toxic version of the drug",
+      "d": "An oral formulation of the same drug"
     },
     "correct_option": "b",
     "explanation": "Liposomal amphotericin B (AmBisome) encapsulates amphotericin B in liposomes, reducing nephrotoxicity and infusion reactions while maintaining antifungal efficacy. Preferred for most invasive fungal infections.\n\nAdditional: reduced nephrotoxicity compared to conventional amphotericin B",
@@ -2587,7 +2587,7 @@
     "question_text": "What is the mechanism of action of metformin on the liver?",
     "options": {
       "a": "It increases hepatic glucose production",
-      "b": "It primarily reduces hepatic glucose production by",
+      "b": "It primarily reduces hepatic glucose production by inhibiting gluconeogenesis",
       "c": "It has no liver effect",
       "d": "It increases glycogen breakdown"
     },
@@ -2637,10 +2637,10 @@
   {
     "question_text": "What is the stepwise approach to COPD management?",
     "options": {
-      "a": "Only bronchodilators",
+      "a": "Using bronchodilators at every stage only",
       "b": "Step up from short-acting bronchodilators → long-acting → combination LABA+LAMA",
-      "c": "Start with oral steroids",
-      "d": "Start with antibiotics"
+      "c": "Start treatment with oral corticosteroids",
+      "d": "Start treatment with broad-spectrum antibiotics"
     },
     "correct_option": "b",
     "explanation": "COPD stepwise: Step 1: SABA/SAMA PRN. Step 2: LABA or LAMA. Step 3: LABA + LAMA. Step 4: LABA + LAMA + ICS (if eosinophils elevated). Step 5: Add roflumilast or azithromycin.\n\nNote: SABA/SAMA; LABA/LAMA\n\nAdditional: → add ICS or other therapies based on severity",
@@ -2655,12 +2655,12 @@
     "question_text": "What is the difference between LABA and LAMA in COPD?",
     "options": {
       "a": "No difference",
-      "b": "LABA are beta-2 agonists; LAMA is a muscarinic",
+      "b": "LABA are beta-2 agonists; LAMA are muscarinic antagonists",
       "c": "LAMA is always better",
       "d": "LABA is for asthma only"
     },
     "correct_option": "b",
-    "explanation": "LABA: stimulate beta-2 receptors → ↑cAMP → bronchodilation. LAMA: block M3 muscarinic receptors → prevent acetylcholine-mediated bronchoconstriction. Combination provides additive bronchodilation.\n\nNote: salmeterol, formoterol; tiotropium\n\nAdditional: antagonist — both cause bronchodilation through different mechanisms",
+    "explanation": "LABA: stimulate beta-2 receptors → ↑cAMP → bronchodilation. LAMA: block M3 muscarinic receptors → prevent acetylcholine-mediated bronchoconstriction. Combination provides additive bronchodilation.\n\nNote: salmeterol, formoterol; tiotropium\n\nAdditional: antagonist — both cause bronchodilation through different mechanisms\n\nNote: LAMA is a muscarinic",
     "subject": "pharmacotherapeutics-i",
     "difficulty": "medium",
     "tags": [
@@ -2689,10 +2689,10 @@
   {
     "question_text": "What is the role of eosinophils in asthma pathophysiology?",
     "options": {
-      "a": "No role",
+      "a": "No role in asthma development",
       "b": "Eosinophils release inflammatory mediators that damage airway",
-      "c": "They kill bacteria only",
-      "d": "They prevent asthma"
+      "c": "They only kill bacteria in the airways",
+      "d": "They prevent asthma attacks entirely"
     },
     "correct_option": "b",
     "explanation": "Eosinophils are key effector cells in type 2 (eosinophilic) asthma. They release leukotriene C4, major basic protein, and eosinophil cationic protein → airway inflammation, mucus hypersecretion, and bronchial hyperresponsiveness.\n\nNote: leukotrienes, major basic protein\n\nAdditional: epithelium and drive type 2 inflammation",
@@ -2757,10 +2757,10 @@
   {
     "question_text": "What is the mechanism of action of leflunomide in rheumatoid arthritis?",
     "options": {
-      "a": "COX inhibition",
+      "a": "COX inhibition like NSAIDs",
       "b": "Inhibiting dihydroorotate dehydrogenase blocking de novo",
-      "c": "Blocking TNF-alpha",
-      "d": "Inhibiting JAK pathway"
+      "c": "Blocking TNF-alpha with antibodies",
+      "d": "Inhibiting JAK-STAT pathway"
     },
     "correct_option": "b",
     "explanation": "Leflunomide (prodrug → teriflunomide) inhibits DHODH, an enzyme essential for de novo pyrimidine synthesis. Activated lymphocytes (which rely on de novo synthesis) are selectively suppressed.\n\nAdditional: pyrimidine synthesis in activated lymphocytes",
@@ -2860,7 +2860,7 @@
     "question_text": "What is the role of pharmacists in asthma and COPD management?",
     "options": {
       "a": "No role",
-      "b": "Inhaler technique assessment and",
+      "b": "Inhaler technique assessment and adherence counseling",
       "c": "Only dispensing inhalers",
       "d": "Only filling prescriptions"
     },
@@ -2927,10 +2927,10 @@
   {
     "question_text": "What is the mechanism of action of salbutamol at the molecular level?",
     "options": {
-      "a": "Blocking M3 receptors",
+      "a": "Blocking M3 receptors on bronchial smooth muscle",
       "b": "Activating beta-2 adrenergic receptors → Gs protein → adenylyl cyclase activation",
-      "c": "Blocking H1 receptors",
-      "d": "Inhibiting PDE3"
+      "c": "Blocking H1 receptors on mast cell surfaces",
+      "d": "Inhibiting PDE3 to raise cAMP within cells"
     },
     "correct_option": "b",
     "explanation": "Salbutamol binds beta-2 receptors → Gs protein activation → adenylyl cyclase → ↑cAMP → PKA activation → decreased intracellular Ca2+ (via sequestration) and decreased MLCK activity → bronchial smooth muscle relaxation.\n\nAdditional: → increased cAMP → decreased intracellular Ca2+ → smooth muscle relaxation",
@@ -2961,10 +2961,10 @@
   {
     "question_text": "What is the difference between DVT and PE treatment?",
     "options": {
-      "a": "Same treatment",
-      "b": "DVT and PE are treated similarly with anticoagulation;",
-      "c": "DVT needs surgery, PE doesn't",
-      "d": "PE doesn't need anticoagulation"
+      "a": "Exactly the same treatment for both",
+      "b": "DVT and PE are treated similarly with anticoagulation, though PE may need more aggressive therapy",
+      "c": "DVT needs surgery while PE does not",
+      "d": "PE does not need any anticoagulation"
     },
     "correct_option": "b",
     "explanation": "Uncomplicated DVT and PE: anticoagulation (LMWH/heparin bridging to warfarin or DOACs). MassPE with hemodynamic instability: thrombolytics (alteplase). Recurrent PE despite anticoagulation: IVC filter.\n\nNote: heparin → warfarin/DOACs\n\nAdditional: massive PE may require thrombolysis or embolectomy",
@@ -3079,10 +3079,10 @@
   {
     "question_text": "What is the mechanism of action of vancomycin?",
     "options": {
-      "a": "Inhibiting DNA replication",
-      "b": "Binding to D-Ala-D-Ala terminal of peptidoglycan precursors inhibiting",
-      "c": "Inhibiting protein synthesis",
-      "d": "Disrupting cell membrane"
+      "a": "Inhibiting bacterial DNA replication",
+      "b": "Binding to D-Ala-D-Ala terminal of peptidoglycan precursors, inhibiting cell wall synthesis",
+      "c": "Inhibiting bacterial protein synthesis",
+      "d": "Disrupting the bacterial cell membrane"
     },
     "correct_option": "b",
     "explanation": "Vancomycin binds to the D-Ala-D-Ala terminus of peptidoglycan precursors, sterically preventing both transglycosylation (polymerization) and transpeptidation (cross-linking), inhibiting cell wall synthesis.\n\nAdditional: cell wall synthesis by preventing transglycosylation and transpeptidation",
@@ -3163,10 +3163,10 @@
   {
     "question_text": "What is the mechanism of action of dexamethasone?",
     "options": {
-      "a": "Blocking histamine receptors",
-      "b": "A potent synthetic glucocorticoid that binds to",
-      "c": "Blocking COX-1 enzyme",
-      "d": "Inhibiting phosphodiesterase"
+      "a": "Blocking histamine H1 receptors",
+      "b": "A potent synthetic glucocorticoid that binds to glucocorticoid receptors",
+      "c": "Blocking COX-1 enzyme in platelets",
+      "d": "Inhibiting phosphodiesterase enzyme"
     },
     "correct_option": "b",
     "explanation": "Dexamethasone binds cytoplasmic glucocorticoid receptors → translocates to nucleus → binds glucocorticoid response elements (GREs) → transrepression of pro-inflammatory genes (NF-kB, AP-1) and transactivation of anti-inflammatory genes.\n\nNote: and modulates gene transcription to suppress inflammation\n\nAdditional: intracellular glucocorticoid receptors translocates to the nucleus",

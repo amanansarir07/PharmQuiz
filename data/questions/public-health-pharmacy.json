@@ -123,7 +123,7 @@
     "question_text": "An epidemic differs from endemic in that an epidemic:",
     "options": [
       "Always exists in a region",
-      "Occurs in greater numbers than expected in",
+      "Occurs in greater numbers than expected in a community",
       "Only affects one person",
       "Never occurs naturally"
     ],
@@ -478,7 +478,7 @@
     "question_text": "SDG Goal 3 aims to:",
     "options": [
       "End poverty",
-      "Ensure healthy lives and",
+      "Ensure healthy lives and promote well-being",
       "Provide quality education",
       "Achieve gender equality"
     ],
@@ -681,7 +681,7 @@
     "question_text": "Endemic disease means:",
     "options": [
       "Occurs suddenly",
-      "Constantly present in a",
+      "Constantly present in a particular region",
       "Has been eliminated",
       "Affects only one person"
     ],
@@ -714,10 +714,10 @@
     "unit_id": "phs-unit-3",
     "question_text": "Specific mortality rate measures deaths:",
     "options": [
-      "From all causes",
-      "From a specific disease in",
-      "Only in hospitals",
-      "Only in urban areas"
+      "From all causes combined together",
+      "From a specific disease in a specific population",
+      "That occur only in hospital settings",
+      "That occur only in urban populations"
     ],
     "correct_index": 1,
     "explanation": "Specific mortality measures deaths from a particular cause in a subgroup.\n\nAdditional: a specific age/sex group",
@@ -765,10 +765,10 @@
     "unit_id": "phs-unit-3",
     "question_text": "Analytical epidemiology:",
     "options": [
-      "Only observes",
-      "Tests hypotheses about",
-      "Only collects samples",
-      "Only interviews"
+      "Only observes disease patterns passively",
+      "Tests hypotheses about the causes and risk factors of disease",
+      "Only collects blood and tissue samples",
+      "Only interviews patients about symptoms"
     ],
     "correct_index": 1,
     "explanation": "Analytical epi tests hypotheses about disease causation.\n\nAdditional: exposure-disease relationships",
@@ -968,7 +968,7 @@
     "question_text": "Hospital waste segregation reduces:",
     "options": [
       "Waste quantity only",
-      "Infection risk and",
+      "Infection risk and environmental contamination",
       "Costs only",
       "Waste weight"
     ],
@@ -1016,10 +1016,10 @@
     "unit_id": "phs-unit-4",
     "question_text": "Food poisoning is caused by:",
     "options": [
-      "Eating too much",
+      "Eating too much at one time",
       "Food contaminated with bacteria, viruses",
-      "Eating quickly",
-      "Spicy food"
+      "Eating quickly without chewing",
+      "Spicy food on an empty stomach"
     ],
     "correct_index": 1,
     "explanation": "Food poisoning from pathogenic microorganisms or toxins.\n\nNote: or toxins",
@@ -1083,7 +1083,7 @@
     "question_text": "Food fortification means:",
     "options": [
       "Adding preservatives",
-      "Adding essential micronutrients to",
+      "Adding essential micronutrients to staple foods",
       "Removing nutrients",
       "Making food taste better"
     ],
@@ -1134,7 +1134,7 @@
     "question_text": "Pharmacy occupational diseases commonly involve:",
     "options": [
       "Heart disease",
-      "Allergic reactions and",
+      "Allergic reactions and anaphylaxis",
       "Bone fractures",
       "Vision loss"
     ],
@@ -1233,7 +1233,7 @@
     "question_text": "What is immunization (vaccination)?",
     "options": {
       "a": "Treating an existing infection",
-      "b": "Administration of a vaccine to stimulate the",
+      "b": "Administration of a vaccine to stimulate the immune system",
       "c": "A type of surgery",
       "d": "Taking antibiotics preventively"
     },
@@ -1302,7 +1302,7 @@
     "question_text": "What is a booster dose?",
     "options": {
       "a": "The first dose of a vaccine",
-      "b": "An additional dose given after the",
+      "b": "An additional dose given after the primary series",
       "c": "A dose given during pregnancy",
       "d": "A dose given to adults only"
     },
@@ -1403,7 +1403,7 @@
     "question_text": "What is the Expanded Programme on Immunization (EPI)?",
     "options": {
       "a": "A private company's marketing program",
-      "b": "WHO's global initiative to ensure all",
+      "b": "WHO's global initiative to ensure all children receive essential vaccines",
       "c": "A program to expand pharmacies",
       "d": "An education program for pharmacists"
     },
@@ -1420,10 +1420,10 @@
   {
     "question_text": "What is the vaccine vial monitor (VVM)?",
     "options": {
-      "a": "A syringe",
-      "b": "A heat-sensitive label on vaccine vials indicating if",
-      "c": "A thermometer",
-      "d": "A storage box"
+      "a": "A syringe with a built-in safety needle",
+      "b": "A heat-sensitive label on vaccine vials indicating heat exposure",
+      "c": "A thermometer for measuring room temperature",
+      "d": "A storage box for vaccine cold chain transport"
     },
     "correct_option": "b",
     "explanation": "VVM is a circular label that changes color when exposed to heat over time. If the inner square becomes darker than the outer circle, the vaccine should not be used.\n\nAdditional: the vaccine has been exposed to excessive heat",
@@ -1437,10 +1437,10 @@
   {
     "question_text": "What is an adverse event following immunization (AEFI)?",
     "options": {
-      "a": "A manufacturing defect",
-      "b": "Any untoward medical occurrence after vaccination whether or",
-      "c": "A benefit of vaccination",
-      "d": "A normal immune response"
+      "a": "A manufacturing defect in the vaccine batch",
+      "b": "Any untoward medical occurrence after vaccination whether or not related to the vaccine",
+      "c": "A benefit produced by vaccination",
+      "d": "A normal expected immune response"
     },
     "correct_option": "b",
     "explanation": "AEFI encompasses any undesirable event occurring after immunization, including vaccine-related reactions, coincidental events, and programmatic errors.\n\nAdditional: not it is caused by the vaccine",
@@ -1471,10 +1471,10 @@
   {
     "question_text": "What is the contraindication for BCG vaccine?",
     "options": {
-      "a": "Being underweight",
-      "b": "HIV infection with",
-      "c": "Having a cold",
-      "d": "Being a newborn"
+      "a": "Being underweight at birth",
+      "b": "HIV infection with severe immunosuppression",
+      "c": "Having a common cold",
+      "d": "Being a newborn infant"
     },
     "correct_option": "b",
     "explanation": "BCG is contraindicated in severely immunocompromised individuals (e.g., advanced HIV) due to risk of disseminated BCG infection. It is safe for HIV-positive children with normal immunity.\n\nAdditional: severe immunosuppression",
@@ -1522,7 +1522,7 @@
   {
     "question_text": "What is the oral rehydration salt (ORS) formula?",
     "options": {
-      "a": "Sugar and salt dissolved in",
+      "a": "Sugar and salt dissolved in clean water",
       "b": "Antibiotic solution",
       "c": "Electrolyte-free sugar water",
       "d": "Pure salt water"
@@ -1590,10 +1590,10 @@
   {
     "question_text": "What is Directly Observed Treatment Short-course (DOTS) for tuberculosis?",
     "options": {
-      "a": "Self-medication at home",
-      "b": "A strategy where a healthcare worker watches the",
-      "c": "Treating TB with surgery",
-      "d": "Using only herbal medicine"
+      "a": "Self-medication at home without supervision",
+      "b": "A strategy where a healthcare worker watches the patient take each dose",
+      "c": "Treating TB with surgical resection",
+      "d": "Using only herbal medicine for TB"
     },
     "correct_option": "b",
     "explanation": "DOTS ensures treatment adherence by having a trained person observe and record each dose. It includes: political commitment, good diagnostics, reliable drug supply, recording system, and direct observation.\n\nAdditional: patient take each dose of TB medication",
@@ -1642,7 +1642,7 @@
     "question_text": "What is multi-drug resistant TB (MDR-TB)?",
     "options": {
       "a": "TB resistant to one drug",
-      "b": "TB resistant to at least Isoniazid and",
+      "b": "TB resistant to at least isoniazid and rifampicin",
       "c": "TB that cannot be treated",
       "d": "TB caused by multiple bacteria"
     },
@@ -1692,10 +1692,10 @@
   {
     "question_text": "What is the MDR-TB treatment regimen duration?",
     "options": {
-      "a": "6 months",
+      "a": "About 6 months of daily drugs",
       "b": "9-20 months depending on the regimen",
-      "c": "3 months",
-      "d": "1 month"
+      "c": "About 3 months of daily drugs",
+      "d": "About 1 month of daily drugs"
     },
     "correct_option": "b",
     "explanation": "MDR-TB treatment is much longer than standard TB: shorter regimens are 9-11 months, longer regimens can extend up to 20 months using second-line drugs.",
@@ -1759,10 +1759,10 @@
   {
     "question_text": "What is the primary treatment for cholera?",
     "options": {
-      "a": "Antibiotics first",
-      "b": "Aggressive fluid replacement with",
-      "c": "Surgery",
-      "d": "Vaccination"
+      "a": "Antibiotics given as first-line treatment",
+      "b": "Aggressive fluid replacement with ORS and IV fluids",
+      "c": "Surgery to remove infected tissue",
+      "d": "Vaccination before exposure"
     },
     "correct_option": "b",
     "explanation": "The cornerstone of cholera treatment is aggressive rehydration. ORS for mild-moderate cases, IV Ringer's lactate for severe dehydration. Antibiotics are secondary.\n\nAdditional: ORS and IV fluids",
@@ -1911,7 +1911,7 @@
     "question_text": "What is the role of an Environmental Health Officer (EHO)?",
     "options": {
       "a": "Treating patients in hospital",
-      "b": "Monitoring and controlling environmental factors affecting",
+      "b": "Monitoring and controlling environmental factors affecting human health",
       "c": "Dispensing medications",
       "d": "Performing surgery"
     },
@@ -2091,13 +2091,13 @@
   {
     "question_text": "What is the difference between epidemic and endemic?",
     "options": {
-      "a": "No difference",
-      "b": "Epidemic is a sudden increase in disease above normal; endemic",
-      "c": "Endemic is worse than epidemic",
-      "d": "Epidemic is always deadly"
+      "a": "No difference between the two patterns",
+      "b": "Epidemic is a sudden increase in disease above normal; endemic is a constant presence in a region",
+      "c": "Endemic is always worse than epidemic",
+      "d": "Epidemic is always a deadly disease"
     },
     "correct_option": "b",
-    "explanation": "Endemic diseases are constantly present in a region (e.g., malaria in tropics). Epidemics are sudden increases above expected levels (e.g., dengue outbreak).\n\nAdditional: is the constant presence of a disease in a population",
+    "explanation": "Endemic diseases are constantly present in a region (e.g., malaria in tropics). Epidemics are sudden increases above expected levels (e.g., dengue outbreak).\n\nAdditional: is the constant presence of a disease in a population\n\nNote: endemic",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2158,7 +2158,7 @@
     "question_text": "What is a case definition in epidemiology?",
     "options": {
       "a": "A legal definition of disease",
-      "b": "A set of criteria for deciding whether a",
+      "b": "A set of criteria for deciding whether a person has a disease",
       "c": "A drug definition",
       "d": "A medical textbook entry"
     },
@@ -2225,7 +2225,7 @@
     "question_text": "What is postpartum hemorrhage (PPH)?",
     "options": {
       "a": "Bleeding during pregnancy",
-      "b": "Loss of 500ml or more of",
+      "b": "Loss of 500 ml or more of blood after delivery",
       "c": "Normal bleeding after delivery",
       "d": "Nosebleed after delivery"
     },
@@ -2241,10 +2241,10 @@
   {
     "question_text": "What is the drug of choice for preventing postpartum hemorrhage?",
     "options": {
-      "a": "Paracetamol",
+      "a": "Paracetamol for fever relief",
       "b": "Oxytocin or Misoprostol",
-      "c": "Amoxicillin",
-      "d": "Ibuprofen"
+      "c": "Amoxicillin for infection",
+      "d": "Ibuprofen for mild pain"
     },
     "correct_option": "b",
     "explanation": "Oxytocin is the gold standard for PPH prevention (10 IU IM after delivery). Misoprostol (600mcg oral) is an alternative when oxytocin is unavailable, especially in community settings.\n\nNote: oral/rectal\n\nNote: injected",
@@ -2291,10 +2291,10 @@
   {
     "question_text": "What is the Integrated Management of Neonatal and Childhood Illness (IMNCI)?",
     "options": {
-      "a": "A surgical program",
-      "b": "A strategy integrating management of major causes of",
-      "c": "A vaccination-only program",
-      "d": "A nutrition program only"
+      "a": "A surgical program for children",
+      "b": "A strategy integrating management of major causes of childhood illness",
+      "c": "A vaccination-only program for infants",
+      "d": "A nutrition program only for mothers"
     },
     "correct_option": "b",
     "explanation": "IMNCI (updated version of IMCI) provides an integrated approach to managing sick children, combining treatment of illness with preventive measures like immunization and nutrition counseling.\n\nNote: and immunization\n\nAdditional: neonatal and childhood illness with growth nutrition",
@@ -2360,7 +2360,7 @@
     "question_text": "What is severe acute malnutrition (SAM)?",
     "options": {
       "a": "BMI above 30",
-      "b": "A condition where weight-for-height is below",
+      "b": "A condition where weight-for-height is far below the standard",
       "c": "Being slightly underweight",
       "d": "Being tall for age"
     },
@@ -2375,10 +2375,10 @@
   {
     "question_text": "What is Ready-to-Use Therapeutic Food (RUTF)?",
     "options": {
-      "a": "Intravenous nutrition",
-      "b": "A energy-dense nutrient-rich food paste used to",
-      "c": "Baby formula",
-      "d": "Vitamin tablet"
+      "a": "Intravenous nutrition given to hospital patients",
+      "b": "An energy-dense, nutrient-rich food paste used to treat severe malnutrition",
+      "c": "Baby formula for infants under one year of age",
+      "d": "Vitamin tablet for routine daily supplementation"
     },
     "correct_option": "b",
     "explanation": "RUTF (like Plumpy'Nut) is a paste made from peanut/groundnut, milk powder, sugar, oil, and micronutrients. It doesn't require water or refrigeration, making it ideal for community treatment.\n\nAdditional: treat severe acute malnutrition in children",
@@ -2410,7 +2410,7 @@
     "question_text": "What is mental health in public health?",
     "options": {
       "a": "Only about treating psychosis",
-      "b": "A state of well-being enabling individuals to",
+      "b": "A state of well-being enabling individuals to realize their potential",
       "c": "Only about mental illness",
       "d": "Only about drug therapy"
     },
@@ -2443,7 +2443,7 @@
     "question_text": "What is substance abuse?",
     "options": {
       "a": "Using prescription drugs as directed",
-      "b": "Harmful or hazardous use of",
+      "b": "Harmful or hazardous use of psychoactive substances",
       "c": "Taking over-the-counter vitamins",
       "d": "Using herbal medicine"
     },
@@ -2509,7 +2509,7 @@
     "question_text": "What is environmental health?",
     "options": {
       "a": "Health of forests only",
-      "b": "The branch of public health concerned with",
+      "b": "The branch of public health concerned with environmental factors",
       "c": "Environmental science in college",
       "d": "Recycling programs"
     },
@@ -2541,10 +2541,10 @@
   {
     "question_text": "What is a health education?",
     "options": {
-      "a": "Medical school curriculum",
-      "b": "Information and activities that increase awareness and",
-      "c": "Teaching pharmacology",
-      "d": "Training pharmacists"
+      "a": "Medical school curriculum for doctors",
+      "b": "Information and activities that increase awareness and promote healthy behavior",
+      "c": "Teaching pharmacology to pharmacy students",
+      "d": "Training pharmacists in dispensing"
     },
     "correct_option": "b",
     "explanation": "Health education aims to inform and motivate people to adopt health-promoting behaviors, make informed decisions, and change lifestyles to improve health outcomes.\n\nAdditional: motivate individuals to adopt healthy behaviors",
@@ -2773,7 +2773,7 @@
     "question_text": "What is patient counseling in pharmacy?",
     "options": {
       "a": "Selling more drugs",
-      "b": "Providing patients with information about",
+      "b": "Providing patients with information about their medicines and usage",
       "c": "Only giving prescription drugs",
       "d": "Filling out forms"
     },
@@ -2837,10 +2837,10 @@
   {
     "question_text": "What is a minor ailment management by pharmacists?",
     "options": {
-      "a": "Treating serious diseases",
-      "b": "Pharmacists assessing and recommending treatment for",
-      "c": "Performing surgery",
-      "d": "Giving injections only"
+      "a": "Treating serious diseases in hospitals",
+      "b": "Pharmacists assessing and recommending treatment for minor self-limiting conditions",
+      "c": "Performing minor surgical procedures",
+      "d": "Giving injections to all patients"
     },
     "correct_option": "b",
     "explanation": "Minor ailment management allows pharmacists to assess symptoms of common conditions, recommend appropriate OTC treatments, and refer to doctors when needed.\n\nNote: cold, headache, and skin rashes\n\nAdditional: common self-limiting conditions like cough",
@@ -2871,12 +2871,12 @@
     "question_text": "What is One Health approach?",
     "options": {
       "a": "Only human health",
-      "b": "An approach recognizing that",
+      "b": "An approach recognizing that human, animal",
       "c": "Animal health only",
       "d": "Environmental health only"
     },
     "correct_option": "b",
-    "explanation": "One Health recognizes the interconnection between humans, animals, and the environment. It addresses zoonotic diseases, food safety, antimicrobial resistance, and environmental health holistically.\n\nNote: and environmental health are interconnected\n\nAdditional: human health animal health",
+    "explanation": "One Health recognizes the interconnection between humans, animals, and the environment. It addresses zoonotic diseases, food safety, antimicrobial resistance, and environmental health holistically.\n\nNote: and environmental health are interconnected\n\nAdditional: human health animal health\n\nNote: and environmental health are linked",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [

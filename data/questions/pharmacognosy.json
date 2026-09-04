@@ -21,7 +21,7 @@
     "question_text": "Crude drugs can be classified morphologically based on:",
     "options": [
       "Chemical nature",
-      "Plant part used",
+      "Plant part used as the drug",
       "Taxonomical classification",
       "Pharmacological action"
     ],
@@ -38,7 +38,7 @@
     "question_text": "The biological source of a crude drug refers to:",
     "options": [
       "Chemical composition",
-      "The plant or animal species from",
+      "The plant or animal species from which the drug is obtained",
       "The method of extraction",
       "The therapeutic use"
     ],
@@ -121,10 +121,10 @@
     "unit_id": "pharmaco-unit-5",
     "question_text": "Caffeine is a xanthine alkaloid obtained from:",
     "options": [
-      "Cinchona",
+      "Cinchona bark extract",
       "Coffee beans and tea leaves",
-      "Rauwolfia",
-      "Belladonna"
+      "Rauwolfia serpentina roots",
+      "Belladonna leaves and roots"
     ],
     "correct_index": 1,
     "explanation": "Caffeine (1,3,7-trimethylxanthine) is obtained from coffee beans (Coffea arabica), tea leaves (Camellia sinensis), and cola nuts. It is a CNS stimulant.",
@@ -206,10 +206,10 @@
     "unit_id": "pharmaco-unit-8",
     "question_text": "Resins are defined as:",
     "options": [
-      "Volatile oils",
+      "Volatile oils from plants",
       "Solid or semi-solid amorphous products",
-      "Fixed oils",
-      "Glycosides"
+      "Fixed oils from seeds",
+      "Glycosides from barks"
     ],
     "correct_index": 1,
     "explanation": "Resins are solid or semi-solid amorphous products formed by the oxidative decomposition of volatile oils (oleoresins) or by chemical reactions in plant tissues.\n\nAdditional: of oxidation of volatile oils",
@@ -665,10 +665,10 @@
     "unit_id": "pharmaco-unit-8",
     "question_text": "Myrrh is a resin used as:",
     "options": [
-      "Laxative only",
-      "Antiseptic mouthwash and",
-      "Analgesic",
-      "Antimalarial"
+      "Laxative for constipation only",
+      "Antiseptic mouthwash and toothpaste",
+      "Analgesic for mild pain",
+      "Antimalarial for fever"
     ],
     "correct_index": 1,
     "explanation": "Myrrh has antiseptic, astringent, and wound-healing properties, used in mouthwashes and throat preparations.\n\nAdditional: wound healing agent",
@@ -716,10 +716,10 @@
     "unit_id": "pharmaco-unit-9",
     "question_text": "Cod liver oil is rich in:",
     "options": [
-      "Proteins",
+      "Proteins for muscle building",
       "Vitamin A and Vitamin D",
-      "Vitamin C",
-      "Iron"
+      "Vitamin C for immunity",
+      "Iron for hemoglobin synthesis"
     ],
     "correct_index": 1,
     "explanation": "Cod liver oil is a rich source of vitamins A and D, used to prevent rickets and vitamin A deficiency.",
@@ -750,10 +750,10 @@
     "unit_id": "pharmaco-unit-10",
     "question_text": "Acacia (gum arabic) is primarily used as:",
     "options": [
-      "Laxative",
+      "Laxative for constipation",
       "Emulsifying agent and demulcent",
-      "Analgesic",
-      "Antiseptic"
+      "Analgesic for mild pain",
+      "Antiseptic for wound cleaning"
     ],
     "correct_index": 1,
     "explanation": "Acacia is a natural emulsifier (protective colloid) used in emulsions and as a demulcent in cough syrups.",
@@ -767,10 +767,10 @@
     "unit_id": "pharmaco-unit-10",
     "question_text": "Tragacanth is used as:",
     "options": [
-      "Purgative",
+      "Purgative for bowel evacuation",
       "Thickening and suspending agent",
-      "Antiseptic",
-      "Analgesic"
+      "Antiseptic for skin infections",
+      "Analgesic for mild pain"
     ],
     "correct_index": 1,
     "explanation": "Tragacanth is a mucilage used as a thickening agent in suspensions, pastes, and emulsions.",
@@ -920,10 +920,10 @@
     "unit_id": "pharmaco-unit-4",
     "question_text": "Cinnamon is obtained from:",
     "options": [
-      "Root",
+      "Root of the mature tree bark",
       "Dried inner bark of Cinnamomum species",
-      "Leaves",
-      "Seeds"
+      "Leaves of the young plant stems",
+      "Seeds after full ripening of fruit"
     ],
     "correct_index": 1,
     "explanation": "Cinnamon (Cinnamomum verum) bark is the dried inner bark of branches, used as spice and carminative.",
@@ -954,10 +954,10 @@
     "unit_id": "pharmaco-unit-4",
     "question_text": "Clove is obtained from:",
     "options": [
-      "Roots",
+      "Roots of the mature tree bark",
       "Dried flower buds of Syzygium aromaticum",
-      "Leaves",
-      "Seeds"
+      "Leaves of the young plant stems",
+      "Seeds after full ripening of fruit"
     ],
     "correct_index": 1,
     "explanation": "Clove consists of dried flower buds of Syzygium aromaticum, rich in eugenol, used as dental analgesic.",
@@ -1038,10 +1038,10 @@
   {
     "question_text": "What are crude drugs?",
     "options": {
-      "a": "Pure chemical compounds",
-      "b": "Naturally obtained drugs that have not yet",
-      "c": "Synthetic drugs",
-      "d": "Patented drugs"
+      "a": "Pure isolated chemical compounds",
+      "b": "Naturally obtained drugs that have not yet been processed or purified",
+      "c": "Synthetic drugs made in a laboratory",
+      "d": "Patented brand-name drugs"
     },
     "correct_option": "b",
     "explanation": "Crude drugs are natural drugs obtained from plant, animal, or mineral sources that haven't undergone purification to isolate active chemical constituents.\n\nAdditional: been processed into pure chemical form",
@@ -2153,10 +2153,10 @@
   {
     "question_text": "What is Triphala?",
     "options": {
-      "a": "A single herb",
-      "b": "An Ayurvedic formulation containing equal",
-      "c": "A mineral drug",
-      "d": "An animal product"
+      "a": "A single herb used for digestion",
+      "b": "An Ayurvedic formulation containing equal parts of three fruits",
+      "c": "A mineral drug like zinc oxide",
+      "d": "An animal product like musk or honey"
     },
     "correct_option": "b",
     "explanation": "Triphala is a classical Ayurvedic preparation containing equal proportions of three fruits: Haritaki (Terminalia chebula), Vibhitaki (T. bellirica), and Amalaki (Emblica officinalis).\n\nNote: and amalaki\n\nAdditional: parts of haritaki vibhitaki",
@@ -2366,10 +2366,10 @@
   {
     "question_text": "What is podophyllotoxin used for?",
     "options": {
-      "a": "Oral laxative",
-      "b": "Topical treatment of warts and",
-      "c": "Antimalarial",
-      "d": "Antihypertensive"
+      "a": "Oral laxative for constipation",
+      "b": "Topical treatment of warts and genital lesions",
+      "c": "Antimalarial for fever",
+      "d": "Antihypertensive for blood pressure"
     },
     "correct_option": "b",
     "explanation": "Podophyllotoxin is used topically to treat genital warts (condyloma acuminatum) and is the chemical precursor for the anticancer drugs etoposide and teniposide.\n\nNote: etoposide\n\nAdditional: condylomata; precursor for anticancer drugs",
@@ -2640,7 +2640,7 @@
       "a": "Ephedra sinica - dried stems",
       "b": "Ephedra gerardiana - dried stems",
       "c": "Ephedra intermedia - dried stems",
-      "d": "All of the above species are used"
+      "d": "Dried stems of any of the listed Ephedra species"
     },
     "correct_option": "d",
     "explanation": "Ephedra is obtained from dried stems of several Ephedra species: E. sinica (Chinese ephedra), E. gerardiana (Indian ephedra), and E. intermedia (family Ephedraceae).",
@@ -3153,7 +3153,7 @@
   {
     "question_text": "What is the biological source of musk?",
     "options": {
-      "a": "Moschus moschiferus - dried secretion from",
+      "a": "Moschus moschiferus - dried secretion from the musk gland",
       "b": "Moschus moschiferus - dried skin",
       "c": "Moschus moschiferus - dried antlers",
       "d": "Moschus moschiferus - dried bones"
@@ -3305,7 +3305,7 @@
   {
     "question_text": "What is the biological source of petroleum jelly (petrolatum)?",
     "options": {
-      "a": "Refined semi-solid mixture of",
+      "a": "Refined semi-solid mixture of hydrocarbons",
       "b": "Animal fat from rendering",
       "c": "Plant wax from jojoba",
       "d": "Mineral oil from limestone"
@@ -3441,7 +3441,7 @@
     "question_text": "What is the difference between glycosides and alkaloids?",
     "options": {
       "a": "No difference",
-      "b": "Glycosides contain a sugar moiety;",
+      "b": "Glycosides contain a sugar moiety; alkaloids contain nitrogen and are basic",
       "c": "Glycosides are always toxic; alkaloids are always safe",
       "d": "Alkaloids are found in animals; glycosides in plants only"
     },
@@ -3542,7 +3542,7 @@
     "question_text": "What are saponin glycosides?",
     "options": {
       "a": "Glycosides with sweet taste only",
-      "b": "Glycosides that produce soap-like foam in",
+      "b": "Glycosides that produce soap-like foam in water",
       "c": "Glycosides with bitter taste only",
       "d": "Glycosides that are always toxic"
     },
@@ -3558,7 +3558,7 @@
     "question_text": "What is a hemolytic test for saponins?",
     "options": {
       "a": "Blood group testing",
-      "b": "Adding saponin solution to blood causes",
+      "b": "Adding saponin solution to blood causes hemolysis of red cells",
       "c": "Testing blood clotting time",
       "d": "Measuring blood pressure"
     },
@@ -3727,10 +3727,10 @@
   {
     "question_text": "What is the Rf value in TLC?",
     "options": {
-      "a": "Retardation factor - ratio of distance moved by",
-      "b": "Reflection factor",
-      "c": "Recovery factor",
-      "d": "Retention factor in HPLC"
+      "a": "Retardation factor - ratio of distance moved by the solute to that of the solvent front",
+      "b": "Reflection factor of the plate surface area",
+      "c": "Recovery factor of the applied sample volume",
+      "d": "Retention factor measured in HPLC columns only"
     },
     "correct_option": "a",
     "explanation": "Rf (Retardation/Retention factor) = Distance moved by compound / Distance moved by solvent front. It is characteristic for a compound under specific conditions and used for identification.\n\nAdditional: compound to distance moved by solvent front",
@@ -3761,10 +3761,10 @@
   {
     "question_text": "What is the significance of macroscopic and microscopic evaluation in pharmacognosy?",
     "options": {
-      "a": "Only for education",
-      "b": "Identifying and authenticating crude drugs through",
-      "c": "Only for chemical analysis",
-      "d": "Only for determining potency"
+      "a": "Only for the education of pharmacy students",
+      "b": "Identifying and authenticating crude drugs through their morphological features",
+      "c": "Only for chemical analysis of active constituents",
+      "d": "Only for determining the potency of the drug"
     },
     "correct_option": "b",
     "explanation": "Macroscopic evaluation examines organoleptic features (color, odor, taste, texture). Microscopic evaluation studies cellular structure, trichomes, starch grains, and crystals for drug authentication.\n\nAdditional: physical characteristics and cellular structure",
@@ -3863,7 +3863,7 @@
     "question_text": "What is acid-insoluble ash?",
     "options": {
       "a": "Ash that dissolves in acid",
-      "b": "The residue after treating total ash with",
+      "b": "The residue after treating total ash with dilute acid",
       "c": "Ash that is acidic in nature",
       "d": "Ash from acidic plants"
     },
@@ -3879,10 +3879,10 @@
   {
     "question_text": "What is water-soluble ash?",
     "options": {
-      "a": "Ash that dissolves in water",
-      "b": "The difference between total ash and residue after",
-      "c": "Ash that absorbs water",
-      "d": "Ash from water plants"
+      "a": "Ash that completely dissolves in water",
+      "b": "The difference between total ash and the residue after treatment with water",
+      "c": "Ash that absorbs moisture from the air",
+      "d": "Ash obtained from aquatic water plants"
     },
     "correct_option": "b",
     "explanation": "Water-soluble ash = Total ash - Residue after water treatment. It gives information about water-soluble inorganic constituents and can indicate the nature of inorganic material.\n\nAdditional: treatment with water indicating water-soluble inorganic matter",
@@ -3897,7 +3897,7 @@
     "question_text": "What is extractive value in pharmacognosy?",
     "options": {
       "a": "Weight of the whole drug",
-      "b": "The amount of crude drug extracted by a",
+      "b": "The amount of crude drug extracted by a given solvent",
       "c": "Weight of residue after burning",
       "d": "Weight of volatile oil only"
     },
@@ -3931,7 +3931,7 @@
     "question_text": "What is the volatile oil content determination?",
     "options": {
       "a": "Measuring fat content",
-      "b": "Determining the percentage of volatile oil in",
+      "b": "Determining the percentage of volatile oil in a crude drug",
       "c": "Measuring alkaloid content",
       "d": "Measuring glycoside content"
     },
@@ -3948,7 +3948,7 @@
     "question_text": "What is the foreign organic matter in pharmacognosy?",
     "options": {
       "a": "Active constituents",
-      "b": "Any material other than the",
+      "b": "Any material other than the drug's own constituents",
       "c": "Valuable constituents",
       "d": "The main drug itself"
     },
@@ -3964,10 +3964,10 @@
   {
     "question_text": "What is adulteration in crude drugs?",
     "options": {
-      "a": "Adding active ingredients",
-      "b": "Intentional or unintentional substitution or",
-      "c": "Improving drug quality",
-      "d": "Adding preservatives"
+      "a": "Adding extra active ingredients to a drug",
+      "b": "Intentional or unintentional substitution or addition of inferior material",
+      "c": "Improving the overall quality of the drug",
+      "d": "Adding preservatives to extend shelf life"
     },
     "correct_option": "b",
     "explanation": "Adulteration is adding inferior/substitute materials to increase bulk or simulate the drug. It can be deliberate (economic fraud) or accidental (poor collection practices).\n\nNote: or harmful material\n\nAdditional: addition of inferior cheaper",
@@ -4031,10 +4031,10 @@
   {
     "question_text": "What is chromatography in pharmacognosy?",
     "options": {
-      "a": "Color measurement",
-      "b": "A group of techniques for separating mixtures based",
-      "c": "A type of distillation",
-      "d": "A type of extraction"
+      "a": "A method of measuring the color intensity of a sample",
+      "b": "A group of techniques for separating mixtures based on differential distribution between phases",
+      "c": "A type of distillation for separating volatile liquids",
+      "d": "A type of extraction using a suitable solvent system"
     },
     "correct_option": "b",
     "explanation": "Chromatography (TLC, HPLC, GC, column) separates plant extract components based on their different affinities for stationary phase (solid/liquid) and mobile phase (liquid/gas).\n\nAdditional: on differential partitioning between stationary and mobile phases",

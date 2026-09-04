@@ -89,9 +89,9 @@
     "question_text": "Aluminum hydroxide gel is classified as:",
     "options": [
       "Antacid and absorbent",
-      "Laxative",
-      "Antiemetic",
-      "Analgesic"
+      "Laxative for constipation",
+      "Antiemetic for nausea",
+      "Analgesic for mild pain"
     ],
     "correct_index": 0,
     "explanation": "Aluminum hydroxide gel is an antacid that neutralizes gastric acid. It also has absorbent properties. It may cause constipation, so it is often combined with magnesium hydroxide.",
@@ -106,7 +106,7 @@
     "question_text": "Magnesium trisilicate acts as an antacid by:",
     "options": [
       "Absorbing acid only",
-      "Neutralizing gastric acid and",
+      "Neutralizing gastric acid and protecting the gastric mucosa",
       "Stimulating acid secretion",
       "Blocking H2 receptors"
     ],
@@ -479,10 +479,10 @@
     "unit_id": "chem-i-unit-2",
     "question_text": "Methylparaben is classified as:",
     "options": [
-      "Antioxidant",
+      "Antioxidant preventing oxidation",
       "Antimicrobial preservative",
-      "Buffer",
-      "Surfactant"
+      "Buffer maintaining the pH",
+      "Surfactant reducing surface tension"
     ],
     "correct_index": 1,
     "explanation": "Methylparaben (and propylparaben) are antimicrobial preservatives used to prevent microbial growth in formulations.",
@@ -530,10 +530,10 @@
     "unit_id": "chem-i-unit-3",
     "question_text": "Magnesium trisilicate is used as:",
     "options": [
-      "Laxative",
+      "Laxative with rapid cathartic action",
       "Antacid with slow and prolonged action",
-      "Diuretic",
-      "Analgesic"
+      "Diuretic with potassium wasting effect",
+      "Analgesic for mild to moderate pain"
     ],
     "correct_index": 1,
     "explanation": "Magnesium trisilicate acts as a slow, prolonged-acting antacid by reacting with HCl to form MgCl2 and silicic acid.",
@@ -547,10 +547,10 @@
     "unit_id": "chem-i-unit-3",
     "question_text": "Light kaolin is used as:",
     "options": [
-      "Laxative",
+      "Laxative with rapid cathartic action",
       "Protective and adsorbent for diarrhea",
-      "Antacid",
-      "Analgesic"
+      "Antacid with immediate acid neutralization",
+      "Analgesic for mild to moderate pain"
     ],
     "correct_index": 1,
     "explanation": "Light kaolin is an adsorbent that adsorbs toxins and bacteria in diarrhea, providing protective and adsorbent action.",
@@ -564,10 +564,10 @@
     "unit_id": "chem-i-unit-3",
     "question_text": "Calcium carbonate is an:",
     "options": [
-      "Antiemetic",
+      "Antiemetic for nausea",
       "Antacid and calcium supplement",
-      "Diuretic",
-      "Laxative"
+      "Diuretic for edema",
+      "Laxative for constipation"
     ],
     "correct_index": 1,
     "explanation": "CaCO3 is a non-systemic antacid that also serves as a dietary calcium supplement.",
@@ -581,10 +581,10 @@
     "unit_id": "chem-i-unit-4",
     "question_text": "Zinc oxide is used as:",
     "options": [
-      "Internal antiseptic",
+      "Internal antiseptic for gut infections",
       "Protective and mild astringent for skin",
-      "Analgesic",
-      "Laxative"
+      "Analgesic for mild pain relief",
+      "Laxative for constipation"
     ],
     "correct_index": 1,
     "explanation": "Zinc oxide is a protective and mild astringent used in ointments, pastes, and dusting powders for skin protection.",
@@ -632,10 +632,10 @@
     "unit_id": "chem-i-unit-4",
     "question_text": "Talc is used in pharmacy as:",
     "options": [
-      "Antiseptic",
+      "Antiseptic for skin wounds",
       "Protective dusting powder base",
-      "Laxative",
-      "Analgesic"
+      "Laxative for constipation",
+      "Analgesic for mild pain"
     ],
     "correct_index": 1,
     "explanation": "Talc (Mg3Si4O10(OH)2) is a very fine, soft mineral used as a protective dusting powder and tablet dusting agent.",
@@ -649,10 +649,10 @@
     "unit_id": "chem-i-unit-4",
     "question_text": "Silver nitrate is used as:",
     "options": [
-      "Antacid",
+      "Antacid for gastric hyperacidity",
       "Caustic agent and antimicrobial",
-      "Laxative",
-      "Diuretic"
+      "Laxative for chronic constipation",
+      "Diuretic for fluid retention states"
     ],
     "correct_index": 1,
     "explanation": "AgNO3 is used as a caustic agent (for warts) and antimicrobial (prophylaxis of neonatal ophthalmia).",
@@ -717,10 +717,10 @@
     "unit_id": "chem-i-unit-7",
     "question_text": "Calcium gluconate is used for:",
     "options": [
-      "Hypertension",
-      "Calcium deficiency and",
-      "Diabetes",
-      "Asthma"
+      "Hypertension in elderly patients",
+      "Calcium deficiency and hypocalcemic tetany",
+      "Diabetes mellitus management",
+      "Asthma in young children"
     ],
     "correct_index": 1,
     "explanation": "Calcium gluconate treats hypocalcemia and is an antidote for hyperkalemia (protects the heart).\n\nAdditional: hyperkalemia emergency",
@@ -904,10 +904,10 @@
     "unit_id": "chem-i-unit-9",
     "question_text": "Identification test for iron involves:",
     "options": [
-      "Adding NaOH",
+      "Adding NaOH to the solution",
       "Adding ammonium thiocyanate solution",
-      "Adding HCl",
-      "Adding Na2CO3"
+      "Adding HCl to the solution",
+      "Adding Na2CO3 to the solution"
     ],
     "correct_index": 1,
     "explanation": "Iron is identified by adding ammonium thiocyanate, which forms a deep blood-red colored complex with Fe3+ ions.\n\nAdditional: producing blood-red color",
@@ -987,10 +987,10 @@
   {
     "question_text": "What is a functional group in organic chemistry?",
     "options": {
-      "a": "A group of atoms",
-      "b": "A specific group of atoms within a",
-      "c": "A type of atom",
-      "d": "A chemical bond"
+      "a": "A group of atoms with a fixed atomic mass",
+      "b": "A specific group of atoms within a molecule that determines reactivity",
+      "c": "A type of atom with a fixed ionic charge",
+      "d": "A chemical bond between two carbon atoms"
     },
     "correct_option": "b",
     "explanation": "Functional groups are reactive groups that determine the chemical properties and reactions of organic molecules (e.g., -OH, -COOH, -NH2, -CHO).\n\nAdditional: molecule responsible for characteristic chemical reactions",
@@ -1124,7 +1124,7 @@
     "question_text": "What is the theory of drug action?",
     "options": {
       "a": "How drugs are priced",
-      "b": "Mechanisms by which drugs interact with",
+      "b": "Mechanisms by which drugs interact with receptors",
       "c": "Drug manufacturing process",
       "d": "Drug distribution methods"
     },
@@ -1139,10 +1139,10 @@
   {
     "question_text": "What is a pharmacophore?",
     "options": {
-      "a": "A drug overdose",
+      "a": "A drug overdose in the body",
       "b": "The minimum structural features in a molecule required",
-      "c": "A type of receptor",
-      "d": "A drug metabolite"
+      "c": "A type of receptor on the cell",
+      "d": "A drug metabolite in the liver"
     },
     "correct_option": "b",
     "explanation": "A pharmacophore is the essential 3D arrangement of functional groups necessary for a drug to interact with its biological target. It guides drug design and SAR studies.\n\nAdditional: for biological activity at a target receptor",
@@ -1172,10 +1172,10 @@
   {
     "question_text": "What is a lead compound?",
     "options": {
-      "a": "A heavy metal compound",
+      "a": "A heavy metal compound like lead oxide",
       "b": "A compound with known biological activity that serves",
-      "c": "A final drug product",
-      "d": "An inactive compound"
+      "c": "A final drug product ready for market",
+      "d": "An inactive compound with no activity"
     },
     "correct_option": "b",
     "explanation": "A lead compound is a molecule with demonstrated pharmacological activity that serves as the starting point for optimization through chemical modification to improve potency and reduce toxicity.\n\nAdditional: as a starting point for drug development",
@@ -1189,10 +1189,10 @@
   {
     "question_text": "What is bioisosterism?",
     "options": {
-      "a": "Same biology",
-      "b": "Replacement of an atom or group with a",
-      "c": "Same biochemistry",
-      "d": "Same organism"
+      "a": "Same biology in different species",
+      "b": "Replacement of an atom or group with a similar one",
+      "c": "Same biochemistry of reactions",
+      "d": "Same organism in all studies"
     },
     "correct_option": "b",
     "explanation": "Bioisosteric replacement substitutes atoms/groups with similar physicochemical properties (e.g., replacing -H with -F, -OH with -NH2) to optimize drug activity, metabolism, or bioavailability.\n\nNote: similar size/shape/electronics\n\nAdditional: bioisostere to modify drug properties without losing activity",
@@ -1207,7 +1207,7 @@
     "question_text": "What is a prodrug?",
     "options": {
       "a": "A drug that is always given intravenously",
-      "b": "An inactive compound that is converted to an",
+      "b": "An inactive compound that is converted to an active drug in the body",
       "c": "A drug given before surgery",
       "d": "A drug that prevents disease"
     },
@@ -1239,13 +1239,13 @@
   {
     "question_text": "What is the difference between a drug and a medicine?",
     "options": {
-      "a": "No difference",
-      "b": "A drug is a chemical substance; a medicine is",
-      "c": "Medicine is always natural",
-      "d": "Drugs are always synthetic"
+      "a": "No difference between the two terms",
+      "b": "A drug is a chemical substance; a medicine is a drug in a suitable dosage form",
+      "c": "Medicine is always a natural product",
+      "d": "Drugs are always synthetic chemicals"
     },
     "correct_option": "b",
-    "explanation": "A drug is any chemical substance that affects biological function. A medicine is a finished pharmaceutical product containing the drug plus excipients in a suitable dosage form.\n\nAdditional: a drug formulated for therapeutic use with excipients",
+    "explanation": "A drug is any chemical substance that affects biological function. A medicine is a finished pharmaceutical product containing the drug plus excipients in a suitable dosage form.\n\nAdditional: a drug formulated for therapeutic use with excipients\n\nNote: a medicine is",
     "subject": "pharmaceutical-chemistry-i",
     "difficulty": "easy",
     "tags": [
@@ -1256,7 +1256,7 @@
     "question_text": "What is an excipient?",
     "options": {
       "a": "The active drug",
-      "b": "An inactive substance added to a",
+      "b": "An inactive substance added to a formulation",
       "c": "A metabolite of the drug",
       "d": "A毒副产物"
     },
@@ -1272,12 +1272,12 @@
     "question_text": "What is the difference between a pure substance and a mixture?",
     "options": {
       "a": "No difference",
-      "b": "A pure substance has a fixed composition; a",
+      "b": "A pure substance has a fixed composition; a mixture has variable composition",
       "c": "Mixtures are always homogeneous",
       "d": "Pure substances are mixtures"
     },
     "correct_option": "b",
-    "explanation": "A pure substance (compound/element) has a definite chemical composition. A mixture (solution, suspension) contains components that can be separated physically.\n\nAdditional: mixture contains two or more substances physically combined",
+    "explanation": "A pure substance (compound/element) has a definite chemical composition. A mixture (solution, suspension) contains components that can be separated physically.\n\nAdditional: mixture contains two or more substances physically combined\n\nNote: a mixture does not",
     "subject": "pharmaceutical-chemistry-i",
     "difficulty": "easy",
     "tags": [
@@ -1303,10 +1303,10 @@
   {
     "question_text": "What is a buffer solution?",
     "options": {
-      "a": "A solution that changes pH easily",
-      "b": "A solution that resists changes in pH when",
-      "c": "A pure water solution",
-      "d": "A highly acidic solution"
+      "a": "A solution whose pH changes very easily",
+      "b": "A solution that resists changes in pH when small amounts of acid or base are added",
+      "c": "A solution of pure distilled water",
+      "d": "A solution that is highly acidic"
     },
     "correct_option": "b",
     "explanation": "Buffers consist of a weak acid and its conjugate base (or weak base and conjugate acid). They maintain stable pH, important in pharmaceutical formulations and biological systems.\n\nAdditional: small amounts of acid or base are added",
@@ -1353,7 +1353,7 @@
     "question_text": "What is the difference between a racemic mixture and an enantiopure compound?",
     "options": {
       "a": "No difference",
-      "b": "A racemic mixture contains equal amounts of both",
+      "b": "A racemic mixture contains equal amounts of both enantiomers",
       "c": "Racemic is more active",
       "d": "Enantiopure is always inactive"
     },
@@ -1368,10 +1368,10 @@
   {
     "question_text": "What is chirality in drug molecules?",
     "options": {
-      "a": "Drug color",
+      "a": "Drug color in solution",
       "b": "The property of a molecule having non-superimposable",
-      "c": "Drug solubility",
-      "d": "Drug stability"
+      "c": "Drug solubility in water",
+      "d": "Drug stability at room temperature"
     },
     "correct_option": "b",
     "explanation": "Chirality means a molecule exists as two mirror-image forms (enantiomers). Drug enantiomers can have different pharmacological activities (e.g., S-ibuprofen is active, R is inactive).\n\nAdditional: mirror images like left and right hands",
@@ -1402,10 +1402,10 @@
   {
     "question_text": "What is a functional group interconversion (FGI)?",
     "options": {
-      "a": "Changing drug brand",
+      "a": "Changing the brand of a drug",
       "b": "Chemical transformation of one functional group",
-      "c": "Changing drug dose",
-      "d": "Changing drug form"
+      "c": "Changing the dose of a drug",
+      "d": "Changing the dosage form of a drug"
     },
     "correct_option": "b",
     "explanation": "FGI involves converting one functional group to another (e.g., -OH to -Cl, -COOH to -COOR) as a step in drug synthesis or to modify drug properties.\n\nAdditional: into another during drug synthesis",
@@ -1419,10 +1419,10 @@
   {
     "question_text": "What is nucleophilic substitution?",
     "options": {
-      "a": "A reaction where a nucleophile attacks an",
-      "b": "Nuclei being substituted",
-      "c": "An addition reaction",
-      "d": "An elimination reaction"
+      "a": "A reaction where a nucleophile attacks an electrophilic carbon",
+      "b": "Nuclei being substituted in the atom",
+      "c": "An addition reaction across a double bond",
+      "d": "An elimination reaction removing water"
     },
     "correct_option": "a",
     "explanation": "In nucleophilic substitution, a nucleophile (electron-rich species like OH-, NH2-, Cl-) attacks an electrophilic carbon, displacing a leaving group (SN1 or SN2 mechanism).\n\nAdditional: electrophilic carbon replacing a leaving group",
@@ -1504,7 +1504,7 @@
     "question_text": "What is oxidation in organic chemistry?",
     "options": {
       "a": "Adding hydrogen",
-      "b": "Loss of electrons or gain of",
+      "b": "Loss of electrons or gain of oxygen",
       "c": "Adding water",
       "d": "Breaking bonds with water"
     },
@@ -1520,7 +1520,7 @@
     "question_text": "What is reduction in organic chemistry?",
     "options": {
       "a": "Loss of electrons",
-      "b": "Gain of electrons or gain of",
+      "b": "Gain of electrons or gain of hydrogen",
       "c": "Losing hydrogen",
       "d": "Adding oxygen"
     },
@@ -1650,7 +1650,7 @@
     "question_text": "What is the Baeyer-Villiger oxidation?",
     "options": {
       "a": "Oxidation of alcohols",
-      "b": "Insertion of an oxygen atom next to",
+      "b": "Insertion of an oxygen atom next to a carbonyl group",
       "c": "Reduction of ketones",
       "d": "Hydrolysis of esters"
     },
@@ -1697,10 +1697,10 @@
   {
     "question_text": "What is the Beilstein test?",
     "options": {
-      "a": "Test for nitrogen",
+      "a": "Test for nitrogen in amino acids",
       "b": "A test for detection of halogens in organic compounds",
-      "c": "Test for oxygen",
-      "d": "Test for sulfur"
+      "c": "Test for oxygen in alcohols",
+      "d": "Test for sulfur in thiols"
     },
     "correct_option": "b",
     "explanation": "The Beilstein test detects halogens (Cl, Br, I) in organic compounds. A copper wire coated with the compound is heated in a flame; a green/blue-green flame indicates halogens.\n\nAdditional: using a copper wire producing a green flame",
@@ -1731,10 +1731,10 @@
   {
     "question_text": "What is a carbonyl group?",
     "options": {
-      "a": "-OH group",
+      "a": "-OH group of an alcohol",
       "b": "C=O group found in aldehydes, ketones",
-      "c": "-NH2 group",
-      "d": "-COOH group"
+      "c": "-NH2 group of an amine",
+      "d": "-COOH group of a carboxylic acid"
     },
     "correct_option": "b",
     "explanation": "The carbonyl group (C=O) is a polar functional group found in aldehydes (R-CHO), ketones (R-CO-R'), carboxylic acids (R-COOH), esters (R-COOR), and amides (R-CONH2).\n\nNote: carboxylic acids, esters, and amides",
@@ -1765,10 +1765,10 @@
   {
     "question_text": "What is Tollens' test?",
     "options": {
-      "a": "Test for alcohols",
+      "a": "Test for alcohols in solution",
       "b": "Detection of aldehydes using Tollens' reagent",
-      "c": "Test for ketones",
-      "d": "Test for amines"
+      "c": "Test for ketones in solution",
+      "d": "Test for amines in solution"
     },
     "correct_option": "b",
     "explanation": "Tollens' reagent [Ag(NH3)2]+ oxidizes aldehydes to carboxylic acids, and Ag+ is reduced to metallic silver forming a mirror on the tube wall. Ketones do not react.\n\nNote: ammoniacal silver nitrate\n\nAdditional: — aldehydes produce a silver mirror",
@@ -1799,12 +1799,12 @@
     "question_text": "What is the structure-activity relationship of sulfonamides?",
     "options": {
       "a": "Any modification is fine",
-      "b": "The para-amino group must be free for activity; substitutions",
+      "b": "The para-amino group must be free for antibacterial activity",
       "c": "The para position doesn't matter",
       "d": "Only the sulfur matters"
     },
     "correct_option": "b",
-    "explanation": "SAR of sulfonamides: 1) Free -NH2 at para position essential. 2) SO2NH- must be present. 3) R group on N1 affects potency, spectrum, and pharmacokinetics.\n\nNote: not acylated\n\nAdditional: on the sulfonamide nitrogen modify potency and spectrum",
+    "explanation": "SAR of sulfonamides: 1) Free -NH2 at para position essential. 2) SO2NH- must be present. 3) R group on N1 affects potency, spectrum, and pharmacokinetics.\n\nNote: not acylated\n\nAdditional: on the sulfonamide nitrogen modify potency and spectrum\n\nNote: substitutions",
     "subject": "pharmaceutical-chemistry-i",
     "difficulty": "hard",
     "tags": [
@@ -1833,7 +1833,7 @@
     "question_text": "How do barbiturates act as sedatives?",
     "options": {
       "a": "By blocking calcium channels",
-      "b": "By enhancing GABAergic inhibition — they increase the",
+      "b": "By enhancing GABAergic inhibition — they increase chloride channel opening",
       "c": "By blocking acetylcholine",
       "d": "By stimulating serotonin receptors"
     },
@@ -1884,10 +1884,10 @@
   {
     "question_text": "What is the general structure of a sulfonamide antibiotic?",
     "options": {
-      "a": "R-SO2-NH-R'",
+      "a": "R-SO2-NH-R' with sulfur in the ring structure",
       "b": "Para-aminobenzene sulfonamide with various R",
-      "c": "R-COOH",
-      "d": "R-NH2 only"
+      "c": "R-COOH with a free carboxylic acid group",
+      "d": "R-NH2 only without any sulfonyl group present"
     },
     "correct_option": "b",
     "explanation": "Sulfonamide antibiotics have the structure: p-NH2-C6H4-SO2-NH-R. The para-amino group is essential. R substituents modify the spectrum, potency, and pharmacokinetics.\n\nAdditional: substituents on the sulfonamide nitrogen",
@@ -1935,10 +1935,10 @@
   {
     "question_text": "What is NAPQI?",
     "options": {
-      "a": "A brand of paracetamol",
+      "a": "A brand name of paracetamol tablets",
       "b": "N-acetyl-p-benzoquinone imine — a toxic reactive",
-      "c": "A type of painkiller",
-      "d": "An excipient"
+      "c": "A type of over-the-counter painkiller",
+      "d": "An excipient used in tablet manufacturing"
     },
     "correct_option": "b",
     "explanation": "NAPQI is the toxic metabolite of paracetamol formed by cytochrome P450 (CYP2E1). Normally detoxified by glutathione conjugation. In overdose, glutathione is depleted → NAPQI causes liver cell death.\n\nAdditional: metabolite of paracetamol formed by CYP2E1",
@@ -2073,10 +2073,10 @@
   {
     "question_text": "What is the Claisen condensation?",
     "options": {
-      "a": "Condensation of two alcohols",
-      "b": "A carbon-carbon bond-forming reaction between two",
-      "c": "Condensation of an acid and amine",
-      "d": "A reduction reaction"
+      "a": "Condensation of two alcohol molecules",
+      "b": "A carbon-carbon bond-forming reaction between two esters or carbonyl compounds",
+      "c": "Condensation of an acid and an amine",
+      "d": "A reduction reaction of a ketone"
     },
     "correct_option": "b",
     "explanation": "Claisen condensation involves base-catalyzed condensation of two ester molecules to form a beta-keto ester. It is an important C-C bond-forming reaction in drug synthesis.\n\nNote: or an ester and a ketone\n\nAdditional: esters using a strong base",
@@ -2089,10 +2089,10 @@
   {
     "question_text": "What is the Knoevenagel condensation?",
     "options": {
-      "a": "A condensation between an aldehyde/ketone and an",
-      "b": "A condensation of two acids",
-      "c": "An oxidation reaction",
-      "d": "A hydrolysis reaction"
+      "a": "A condensation between an aldehyde/ketone and an active methylene compound",
+      "b": "A condensation of two carboxylic acids",
+      "c": "An oxidation reaction of an alcohol",
+      "d": "A hydrolysis reaction of an ester"
     },
     "correct_option": "a",
     "explanation": "Knoevenagel condensation involves reaction of an aldehyde or ketone with an active methylene compound (malonic acid, acetoacetic ester) using a mild base catalyst.\n\nAdditional: active methylene compound using a weak base",
@@ -2173,7 +2173,7 @@
     "question_text": "What is the importance of pKa in drug design?",
     "options": {
       "a": "pKa has no importance",
-      "b": "pKa determines the ionization state of a",
+      "b": "pKa determines the ionization state of a drug at a given pH",
       "c": "pKa determines molecular weight",
       "d": "pKa measures drug potency"
     },
@@ -2206,10 +2206,10 @@
   {
     "question_text": "What is a Michael acceptor in drug chemistry?",
     "options": {
-      "a": "A type of receptor",
-      "b": "An alpha beta-unsaturated carbonyl compound that",
-      "c": "An enzyme inhibitor",
-      "d": "A drug metabolite"
+      "a": "A type of receptor on cell membranes",
+      "b": "An alpha,beta-unsaturated carbonyl compound that accepts electrons",
+      "c": "An enzyme inhibitor of cytochrome P450",
+      "d": "A drug metabolite formed in the liver"
     },
     "correct_option": "b",
     "explanation": "Michael acceptors (e.g., acrylamides, vinyl ketones) have an electrophilic double bond conjugated with a carbonyl. They react with nucleophiles (thiols, amines) via Michael addition.\n\nAdditional: undergoes Michael addition with nucleophiles",
@@ -2222,10 +2222,10 @@
   {
     "question_text": "What is the Robinson annulation?",
     "options": {
-      "a": "A simple condensation",
-      "b": "A ring-forming reaction combining a Michael addition with an",
-      "c": "A reduction reaction",
-      "d": "An oxidation reaction"
+      "a": "A simple condensation of two esters",
+      "b": "A ring-forming reaction combining Michael addition with aldol condensation",
+      "c": "A reduction reaction of a ketone",
+      "d": "An oxidation reaction of an alcohol"
     },
     "correct_option": "b",
     "explanation": "Robinson annulation combines Michael addition of a ketone to a vinyl ketone followed by intramolecular aldol condensation, forming a new six-membered ring. Important in steroid synthesis.\n\nAdditional: intramolecular aldol condensation to form a six-membered ring",
@@ -2238,10 +2238,10 @@
   {
     "question_text": "What is diazepam's chemical classification?",
     "options": {
-      "a": "Barbiturate",
+      "a": "Barbiturate with marked sedative action",
       "b": "Benzodiazepine — 1 4-benzodiazepine with a chlorophenyl group",
-      "c": "Phenothiazine",
-      "d": "Imidazopyridine"
+      "c": "Phenothiazine with antipsychotic action profile",
+      "d": "Imidazopyridine with hypnotic action profile"
     },
     "correct_option": "b",
     "explanation": "Diazepam is a 1,4-benzodiazepine with Cl at position 7, phenyl at C5, and methyl on N1. It enhances GABAergic inhibition in the CNS.\n\nAdditional: at C5 and a methyl group on N1",
@@ -2255,10 +2255,10 @@
   {
     "question_text": "What is the general structure of a sulfonamide drug?",
     "options": {
-      "a": "Ar-SO2-NH-R",
+      "a": "Ar-SO2-NH-R with a metal salt",
       "b": "Parasubstituted benzene sulfonamide:",
-      "c": "Ar-COOH",
-      "d": "Ar-OH"
+      "c": "Ar-COOH with a free acid group",
+      "d": "Ar-OH with a phenolic group"
     },
     "correct_option": "b",
     "explanation": "Sulfonamide drugs share the structure p-NH2-C6H4-SO2-NH-R. The free para-amino group and sulfonamide group are essential for antibacterial activity.\n\nNote: 4-NH2-C6H4-SO2-NH-R",
@@ -2360,7 +2360,7 @@
     "question_text": "What is the structural relationship between caffeine, theophylline, and theobromine?",
     "options": {
       "a": "They are completely different",
-      "b": "All are methylxanthines differing in the number and",
+      "b": "All are methylxanthines differing in the number and position of methyl groups",
       "c": "They share no structural features",
       "d": "Only caffeine is a methylxanthine"
     },
@@ -2394,7 +2394,7 @@
     "question_text": "What is the synthesis of paracetamol from phenol?",
     "options": {
       "a": "Direct acetylation of phenol",
-      "b": "Nitration of phenol → reduction to",
+      "b": "Nitration of phenol, then reduction and acetylation",
       "c": "Oxidation of phenol",
       "d": "Chlorination of phenol"
     },
@@ -2410,10 +2410,10 @@
   {
     "question_text": "What is the condensation reaction between an amine and a carboxylic acid?",
     "options": {
-      "a": "Esterification",
-      "b": "Amide bond formation with",
-      "c": "Aldol condensation",
-      "d": "Michael addition"
+      "a": "Esterification of an alcohol and acid",
+      "b": "Amide bond formation with loss of water",
+      "c": "Aldol condensation of two aldehydes",
+      "d": "Michael addition to an alkene"
     },
     "correct_option": "b",
     "explanation": "Reaction of -NH2 (amine) with -COOH (carboxylic acid) forms an amide bond (-CONH-) with loss of water. This is the basis of peptide and protein formation.\n\nNote: peptide bond formation\n\nAdditional: release of water",
@@ -2426,10 +2426,10 @@
   {
     "question_text": "What is the Grignard reagent?",
     "options": {
-      "a": "An acid",
-      "b": "An organomagnesium compound used as a",
-      "c": "A base",
-      "d": "A catalyst"
+      "a": "An acid with a carboxyl functional group",
+      "b": "An organomagnesium compound used as a carbon nucleophile",
+      "c": "A base with a hydroxyl functional group",
+      "d": "A catalyst used for esterification reactions"
     },
     "correct_option": "b",
     "explanation": "Grignard reagents (R-Mg-X) are formed by reacting alkyl/aryl halides with magnesium metal in dry ether. They are powerful nucleophiles that attack carbonyl carbons.\n\nNote: RMgX\n\nAdditional: strong nucleophile in organic synthesis",
@@ -2442,10 +2442,10 @@
   {
     "question_text": "What is the Cannizzaro reaction?",
     "options": {
-      "a": "Reaction of aldehydes with no alpha-hydrogens in the presence of",
-      "b": "Oxidation of alcohols",
-      "c": "Reduction of ketones",
-      "d": "Condensation of esters"
+      "a": "Reaction of aldehydes with no alpha-hydrogens in concentrated alkali",
+      "b": "Oxidation of primary alcohols",
+      "c": "Reduction of ketones to alcohols",
+      "d": "Condensation of esters with amines"
     },
     "correct_option": "a",
     "explanation": "Cannizzaro reaction: aldehydes without alpha-H (e.g., formaldehyde, benzaldehyde) undergo base-catalyzed disproportionation to give a primary alcohol and a carboxylic acid salt.\n\nAdditional: strong base to give alcohol and carboxylic acid salt",
@@ -2476,7 +2476,7 @@
     "question_text": "What is a pharmacological antagonist?",
     "options": {
       "a": "A drug that enhances receptor activity",
-      "b": "A drug that binds to a receptor without",
+      "b": "A drug that binds to a receptor without activating it, blocking the agonist",
       "c": "An enzyme inhibitor",
       "d": "A toxic substance"
     },
@@ -2492,10 +2492,10 @@
   {
     "question_text": "What is the difference between competitive and non-competitive antagonism?",
     "options": {
-      "a": "No difference",
-      "b": "Competitive antagonist competes with agonist for the",
-      "c": "Competitive is always better",
-      "d": "Non-competitive is weaker"
+      "a": "No difference between the two mechanisms",
+      "b": "Competitive antagonist competes with agonist for the same receptor site",
+      "c": "Competitive is always clinically better",
+      "d": "Non-competitive antagonism is always weaker"
     },
     "correct_option": "b",
     "explanation": "Competitive antagonists bind to the same site as the agonist and can be overcome by increasing agonist concentration (rightward shift of dose-response curve). Non-competitive antagonists bind irreversibly or allosterically.\n\nNote: insurmountable\n\nAdditional: same binding site; non-competitive binds elsewhere",
@@ -2509,7 +2509,7 @@
     "question_text": "What is the Hammett equation in drug design?",
     "options": {
       "a": "A formula for molecular weight",
-      "b": "A mathematical relationship between reaction rates and",
+      "b": "A mathematical relationship between reaction rates and substituent effects",
       "c": "A formula for drug dosing",
       "d": "A formula for pH calculation"
     },
@@ -2524,10 +2524,10 @@
   {
     "question_text": "What is a bioisostere?",
     "options": {
-      "a": "A biological organism",
-      "b": "An atom or group that can replace another while",
-      "c": "A toxic metabolite",
-      "d": "A drug excipient"
+      "a": "A biological organism used in drug testing",
+      "b": "An atom or group that can replace another while keeping similar biological activity",
+      "c": "A toxic metabolite formed during drug metabolism",
+      "d": "A drug excipient added for tablet binding"
     },
     "correct_option": "b",
     "explanation": "Bioisosteres are substituents with similar physicochemical properties: -F for -H (similar size, different electronics), -COOH for tetrazole (same pKa), -CH3 for -Cl (similar volume).\n\nNote: or electronic properties\n\nAdditional: maintaining similar biological activity due to similar size shape",
@@ -2575,10 +2575,10 @@
   {
     "question_text": "What is the difference between Km and Vmax?",
     "options": {
-      "a": "No difference",
-      "b": "Km is substrate concentration at half-Vmax;",
-      "c": "Km measures velocity",
-      "d": "Vmax measures affinity"
+      "a": "No difference between the two values",
+      "b": "Km is substrate concentration at half-Vmax; Vmax is the maximum reaction rate",
+      "c": "Km measures the reaction velocity",
+      "d": "Vmax measures enzyme-substrate affinity"
     },
     "correct_option": "b",
     "explanation": "Km reflects enzyme-substrate affinity (lower Km = higher affinity). Vmax is the maximum rate when enzyme is fully saturated with substrate. Both are important in drug-enzyme interactions.\n\nNote: measure of affinity\n\nAdditional: Vmax is maximum reaction velocity",
@@ -2626,7 +2626,7 @@
     "question_text": "What is the first-pass effect?",
     "options": {
       "a": "The first time a drug is given",
-      "b": "Metabolism of a drug in the gut wall and",
+      "b": "Metabolism of a drug in the gut wall and liver before systemic circulation",
       "c": "The first dose response",
       "d": "Drug absorption in the stomach"
     },
@@ -2659,7 +2659,7 @@
     "question_text": "What is the difference between inhibitory constant (Ki) and IC50?",
     "options": {
       "a": "Same thing",
-      "b": "Ki is the dissociation constant of inhibitor from",
+      "b": "Ki is the dissociation constant of inhibitor from the enzyme",
       "c": "Ki is always higher",
       "d": "IC50 is the binding constant"
     },
@@ -2677,7 +2677,7 @@
     "question_text": "What is a Michaelis-Menten inhibitor?",
     "options": {
       "a": "An inhibitor named Michaelis",
-      "b": "An inhibitor that follows Michaelis-Menten kinetics with",
+      "b": "An inhibitor that increases Km without changing Vmax",
       "c": "A substrate analog",
       "d": "An enzyme activator"
     },
@@ -2693,7 +2693,7 @@
     "question_text": "What is an uncompetitive inhibitor?",
     "options": {
       "a": "An inhibitor that binds to the free enzyme",
-      "b": "An inhibitor that binds only to the",
+      "b": "An inhibitor that binds only to the enzyme-substrate complex",
       "c": "An inhibitor that binds irreversibly",
       "d": "An inhibitor that activates the enzyme"
     },
@@ -2710,7 +2710,7 @@
     "question_text": "What is the Henderson-Hasselbalch equation?",
     "options": {
       "a": "pH = pKa + log([acid]/[base])",
-      "b": "pH = pKa + log — used to",
+      "b": "pH = pKa + log [A-]/[HA] — used to find drug ionization",
       "c": "pH = pKa - log([acid]/[base])",
       "d": "pH = pKa x [acid]/[base]"
     },
@@ -2726,12 +2726,12 @@
     "question_text": "What is the significance of drug ionization for absorption?",
     "options": {
       "a": "Ionized drugs are always absorbed better",
-      "b": "Unionized drugs cross lipid membranes more easily; ionized forms are more",
+      "b": "Unionized drugs cross lipid membranes more easily; ionized drugs do not",
       "c": "Ionization doesn't affect absorption",
       "d": "Only neutral drugs are absorbed"
     },
     "correct_option": "b",
-    "explanation": "The pH-partition hypothesis: unionized forms cross membranes better. Weak acids are better absorbed in stomach (acidic pH, more unionized). Weak bases in intestine (alkaline pH).\n\nNote: non-ionized\n\nAdditional: water-soluble and better absorbed in ionized form from some sites",
+    "explanation": "The pH-partition hypothesis: unionized forms cross membranes better. Weak acids are better absorbed in stomach (acidic pH, more unionized). Weak bases in intestine (alkaline pH).\n\nNote: non-ionized\n\nAdditional: water-soluble and better absorbed in ionized form from some sites\n\nNote: ionized forms are more",
     "subject": "pharmaceutical-chemistry-i",
     "difficulty": "medium",
     "tags": [
@@ -2743,7 +2743,7 @@
     "question_text": "What is the drug's partition coefficient?",
     "options": {
       "a": "How fast a drug dissolves",
-      "b": "The ratio of drug concentration in",
+      "b": "The ratio of drug concentration in oil and water phases",
       "c": "The drug's molecular weight",
       "d": "The drug's melting point"
     },
@@ -2759,7 +2759,7 @@
     "question_text": "What is crystal polymorphism in pharmaceutical chemistry?",
     "options": {
       "a": "Bacteria growing on crystals",
-      "b": "The ability of a drug to exist in",
+      "b": "The ability of a drug to exist in multiple crystalline forms",
       "c": "Crystal formation in drugs",
       "d": "The color of drug crystals"
     },
@@ -2775,7 +2775,7 @@
     "question_text": "What is the significance of salt selection in drug formulation?",
     "options": {
       "a": "It has no significance",
-      "b": "Different salt forms of the same",
+      "b": "Different salt forms of the same active ingredient",
       "c": "Only one salt form exists",
       "d": "Salt forms don't affect absorption"
     },
@@ -2842,10 +2842,10 @@
   {
     "question_text": "What is the Bischler-Napieralski reaction?",
     "options": {
-      "a": "A condensation reaction",
+      "a": "A condensation reaction of two esters",
       "b": "A cyclization of beta-phenylethylamides using P2O5 or POCl3",
-      "c": "An oxidation reaction",
-      "d": "A reduction reaction"
+      "c": "An oxidation reaction of alcohols",
+      "d": "A reduction reaction of nitro groups"
     },
     "correct_option": "b",
     "explanation": "Bischler-Napieralski: cyclodehydration of N-acyl-beta-phenylethylamine using Lewis acid (P2O5, POCl3) to form 3,4-dihydroisoquinoline. Key step in synthesizing isoquinoline alkaloids.\n\nAdditional: to form dihydroisoquinolines — important in alkaloid synthesis",
@@ -2860,7 +2860,7 @@
     "question_text": "What is the Pictet-Spengler reaction?",
     "options": {
       "a": "A simple condensation",
-      "b": "A condensation of a beta-arylethylamine with an",
+      "b": "A condensation of a beta-arylethylamine with an aldehyde",
       "c": "An elimination reaction",
       "d": "A substitution reaction"
     },
@@ -2876,10 +2876,10 @@
   {
     "question_text": "What is the Curtius rearrangement?",
     "options": {
-      "a": "A rearrangement of alkenes",
-      "b": "Thermal decomposition of an acyl azide to an isocyanate with",
-      "c": "A condensation reaction",
-      "d": "A reduction reaction"
+      "a": "A rearrangement of alkenes to cyclopropanes",
+      "b": "Thermal decomposition of an acyl azide to an isocyanate with loss of nitrogen",
+      "c": "A condensation reaction of two aldehydes",
+      "d": "A reduction reaction of a nitro group"
     },
     "correct_option": "b",
     "explanation": "Curtius: RCON3 → R-N=C=O + N2. The isocyanate is hydrolyzed to amine. Used to convert carboxylic acids to amines with one fewer carbon atom.\n\nAdditional: loss of N2 used to convert carboxylic acids to amines",
@@ -2909,7 +2909,7 @@
     "question_text": "What is the Gabriel phthalimide synthesis?",
     "options": {
       "a": "A method to synthesize carboxylic acids",
-      "b": "A method to prepare pure primary amines from",
+      "b": "A method to prepare pure primary amines from alkyl halides",
       "c": "A method to synthesize esters",
       "d": "A method to prepare alcohols"
     },
@@ -2977,12 +2977,12 @@
     "question_text": "What is the significance of the halogen atom in drug design?",
     "options": {
       "a": "Halogens are only for flavoring",
-      "b": "Fluorine enhances metabolic stability and lipophilicity; chlorine/bromine",
+      "b": "Fluorine enhances metabolic stability and lipophilicity, improving drug action",
       "c": "Halogens are always removed",
       "d": "Halogens decrease drug activity"
     },
     "correct_option": "b",
-    "explanation": "Halogens in drug design: F (increases metabolic stability, bioisostere for H, improves membrane permeability), Cl/Br (increase lipophilicity, can form halogen bonds with proteins), I (used in radiocontrast).\n\nAdditional: increase lipophilicity and can participate in binding",
+    "explanation": "Halogens in drug design: F (increases metabolic stability, bioisostere for H, improves membrane permeability), Cl/Br (increase lipophilicity, can form halogen bonds with proteins), I (used in radiocontrast).\n\nAdditional: increase lipophilicity and can participate in binding\n\nNote: chlorine/bromine",
     "subject": "pharmaceutical-chemistry-i",
     "difficulty": "medium",
     "tags": [
@@ -2993,13 +2993,13 @@
   {
     "question_text": "What is the difference between a drug's intrinsic activity and efficacy?",
     "options": {
-      "a": "Same thing",
-      "b": "Intrinsic activity is the ability to activate a receptor; efficacy",
-      "c": "Efficacy is always higher",
-      "d": "Intrinsic activity measures potency"
+      "a": "Both terms mean exactly the same thing",
+      "b": "Intrinsic activity is the ability to activate a receptor; efficacy is the resulting response",
+      "c": "Efficacy is always the higher value",
+      "d": "Intrinsic activity is a measure of potency"
     },
     "correct_option": "b",
-    "explanation": "Intrinsic activity (a): ability of drug to activate receptor (full agonist a=1, partial agonist 0<a<1, antagonist a=0). Efficacy: maximum therapeutic effect achievable in a clinical setting.\n\nNote: 0-1 scale\n\nAdditional: is the maximum response a drug can produce in vivo",
+    "explanation": "Intrinsic activity (a): ability of drug to activate receptor (full agonist a=1, partial agonist 0<a<1, antagonist a=0). Efficacy: maximum therapeutic effect achievable in a clinical setting.\n\nNote: 0-1 scale\n\nAdditional: is the maximum response a drug can produce in vivo\n\nNote: efficacy",
     "subject": "pharmaceutical-chemistry-i",
     "difficulty": "medium",
     "tags": [
@@ -3010,10 +3010,10 @@
   {
     "question_text": "What is the Clark's occupancy theory?",
     "options": {
-      "a": "How drugs occupy space",
-      "b": "A theory stating that drug response is proportional to",
-      "c": "How cells occupy tissues",
-      "d": "A theory about drug storage"
+      "a": "How drugs occupy space in the body",
+      "b": "A theory stating that drug response is proportional to receptor occupancy",
+      "c": "How cells occupy tissues in organs",
+      "d": "A theory about drug storage conditions"
     },
     "correct_option": "b",
     "explanation": "Clark's theory: Drug response = proportion of receptors occupied. Occupancy depends on drug concentration and receptor affinity (Kd). Limitations: doesn't account for spare receptors or partial agonists.\n\nAdditional: the fraction of receptors occupied by the drug",
@@ -3026,10 +3026,10 @@
   {
     "question_text": "What is the difference between affinity and potency?",
     "options": {
-      "a": "Same thing",
-      "b": "Affinity is how well a drug binds to a receptor; potency",
-      "c": "Potency measures binding",
-      "d": "Affinity measures clinical effect"
+      "a": "Both terms mean exactly the same thing",
+      "b": "Affinity is how well a drug binds to a receptor; potency is the dose needed for effect",
+      "c": "Potency measures receptor binding strength",
+      "d": "Affinity measures the clinical effect produced"
     },
     "correct_option": "b",
     "explanation": "Affinity (Kd): binding strength to receptor (measured in binding assays). Potency (EC50): concentration needed for 50% of maximum effect (functional assays). A high-affinity drug may have low potency if it has low intrinsic activity.\n\nAdditional: is the amount of drug needed to produce a given effect",
@@ -3111,10 +3111,10 @@
   {
     "question_text": "What is the Vilsmeier-Haack reaction?",
     "options": {
-      "a": "A hydrolysis reaction",
-      "b": "A formylation reaction using DMF and POCl3 to",
-      "c": "An oxidation reaction",
-      "d": "A reduction reaction"
+      "a": "A hydrolysis reaction of an ester",
+      "b": "A formylation reaction using DMF and POCl3 to introduce a formyl group",
+      "c": "An oxidation reaction of an alcohol",
+      "d": "A reduction reaction of a nitro group"
     },
     "correct_option": "b",
     "explanation": "Vilsmeier-Haack: DMF + POCl3 generates a chloroiminium ion that acts as an electrophile, introducing a formyl group (-CHO) on electron-rich aromatics and heterocycles.\n\nAdditional: introduce a -CHO group on electron-rich aromatic rings",
@@ -3196,7 +3196,7 @@
     "question_text": "What is the SAR of morphine?",
     "options": {
       "a": "No SAR exists",
-      "b": "3-OH is essential; N-methyl can be",
+      "b": "3-OH is essential; N-methyl can be replaced or removed",
       "c": "Only the nitrogen matters",
       "d": "Only the aromatic ring matters"
     },
@@ -3214,12 +3214,12 @@
     "question_text": "What is the difference between morphine and naloxone structurally?",
     "options": {
       "a": "No difference",
-      "b": "Morphine has N-methyl group; naloxone has N-allyl",
+      "b": "Morphine has an N-methyl group; naloxone has an allyl group at that position",
       "c": "Naloxone has no hydroxyl groups",
       "d": "Morphine has no nitrogen"
     },
     "correct_option": "b",
-    "explanation": "The N-substituent determines agonist/antagonist activity: N-methyl (morphine) = agonist. N-allyl/cyclopropylmethyl (naloxone/naltrexone) = antagonist. This is a key SAR finding in opioid chemistry.\n\nNote: N-CH2CH=CH2\n\nAdditional: group which makes it an antagonist",
+    "explanation": "The N-substituent determines agonist/antagonist activity: N-methyl (morphine) = agonist. N-allyl/cyclopropylmethyl (naloxone/naltrexone) = antagonist. This is a key SAR finding in opioid chemistry.\n\nNote: N-CH2CH=CH2\n\nAdditional: group which makes it an antagonist\n\nNote: naloxone has N-allyl",
     "subject": "pharmaceutical-chemistry-i",
     "difficulty": "medium",
     "tags": [
@@ -3267,7 +3267,7 @@
     "question_text": "What is the Weerman degradation?",
     "options": {
       "a": "A hydrolysis of esters",
-      "b": "Conversion of alpha-hydroxy amides to",
+      "b": "Conversion of alpha-hydroxy amides to aldehydes",
       "c": "An oxidation reaction",
       "d": "A reduction reaction"
     },
@@ -3332,12 +3332,12 @@
     "question_text": "What is the importance of prodrug design in overcoming the first-pass effect?",
     "options": {
       "a": "Prodrugs always bypass first-pass",
-      "b": "Lipophilic prodrugs may bypass gut wall metabolism; certain",
+      "b": "Lipophilic prodrugs may bypass gut wall metabolism, reducing first-pass loss",
       "c": "Prodrugs increase first-pass effect",
       "d": "Prodrugs have no advantage"
     },
     "correct_option": "b",
-    "explanation": "Prodrug strategies to overcome first-pass: 1) Lipophilic esters for better absorption. 2) Targeted activation at specific sites. 3) Avoiding CYP450 substrates. 4) Using alternative routes (sublingual, transdermal).\n\nAdditional: prodrugs can be designed for targeted activation",
+    "explanation": "Prodrug strategies to overcome first-pass: 1) Lipophilic esters for better absorption. 2) Targeted activation at specific sites. 3) Avoiding CYP450 substrates. 4) Using alternative routes (sublingual, transdermal).\n\nAdditional: prodrugs can be designed for targeted activation\n\nNote: certain",
     "subject": "pharmaceutical-chemistry-i",
     "difficulty": "medium",
     "tags": [

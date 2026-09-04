@@ -853,10 +853,10 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Cyclone separator works on the principle of:",
     "options": [
-      "Filtration",
-      "Centrifugal force for",
-      "Evaporation",
-      "Distillation"
+      "Filtration through a fine mesh screen",
+      "Centrifugal force for separating particles from a gas stream",
+      "Evaporation of the liquid phase under vacuum",
+      "Distillation of the volatile liquid fraction"
     ],
     "correct_index": 1,
     "explanation": "Cyclone separators use centrifugal force to separate particles from air streams.\n\nAdditional: particle separation",
@@ -870,10 +870,10 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Tray dryer is used for:",
     "options": [
-      "Filtration",
+      "Filtration of suspensions",
       "Drying of wet solids and granules",
-      "Distillation",
-      "Milling"
+      "Distillation of mixtures",
+      "Milling of granules"
     ],
     "correct_index": 1,
     "explanation": "Tray dryer uses hot air circulation over trays containing wet material for drying.",
@@ -904,10 +904,10 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Membrane filtration is used for:",
     "options": [
-      "Milling",
-      "Sterile filtration of",
-      "Distillation",
-      "Crystallization"
+      "Milling of coarse powders",
+      "Sterile filtration of heat-labile solutions",
+      "Distillation of volatile liquids",
+      "Crystallization of saturated solutions"
     ],
     "correct_index": 1,
     "explanation": "Membrane filters (0.22 micron) sterilize heat-sensitive solutions by removing bacteria.\n\nAdditional: heat-sensitive solutions",
@@ -1431,10 +1431,10 @@
     "unit_id": "pharm-i-unit-5",
     "question_text": "Steam distillation is used to extract:",
     "options": [
-      "Mineral salts",
+      "Mineral salts from sea water",
       "Volatile oils from plant materials",
-      "Proteins",
-      "Sugars"
+      "Proteins from animal tissues",
+      "Sugars from plant juices"
     ],
     "correct_index": 1,
     "explanation": "Steam distillation extracts volatile oils (essential oils) from aromatic plant materials without thermal decomposition.",
@@ -1857,7 +1857,7 @@
     "question_text": "Percolation in pharmacy involves:",
     "options": [
       "Filtration of solutions",
-      "Passage of solvent through packed bed of",
+      "Passage of solvent through a packed bed of drug powder",
       "Distillation of liquids",
       "Evaporation of solvents"
     ],
@@ -1942,7 +1942,7 @@
     "question_text": "The principle of a water bath (thermostatically controlled) is:",
     "options": [
       "Direct heating with flame",
-      "Heating by immersion in",
+      "Heating by immersion in hot water",
       "Dry heat sterilization",
       "Microwave heating"
     ],
@@ -1992,10 +1992,10 @@
     "unit_id": "pharm-i-unit-5",
     "question_text": "The purpose of a fractionating column in fractional distillation is to:",
     "options": [
-      "Cool the vapor",
-      "Provide multiple theoretical plates for",
-      "Heat the mixture",
-      "Filter impurities"
+      "Cool the vapor to liquid form",
+      "Provide multiple theoretical plates for efficient separation",
+      "Heat the mixture to boiling point",
+      "Filter insoluble impurities from the mixture"
     ],
     "correct_index": 1,
     "explanation": "A fractionating column provides surface area for repeated condensation and vaporization, effectively performing multiple simple distillations in one apparatus.\n\nAdditional: repeated condensation-vaporization cycles improving separation",
@@ -2145,10 +2145,10 @@
     "unit_id": "pharm-i-unit-6",
     "question_text": "Brownian motion in colloids refers to:",
     "options": [
-      "Color change",
-      "Random zigzag motion of colloidal particles due",
-      "Settling of particles",
-      "Evaporation of solvent"
+      "A color change in the colloidal dispersion",
+      "Random zigzag motion of colloidal particles due to bombardment by solvent molecules",
+      "Settling of particles under gravity over time",
+      "Evaporation of the dispersion medium slowly"
     ],
     "correct_index": 1,
     "explanation": "Brownian motion is the continuous random movement of colloidal particles caused by collision with molecules of the dispersion medium.\n\nAdditional: to bombardment by molecules of dispersion medium",
@@ -2350,7 +2350,7 @@
     "question_text": "Half-life (t1/2) of a drug is directly proportional to:",
     "options": [
       "Clearance",
-      "Volume of distribution and",
+      "Volume of distribution",
       "Dose administered",
       "Drug concentration"
     ],
@@ -2383,10 +2383,10 @@
     "unit_id": "pharm-i-unit-8",
     "question_text": "Loading dose is calculated using:",
     "options": [
-      "Clearance and Css",
+      "Clearance and steady-state concentration",
       "Volume of distribution and target Css",
-      "Only half-life",
-      "Only body weight"
+      "Considering only the drug half-life",
+      "Considering only the patient's weight"
     ],
     "correct_index": 1,
     "explanation": "Loading dose = (Vd x Css) / F, where F is bioavailability. It depends on Vd, not clearance.\n\nNote: LD = Vd x Css / F",
@@ -2706,10 +2706,10 @@
     "unit_id": "pharm-i-unit-6",
     "question_text": "HLB (Hydrophilic-Lipophilic Balance) value helps in:",
     "options": [
-      "Measuring viscosity",
-      "Selecting appropriate emulsifier for",
-      "Measuring pH",
-      "Measuring particle size"
+      "Measuring the viscosity of liquids",
+      "Selecting appropriate emulsifier for a given formulation",
+      "Measuring the pH of a solution",
+      "Measuring the particle size of powders"
     ],
     "correct_index": 1,
     "explanation": "HLB scale (0-20) indicates the emulsifier's affinity. High HLB (8-18) = O/W emulsifier; Low HLB (3-6) = W/O emulsifier.\n\nAdditional: oil-in-water or water-in-oil emulsions",
@@ -2775,7 +2775,7 @@
     "question_text": "First-order drug release means:",
     "options": [
       "Constant rate of release",
-      "Release rate proportional to",
+      "Release rate proportional to the amount of drug remaining",
       "No release",
       "Only initial burst release"
     ],
@@ -2876,10 +2876,10 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Planetary ball mill works by:",
     "options": [
-      "Only rotation",
-      "Cylinders rotating around central axis AND",
-      "Vibration only",
-      "Impact only"
+      "Rotation of the mill chamber only",
+      "Cylinders rotating around a central axis with grinding balls",
+      "Vibration of the grinding chamber only",
+      "Impact of falling balls only"
     ],
     "correct_index": 1,
     "explanation": "Planetary ball mill has jars rotating on their own axis while orbiting a central axis, creating high-energy collisions for fine grinding.\n\nAdditional: on their own axis simultaneously",
@@ -2996,7 +2996,7 @@
     "question_text": "Sustained-release dosage forms aim to:",
     "options": [
       "Release drug all at once immediately",
-      "Maintain therapeutic drug levels over an",
+      "Maintain therapeutic drug levels over an extended period",
       "Release drug only in the colon",
       "Dissolve faster than conventional tablets"
     ],
@@ -3183,7 +3183,7 @@
     "question_text": "Liniments are:",
     "options": [
       "Always aqueous preparations",
-      "Alcoholic or oily preparations rubbed into",
+      "Alcoholic or oily preparations rubbed into the skin",
       "Oral preparations",
       "Eye preparations"
     ],
@@ -3234,7 +3234,7 @@
     "question_text": "Nernst diffusion layer (h) in dissolution is:",
     "options": [
       "The entire vessel thickness",
-      "A thin stagnant layer of",
+      "A thin stagnant layer of liquid adjacent to the dissolving surface",
       "The filter paper thickness",
       "The container wall"
     ],
@@ -3268,7 +3268,7 @@
     "question_text": "Cosseting in pharmaceutical manufacturing involves:",
     "options": [
       "Final product testing",
-      "Applying a thin coat of sugar or",
+      "Applying a thin coat of sugar or syrup to tablets",
       "Packaging medicines",
       "Labeling products"
     ],
@@ -3286,8 +3286,8 @@
     "options": [
       "28.35 g (avoirdupois ounce)",
       "31.1 g",
-      "100 g",
-      "10 g"
+      "About 100 g",
+      "About 10 g"
     ],
     "correct_index": 1,
     "explanation": "1 troy ounce ≈ 31.1 g, used for precious metals and sometimes for pharmacy calculations (different from avoirdupois ounce = 28.35g).",
