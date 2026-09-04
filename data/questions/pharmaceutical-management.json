@@ -2633,5 +2633,1280 @@
     "tags": [
       "pharmaceutical industry"
     ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "The management function that compares actual performance with standards and takes corrective action is:",
+    "options": [
+      "Controlling",
+      "Planning",
+      "Staffing",
+      "Organizing"
+    ],
+    "correct_index": 0,
+    "explanation": "Controlling measures actual results against planned standards, identifies deviations and applies corrective action to keep the organization on course.",
+    "difficulty": "easy",
+    "tags": [
+      "management",
+      "functions"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "According to Fayol, the principle of 'unity of direction' means that:",
+    "options": [
+      "One head and one plan for a group of activities having the same objective",
+      "Every employee should receive orders from only one superior",
+      "Employees should be paid fairly for their work",
+      "Authority must flow downward from top to bottom"
+    ],
+    "correct_index": 0,
+    "explanation": "Unity of direction states that activities with the same objective must be guided by one plan and one head, whereas unity of command concerns each subordinate having a single boss.",
+    "difficulty": "hard",
+    "tags": [
+      "management",
+      "Fayol"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Fayol's principle of 'esprit de corps' emphasises:",
+    "options": [
+      "Harmony and team spirit among the employees of the organization",
+      "Strict discipline through fear of punishment",
+      "One employee receiving orders from several bosses",
+      "Specialisation of work among different departments"
+    ],
+    "correct_index": 0,
+    "explanation": "Esprit de corps means 'union is strength' — Fayol urged managers to build harmony, teamwork and morale rather than dividing the workforce.",
+    "difficulty": "medium",
+    "tags": [
+      "management",
+      "Fayol"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "According to McGregor's Theory X, managers assume that workers:",
+    "options": [
+      "Dislike work and must be closely supervised and coerced",
+      "Are self-directed and seek responsibility naturally",
+      "Work best without any rules or targets",
+      "Are motivated mainly by job satisfaction"
+    ],
+    "correct_index": 0,
+    "explanation": "Theory X assumes the average worker dislikes work, avoids responsibility and needs direction, control and even threats to work effectively.",
+    "difficulty": "medium",
+    "tags": [
+      "management",
+      "Theory X"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "McGregor's Theory Y assumes that employees:",
+    "options": [
+      "Are self-motivated and accept responsibility when committed to goals",
+      "Need constant punishment to complete their tasks",
+      "Avoid work whenever the opportunity arises",
+      "Work only for money and never for achievement"
+    ],
+    "correct_index": 0,
+    "explanation": "Theory Y holds that work is natural and that people exercise self-direction and creativity when they are committed to organizational objectives.",
+    "difficulty": "medium",
+    "tags": [
+      "management",
+      "Theory Y"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "In laissez-faire (free-rein) leadership, the leader:",
+    "options": [
+      "Gives subordinates complete freedom to make decisions and set goals",
+      "Makes every decision without consulting the group",
+      "Consults subordinates but keeps final authority",
+      "Rewards workers only through financial incentives"
+    ],
+    "correct_index": 0,
+    "explanation": "Free-rein leadership delegates decision-making almost entirely to the group, suited to highly skilled and self-motivated teams.",
+    "difficulty": "medium",
+    "tags": [
+      "management",
+      "leadership"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "The 'grapevine' in an organization refers to:",
+    "options": [
+      "The informal channel of communication that carries unofficial information",
+      "The official chain of command shown in the organization chart",
+      "A meeting where departmental heads report to top management",
+      "The written circulars issued by the personnel department"
+    ],
+    "correct_index": 0,
+    "explanation": "The grapevine is the informal communication network through which rumours and unofficial information spread quickly among employees.",
+    "difficulty": "easy",
+    "tags": [
+      "management",
+      "communication"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Delegation of authority means:",
+    "options": [
+      "Assigning tasks with the necessary authority to subordinates while retaining accountability",
+      "Giving away all responsibility so the manager is not answerable",
+      "Allowing employees to make policies for the whole organization",
+      "Transferring ownership of the company to its workers"
+    ],
+    "correct_index": 0,
+    "explanation": "Delegation entrusts part of a manager's work and authority to subordinates, but the manager remains accountable for the final result.",
+    "difficulty": "medium",
+    "tags": [
+      "management",
+      "delegation"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "The process of attracting a pool of qualified applicants for a vacant job is called:",
+    "options": [
+      "Recruitment",
+      "Selection",
+      "Placement",
+      "Induction"
+    ],
+    "correct_index": 0,
+    "explanation": "Recruitment is the positive process of searching for and attracting applicants; selection then chooses the most suitable candidate from that pool.",
+    "difficulty": "easy",
+    "tags": [
+      "HRM",
+      "recruitment"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Training given to an employee by actually performing the job under a senior worker's guidance is called:",
+    "options": [
+      "On-the-job training",
+      "Vestibule training",
+      "Apprenticeship in a classroom",
+      "Correspondence course training"
+    ],
+    "correct_index": 0,
+    "explanation": "On-the-job training (learning by doing) places the employee in the real workplace under supervision, for example coaching and job rotation.",
+    "difficulty": "easy",
+    "tags": [
+      "HRM",
+      "training"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "The main purpose of performance appraisal is to:",
+    "options": [
+      "Evaluate an employee's work and guide training, promotion and feedback",
+      "Decide which employees should be dismissed immediately",
+      "Compare two rival companies' financial results",
+      "Fix the selling price of the company's products"
+    ],
+    "correct_index": 0,
+    "explanation": "Performance appraisal systematically evaluates employee performance to support decisions on pay, promotion, training needs and career development.",
+    "difficulty": "easy",
+    "tags": [
+      "HRM",
+      "appraisal"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Which of the following is an example of a financial incentive for employees?",
+    "options": [
+      "Profit sharing and bonus payments",
+      "A certificate of appreciation",
+      "Greater job responsibility",
+      "Flexible working hours"
+    ],
+    "correct_index": 0,
+    "explanation": "Financial incentives reward employees in money terms (bonus, profit sharing, commission), while non-financial incentives give recognition, status or responsibility.",
+    "difficulty": "easy",
+    "tags": [
+      "management",
+      "incentives"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "Management by Objectives (MBO) is an approach in which:",
+    "options": [
+      "Superiors and subordinates jointly set goals and review performance against them",
+      "Only top management decides every target without discussion",
+      "Workers are paid purely by the number of units produced",
+      "Objectives are replaced entirely by rules and procedures"
+    ],
+    "correct_index": 0,
+    "explanation": "MBO, popularised by Peter Drucker, involves participative goal setting at all levels with periodic review of achievement against agreed objectives.",
+    "difficulty": "medium",
+    "tags": [
+      "management",
+      "MBO"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "First-line (supervisory) managers are mainly responsible for:",
+    "options": [
+      "Directing the day-to-day activities of the operating workforce",
+      "Formulating the long-term vision of the entire company",
+      "Deciding the capital structure of the firm",
+      "Auditing the annual financial statements"
+    ],
+    "correct_index": 0,
+    "explanation": "First-line managers (supervisors, foremen) oversee and direct operative employees on a daily basis, converting plans into actual output.",
+    "difficulty": "easy",
+    "tags": [
+      "management",
+      "levels"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-1",
+    "question_text": "A characteristic feature of Weber's bureaucratic organization is:",
+    "options": [
+      "A clear hierarchy of offices governed by formal rules and written records",
+      "Complete absence of any rules or job descriptions",
+      "Decision making based on personal whims of the owner",
+      "An organization chart that changes every single day"
+    ],
+    "correct_index": 0,
+    "explanation": "Weber's bureaucracy is marked by division of labour, a defined hierarchy, formal rules, impersonality and career advancement based on merit.",
+    "difficulty": "medium",
+    "tags": [
+      "management",
+      "bureaucracy"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "A purchase requisition in a pharmacy store is:",
+    "options": [
+      "An internal request from the store to the purchasing department to buy stock",
+      "A bill sent by the supplier for goods already delivered",
+      "A legal permit to sell controlled medicines",
+      "A document listing the qualifications of suppliers"
+    ],
+    "correct_index": 0,
+    "explanation": "The purchase requisition originates internally, signalling the store's need for goods, after which the purchasing unit invites quotations or tenders.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "procurement"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "An open tender differs from a restricted tender because in an open tender:",
+    "options": [
+      "Any qualified supplier may submit a bid after a public advertisement",
+      "Only a preselected shortlist of suppliers is invited",
+      "The contract is given without any competition",
+      "Suppliers negotiate the price after delivery"
+    ],
+    "correct_index": 0,
+    "explanation": "Open tendering advertises the requirement publicly so all interested eligible bidders can compete, while restricted tendering invites a chosen few.",
+    "difficulty": "medium",
+    "tags": [
+      "supply chain",
+      "tender"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "A 'quarantine' area in a pharmaceutical warehouse is used to hold goods that:",
+    "options": [
+      "Are awaiting quality verification before they are released for sale",
+      "Have already expired and need immediate disposal",
+      "Are reserved for a hospital's emergency use only",
+      "Belong to a competitor's brand under test"
+    ],
+    "correct_index": 0,
+    "explanation": "Incoming batches are kept in quarantine until sampling and quality testing confirm they meet specifications; only then are they released to saleable stock.",
+    "difficulty": "medium",
+    "tags": [
+      "supply chain",
+      "warehousing"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "A stock-out in a pharmacy means that:",
+    "options": [
+      "A medicine requested by a patient is not available at that time",
+      "The store has more stock than it can store",
+      "The medicine has exceeded its expiry date",
+      "The supplier has delivered goods free of charge"
+    ],
+    "correct_index": 0,
+    "explanation": "Stock-out is the temporary exhaustion of an item; it causes lost sales, dissatisfied patients and, for essential drugs, possible harm.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "stock-out"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "The two-bin system is a method of:",
+    "options": [
+      "Inventory control in which the second bin holds reserve stock used when the first empties",
+      "Dispensing tablets into individual unit-dose packets for ward use",
+      "Sterilising glassware using two separate autoclave cycles",
+      "Classifying drugs by their main pharmacological action"
+    ],
+    "correct_index": 0,
+    "explanation": "In the two-bin (or two-card) system the first bin is used for normal issues; when it empties a replenishment order is placed while the reserve second bin serves demand.",
+    "difficulty": "medium",
+    "tags": [
+      "supply chain",
+      "inventory control"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "A vaccine vial monitor (VVM) is a label that:",
+    "options": [
+      "Changes colour to show whether the vaccine has been exposed to excess heat",
+      "Records the batch number of the vaccine",
+      "Shows the name of the vaccinating health worker",
+      "Measures the pH of the vaccine liquid"
+    ],
+    "correct_index": 0,
+    "explanation": "A VVM is a chemical indicator printed on the vial label; its inner square darkens irreversibly when heat exposure threatens the vaccine's potency.",
+    "difficulty": "medium",
+    "tags": [
+      "supply chain",
+      "vaccines"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Deterioration of medicines during storage refers to:",
+    "options": [
+      "Physical or chemical change that reduces their quality and potency",
+      "An increase in their wholesale purchase price",
+      "Improvement in their solubility with time",
+      "Transfer of stock from one shelf to another"
+    ],
+    "correct_index": 0,
+    "explanation": "Heat, light, moisture and air can hydrolyse, oxidise or soften medicines, so proper storage conditions preserve quality until the expiry date.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "storage"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Under Good Distribution Practice (GDP), vehicles used to transport medicines should:",
+    "options": [
+      "Be clean, secure and able to maintain the required temperature during transit",
+      "Carry passengers together with the medicines",
+      "Operate without any temperature records",
+      "Transport all medicines at freezing temperature"
+    ],
+    "correct_index": 0,
+    "explanation": "GDP requires that transport vehicles protect products from contamination, damage and temperature extremes, with monitoring where cold chain is needed.",
+    "difficulty": "medium",
+    "tags": [
+      "supply chain",
+      "GDP"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Reverse logistics in the pharmaceutical supply chain deals with:",
+    "options": [
+      "Returns, recalls, expired products and their safe disposal",
+      "Forward movement of goods from factory to retailer",
+      "Advertising of products to the final consumer",
+      "Transport of raw materials to the manufacturer"
+    ],
+    "correct_index": 0,
+    "explanation": "Reverse logistics handles product flowing backwards through the chain: customer returns, market recalls and disposal of expired or damaged stock.",
+    "difficulty": "medium",
+    "tags": [
+      "supply chain",
+      "reverse logistics"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "The batch (lot) number printed on a medicine label mainly helps to:",
+    "options": [
+      "Trace the product back to its manufacturing details in case of a recall",
+      "Show the retail price of the medicine",
+      "Indicate the pharmacological class of the drug",
+      "Identify the prescribing doctor of the medicine"
+    ],
+    "correct_index": 0,
+    "explanation": "Batch numbers link each pack to its production records, enabling rapid identification and withdrawal of defective stock during recalls.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "labelling"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Cartons of medicines should be stored in a warehouse by:",
+    "options": [
+      "Placing them on pallets raised above the floor and away from the walls",
+      "Stacking them directly on the damp concrete floor",
+      "Piling them against the wall to save space",
+      "Storing them upside down without any order"
+    ],
+    "correct_index": 0,
+    "explanation": "Pallet storage lifts stock off the floor, allowing air circulation and easy cleaning, while spacing from walls prevents damp damage and aids inspection.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "storage"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Procurement is a broader concept than purchasing because procurement also includes:",
+    "options": [
+      "Sourcing, supplier evaluation, contracting and follow-up of orders",
+      "Only the act of writing a cheque to the supplier",
+      "Selling the medicines to the final consumer",
+      "Advertising the company's products on television"
+    ],
+    "correct_index": 0,
+    "explanation": "Purchasing is the narrow act of buying, while procurement covers the whole cycle from identifying needs and selecting suppliers to contracting and receiving.",
+    "difficulty": "medium",
+    "tags": [
+      "supply chain",
+      "procurement"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "Diluents supplied with vaccines should be stored:",
+    "options": [
+      "At controlled temperature and never allowed to freeze",
+      "Always inside a deep freezer below -20°C",
+      "In direct sunlight to keep them dry",
+      "With the opened vaccine vials overnight"
+    ],
+    "correct_index": 0,
+    "explanation": "Vaccine diluents must not be frozen (the vial may crack and the diluent becomes unusable); they are kept at controlled temperature, separate from freezing.",
+    "difficulty": "medium",
+    "tags": [
+      "supply chain",
+      "vaccines"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "A continuous temperature recording device used inside a vaccine refrigerator is called a:",
+    "options": [
+      "Temperature data logger or monitor",
+      "Vaccine vial monitor label",
+      "Batch record book",
+      "Cold box carrier"
+    ],
+    "correct_index": 0,
+    "explanation": "Data loggers or electronic monitors continuously record refrigerator temperature so that any break in the 2-8°C cold chain is detected and documented.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "cold chain"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-2",
+    "question_text": "In the pharmaceutical distribution chain, a wholesaler mainly serves to:",
+    "options": [
+      "Buy in bulk from manufacturers and supply smaller quantities to retailers",
+      "Manufacture tablets and capsules for the market",
+      "Prescribe medicines to the general public",
+      "Destroy expired medicines at the landfill"
+    ],
+    "correct_index": 0,
+    "explanation": "Wholesalers (distributors) purchase large lots from manufacturers and break bulk to supply retailers and institutions, adding storage and logistic value.",
+    "difficulty": "easy",
+    "tags": [
+      "supply chain",
+      "distribution"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "The 'promotion' element of the marketing mix includes:",
+    "options": [
+      "Advertising, personal selling, sales promotion and publicity",
+      "Product design, packaging and branding only",
+      "Warehousing and transportation of goods",
+      "Setting the price of the product"
+    ],
+    "correct_index": 0,
+    "explanation": "Promotion communicates the product to buyers through advertising, personal selling (detailing), sales promotion and public relations.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "promotion"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Price skimming is a pricing strategy in which a company:",
+    "options": [
+      "Sets a high initial price that is gradually lowered over time",
+      "Sets a very low price to enter a market quickly",
+      "Charges the same price as every competitor",
+      "Prices products below their cost permanently"
+    ],
+    "correct_index": 0,
+    "explanation": "Skimming launches at a high price to recover costs from early adopters, then reduces the price as competition appears or demand segments are exhausted.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "pricing"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Cost-plus pricing determines the selling price by:",
+    "options": [
+      "Adding a fixed profit margin to the total cost of the product",
+      "Charging whatever the customer is willing to pay",
+      "Matching the lowest price in the market",
+      "Ignoring costs and following competitor prices"
+    ],
+    "correct_index": 0,
+    "explanation": "Cost-plus pricing adds a desired markup to unit cost, a simple method widely used where costs are easy to calculate.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "pricing"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Marketing research is best defined as the:",
+    "options": [
+      "Systematic collection, analysis and interpretation of data to guide marketing decisions",
+      "Personal selling of products to doctors and pharmacists",
+      "Designing of attractive labels for medicine packs",
+      "Hiring of new staff for the sales department"
+    ],
+    "correct_index": 0,
+    "explanation": "Marketing research gathers objective information about markets, consumers and competitors to reduce uncertainty in marketing decisions.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "research"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "A product line is a group of:",
+    "options": [
+      "Related products manufactured by one company that share similar use or features",
+      "Competing brands of the same drug sold by different companies",
+      "Raw materials such as binders used in tablet manufacturing",
+      "Departments that work together inside a hospital pharmacy"
+    ],
+    "correct_index": 0,
+    "explanation": "A product line consists of closely related items (e.g., a range of analgesics) offered by one firm, while the product mix is the full set of lines.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "product"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "According to Ansoff's growth matrix, the four growth strategies are market penetration, market development, product development and:",
+    "options": [
+      "Diversification",
+      "Liquidation",
+      "Retrenchment",
+      "Stabilisation"
+    ],
+    "correct_index": 0,
+    "explanation": "Ansoff's matrix pairs existing/new products with existing/new markets; the fourth cell, diversification, enters new markets with new products.",
+    "difficulty": "hard",
+    "tags": [
+      "marketing",
+      "growth strategies"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "In the BCG (Boston Consulting Group) matrix, products with high market share in a low-growth market are called:",
+    "options": [
+      "Cash cows",
+      "Stars",
+      "Question marks",
+      "Dogs"
+    ],
+    "correct_index": 0,
+    "explanation": "Cash cows generate steady cash with little investment needed; stars lead high-growth markets, question marks need decisions, and dogs are weak products.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "BCG matrix"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "USP in pharmaceutical marketing stands for:",
+    "options": [
+      "Unique selling proposition",
+      "United States Pharmacopoeia",
+      "Universal safety protocol",
+      "Uniform sales price"
+    ],
+    "correct_index": 0,
+    "explanation": "The unique selling proposition is the distinct benefit that differentiates a brand from competitors, e.g., faster action or better taste.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "terminology"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "The AIDA model of communication describes the stages of:",
+    "options": [
+      "Attention, Interest, Desire, Action",
+      "Aim, Idea, Decision, Assessment",
+      "Analysis, Investment, Delivery, Audit",
+      "Advise, Inform, Discuss, Agree"
+    ],
+    "correct_index": 0,
+    "explanation": "AIDA maps the buyer journey: first gaining attention, then interest and desire, and finally prompting the purchase action.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "AIDA"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "A 'push' promotional strategy in marketing means:",
+    "options": [
+      "Pushing the product through the distribution channel using trade promotions and personal selling",
+      "Advertising directly to end consumers who then demand the product",
+      "Pushing competitors out of the market by price wars",
+      "Pushing the launch date of a new product forward"
+    ],
+    "correct_index": 0,
+    "explanation": "Push strategy directs promotion at wholesalers and retailers to stock and push the product to consumers; pull strategy instead attracts consumers to demand it.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "push strategy"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "In the product life cycle, sales rise most rapidly during the:",
+    "options": [
+      "Growth stage",
+      "Introduction stage",
+      "Decline stage",
+      "Maturity stage"
+    ],
+    "correct_index": 0,
+    "explanation": "In the growth stage the product gains market acceptance, sales climb sharply and profits increase as competitors begin entering.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "product life cycle"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "During the maturity stage of the product life cycle, marketers typically focus on:",
+    "options": [
+      "Defending market share and differentiating the product from rivals",
+      "Educating the public about the product's existence",
+      "Withdrawing the product from all markets",
+      "Reducing quality to cut production costs"
+    ],
+    "correct_index": 0,
+    "explanation": "At maturity, sales plateau and competition intensifies, so brands defend share through differentiation, promotions and efficiency.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "product life cycle"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Brand equity refers to the:",
+    "options": [
+      "Commercial value that a brand adds to a product through consumer recognition and loyalty",
+      "Total cost of printing the brand label on every pack produced",
+      "Number of different brand names a company has registered",
+      "Weight of the packaging material used for the product"
+    ],
+    "correct_index": 0,
+    "explanation": "Brand equity is the premium value built from years of quality, awareness and loyalty, allowing higher prices and easier new product acceptance.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "branding"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Institutional (hospital) buyers differ from retail consumers of medicines mainly because they:",
+    "options": [
+      "Purchase in bulk, often through tenders, with more rational product selection",
+      "Always buy single packs at full retail price",
+      "Never evaluate quality before buying",
+      "Are influenced only by television advertising"
+    ],
+    "correct_index": 0,
+    "explanation": "Hospitals and institutions buy large volumes through formal tenders, assessing quality, price and reliable supply, unlike individual retail customers.",
+    "difficulty": "medium",
+    "tags": [
+      "marketing",
+      "institutional market"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-3",
+    "question_text": "Public relations activities in a pharmaceutical company are mainly aimed at:",
+    "options": [
+      "Building a favourable image and goodwill for the company",
+      "Selling products door to door to consumers",
+      "Calculating the cost of raw materials",
+      "Fixing the salary of medical representatives"
+    ],
+    "correct_index": 0,
+    "explanation": "Public relations uses media, events and community programmes to create a positive corporate image and trust among the public and professionals.",
+    "difficulty": "easy",
+    "tags": [
+      "marketing",
+      "public relations"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "An intrapreneur is best described as:",
+    "options": [
+      "An employee inside a large organization who behaves like an entrepreneur in developing new ventures",
+      "A person who runs an illegal business without registration",
+      "A government officer who regulates business firms",
+      "An investor who only lends money and takes no risk"
+    ],
+    "correct_index": 0,
+    "explanation": "Intrapreneurship lets employees within an established firm develop innovative products or ventures using company resources, sharing the entrepreneurial spirit.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "intrapreneur"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Innovation in entrepreneurship means:",
+    "options": [
+      "Introducing a new product, process, market or way of organizing business",
+      "Copying an existing product without any change",
+      "Waiting for the government to start a business",
+      "Saving money without ever investing it"
+    ],
+    "correct_index": 0,
+    "explanation": "Entrepreneurs innovate by combining resources in new ways — new goods, methods, markets or supply sources — as stressed by Schumpeter.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "innovation"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "A business plan is primarily a document that:",
+    "options": [
+      "Describes the venture's goals, market, operations, finance and strategies for investors",
+      "A register that records the daily sales of the pharmacy",
+      "A booklet listing the side effects of all dispensed drugs",
+      "The official licence required to import medicines into Nepal"
+    ],
+    "correct_index": 0,
+    "explanation": "The business plan maps out objectives, target market, competition, operations and financial projections, serving as a roadmap and a tool to attract finance.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "business plan"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "A feasibility study is conducted before starting a business to:",
+    "options": [
+      "Assess whether the proposed venture is technically, financially and commercially viable",
+      "Guarantee that the business will never face losses",
+      "Approve the medicines to be sold in the pharmacy",
+      "Select the brand name of the products"
+    ],
+    "correct_index": 0,
+    "explanation": "Feasibility analysis examines market demand, technical requirements, finance and management so the entrepreneur can decide whether to proceed.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "feasibility"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Common sources of finance for starting a small community pharmacy include:",
+    "options": [
+      "Personal savings, bank loans and cooperative or microfinance credit",
+      "Only foreign currency exchange earnings",
+      "Taxes collected from the government",
+      "Donations from rival pharmacies"
+    ],
+    "correct_index": 0,
+    "explanation": "Small pharmacy ventures are usually funded from own capital, commercial bank loans and cooperative or microfinance institutions.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "finance"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "A major advantage of the sole proprietorship form of pharmacy business is:",
+    "options": [
+      "Easy formation with the owner enjoying full control of decisions and profits",
+      "Unlimited liability shared with many partners",
+      "Separation of ownership from day-to-day management",
+      "Double taxation of the business income"
+    ],
+    "correct_index": 0,
+    "explanation": "Sole proprietorship is simple to start and gives the owner total control and all profits; its drawback is unlimited liability and limited capital.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "business forms"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Which of the following is a disadvantage of the partnership form of pharmacy business?",
+    "options": [
+      "Unlimited liability and possible disputes among partners",
+      "Complete secrecy of business affairs",
+      "Unlimited access to public share capital",
+      "No personal liability for any partner"
+    ],
+    "correct_index": 0,
+    "explanation": "In a general partnership each partner has unlimited personal liability and disagreements or the exit of a partner can destabilize the firm.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "business forms"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "An imitative entrepreneur differs from an innovative entrepreneur because the imitative type:",
+    "options": [
+      "Adopts and copies successful ideas already proven elsewhere",
+      "Invents entirely new products never seen before",
+      "Refuses to adopt any new technology",
+      "Only works in the agricultural sector"
+    ],
+    "correct_index": 0,
+    "explanation": "Imitative entrepreneurs replicate proven business models or products in their own market, a common and lower-risk route in developing economies.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "types"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Opportunity recognition in entrepreneurship refers to:",
+    "options": [
+      "Identifying unmet customer needs that can be turned into profitable business ideas",
+      "Winning a government supply contract through a lucky draw",
+      "Locating the cheapest warehouse space available in the city",
+      "Predicting the weather for planning outdoor sales events"
+    ],
+    "correct_index": 0,
+    "explanation": "Successful entrepreneurs scan the environment to spot gaps or problems and convert them into viable products or services.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "opportunity"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "A business incubation centre supports start-ups mainly by providing:",
+    "options": [
+      "Mentorship, affordable workspace, training and links to funding",
+      "Guaranteed profits for the first five years",
+      "Free medicines for the new pharmacy",
+      "Automatic exemption from all government laws"
+    ],
+    "correct_index": 0,
+    "explanation": "Incubators nurture young firms with shared facilities, advice, networking and finance access until they become self-sustaining.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "incubation"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "A franchise pharmacy business model means:",
+    "options": [
+      "Operating under an established brand name by paying the franchisor for rights and support",
+      "A pharmacy that is owned and run wholly by the government",
+      "A pharmacy restricted to selling one manufacturer's products",
+      "A mobile pharmacy van that serves areas without a fixed shop"
+    ],
+    "correct_index": 0,
+    "explanation": "Franchising licenses the entrepreneur to use a proven brand, system and support in return for fees, reducing start-up risk.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "franchise"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "The main contribution of entrepreneurship to a country's economy is:",
+    "options": [
+      "Job creation, innovation and growth of the national income",
+      "Increasing the unemployment rate",
+      "Reducing the variety of goods available",
+      "Concentrating all wealth in one firm"
+    ],
+    "correct_index": 0,
+    "explanation": "Entrepreneurship generates employment, introduces innovations and mobilises capital, driving economic development.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "economic role"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "A start-up differs from a traditional small business mainly in its:",
+    "options": [
+      "Focus on scalability, innovation and rapid growth potential",
+      "Guarantee of permanent high profit",
+      "Reliance on manual record keeping only",
+      "Avoidance of any digital technology"
+    ],
+    "correct_index": 0,
+    "explanation": "Start-ups are designed to grow fast by solving a problem innovatively, often with technology, unlike lifestyle small businesses that stay local.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "start-up"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "According to McClelland, entrepreneurs are strongly driven by the need for:",
+    "options": [
+      "Achievement — the urge to excel and accomplish challenging goals",
+      "Sleep and rest during working hours",
+      "Avoiding all forms of competition",
+      "Guaranteed monthly salaries from employers"
+    ],
+    "correct_index": 0,
+    "explanation": "McClelland's theory of achievement motivation holds that high need-for-achievement individuals are drawn to entrepreneurial activity.",
+    "difficulty": "medium",
+    "tags": [
+      "entrepreneurship",
+      "motivation"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-4",
+    "question_text": "Before opening a community pharmacy, a market analysis should determine:",
+    "options": [
+      "The local demand for medicines and the number of competing pharmacies",
+      "The air quality and ventilation inside the proposed building",
+      "The total number of doctors who have gone to work abroad",
+      "The current exchange rate of foreign currencies in the market"
+    ],
+    "correct_index": 0,
+    "explanation": "Market analysis estimates customer volume, medicine demand, competition and purchasing power, guiding location and stock decisions.",
+    "difficulty": "easy",
+    "tags": [
+      "entrepreneurship",
+      "market analysis"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "The law of supply states that, other things being equal:",
+    "options": [
+      "Quantity supplied of a good rises as its price rises",
+      "Quantity supplied rises as the price falls",
+      "Supply is always fixed whatever the price",
+      "Suppliers reduce output when prices increase"
+    ],
+    "correct_index": 0,
+    "explanation": "The law of supply describes the direct relationship between price and quantity supplied: higher prices attract more output because profits rise.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacoeconomics",
+      "supply"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Price elasticity of demand measures:",
+    "options": [
+      "How responsive the quantity demanded is to a change in price",
+      "The total profit earned from each product",
+      "The number of substitutes a competitor offers",
+      "How quickly medicines expire on the shelf"
+    ],
+    "correct_index": 0,
+    "explanation": "Elasticity of demand is the percentage change in quantity demanded divided by the percentage change in price; it shows demand sensitivity to price.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacoeconomics",
+      "elasticity"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Cost-minimization analysis (CMA) in pharmacoeconomics is used when:",
+    "options": [
+      "Two treatments have equal outcomes, so only their costs are compared",
+      "Treatments differ in both cost and clinical outcome",
+      "No treatment costs need measuring at all",
+      "Only the patient's quality of life is compared"
+    ],
+    "correct_index": 0,
+    "explanation": "CMA assumes the alternatives are therapeutically equivalent, so the decision is made purely on which option costs less.",
+    "difficulty": "hard",
+    "tags": [
+      "pharmacoeconomics",
+      "CMA"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Which of the following is an indirect (overhead) cost in a pharmacy?",
+    "options": [
+      "Rent, electricity and administrative salaries",
+      "The purchase price of the medicines sold",
+      "Wages of the compounding staff only",
+      "Cost of the bottles and labels used"
+    ],
+    "correct_index": 0,
+    "explanation": "Indirect costs cannot be traced to a single product and include rent, utilities and administration; direct costs are the medicines and materials for each product.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacoeconomics",
+      "costs"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "A sunk cost is a cost that:",
+    "options": [
+      "Has already been incurred and cannot be recovered by any future decision",
+      "Will be paid only if the project succeeds",
+      "Varies directly with the quantity produced",
+      "Is paid to the government as tax"
+    ],
+    "correct_index": 0,
+    "explanation": "Sunk costs (e.g., money already spent on research) are irrelevant to future decisions because they cannot be changed or recovered.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacoeconomics",
+      "costs"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "The incremental cost-effectiveness ratio (ICER) is calculated as:",
+    "options": [
+      "(Cost of new treatment - cost of comparator) divided by (effect of new treatment - effect of comparator)",
+      "Total cost of the new treatment multiplied by its total effect",
+      "Effect of the new drug divided by the effect of placebo",
+      "The price of one tablet in the local market"
+    ],
+    "correct_index": 0,
+    "explanation": "ICER expresses the extra cost per extra unit of health gain of one treatment over another, guiding value-for-money decisions.",
+    "difficulty": "hard",
+    "tags": [
+      "pharmacoeconomics",
+      "ICER"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "An income statement (profit and loss account) of a pharmacy reports:",
+    "options": [
+      "Revenues and expenses over a period to show the net profit or loss",
+      "The value of assets and liabilities at one date",
+      "Only the cash received from debtors",
+      "The market share of the pharmacy"
+    ],
+    "correct_index": 0,
+    "explanation": "The income statement matches sales revenue against expenses over an accounting period to arrive at net profit or loss.",
+    "difficulty": "medium",
+    "tags": [
+      "accounting",
+      "income statement"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "The accounting equation is expressed as:",
+    "options": [
+      "Assets = Liabilities + Owner's equity",
+      "Assets = Revenue - Expenses",
+      "Liabilities = Assets + Owner's equity",
+      "Profit = Assets - Liabilities + Equity"
+    ],
+    "correct_index": 0,
+    "explanation": "The fundamental accounting equation states that everything the firm owns (assets) is financed by creditors (liabilities) and owners (equity).",
+    "difficulty": "easy",
+    "tags": [
+      "accounting",
+      "accounting equation"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "The current ratio of a business is used to measure its:",
+    "options": [
+      "Short-term liquidity by comparing current assets with current liabilities",
+      "Long-term profitability of the business over a five-year period",
+      "Total sales of the pharmacy compared with the previous year",
+      "The number of employees working in each branch of the firm"
+    ],
+    "correct_index": 0,
+    "explanation": "Current ratio = current assets ÷ current liabilities; it shows whether the firm can meet obligations due within the year.",
+    "difficulty": "medium",
+    "tags": [
+      "accounting",
+      "ratios"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "The rate of Value Added Tax (VAT) generally levied on goods and services in Nepal is:",
+    "options": [
+      "13%",
+      "5%",
+      "25%",
+      "1%"
+    ],
+    "correct_index": 0,
+    "explanation": "Nepal levies VAT at 13% on taxable goods and services, administered by the Inland Revenue Department.",
+    "difficulty": "medium",
+    "tags": [
+      "accounting",
+      "VAT"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Tax Deducted at Source (TDS) means that:",
+    "options": [
+      "Tax is withheld from a payment (such as salary) and deposited to the government on the payee's behalf",
+      "Tax is collected only once at the very end of the business year",
+      "The customer pays the tax directly to the foreign supplier",
+      "All medicines sold in the country are exempt from any tax"
+    ],
+    "correct_index": 0,
+    "explanation": "Under TDS the payer deducts a percentage from specified payments and remits it to the tax authority, crediting it against the recipient's liability.",
+    "difficulty": "medium",
+    "tags": [
+      "accounting",
+      "taxation"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Working capital of a pharmacy is defined as:",
+    "options": [
+      "Current assets minus current liabilities",
+      "Total assets minus total liabilities",
+      "Fixed assets such as buildings and shelves",
+      "The annual profit of the business"
+    ],
+    "correct_index": 0,
+    "explanation": "Working capital is the funds available for day-to-day operations — current assets (cash, stock, debtors) less current liabilities (creditors, dues).",
+    "difficulty": "medium",
+    "tags": [
+      "accounting",
+      "working capital"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "In health insurance, the 'premium' is:",
+    "options": [
+      "The periodic amount the insured pays to keep the insurance policy active",
+      "The amount the insurer pays when a claim is made",
+      "The discount given on the first claim",
+      "The tax the hospital pays to the government"
+    ],
+    "correct_index": 0,
+    "explanation": "The premium is the regular payment made by the insured person or family to the insurer in exchange for coverage of healthcare costs.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacoeconomics",
+      "insurance"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "A DALY (Disability-Adjusted Life Year) is a measure that combines:",
+    "options": [
+      "Years of life lost due to early death with years lived with disability",
+      "Only the financial cost of a disease",
+      "The number of hospital beds available",
+      "The market price of medicines for a disease"
+    ],
+    "correct_index": 0,
+    "explanation": "One DALY equals one lost year of healthy life, summing premature mortality and disability, used to compare disease burdens.",
+    "difficulty": "hard",
+    "tags": [
+      "pharmacoeconomics",
+      "DALY"
+    ]
+  },
+  {
+    "unit_id": "mgmt-unit-5",
+    "question_text": "Under the straight-line method, annual depreciation is calculated as:",
+    "options": [
+      "(Cost of the asset - salvage value) divided by its useful life",
+      "Cost of the asset multiplied by its useful life",
+      "Salvage value multiplied by the tax rate",
+      "The resale price of the asset each year"
+    ],
+    "correct_index": 0,
+    "explanation": "Straight-line depreciation spreads the depreciable amount (cost minus scrap value) evenly over the asset's estimated useful life.",
+    "difficulty": "medium",
+    "tags": [
+      "accounting",
+      "depreciation"
+    ]
   }
 ]
