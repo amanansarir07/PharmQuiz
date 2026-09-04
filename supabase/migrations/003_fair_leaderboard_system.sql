@@ -59,8 +59,8 @@ declare
   v_period_start timestamptz;
   v_min_quizzes int;
 begin
-  v_period_start := get_period_start(p_period);
-  v_min_quizzes := get_min_quizzes(p_period);
+  v_period_start := public.get_period_start(p_period);
+  v_min_quizzes := public.get_min_quizzes(p_period);
 
   return query
   with user_stats as (
@@ -73,7 +73,7 @@ begin
       round(
         (sum(qr.correct)::numeric / nullif(sum(qr.total), 0)) * 100, 2
       ) as overall_accuracy
-    from quiz_results qr
+    from public.quiz_results qr
     where qr.completed_at >= v_period_start
     group by qr.user_id
   ),
@@ -95,7 +95,7 @@ begin
       , 2) as score,
       case when coalesce(us.quizzes_taken, 0) >= v_min_quizzes then true else false end as qualified,
       greatest(v_min_quizzes - coalesce(us.quizzes_taken, 0), 0) as quizzes_needed
-    from profiles p
+    from public.profiles p
     left join user_stats us on p.id = us.user_id
     where p.role != 'admin' or p.role is null
   )
@@ -150,8 +150,8 @@ declare
   v_period_start timestamptz;
   v_min_quizzes int;
 begin
-  v_period_start := get_period_start(p_period);
-  v_min_quizzes := get_min_quizzes(p_period);
+  v_period_start := public.get_period_start(p_period);
+  v_min_quizzes := public.get_min_quizzes(p_period);
 
   return query
   with user_stats as (
@@ -163,7 +163,7 @@ begin
       round(
         (sum(qr.correct)::numeric / nullif(sum(qr.total), 0)) * 100, 2
       ) as overall_accuracy
-    from quiz_results qr
+    from public.quiz_results qr
     where qr.completed_at >= v_period_start
     group by qr.user_id
   ),
@@ -191,7 +191,7 @@ begin
         coalesce(us.quizzes_taken, 0) desc
       ) as rank,
       count(*) over () as total_participants
-    from profiles p
+    from public.profiles p
     left join user_stats us on p.id = us.user_id
     where (p.role != 'admin' or p.role is null)
       and coalesce(us.quizzes_taken, 0) > 0
