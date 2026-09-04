@@ -94,6 +94,121 @@ create policy "Users can insert own results"
 -- ---------- 4) quiz_results SELECT: no more anon dump ----------
 drop policy if exists "Anyone can view leaderboard results" on public.quiz_results;
 
+-- ---------- 4b) helper functions (self-contained: 003 may not have run) ----------
+create or replace function get_period_start(period text)
+returns timestamptz
+language sql
+stable
+as $$
+  select case period
+    when 'daily' then date_trunc('day', now())
+    when 'weekly' then date_trunc('week', now())::timestamptz
+    when 'monthly' then date_trunc('month', now())::timestamptz
+    when 'all_time' then '1970-01-01'::timestamptz
+    else date_trunc('day', now())
+  end;
+$$;
+
+grant execute on function get_period_start(text) to authenticated;
+
+create or replace function get_min_quizzes(period text)
+returns int
+language sql
+stable
+as $$
+  select case period
+    when 'daily' then 1
+    when 'weekly' then 5
+    when 'monthly' then 10
+    when 'all_time' then 20
+    else 1
+  end;
+$$;
+
+grant execute on function get_min_quizzes(text) to authenticated;
+
+create or replace function get_user_leaderboard_position(
+  p_user_id uuid,
+  p_period text default 'all_time'
+)
+returns table (
+  rank int,
+  total_participants int,
+  qualified boolean,
+  quizzes_needed int,
+  quizzes_taken int,
+  total_correct int,
+  accuracy numeric
+)
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_period_start timestamptz;
+  v_min_quizzes int;
+begin
+  v_period_start := get_period_start(p_period);
+  v_min_quizzes := get_min_quizzes(p_period);
+
+  return query
+  with user_stats as (
+    select
+      qr.user_id,
+      count(*) as quizzes_taken,
+      sum(qr.correct) as total_correct,
+      sum(qr.total) as total_attempted,
+      round(
+        (sum(qr.correct)::numeric / nullif(sum(qr.total), 0)) * 100, 2
+      ) as overall_accuracy
+    from quiz_results qr
+    where qr.completed_at >= v_period_start
+    group by qr.user_id
+  ),
+  ranked as (
+    select
+      p.id as user_id,
+      coalesce(us.quizzes_taken, 0) as quizzes_taken,
+      coalesce(us.total_correct, 0) as total_correct,
+      coalesce(us.overall_accuracy, 0) as accuracy,
+      case when coalesce(us.quizzes_taken, 0) >= v_min_quizzes then true else false end as qualified,
+      greatest(v_min_quizzes - coalesce(us.quizzes_taken, 0), 0) as quizzes_needed,
+      round(
+        (coalesce(us.total_correct, 0)::numeric * 0.7) +
+        (coalesce(us.overall_accuracy, 0)::numeric * 0.3) +
+        (least(coalesce(us.quizzes_taken, 0)::numeric / v_min_quizzes, 1) * 10)
+      , 2) as score,
+      row_number() over (order by
+        case when coalesce(us.quizzes_taken, 0) >= v_min_quizzes then 1 else 2 end,
+        round(
+          (coalesce(us.total_correct, 0)::numeric * 0.7) +
+          (coalesce(us.overall_accuracy, 0)::numeric * 0.3) +
+          (least(coalesce(us.quizzes_taken, 0)::numeric / v_min_quizzes, 1) * 10)
+        , 2) desc,
+        coalesce(us.overall_accuracy, 0) desc,
+        coalesce(us.quizzes_taken, 0) desc
+      ) as rank,
+      count(*) over () as total_participants
+    from profiles p
+    left join user_stats us on p.id = us.user_id
+    where (p.role != 'admin' or p.role is null)
+      and coalesce(us.quizzes_taken, 0) > 0
+  )
+  select
+    rank,
+    total_participants,
+    qualified,
+    quizzes_needed,
+    quizzes_taken,
+    total_correct,
+    accuracy
+  from ranked
+  where user_id = p_user_id;
+end;
+$$;
+
+grant execute on function get_user_leaderboard_position(uuid, text) to authenticated;
+
 -- ---------- 5) get_leaderboard: remove email, anon access ----------
 drop view if exists public.leaderboard_daily;
 drop view if exists public.leaderboard_weekly;
