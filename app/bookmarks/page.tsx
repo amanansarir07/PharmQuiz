@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Bookmark, Eye, EyeOff, Trash2, BookOpen } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useBookmarks } from "@/lib/bookmarks";
+import { findBankQuestion } from "@/lib/quiz-loader";
 import { getSubjectName } from "@/lib/stats";
 import { subjects } from "@/data/subjects";
 
@@ -15,6 +16,30 @@ export default function BookmarksPage() {
 
   // For show/hide answers per question — use a simple Set
   const [showAnswers, setShowAnswers] = useState<Set<string>>(new Set());
+
+  // Supabase bookmarks only store slim records (text + subject). Rehydrate
+  // full options/answer/explanation from the local question bank so the page
+  // actually shows a usable question.
+  const enrichedBookmarks = useMemo(
+    () =>
+      bookmarks.map((b) => {
+        if (b.options.length > 0) return b;
+        const full = findBankQuestion(b.subjectSlug || undefined, b.questionText);
+        if (full) {
+          return {
+            ...b,
+            options: full.options,
+            correctIndex: full.correctIndex,
+            explanation: full.explanation,
+            difficulty: full.difficulty,
+            unitId: full.unitId || b.unitId,
+            subjectSlug: full.subjectSlug || b.subjectSlug,
+          };
+        }
+        return b;
+      }),
+    [bookmarks]
+  );
 
   const toggleAnswer = (id: string) => {
     setShowAnswers((prev) => {
@@ -58,7 +83,7 @@ export default function BookmarksPage() {
             {bookmarks.length} bookmarked question{bookmarks.length !== 1 ? "s" : ""}
           </p>
           <div className="space-y-4">
-            {bookmarks.map((q) => {
+            {enrichedBookmarks.map((q) => {
               const subjectName = getSubjectName(q.subjectSlug);
               const subject = subjects.find((s) => s.slug === q.subjectSlug);
               const unitName = subject?.units.find((u) => u.id === q.unitId)?.name || "";

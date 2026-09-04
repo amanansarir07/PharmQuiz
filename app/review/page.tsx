@@ -27,7 +27,9 @@ export default function ReviewPage() {
   const [visibleCount, setVisibleCount] = useState(30);
   const { isBookmarked, toggleBookmark } = useBookmarks();
 
-  const allQuestions = getAllQuestions();
+  // Build the bank once: getAllQuestions() shuffles options, so calling it on
+  // every render made option positions jump around while typing/filtering.
+  const [allQuestions] = useState<QuizQuestion[]>(() => getAllQuestions());
 
   const filtered = allQuestions.filter((q) => {
     const matchesSearch =

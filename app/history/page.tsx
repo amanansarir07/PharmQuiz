@@ -6,55 +6,21 @@ import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { History, Clock, Target, ArrowRight, BookOpen, RotateCcw } from "lucide-react";
+import { History, ArrowRight, BookOpen } from "lucide-react";
 import { getSubjectName } from "@/lib/stats";
-
-interface QuizHistoryEntry {
-  sessionId: string;
-  subject: string;
-  correct: number;
-  total: number;
-  score: number;
-  percentage: number;
-  timeTaken: number | null;
-  completedAt: string;
-  hasResults: boolean;
-}
+import { getQuizHistory, type HistoryEntry } from "@/lib/history";
+import { useAuth } from "@/lib/auth";
 
 export default function HistoryPage() {
-  const [history, setHistory] = useState<QuizHistoryEntry[]>([]);
+  const { user } = useAuth();
+  const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [mounted, setMounted] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
-    const entries: QuizHistoryEntry[] = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith("quiz-results-")) {
-        try {
-          const raw = JSON.parse(localStorage.getItem(key) || "{}");
-          if (raw && raw.answers && raw.questions) {
-            const correct = raw.answers.filter((a: any) => a.isCorrect).length;
-            const total = raw.questions.length;
-            entries.push({
-              sessionId: key.replace("quiz-results-", ""),
-              subject: raw.config?.subject || "unknown",
-              correct,
-              total,
-              score: raw.score ?? correct,
-              percentage: total > 0 ? Math.round((correct / total) * 100) : 0,
-              timeTaken: raw.timeTaken ?? null,
-              completedAt: raw.config?.completedAt || "",
-              hasResults: true,
-            });
-          }
-        } catch {}
-      }
-    }
-    entries.sort((a, b) => b.completedAt.localeCompare(a.completedAt));
-    setHistory(entries);
-  }, []);
+    getQuizHistory(user?.id).then(setHistory);
+  }, [user]);
 
   const formatDate = (iso: string) => {
     try {
@@ -97,28 +63,45 @@ export default function HistoryPage() {
           </CardContent>
         </Card>
       ) : (
-        <div className="space-y-3">
-          {history.map((entry) => (
-            <Card key={entry.sessionId} className="hover:shadow-md transition-shadow cursor-pointer" onClick={() => router.push(`/quiz/${entry.sessionId}/results`)}>
-              <CardContent className="p-4 flex items-center gap-4">
-                <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10`}>
-                  <span className={`text-xl font-bold ${getScoreColor(entry.percentage)}`}>{entry.percentage}%</span>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <p className="font-medium text-sm truncate">{getSubjectName(entry.subject)}</p>
-                    <Badge variant="outline" className="text-xs shrink-0">{entry.correct}/{entry.total}</Badge>
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-0.5">
-                    {formatDate(entry.completedAt)}
-                    {entry.timeTaken && <> · {formatTime(entry.timeTaken)}</>}
-                  </p>
-                </div>
-                <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <>
+          <div className="space-y-3">
+            {history.map((entry) => {
+              const percentage = entry.total > 0 ? Math.round((entry.correct / entry.total) * 100) : 0;
+              const clickable = entry.hasLocalDetail && entry.localSessionId;
+              return (
+                <Card
+                  key={entry.key}
+                  onClick={() => clickable && router.push(`/quiz/${entry.localSessionId}/results`)}
+                  className={`transition-all hover:shadow-md ${clickable ? "cursor-pointer" : ""}`}
+                >
+                  <CardContent className="p-4 flex items-center gap-4">
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10`}>
+                      <span className={`text-xl font-bold ${getScoreColor(percentage)}`}>{percentage}%</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <p className="font-medium text-sm truncate">{getSubjectName(entry.subject)}</p>
+                        <Badge variant="outline" className="text-xs shrink-0">{entry.correct}/{entry.total}</Badge>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        {formatDate(entry.completedAt)}
+                        {entry.timeTaken && <> · {formatTime(entry.timeTaken)}</>}
+                        {!entry.hasLocalDetail && <span className="ml-2 text-muted-foreground/70">(summary — full review available on the device you took it on)</span>}
+                      </p>
+                    </div>
+                    {clickable && (
+                      <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+          <p className="mt-6 text-center text-xs text-muted-foreground">
+            <BookOpen className="inline h-3 w-3 mr-1" />
+            History syncs with your account, so it follows you across devices.
+          </p>
+        </>
       )}
     </div>
   );

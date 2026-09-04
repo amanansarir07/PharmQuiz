@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth";
 import { subjects } from "@/data/subjects";
 import { calculateStats } from "@/lib/stats";
 import type { UserStats } from "@/lib/stats";
+import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import {
   BookOpen,
   Trophy,
@@ -25,21 +26,29 @@ export default function DashboardPage() {
   const { user } = useAuth();
   const firstName = user?.name?.split(" ")[0] || "Student";
   const [stats, setStats] = useState<UserStats | null>(null);
+  const [recent, setRecent] = useState<HistoryEntry[]>([]);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    if (user) calculateStats(user.id).then(setStats);
+  const refreshData = useCallback(async () => {
+    if (!user) return;
+    const [s, h] = await Promise.all([calculateStats(user.id), getQuizHistory(user.id)]);
+    setStats(s);
+    setRecent(h.slice(0, 5));
   }, [user]);
 
   useEffect(() => {
-    const handler = () => { if (user) calculateStats(user.id).then(setStats); };
+    setMounted(true);
+    refreshData();
+  }, [refreshData]);
+
+  useEffect(() => {
+    const handler = () => refreshData();
     window.addEventListener("focus", handler);
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "visible") handler();
     });
     return () => window.removeEventListener("focus", handler);
-  }, [user]);
+  }, [refreshData]);
 
   if (!mounted) {
     return (
@@ -68,29 +77,9 @@ export default function DashboardPage() {
 
   const s = stats || { quizzesTaken: 0, totalCorrect: 0, totalAttempted: 0, accuracy: 0, currentStreak: 0, totalScore: 0, subjectBreakdown: {} };
 
-  // Get recent results from localStorage
-  const recentResults: Array<{sessionId: string; subject: string; score: number; total: number; accuracy: number; date: string}> = [];
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    if (key?.startsWith("quiz-results-")) {
-      try {
-        const data = JSON.parse(localStorage.getItem(key)!);
-        if (data?.config?.completedAt) {
-          const correctCount = data.answers?.filter((a: any) => a.isCorrect).length ?? 0;
-          recentResults.push({
-            sessionId: key.replace("quiz-results-", ""),
-            subject: data.config.subject || "unknown",
-            score: data.score ?? correctCount,
-            total: data.questions?.length ?? 0,
-            accuracy: data.questions?.length > 0 ? Math.round((correctCount / data.questions.length) * 100) : 0,
-            date: data.config.completedAt,
-          });
-        }
-      } catch {}
-    }
-  }
-  recentResults.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  const recent = recentResults.slice(0, 3);
+  // Recent activity is built from Supabase quiz history merged with this
+  // device's localStorage results (see lib/history.ts) so it survives device
+  // changes and browser storage clears.
 
   const subjectNames: Record<string, string> = {
     "pharmacology-i": "Pharmacology I",
@@ -175,27 +164,37 @@ export default function DashboardPage() {
             </Link>
           </div>
           <div className="space-y-2">
-            {recent.map((r) => (
-              <Link key={r.sessionId} href={"/quiz/" + r.sessionId + "/results"}>
-                <Card className="transition-all hover:shadow-md cursor-pointer">
+            {recent.map((r) => {
+              const accuracy = r.total > 0 ? Math.round((r.correct / r.total) * 100) : 0;
+              const inner = (
+                <Card className={"transition-all " + (r.hasLocalDetail ? "hover:shadow-md cursor-pointer" : "opacity-90")}>
                   <CardContent className="p-3 flex items-center gap-3">
-                    <div className={"flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold " + (r.accuracy >= 70 ? "bg-green-100 dark:bg-green-950 text-green-600 dark:text-green-400" : r.accuracy >= 50 ? "bg-yellow-100 dark:bg-yellow-950 text-yellow-600 dark:text-yellow-400" : "bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400")}>
-                      {r.accuracy}%
+                    <div className={"flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold " + (accuracy >= 70 ? "bg-green-100 dark:bg-green-950 text-green-600 dark:text-green-400" : accuracy >= 50 ? "bg-yellow-100 dark:bg-yellow-950 text-yellow-600 dark:text-yellow-400" : "bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400")}>
+                      {accuracy}%
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-medium text-sm truncate">{subjectNames[r.subject] || r.subject}</p>
-                      <p className="text-xs text-muted-foreground">{r.score}/{r.total} correct &middot; {fmtTime(r.date)}</p>
+                      <p className="text-xs text-muted-foreground">{r.correct}/{r.total} correct &middot; {fmtTime(r.completedAt)}</p>
                     </div>
-                    <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0" />
+                    {r.hasLocalDetail && r.localSessionId && (
+                      <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0" />
+                    )}
                   </CardContent>
                 </Card>
-              </Link>
-            ))}
+              );
+              return r.hasLocalDetail && r.localSessionId ? (
+                <Link key={r.key} href={"/quiz/" + r.localSessionId + "/results"}>
+                  {inner}
+                </Link>
+              ) : (
+                <div key={r.key}>{inner}</div>
+              );
+            })}
           </div>
         </div>
       )}
 
-      {recent.length === 0 && (
+      {recent.length === 0 && stats !== null && (
         <div className="mb-6">
           <Card className="border-dashed">
             <CardContent className="p-6 text-center">

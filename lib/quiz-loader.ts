@@ -142,3 +142,36 @@ export function getQuestionCount(): number {
     0
   );
 }
+
+/**
+ * Look up a full question from the local bank by subject + exact text.
+ * Returns the question in natural (file) order — NOT shuffled — with the
+ * bank's own correct index. Used to rehydrate slim records like bookmarks.
+ */
+export function findBankQuestion(
+  subjectSlug: string | undefined,
+  questionText: string
+): (QuizQuestion & { subjectSlug: string }) | null {
+  const banks = subjectSlug && allQuestionsBySubject[subjectSlug]
+    ? [subjectSlug]
+    : Object.keys(allQuestionsBySubject);
+
+  for (const slug of banks) {
+    const found = (allQuestionsBySubject[slug] || []).find(
+      (q) => q.question_text === questionText
+    );
+    if (found) {
+      return {
+        id: found.unit_id ? found.unit_id + "-" + questionText.substring(0, 20) : slug + "-" + questionText.substring(0, 20),
+        question: found.question_text,
+        options: normalizeOptions(found),
+        correctIndex: getCorrectIndex(found),
+        explanation: found.explanation || "",
+        difficulty: found.difficulty || "medium",
+        unitId: found.unit_id,
+        subjectSlug: slug,
+      };
+    }
+  }
+  return null;
+}

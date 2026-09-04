@@ -10,6 +10,13 @@ import { getQuestionsForQuiz, type QuizQuestion } from "@/lib/quiz-loader";
 import { supabase } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth";
 import {
+  safeGetItem,
+  safeSetItem,
+  safeRemoveItem,
+  saveQuizResultLocal,
+  pruneExpiredScratchKeys,
+} from "@/lib/storage";
+import {
   Clock,
   ChevronLeft,
   ChevronRight,
@@ -35,11 +42,24 @@ export default function ActiveQuizPage({
   const [showExplanation, setShowExplanation] = useState(false);
   const [showResumedBanner, setShowResumedBanner] = useState(false);
   const answersRef = useRef<(number | null)[]>([]);
+  const submittingRef = useRef(false);
+  const timeLeftRef = useRef<number | null>(null);
+  const submitRef = useRef<() => void>(() => {});
   const { user } = useAuth();
 
   useEffect(() => {
+    pruneExpiredScratchKeys();
+
+    // Already completed on this device (e.g. user pressed Back after
+    // submitting) — go straight to results instead of letting them
+    // re-submit and double-count a quiz.
+    if (safeGetItem(`quiz-results-${sessionId}`)) {
+      router.replace(`/quiz/${sessionId}/results`);
+      return;
+    }
+
     // Read config using the actual session ID from URL
-    const stored = localStorage.getItem(`quiz-config-${sessionId}`);
+    const stored = safeGetItem(`quiz-config-${sessionId}`);
     if (stored) {
       const config = JSON.parse(stored);
       setQuizConfig(config);
@@ -53,7 +73,7 @@ export default function ActiveQuizPage({
       setQuestions(finalQs);
 
       // Try to restore saved progress (crash recovery)
-      const savedProgress = localStorage.getItem(`quiz-progress-${sessionId}`);
+      const savedProgress = safeGetItem(`quiz-progress-${sessionId}`);
       if (savedProgress) {
         try {
           const progress = JSON.parse(savedProgress);
@@ -86,12 +106,17 @@ export default function ActiveQuizPage({
       setQuestions(qs);
       setAnswers(new Array(qs.length).fill(null));
     }
-  }, [sessionId]);
+  }, [sessionId, router]);
 
   // Keep answersRef in sync with answers state
   useEffect(() => {
     answersRef.current = answers;
   }, [answers]);
+
+  // Keep timeLeftRef fresh for the submit callback
+  useEffect(() => {
+    timeLeftRef.current = timeLeft;
+  }, [timeLeft]);
 
   // Save quiz progress to localStorage on every change (crash recovery)
   useEffect(() => {
@@ -103,23 +128,115 @@ export default function ActiveQuizPage({
       timeLeft,
       savedAt: Date.now(),
     };
-    localStorage.setItem(`quiz-progress-${sessionId}`, JSON.stringify(progress));
+    safeSetItem(`quiz-progress-${sessionId}`, JSON.stringify(progress));
   }, [answers, currentIndex, markedForReview, timeLeft, questions.length, sessionId]);
 
-  useEffect(() => {
-    if (timeLeft === null || timeLeft <= 0) return;
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev === null || prev <= 1) {
-          clearInterval(timer);
-          // Use ref for fresh answers to avoid stale closure
-          doSubmit(answersRef.current);
-          return 0;
+  const doSubmit = useCallback(
+    async (currentAnswers: (number | null)[]) => {
+      if (submittingRef.current) return;
+      submittingRef.current = true;
+
+      try {
+        const results = questions.map((q, i) => ({
+          questionId: q.id,
+          selected: currentAnswers[i],
+          correct: q.correctIndex,
+          isCorrect: currentAnswers[i] === q.correctIndex,
+        }));
+
+        const correct = results.filter((r) => r.isCorrect).length;
+        const incorrect = results.filter((r) => !r.isCorrect && r.selected !== null).length;
+        const total = results.length;
+        // Apply negative marking: deduct 1 mark per wrong answer (min 0)
+        const score = quizConfig?.negativeMarking ? Math.max(0, correct - incorrect) : correct;
+        const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
+        const timeTaken = quizConfig?.timeLimit
+          ? quizConfig.timeLimit * 60 - (timeLeftRef.current || 0)
+          : null;
+
+        // Save to localStorage for results page AND analytics. Failure here
+        // must never block submission — it just means no detailed review.
+        try {
+          saveQuizResultLocal(sessionId, {
+            answers: results,
+            questions,
+            config: {
+              ...quizConfig,
+              completedAt: new Date().toISOString(),
+            },
+            score,
+            incorrect,
+            timeTaken,
+          });
+        } catch (err) {
+          console.warn("Local quiz result save failed:", err);
         }
-        return prev - 1;
-      });
+
+        // Save to Supabase for shared stats/leaderboard (non-blocking, best-effort)
+        if (user) {
+          try {
+            const { error: rpcError } = await supabase.rpc("save_quiz_result", {
+              p_user_id: user.id,
+              p_subject: quizConfig?.subject || "unknown",
+              p_score: score,
+              p_total: total,
+              p_correct: correct,
+              p_accuracy: accuracy,
+              p_time_taken: timeTaken,
+            });
+            if (rpcError) {
+              console.warn("RPC save failed, trying direct insert:", rpcError.message);
+              const { error: insertError } = await supabase.from("quiz_results").insert({
+                user_id: user.id,
+                subject: quizConfig?.subject || "unknown",
+                score: score,
+                total,
+                correct,
+                accuracy,
+                time_taken: timeTaken,
+              });
+              if (insertError) {
+                console.warn("Direct insert also failed (localStorage only):", insertError.message);
+              }
+            }
+          } catch (err) {
+            console.warn("Supabase save error (using localStorage):", err);
+          }
+        }
+
+        // Clear saved progress
+        safeRemoveItem(`quiz-progress-${sessionId}`);
+        // replace() so the Back button can't return to this page and re-submit
+        router.replace(`/quiz/${sessionId}/results`);
+      } catch (err) {
+        console.error("Quiz submit failed:", err);
+        submittingRef.current = false;
+        setShowSubmitConfirm(false);
+      }
+    },
+    [questions, quizConfig, router, sessionId, user]
+  );
+
+  const handleSubmit = useCallback(() => {
+    doSubmit(answersRef.current);
+  }, [doSubmit]);
+
+  // Always point submitRef at the latest handleSubmit
+  useEffect(() => {
+    submitRef.current = handleSubmit;
+  }, [handleSubmit]);
+
+  // Countdown timer — decrements every second; submits automatically at 0.
+  useEffect(() => {
+    if (timeLeft === null) return;
+    if (timeLeft <= 0) {
+      submitRef.current();
+      return;
+    }
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => (prev === null || prev <= 1 ? 0 : prev - 1));
     }, 1000);
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, [timeLeft]);
 
   const formatTime = (seconds: number) => {
@@ -146,7 +263,7 @@ export default function ActiveQuizPage({
 
   // Check for restored progress on mount
   useEffect(() => {
-    const saved = localStorage.getItem(`quiz-progress-${sessionId}`);
+    const saved = safeGetItem(`quiz-progress-${sessionId}`);
     if (saved) {
       try {
         const p = JSON.parse(saved);
@@ -167,86 +284,6 @@ export default function ActiveQuizPage({
       return next;
     });
   };
-
-  const doSubmit = useCallback(
-    async (currentAnswers: (number | null)[]) => {
-      const results = questions.map((q, i) => ({
-        questionId: q.id,
-        selected: currentAnswers[i],
-        correct: q.correctIndex,
-        isCorrect: currentAnswers[i] === q.correctIndex,
-      }));
-
-      const correct = results.filter((r) => r.isCorrect).length;
-      const incorrect = results.filter((r) => !r.isCorrect && r.selected !== null).length;
-      const total = results.length;
-      // Apply negative marking: deduct 1 mark per wrong answer (min 0)
-      const score = quizConfig?.negativeMarking ? Math.max(0, correct - incorrect) : correct;
-      const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
-      const timeTaken = quizConfig?.timeLimit
-        ? quizConfig.timeLimit * 60 - (timeLeft || 0)
-        : null;
-
-      // Save to localStorage for results page AND analytics
-      localStorage.setItem(
-        `quiz-results-${sessionId}`,
-        JSON.stringify({
-          answers: results,
-          questions,
-          config: {
-            ...quizConfig,
-            completedAt: new Date().toISOString(),
-          },
-          score,
-          incorrect,
-          timeTaken,
-        })
-      );
-
-      // Save to Supabase for shared stats/leaderboard (non-blocking, best-effort)
-      // Uses SECURITY DEFINER function to bypass RLS (publishable key can't do auth.uid())
-      if (user) {
-        try {
-          const { error: rpcError } = await supabase.rpc("save_quiz_result", {
-            p_user_id: user.id,
-            p_subject: quizConfig?.subject || "unknown",
-            p_score: score,
-            p_total: total,
-            p_correct: correct,
-            p_accuracy: accuracy,
-            p_time_taken: timeTaken,
-          });
-          if (rpcError) {
-            // Fallback: try direct INSERT (may fail due to RLS)
-            console.warn("RPC save failed, trying direct insert:", rpcError.message);
-            const { error: insertError } = await supabase.from("quiz_results").insert({
-              user_id: user.id,
-              subject: quizConfig?.subject || "unknown",
-              score: score,
-              total,
-              correct,
-              accuracy,
-              time_taken: timeTaken,
-            });
-            if (insertError) {
-              console.warn("Direct insert also failed (localStorage only):", insertError.message);
-            }
-          }
-        } catch (err) {
-          console.warn("Supabase save error (using localStorage):", err);
-        }
-      }
-
-      // Clear saved progress
-      localStorage.removeItem(`quiz-progress-${sessionId}`);
-      router.push(`/quiz/${sessionId}/results`);
-    },
-    [questions, quizConfig, timeLeft, router, sessionId, user]
-  );
-
-  const handleSubmit = useCallback(() => {
-    doSubmit(answersRef.current);
-  }, [doSubmit]);
 
   if (questions.length === 0) {
     return (
@@ -453,7 +490,9 @@ export default function ActiveQuizPage({
                 <Button variant="outline" onClick={() => setShowSubmitConfirm(false)}>
                   Continue MCQs
                 </Button>
-                <Button onClick={handleSubmit}>Confirm Submit</Button>
+                <Button onClick={handleSubmit} disabled={submittingRef.current}>
+                  {submittingRef.current ? "Submitting..." : "Confirm Submit"}
+                </Button>
               </div>
             </CardContent>
           </Card>

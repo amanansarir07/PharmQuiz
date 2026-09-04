@@ -12,6 +12,7 @@ import {
   QUIZ_TIME_OPTIONS,
   DIFFICULTY_OPTIONS,
 } from "@/lib/constants";
+import { safeSetItem, pruneExpiredScratchKeys } from "@/lib/storage";
 import {
   Settings,
   Play,
@@ -40,6 +41,7 @@ function QuizSetupInner() {
   const startRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    pruneExpiredScratchKeys();
     const subjectParam = searchParams.get("subject");
     if (subjectParam && subjects.find((s) => s.slug === subjectParam)) {
       setSelectedSubject(subjectParam);
@@ -93,7 +95,7 @@ function QuizSetupInner() {
       revisionMode,
     };
     const sessionId = crypto.randomUUID();
-    localStorage.setItem(
+    safeSetItem(
       `quiz-config-${sessionId}`,
       JSON.stringify(config)
     );
