@@ -343,10 +343,10 @@
     "unit_id": "pharmaco-i-unit-3",
     "question_text": "Methotrexate is used in the treatment of:",
     "options": [
-      "Only cancer",
+      "Treatment of cancer only",
       "Rheumatoid arthritis and cancer",
-      "Only infection",
-      "Only hypertension"
+      "Infections caused by bacteria",
+      "High blood pressure alone"
     ],
     "correct_index": 1,
     "explanation": "Methotrexate is used as a disease-modifying antirheumatic drug (DMARD) for rheumatoid arthritis at low doses, and as an anticancer agent at high doses.",
@@ -445,10 +445,10 @@
     "unit_id": "pharmaco-i-unit-4",
     "question_text": "Dopamine in low doses primarily acts on:",
     "options": [
-      "Alpha receptors",
-      "Beta-1 receptors",
+      "Alpha-1 receptors present on blood vessels",
+      "Beta-1 receptors present in the heart",
       "Dopamine receptors in renal vasculature",
-      "Muscarinic receptors"
+      "Muscarinic receptors present in the gut"
     ],
     "correct_index": 2,
     "explanation": "At low doses, dopamine primarily stimulates dopamine receptors in renal and mesenteric vasculature, causing vasodilation and increased renal blood flow.",
@@ -771,7 +771,7 @@
       "Paracetamol",
       "Dairy products or calcium supplements",
       "Oral rehydration salts",
-      "Vitamin C"
+      "Vitamin C supplements taken daily"
     ],
     "correct_index": 1,
     "explanation": "Tetracyclines form insoluble chelates with calcium, iron, aluminum, and magnesium ions present in milk and antacids, reducing their absorption. They should be taken on an empty stomach.",
@@ -853,7 +853,7 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "The volume of distribution (Vd) is large when:",
     "options": [
-      "Drug stays in blood",
+      "The drug stays mainly inside the blood",
       "Drug distributes extensively into tissues",
       "Drug is rapidly excreted",
       "Drug is poorly absorbed"
@@ -906,8 +906,8 @@
     "options": [
       "Dose needed for effect",
       "Maximum response a drug can produce",
-      "Speed of onset",
-      "Cost of drug"
+      "The speed of onset of the drug's effect",
+      "The total cost of the drug to the patient"
     ],
     "correct_index": 1,
     "explanation": "Efficacy (Emax) is the maximum effect a drug can produce regardless of dose.",
@@ -921,10 +921,10 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "Enterohepatic recirculation involves:",
     "options": [
-      "Drug excreted in urine",
+      "Excretion of the drug mainly through the urine by the kidney",
       "Drug excreted in bile, reabsorbed from intestine",
-      "Drug absorbed from lungs",
-      "Drug stored in fat"
+      "Absorption of the drug through the lungs into the bloodstream",
+      "Storage of the drug in adipose tissue for long periods"
     ],
     "correct_index": 1,
     "explanation": "Enterohepatic recirculation: drug is excreted in bile into intestine, reabsorbed, and returns to liver via portal circulation.\n\nNote: returning to liver",
@@ -989,7 +989,7 @@
     "unit_id": "pharmaco-i-unit-2",
     "question_text": "PPIs work by:",
     "options": [
-      "Blocking H2 receptors",
+      "Blocking histamine H2 receptors on the parietal cells",
       "Irreversibly inhibiting H+/K+ ATPase proton pump",
       "Neutralizing stomach acid",
       "Stimulating mucus secretion"
@@ -1127,8 +1127,8 @@
     "options": [
       "Strong anti-inflammatory effect",
       "Analgesic and antipyretic but weak anti-inflammatory effect",
-      "Only antipyretic effect",
-      "No analgesic effect"
+      "Only an antipyretic effect and nothing else",
+      "Has no analgesic effect at all"
     ],
     "correct_index": 1,
     "explanation": "Paracetamol has good analgesic and antipyretic activity but very weak anti-inflammatory activity in peripheral tissues.",
@@ -1278,10 +1278,10 @@
     "unit_id": "pharmaco-i-unit-4",
     "question_text": "Atropine can cause:",
     "options": [
-      "Bradycardia",
+      "Bradycardia and excessive salivation",
       "Tachycardia, dry mouth",
-      "Hypotension",
-      "Diarrhea"
+      "Hypotension and muscle weakness",
+      "Diarrhea and abdominal cramps"
     ],
     "correct_index": 1,
     "explanation": "Atropine causes tachycardia (block M2 on heart), dry mouth (block M3 on salivary glands), blurred vision (mydriasis).\n\nNote: blurred vision",
@@ -1298,7 +1298,7 @@
       "Blocking muscarinic receptors",
       "Stimulating beta-2 receptors causing bronchodilation",
       "Blocking histamine receptors",
-      "Inhibiting leukotrienes"
+      "Inhibiting the synthesis of leukotrienes"
     ],
     "correct_index": 1,
     "explanation": "Salbutamol is a selective beta-2 agonist that relaxes bronchial smooth muscle causing bronchodilation.",
@@ -1312,7 +1312,7 @@
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "Theophylline works by:",
     "options": [
-      "Blocking H1 receptors",
+      "Blocking histamine H1 receptors in the airways",
       "Inhibiting phosphodiesterase and blocking adenosine receptors",
       "Blocking leukotriene receptors",
       "Stimulating beta-2 receptors only"
@@ -1329,9 +1329,9 @@
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "Corticosteroids in asthma work by:",
     "options": [
-      "Direct bronchodilation",
+      "Producing direct relaxation of the airways",
       "Reducing airway inflammation and suppressing immune response",
-      "Blocking histamine",
+      "Blocking histamine at the H1 receptors",
       "Inhibiting leukotriene synthesis"
     ],
     "correct_index": 1,
@@ -1363,10 +1363,10 @@
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "Codeine is used as:",
     "options": [
-      "Bronchodilator",
+      "A bronchodilator that is used for asthma",
       "Antitussive and mild analgesic",
-      "Antihistamine",
-      "Anti-inflammatory"
+      "An antihistamine that is used for allergies",
+      "A potent anti-inflammatory agent"
     ],
     "correct_index": 1,
     "explanation": "Codeine is an opioid used as an antitussive (cough suppressant) and mild analgesic.",
@@ -1397,9 +1397,9 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Tetracyclines work by:",
     "options": [
-      "Inhibiting cell wall synthesis",
+      "Inhibiting cell wall synthesis in growing bacteria",
       "Binding 30S ribosomal subunit inhibiting protein synthesis",
-      "Inhibiting DNA gyrase",
+      "Inhibiting DNA gyrase to stop bacterial replication",
       "Inhibiting folic acid synthesis"
     ],
     "correct_index": 1,
@@ -1516,7 +1516,7 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Beta-lactamase inhibitors (clavulanic acid) work by:",
     "options": [
-      "Killing bacteria directly",
+      "Killing bacteria directly by lysing their cell walls",
       "Irreversibly binding beta-lactamase enzymes, protecting the antibiotic",
       "Inhibiting bacterial cell wall synthesis",
       "Blocking bacterial protein synthesis"
@@ -1533,7 +1533,7 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Vancomycin works by:",
     "options": [
-      "Inhibiting DNA synthesis",
+      "Inhibiting bacterial DNA synthesis",
       "Binding D-Ala-D-Ala terminus of peptidoglycan precursors",
       "Inhibiting protein synthesis",
       "Inhibiting folic acid synthesis"
@@ -1586,7 +1586,7 @@
     "options": [
       "Time taken for drug action",
       "Concentration range between minimum effective",
-      "Maximum dose allowed",
+      "The maximum single dose that is allowed",
       "Time of drug administration"
     ],
     "correct_index": 1,
@@ -1604,7 +1604,7 @@
       "Allergic reaction to drug",
       "Decreased response to a drug after repeated use",
       "Increased response to drug",
-      "No response to drug"
+      "A complete lack of response to any drug"
     ],
     "correct_index": 1,
     "explanation": "Drug tolerance is a reduced response to a drug after repeated administration, requiring higher doses for the same effect.",
@@ -1619,9 +1619,9 @@
     "question_text": "Tachyphylaxis is:",
     "options": [
       "Rapid tolerance to drug after repeated administration",
-      "Slow tolerance development",
-      "Drug allergy",
-      "Drug idiosyncrasy"
+      "Tolerance that develops slowly over weeks of therapy",
+      "An immediate allergic reaction that is caused by the drug",
+      "A genetically determined abnormal reaction to the drug"
     ],
     "correct_index": 0,
     "explanation": "Tachyphylaxis is a rapid decrease in response to a drug after a few doses (acute tolerance).\n\nAdditional: single dose or few doses",
@@ -1652,10 +1652,10 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "Plasma protein binding of drugs means:",
     "options": [
-      "Drug is inactive",
+      "The drug becomes completely inactive in the body",
       "Drug is bound to albumin and other plasma proteins",
-      "Drug is destroyed",
-      "Drug is excreted faster"
+      "The drug is destroyed by the enzymes present in plasma",
+      "The drug is excreted rapidly without any delay"
     ],
     "correct_index": 1,
     "explanation": "Drug-protein complexes are pharmacologically inactive and act as reservoirs. Only free (unbound) drug is active.\n\nAdditional: temporarily inactivated acting as a reservoir",
@@ -1686,10 +1686,10 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "Prodrug is a drug that:",
     "options": [
-      "Is active as administered",
+      "Is fully active in the form in which it is administered",
       "Requires metabolic conversion in the body to become active",
-      "Cannot be metabolized",
-      "Has no side effects"
+      "Cannot be metabolized or broken down in the body",
+      "Produces no side effects at all in the patient"
     ],
     "correct_index": 1,
     "explanation": "A prodrug is pharmacologically inactive until metabolized in vivo to its active form (e.g., Enalapril -> Enalaprilat).\n\nAdditional: body to become active",
@@ -1754,10 +1754,10 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "Intrinsic efficacy (intrinsic activity) of a drug is:",
     "options": [
-      "Ability to bind receptor",
+      "The ability of the drug to bind to its receptor",
       "Ability to activate the receptor after binding to it",
-      "Dose needed for effect",
-      "Speed of absorption"
+      "The dose of the drug that is needed to produce an effect",
+      "The speed with which the drug is absorbed from the gut"
     ],
     "correct_index": 1,
     "explanation": "Intrinsic efficacy is the ability of a drug to activate the receptor and produce a biological response after binding.\n\nNote: produce response",
@@ -1805,10 +1805,10 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "Inverse agonist produces:",
     "options": [
-      "Same effect as the agonist itself",
+      "Exactly the same effect as the agonist itself",
       "Opposite effect to an agonist by acting on the same receptor",
-      "No effect on the receptor at all",
-      "Enhanced effect beyond full agonist"
+      "No effect at all on the receptor",
+      "An effect that exceeds that of a full agonist"
     ],
     "correct_index": 1,
     "explanation": "Inverse agonists reduce constitutive (basal) receptor activity, producing effects opposite to agonists.\n\nAdditional: reducing constitutive receptor activity",
@@ -1908,9 +1908,9 @@
     "question_text": "Misoprostol (a PGE1 analog) is used for:",
     "options": [
       "Treating ulcers and preventing NSAID-induced gastric injury",
-      "Treating high blood pressure",
-      "Treating acute asthma attacks",
-      "Treating type 2 diabetes mellitus"
+      "Lowering blood pressure in hypertensive patients",
+      "Relieving acute attacks of bronchial asthma",
+      "Controlling blood sugar in type 2 diabetes"
     ],
     "correct_index": 0,
     "explanation": "Misoprostol is a prostaglandin E1 analog that inhibits gastric acid secretion and protects gastric mucosa, preventing NSAID-induced ulcers.\n\nAdditional: NSAID-induced gastric ulcers",
@@ -1958,10 +1958,10 @@
     "unit_id": "pharmaco-i-unit-2",
     "question_text": "Cimetidine differs from other H2 blockers because it:",
     "options": [
-      "Is the most potent",
+      "Is the most potent of all the H2 blockers",
       "Has antiandrogenic effects and inhibits CYP450",
       "Is over-the-counter only",
-      "Has no side effects"
+      "Is completely free of any side effects"
     ],
     "correct_index": 1,
     "explanation": "Cimetidine has antiandrogenic effects (gynecomastia, impotence) and inhibits CYP450, causing drug interactions.",
@@ -2043,10 +2043,10 @@
     "unit_id": "pharmaco-i-unit-3",
     "question_text": "Diclofenac is available in topical form because:",
     "options": [
-      "Oral form is banned",
+      "The oral form has been banned in all countries",
       "Topical application provides local anti-inflammatory effect",
-      "It cannot be given orally",
-      "Topical is more potent"
+      "The drug cannot be given by the oral route at all",
+      "The topical form is more potent than the oral form"
     ],
     "correct_index": 1,
     "explanation": "Topical diclofenac provides local anti-inflammatory effect at the site of application with reduced GI side effects compared to oral.\n\nAdditional: with less systemic side effects",
@@ -2077,10 +2077,10 @@
     "unit_id": "pharmaco-i-unit-3",
     "question_text": "NSAIDs can cause which serious GI complication?",
     "options": [
-      "Diarrhea only",
+      "Diarrhea only, without ulcers or bleeding",
       "Gastric ulceration and GI bleeding",
-      "Hepatotoxicity",
-      "Nephrotoxicity only"
+      "Liver toxicity without any stomach effect",
+      "Kidney toxicity without any stomach effect"
     ],
     "correct_index": 1,
     "explanation": "NSAIDs inhibit COX-1, reducing protective prostaglandins in gastric mucosa, leading to ulceration and GI bleeding.",
@@ -2094,10 +2094,10 @@
     "unit_id": "pharmaco-i-unit-3",
     "question_text": "Nephrotoxicity of NSAIDs is due to:",
     "options": [
-      "Direct kidney damage",
+      "Direct toxic damage to the kidney cells",
       "Inhibition of renal prostaglandins",
-      "Kidney infection",
-      "Kidney stones"
+      "Infection of the kidney by bacteria",
+      "Formation of stones inside the kidney"
     ],
     "correct_index": 1,
     "explanation": "NSAIDs inhibit renal COX, reducing vasodilatory prostaglandins (PGE2, PGI2), decreasing renal blood flow, especially in dehydrated patients.\n\nAdditional: reducing renal blood flow",
@@ -2128,10 +2128,10 @@
     "unit_id": "pharmaco-i-unit-3",
     "question_text": "Aspirin in pregnancy (especially 3rd trimester) can cause:",
     "options": [
-      "Preterm labor",
+      "Onset of preterm labor before term",
       "Premature closure of ductus arteriosus",
       "Low birth weight only",
-      "No effects"
+      "No harmful effects at all on the fetus"
     ],
     "correct_index": 1,
     "explanation": "Aspirin in late pregnancy can close the ductus arteriosus in the fetus and increase bleeding risk in both mother and baby.\n\nAdditional: and bleeding in mother/fetus",
@@ -2164,7 +2164,7 @@
     "options": [
       "Stimulating sympathetic nerves",
       "Blocking muscarinic receptors on sphincter pupillae muscle",
-      "Blocking alpha receptors",
+      "Blocking beta receptors in the eye",
       "Stimulating beta receptors"
     ],
     "correct_index": 1,
@@ -2230,10 +2230,10 @@
     "unit_id": "pharmaco-i-unit-4",
     "question_text": "Sotalol is classified as:",
     "options": [
-      "Alpha blocker",
+      "A selective alpha-1 receptor blocker",
       "Class III antiarrhythmic with beta-blocking activity",
-      "Calcium channel blocker",
-      "Diuretic"
+      "A dihydropyridine calcium channel blocker",
+      "A thiazide diuretic used for hypertension"
     ],
     "correct_index": 1,
     "explanation": "Sotalol has both non-selective beta-blocking (Class II) and potassium channel blocking (Class III) antiarrhythmic properties.\n\nAdditional: non-selective beta-blocking properties",
@@ -2265,9 +2265,9 @@
     "question_text": "Organophosphate poisoning is treated with:",
     "options": [
       "Atropine and pralidoxime",
-      "Adrenaline only",
-      "Insulin only",
-      "Vitamin K"
+      "Adrenaline given alone for shock",
+      "Insulin given alone for hyperglycemia",
+      "Vitamin K given for bleeding risk"
     ],
     "correct_index": 0,
     "explanation": "Organophosphates inhibit acetylcholinesterase. Atropine blocks excess ACh effects; pralidoxime reactivates the enzyme (if given early).\n\nNote: 2-PAM",
@@ -2335,7 +2335,7 @@
       "Beta blocker",
       "Calcium channel blocker",
       "Alpha blocker",
-      "ACE inhibitor"
+      "An ACE inhibitor used for hypertension"
     ],
     "correct_index": 1,
     "explanation": "Nifedipine is a dihydropyridine calcium channel blocker that relaxes vascular smooth muscle, used for hypertension and angina.\n\nNote: dihydropyridine",
@@ -2386,7 +2386,7 @@
       "A bronchodilator",
       "An inhaled corticosteroid",
       "An antihistamine",
-      "A mucolytic"
+      "A mucolytic that thins the mucus"
     ],
     "correct_index": 1,
     "explanation": "Budesonide is an inhaled corticosteroid that reduces airway inflammation, used as first-line maintenance therapy for persistent asthma.\n\nNote: ICS\n\nAdditional: for asthma maintenance",
@@ -2400,10 +2400,10 @@
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "Tiotropium bromide is a:",
     "options": [
-      "SABA",
-      "LABA",
+      "A short-acting beta-2 agonist (SABA)",
+      "A long-acting beta-2 agonist (LABA)",
       "Long-acting muscarinic antagonist",
-      "Corticosteroid"
+      "An inhaled corticosteroid anti-inflammatory"
     ],
     "correct_index": 2,
     "explanation": "Tiotropium is a LAMA (24-hour duration) that blocks M3 receptors in airways, used for COPD maintenance therapy.\n\nAdditional: for COPD",
@@ -2417,10 +2417,10 @@
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "N-acetylcysteine (NAC) is used as a mucolytic because it:",
     "options": [
-      "Dilates bronchi",
+      "Directly dilates the bronchi like a bronchodilator",
       "Breaks disulfide bonds in mucus glycoproteins",
-      "Blocks histamine",
-      "Inhibits leukotrienes"
+      "Blocks histamine release from the mast cells",
+      "Inhibits the synthesis of leukotrienes"
     ],
     "correct_index": 1,
     "explanation": "NAC breaks disulfide bonds in mucus glycoproteins, thinning secretions and making them easier to expectorate.\n\nAdditional: mucus reducing viscosity",
@@ -2451,10 +2451,10 @@
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "Ambroxol is a:",
     "options": [
-      "Bronchodilator",
+      "A bronchodilator that relaxes airway smooth muscle",
       "Mucolytic and secretolytic agent",
-      "Antihistamine",
-      "Corticosteroid"
+      "An antihistamine that blocks H1 receptors",
+      "An inhaled corticosteroid used for asthma"
     ],
     "correct_index": 1,
     "explanation": "Ambroxol is a mucolytic that reduces mucus viscosity and stimulates surfactant production, used in productive cough.",
@@ -2536,10 +2536,10 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Rifampicin is a potent inducer of CYP450, which means:",
     "options": [
-      "It slows drug metabolism",
+      "It slows the metabolism of all other drugs",
       "It speeds up metabolism of other drugs, reducing their levels",
       "It has no effect on other drugs",
-      "It inhibits all enzymes"
+      "It inhibits the metabolism of all other drugs"
     ],
     "correct_index": 1,
     "explanation": "Rifampicin induces CYP3A4 and other CYP enzymes, accelerating metabolism of co-administered drugs (oral contraceptives, warfarin, etc.).",
@@ -2553,7 +2553,7 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Ethambutol is primarily used for:",
     "options": [
-      "Malaria",
+      "Malaria caused by plasmodium parasites",
       "Multidrug-resistant TB treatment",
       "Fungal infections",
       "Viral infections"
@@ -2657,7 +2657,7 @@
     "options": [
       "Malaria treatment",
       "Intensive phase of TB treatment",
-      "HIV treatment",
+      "Treatment of HIV infection",
       "Fungal infections"
     ],
     "correct_index": 1,
@@ -2672,7 +2672,7 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Clopidogrel is an antiplatelet drug that works by:",
     "options": [
-      "Inhibiting COX-1",
+      "Inhibiting the COX-1 enzyme present in platelets",
       "Irreversibly blocking P2Y12 ADP receptors on platelets",
       "Inhibiting thromboxane synthesis",
       "Blocking fibrinogen receptors"
@@ -2706,10 +2706,10 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Oseltamivir (Tamiflu) works by:",
     "options": [
-      "Killing influenza virus directly",
-      "Inhibiting neuraminidase enzyme preventing viral",
-      "Blocking viral entry into cells",
-      "Inhibiting viral RNA replication"
+      "Killing influenza viruses directly before they enter cells",
+      "Inhibiting neuraminidase, preventing the release of new virus from infected cells",
+      "Blocking entry of the virus into the host cells at the surface",
+      "Inhibiting replication of the viral RNA inside the host cell"
     ],
     "correct_index": 1,
     "explanation": "Oseltamivir inhibits influenza neuraminidase, preventing release of new viral particles from infected cells.\n\nAdditional: release from infected cells",
@@ -2757,10 +2757,10 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Amphotericin B is known as:",
     "options": [
-      "Broad-spectrum antibiotic",
+      "A broad-spectrum antibiotic active against bacteria",
       "Gold standard antifungal for severe systemic fungal infections",
-      "Antiviral drug",
-      "Antimalarial drug"
+      "An antiviral drug active against herpes viruses",
+      "An antimalarial drug used against plasmodium species"
     ],
     "correct_index": 1,
     "explanation": "Amphotericin B is the gold standard for severe systemic fungal infections but has significant nephrotoxicity (reason for lipid formulations).\n\nNote: but nephrotoxic\n\nAdditional: systemic fungal infections",
@@ -2913,7 +2913,7 @@
       "Individual response",
       "Group average response to graded doses",
       "Binary yes/no response",
-      "Time of response"
+      "The time taken for the response to appear"
     ],
     "correct_index": 1,
     "explanation": "Graded dose-response curves plot the magnitude of individual response against increasing doses of a drug.\n\nNote: population",
@@ -2978,10 +2978,10 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "Teratogenic drugs cause:",
     "options": [
-      "Drug addiction in fetus",
+      "Addiction to the drug in the developing fetus",
       "Congenital malformations when given during pregnancy",
-      "Fetal death only",
-      "No harm to fetus"
+      "Causing only fetal death and nothing else",
+      "Having no harmful effect on the developing fetus"
     ],
     "correct_index": 1,
     "explanation": "Teratogens are drugs that cross the placenta and cause developmental abnormalities (birth defects) when given during critical periods of pregnancy.\n\nAdditional: given during pregnancy",
@@ -3216,10 +3216,10 @@
     "unit_id": "pharmaco-i-unit-4",
     "question_text": "Pirbuterol and salmeterol differ because pirbuterol is:",
     "options": [
-      "Longer acting",
+      "Longer acting than salmeterol because it is a LABA",
       "Shorter acting while salmeterol is LABA",
-      "An anticholinergic",
-      "A corticosteroid"
+      "An anticholinergic agent that is used in COPD",
+      "An inhaled corticosteroid that is used in asthma"
     ],
     "correct_index": 1,
     "explanation": "Pirbuterol is a SABA (short-acting, 4-6 hours) while salmeterol is a LABA (long-acting, 12 hours).",
@@ -3250,10 +3250,10 @@
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "Zafirlukast is a:",
     "options": [
-      "Beta-2 agonist",
+      "A short-acting beta-2 receptor agonist",
       "Leukotriene receptor antagonist",
-      "Corticosteroid",
-      "Anticholinergic"
+      "An inhaled corticosteroid anti-inflammatory",
+      "An anticholinergic bronchodilator agent"
     ],
     "correct_index": 1,
     "explanation": "Zafirlukast blocks cysteinyl leukotriene receptors (CysLT1), preventing leukotriene-mediated bronchoconstriction in asthma prophylaxis.",
@@ -3318,10 +3318,10 @@
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "Guaifenesin is a:",
     "options": [
-      "Antitussive",
+      "An antitussive that suppresses the cough reflex",
       "Expectorant that reduces mucus viscosity",
-      "Bronchodilator",
-      "Mast cell stabilizer"
+      "A bronchodilator that relaxes the airways",
+      "A mast cell stabilizer that prevents mediator release"
     ],
     "correct_index": 1,
     "explanation": "Guaifenesin is an expectorant that increases respiratory tract fluid secretion and reduces mucus viscosity, aiding expectoration.",
@@ -3335,10 +3335,10 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Azithromycin differs from erythromycin because:",
     "options": [
-      "It is less potent",
+      "It is less potent than erythromycin",
       "It has longer half-life, better tissue penetration",
       "It has more GI side effects",
-      "It is only given IV"
+      "It can be given only by the intravenous route"
     ],
     "correct_index": 1,
     "explanation": "Azithromycin (macrolide) has a longer half-life (68h), better tissue penetration, fewer drug interactions, and less GI effects than erythromycin.\n\nNote: and less GI side effects",
@@ -3369,10 +3369,10 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Colistimethate (colistin) is a last-resort antibiotic for:",
     "options": [
-      "MRSA infections",
-      "Multidrug-resistant gram-negative",
-      "Tuberculosis",
-      "Malaria"
+      "MRSA skin and soft tissue infections",
+      "Multidrug-resistant gram-negative bacterial infections",
+      "Pulmonary tuberculosis resistant to first-line drugs",
+      "Malaria caused by Plasmodium falciparum"
     ],
     "correct_index": 1,
     "explanation": "Colistin is a polymyxin antibiotic used as a last resort for extensively drug-resistant (XDR) gram-negative bacterial infections.\n\nNote: MDR Pseudomonas, Acinetobacter\n\nAdditional: infections",
@@ -3405,7 +3405,7 @@
     "options": [
       "A beta-lactam like penicillins",
       "A glycylcycline effective against resistant bacteria including MRSA",
-      "A macrolide like erythromycin",
+      "A macrolide antibiotic like erythromycin",
       "A fluoroquinolone like ciprofloxacin"
     ],
     "correct_index": 1,
@@ -3422,8 +3422,8 @@
     "options": [
       "Only works on gram-negative bacteria",
       "Has enhanced activity against respiratory pathogens including atypicals",
-      "Is only used for UTI",
-      "Has no gram-positive activity"
+      "Is used only for urinary tract infections",
+      "Has no activity against gram-positive bacteria at all"
     ],
     "correct_index": 1,
     "explanation": "Moxifloxacin has enhanced gram-positive and atypical coverage (Mycoplasma, Chlamydophila, Legionella), making it suitable for respiratory infections.\n\nNote: Mycoplasma, Legionella",
