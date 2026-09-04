@@ -8,6 +8,7 @@ import { subjects } from "@/data/subjects";
 import { safeSetItem } from "@/lib/storage";
 import {
   fetchUpcomingExams,
+  formatCountdown,
   formatInKathmandu,
   isExamLive,
   scheduledMockConfig,
@@ -61,21 +62,6 @@ export default function DashboardPage() {
     const t = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(t);
   }, [exams.length]);
-
-  const countdownTo = (iso: string) => {
-    let diff = new Date(iso).getTime() - now.getTime();
-    if (diff <= 0) return "";
-    const d = Math.floor(diff / 86400000);
-    diff -= d * 86400000;
-    const h = Math.floor(diff / 3600000);
-    diff -= h * 3600000;
-    const m = Math.floor(diff / 60000);
-    diff -= m * 60000;
-    const s = Math.floor(diff / 1000);
-    if (d > 0) return `${d}d ${h}h ${m}m ${s}s`;
-    if (h > 0) return `${h}h ${m}m ${s}s`;
-    return `${m}m ${s}s`;
-  };
 
   const startScheduled = (exam: MockExam) => {
     const sessionId = crypto.randomUUID();
@@ -235,7 +221,7 @@ export default function DashboardPage() {
                           · {exam.duration_minutes} min
                         </p>
                         <p className="mt-1 text-sm font-semibold tabular-nums text-primary">
-                          Starts in {countdownTo(exam.starts_at)}
+                          Starts in {formatCountdown(exam.starts_at, now)}
                         </p>
                       </div>
                       <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />

@@ -106,6 +106,26 @@ export function formatInKathmandu(
   return d.toLocaleString("en-GB", opts);
 }
 
+/**
+ * Human countdown with seconds: "1d 2h 3m 4s", "23h 49m 12s", "49m 12s",
+ * "59s". Shared by the dashboard, mock-test page, and admin schedule list.
+ */
+export function formatCountdown(targetIso: string, now: Date): string {
+  let diff = new Date(targetIso).getTime() - now.getTime();
+  if (diff <= 0) return "0s";
+  const d = Math.floor(diff / 86400000);
+  diff -= d * 86400000;
+  const h = Math.floor(diff / 3600000);
+  diff -= h * 3600000;
+  const m = Math.floor(diff / 60000);
+  diff -= m * 60000;
+  const s = Math.floor(diff / 1000);
+  if (d > 0) return `${d}d ${h}h ${m}m ${s}s`;
+  if (h > 0) return `${h}h ${m}m ${s}s`;
+  if (m > 0) return `${m}m ${s}s`;
+  return `${s}s`;
+}
+
 /** True when `now` falls inside the exam window. */
 export function isExamLive(exam: MockExam, now = new Date()): boolean {
   const start = new Date(exam.starts_at).getTime();

@@ -13,6 +13,7 @@ import {
   createMockExam,
   deleteMockExam,
   fetchAllExams,
+  formatCountdown,
   formatInKathmandu,
   isExamLive,
   isExamOver,
@@ -32,16 +33,6 @@ import {
   ShieldAlert,
   Trash2,
 } from "lucide-react";
-
-function timeToLabel(targetIso: string, now: Date): string | null {
-  const diff = new Date(targetIso).getTime() - now.getTime();
-  if (diff <= 0) return null;
-  const mins = Math.floor(diff / 60000);
-  if (mins < 60) return mins + " min";
-  const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return hrs + "h " + (mins % 60) + "m";
-  return Math.floor(hrs / 24) + "d " + (hrs % 24) + "h";
-}
 
 export default function AdminMockExamsPage() {
   const router = useRouter();
@@ -67,7 +58,7 @@ export default function AdminMockExamsPage() {
 
   useEffect(() => {
     if (isAdmin) load();
-    const t = setInterval(() => setNow(new Date()), 30_000);
+    const t = setInterval(() => setNow(new Date()), 1_000);
     return () => clearInterval(t);
   }, [isAdmin, load]);
 
@@ -296,7 +287,6 @@ export default function AdminMockExamsPage() {
           {exams.map((exam) => {
             const live = isExamLive(exam, now);
             const over = isExamOver(exam, now);
-            const startsLabel = timeToLabel(exam.starts_at, now);
             return (
               <Card key={exam.id}>
                 <CardContent className="flex flex-wrap items-center justify-between gap-3 p-4 sm:p-5">
@@ -309,7 +299,7 @@ export default function AdminMockExamsPage() {
                         <Badge variant="secondary">Ended</Badge>
                       ) : (
                         <Badge variant="secondary">
-                          {startsLabel ? "Starts " + startsLabel : "Starts soon"}
+                          Starts {formatCountdown(exam.starts_at, now)}
                         </Badge>
                       )}
                     </div>

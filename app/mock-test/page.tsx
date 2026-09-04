@@ -11,6 +11,7 @@ import { safeSetItem } from "@/lib/storage";
 import { useAuth } from "@/lib/auth";
 import {
   fetchUpcomingExams,
+  formatCountdown,
   formatInKathmandu,
   isExamLive,
   scheduledMockConfig,
@@ -58,23 +59,13 @@ export default function MockTestPage() {
         }
       });
     }, 60_000);
-    const t = setInterval(() => setNow(new Date()), 30_000);
+    const t = setInterval(() => setNow(new Date()), 1_000);
     return () => {
       alive = false;
       clearInterval(t);
       clearInterval(refresh);
     };
   }, []);
-
-  const timeTo = (exam: MockExam, now: Date): string | null => {
-    const diff = new Date(exam.starts_at).getTime() - now.getTime();
-    if (diff <= 0) return null;
-    const mins = Math.floor(diff / 60000);
-    if (mins < 60) return `${mins} min`;
-    const hrs = Math.floor(mins / 60);
-    if (hrs < 24) return `${hrs}h ${mins % 60}m`;
-    return `${Math.floor(hrs / 24)}d ${hrs % 24}h`;
-  };
 
   const startMockTest = (exam?: MockExam) => {
     const sessionId = crypto.randomUUID();
@@ -137,7 +128,6 @@ export default function MockTestPage() {
             <div className="space-y-3">
               {exams.map((exam) => {
                 const live = isExamLive(exam, now);
-                const startsLabel = timeTo(exam, now);
                 return (
                   <div
                     key={exam.id}
@@ -150,12 +140,10 @@ export default function MockTestPage() {
                           <Badge className="bg-green-600 text-white">
                             ● LIVE NOW
                           </Badge>
-                        ) : startsLabel ? (
-                          <Badge variant="secondary">
-                            Starts {startsLabel}
-                          </Badge>
                         ) : (
-                          <Badge variant="secondary">Starts soon</Badge>
+                          <Badge variant="secondary">
+                            Starts {formatCountdown(exam.starts_at, now)}
+                          </Badge>
                         )}
                       </div>
                       <p className="mt-1 flex flex-wrap items-center gap-x-1 text-sm text-muted-foreground">
@@ -272,17 +260,15 @@ export default function MockTestPage() {
           );
         }
         if (gated && nextExam) {
-          const opensIn = timeTo(nextExam, now);
           return (
             <div className="text-center">
               <Button size="lg" className="w-full" disabled>
                 <Clock className="mr-2 h-5 w-5" />
                 Starts {formatInKathmandu(nextExam.starts_at, "short")}
               </Button>
-              <p className="mt-3 text-sm font-medium text-primary">
-                {opensIn
-                  ? "This mock test opens in " + opensIn + "."
-                  : "This mock test opens soon."}
+              <p className="mt-3 text-sm font-medium text-primary tabular-nums">
+                This mock test opens in{" "}
+                {formatCountdown(nextExam.starts_at, now)}.
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
                 The start button unlocks automatically at the scheduled time
