@@ -155,9 +155,9 @@ begin
   with user_stats as (
     select
       qr.user_id,
-      count(*) as quizzes_taken,
-      sum(qr.correct) as total_correct,
-      sum(qr.total) as total_attempted,
+      count(*)::int as quizzes_taken,
+      sum(qr.correct)::int as total_correct,
+      sum(qr.total)::int as total_attempted,
       round(
         (sum(qr.correct)::numeric / nullif(sum(qr.total), 0)) * 100, 2
       ) as overall_accuracy
@@ -187,8 +187,8 @@ begin
         , 2) desc,
         coalesce(us.overall_accuracy, 0) desc,
         coalesce(us.quizzes_taken, 0) desc
-      ) as rank,
-      count(*) over () as total_participants
+      )::int as rank,
+      count(*) over ()::int as total_participants
     from public.profiles p
     left join user_stats us on p.id = us.user_id
     where (p.role != 'admin' or p.role is null)
@@ -250,9 +250,9 @@ begin
   with user_stats as (
     select
       qr.user_id,
-      count(*) as quizzes_taken,
-      sum(qr.correct) as total_correct,
-      sum(qr.total) as total_attempted,
+      count(*)::int as quizzes_taken,
+      sum(qr.correct)::int as total_correct,
+      sum(qr.total)::int as total_attempted,
       round(avg(qr.accuracy)::numeric, 2) as avg_accuracy,
       round(
         (sum(qr.correct)::numeric / nullif(sum(qr.total), 0)) * 100, 2
@@ -288,7 +288,7 @@ begin
       ranked.score desc,
       ranked.accuracy desc,
       ranked.quizzes_taken desc
-    ) as rank,
+    )::int as rank,
     ranked.user_id,
     ranked.name,
     ranked.quizzes_taken,
