@@ -8,7 +8,6 @@ export interface LeaderboardEntry {
   rank: number;
   user_id: string;
   name: string;
-  email: string;
   quizzesTaken: number;
   totalCorrect: number;
   totalAttempted: number;
@@ -53,7 +52,6 @@ interface LeaderboardRow {
   rank: number;
   user_id: string;
   name: string;
-  email: string;
   quizzes_taken: number;
   total_correct: number;
   total_attempted: number;
@@ -93,7 +91,6 @@ export async function getLeaderboard(
     rank: row.rank,
     user_id: row.user_id,
     name: row.name,
-    email: row.email,
     quizzesTaken: row.quizzes_taken,
     totalCorrect: row.total_correct,
     totalAttempted: row.total_attempted,

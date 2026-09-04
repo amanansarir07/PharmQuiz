@@ -49,7 +49,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       id: u.id,
       name: meta.name || u.email?.split("@")[0] || "User",
       email: u.email || "",
-      role: (meta.role as "user" | "admin") || "user",
+      // Never trust client-controlled user_metadata for the role — the DB
+      // profile row is the only authority. This fallback only runs when the
+      // profiles query fails, so default to the least privilege.
+      role: "user",
       createdAt: u.created_at || new Date().toISOString(),
     };
   }, []);

@@ -206,7 +206,7 @@ export default function LeaderboardPage() {
                 const rank = podiumRanks[visualIdx];
                 const cfg = podiumConfig[rank - 1];
                 const isCenter = rank === 1;
-                const isMe = user?.email === entry.email;
+                const isMe = user?.id === entry.user_id;
 
                 return (
                   <div key={entry.user_id} className={cn("flex flex-col items-center", isCenter ? "order-2" : visualIdx === 0 ? "order-1" : "order-3")}>
@@ -244,7 +244,7 @@ export default function LeaderboardPage() {
           {rest.length > 0 && (
             <div className="rounded-xl border divide-y overflow-hidden">
               {rest.map((entry) => {
-                const isMe = user?.email === entry.email;
+                const isMe = user?.id === entry.user_id;
                 return (
                   <div
                     key={entry.user_id}
