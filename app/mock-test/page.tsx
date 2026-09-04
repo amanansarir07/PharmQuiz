@@ -26,12 +26,15 @@ import {
   ArrowLeft,
   GraduationCap,
   CalendarClock,
+  Clock,
+  Loader2,
   Megaphone,
 } from "lucide-react";
 
 export default function MockTestPage() {
   const router = useRouter();
   const [exams, setExams] = useState<MockExam[]>([]);
+  const [examsLoaded, setExamsLoaded] = useState(false);
   const [now, setNow] = useState(() => new Date());
   const { isAdmin } = useAuth();
 
@@ -40,12 +43,26 @@ export default function MockTestPage() {
   useEffect(() => {
     let alive = true;
     fetchUpcomingExams().then((list) => {
-      if (alive) setExams(list);
+      if (alive) {
+        setExams(list);
+        setExamsLoaded(true);
+      }
     });
+    // Refresh the schedule every 60s so an admin reschedule shows up even
+    // if the student keeps this page open.
+    const refresh = setInterval(() => {
+      fetchUpcomingExams().then((list) => {
+        if (alive) {
+          setExams(list);
+          setExamsLoaded(true);
+        }
+      });
+    }, 60_000);
     const t = setInterval(() => setNow(new Date()), 30_000);
     return () => {
       alive = false;
       clearInterval(t);
+      clearInterval(refresh);
     };
   }, []);
 
@@ -238,13 +255,73 @@ export default function MockTestPage() {
         </CardContent>
       </Card>
 
-      <Button size="lg" className="w-full" onClick={() => startMockTest()}>
-        <Play className="mr-2 h-5 w-5" />
-        Start Mock Test
-      </Button>
-      <p className="mt-3 text-center text-xs text-muted-foreground">
-        {subjects.length * 10} random questions are picked fresh each time you start.
-      </p>
+      {(() => {
+        // The official exam is announced by the admin at a fixed time. While an
+        // exam is scheduled (or live), the main button starts THAT exam at its
+        // scheduled time — never a free run early.
+        const nextExam = exams[0] || null;
+        const liveScheduled = !!nextExam && isExamLive(nextExam, now);
+        const gated = examsLoaded && !!nextExam && !liveScheduled;
+
+        if (!examsLoaded) {
+          return (
+            <Button size="lg" className="w-full" disabled>
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+              Checking schedule...
+            </Button>
+          );
+        }
+        if (gated && nextExam) {
+          const opensIn = timeTo(nextExam, now);
+          return (
+            <div className="text-center">
+              <Button size="lg" className="w-full" disabled>
+                <Clock className="mr-2 h-5 w-5" />
+                Starts {formatInKathmandu(nextExam.starts_at, "short")}
+              </Button>
+              <p className="mt-3 text-sm font-medium text-primary">
+                {opensIn
+                  ? "This mock test opens in " + opensIn + "."
+                  : "This mock test opens soon."}
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                The start button unlocks automatically at the scheduled time
+                above.
+              </p>
+            </div>
+          );
+        }
+        if (liveScheduled && nextExam) {
+          return (
+            <>
+              <Button
+                size="lg"
+                className="w-full"
+                onClick={() => startMockTest(nextExam)}
+              >
+                <Play className="mr-2 h-5 w-5" />
+                Start Mock Test - Live Now
+              </Button>
+              <p className="mt-3 text-center text-xs text-muted-foreground">
+                The timer starts when you begin and submits automatically at the
+                end.
+              </p>
+            </>
+          );
+        }
+        return (
+          <>
+            <Button size="lg" className="w-full" onClick={() => startMockTest()}>
+              <Play className="mr-2 h-5 w-5" />
+              Start Mock Test
+            </Button>
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              {subjects.length * 10} random questions are picked fresh each time
+              you start.
+            </p>
+          </>
+        );
+      })()}
     </div>
   );
 }
