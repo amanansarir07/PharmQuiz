@@ -14,6 +14,14 @@ import {
 } from "@/lib/constants";
 import { safeSetItem, pruneExpiredScratchKeys } from "@/lib/storage";
 import {
+  fetchUpcomingExams,
+  formatCountdown,
+  formatInKathmandu,
+  isExamLive,
+  scheduledMockConfig,
+  type MockExam,
+} from "@/lib/mock-exams";
+import {
   Settings,
   Play,
   Clock,
@@ -40,6 +48,9 @@ function QuizSetupInner() {
   const timeRef = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
   const startRef = useRef<HTMLDivElement>(null);
+  const [exams, setExams] = useState<MockExam[]>([]);
+  const [examsLoaded, setExamsLoaded] = useState(false);
+  const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
     pruneExpiredScratchKeys();
@@ -48,6 +59,28 @@ function QuizSetupInner() {
       setSelectedSubject(subjectParam);
     }
   }, [searchParams]);
+
+  // Scheduled mock announcements — same rule as the Mock Test page: a
+  // scheduled exam only starts at its admin-set time, never before.
+  useEffect(() => {
+    let alive = true;
+    const refreshExams = () => {
+      fetchUpcomingExams().then((list) => {
+        if (alive) {
+          setExams(list);
+          setExamsLoaded(true);
+        }
+      });
+    };
+    refreshExams();
+    const refresh = setInterval(refreshExams, 60_000);
+    const t = setInterval(() => setNow(new Date()), 1_000);
+    return () => {
+      alive = false;
+      clearInterval(t);
+      clearInterval(refresh);
+    };
+  }, []);
 
   const subject = subjects.find((s) => s.slug === selectedSubject);
 
@@ -103,6 +136,20 @@ function QuizSetupInner() {
     router.push(`/quiz/${sessionId}`);
   };
 
+  const startScheduledMock = (exam: MockExam) => {
+    const sessionId = crypto.randomUUID();
+    safeSetItem(
+      `quiz-config-${sessionId}`,
+      JSON.stringify(scheduledMockConfig(exam))
+    );
+    router.push(`/quiz/${sessionId}`);
+  };
+
+  // A scheduled exam that is live now wins; otherwise the soonest upcoming
+  // one drives the banner. When none exist, free mock practice is available.
+  const liveExam = exams.find((e) => isExamLive(e, now)) || null;
+  const upcomingExam = liveExam ? null : exams[0] || null;
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
       <div className="mb-8">
@@ -116,23 +163,66 @@ function QuizSetupInner() {
       </div>
 
       <div className="space-y-6">
-        {/* Mock Test Banner */}
-        <Card className="border-primary/30 bg-primary/5">
+        {/* Mock Test Banner — schedule-aware */}
+        <Card
+          className={
+            liveExam
+              ? "border-green-500/50 bg-green-50 dark:bg-green-950/40"
+              : "border-primary/30 bg-primary/5"
+          }
+        >
           <CardContent className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
-            <div className="flex items-center gap-3">
+            <div className="flex min-w-0 items-center gap-3">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
                 <Timer className="h-5 w-5" />
               </div>
-              <div>
-                <p className="font-semibold">Full Mock Test</p>
-                <p className="text-xs text-muted-foreground">
-                  80 questions • 8 subjects • 80 minutes • no negative marking
+              <div className="min-w-0">
+                <p className="flex flex-wrap items-center gap-2 font-semibold">
+                  Full Mock Test
+                  {liveExam && (
+                    <Badge className="bg-green-600 text-white">● LIVE</Badge>
+                  )}
                 </p>
+                {liveExam ? (
+                  <p className="text-xs text-muted-foreground">
+                    {liveExam.title} · {liveExam.duration_minutes} minutes • 8
+                    subjects × 10 questions
+                  </p>
+                ) : upcomingExam ? (
+                  <>
+                    <p className="text-xs text-muted-foreground">
+                      {upcomingExam.title} · starts{" "}
+                      {formatInKathmandu(upcomingExam.starts_at, "short")}{" "}
+                      (Kathmandu)
+                    </p>
+                    <p className="mt-0.5 text-xs font-semibold tabular-nums text-primary">
+                      Opens in {formatCountdown(upcomingExam.starts_at, now)}
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-xs text-muted-foreground">
+                    80 questions • 8 subjects • 80 minutes • no negative marking
+                  </p>
+                )}
               </div>
             </div>
-            <Button onClick={() => router.push("/mock-test")} className="shrink-0">
-              Start Mock Test
-            </Button>
+            {!examsLoaded ? (
+              <Button disabled className="shrink-0">
+                Checking schedule...
+              </Button>
+            ) : liveExam ? (
+              <Button onClick={() => startScheduledMock(liveExam)} className="shrink-0">
+                Start Live Mock
+              </Button>
+            ) : upcomingExam ? (
+              <Button disabled className="shrink-0">
+                Starts {formatInKathmandu(upcomingExam.starts_at, "short")}
+              </Button>
+            ) : (
+              <Button onClick={() => router.push("/mock-test")} className="shrink-0">
+                Start Mock Test
+              </Button>
+            )}
           </CardContent>
         </Card>
 
