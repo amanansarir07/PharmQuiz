@@ -4060,5 +4060,3320 @@
       "GC",
       "volatile oils"
     ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Organized crude drugs are those that:",
+    "options": [
+      "Possess a definite cellular structure such as leaves and roots",
+      "Have no cellular structure such as gums and resins",
+      "Are obtained only from mineral sources",
+      "Are completely synthetic in origin"
+    ],
+    "correct_index": 0,
+    "explanation": "Organized crude drugs have a definite cellular structure and are obtained from definite plant parts like leaves, roots, seeds and barks.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "organized drugs"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Unorganized crude drugs include:",
+    "options": [
+      "Gums, resins, oils, waxes and dried juices",
+      "Leaves, roots and seeds of plants",
+      "Dried flowers and flower buds",
+      "Stems and barks of woody plants"
+    ],
+    "correct_index": 0,
+    "explanation": "Unorganized drugs lack definite cellular structure and include gums, resins, fixed oils, volatile oils, waxes and dried latices.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "unorganized drugs"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "The scope of pharmacognosy includes the study of:",
+    "options": [
+      "Natural drugs, their sources, chemistry, identification and uses",
+      "Only the synthesis of new chemical entities",
+      "Only the pricing of pharmaceutical products",
+      "Only the marketing of finished medicines"
+    ],
+    "correct_index": 0,
+    "explanation": "Pharmacognosy deals with natural drugs from plant, animal and mineral sources including their identification, chemistry and therapeutic uses.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "scope"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Crude drugs can be obtained from:",
+    "options": [
+      "Plants, animals, minerals and microorganisms",
+      "Plants only, no other source exists",
+      "Synthetic chemical laboratories only",
+      "Petroleum refining processes only"
+    ],
+    "correct_index": 0,
+    "explanation": "Crude drugs are obtained from natural sources: plants (digitalis), animals (beeswax, lanolin), minerals (kaolin, talc) and microorganisms (penicillin).",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "sources"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "The binomial nomenclature of a plant drug consists of:",
+    "options": [
+      "The genus and species names",
+      "The family and order names",
+      "The common and trade names",
+      "The chemical and official names"
+    ],
+    "correct_index": 0,
+    "explanation": "Binomial nomenclature gives every plant two Latin names, the genus followed by the species, e.g., Atropa belladonna.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "nomenclature"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "The official standards for a drug are listed in the:",
+    "options": [
+      "Pharmacopoeia",
+      "Telephone directory",
+      "Chemical formula index",
+      "Trade name register"
+    ],
+    "correct_index": 0,
+    "explanation": "The pharmacopoeia (e.g., IP, BP, USP) contains official standards for identity, purity and strength of drugs.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "pharmacopoeia"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "The term 'pharmacognosy' is derived from the Greek words meaning:",
+    "options": [
+      "Drug and knowledge",
+      "Poison and cure",
+      "Plant and flower",
+      "Chemical and biology"
+    ],
+    "correct_index": 0,
+    "explanation": "Pharmacognosy comes from Greek 'pharmakon' (drug) and 'gnosis' (knowledge) — the knowledge of drugs.",
+    "difficulty": "medium",
+    "tags": [
+      "introduction",
+      "etymology"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Which of the following is an animal source of a crude drug?",
+    "options": [
+      "Honey and beeswax",
+      "Kaolin and talc",
+      "Gum acacia",
+      "Eucalyptus oil"
+    ],
+    "correct_index": 0,
+    "explanation": "Honey, beeswax, lanolin, gelatin and musk are obtained from animals, whereas kaolin, talc and acacia come from minerals and plants.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "animal sources"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Examples of mineral sources of drugs include:",
+    "options": [
+      "Kaolin, talc, bentonite and chalk",
+      "Opium, digitalis and senna",
+      "Honey, beeswax and lanolin",
+      "Agar, alginate and carrageenan"
+    ],
+    "correct_index": 0,
+    "explanation": "Kaolin, talc, bentonite and prepared chalk are important drugs of mineral origin used as adsorbents and bases.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "mineral sources"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "The earliest written records of medicines are found in the:",
+    "options": [
+      "Ebers papyrus of ancient Egypt",
+      "Modern internet databases",
+      "British pharmacopoeia",
+      "Indian patent office"
+    ],
+    "correct_index": 0,
+    "explanation": "The Ebers papyrus (about 1550 BC) is one of the oldest medical documents, recording many plant drugs used in ancient Egypt.",
+    "difficulty": "medium",
+    "tags": [
+      "introduction",
+      "history"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "The importance of pharmacognosy in pharmacy practice is mainly for:",
+    "options": [
+      "Detection of adulteration and quality control of natural drugs",
+      "Increasing the sales price of medicines",
+      "Designing packaging labels only",
+      "Preparing hospital budgets"
+    ],
+    "correct_index": 0,
+    "explanation": "Pharmacognosy provides the tools to identify genuine drugs and detect adulteration, ensuring quality and safety of herbal and natural products.",
+    "difficulty": "medium",
+    "tags": [
+      "introduction",
+      "importance"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Chemotaxonomic classification of crude drugs is based on:",
+    "options": [
+      "The chemical constituents present in the drug",
+      "The shape and size of the drug",
+      "The price of the drug in the market",
+      "The country of origin of the drug"
+    ],
+    "correct_index": 0,
+    "explanation": "Chemotaxonomy groups drugs according to their chemical constituents, e.g., all alkaloid-containing or glycoside-containing drugs together.",
+    "difficulty": "medium",
+    "tags": [
+      "introduction",
+      "classification"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Penicillin and streptomycin are obtained from:",
+    "options": [
+      "Microorganisms (fungi and actinomycetes)",
+      "Animal endocrine glands and tissues",
+      "Deep sea mineral deposits",
+      "Marine fish liver oils"
+    ],
+    "correct_index": 0,
+    "explanation": "Penicillin comes from Penicillium notatum and streptomycin from Streptomyces griseus, both microorganisms.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "microbial sources"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "Pharmacognosy is considered an allied science to:",
+    "options": [
+      "Botany, chemistry, pharmacology and therapeutics",
+      "Only accountancy and finance",
+      "Only computer programming",
+      "Only civil engineering"
+    ],
+    "correct_index": 0,
+    "explanation": "Pharmacognosy draws on botany, chemistry, pharmacology and therapeutics to study natural drugs comprehensively.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "allied sciences"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-1",
+    "question_text": "A pharmacognosist is primarily concerned with:",
+    "options": [
+      "Identification, standardization and quality of natural drugs",
+      "Marketing of branded medicines",
+      "Designing hospital furniture",
+      "Operating diagnostic imaging machines"
+    ],
+    "correct_index": 0,
+    "explanation": "The pharmacognosist identifies crude drugs, studies their constituents and ensures their standardization and quality.",
+    "difficulty": "easy",
+    "tags": [
+      "introduction",
+      "role"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "The biological source of opium is the:",
+    "options": [
+      "Dried latex from unripe capsules of Papaver somniferum",
+      "Dried leaves of Cannabis sativa",
+      "Dried roots of Rauwolfia serpentina",
+      "Dried bark of Cinchona succirubra"
+    ],
+    "correct_index": 0,
+    "explanation": "Opium is the dried latex obtained by incising the unripe capsules of Papaver somniferum (family Papaveraceae).",
+    "difficulty": "easy",
+    "tags": [
+      "biological source",
+      "opium"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Papaver somniferum (opium poppy) belongs to the family:",
+    "options": [
+      "Papaveraceae",
+      "Solanaceae",
+      "Rubiaceae",
+      "Apocynaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Opium poppy belongs to Papaveraceae, the poppy family.",
+    "difficulty": "easy",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Digitalis purpurea belongs to which family?",
+    "options": [
+      "Scrophulariaceae",
+      "Leguminosae",
+      "Myrtaceae",
+      "Zingiberaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Digitalis (foxglove) belongs to the family Scrophulariaceae.",
+    "difficulty": "medium",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Cinchona, the source of quinine, belongs to the family:",
+    "options": [
+      "Rubiaceae",
+      "Solanaceae",
+      "Papaveraceae",
+      "Loganiaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Cinchona belongs to the family Rubiaceae, the madder/coffee family.",
+    "difficulty": "medium",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Atropa belladonna belongs to the family:",
+    "options": [
+      "Solanaceae",
+      "Lamiaceae",
+      "Araceae",
+      "Rutaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Belladonna belongs to Solanaceae, which also includes stramonium, henbane and potato.",
+    "difficulty": "easy",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Mentha piperita (peppermint) belongs to the family:",
+    "options": [
+      "Lamiaceae (Labiatae)",
+      "Myrtaceae",
+      "Umbelliferae",
+      "Compositae"
+    ],
+    "correct_index": 0,
+    "explanation": "Peppermint belongs to Lamiaceae, the mint family, characterized by square stems and aromatic leaves.",
+    "difficulty": "medium",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Syzygium aromaticum (clove) belongs to the family:",
+    "options": [
+      "Myrtaceae",
+      "Papaveraceae",
+      "Rubiaceae",
+      "Apocynaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Clove belongs to Myrtaceae, the myrtle family, which also gives eucalyptus.",
+    "difficulty": "easy",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Zingiber officinale (ginger) belongs to the family:",
+    "options": [
+      "Zingiberaceae",
+      "Liliaceae",
+      "Gramineae",
+      "Solanaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Ginger belongs to Zingiberaceae, the ginger family, which also includes turmeric and cardamom.",
+    "difficulty": "easy",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Acacia (gum arabic) is obtained from plants of the family:",
+    "options": [
+      "Leguminosae (Fabaceae)",
+      "Malvaceae",
+      "Anacardiaceae",
+      "Burseraceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Acacia senegal belongs to Leguminosae; gum arabic exudes from its stem and branches.",
+    "difficulty": "medium",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Rauwolfia serpentina belongs to the family:",
+    "options": [
+      "Apocynaceae",
+      "Solanaceae",
+      "Loganiaceae",
+      "Rubiaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Rauwolfia belongs to Apocynaceae, the dogbane family, which also yields vinca.",
+    "difficulty": "medium",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Ephedra, the source of ephedrine, belongs to the family:",
+    "options": [
+      "Ephedraceae",
+      "Solanaceae",
+      "Labiatae",
+      "Compositae"
+    ],
+    "correct_index": 0,
+    "explanation": "Ephedra belongs to Ephedraceae (Gnetaceae), a gymnosperm family.",
+    "difficulty": "hard",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Glycyrrhiza glabra (liquorice) belongs to the family:",
+    "options": [
+      "Leguminosae",
+      "Rosaceae",
+      "Umbelliferae",
+      "Ranunculaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Liquorice belongs to Leguminosae; its sweet principle glycyrrhizin comes from the dried roots and stolons.",
+    "difficulty": "medium",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Ergot is a drug obtained from:",
+    "options": [
+      "A fungus (Claviceps purpurea) parasitic on rye",
+      "A marine brown alga used in pharmacy",
+      "A mineral deposit of sedimentary origin",
+      "An endocrine gland of the ox"
+    ],
+    "correct_index": 0,
+    "explanation": "Ergot is the dried sclerotium of the fungus Claviceps purpurea, which replaces the grain of rye.",
+    "difficulty": "medium",
+    "tags": [
+      "biological source",
+      "fungus"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Strychnos nux-vomica belongs to the family:",
+    "options": [
+      "Loganiaceae",
+      "Apocynaceae",
+      "Solanaceae",
+      "Menyanthaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Nux vomica belongs to Loganiaceae; its seeds yield strychnine and brucine.",
+    "difficulty": "hard",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-2",
+    "question_text": "Linseed (Linum usitatissimum) belongs to the family:",
+    "options": [
+      "Linaceae",
+      "Cruciferae",
+      "Malvaceae",
+      "Euphorbiaceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Linseed belongs to Linaceae; its seeds yield linseed oil rich in linolenic acid.",
+    "difficulty": "hard",
+    "tags": [
+      "biological source",
+      "family"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "The four types of drug evaluation are:",
+    "options": [
+      "Organoleptic, microscopic, chemical and biological",
+      "Physical, optical, digital and thermal",
+      "Visual, auditory, tactile and olfactory",
+      "Qualitative, quantitative, statistical and computational"
+    ],
+    "correct_index": 0,
+    "explanation": "Drugs are evaluated by organoleptic (sensory), microscopic, chemical and biological methods to establish identity, purity and quality.",
+    "difficulty": "easy",
+    "tags": [
+      "evaluation",
+      "types"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Loss on drying of a crude drug measures:",
+    "options": [
+      "The moisture and volatile matter present",
+      "The ash content of the drug sample",
+      "The volatile oil content present",
+      "The crude fiber content only"
+    ],
+    "correct_index": 0,
+    "explanation": "Loss on drying (usually at 105°C) indicates the water and volatile matter content, which affects drug stability and microbial growth.",
+    "difficulty": "medium",
+    "tags": [
+      "evaluation",
+      "loss on drying"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Stomatal index is calculated to determine the:",
+    "options": [
+      "Ratio of stomata to epidermal cells in a leaf",
+      "Size of the leaf lamina",
+      "Thickness of the leaf cuticle",
+      "Number of veins in the leaf"
+    ],
+    "correct_index": 0,
+    "explanation": "Stomatal index = (number of stomata / stomata + epidermal cells) x 100; it is a constant characteristic used to identify leaf drugs.",
+    "difficulty": "hard",
+    "tags": [
+      "evaluation",
+      "stomatal index"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Palisade ratio is the average number of:",
+    "options": [
+      "Palisade cells beneath each upper epidermal cell",
+      "Stomata on one square millimeter of leaf",
+      "Trichomes on the leaf margin",
+      "Veins meeting at the leaf apex"
+    ],
+    "correct_index": 0,
+    "explanation": "Palisade ratio is the average number of palisade cells under each epidermal cell; it helps identify powdered leaf drugs.",
+    "difficulty": "hard",
+    "tags": [
+      "evaluation",
+      "palisade ratio"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "The lycopodium spore method is used for:",
+    "options": [
+      "Quantitative microscopy of powdered drugs",
+      "Determination of moisture content",
+      "Assay of volatile oil content",
+      "Measurement of ash value"
+    ],
+    "correct_index": 0,
+    "explanation": "Lycopodium spore method counts characteristic structures (spores) to estimate the proportion of foreign matter or starch in powders.",
+    "difficulty": "hard",
+    "tags": [
+      "evaluation",
+      "quantitative microscopy"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Swelling index is a test particularly applied to:",
+    "options": [
+      "Gums, mucilages and agar",
+      "Volatile oil bearing leaves",
+      "Alkaloid containing barks",
+      "Resinous roots"
+    ],
+    "correct_index": 0,
+    "explanation": "Swelling index measures the volume occupied by a drug after absorbing water; it is characteristic of gums, mucilages and agar.",
+    "difficulty": "medium",
+    "tags": [
+      "evaluation",
+      "swelling index"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Fluorescence analysis of a crude drug is performed using:",
+    "options": [
+      "Ultraviolet light",
+      "Visible white light only",
+      "Infrared heat rays",
+      "X-rays"
+    ],
+    "correct_index": 0,
+    "explanation": "Many drugs fluoresce characteristically under UV light, which helps in their identification and detection of adulteration.",
+    "difficulty": "medium",
+    "tags": [
+      "evaluation",
+      "fluorescence"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "The specific gravity of a fixed oil is measured to check its:",
+    "options": [
+      "Purity and identity",
+      "Taste only",
+      "Color only",
+      "Shelf life only"
+    ],
+    "correct_index": 0,
+    "explanation": "Specific gravity is a physical constant used to identify fixed oils and detect adulteration with cheaper oils.",
+    "difficulty": "easy",
+    "tags": [
+      "evaluation",
+      "specific gravity"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Refractive index of volatile oils is determined to:",
+    "options": [
+      "Check their purity and detect adulteration",
+      "Measure their color intensity",
+      "Estimate their water content",
+      "Determine their ash value"
+    ],
+    "correct_index": 0,
+    "explanation": "Refractive index is a characteristic physical constant of volatile oils used in quality control and adulteration detection.",
+    "difficulty": "medium",
+    "tags": [
+      "evaluation",
+      "refractive index"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Optical rotation of a solution is measured with a:",
+    "options": [
+      "Polarimeter",
+      "Viscometer",
+      "Colorimeter",
+      "Hygrometer"
+    ],
+    "correct_index": 0,
+    "explanation": "A polarimeter measures optical rotation, which helps identify optically active constituents such as alkaloids and glycosides.",
+    "difficulty": "medium",
+    "tags": [
+      "evaluation",
+      "optical rotation"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Bitterness value is used to evaluate drugs that act as:",
+    "options": [
+      "Bitter tonics and appetite stimulants",
+      "Sedatives and hypnotic agents",
+      "Expectorant cough remedies",
+      "Antacid preparations"
+    ],
+    "correct_index": 0,
+    "explanation": "Bitterness value compares the bitterness of a drug with quinine sulfate; it is used for bitter tonics like gentian and chirata.",
+    "difficulty": "hard",
+    "tags": [
+      "evaluation",
+      "bitterness value"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Wagner's reagent produces a ______ precipitate with alkaloids:",
+    "options": [
+      "Brown",
+      "Blue",
+      "Green",
+      "Yellow"
+    ],
+    "correct_index": 0,
+    "explanation": "Wagner's reagent (iodine in potassium iodide) gives a brown precipitate with alkaloids; Dragendorff's gives orange-red and Mayer's cream colored.",
+    "difficulty": "easy",
+    "tags": [
+      "evaluation",
+      "alkaloid tests"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Chemical evaluation of a crude drug is done to determine:",
+    "options": [
+      "The nature and quantity of its active constituents",
+      "Only the color and odor of the drug",
+      "Only the botanical identity of the plant",
+      "The geographical origin of the plant"
+    ],
+    "correct_index": 0,
+    "explanation": "Chemical evaluation identifies and quantifies active constituents (alkaloids, glycosides, volatile oils) by chemical methods.",
+    "difficulty": "easy",
+    "tags": [
+      "evaluation",
+      "chemical"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Biological evaluation of a drug is based on:",
+    "options": [
+      "Its pharmacological effect on living organisms",
+      "Its physical appearance under a microscope",
+      "Its solubility in different solvents",
+      "Its behavior on a chromatography plate"
+    ],
+    "correct_index": 0,
+    "explanation": "Biological (bioassay) evaluation measures the drug's pharmacological activity on animals or isolated tissues, e.g., digitalis on frogs.",
+    "difficulty": "medium",
+    "tags": [
+      "evaluation",
+      "biological"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-3",
+    "question_text": "Microscopic measurement of plant cells and crystals is carried out with:",
+    "options": [
+      "An ocular micrometer calibrated against a stage micrometer",
+      "An ordinary ruler and measuring tape",
+      "A graduated laboratory measuring cylinder",
+      "A mercury barometer instrument"
+    ],
+    "correct_index": 0,
+    "explanation": "Ocular and stage micrometers are used to measure cellular structures like starch grains, fibers and calcium oxalate crystals in microscopy.",
+    "difficulty": "medium",
+    "tags": [
+      "evaluation",
+      "micrometry"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "The official part of liquorice used medicinally is the:",
+    "options": [
+      "Dried roots and stolons",
+      "Dried flowers",
+      "Fresh fruits",
+      "Dried seeds"
+    ],
+    "correct_index": 0,
+    "explanation": "Liquorice consists of the dried roots and stolons of Glycyrrhiza glabra, the source of sweet glycyrrhizin.",
+    "difficulty": "easy",
+    "tags": [
+      "plant parts",
+      "liquorice"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Rhubarb is obtained from the:",
+    "options": [
+      "Dried rhizome and roots of Rheum species",
+      "Dried leaves of Rheum species",
+      "Fresh flowers of Rheum species",
+      "Ripe seeds of Rheum species"
+    ],
+    "correct_index": 0,
+    "explanation": "Rhubarb consists of the dried rhizome and roots of Rheum species, used as an anthraquinone laxative.",
+    "difficulty": "medium",
+    "tags": [
+      "plant parts",
+      "rhubarb"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Ispaghula (psyllium) consists of the:",
+    "options": [
+      "Dried seeds and seed husks of Plantago ovata",
+      "Dried leaves of Plantago ovata",
+      "Fresh roots of Plantago ovata",
+      "Dried flowers of Plantago ovata"
+    ],
+    "correct_index": 0,
+    "explanation": "Ispaghula is the dried seed and husk of Plantago ovata, a bulk-forming laxative rich in mucilage.",
+    "difficulty": "easy",
+    "tags": [
+      "plant parts",
+      "ispaghula"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Belladonna herb consists of the:",
+    "options": [
+      "Dried leaves and flowering tops (and roots)",
+      "Dried bark of the mature trunk",
+      "Ripe berries and their juice",
+      "Dried wood of the woody stem"
+    ],
+    "correct_index": 0,
+    "explanation": "Belladonna herb is the dried leaves and flowering tops of Atropa belladonna; the root is used separately for atropine.",
+    "difficulty": "easy",
+    "tags": [
+      "plant parts",
+      "belladonna"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Rauwolfia is obtained from the:",
+    "options": [
+      "Dried roots of Rauwolfia serpentina",
+      "Dried leaves of Rauwolfia serpentina",
+      "Fresh flowers of Rauwolfia serpentina",
+      "Dried fruits of Rauwolfia serpentina"
+    ],
+    "correct_index": 0,
+    "explanation": "Rauwolfia consists of the dried roots of Rauwolfia serpentina, which contain reserpine and other alkaloids.",
+    "difficulty": "easy",
+    "tags": [
+      "plant parts",
+      "rauwolfia"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Nux vomica consists of the:",
+    "options": [
+      "Dried ripe seeds of Strychnos nux-vomica",
+      "Dried leaves of Strychnos nux-vomica",
+      "Fresh bark of Strychnos nux-vomica",
+      "Dried roots of Strychnos nux-vomica"
+    ],
+    "correct_index": 0,
+    "explanation": "Nux vomica is the dried ripe seed of Strychnos nux-vomica containing strychnine and brucine.",
+    "difficulty": "easy",
+    "tags": [
+      "plant parts",
+      "nux vomica"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Cardamom consists of the:",
+    "options": [
+      "Dried ripe seeds within the fruit capsule",
+      "Dried leaves of the plant",
+      "Fresh roots of the plant",
+      "Dried bark of the stem"
+    ],
+    "correct_index": 0,
+    "explanation": "Cardamom is the dried ripe seed of Elettaria cardamomum, used as a carminative and flavoring agent.",
+    "difficulty": "medium",
+    "tags": [
+      "plant parts",
+      "cardamom"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Ergot is the dried:",
+    "options": [
+      "Sclerotium of the fungus Claviceps purpurea",
+      "Fruiting body of a mushroom",
+      "Thallus of a lichen",
+      "Frond of a fern"
+    ],
+    "correct_index": 0,
+    "explanation": "Ergot is the dried sclerotium of Claviceps purpurea, a fungus that replaces the grain of rye.",
+    "difficulty": "medium",
+    "tags": [
+      "plant parts",
+      "ergot"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Senna is obtained from the:",
+    "options": [
+      "Dried leaves and pods of Cassia species",
+      "Dried roots of Cassia species",
+      "Fresh flowers of Cassia species",
+      "Dried seeds only of Cassia species"
+    ],
+    "correct_index": 0,
+    "explanation": "Senna consists of dried leaflets and fruits (pods) of Cassia angustifolia or C. acutifolia, used as anthraquinone laxative.",
+    "difficulty": "easy",
+    "tags": [
+      "plant parts",
+      "senna"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Opium is collected from the unripe capsules of the poppy by:",
+    "options": [
+      "Making incisions to allow the latex to exude",
+      "Grinding the entire fruit",
+      "Soaking the flowers in water",
+      "Fermenting the seeds"
+    ],
+    "correct_index": 0,
+    "explanation": "Unripe poppy capsules are lanced; the exuded latex dries to form opium, which is then scraped off.",
+    "difficulty": "medium",
+    "tags": [
+      "plant parts",
+      "opium collection"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Sandalwood uses the ______ part of the tree:",
+    "options": [
+      "Heartwood",
+      "Leaves",
+      "Flowers",
+      "Fruits"
+    ],
+    "correct_index": 0,
+    "explanation": "Sandalwood oil is distilled from the heartwood of Santalum album, the source of santalol.",
+    "difficulty": "medium",
+    "tags": [
+      "plant parts",
+      "sandalwood"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Fennel and coriander are examples of drugs obtained from:",
+    "options": [
+      "Cre-mocarp (schizocarp) fruits",
+      "Underground rhizomes",
+      "Bark of the trunk",
+      "Leafy twigs"
+    ],
+    "correct_index": 0,
+    "explanation": "Fennel and coriander are cremocarp (schizocarp) fruits of the Umbelliferae family, used as carminatives.",
+    "difficulty": "hard",
+    "tags": [
+      "plant parts",
+      "fruits"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "The part of the ginger plant used medicinally is the:",
+    "options": [
+      "Rhizome",
+      "Leaf",
+      "Flower",
+      "Ripe fruit"
+    ],
+    "correct_index": 0,
+    "explanation": "Ginger is the dried rhizome of Zingiber officinale, used as a carminative and antiemetic.",
+    "difficulty": "easy",
+    "tags": [
+      "plant parts",
+      "ginger"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "The official part of digitalis used is the:",
+    "options": [
+      "Dried leaves",
+      "Dried roots",
+      "Ripe seeds",
+      "Fresh flowers"
+    ],
+    "correct_index": 0,
+    "explanation": "Digitalis is prepared from the dried leaves of Digitalis purpurea, the source of cardiac glycosides.",
+    "difficulty": "easy",
+    "tags": [
+      "plant parts",
+      "digitalis"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-4",
+    "question_text": "Castor oil is obtained from the:",
+    "options": [
+      "Seeds of Ricinus communis",
+      "Leaves of Ricinus communis",
+      "Roots of Ricinus communis",
+      "Bark of Ricinus communis"
+    ],
+    "correct_index": 0,
+    "explanation": "Castor oil is expressed from the seeds of Ricinus communis (family Euphorbiaceae); the press cake is poisonous due to ricin.",
+    "difficulty": "easy",
+    "tags": [
+      "plant parts",
+      "castor"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Alkaloids are basic in nature because they contain:",
+    "options": [
+      "Nitrogen, usually in a heterocyclic ring",
+      "Oxygen in a carbonyl group",
+      "Sulfur in a thiol group",
+      "Phosphorus in a phosphate group"
+    ],
+    "correct_index": 0,
+    "explanation": "Alkaloids contain basic nitrogen, usually as part of a heterocyclic ring, which accounts for their basic character.",
+    "difficulty": "easy",
+    "tags": [
+      "alkaloids",
+      "properties"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "In plants, alkaloids are usually found combined with:",
+    "options": [
+      "Organic acids as salts",
+      "Simple sugars as esters",
+      "Minerals as chelates",
+      "Proteins as peptides"
+    ],
+    "correct_index": 0,
+    "explanation": "Alkaloids occur in plants as salts of organic acids such as meconic, quinic and citric acids.",
+    "difficulty": "medium",
+    "tags": [
+      "alkaloids",
+      "occurrence"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Atropine, hyoscine and cocaine are examples of:",
+    "options": [
+      "Tropane alkaloids",
+      "Indole alkaloids",
+      "Purine alkaloids",
+      "Isoquinoline alkaloids"
+    ],
+    "correct_index": 0,
+    "explanation": "Tropane alkaloids contain the tropane nucleus and include atropine, hyoscine (scopolamine) and cocaine.",
+    "difficulty": "medium",
+    "tags": [
+      "alkaloids",
+      "tropane"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Reserpine, strychnine and ergot alkaloids belong to the:",
+    "options": [
+      "Indole group of alkaloids",
+      "Tropane group of alkaloids",
+      "Purine group of alkaloids",
+      "Quinoline group of alkaloids"
+    ],
+    "correct_index": 0,
+    "explanation": "Reserpine, strychnine, brucine and ergot alkaloids contain the indole nucleus.",
+    "difficulty": "medium",
+    "tags": [
+      "alkaloids",
+      "indole"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Caffeine, theobromine and theophylline are classified as:",
+    "options": [
+      "Purine (xanthine) alkaloids",
+      "Tropane alkaloids",
+      "Steroidal alkaloids",
+      "Quinoline alkaloids"
+    ],
+    "correct_index": 0,
+    "explanation": "Caffeine, theobromine and theophylline are methylxanthines (purine alkaloids) with CNS stimulant and bronchodilator actions.",
+    "difficulty": "easy",
+    "tags": [
+      "alkaloids",
+      "purine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Morphine, papaverine and emetine belong to the:",
+    "options": [
+      "Isoquinoline group of alkaloids",
+      "Pyridine group of alkaloids",
+      "Tropane group of alkaloids",
+      "Indole group of alkaloids"
+    ],
+    "correct_index": 0,
+    "explanation": "Morphine, papaverine (opium) and emetine (ipecacuanha) contain the isoquinoline nucleus.",
+    "difficulty": "medium",
+    "tags": [
+      "alkaloids",
+      "isoquinoline"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Cocaine is obtained from the:",
+    "options": [
+      "Leaves of Erythroxylum coca",
+      "Bark of Cinchona officinalis",
+      "Roots of Rauwolfia serpentina",
+      "Seeds of Strychnos nux-vomica"
+    ],
+    "correct_index": 0,
+    "explanation": "Cocaine is the chief alkaloid of the leaves of Erythroxylum coca, a tropane alkaloid with local anesthetic action.",
+    "difficulty": "medium",
+    "tags": [
+      "alkaloids",
+      "cocaine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Hyoscine (scopolamine) is used for:",
+    "options": [
+      "Motion sickness and preoperative sedation",
+      "Treatment of malaria",
+      "Reduction of gastric acidity",
+      "Relief of bronchial asthma"
+    ],
+    "correct_index": 0,
+    "explanation": "Hyoscine, a central anticholinergic, is the most effective drug for motion sickness and is used for preanesthetic sedation.",
+    "difficulty": "medium",
+    "tags": [
+      "alkaloids",
+      "hyoscine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Nicotine is obtained from the:",
+    "options": [
+      "Dried leaves of Nicotiana tabacum",
+      "Dried roots of Atropa belladonna",
+      "Bark of Cinchona ledgeriana",
+      "Seeds of Strychnos nux-vomica"
+    ],
+    "correct_index": 0,
+    "explanation": "Nicotine is a pyridine alkaloid obtained from the dried leaves of Nicotiana tabacum (tobacco).",
+    "difficulty": "easy",
+    "tags": [
+      "alkaloids",
+      "nicotine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Vincristine and vinblastine are obtained from:",
+    "options": [
+      "Catharanthus roseus (vinca)",
+      "Digitalis purpurea",
+      "Papaver somniferum",
+      "Atropa belladonna"
+    ],
+    "correct_index": 0,
+    "explanation": "Vincristine and vinblastine are dimeric indole alkaloids from Catharanthus roseus, used as anticancer drugs.",
+    "difficulty": "medium",
+    "tags": [
+      "alkaloids",
+      "vinca"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Quinidine, a stereoisomer of quinine, is used clinically as:",
+    "options": [
+      "An antiarrhythmic agent",
+      "An antimalarial only",
+      "A hypnotic agent",
+      "A laxative"
+    ],
+    "correct_index": 0,
+    "explanation": "Quinidine is a class Ia antiarrhythmic used to treat atrial fibrillation and other arrhythmias.",
+    "difficulty": "hard",
+    "tags": [
+      "alkaloids",
+      "quinidine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Papaverine is used therapeutically as a:",
+    "options": [
+      "Smooth muscle relaxant and vasodilator",
+      "CNS stimulant",
+      "Muscle relaxant at the neuromuscular junction",
+      "Local anesthetic only"
+    ],
+    "correct_index": 0,
+    "explanation": "Papaverine is an opium isoquinoline alkaloid that relaxes smooth muscle, used as a vasodilator in vascular spasm.",
+    "difficulty": "hard",
+    "tags": [
+      "alkaloids",
+      "papaverine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Physostigmine is obtained from the:",
+    "options": [
+      "Calabar bean (Physostigma venenosum)",
+      "Unripe capsules of opium poppy",
+      "Bark of Cinchona officinalis",
+      "Seeds of Strychnos nux-vomica"
+    ],
+    "correct_index": 0,
+    "explanation": "Physostigmine is an indole alkaloid from the Calabar bean; it is an anticholinesterase used in glaucoma and atropine poisoning.",
+    "difficulty": "hard",
+    "tags": [
+      "alkaloids",
+      "physostigmine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "The alkaloid present in tea and coffee that stimulates the CNS is:",
+    "options": [
+      "Caffeine",
+      "Theobromine",
+      "Pilocarpine",
+      "Arecoline"
+    ],
+    "correct_index": 0,
+    "explanation": "Caffeine is the principal purine alkaloid of tea and coffee, producing CNS stimulation, diuresis and cardiac stimulation.",
+    "difficulty": "easy",
+    "tags": [
+      "alkaloids",
+      "caffeine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-5",
+    "question_text": "Which of the following is a test for alkaloids using picric acid?",
+    "options": [
+      "Hager's test giving a yellow precipitate",
+      "Molisch test giving a violet ring",
+      "Fehling's test giving a red precipitate",
+      "Biuret test giving a pink color"
+    ],
+    "correct_index": 0,
+    "explanation": "Hager's test uses saturated picric acid, which gives a yellow precipitate with alkaloids.",
+    "difficulty": "hard",
+    "tags": [
+      "alkaloids",
+      "Hager's test"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Anthraquinone glycosides are present in:",
+    "options": [
+      "Senna, cascara, rhubarb and aloe",
+      "Digitalis and strophanthus",
+      "Liquorice and ginseng",
+      "Mustard and bitter almond"
+    ],
+    "correct_index": 0,
+    "explanation": "Senna, cascara, rhubarb and aloe contain anthraquinone glycosides that act as stimulant laxatives.",
+    "difficulty": "easy",
+    "tags": [
+      "glycosides",
+      "anthraquinone"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Borntrager's test is used to detect:",
+    "options": [
+      "Anthraquinone glycosides",
+      "Cardiac glycosides",
+      "Saponin glycosides",
+      "Cyanogenetic glycosides"
+    ],
+    "correct_index": 0,
+    "explanation": "Borntrager's test detects anthraquinones: a pink to red color develops in the ammonia layer after hydrolysis and extraction with benzene.",
+    "difficulty": "medium",
+    "tags": [
+      "glycosides",
+      "Borntrager's test"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Saponin glycosides are characteristically present in:",
+    "options": [
+      "Ginseng, liquorice and shatavari",
+      "Digitalis and squill",
+      "Senna and cascara",
+      "Almonds and cherry bark"
+    ],
+    "correct_index": 0,
+    "explanation": "Saponins occur in ginseng (ginsenosides), liquorice (glycyrrhizin) and shatavari; they foam and hemolyze red cells.",
+    "difficulty": "medium",
+    "tags": [
+      "glycosides",
+      "saponins"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "A cardiac glycoside molecule consists of:",
+    "options": [
+      "A steroidal aglycone linked to a sugar moiety",
+      "An alkaloidal base with an organic acid",
+      "A terpene with a resin acid",
+      "A protein with a carbohydrate"
+    ],
+    "correct_index": 0,
+    "explanation": "Cardiac glycosides have a cyclopentanoperhydrophenanthrene (steroid) aglycone with a lactone ring, attached to sugars (glycones).",
+    "difficulty": "medium",
+    "tags": [
+      "glycosides",
+      "cardiac"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Ouabain, a cardiac glycoside, is obtained from:",
+    "options": [
+      "Strophanthus gratus seeds",
+      "Digitalis purpurea leaves",
+      "Urginea maritima bulbs",
+      "Nerium oleander bark"
+    ],
+    "correct_index": 0,
+    "explanation": "Ouabain is a rapidly acting cardiac glycoside obtained from the seeds of Strophanthus gratus.",
+    "difficulty": "hard",
+    "tags": [
+      "glycosides",
+      "ouabain"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Squill (Urginea maritima) contains:",
+    "options": [
+      "Cardiac glycosides such as scillaren",
+      "Anthraquinone glycosides",
+      "Cyanogenetic glycosides",
+      "Flavonoid glycosides"
+    ],
+    "correct_index": 0,
+    "explanation": "Squill contains cardiac glycosides (scillaren A and B) with digitalis-like cardiotonic action.",
+    "difficulty": "hard",
+    "tags": [
+      "glycosides",
+      "squill"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Glycyrrhizic acid on hydrolysis yields:",
+    "options": [
+      "Glycyrrhetinic acid and two molecules of glucose",
+      "Sennosides together with glucose",
+      "Digoxin and digitoxose sugars",
+      "Amygdalin and benzaldehyde"
+    ],
+    "correct_index": 0,
+    "explanation": "Glycyrrhizin is a saponin glycoside that hydrolyzes to glycyrrhetinic acid plus two glucose molecules, giving liquorice its sweetness.",
+    "difficulty": "medium",
+    "tags": [
+      "glycosides",
+      "liquorice"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Diosgenin, a steroidal saponin, is obtained from:",
+    "options": [
+      "Dioscorea (yam) species",
+      "Digitalis species",
+      "Cinchona species",
+      "Papaver species"
+    ],
+    "correct_index": 0,
+    "explanation": "Diosgenin from Dioscorea tubers is a key starting material for the semisynthesis of steroid hormones and oral contraceptives.",
+    "difficulty": "medium",
+    "tags": [
+      "glycosides",
+      "diosgenin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Amygdalin, a cyanogenetic glycoside, is present in:",
+    "options": [
+      "Bitter almonds",
+      "Sweet oranges",
+      "Green tea leaves",
+      "Sugarcane juice"
+    ],
+    "correct_index": 0,
+    "explanation": "Amygdalin in bitter almonds liberates hydrogen cyanide on hydrolysis; the same glycoside occurs in peach and cherry kernels.",
+    "difficulty": "medium",
+    "tags": [
+      "glycosides",
+      "cyanogenetic"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Sinigrin, an isothiocyanate glycoside, is present in:",
+    "options": [
+      "Black mustard seeds",
+      "Coriander fruits",
+      "Clove buds",
+      "Ginger rhizomes"
+    ],
+    "correct_index": 0,
+    "explanation": "Sinigrin in black mustard liberates allyl isothiocyanate (volatile oil of mustard) when hydrolyzed by myrosin.",
+    "difficulty": "hard",
+    "tags": [
+      "glycosides",
+      "sinigrin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Rutin, a flavonoid glycoside, is obtained from:",
+    "options": [
+      "Buckwheat",
+      "Wheat bran",
+      "Rice husk",
+      "Barley grain"
+    ],
+    "correct_index": 0,
+    "explanation": "Rutin (vitamin P) is a flavonoid glycoside obtained from buckwheat, used to reduce capillary fragility.",
+    "difficulty": "medium",
+    "tags": [
+      "glycosides",
+      "rutin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Hesperidin, a flavonoid glycoside, is present in:",
+    "options": [
+      "Citrus fruits such as orange and lemon",
+      "Roasted coffee bean kernels",
+      "Fermented cocoa bean nibs",
+      "Fresh peppermint leaves"
+    ],
+    "correct_index": 0,
+    "explanation": "Hesperidin occurs in the rind and albedo of citrus fruits and has vitamin P-like action on capillaries.",
+    "difficulty": "medium",
+    "tags": [
+      "glycosides",
+      "hesperidin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Dicoumarol, formed from coumarin in spoiled sweet clover, is used as:",
+    "options": [
+      "An oral anticoagulant",
+      "A cardiac stimulant",
+      "A laxative",
+      "An antihistamine"
+    ],
+    "correct_index": 0,
+    "explanation": "Coumarin glycosides in sweet clover convert to dicoumarol during spoilage; dicoumarol and its analogs (warfarin) are anticoagulants.",
+    "difficulty": "hard",
+    "tags": [
+      "glycosides",
+      "coumarin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Cardiac glycosides are used therapeutically for:",
+    "options": [
+      "Congestive heart failure and atrial fibrillation",
+      "Hypertensive crisis management",
+      "Acute bronchial asthma attacks",
+      "Peptic ulcer disease therapy"
+    ],
+    "correct_index": 0,
+    "explanation": "Cardiac glycosides (digoxin, digitoxin) increase myocardial contractility and slow AV conduction, treating heart failure and atrial fibrillation.",
+    "difficulty": "easy",
+    "tags": [
+      "glycosides",
+      "cardiac use"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-6",
+    "question_text": "Digitoxin differs from digoxin in being:",
+    "options": [
+      "More lipid soluble with better oral absorption and longer half-life",
+      "Water soluble and given only intravenously",
+      "Completely inactive by mouth",
+      "A synthetic steroid with no sugar"
+    ],
+    "correct_index": 0,
+    "explanation": "Digitoxin has one less hydroxyl group than digoxin, making it more lipid soluble, better absorbed orally and longer acting.",
+    "difficulty": "hard",
+    "tags": [
+      "glycosides",
+      "digitoxin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Enfleurage is a method used to extract volatile oils from:",
+    "options": [
+      "Delicate flowers such as jasmine and rose",
+      "Dried barks and woody stems",
+      "Underground rhizomes",
+      "Ripe citrus fruit peels"
+    ],
+    "correct_index": 0,
+    "explanation": "Enfleurage extracts oils from delicate flowers by absorption into odorless fat, used when heat would destroy the fragrance.",
+    "difficulty": "hard",
+    "tags": [
+      "volatile oils",
+      "enfleurage"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "The cold expression (scarification) method is used to obtain oil from:",
+    "options": [
+      "Citrus fruit peels like lemon and orange",
+      "Delicate rose petals and jasmine",
+      "Dried clove flower buds",
+      "Sandalwood heartwood chips"
+    ],
+    "correct_index": 0,
+    "explanation": "Cold expression squeezes volatile oil from the oil glands of citrus peels without heat, preserving the fresh odor.",
+    "difficulty": "medium",
+    "tags": [
+      "volatile oils",
+      "expression"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Volatile oils differ from fixed oils because volatile oils:",
+    "options": [
+      "Evaporate at room temperature and are not glycerides",
+      "Do not evaporate and leave a grease spot",
+      "Are soluble only in water",
+      "Are solid at body temperature"
+    ],
+    "correct_index": 0,
+    "explanation": "Volatile (essential) oils evaporate at room temperature leaving no stain and are not esters of glycerol, unlike fixed oils.",
+    "difficulty": "easy",
+    "tags": [
+      "volatile oils",
+      "properties"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Turpentine oil is obtained from the:",
+    "options": [
+      "Oleoresin of Pinus species",
+      "Fruits of citrus species",
+      "Leaves of eucalyptus species",
+      "Rhizomes of ginger species"
+    ],
+    "correct_index": 0,
+    "explanation": "Turpentine oil is distilled from the oleoresin (turpentine) tapped from Pinus trees; the residue is colophony.",
+    "difficulty": "medium",
+    "tags": [
+      "volatile oils",
+      "turpentine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "The chief constituent of turpentine oil is:",
+    "options": [
+      "Pinene",
+      "Menthol",
+      "Cineole",
+      "Eugenol"
+    ],
+    "correct_index": 0,
+    "explanation": "Turpentine oil is mainly pinene, a bicyclic terpene with rubefacient and solvent properties.",
+    "difficulty": "medium",
+    "tags": [
+      "volatile oils",
+      "pinene"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Anethole is the chief constituent of:",
+    "options": [
+      "Anise and fennel oils",
+      "Peppermint oil",
+      "Clove oil",
+      "Turpentine oil"
+    ],
+    "correct_index": 0,
+    "explanation": "Anethole, a phenylpropanoid, is the principal constituent of anise oil and fennel oil, giving their characteristic flavor.",
+    "difficulty": "medium",
+    "tags": [
+      "volatile oils",
+      "anethole"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Carvone is the chief constituent of:",
+    "options": [
+      "Dill and caraway oils",
+      "Rose oil",
+      "Sandalwood oil",
+      "Wintergreen oil"
+    ],
+    "correct_index": 0,
+    "explanation": "Carvone is the main constituent of dill oil and caraway oil, responsible for their characteristic odor.",
+    "difficulty": "medium",
+    "tags": [
+      "volatile oils",
+      "carvone"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Linalool is the chief constituent of:",
+    "options": [
+      "Coriander oil",
+      "Clove oil",
+      "Peppermint oil",
+      "Eucalyptus oil"
+    ],
+    "correct_index": 0,
+    "explanation": "Linalool is a monoterpene alcohol that is the principal constituent of coriander oil.",
+    "difficulty": "hard",
+    "tags": [
+      "volatile oils",
+      "linalool"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Santalol is the chief constituent of:",
+    "options": [
+      "Sandalwood oil",
+      "Rose oil",
+      "Lemon oil",
+      "Ginger oil"
+    ],
+    "correct_index": 0,
+    "explanation": "Santalol, a sesquiterpene alcohol, is the chief constituent of sandalwood oil used in perfumery.",
+    "difficulty": "medium",
+    "tags": [
+      "volatile oils",
+      "santalol"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Methyl salicylate is the chief constituent of:",
+    "options": [
+      "Oil of wintergreen",
+      "Peppermint oil",
+      "Clove oil",
+      "Anise oil"
+    ],
+    "correct_index": 0,
+    "explanation": "Oil of wintergreen (Gaultheria) consists mainly of methyl salicylate, a natural analgesic counterirritant.",
+    "difficulty": "medium",
+    "tags": [
+      "volatile oils",
+      "methyl salicylate"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Oil of wintergreen is used externally as:",
+    "options": [
+      "A counterirritant and rubefacient in ointments",
+      "An oral antacid suspension",
+      "An intravenous anesthetic agent",
+      "A stimulant laxative preparation"
+    ],
+    "correct_index": 0,
+    "explanation": "Methyl salicylate is applied topically for muscular and joint pain as a counterirritant/rubefacient.",
+    "difficulty": "easy",
+    "tags": [
+      "volatile oils",
+      "wintergreen use"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Eucalyptus oil is used as:",
+    "options": [
+      "A decongestant and antiseptic inhalant",
+      "An oral antidiabetic",
+      "An intravenous anticoagulant",
+      "A diagnostic dye"
+    ],
+    "correct_index": 0,
+    "explanation": "Eucalyptus oil, rich in cineole, is used in inhalations as a decongestant and mild antiseptic for respiratory infections.",
+    "difficulty": "easy",
+    "tags": [
+      "volatile oils",
+      "eucalyptus use"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Clove oil is used in dentistry as:",
+    "options": [
+      "A local analgesic for toothache",
+      "A filling material",
+      "A tooth whitener",
+      "An anesthetic for extraction"
+    ],
+    "correct_index": 0,
+    "explanation": "Eugenol, the chief constituent of clove oil, acts as a local analgesic; oil of cloves is applied for toothache and in dental cements.",
+    "difficulty": "easy",
+    "tags": [
+      "volatile oils",
+      "clove use"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Rose oil is obtained by:",
+    "options": [
+      "Steam distillation of fresh rose petals",
+      "Cold pressing of rose hips",
+      "Solvent extraction of rose wood",
+      "Fermentation of rose roots"
+    ],
+    "correct_index": 0,
+    "explanation": "Rose oil (otto of rose) is obtained by steam distillation of fresh rose petals, chiefly in Bulgaria and Turkey.",
+    "difficulty": "medium",
+    "tags": [
+      "volatile oils",
+      "rose oil"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-7",
+    "question_text": "Thymol, obtained from thyme oil, is used as:",
+    "options": [
+      "An antiseptic and anthelmintic",
+      "A cardiac glycoside substitute",
+      "An oral contraceptive",
+      "A diagnostic reagent"
+    ],
+    "correct_index": 0,
+    "explanation": "Thymol is a phenolic constituent of thyme oil with antiseptic and anthelmintic (hookworm) properties.",
+    "difficulty": "medium",
+    "tags": [
+      "volatile oils",
+      "thymol"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Chemically, resins are:",
+    "options": [
+      "Complex mixtures of resin acids, esters, alcohols and terpenes",
+      "Simple sugars and starch polysaccharides",
+      "Pure proteins of plant origin only",
+      "Salts of inorganic mineral acids"
+    ],
+    "correct_index": 0,
+    "explanation": "Resins are amorphous complex mixtures of resin acids, resin esters, alcohols, phenols and terpenes, insoluble in water.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "chemistry"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Resins are insoluble in:",
+    "options": [
+      "Water but soluble in alcohol and organic solvents",
+      "Alcohol but soluble in water",
+      "Both water and organic solvents",
+      "All solvents including benzene"
+    ],
+    "correct_index": 0,
+    "explanation": "Resins are insoluble in water but dissolve in alcohol, ether, chloroform and other organic solvents.",
+    "difficulty": "easy",
+    "tags": [
+      "resins",
+      "solubility"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "A gum-resin is a combination of:",
+    "options": [
+      "Gum and resin, such as asafoetida",
+      "Volatile oil and resin only",
+      "Sugar and resin only",
+      "Alkaloid and resin only"
+    ],
+    "correct_index": 0,
+    "explanation": "Gum-resins contain both gum and resin; asafoetida and gamboge are examples.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "gum-resin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "An oleo-resin is a combination of:",
+    "options": [
+      "Volatile oil and resin, such as ginger oleoresin",
+      "Fixed oil and gum together only",
+      "Resin and alkaloid together only",
+      "Sugar and mucilage together only"
+    ],
+    "correct_index": 0,
+    "explanation": "Oleo-resins contain volatile oil together with resin, e.g., oleoresin of ginger and capsicum.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "oleo-resin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "An oleo-gum-resin contains:",
+    "options": [
+      "Volatile oil, gum and resin, such as myrrh",
+      "Only resin and fixed oil",
+      "Only gum and sugar",
+      "Only volatile oil and alkaloid"
+    ],
+    "correct_index": 0,
+    "explanation": "Oleo-gum-resins contain volatile oil, gum and resin together; myrrh, frankincense and asafoetida are examples.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "oleo-gum-resin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "A balsam is a resin that contains:",
+    "options": [
+      "Benzoic or cinnamic acid, or both",
+      "Only sugars and gums",
+      "Only volatile oils",
+      "Only alkaloidal salts"
+    ],
+    "correct_index": 0,
+    "explanation": "Balsams are resinous mixtures containing benzoic or cinnamic acid or their esters, e.g., benzoin, tolu balsam and Peru balsam.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "balsam"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Tolu balsam and Peru balsam are examples of:",
+    "options": [
+      "Balsams",
+      "Gum-resins",
+      "Oleo-resins",
+      "Fixed oils"
+    ],
+    "correct_index": 0,
+    "explanation": "Tolu and Peru balsams are balsams containing cinnamic and benzoic acids, used as expectorants and in perfumery.",
+    "difficulty": "easy",
+    "tags": [
+      "resins",
+      "balsams"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Colophony (rosin) is obtained from:",
+    "options": [
+      "The oleoresin of Pinus species after distilling turpentine oil",
+      "The latex of Papaver somniferum plant",
+      "The bark of Cinchona officinalis",
+      "The rhizome of Zingiber officinale"
+    ],
+    "correct_index": 0,
+    "explanation": "Colophony is the residue left after distilling turpentine oil from pine oleoresin; it is used in plasters and ointments.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "colophony"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Capsaicin, the pungent principle of capsicum, is used as:",
+    "options": [
+      "A counterirritant and topical analgesic",
+      "An oral antidiabetic drug",
+      "A cardiac stimulant drug",
+      "A stimulant laxative agent"
+    ],
+    "correct_index": 0,
+    "explanation": "Capsaicin from capsicum fruit depletes substance P, acting as a counterirritant and topical analgesic in creams.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "capsaicin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Turpentine oil and colophony are both products of:",
+    "options": [
+      "The oleoresin of Pinus species",
+      "The fruit of citrus species",
+      "The bark of cinnamon species",
+      "The seed of Ricinus species"
+    ],
+    "correct_index": 0,
+    "explanation": "Distillation of pine oleoresin yields turpentine oil (volatile) and leaves colophony (rosin) as the non-volatile residue.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "turpentine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Compound tincture of benzoin is used as:",
+    "options": [
+      "An inhalant antiseptic for the respiratory tract",
+      "An oral anticoagulant medicine",
+      "A laxative syrup preparation",
+      "An antidote for acute poisoning"
+    ],
+    "correct_index": 0,
+    "explanation": "Compound tincture of benzoin (friar's balsam) is used as an inhalant and topical antiseptic for respiratory and skin conditions.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "benzoin use"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Asafoetida (hing) is the dried:",
+    "options": [
+      "Oleo-gum-resin from the rhizome and roots of Ferula species",
+      "Resin from the bark of Pinus species",
+      "Gum from the stem of Acacia species",
+      "Balsam from the trunk of Styrax species"
+    ],
+    "correct_index": 0,
+    "explanation": "Asafoetida is an oleo-gum-resin obtained by incising the rhizome and roots of Ferula foetida; it is a carminative.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "asafoetida"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Podophyllum resin contains the lignan:",
+    "options": [
+      "Podophyllotoxin",
+      "Podophyllin ester",
+      "Ricinoleic acid",
+      "Sennoside"
+    ],
+    "correct_index": 0,
+    "explanation": "Podophyllum resin contains podophyllotoxin, a lignan with cytotoxic and antiviral (wart treatment) activity.",
+    "difficulty": "hard",
+    "tags": [
+      "resins",
+      "podophyllotoxin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Cannabis resin (charas) is obtained from the:",
+    "options": [
+      "Flowering tops of Cannabis sativa",
+      "Leaves of Nicotiana tabacum",
+      "Roots of Rauwolfia serpentina",
+      "Bark of Cinchona species"
+    ],
+    "correct_index": 0,
+    "explanation": "Charas is the resinous exudate from the flowering tops of female Cannabis sativa plants, containing cannabinoids.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "cannabis"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-8",
+    "question_text": "Peru balsam is used in medicine as:",
+    "options": [
+      "An expectorant and in dermatological preparations",
+      "A cardiac glycoside preparation",
+      "A hypoglycemic agent for diabetes",
+      "A diagnostic reagent in laboratories"
+    ],
+    "correct_index": 0,
+    "explanation": "Peru balsam is used as an expectorant internally and as a stimulant and antiseptic in skin preparations externally.",
+    "difficulty": "medium",
+    "tags": [
+      "resins",
+      "peru balsam"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Fixed oils and fats are chemically:",
+    "options": [
+      "Triglycerides (esters of glycerol with fatty acids)",
+      "Complex terpene hydrocarbon mixtures",
+      "Polysaccharide polymers of glucose",
+      "Protein complexes found in plants"
+    ],
+    "correct_index": 0,
+    "explanation": "Fixed oils and fats are glyceryl esters of fatty acids (triglycerides); they are non-volatile and leave a permanent stain.",
+    "difficulty": "easy",
+    "tags": [
+      "lipids",
+      "chemistry"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Fixed oils differ from volatile oils because fixed oils:",
+    "options": [
+      "Do not evaporate and leave a permanent grease spot",
+      "Evaporate completely on warming",
+      "Are soluble in water",
+      "Are always solid in nature"
+    ],
+    "correct_index": 0,
+    "explanation": "Fixed oils do not evaporate at room temperature and leave a permanent grease spot on paper, unlike volatile oils.",
+    "difficulty": "easy",
+    "tags": [
+      "lipids",
+      "fixed vs volatile"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Lanolin (wool fat) has the special property of:",
+    "options": [
+      "Absorbing large amounts of water",
+      "Melting at body temperature",
+      "Being completely water soluble",
+      "Evaporating on standing"
+    ],
+    "correct_index": 0,
+    "explanation": "Lanolin absorbs up to 100-200% of its weight of water, making it valuable in water-in-oil emulsions and ointments.",
+    "difficulty": "medium",
+    "tags": [
+      "lipids",
+      "lanolin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Cocoa butter is used as a suppository base because it:",
+    "options": [
+      "Melts at body temperature",
+      "Dissolves rapidly in water",
+      "Never softens in warm climates",
+      "Is a mineral wax"
+    ],
+    "correct_index": 0,
+    "explanation": "Cocoa butter (theobroma oil) is solid at room temperature but melts at about 30-35°C, i.e., at body temperature.",
+    "difficulty": "easy",
+    "tags": [
+      "lipids",
+      "cocoa butter"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "The chief fatty acid of olive oil is:",
+    "options": [
+      "Oleic acid",
+      "Stearic acid",
+      "Linolenic acid",
+      "Ricinoleic acid"
+    ],
+    "correct_index": 0,
+    "explanation": "Olive oil consists mainly of oleic acid (about 70%) and is a non-drying fixed oil.",
+    "difficulty": "medium",
+    "tags": [
+      "lipids",
+      "olive oil"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Arachis oil is obtained from:",
+    "options": [
+      "Groundnut (Arachis hypogaea)",
+      "Olive (Olea europaea)",
+      "Sesame (Sesamum indicum)",
+      "Coconut (Cocos nucifera)"
+    ],
+    "correct_index": 0,
+    "explanation": "Arachis oil, also called groundnut or peanut oil, is expressed from Arachis hypogaea kernels.",
+    "difficulty": "easy",
+    "tags": [
+      "lipids",
+      "arachis oil"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Safflower oil is rich in:",
+    "options": [
+      "Linoleic acid",
+      "Erucic acid",
+      "Ricinoleic acid",
+      "Myristic acid"
+    ],
+    "correct_index": 0,
+    "explanation": "Safflower oil has a high content of linoleic acid, making it a semi-drying oil used in dietary supplements.",
+    "difficulty": "hard",
+    "tags": [
+      "lipids",
+      "safflower"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Chaulmoogra oil was historically used in the treatment of:",
+    "options": [
+      "Leprosy",
+      "Malaria",
+      "Tuberculosis",
+      "Diabetes"
+    ],
+    "correct_index": 0,
+    "explanation": "Chaulmoogra oil from Hydnocarpus seeds was the traditional remedy for leprosy before modern antibiotics.",
+    "difficulty": "medium",
+    "tags": [
+      "lipids",
+      "chaulmoogra"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "The drying property of linseed oil is due to its high content of:",
+    "options": [
+      "Linolenic acid",
+      "Oleic acid",
+      "Palmitic acid",
+      "Ricinoleic acid"
+    ],
+    "correct_index": 0,
+    "explanation": "Linseed oil is a drying oil rich in linolenic acid, which polymerizes on exposure to air, used in paints and varnishes.",
+    "difficulty": "medium",
+    "tags": [
+      "lipids",
+      "linseed"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Castor oil is obtained from the seeds of Ricinus communis by:",
+    "options": [
+      "Cold expression (pressing)",
+      "Steam distillation",
+      "Solvent maceration with ether",
+      "Fermentation of the seeds"
+    ],
+    "correct_index": 0,
+    "explanation": "Castor oil is obtained by cold expression of Ricinus seeds; heat treatment is avoided to prevent inactivation.",
+    "difficulty": "medium",
+    "tags": [
+      "lipids",
+      "castor extraction"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Saponification value of a fat is a measure of:",
+    "options": [
+      "The average molecular weight of its fatty acids",
+      "Its degree of unsaturation",
+      "Its free fatty acid content",
+      "Its rancidity"
+    ],
+    "correct_index": 0,
+    "explanation": "Saponification value is the mg of KOH needed to saponify 1 g of fat; a higher value indicates lower average molecular weight of fatty acids.",
+    "difficulty": "hard",
+    "tags": [
+      "lipids",
+      "saponification value"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Iodine value of an oil indicates its:",
+    "options": [
+      "Degree of unsaturation",
+      "Water content",
+      "Ash content",
+      "Sugar content"
+    ],
+    "correct_index": 0,
+    "explanation": "Iodine value measures the grams of iodine absorbed by 100 g of fat, reflecting the number of double bonds (unsaturation).",
+    "difficulty": "medium",
+    "tags": [
+      "lipids",
+      "iodine value"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Acid value of a fat measures its:",
+    "options": [
+      "Free fatty acid content",
+      "Unsaturation",
+      "Saponification number",
+      "Peroxide content"
+    ],
+    "correct_index": 0,
+    "explanation": "Acid value is the mg of KOH required to neutralize free fatty acids in 1 g of fat; it rises with hydrolysis and rancidity.",
+    "difficulty": "medium",
+    "tags": [
+      "lipids",
+      "acid value"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "Ester value of a fat is calculated as:",
+    "options": [
+      "Saponification value minus acid value",
+      "Iodine value plus acid value",
+      "Acid value minus iodine value",
+      "Saponification value divided by iodine value"
+    ],
+    "correct_index": 0,
+    "explanation": "Ester value = saponification value − acid value; it represents the KOH needed to saponify the esters in the fat.",
+    "difficulty": "hard",
+    "tags": [
+      "lipids",
+      "ester value"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-9",
+    "question_text": "A high peroxide value in a fixed oil indicates:",
+    "options": [
+      "Rancidity due to oxidative deterioration",
+      "High unsaturation that is desirable",
+      "Presence of added water",
+      "High saponification number"
+    ],
+    "correct_index": 0,
+    "explanation": "Peroxide value measures peroxides formed by oxidation; a high value signals rancidity and poor quality of the oil.",
+    "difficulty": "medium",
+    "tags": [
+      "lipids",
+      "peroxide value"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Gums are produced by plants as:",
+    "options": [
+      "Pathological products formed after injury",
+      "Normal products of photosynthesis",
+      "Waste products of respiration",
+      "Products of seed germination"
+    ],
+    "correct_index": 0,
+    "explanation": "Gums are pathological products exuded when the plant is injured or infected (gummosis), e.g., acacia and tragacanth.",
+    "difficulty": "medium",
+    "tags": [
+      "gums",
+      "origin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Mucilages are produced by plants as:",
+    "options": [
+      "Physiological products of normal metabolism",
+      "Pathological exudates after injury",
+      "Products of fungal infection only",
+      "Artificial synthetic polymers"
+    ],
+    "correct_index": 0,
+    "explanation": "Mucilages are normal physiological products formed during plant growth, present in seeds, roots and leaves, e.g., ispaghula.",
+    "difficulty": "medium",
+    "tags": [
+      "gums",
+      "mucilages"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Acacia (gum arabic) is obtained from:",
+    "options": [
+      "Acacia senegal by incising the stem and branches",
+      "The seeds of Plantago ovata",
+      "The roots of Glycyrrhiza glabra",
+      "The bark of Cinnamomum zeylanicum"
+    ],
+    "correct_index": 0,
+    "explanation": "Gum arabic exudes naturally or after incision from the stems and branches of Acacia senegal.",
+    "difficulty": "easy",
+    "tags": [
+      "gums",
+      "acacia source"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Tragacanth is obtained from:",
+    "options": [
+      "Astragalus gummifer by incision",
+      "The fruit of Citrus species",
+      "The leaves of Cassia species",
+      "The roots of Rheum species"
+    ],
+    "correct_index": 0,
+    "explanation": "Tragacanth is the dried gummy exudate obtained by incision from Astragalus gummifer.",
+    "difficulty": "medium",
+    "tags": [
+      "gums",
+      "tragacanth source"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Gum tragacanth is characterized by its:",
+    "options": [
+      "High swelling index in water",
+      "Complete insolubility in water",
+      "Melting point below body temperature",
+      "Reduction of sugar content"
+    ],
+    "correct_index": 0,
+    "explanation": "Tragacanth swells in water to form a viscous gel because of its bassorin content, giving a very high swelling index.",
+    "difficulty": "medium",
+    "tags": [
+      "gums",
+      "tragacanth"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Guar gum is obtained from:",
+    "options": [
+      "The endosperm of Cyamopsis tetragonoloba seeds",
+      "The bark of Acacia senegal",
+      "The roots of Astragalus gummifer",
+      "The leaves of Aloe barbadensis"
+    ],
+    "correct_index": 0,
+    "explanation": "Guar gum is the ground endosperm of the seeds of Cyamopsis tetragonoloba (cluster bean).",
+    "difficulty": "medium",
+    "tags": [
+      "gums",
+      "guar gum"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Guar gum is used in pharmacy as a:",
+    "options": [
+      "Sustained-release and thickening agent",
+      "Tablet coating colorant",
+      "Volatile oil base",
+      "Preservative"
+    ],
+    "correct_index": 0,
+    "explanation": "Guar gum is a hydrophilic polymer used as a binder, thickening and sustained-release agent in formulations.",
+    "difficulty": "easy",
+    "tags": [
+      "gums",
+      "guar uses"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Sodium alginate is obtained from:",
+    "options": [
+      "Brown seaweeds such as Laminaria and Macrocystis",
+      "Red seaweeds such as Chondrus crispus",
+      "Freshwater algae",
+      "Marine animal shells"
+    ],
+    "correct_index": 0,
+    "explanation": "Alginic acid and its sodium salt are extracted from brown seaweeds (Phaeophyceae) like Laminaria and Macrocystis.",
+    "difficulty": "medium",
+    "tags": [
+      "gums",
+      "alginate"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Carrageenan is obtained from:",
+    "options": [
+      "Red algae (Chondrus crispus, Irish moss)",
+      "Brown algae of the Phaeophyceae class",
+      "Green algae of freshwater origin",
+      "Blue-green algae of the Cyanophyceae"
+    ],
+    "correct_index": 0,
+    "explanation": "Carrageenan is extracted from red seaweeds, principally Chondrus crispus (Irish moss).",
+    "difficulty": "medium",
+    "tags": [
+      "gums",
+      "carrageenan"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Agar is used in pharmacy as:",
+    "options": [
+      "A suspending agent and culture medium base",
+      "A volatile oil source material",
+      "An alkaloidal precipitating reagent",
+      "A mineral filler substance"
+    ],
+    "correct_index": 0,
+    "explanation": "Agar is a hydrophilic colloid used as a suspending agent, laxative and solidifying base for microbiological culture media.",
+    "difficulty": "easy",
+    "tags": [
+      "gums",
+      "agar uses"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Pectin is obtained from:",
+    "options": [
+      "Citrus peel and apple pomace",
+      "Seaweed thalli",
+      "Animal connective tissue",
+      "Mineral deposits"
+    ],
+    "correct_index": 0,
+    "explanation": "Pectin is extracted from the inner peel of citrus fruits and apple pomace.",
+    "difficulty": "easy",
+    "tags": [
+      "gums",
+      "pectin source"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Pectin is used medicinally as:",
+    "options": [
+      "An antidiarrheal and gelling agent",
+      "A cardiac stimulant",
+      "A hypnotic",
+      "A diuretic"
+    ],
+    "correct_index": 0,
+    "explanation": "Pectin is used as a demulcent antidiarrheal and as a gelling/thickening agent in pharmaceutical preparations.",
+    "difficulty": "medium",
+    "tags": [
+      "gums",
+      "pectin uses"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Maize starch is used in tablet manufacture as:",
+    "options": [
+      "A diluent and disintegrant",
+      "A lubricant only",
+      "A coating colorant",
+      "A sweetening agent"
+    ],
+    "correct_index": 0,
+    "explanation": "Starch acts as a diluent (filler) and as a disintegrant that promotes tablet breakup in water.",
+    "difficulty": "easy",
+    "tags": [
+      "gums",
+      "starch"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Dextran is produced by the action of:",
+    "options": [
+      "Leuconostoc mesenteroides on sucrose",
+      "Penicillium notatum on glucose",
+      "Saccharomyces cerevisiae on maltose",
+      "Lactobacillus on lactose"
+    ],
+    "correct_index": 0,
+    "explanation": "Dextran is a glucose polymer synthesized by Leuconostoc mesenteroides from sucrose; clinical dextran is used as a plasma substitute.",
+    "difficulty": "hard",
+    "tags": [
+      "gums",
+      "dextran"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-10",
+    "question_text": "Gelatin is obtained from:",
+    "options": [
+      "Animal collagen by partial hydrolysis",
+      "Plant gums by acid hydrolysis",
+      "Seaweed by alkali extraction",
+      "Mineral chalk by calcination"
+    ],
+    "correct_index": 0,
+    "explanation": "Gelatin is produced by partial hydrolysis of collagen from animal skin, bone and connective tissue.",
+    "difficulty": "easy",
+    "tags": [
+      "gums",
+      "gelatin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Vaccines can be classified into:",
+    "options": [
+      "Live attenuated, killed, toxoids and subunit vaccines",
+      "Only oral and injectable forms",
+      "Only bacterial and viral types",
+      "Only liquid and powder forms"
+    ],
+    "correct_index": 0,
+    "explanation": "Vaccines include live attenuated, killed (inactivated), toxoid and subunit/recombinant types.",
+    "difficulty": "easy",
+    "tags": [
+      "biological products",
+      "vaccine types"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Which of the following is a live attenuated vaccine?",
+    "options": [
+      "BCG, MMR and oral polio vaccine (OPV)",
+      "Rabies vaccine",
+      "Salk polio vaccine (IPV)",
+      "Tetanus toxoid"
+    ],
+    "correct_index": 0,
+    "explanation": "BCG, MMR and OPV contain living but weakened microorganisms (live attenuated vaccines).",
+    "difficulty": "easy",
+    "tags": [
+      "biological products",
+      "live vaccines"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "An example of a killed (inactivated) vaccine is:",
+    "options": [
+      "Rabies vaccine and Salk polio vaccine (IPV)",
+      "BCG tuberculosis vaccine",
+      "MMR measles mumps rubella vaccine",
+      "Oral polio vaccine (OPV)"
+    ],
+    "correct_index": 0,
+    "explanation": "Rabies and Salk IPV are prepared from whole killed microorganisms (inactivated vaccines).",
+    "difficulty": "medium",
+    "tags": [
+      "biological products",
+      "killed vaccines"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Tetanus toxoid is prepared by:",
+    "options": [
+      "Inactivating tetanus toxin with formaldehyde",
+      "Growing live tetanus bacilli in culture",
+      "Extracting toxin from horse serum",
+      "Synthesizing the toxin chemically"
+    ],
+    "correct_index": 0,
+    "explanation": "Toxoids are toxins detoxified with formaldehyde or heat so they retain antigenicity but lose toxicity.",
+    "difficulty": "medium",
+    "tags": [
+      "biological products",
+      "toxoid"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Attenuation of a microorganism for vaccine preparation means:",
+    "options": [
+      "Weakening its virulence while preserving antigenicity",
+      "Killing it completely with heat",
+      "Increasing its toxicity for immunity",
+      "Removing all its proteins"
+    ],
+    "correct_index": 0,
+    "explanation": "Attenuation reduces virulence so the organism cannot cause disease but still stimulates protective immunity.",
+    "difficulty": "medium",
+    "tags": [
+      "biological products",
+      "attenuation"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Antitoxin serum is used for:",
+    "options": [
+      "Neutralizing circulating toxins such as tetanus toxin",
+      "Preventing bacterial growth only",
+      "Stimulating antibody production only",
+      "Replacing blood volume"
+    ],
+    "correct_index": 0,
+    "explanation": "Antitoxins are antibodies that neutralize specific toxins, used in tetanus, diphtheria and botulism.",
+    "difficulty": "easy",
+    "tags": [
+      "biological products",
+      "antitoxin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Antivenom serum is used in the treatment of:",
+    "options": [
+      "Snake bite envenomation",
+      "Tetanus infection",
+      "Rabies infection",
+      "Typhoid fever"
+    ],
+    "correct_index": 0,
+    "explanation": "Antivenom (antivenin) contains antibodies against snake venom and is the specific treatment for poisonous snake bites.",
+    "difficulty": "easy",
+    "tags": [
+      "biological products",
+      "antivenom"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Human immunoglobulins provide:",
+    "options": [
+      "Immediate passive immunity",
+      "Long lasting active immunity",
+      "Permanent genetic immunity",
+      "No protection at all"
+    ],
+    "correct_index": 0,
+    "explanation": "Ready-made antibodies in immunoglobulins confer immediate but temporary passive immunity.",
+    "difficulty": "easy",
+    "tags": [
+      "biological products",
+      "immunoglobulins"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "OPV (Sabin) and IPV (Salk) are vaccines against:",
+    "options": [
+      "Poliomyelitis",
+      "Measles",
+      "Tuberculosis",
+      "Diphtheria"
+    ],
+    "correct_index": 0,
+    "explanation": "OPV is the live oral (Sabin) vaccine and IPV the killed injectable (Salk) vaccine, both against polio.",
+    "difficulty": "easy",
+    "tags": [
+      "biological products",
+      "polio vaccine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "The measles vaccine is a:",
+    "options": [
+      "Live attenuated vaccine",
+      "Killed whole-cell vaccine",
+      "Toxoid vaccine",
+      "Polysaccharide vaccine"
+    ],
+    "correct_index": 0,
+    "explanation": "Measles vaccine is live attenuated and is given as part of the MMR combination.",
+    "difficulty": "easy",
+    "tags": [
+      "biological products",
+      "measles"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Immunization of pregnant women with tetanus toxoid prevents:",
+    "options": [
+      "Neonatal tetanus",
+      "Childhood measles",
+      "Congenital rubella",
+      "Whooping cough"
+    ],
+    "correct_index": 0,
+    "explanation": "Maternal tetanus toxoid immunization produces protective antibodies that cross the placenta, preventing neonatal tetanus.",
+    "difficulty": "medium",
+    "tags": [
+      "biological products",
+      "TT pregnancy"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Vaccines are stored and transported at a temperature of:",
+    "options": [
+      "2-8°C maintaining the cold chain",
+      "Room temperature 25-30°C",
+      "Freezing below -20°C",
+      "Any temperature is acceptable"
+    ],
+    "correct_index": 0,
+    "explanation": "Most vaccines require cold chain storage at 2-8°C; freezing or excess heat destroys their potency.",
+    "difficulty": "easy",
+    "tags": [
+      "biological products",
+      "cold chain"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "BCG stands for:",
+    "options": [
+      "Bacillus Calmette-Guérin",
+      "Bacillus Clostridium gangrenosum",
+      "Bacterium cholera group",
+      "Bacillus coli gangrenosum"
+    ],
+    "correct_index": 0,
+    "explanation": "BCG is the Bacillus Calmette-Guérin strain of attenuated Mycobacterium bovis, used against tuberculosis.",
+    "difficulty": "medium",
+    "tags": [
+      "biological products",
+      "BCG"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "Tuberculin is used for the:",
+    "options": [
+      "Mantoux test to detect tuberculosis exposure",
+      "Treatment of tuberculosis",
+      "Immunization against tuberculosis",
+      "Culture of tubercle bacilli"
+    ],
+    "correct_index": 0,
+    "explanation": "Tuberculin (PPD) is injected intradermally in the Mantoux test; a positive reaction indicates exposure to TB.",
+    "difficulty": "medium",
+    "tags": [
+      "biological products",
+      "tuberculin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-11",
+    "question_text": "The hepatitis B vaccine is produced by:",
+    "options": [
+      "Recombinant DNA technology",
+      "Attenuating live hepatitis virus",
+      "Inactivating the virus with formalin",
+      "Extraction from human serum only"
+    ],
+    "correct_index": 0,
+    "explanation": "Hepatitis B vaccine is a recombinant vaccine made from the surface antigen produced in yeast cells by genetic engineering.",
+    "difficulty": "medium",
+    "tags": [
+      "biological products",
+      "hepatitis B"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Enzymes are best defined as:",
+    "options": [
+      "Biological catalysts that speed up biochemical reactions",
+      "Inorganic salts that neutralize acids",
+      "Carbohydrates that store energy",
+      "Lipids that form cell membranes"
+    ],
+    "correct_index": 0,
+    "explanation": "Enzymes are protein (or RNA) catalysts that accelerate biochemical reactions without being consumed.",
+    "difficulty": "easy",
+    "tags": [
+      "enzymes",
+      "definition"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Papain obtained from papaya latex is used as:",
+    "options": [
+      "A meat tenderizer and digestive aid",
+      "A blood anticoagulant",
+      "A bronchodilator",
+      "A cardiac stimulant"
+    ],
+    "correct_index": 0,
+    "explanation": "Papain is a proteolytic enzyme used as a meat tenderizer, digestive aid and in clarifying beverages.",
+    "difficulty": "easy",
+    "tags": [
+      "enzymes",
+      "papain uses"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Bromelain is obtained from:",
+    "options": [
+      "Pineapple (Ananas comosus)",
+      "Papaya fruit",
+      "Fig tree latex",
+      "Jack bean seeds"
+    ],
+    "correct_index": 0,
+    "explanation": "Bromelain is a proteolytic enzyme obtained from the stem and fruit of pineapple.",
+    "difficulty": "easy",
+    "tags": [
+      "enzymes",
+      "bromelain"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Bromelain is used therapeutically as:",
+    "options": [
+      "An anti-inflammatory and digestive enzyme",
+      "An antidiabetic agent for diabetes",
+      "A local anesthetic agent",
+      "A laxative preparation"
+    ],
+    "correct_index": 0,
+    "explanation": "Bromelain reduces inflammation and edema (e.g., after surgery) and aids protein digestion.",
+    "difficulty": "medium",
+    "tags": [
+      "enzymes",
+      "bromelain uses"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Trypsin is obtained from:",
+    "options": [
+      "The pancreas of animals",
+      "Pineapple stems",
+      "Papaya latex",
+      "Fermented barley"
+    ],
+    "correct_index": 0,
+    "explanation": "Trypsin is a pancreatic proteolytic enzyme obtained from animal pancreas.",
+    "difficulty": "easy",
+    "tags": [
+      "enzymes",
+      "trypsin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Chymotrypsin is used for:",
+    "options": [
+      "Debridement of wounds and digestion of proteins",
+      "Dissolving blood clots in veins",
+      "Lowering blood sugar",
+      "Relieving bronchial spasm"
+    ],
+    "correct_index": 0,
+    "explanation": "Chymotrypsin digests necrotic tissue (wound debridement) and is used with trypsin for inflammatory conditions.",
+    "difficulty": "medium",
+    "tags": [
+      "enzymes",
+      "chymotrypsin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Pepsin is obtained from:",
+    "options": [
+      "The gastric juice of animals",
+      "The pancreas of ox",
+      "The saliva of mammals",
+      "Fermented yeast"
+    ],
+    "correct_index": 0,
+    "explanation": "Pepsin is a proteolytic enzyme secreted in gastric juice and obtained from animal stomachs.",
+    "difficulty": "easy",
+    "tags": [
+      "enzymes",
+      "pepsin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Pepsin is used in medicine for:",
+    "options": [
+      "Digestive insufficiency (protein digestion)",
+      "Relief of constipation",
+      "Reduction of gastric acid",
+      "Treatment of worm infestation"
+    ],
+    "correct_index": 0,
+    "explanation": "Pepsin is given as a digestive aid with hydrochloric acid in hypochlorhydria and digestive insufficiency.",
+    "difficulty": "easy",
+    "tags": [
+      "enzymes",
+      "pepsin uses"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Diastase is obtained from:",
+    "options": [
+      "Malt (germinated barley)",
+      "Pineapple fruit",
+      "Ox pancreas",
+      "Jack bean seeds"
+    ],
+    "correct_index": 0,
+    "explanation": "Diastase (amylase) is prepared from malt, the germinated grain of barley, and digests starch.",
+    "difficulty": "medium",
+    "tags": [
+      "enzymes",
+      "diastase"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Rennet, used in cheese making, is obtained from:",
+    "options": [
+      "The stomach of young calves",
+      "The pancreas of pigs",
+      "Yeast fermentation",
+      "Soybean sprouts"
+    ],
+    "correct_index": 0,
+    "explanation": "Rennet contains rennin (chymosin) from calf stomachs; it coagulates milk casein in cheese production.",
+    "difficulty": "medium",
+    "tags": [
+      "enzymes",
+      "rennet"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Urease is obtained from:",
+    "options": [
+      "Jack bean (Canavalia ensiformis)",
+      "Pineapple stem latex",
+      "Germinated barley malt",
+      "The ox stomach lining"
+    ],
+    "correct_index": 0,
+    "explanation": "Urease, which splits urea into ammonia and carbon dioxide, is obtained from jack bean seeds.",
+    "difficulty": "hard",
+    "tags": [
+      "enzymes",
+      "urease"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Streptokinase is used clinically for:",
+    "options": [
+      "Dissolving blood clots in myocardial infarction",
+      "Treating bacterial pneumonia",
+      "Relieving asthma attacks",
+      "Lowering blood cholesterol"
+    ],
+    "correct_index": 0,
+    "explanation": "Streptokinase, obtained from streptococci, activates plasminogen to dissolve thrombi in MI and deep vein thrombosis.",
+    "difficulty": "medium",
+    "tags": [
+      "enzymes",
+      "streptokinase"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Hyaluronidase is commonly known as the:",
+    "options": [
+      "Spreading factor",
+      "Clotting factor",
+      "Growth factor",
+      "Anti-inflammatory factor"
+    ],
+    "correct_index": 0,
+    "explanation": "Hyaluronidase depolymerizes hyaluronic acid in connective tissue, increasing tissue permeability, hence 'spreading factor'.",
+    "difficulty": "medium",
+    "tags": [
+      "enzymes",
+      "hyaluronidase"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Enzymes show maximum activity at their:",
+    "options": [
+      "Optimum temperature and pH",
+      "Freezing temperature",
+      "Maximum acidity",
+      "Boiling temperature"
+    ],
+    "correct_index": 0,
+    "explanation": "Each enzyme works best at an optimum temperature (usually 37°C) and optimum pH; extremes denature it.",
+    "difficulty": "easy",
+    "tags": [
+      "enzymes",
+      "optimum conditions"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-13",
+    "question_text": "Pancreatin is obtained from:",
+    "options": [
+      "The pancreas of ox or pig",
+      "The leaves of papaya",
+      "The roots of ginger",
+      "Fermented rice"
+    ],
+    "correct_index": 0,
+    "explanation": "Pancreatin is a mixture of pancreatic enzymes (amylase, lipase, protease) obtained from ox or pig pancreas.",
+    "difficulty": "easy",
+    "tags": [
+      "enzymes",
+      "pancreatin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Bioassay-guided fractionation is used to:",
+    "options": [
+      "Isolate the active principle from a crude extract",
+      "Determine the price of a drug",
+      "Classify plants botanically",
+      "Measure the ash content"
+    ],
+    "correct_index": 0,
+    "explanation": "In bioassay-guided fractionation, each fraction is tested for activity until the pure active compound is isolated.",
+    "difficulty": "medium",
+    "tags": [
+      "drug discovery",
+      "fractionation"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Morphine, the first alkaloid isolated in pure form, was obtained from:",
+    "options": [
+      "Opium by Serturner in 1805",
+      "Cinchona bark by Pelletier",
+      "Nux vomica by Caventou",
+      "Tea leaves by Runge"
+    ],
+    "correct_index": 0,
+    "explanation": "Friedrich Serturner isolated morphine from opium in 1805, the first alkaloid ever isolated.",
+    "difficulty": "medium",
+    "tags": [
+      "drug discovery",
+      "morphine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Salicin from willow bark is the natural precursor of:",
+    "options": [
+      "Aspirin",
+      "Paracetamol",
+      "Penicillin",
+      "Quinine"
+    ],
+    "correct_index": 0,
+    "explanation": "Salicin from Salix (willow) bark yields salicylic acid, from which acetylsalicylic acid (aspirin) was developed.",
+    "difficulty": "easy",
+    "tags": [
+      "drug discovery",
+      "salicin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Artemisinin, an antimalarial drug, is obtained from:",
+    "options": [
+      "Artemisia annua (sweet wormwood)",
+      "Cinchona officinalis",
+      "Cinchona ledgeriana",
+      "Papaver somniferum"
+    ],
+    "correct_index": 0,
+    "explanation": "Artemisinin is a sesquiterpene lactone from Artemisia annua, active against chloroquine-resistant malaria.",
+    "difficulty": "medium",
+    "tags": [
+      "drug discovery",
+      "artemisinin"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Taxol (paclitaxel), an anticancer drug, is obtained from:",
+    "options": [
+      "Taxus brevifolia (Pacific yew)",
+      "Catharanthus roseus",
+      "Podophyllum peltatum",
+      "Cephaelis ipecacuanha"
+    ],
+    "correct_index": 0,
+    "explanation": "Paclitaxel is a taxane diterpene isolated from the bark of Taxus brevifolia, used against ovarian and breast cancer.",
+    "difficulty": "medium",
+    "tags": [
+      "drug discovery",
+      "taxol"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Vincristine and vinblastine from Catharanthus roseus are used for:",
+    "options": [
+      "Cancer chemotherapy",
+      "Malaria treatment",
+      "Diabetes control",
+      "Hypertension management"
+    ],
+    "correct_index": 0,
+    "explanation": "Vinca alkaloids (vincristine, vinblastine) are antimitotic drugs used in leukemia, lymphomas and other cancers.",
+    "difficulty": "easy",
+    "tags": [
+      "drug discovery",
+      "vinca"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Pilocarpine is obtained from:",
+    "options": [
+      "Pilocarpus jaborandi leaves",
+      "Physostigma venenosum seeds",
+      "Atropa belladonna roots",
+      "Erythroxylum coca leaves"
+    ],
+    "correct_index": 0,
+    "explanation": "Pilocarpine, a muscarinic agonist used in glaucoma, comes from the leaves of Pilocarpus jaborandi.",
+    "difficulty": "hard",
+    "tags": [
+      "drug discovery",
+      "pilocarpine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Tubocurarine, a skeletal muscle relaxant, is obtained from:",
+    "options": [
+      "Chondodendron tomentosum (curare)",
+      "Curarea alkaloid of nux vomica",
+      "Strychnos seeds only",
+      "Physostigma venenosum"
+    ],
+    "correct_index": 0,
+    "explanation": "Tubocurarine, the active principle of curare arrow poison, comes from Chondodendron tomentosum and blocks NMJ transmission.",
+    "difficulty": "hard",
+    "tags": [
+      "drug discovery",
+      "tubocurarine"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "The first step in natural product drug discovery is:",
+    "options": [
+      "Collection and authentication of the plant material",
+      "Clinical trials in human volunteers",
+      "Marketing of the finished product",
+      "Filing of the product patent"
+    ],
+    "correct_index": 0,
+    "explanation": "Drug discovery from nature begins with proper collection, botanical identification and authentication of the source material.",
+    "difficulty": "easy",
+    "tags": [
+      "drug discovery",
+      "process"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "High-throughput screening is used to:",
+    "options": [
+      "Rapidly test many compounds against a biological target",
+      "Screen patients for drug allergy",
+      "Separate plant pigments",
+      "Measure moisture content"
+    ],
+    "correct_index": 0,
+    "explanation": "High-throughput screening uses automated robots to test thousands of compounds quickly for activity against a target.",
+    "difficulty": "medium",
+    "tags": [
+      "drug discovery",
+      "HTS"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Ethnopharmacology is the study of:",
+    "options": [
+      "Traditional uses of plants and animals by indigenous people",
+      "Effects of drugs on ethnic groups only",
+      "Prices of medicines across countries",
+      "Adverse effects of synthetic drugs"
+    ],
+    "correct_index": 0,
+    "explanation": "Ethnopharmacology records and investigates traditional remedies used by indigenous cultures as leads for drug discovery.",
+    "difficulty": "medium",
+    "tags": [
+      "drug discovery",
+      "ethnopharmacology"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "A lead compound in drug discovery is:",
+    "options": [
+      "A compound with promising activity that can be chemically modified",
+      "A compound that failed all biological tests",
+      "A toxic impurity in the extract",
+      "The first solvent used for extraction"
+    ],
+    "correct_index": 0,
+    "explanation": "A lead is a natural or synthetic compound showing promising biological activity; it becomes a template for optimization.",
+    "difficulty": "medium",
+    "tags": [
+      "drug discovery",
+      "lead compound"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Semisynthetic drugs are prepared by:",
+    "options": [
+      "Chemical modification of natural products",
+      "Complete synthesis from petroleum",
+      "Fermentation of sugars only",
+      "Mixing two pure chemicals"
+    ],
+    "correct_index": 0,
+    "explanation": "Semisynthetic drugs are made by modifying natural molecules, e.g., codeine and naloxone from morphine.",
+    "difficulty": "easy",
+    "tags": [
+      "drug discovery",
+      "semisynthetic"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "The WHO supports research on herbal medicines mainly to:",
+    "options": [
+      "Ensure their safety, efficacy and quality",
+      "Increase their market price",
+      "Replace all synthetic drugs",
+      "Promote only Nepali herbs"
+    ],
+    "correct_index": 0,
+    "explanation": "WHO guidelines promote standardization, safety evaluation and quality control of traditional herbal medicines worldwide.",
+    "difficulty": "easy",
+    "tags": [
+      "drug discovery",
+      "WHO"
+    ]
+  },
+  {
+    "unit_id": "pharmaco-unit-14",
+    "question_text": "Galanthamine, used in Alzheimer's disease, is obtained from:",
+    "options": [
+      "Galanthus species (snowdrop)",
+      "Catharanthus roseus",
+      "Taxus brevifolia",
+      "Podophyllum peltatum"
+    ],
+    "correct_index": 0,
+    "explanation": "Galanthamine is an Amaryllidaceae alkaloid from Galanthus (snowdrop) bulbs; it inhibits acetylcholinesterase and is used in Alzheimer's disease.",
+    "difficulty": "medium",
+    "tags": [
+      "drug discovery",
+      "galanthamine"
+    ]
   }
 ]
