@@ -37,10 +37,10 @@
     "unit_id": "pharmaco-unit-2",
     "question_text": "The biological source of a crude drug refers to:",
     "options": [
-      "Chemical composition",
+      "The chemical constituents that are present in the drug",
       "The plant or animal species from which the drug is obtained",
-      "The method of extraction",
-      "The therapeutic use"
+      "The process by which the drug was extracted and purified",
+      "The disease condition for which the drug is used"
     ],
     "correct_index": 1,
     "explanation": "The biological source specifies the scientific name (genus and species), family, part of the organism used, and geographical source of the crude drug.\n\nAdditional: which the drug is derived",
@@ -53,10 +53,10 @@
     "unit_id": "pharmaco-unit-3",
     "question_text": "Ash value of a crude drug indicates:",
     "options": [
-      "Moisture content",
+      "The moisture content of the drug",
       "Amount of inorganic matter present",
-      "Volatile oil content",
-      "Alkaloid content"
+      "The volatile oil content of the drug",
+      "The alkaloid content of the drug"
     ],
     "correct_index": 1,
     "explanation": "Ash value represents the total amount of inorganic matter (mineral salts, calcium oxalate, silica, etc.) present in a crude drug. It is used for quality control and detection of adulteration.",
@@ -70,10 +70,10 @@
     "unit_id": "pharmaco-unit-3",
     "question_text": "Extractive values are used to measure:",
     "options": [
-      "Ash content",
+      "The ash content of the drug",
       "Amount of chemical constituents",
-      "Moisture content",
-      "Microbial load"
+      "The moisture content of the drug",
+      "The microbial load of the drug"
     ],
     "correct_index": 1,
     "explanation": "Extractive values measure the amount of chemical constituents extracted by specific solvents (water, alcohol, ether). They help in evaluating the quality and detecting adulteration.\n\nAdditional: extracted by specific solvents",
@@ -226,7 +226,7 @@
       "Are soluble in water",
       "Swell in water but are not truly soluble",
       "Are soluble in alcohol",
-      "Do not absorb water"
+      "Do not absorb any water at all"
     ],
     "correct_index": 1,
     "explanation": "Gums swell in water to form mucilaginous masses but are not truly soluble (they form colloidal dispersions). True gums are exudates from plant wounds.",
@@ -410,10 +410,10 @@
     "unit_id": "pharmaco-unit-5",
     "question_text": "Reserpine is obtained from:",
     "options": [
-      "Cinchona",
+      "Cinchona officinalis bark",
       "Rauwolfia serpentina",
-      "Opium",
-      "Nux vomica"
+      "Papaver somniferum latex",
+      "Strychnos nux-vomica seeds"
     ],
     "correct_index": 1,
     "explanation": "Reserpine is an indole alkaloid from Rauwolfia serpentina, used as an antihypertensive agent.\n\nNote: Sarpagandha",
@@ -427,10 +427,10 @@
     "unit_id": "pharmaco-unit-5",
     "question_text": "General test for alkaloids (Dragendorff's reagent) produces:",
     "options": [
-      "Blue color",
+      "Formation of a blue color",
       "Orange-red precipitate",
-      "Green color",
-      "Yellow color"
+      "Formation of a green color",
+      "Formation of a yellow color"
     ],
     "correct_index": 1,
     "explanation": "Dragendorff's reagent (potassium bismuth iodide) produces an orange-red precipitate with most alkaloids.",
@@ -444,10 +444,10 @@
     "unit_id": "pharmaco-unit-6",
     "question_text": "Glycosides are:",
     "options": [
-      "Simple sugars",
-      "Compounds that yield sugar",
-      "Fatty acids",
-      "Amino acids"
+      "Simple sugars like glucose and fructose",
+      "Compounds that yield a sugar and a non-sugar part on hydrolysis",
+      "Fatty acids and their esters",
+      "Amino acids and proteins"
     ],
     "correct_index": 1,
     "explanation": "Glycosides consist of a sugar part (glycone) and a non-sugar part (aglycone/genin), linked by a glycosidic bond.\n\nAdditional: + non-sugar on hydrolysis",
@@ -495,10 +495,10 @@
     "unit_id": "pharmaco-unit-6",
     "question_text": "Liquorice contains glycosides used as:",
     "options": [
-      "Cardiotonic",
+      "A cardiotonic for heart failure",
       "Demulcent, expectorant",
-      "Purgative",
-      "Antimalarial"
+      "A purgative for constipation",
+      "An antimalarial for fevers"
     ],
     "correct_index": 1,
     "explanation": "Glycyrrhizin from liquorice has demulcent, expectorant, anti-inflammatory, and anti-ulcer properties.\n\nNote: and anti-ulcer",
@@ -648,10 +648,10 @@
     "unit_id": "pharmaco-unit-8",
     "question_text": "Resins are:",
     "options": [
-      "Water-soluble plant products",
+      "Water-soluble plant products like the gums",
       "Amorphous insoluble products from plant exudates",
-      "Fixed oils",
-      "Waxes"
+      "Fixed oils that are liquid at room temperature",
+      "Waxes that melt easily when they are warmed"
     ],
     "correct_index": 1,
     "explanation": "Resins are complex amorphous mixtures of organic acids, insoluble in water but soluble in alcohol and有机溶剂.\n\nAdditional: or extracted from natural sources",
@@ -801,9 +801,9 @@
     "unit_id": "pharmaco-unit-11",
     "question_text": "Vaccines work by:",
     "options": [
-      "Killing bacteria directly",
+      "Killing bacteria directly by chemical action",
       "Stimulating active immunity by producing antibodies",
-      "Replacing antibiotics",
+      "Replacing antibiotics in the treatment",
       "Providing passive immunity only"
     ],
     "correct_index": 1,
@@ -818,10 +818,10 @@
     "unit_id": "pharmaco-unit-11",
     "question_text": "Sera are preparations containing:",
     "options": [
-      "Vaccines",
+      "Vaccines for immunization",
       "Preformed antibodies",
-      "Antibiotics",
-      "Vitamins"
+      "Antibiotics for infections",
+      "Vitamins and minerals"
     ],
     "correct_index": 1,
     "explanation": "Sera contain preformed antibodies obtained from immunized animals or humans, providing passive immunity.\n\nNote: immunoglobulins",
@@ -1041,7 +1041,7 @@
       "a": "Pure isolated chemical compounds",
       "b": "Naturally obtained drugs that have not yet been processed or purified",
       "c": "Synthetic drugs made in a laboratory",
-      "d": "Patented brand-name drugs"
+      "d": "Synthetic patented brand-name medicines made in industry"
     },
     "correct_option": "b",
     "explanation": "Crude drugs are natural drugs obtained from plant, animal, or mineral sources that haven't undergone purification to isolate active chemical constituents.\n\nAdditional: been processed into pure chemical form",
@@ -1055,10 +1055,10 @@
   {
     "question_text": "What is the biological source of opium?",
     "options": {
-      "a": "Cannabis sativa",
-      "b": "Dried latex obtained from unripe",
-      "c": "Rauwolfia serpentina",
-      "d": "Digitalis purpurea"
+      "a": "Dried leaves of Cannabis sativa",
+      "b": "Dried latex obtained from unripe capsules of Papaver somniferum",
+      "c": "Dried roots of Rauwolfia serpentina",
+      "d": "Dried leaves of Digitalis purpurea"
     },
     "correct_option": "b",
     "explanation": "Opium is the dried latex (oleoresin) obtained by incising the unripe capsules of Papaver somniferum (opium poppy), belonging to family Papaveraceae.\n\nAdditional: capsules of Papaver somniferum",
@@ -1090,10 +1090,10 @@
   {
     "question_text": "What is the biological source of digitalis?",
     "options": {
-      "a": "Thevetia peruviana",
+      "a": "Thevetia peruviana - dried leaves",
       "b": "Dried leaves of Digitalis purpurea",
-      "c": "Strophanthus kombe",
-      "d": "Nerium oleander"
+      "c": "Strophanthus kombe - dried seeds",
+      "d": "Nerium oleander - dried leaves"
     },
     "correct_option": "b",
     "explanation": "Digitalis consists of dried leaves of Digitalis purpurea Linn. (family Plantaginaceae/Scrophulariaceae), collected from plants during the second year of growth.\n\nNote: foxglove",
@@ -1141,10 +1141,10 @@
   {
     "question_text": "What are alkaloids?",
     "options": {
-      "a": "Sugars found in plants",
-      "b": "Nitrogen-containing organic compounds of plant",
-      "c": "Fatty acids",
-      "d": "Vitamins from plants"
+      "a": "Carbohydrate derivatives that are found in plants",
+      "b": "Basic nitrogen-containing organic compounds from plants",
+      "c": "Fatty acid derivatives obtained from plant oils",
+      "d": "Protein derivatives that come from seeds"
     },
     "correct_option": "b",
     "explanation": "Alkaloids are naturally occurring nitrogenous compounds (usually basic) with potent pharmacological effects. Examples: morphine, quinine, atropine, caffeine, nicotine.\n\nAdditional: origin with pronounced physiological effects",
@@ -1226,10 +1226,10 @@
   {
     "question_text": "What is the biological source of ipecacuanha?",
     "options": {
-      "a": "Cephaelis ipecacuanha - dried",
-      "b": "Cinchona bark",
-      "c": "Digitalis leaves",
-      "d": "Nux vomica seeds"
+      "a": "Cephaelis ipecacuanha - dried rhizome and roots",
+      "b": "Cinchona officinalis - dried bark",
+      "c": "Digitalis purpurea - dried leaves",
+      "d": "Strychnos nux-vomica - dried seeds"
     },
     "correct_option": "a",
     "explanation": "Ipecacuanha (Ipecac) is obtained from Cephaelis ipecacuanha (family Rubiaceae), dried rhizome and roots. It contains emetine and cephaeline as chief alkaloids.\n\nAdditional: rhizome and roots",
@@ -1243,10 +1243,10 @@
   {
     "question_text": "What is the therapeutic use of emetine from ipecacuanha?",
     "options": {
-      "a": "Analgesic",
+      "a": "A mild analgesic that is used for pain relief",
       "b": "Emetic and anti-amoebic agent",
-      "c": "Antimalarial",
-      "d": "Cardiac tonic"
+      "c": "An antimalarial agent that is used for fevers",
+      "d": "A tonic that acts on the heart muscle"
     },
     "correct_option": "b",
     "explanation": "Emetine is used as an emetic (in syrup of ipecac) and as an anti-amoebic agent for treating amoebic dysentery and liver abscess.",
@@ -1481,10 +1481,10 @@
   {
     "question_text": "What is the biological source of opium poppy (besides the latex for opium)?",
     "options": {
-      "a": "Seeds are used as food",
+      "a": "The seeds are used as food in many countries",
       "b": "Poppy seeds contain negligible alkaloids and are used as food/flavoring",
       "c": "Leaves contain more alkaloids than the latex",
-      "d": "Roots contain morphine"
+      "d": "The roots contain large amounts of morphine"
     },
     "correct_option": "b",
     "explanation": "Poppy seeds from Papaver somniferum contain negligible amounts of alkaloids and are used safely as food ingredient (bread, pastries). The alkaloid-rich latex is from the capsule.",
@@ -1816,10 +1816,10 @@
   {
     "question_text": "What are tannins in pharmacognosy?",
     "options": {
-      "a": "Nitrogenous alkaloids",
-      "b": "Water-soluble polyphenolic compounds that precipitate",
-      "c": "Volatile aromatic oils",
-      "d": "Steroidal glycosides"
+      "a": "Nitrogenous basic alkaloidal compounds",
+      "b": "Water-soluble polyphenolic compounds that precipitate proteins",
+      "c": "Volatile aromatic compounds that are present in plants",
+      "d": "Steroidal glycosides that act on the heart"
     },
     "correct_option": "b",
     "explanation": "Tannins are complex phenolic compounds (high molecular weight) that precipitate proteins. They have astringent, antimicrobial, and anti-inflammatory properties.\n\nAdditional: proteins and have astringent properties",
@@ -1935,9 +1935,9 @@
     "question_text": "What is the biological source of khair (Acacia catechu)?",
     "options": {
       "a": "Heartwood of Acacia catechu - aqueous extract",
-      "b": "Bark of Acacia arabica",
-      "c": "Leaves of Acacia nilotica",
-      "d": "Seeds of Acacia senegal"
+      "b": "Bark of Acacia arabica - dried",
+      "c": "Leaves of Acacia nilotica - dried",
+      "d": "Seeds of Acacia senegal - dried"
     },
     "correct_option": "a",
     "explanation": "Khair (Cutch) is the aqueous extract of heartwood of Acacia catechu (family Fabaceae). It is rich in catechu tannins and used in diarrhea and throat infections.\n\nNote: cutch/khair",
@@ -3106,7 +3106,7 @@
     "question_text": "What is the biological source of honey?",
     "options": {
       "a": "Apis mellifera - nectar of flowers processed by bees",
-      "b": "Apis cerana - tree sap",
+      "b": "Apis cerana - sap collected from trees",
       "c": "Vespa orientalis - fruit juice",
       "d": "Bombus terrestris - leaf extract"
     },
@@ -3122,9 +3122,9 @@
     "question_text": "What is the biological source of propolis?",
     "options": {
       "a": "Apis mellifera - resinous mixture from tree buds",
-      "b": "Apis mellifera - bee venom",
-      "c": "Apis mellifera - royal jelly",
-      "d": "Apis mellifera - beeswax"
+      "b": "Apis mellifera - venom from the sting",
+      "c": "Apis mellifera - royal jelly for the queen",
+      "d": "Apis mellifera - wax from the hive"
     },
     "correct_option": "a",
     "explanation": "Propolis (bee glue) is a resinous mixture collected by honeybees from tree buds and sap flows. It contains flavonoids and has antimicrobial, anti-inflammatory, and wound-healing properties.",
@@ -3137,10 +3137,10 @@
   {
     "question_text": "What is the biological source of royal jelly?",
     "options": {
-      "a": "Secretion from hypopharyngeal glands of worker",
-      "b": "Pollen collected by bees",
-      "c": "Honey from wild bees",
-      "d": "Bee venom"
+      "a": "Secretion from hypopharyngeal glands of worker bees fed to the queen bee",
+      "b": "Pollen that is collected by the worker bees",
+      "c": "Honey that is collected from wild bee hives",
+      "d": "Venom that is secreted from the stinger of the bee"
     },
     "correct_option": "a",
     "explanation": "Royal jelly is a milky secretion from hypopharyngeal glands of worker Apis mellifera bees, fed exclusively to the queen. It contains proteins, fatty acids (10-HDA), and vitamins.\n\nAdditional: bees fed to queen bee",
@@ -3306,9 +3306,9 @@
     "question_text": "What is the biological source of petroleum jelly (petrolatum)?",
     "options": {
       "a": "Refined semi-solid mixture of hydrocarbons",
-      "b": "Animal fat from rendering",
-      "c": "Plant wax from jojoba",
-      "d": "Mineral oil from limestone"
+      "b": "Animal fat obtained by rendering tissues",
+      "c": "Plant wax extracted from jojoba beans",
+      "d": "Mineral oil distilled from limestone rock"
     },
     "correct_option": "a",
     "explanation": "Petroleum jelly is a semi-solid mixture of hydrocarbons obtained by refining petroleum. It is used as an ointment base, emollient, and protective barrier.\n\nAdditional: hydrocarbons from petroleum",
@@ -3339,9 +3339,9 @@
     "question_text": "What is the biological source of bentonite?",
     "options": {
       "a": "Natural colloidal hydrated aluminum silicate",
-      "b": "Natural calcium carbonate",
-      "c": "Natural magnesium hydroxide",
-      "d": "Natural sodium bicarbonate"
+      "b": "Natural calcium carbonate found in chalk deposits",
+      "c": "Natural magnesium hydroxide found in rocks",
+      "d": "Natural sodium bicarbonate found in mineral springs"
     },
     "correct_option": "a",
     "explanation": "Bentonite is a native colloidal hydrated aluminum silicate (montmorillonite) that swells in water. It is used as a suspending agent, emulsifying agent, and adsorbent.\n\nNote: montmorillonite",
@@ -3356,9 +3356,9 @@
     "question_text": "What is the biological source of talc?",
     "options": {
       "a": "Natural hydrated magnesium silicate mineral",
-      "b": "Natural calcium sulfate",
-      "c": "Natural sodium chloride",
-      "d": "Natural potassium carbonate"
+      "b": "Natural calcium sulfate mineral",
+      "c": "Natural sodium chloride mineral salt",
+      "d": "Natural potassium carbonate mineral"
     },
     "correct_option": "a",
     "explanation": "Talc is a natural hydrated magnesium silicate mineral (Mg₃Si₄O₁₀(OH)₂). It is used as a dusting powder, tablet excipient (glidant), and in cosmetic preparations.",
@@ -3373,9 +3373,9 @@
     "question_text": "What is the biological source of calcium carbonate (natural chalk)?",
     "options": {
       "a": "Natural calcium carbonate from limestone, marble",
-      "b": "Synthetic calcium hydroxide",
-      "c": "Natural sodium bicarbonate",
-      "d": "Natural magnesium carbonate"
+      "b": "Synthetic calcium hydroxide produced in industry",
+      "c": "Natural sodium bicarbonate from mineral springs",
+      "d": "Natural magnesium carbonate from magnesite rocks"
     },
     "correct_option": "a",
     "explanation": "Natural calcium carbonate (CaCO₃) is obtained from limestone, marble, or oyster shells. It is used as an antacid and calcium supplement.\n\nNote: or shells",
@@ -3457,10 +3457,10 @@
   {
     "question_text": "What are the main types of glycosides based on the aglycone?",
     "options": {
-      "a": "Sugars and starches",
-      "b": "Cardiac glycosides, anthraquinone glycosides",
-      "c": "Alkaloids and vitamins",
-      "d": "Fats and waxes"
+      "a": "Sugars and starches that are obtained from plants",
+      "b": "Cardiac, anthraquinone, saponin, flavonoid and cyanogenetic glycosides",
+      "c": "Alkaloids and vitamins that are obtained from plants",
+      "d": "Fats and waxes that are obtained from plants"
     },
     "correct_option": "b",
     "explanation": "Glycosides are classified by their aglycone: cardiac (digitoxin), anthraquinone (sennosides), saponin (diosgenin), flavonoid (rutin), cyanogenic (amygdalin), etc.\n\nNote: saponin glycosides, flavonoid glycosides, cyanogenic glycosides",
@@ -3476,8 +3476,8 @@
     "options": {
       "a": "A glycoside affecting the respiratory system",
       "b": "A glycoside with specific action on the heart, increasing force of contraction",
-      "c": "A glycoside used for diabetes",
-      "d": "A glycoside used as a laxative"
+      "c": "A glycoside that is used for treating diabetes",
+      "d": "A glycoside that is used as a laxative"
     },
     "correct_option": "b",
     "explanation": "Cardiac glycosides (cardenolides like digoxin, digitoxin) have a specific positive inotropic effect on the heart, increasing the force of myocardial contraction.",
@@ -3507,10 +3507,10 @@
   {
     "question_text": "What is the Kedde test used for?",
     "options": {
-      "a": "Testing for alkaloids",
+      "a": "A test used to detect the presence of alkaloids",
       "b": "Chemical identification test for cardenolides",
-      "c": "Testing for tannins",
-      "d": "Testing for volatile oils"
+      "c": "A test used for the detection of tannins",
+      "d": "A test used for detection of volatile oils"
     },
     "correct_option": "b",
     "explanation": "The Kedde test is a colorimetric test for cardenolides: the drug extract with 3,5-dinitrobenzoic acid and alkali produces a violet/purple color indicating the unsaturated lactone ring.\n\nNote: cardiac glycosides\n\nAdditional: using 3 5-dinitrobenzoic acid",
@@ -3524,10 +3524,10 @@
   {
     "question_text": "What is the Keller-Kiliani test used for?",
     "options": {
-      "a": "Testing for alkaloids",
+      "a": "A test used to detect the presence of alkaloids",
       "b": "Identification test for cardenolides",
-      "c": "Testing for tannins",
-      "d": "Testing for saponins"
+      "c": "A test used for the detection of tannins",
+      "d": "A test used for the detection of saponins"
     },
     "correct_option": "b",
     "explanation": "The Keller-Kiliani test detects 2-deoxy sugars in cardiac glycosides. Glacial acetic acid with ferric chloride and concentrated sulfuric acid produces a blue-green color at the junction.\n\nNote: like digitoxose\n\nAdditional: containing a 2-deoxy sugar",
@@ -3557,10 +3557,10 @@
   {
     "question_text": "What is a hemolytic test for saponins?",
     "options": {
-      "a": "Blood group testing",
+      "a": "A test used to determine the blood group of a patient",
       "b": "Adding saponin solution to blood causes hemolysis of red cells",
-      "c": "Testing blood clotting time",
-      "d": "Measuring blood pressure"
+      "c": "A test that measures the clotting time of blood",
+      "d": "A method of measuring the blood pressure"
     },
     "correct_option": "b",
     "explanation": "Saponins disrupt cell membranes due to their surfactant nature. When added to blood, they lyse RBCs, causing release of hemoglobin — this is the hemolytic test for saponins.\n\nNote: hemolysis\n\nAdditional: lysis of red blood cells",
@@ -3574,10 +3574,10 @@
   {
     "question_text": "What is the foaming test for saponins?",
     "options": {
-      "a": "Testing if water boils",
-      "b": "Shaking an aqueous extract produces stable",
-      "c": "Testing for volatile oil",
-      "d": "Testing for alkaloids"
+      "a": "Testing whether the water boils at 100 degrees Celsius",
+      "b": "Shaking an aqueous extract produces stable persistent foam",
+      "c": "A test that is used for the detection of volatile oils",
+      "d": "A test that is used for the detection of alkaloids"
     },
     "correct_option": "b",
     "explanation": "When an aqueous solution containing saponins is shaken, it produces a persistent foam due to the surface-active (surfactant) nature of saponins — this is a simple qualitative test.\n\nAdditional: persistent foam due to surfactant properties",
@@ -3608,10 +3608,10 @@
   {
     "question_text": "What is the Liebermann-Burchard test used for?",
     "options": {
-      "a": "Testing for alkaloids",
+      "a": "A test that is used for the detection of alkaloids",
       "b": "Identification test for steroids and triterpenoids",
-      "c": "Testing for tannins",
-      "d": "Testing for carbohydrates"
+      "c": "A test that is used for the detection of tannins",
+      "d": "A test that is used for the detection of carbohydrates"
     },
     "correct_option": "b",
     "explanation": "The Liebermann-Burchard test uses acetic anhydride and sulfuric acid to produce color changes (blue-green for steroids, pink/violet for triterpenoids) for identification.",
@@ -3642,10 +3642,10 @@
   {
     "question_text": "What is the identification test for alkaloids using Dragendorff's reagent?",
     "options": {
-      "a": "Green color",
+      "a": "Formation of a green color",
       "b": "Orange-red to brown precipitate",
-      "c": "Blue color",
-      "d": "White precipitate"
+      "c": "Formation of a blue color",
+      "d": "Formation of a white precipitate"
     },
     "correct_option": "b",
     "explanation": "Dragendorff's reagent (potassium bismuth iodide) produces an orange-red to brown precipitate with most alkaloids. It is a general confirmatory test for alkaloids.",
@@ -3693,10 +3693,10 @@
   {
     "question_text": "What is the vanillin-sulfuric acid test used for?",
     "options": {
-      "a": "Testing for alkaloids",
+      "a": "A test that is used for the detection of alkaloids",
       "b": "Identification test for steroids and triterpenoids",
-      "c": "Testing for carbohydrates",
-      "d": "Testing for tannins"
+      "c": "A test that is used for the detection of carbohydrates",
+      "d": "A test that is used for the detection of tannins"
     },
     "correct_option": "b",
     "explanation": "Vanillin-sulfuric acid reagent produces characteristic colors (red, violet, blue, green) with steroids and triterpenoids, useful for identifying these compound classes.\n\nNote: various color reactions",
@@ -3744,10 +3744,10 @@
   {
     "question_text": "What is high-performance liquid chromatography (HPLC) used for in pharmacognosy?",
     "options": {
-      "a": "Only for separating pigments",
-      "b": "Quantitative analysis and standardization of active",
-      "c": "Only for qualitative analysis",
-      "d": "Only for purification"
+      "a": "Used only for separating pigments from plant extracts",
+      "b": "Quantitative analysis and standardization of active constituents in crude drugs",
+      "c": "Used only for the qualitative analysis of plant samples",
+      "d": "Used only for purifying the crude drug material"
     },
     "correct_option": "b",
     "explanation": "HPLC is used for precise quantification and quality control of active constituents (alkaloids, glycosides, flavonoids) in crude drugs, extracts, and pharmaceutical formulations.\n\nAdditional: constituents in crude drugs and formulations",
@@ -3777,10 +3777,10 @@
   {
     "question_text": "What are trichomes in pharmacognosy?",
     "options": {
-      "a": "Chemical compounds",
+      "a": "Chemical compounds that are found in plant cells",
       "b": "Hair-like outgrowths on plant surfaces",
-      "c": "Type of crystals",
-      "d": "Starch grains"
+      "c": "Crystalline deposits of calcium oxalate",
+      "d": "Starch grains found inside the plant cells"
     },
     "correct_option": "b",
     "explanation": "Trichomes are epidermal appendages (hair-like structures) on leaves, stems, and other plant parts. Their type (glandular, non-glandular, unicellular, multicellular) helps identify drugs microscopically.\n\nAdditional: used for microscopic identification",
@@ -3828,10 +3828,10 @@
   {
     "question_text": "What is the concept of pharmacognostic evaluation?",
     "options": {
-      "a": "Only chemical testing",
-      "b": "A systematic approach to evaluate",
-      "c": "Only tasting the drug",
-      "d": "Only measuring weight"
+      "a": "A process that involves only the chemical testing of the drug",
+      "b": "Systematic evaluation of crude drugs for standardization and quality control",
+      "c": "Judging the quality only by tasting the crude drug",
+      "d": "A method that measures only the weight of the drug sample"
     },
     "correct_option": "b",
     "explanation": "Pharmacognostic evaluation is a comprehensive evaluation including organoleptic, macroscopic, microscopic, physical (ash, moisture, extractive), chemical, and biological parameters for drug standardization.\n\nNote: physical, chemical, and biological methods\n\nAdditional: crude drugs using morphological microscopic",
@@ -3845,10 +3845,10 @@
   {
     "question_text": "What is total ash value in pharmacognosy?",
     "options": {
-      "a": "Weight of the drug",
-      "b": "Residue remaining after incineration of drug at",
-      "c": "Weight of volatile oil",
-      "d": "Weight of extract"
+      "a": "The total weight of the fresh drug sample",
+      "b": "Residue remaining after complete incineration of the drug, indicating its mineral content",
+      "c": "The weight of volatile oil present in the sample",
+      "d": "The weight of extract obtained with a solvent"
     },
     "correct_option": "b",
     "explanation": "Total ash is the residue after complete incineration. It indicates mineral content; unusually high values suggest contamination with earth/sand. Determined by official methods.\n\nAdditional: 450-600°C indicating mineral content and purity",
@@ -3879,10 +3879,10 @@
   {
     "question_text": "What is water-soluble ash?",
     "options": {
-      "a": "Ash that completely dissolves in water",
+      "a": "Ash that completely dissolves in water to give a clear solution",
       "b": "The difference between total ash and the residue after treatment with water",
-      "c": "Ash that absorbs moisture from the air",
-      "d": "Ash obtained from aquatic water plants"
+      "c": "Ash that absorbs moisture from the air when exposed",
+      "d": "Ash that is obtained from aquatic plants growing in water"
     },
     "correct_option": "b",
     "explanation": "Water-soluble ash = Total ash - Residue after water treatment. It gives information about water-soluble inorganic constituents and can indicate the nature of inorganic material.\n\nAdditional: treatment with water indicating water-soluble inorganic matter",
@@ -3896,10 +3896,10 @@
   {
     "question_text": "What is extractive value in pharmacognosy?",
     "options": {
-      "a": "Weight of the whole drug",
+      "a": "The total weight of the whole crude drug",
       "b": "The amount of crude drug extracted by a given solvent",
       "c": "Weight of residue after burning",
-      "d": "Weight of volatile oil only"
+      "d": "The weight of volatile oil only in the sample"
     },
     "correct_option": "b",
     "explanation": "Extractive values (water-soluble, alcohol-soluble, ether-soluble) indicate the nature and amount of chemical constituents. They help assess quality and detect adulteration.\n\nAdditional: specific solvent indicating the amount of soluble constituents",
@@ -3930,10 +3930,10 @@
   {
     "question_text": "What is the volatile oil content determination?",
     "options": {
-      "a": "Measuring fat content",
+      "a": "Measuring the fat content of the drug sample",
       "b": "Determining the percentage of volatile oil in a crude drug",
-      "c": "Measuring alkaloid content",
-      "d": "Measuring glycoside content"
+      "c": "Measuring the alkaloid content of the sample",
+      "d": "Measuring the glycoside content of the sample"
     },
     "correct_option": "b",
     "explanation": "Volatile oil content is determined by steam distillation using a Clevenger apparatus. The drug is distilled and the volume of oil collected is measured. Official limits are specified.\n\nNote: Clevenger apparatus\n\nAdditional: a crude drug by steam distillation",
@@ -3947,10 +3947,10 @@
   {
     "question_text": "What is the foreign organic matter in pharmacognosy?",
     "options": {
-      "a": "Active constituents",
+      "a": "The active constituents of the drug itself",
       "b": "Any material other than the drug's own constituents",
-      "c": "Valuable constituents",
-      "d": "The main drug itself"
+      "c": "The valuable constituents of the crude drug",
+      "d": "The main crude drug material itself"
     },
     "correct_option": "b",
     "explanation": "Foreign organic matter includes non-drug plant parts, insects, dirt, sand, and other contaminants. Pharmacopoeias set limits (usually not more than 2%) for these impurities.\n\nNote: insects, other plant parts) that should be limited\n\nAdditional: official drug (stems dirt",
@@ -3964,10 +3964,10 @@
   {
     "question_text": "What is adulteration in crude drugs?",
     "options": {
-      "a": "Adding extra active ingredients to a drug",
+      "a": "Adding extra active ingredients to make the drug stronger",
       "b": "Intentional or unintentional substitution or addition of inferior material",
-      "c": "Improving the overall quality of the drug",
-      "d": "Adding preservatives to extend shelf life"
+      "c": "Improving the overall quality of the crude drug",
+      "d": "Adding preservatives to extend the shelf life of the drug"
     },
     "correct_option": "b",
     "explanation": "Adulteration is adding inferior/substitute materials to increase bulk or simulate the drug. It can be deliberate (economic fraud) or accidental (poor collection practices).\n\nNote: or harmful material\n\nAdditional: addition of inferior cheaper",
@@ -3981,10 +3981,10 @@
   {
     "question_text": "What is substitution in crude drugs?",
     "options": {
-      "a": "Using a cheaper excipient",
-      "b": "Replacing a drug with another species that may",
-      "c": "Adding more active ingredient",
-      "d": "Changing the package"
+      "a": "Using a cheaper excipient in the formulation",
+      "b": "Replacing a drug with another plant species that may be related or unrelated",
+      "c": "Adding extra active ingredient to the drug",
+      "d": "Changing the packaging of the drug product"
     },
     "correct_option": "b",
     "explanation": "Substitution is replacing the official drug with a different plant species. It may be done due to scarcity, cost, or ignorance. The substitute may have different therapeutic properties.\n\nNote: related or unrelated\n\nAdditional: or may not have similar therapeutic action",
@@ -4047,10 +4047,10 @@
   {
     "question_text": "What is the significance of gas chromatography (GC) in pharmacognosy?",
     "options": {
-      "a": "Used only for synthetic compounds",
+      "a": "Used only for synthetic compounds made in the laboratory",
       "b": "Used for analysis and standardization of volatile oil components",
-      "c": "Used only for alkaloid analysis",
-      "d": "Used only for glycoside analysis"
+      "c": "Used only for the analysis of alkaloidal drugs",
+      "d": "Used only for the analysis of glycoside drugs"
     },
     "correct_option": "b",
     "explanation": "GC is the preferred method for analyzing volatile oils and essential oils, allowing separation and quantification of individual terpene and phenylpropanoid components.",
