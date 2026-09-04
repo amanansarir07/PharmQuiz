@@ -141,38 +141,6 @@ export default function LeaderboardPage() {
         ))}
       </div>
 
-      {/* Your Rank */}
-      {user && userPosition && (
-        <div className={cn(
-          "mb-8 flex items-center gap-4 rounded-2xl border p-4",
-          userPosition.qualified
-            ? "bg-primary/5 border-primary/20"
-            : "bg-orange-500/5 border-orange-500/20"
-        )}>
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-sm">
-            {userPosition.qualified ? `#${userPosition.rank}` : "?"}
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold">
-              {userPosition.qualified ? "Your Rank" : "Not ranked yet"}
-            </p>
-            <p className="text-xs text-muted-foreground">
-              {userPosition.quizzesTaken} quizzes &middot; {userPosition.accuracy}% accuracy
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="h-8 w-px bg-border" />
-            <div className="text-right">
-              <p className="text-xs text-muted-foreground">
-                {userPosition.qualified
-                  ? `${userPosition.rank}/${userPosition.totalParticipants}`
-                  : `${userPosition.quizzesNeeded} more to qualify`}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
       {!mounted ? (
         /* Skeleton */
         <div className="space-y-3">
@@ -283,8 +251,9 @@ export default function LeaderboardPage() {
             </div>
           )}
 
-          {/* You at bottom if ranked > 3 */}
-          {user && userPosition && userPosition.qualified && userPosition.rank > 3 && (
+          {/* You at bottom — only when your row is NOT already in the visible list
+              (i.e. you're ranked beyond the fetched entries) */}
+          {user && userPosition && userPosition.qualified && userPosition.rank > entries.length && (
             <div className="mt-3 rounded-xl border bg-primary/5 p-3 flex items-center gap-3">
               <span className="w-7 text-center text-sm font-bold text-primary shrink-0">
                 #{userPosition.rank}

@@ -72,5 +72,4 @@ left join (
   from quiz_results
   group by user_id
 ) qr on p.id = qr.user_id
-where p.role != 'admin' or p.role is null
 order by qr.total_correct desc nulls last;

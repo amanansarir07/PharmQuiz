@@ -191,8 +191,7 @@ begin
       count(*) over ()::int as total_participants
     from public.profiles p
     left join user_stats us on p.id = us.user_id
-    where (p.role != 'admin' or p.role is null)
-      and coalesce(us.quizzes_taken, 0) > 0
+    where coalesce(us.quizzes_taken, 0) > 0
   )
   select
     ranked.rank,
@@ -280,7 +279,6 @@ begin
       greatest(v_min_quizzes - coalesce(us.quizzes_taken, 0), 0) as quizzes_needed
     from public.profiles p
     left join user_stats us on p.id = us.user_id
-    where p.role != 'admin' or p.role is null
   )
   select
     row_number() over (order by
@@ -336,7 +334,6 @@ left join (
   from quiz_results
   group by user_id
 ) qr on p.id = qr.user_id
-where p.role != 'admin' or p.role is null
 order by qr.total_correct desc nulls last;
 
 create or replace view public.leaderboard_daily as

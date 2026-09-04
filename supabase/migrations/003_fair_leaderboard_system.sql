@@ -97,7 +97,6 @@ begin
       greatest(v_min_quizzes - coalesce(us.quizzes_taken, 0), 0) as quizzes_needed
     from public.profiles p
     left join user_stats us on p.id = us.user_id
-    where p.role != 'admin' or p.role is null
   )
   select
     row_number() over (order by
@@ -193,8 +192,7 @@ begin
       count(*) over ()::int as total_participants
     from public.profiles p
     left join user_stats us on p.id = us.user_id
-    where (p.role != 'admin' or p.role is null)
-      and coalesce(us.quizzes_taken, 0) > 0
+    where coalesce(us.quizzes_taken, 0) > 0
   )
   select
     ranked.rank,
