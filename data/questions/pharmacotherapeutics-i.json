@@ -122,10 +122,10 @@
     "unit_id": "thera-unit-3",
     "question_text": "Parkinsonism is characterized by deficiency of which neurotransmitter?",
     "options": [
-      "Serotonin",
+      "Serotonin in the brainstem",
       "Dopamine",
-      "Acetylcholine",
-      "GABA"
+      "Acetylcholine in motor neurons",
+      "GABA in the cerebral cortex"
     ],
     "correct_index": 1,
     "explanation": "Parkinsonism is caused by degeneration of dopaminergic neurons in the substantia nigra, leading to dopamine deficiency. Treatment includes levodopa/carbidopa to replenish dopamine.",
@@ -224,10 +224,10 @@
     "unit_id": "thera-unit-5",
     "question_text": "Malaria is caused by:",
     "options": [
-      "Bacteria",
+      "Bacteria such as Salmonella",
       "Plasmodium species",
-      "Virus",
-      "Fungus"
+      "Virus such as dengue virus",
+      "Fungus such as Candida"
     ],
     "correct_index": 1,
     "explanation": "Malaria is caused by Plasmodium species (P. falciparum, P. vivax, P. ovale, P. malariae) transmitted by female Anopheles mosquito. P. falciparum is the most dangerous.\n\nNote: protozoa",
@@ -241,10 +241,10 @@
     "unit_id": "thera-unit-5",
     "question_text": "Urinary tract infections (UTI) are most commonly caused by:",
     "options": [
-      "Virus",
+      "Virus such as herpes virus",
       "Escherichia coli",
-      "Fungus",
-      "Parasite"
+      "Fungus such as Candida albicans",
+      "Parasite such as Giardia"
     ],
     "correct_index": 1,
     "explanation": "UTIs are most commonly caused by Escherichia coli (E. coli), which accounts for about 80-85% of community-acquired UTIs. Treatment includes antibiotics like nitrofurantoin and trimethoprim.\n\nNote: E. coli",
@@ -309,10 +309,10 @@
     "unit_id": "thera-unit-1",
     "question_text": "PUD is most commonly associated with:",
     "options": [
-      "E.coli",
+      "E. coli in the gut",
       "Helicobacter pylori",
-      "Streptococcus",
-      "Staphylococcus"
+      "Streptococcus in the throat",
+      "Staphylococcus on the skin"
     ],
     "correct_index": 1,
     "explanation": "H. pylori is the most common cause of PUD.",
@@ -326,10 +326,10 @@
     "unit_id": "thera-unit-1",
     "question_text": "Loperamide is used for:",
     "options": [
-      "Constipation",
+      "Constipation in adults",
       "Acute diarrhea",
-      "Nausea",
-      "Vomiting"
+      "Nausea during pregnancy",
+      "Vomiting from motion sickness"
     ],
     "correct_index": 1,
     "explanation": "Loperamide is an antidiarrheal that slows intestinal motility.",
@@ -360,10 +360,10 @@
     "unit_id": "thera-unit-1",
     "question_text": "Domperidone is a:",
     "options": [
-      "Antacid",
+      "Antacid for heartburn",
       "Prokinetic antiemetic",
-      "PPI",
-      "H2 blocker"
+      "PPI for acid suppression",
+      "H2 blocker for ulcers"
     ],
     "correct_index": 1,
     "explanation": "Domperidone is a peripheral dopamine antagonist with prokinetic properties.",
@@ -377,10 +377,10 @@
     "unit_id": "thera-unit-1",
     "question_text": "Ranitidine was withdrawn due to:",
     "options": [
-      "Ineffectiveness",
+      "Ineffectiveness in most patients",
       "NDMA carcinogen contamination",
-      "High cost",
-      "Allergic reactions"
+      "High cost of production",
+      "Allergic reactions in some users"
     ],
     "correct_index": 1,
     "explanation": "Ranitidine was recalled due to NDMA contamination, a probable carcinogen.",
@@ -411,7 +411,7 @@
     "unit_id": "thera-unit-2",
     "question_text": "Methotrexate is first-line for:",
     "options": [
-      "Diabetes",
+      "Diabetes mellitus",
       "Rheumatoid arthritis",
       "Hypertension",
       "Asthma"
@@ -428,10 +428,10 @@
     "unit_id": "thera-unit-2",
     "question_text": "Allopurinol reduces:",
     "options": [
-      "Blood sugar",
+      "Blood sugar levels",
       "Uric acid production",
       "Blood pressure",
-      "Cholesterol"
+      "Cholesterol levels"
     ],
     "correct_index": 1,
     "explanation": "Allopurinol is a xanthine oxidase inhibitor that reduces uric acid in gout.",
@@ -445,10 +445,10 @@
     "unit_id": "thera-unit-2",
     "question_text": "Colchicine is effective in acute:",
     "options": [
-      "RA",
+      "Rheumatoid arthritis flare",
       "Gout",
-      "Osteoarthritis",
-      "Fibromyalgia"
+      "Osteoarthritis flare",
+      "Fibromyalgia pain"
     ],
     "correct_index": 1,
     "explanation": "Colchicine is effective for acute gout attacks.",
@@ -513,10 +513,10 @@
     "unit_id": "thera-unit-3",
     "question_text": "Lithium is primarily used for:",
     "options": [
-      "Epilepsy",
-      "Depression",
+      "Epilepsy in adults",
+      "Major depression",
       "Bipolar disorder",
-      "Anxiety"
+      "Anxiety disorders"
     ],
     "correct_index": 2,
     "explanation": "Lithium is the mood stabilizer of choice for bipolar disorder.",
@@ -547,10 +547,10 @@
     "unit_id": "thera-unit-3",
     "question_text": "Diazepam is used for:",
     "options": [
-      "Insomnia only",
+      "Insomnia as the only indication",
       "Anxiety and seizures",
       "Hypertension",
-      "Diabetes"
+      "Diabetes mellitus"
     ],
     "correct_index": 1,
     "explanation": "Diazepam is a benzodiazepine for anxiety, seizures, muscle spasms.",
@@ -617,8 +617,8 @@
     "options": [
       "Histamine receptors",
       "Leukotriene receptors",
-      "Mast cells",
-      "IgE receptors"
+      "Mast cell degranulation",
+      "IgE receptor binding"
     ],
     "correct_index": 1,
     "explanation": "Montelukast is a leukotriene receptor antagonist for asthma prophylaxis.",
@@ -632,10 +632,10 @@
     "unit_id": "thera-unit-4",
     "question_text": "Aminophylline is a:",
     "options": [
-      "Antibiotic",
+      "Antibiotic for infections",
       "Methylxanthine bronchodilator",
-      "Antihistamine",
-      "Antifungal"
+      "Antihistamine for allergies",
+      "Antifungal for fungal infections"
     ],
     "correct_index": 1,
     "explanation": "Aminophylline is a methylxanthine bronchodilator for asthma.",
@@ -649,10 +649,10 @@
     "unit_id": "thera-unit-4",
     "question_text": "Prednisolone in asthma acts as:",
     "options": [
-      "Rescue drug",
+      "Rescue drug for acute attacks",
       "Anti-inflammatory controller",
-      "Bronchodilator",
-      "Antibiotic"
+      "Bronchodilator for relief",
+      "Antibiotic for infection"
     ],
     "correct_index": 1,
     "explanation": "Prednisolone reduces airway inflammation in moderate-severe asthma.",
@@ -666,10 +666,10 @@
     "unit_id": "thera-unit-5",
     "question_text": "DOTS treats:",
     "options": [
-      "Diabetes",
+      "Diabetes mellitus",
       "Tuberculosis",
-      "Malaria",
-      "HIV"
+      "Malaria infection",
+      "HIV infection"
     ],
     "correct_index": 1,
     "explanation": "DOTS is the WHO strategy for tuberculosis treatment.",
@@ -717,10 +717,10 @@
     "unit_id": "thera-unit-5",
     "question_text": "ACT treats:",
     "options": [
-      "Cancer",
+      "Cancer chemotherapy",
       "Malaria",
-      "Tuberculosis",
-      "HIV"
+      "Tuberculosis infection",
+      "HIV infection"
     ],
     "correct_index": 1,
     "explanation": "ACT combines artemisinin derivative with partner drug for malaria.",
@@ -751,10 +751,10 @@
     "unit_id": "thera-unit-5",
     "question_text": "Amoxicillin treats:",
     "options": [
-      "Viral infections",
+      "Viral infections like flu",
       "Bacterial respiratory infections",
-      "Fungal infections",
-      "Parasitic infections"
+      "Fungal infections like ringworm",
+      "Parasitic infections like malaria"
     ],
     "correct_index": 1,
     "explanation": "Amoxicillin is a broad-spectrum penicillin for bacterial infections.",
@@ -768,10 +768,10 @@
     "unit_id": "thera-unit-5",
     "question_text": "Hepatitis B birth dose in Nepal:",
     "options": [
-      "Oral vaccine",
+      "Oral vaccine drops",
       "IM injection within 24h",
-      "IV injection",
-      "SC injection"
+      "IV injection in the arm",
+      "SC injection under the skin"
     ],
     "correct_index": 1,
     "explanation": "Hep B birth dose is IM injection within 24 hours of birth.",
@@ -819,10 +819,10 @@
     "unit_id": "thera-unit-1",
     "question_text": "Hepatitis A is transmitted through:",
     "options": [
-      "Blood transfusion",
+      "Blood transfusion from carriers",
       "Contaminated food and water",
-      "Sexual contact",
-      "Airborne droplets"
+      "Sexual contact with carriers",
+      "Airborne droplets from coughing"
     ],
     "correct_index": 1,
     "explanation": "Hepatitis A is transmitted via fecal-oral route through contaminated food and water.",
@@ -836,10 +836,10 @@
     "unit_id": "thera-unit-2",
     "question_text": "Osteoarthritis primarily affects:",
     "options": [
-      "Spine only",
+      "Spine only, never other joints",
       "Weight-bearing joints",
-      "Only fingers",
-      "Only jaw"
+      "Only the finger joints",
+      "Only the jaw joint"
     ],
     "correct_index": 1,
     "explanation": "OA primarily affects weight-bearing joints with cartilage degeneration.\n\nNote: knees, hips",
@@ -870,10 +870,10 @@
     "unit_id": "thera-unit-5",
     "question_text": "Metronidazole is effective against:",
     "options": [
-      "Viral infections",
+      "Viral infections like influenza",
       "Anaerobic bacteria and protozoa",
-      "Fungal infections",
-      "Worm infections"
+      "Fungal infections like candida",
+      "Worm infections like roundworm"
     ],
     "correct_index": 1,
     "explanation": "Metronidazole is effective against anaerobic bacteria and protozoa.",
@@ -903,10 +903,10 @@
   {
     "question_text": "What is pharmacotherapeutics?",
     "options": {
-      "a": "Study of drug prices",
+      "a": "Study of drug prices and markets",
       "b": "The study of how drugs are used to prevent, treat",
-      "c": "Study of drug manufacturing",
-      "d": "Study of drug chemistry"
+      "c": "Study of drug manufacturing processes",
+      "d": "Study of drug chemical structures"
     },
     "correct_option": "b",
     "explanation": "Pharmacotherapeutics combines pharmacology with clinical medicine to use drugs rationally for the prevention, treatment, and cure of diseases.\n\nNote: and cure diseases",
@@ -952,10 +952,10 @@
   {
     "question_text": "What is the target blood pressure in hypertensive patients?",
     "options": {
-      "a": "140/90 mmHg or below",
+      "a": "140/90 mmHg or below for all patients",
       "b": "130/80 mmHg or below for most hypertensive patients",
-      "c": "120/70 mmHg or below",
-      "d": "150/100 mmHg or below"
+      "c": "120/70 mmHg or below for all patients",
+      "d": "150/100 mmHg or below for all patients"
     },
     "correct_option": "b",
     "explanation": "JNC 8/ACC-AHA guidelines: <130/80 mmHg for most adults; <140/90 for patients >60 years. Lower targets reduce cardiovascular events.\n\nAdditional: most patients; 140/90 for elderly",
@@ -1003,10 +1003,10 @@
   {
     "question_text": "What are ACE inhibitors contraindicated in?",
     "options": {
-      "a": "Hypertension",
-      "b": "Pregnancy and bilateral",
-      "c": "Heart failure",
-      "d": "Diabetes"
+      "a": "Hypertension in young adults",
+      "b": "Pregnancy and bilateral renal artery stenosis",
+      "c": "Chronic heart failure",
+      "d": "Type 2 diabetes mellitus"
     },
     "correct_option": "b",
     "explanation": "ACE inhibitors are teratogenic (cause fetal renal agenesis, oligohydramnios) — absolutely contraindicated in pregnancy. Also contraindicated in bilateral renal artery stenosis.\n\nAdditional: renal artery stenosis",
@@ -1208,10 +1208,10 @@
   {
     "question_text": "What are the long-term risks of proton pump inhibitors?",
     "options": {
-      "a": "No risks",
-      "b": "Increased risk of C.",
-      "c": "Weight gain only",
-      "d": "Hypertension only"
+      "a": "No long-term risks at all",
+      "b": "Increased risk of C. difficile infection, fractures, hypomagnesemia",
+      "c": "Weight gain as the only long-term effect",
+      "d": "Hypertension as the only long-term effect"
     },
     "correct_option": "b",
     "explanation": "Long-term PPI use is associated with: C. difficile colitis, hypomagnesemia, osteoporosis/fragility fractures (reduced calcium absorption), vitamin B12 deficiency, and interstitial nephritis.\n\nNote: osteoporosis, vitamin B12 deficiency, and kidney disease\n\nNote: difficile infection, hypomagnesemia",
@@ -1226,11 +1226,11 @@
     "question_text": "What is the mechanism of action of statins (e.g., atorvastatin)?",
     "options": {
       "a": "Inhibiting HMG-CoA reductase, the rate-limiting enzyme in cholesterol synthesis",
-      "b": "Inhibiting cholesterol absorption",
-      "c": "Increasing bile acid excretion",
-      "d": "Inhibiting lipoprotein lipase"
+      "b": "Inhibiting cholesterol absorption in the intestine",
+      "c": "Increasing bile acid excretion in the gut",
+      "d": "Inhibiting the lipoprotein lipase enzyme"
     },
-    "correct_option": "b",
+    "correct_option": "a",
     "explanation": "Statins competitively inhibit HMG-CoA reductase, the rate-limiting enzyme in the mevalonate pathway for cholesterol synthesis. This upregulates LDL receptors, increasing LDL clearance from blood.",
     "subject": "pharmacotherapeutics-i",
     "difficulty": "medium",
@@ -1259,10 +1259,10 @@
   {
     "question_text": "What is the major side effect of statins?",
     "options": {
-      "a": "Liver failure",
+      "a": "Acute liver failure",
       "b": "Myopathy (muscle pain and damage)",
-      "c": "Kidney failure",
-      "d": "Blindness"
+      "c": "Acute kidney failure",
+      "d": "Permanent blindness"
     },
     "correct_option": "b",
     "explanation": "Statins can cause myalgia (muscle pain, 5-10%), myopathy (elevated CK), and rarely rhabdomyolysis (life-threatening muscle breakdown with myoglobinuria). Liver enzymes should be monitored.\n\nNote: severe muscle breakdown\n\nNote: muscle pain/weakness",
@@ -1345,10 +1345,10 @@
   {
     "question_text": "What is the mechanism of action of clopidogrel?",
     "options": {
-      "a": "Inhibiting COX-1 enzyme",
+      "a": "Inhibiting the COX-1 enzyme",
       "b": "Irreversibly inhibiting P2Y12 ADP receptors",
-      "c": "Inhibiting thrombin",
-      "d": "Dissolving clots"
+      "c": "Inhibiting thrombin directly",
+      "d": "Dissolving existing blood clots"
     },
     "correct_option": "b",
     "explanation": "Clopidogrel is a prodrug (activated by CYP2C19) that irreversibly blocks P2Y12 ADP receptors on platelets, preventing ADP-mediated platelet activation and aggregation for the platelet's lifetime (7-10 days).\n\nAdditional: on platelets preventing platelet aggregation",
@@ -1396,10 +1396,10 @@
   {
     "question_text": "What is the clinical use of metoprolol in heart failure?",
     "options": {
-      "a": "It worsens heart failure",
-      "b": "It improves survival in chronic stable heart",
-      "c": "It is contraindicated in HF",
-      "d": "It is only used for acute HF"
+      "a": "It worsens chronic heart failure",
+      "b": "It improves survival in chronic stable heart failure",
+      "c": "It is contraindicated in heart failure",
+      "d": "It is used only for acute heart failure"
     },
     "correct_option": "b",
     "explanation": "Metoprolol succinate (extended-release) is one of three evidence-based beta-blockers for HFrEF (along with bisoprolol and carvedilol). It improves ejection fraction and reduces mortality.\n\nAdditional: failure by blocking chronic sympathetic overactivation",
@@ -1430,10 +1430,10 @@
   {
     "question_text": "What is the difference between dihydropyridine and non-dihydropyridine CCBs?",
     "options": {
-      "a": "No difference",
+      "a": "No difference between the two subclasses",
       "b": "DHP CCBs primarily vasodilate arteries; non-DHP CCBs affect the heart more",
-      "c": "Non-DHP are always better",
-      "d": "DHP don't affect blood vessels"
+      "c": "Non-DHP drugs are always better",
+      "d": "DHP drugs do not affect blood vessels"
     },
     "correct_option": "b",
     "explanation": "DHP CCBs (amlodipine, nifedipine): primarily arterial vasodilation. Non-DHP (verapamil, diltiazem): also slow heart rate and AV conduction. Non-DHPs are contraindicated in heart block and HFrEF.\n\nNote: amlodipine; verapamil, diltiazem\n\nAdditional: depress cardiac conduction and contractility\n\nNote: non-DHP also",
@@ -1499,7 +1499,7 @@
     "question_text": "What is the role of pharmacists in anticoagulation management?",
     "options": {
       "a": "No role",
-      "b": "Dosing, monitoring INR/APTT",
+      "b": "Dosing and monitoring INR/APTT",
       "c": "Only dispensing",
       "d": "Only compounding"
     },
@@ -1532,10 +1532,10 @@
   {
     "question_text": "What is the first-line treatment for acute asthma exacerbation?",
     "options": {
-      "a": "Oral corticosteroids",
-      "b": "Inhaled short-acting beta-2 agonist —",
-      "c": "Antibiotics",
-      "d": "Antihistamines"
+      "a": "Oral corticosteroids given first",
+      "b": "Inhaled short-acting beta-2 agonist (SABA) repeated frequently",
+      "c": "Antibiotics for possible infection",
+      "d": "Antihistamines for allergy relief"
     },
     "correct_option": "b",
     "explanation": "Acute asthma: SABA (albuterol) every 20 minutes for 1 hour (nebulizer or MDI with spacer). Add ipratropium bromide for severe attacks. Systemic corticosteroids within first hour if severe.\n\nNote: SABA; salbutamol\n\nAdditional: albuterol via nebulizer or MDI",
@@ -1566,10 +1566,10 @@
   {
     "question_text": "What is the difference between SABA and LABA?",
     "options": {
-      "a": "No difference",
-      "b": "SABA — short-acting, used for quick relief of bronchospasm",
-      "c": "LABA is for acute attacks",
-      "d": "SABA is for maintenance"
+      "a": "No difference between the two drugs",
+      "b": "SABA acts quickly for acute relief; LABA is long-acting for maintenance control",
+      "c": "LABA is used only for acute attacks",
+      "d": "SABA is used for maintenance control"
     },
     "correct_option": "b",
     "explanation": "SABA (4-6h duration) for rescue/acute bronchospasm. LABA (12h) for maintenance, always combined with ICS in asthma. LABA monotherapy in asthma increases risk of severe exacerbations.\n\nNote: formoterol) — long-acting, used for maintenance; never alone in asthma\n\nNote: albuterol\n\nAdditional: quick relief; LABA (salmeterol",
@@ -1618,10 +1618,10 @@
   {
     "question_text": "What is the mechanism of action of metformin in detail?",
     "options": {
-      "a": "Stimulating insulin release",
-      "b": "Activates AMP-activated protein kinase reducing hepatic",
-      "c": "Inhibiting DPP-4",
-      "d": "Blocking SGLT2"
+      "a": "Stimulating insulin release from beta cells",
+      "b": "Activates AMP-activated protein kinase reducing hepatic glucose production",
+      "c": "Inhibiting the DPP-4 enzyme",
+      "d": "Blocking SGLT2 in the kidney"
     },
     "correct_option": "b",
     "explanation": "Metformin activates AMPK, which: 1) Reduces hepatic glucose production (primary). 2) Increases glucose uptake in muscle. 3) Reduces intestinal glucose absorption. 4) Does NOT stimulate insulin release.\n\nAdditional: gluconeogenesis and improving peripheral insulin sensitivity",
@@ -1718,10 +1718,10 @@
   {
     "question_text": "What is the mechanism of action of metformin vs sulfonylureas?",
     "options": {
-      "a": "Same mechanism",
+      "a": "Both share the same mechanism",
       "b": "Metformin reduces hepatic glucose production; sulfonylureas stimulate insulin release",
-      "c": "Both stimulate insulin",
-      "d": "Both reduce glucose production only"
+      "c": "Both stimulate insulin secretion",
+      "d": "Both only reduce hepatic glucose production"
     },
     "correct_option": "b",
     "explanation": "Metformin: reduces hepatic glucose output + improves insulin sensitivity (does NOT stimulate insulin → low hypoglycemia risk). Sulfonylureas: close K-ATP channels on beta cells → insulin secretion (risk of hypoglycemia).\n\nNote: does not stimulate insulin\n\nAdditional: insulin release from pancreatic beta cells\n\nNote: sulfonylureas stimulate",
@@ -1752,10 +1752,10 @@
   {
     "question_text": "What is the mechanism of action of atorvastatin in detail?",
     "options": {
-      "a": "Blocking cholesterol absorption",
-      "b": "Competitively inhibiting HMG-CoA reductase the rate-limiting",
-      "c": "Increasing bile acid production",
-      "d": "Inhibiting HMG-CoA synthase"
+      "a": "Blocking cholesterol absorption in the gut",
+      "b": "Competitively inhibiting HMG-CoA reductase, the rate-limiting enzyme of cholesterol synthesis",
+      "c": "Increasing bile acid production in the liver",
+      "d": "Inhibiting the HMG-CoA synthase enzyme"
     },
     "correct_option": "b",
     "explanation": "Atorvastatin competitively inhibits HMG-CoA reductase in the mevalonate pathway. Reduced intracellular cholesterol → upregulation of hepatic LDL receptors → increased clearance of LDL-C from blood.\n\nNote: upregulating LDL receptors\n\nAdditional: enzyme in hepatic cholesterol synthesis",
@@ -1769,10 +1769,10 @@
   {
     "question_text": "What are the indications for statin therapy?",
     "options": {
-      "a": "Only high cholesterol",
-      "b": "Secondary prevention primary prevention",
-      "c": "Only for elderly",
-      "d": "Only for young patients"
+      "a": "Only when cholesterol is very high",
+      "b": "Secondary prevention and primary prevention in high-risk patients",
+      "c": "Only for elderly patients over 75",
+      "d": "Only for patients under 40 years"
     },
     "correct_option": "b",
     "explanation": "Indications: 1) Clinical ASCVD (high-intensity). 2) LDL ≥190 (high-intensity). 3) Diabetes 40-75 with LDL 70-189 (moderate-intensity). 4) Primary prevention with 10-year risk ≥7.5% (moderate to high).\n\nNote: LDL-C ≥190 mg/dL, diabetes; 40-75 years\n\nNote: established ASCVD; >7.5-20%\n\nAdditional: with high 10-year risk",
@@ -1820,10 +1820,10 @@
   {
     "question_text": "What is the mechanism of action of metronidazole?",
     "options": {
-      "a": "Inhibiting cell wall synthesis",
+      "a": "Inhibiting bacterial cell wall synthesis",
       "b": "Its reduced metabolites damage DNA causing strand breakage and cell death",
-      "c": "Inhibiting protein synthesis",
-      "d": "Inhibiting folic acid synthesis"
+      "c": "Inhibiting bacterial protein synthesis",
+      "d": "Inhibiting bacterial folic acid synthesis"
     },
     "correct_option": "b",
     "explanation": "Metronidazole is reduced by anaerobic organisms (low redox potential) → reactive nitro radicals that damage DNA (strand breakage), causing cell death. Active against anaerobes (Bacteroides, Clostridium) and protozoa (Giardia, Trichomonas).\n\nAdditional: cell death — active against anaerobes and protozoa",
@@ -1854,10 +1854,10 @@
   {
     "question_text": "What is the black box warning for metronidazole?",
     "options": {
-      "a": "It causes weight gain",
-      "b": "Alcohol interaction (disulfiram-like reaction",
-      "c": "It causes hair loss",
-      "d": "It causes hypertension"
+      "a": "It causes significant weight gain",
+      "b": "Alcohol interaction (disulfiram-like reaction with nausea and vomiting)",
+      "c": "It causes permanent hair loss",
+      "d": "It causes severe hypertension"
     },
     "correct_option": "b",
     "explanation": "Metronidazole + alcohol causes disulfiram-like reaction (nausea, vomiting, flushing). Animal studies showed carcinogenicity (avoid unnecessary use). Avoid during first trimester if possible.\n\nNote: flushing) and it is carcinogenic in animal studies\n\nAdditional: — nausea vomiting",
@@ -1872,7 +1872,7 @@
     "question_text": "What is the mechanism of action of amoxicillin?",
     "options": {
       "a": "Inhibiting protein synthesis",
-      "b": "Binding to PBPs and inhibiting bacterial cell",
+      "b": "Binding to PBPs and inhibiting bacterial cell wall synthesis",
       "c": "Inhibiting DNA replication",
       "d": "Inhibiting folic acid synthesis"
     },
@@ -1922,10 +1922,10 @@
   {
     "question_text": "What is the major side effect of fluoroquinolones?",
     "options": {
-      "a": "GI upset only",
+      "a": "Mild GI upset only",
       "b": "Tendon rupture, QT prolongation",
-      "c": "Weight gain",
-      "d": "Hair loss"
+      "c": "Significant weight gain",
+      "d": "Permanent hair loss"
     },
     "correct_option": "b",
     "explanation": "Fluoroquinolone side effects: tendon rupture/tendinitis (black box warning), QT prolongation (avoid with other QT-prolonging drugs), peripheral neuropathy, CNS effects, photosensitivity, and dysglycemia.\n\nNote: peripheral neuropathy, and CNS effects; dizziness, confusion\n\nNote: especially Achilles",
@@ -2026,7 +2026,7 @@
     "question_text": "What is the role of pharmacists in asthma management?",
     "options": {
       "a": "No role",
-      "b": "Inhaler technique education",
+      "b": "Inhaler technique education and adherence support",
       "c": "Only dispensing inhalers",
       "d": "Only compounding"
     },
@@ -2043,7 +2043,7 @@
     "question_text": "What is the role of pharmacists in diabetes management?",
     "options": {
       "a": "No role",
-      "b": "Blood glucose monitoring",
+      "b": "Blood glucose monitoring education and counseling",
       "c": "Only dispensing insulin",
       "d": "Only counting tablets"
     },
@@ -2059,10 +2059,10 @@
   {
     "question_text": "What is the mechanism of action of amlodipine in detail?",
     "options": {
-      "a": "Blocking beta receptors",
+      "a": "Blocking beta-1 adrenergic receptors",
       "b": "Binding to L-type calcium channels in vascular smooth muscle",
-      "c": "Inhibiting angiotensin II",
-      "d": "Blocking aldosterone"
+      "c": "Inhibiting angiotensin II production",
+      "d": "Blocking aldosterone receptors"
     },
     "correct_option": "b",
     "explanation": "Amlodipine binds to the alpha-1 subunit of L-type voltage-gated calcium channels in arterial smooth muscle, preventing calcium influx → reduced smooth muscle contraction → vasodilation → reduced peripheral resistance and BP.\n\nNote: causing vasodilation and reducing afterload\n\nAdditional: vascular smooth muscle blocking Ca2+ influx",
@@ -2128,10 +2128,10 @@
   {
     "question_text": "What is the difference between primary and secondary hypertension?",
     "options": {
-      "a": "No difference",
-      "b": "Primary = no identifiable cause; secondary",
-      "c": "Secondary is always more common",
-      "d": "Primary is always more severe"
+      "a": "No difference between the two types",
+      "b": "Primary = no identifiable cause; secondary = due to an underlying condition",
+      "c": "Secondary hypertension is always more common",
+      "d": "Primary hypertension is always more severe"
     },
     "correct_option": "b",
     "explanation": "Primary (essential) hypertension: no single identifiable cause (genetic + environmental factors). Secondary (5-10%): renal disease, pheochromocytoma, Cushing's, primary aldosteronism, coarctation of aorta, OSA.\n\nNote: renal disease, endocrine disorders, medications\n\nNote: essential; 90-95%\n\nAdditional: = due to an identifiable cause",
@@ -2146,7 +2146,7 @@
     "question_text": "What are the 5 classes of antihypertensive drugs recommended as first-line?",
     "options": {
       "a": "Alpha-blockers, beta-blockers, nitrates, diuretics, ACE inhibitors",
-      "b": "Thiazide diuretics, ACE inhibitors, ARBs",
+      "b": "Thiazide diuretics, ACE inhibitors, ARBs, calcium channel blockers",
       "c": "Only ACE inhibitors",
       "d": "Only beta-blockers"
     },
@@ -2180,7 +2180,7 @@
     "question_text": "What is the mechanism of action of digoxin?",
     "options": {
       "a": "Blocking beta receptors",
-      "b": "Inhibiting Na+/K+-ATPase pump",
+      "b": "Inhibiting the Na+/K+-ATPase pump",
       "c": "Blocking calcium channels",
       "d": "Inhibiting ACE"
     },
@@ -2214,7 +2214,7 @@
     "question_text": "What is the antidote for digoxin toxicity?",
     "options": {
       "a": "Atropine to raise the heart rate",
-      "b": "Digoxin-specific antibody fragments for life-threatening",
+      "b": "Digoxin-specific antibody fragments for life-threatening toxicity",
       "c": "N-acetylcysteine for paracetamol overdose",
       "d": "Vitamin K to reverse warfarin effect"
     },
@@ -2231,11 +2231,11 @@
     "question_text": "What factors can increase digoxin toxicity?",
     "options": {
       "a": "Hypokalemia, hypomagnesemia, renal impairment, quinidine and amiodarone co-administration, and elderly age",
-      "b": "Only high doses",
-      "c": "Only kidney disease",
-      "d": "Only old age"
+      "b": "Only when the prescribed dose is too high",
+      "c": "Only in patients with pre-existing kidney disease",
+      "d": "Only in very elderly patients"
     },
-    "correct_option": "b",
+    "correct_option": "a",
     "explanation": "Risk factors for digoxin toxicity: hypokalemia (most important — K+ and digoxin compete for Na+/K+-ATPase), hypomagnesemia, renal impairment (reduced clearance), drug interactions (amiodarone, verapamil, quinidine).",
     "subject": "pharmacotherapeutics-i",
     "difficulty": "medium",
@@ -2298,10 +2298,10 @@
   {
     "question_text": "What is the role of pharmacists in cardiovascular disease management?",
     "options": {
-      "a": "No role",
-      "b": "Medication therapy management",
-      "c": "Only dispensing",
-      "d": "Only compounding"
+      "a": "No role at all in CVD care",
+      "b": "Medication therapy management and adherence counseling",
+      "c": "Only dispensing cardiac medications",
+      "d": "Only compounding cardiac preparations"
     },
     "correct_option": "b",
     "explanation": "Pharmacists in CVD: medication reconciliation, BP monitoring (pharmacist-led clinics), statin and anticoagulation management, adherence assessment, drug interaction screening, smoking cessation support.\n\nNote: BP/cholesterol monitoring, adherence support, drug interaction screening, and lifestyle modification counseling\n\nAdditional: dose optimization",
@@ -2366,10 +2366,10 @@
   {
     "question_text": "What is the clinical use of spironolactone in heart failure?",
     "options": {
-      "a": "No use in HF",
-      "b": "It reduces mortality and hospitalizations in severe",
-      "c": "It is first-line for all HF",
-      "d": "It worsens heart failure"
+      "a": "No use in heart failure at all",
+      "b": "It reduces mortality and hospitalizations in severe heart failure",
+      "c": "It is first-line for every heart failure case",
+      "d": "It worsens heart failure outcomes"
     },
     "correct_option": "b",
     "explanation": "RALES trial: spironolactone (25mg/day) reduced mortality by 30% in severe HFrEF (NYHA III-IV). It blocks the harmful effects of aldosterone on cardiac remodeling and fibrosis.\n\nAdditional: HF as demonstrated in the RALES trial",
@@ -2433,10 +2433,10 @@
   {
     "question_text": "What is the mechanism of action of tramadol?",
     "options": {
-      "a": "Only COX inhibition",
+      "a": "Only COX enzyme inhibition",
       "b": "Weak opioid agonist and inhibits serotonin/norepinephrine reuptake",
-      "c": "Only NSAID-like action",
-      "d": "Only local anesthetic effect"
+      "c": "Only NSAID-like anti-inflammatory action",
+      "d": "Only a local anesthetic effect"
     },
     "correct_option": "b",
     "explanation": "Tramadol: weak mu-opioid receptor agonist + inhibits reuptake of serotonin and norepinephrine in descending pain pathways. Dual mechanism provides analgesic synergy. Active metabolite (O-desmethyltramadol) is more potent.\n\nNote: mu-receptor\n\nAdditional: — dual mechanism for pain relief",
@@ -2451,7 +2451,7 @@
     "question_text": "What is the advantage of tramadol over stronger opioids?",
     "options": {
       "a": "It is always stronger",
-      "b": "Lower risk of respiratory depression and dependence compared",
+      "b": "Lower risk of respiratory depression and dependence compared to morphine",
       "c": "No addiction potential",
       "d": "It is more effective for severe pain"
     },
@@ -2519,7 +2519,7 @@
     "question_text": "What is the role of pharmacists in infectious disease management?",
     "options": {
       "a": "No role",
-      "b": "Antibiotic stewardship dose optimization",
+      "b": "Antibiotic stewardship and dose optimization",
       "c": "Only dispensing antibiotics",
       "d": "Only compounding IV antibiotics"
     },
@@ -2570,7 +2570,7 @@
     "question_text": "What is liposomal amphotericin B (AmBisome)?",
     "options": {
       "a": "A different antifungal from another class",
-      "b": "A lipid formulation of amphotericin B with significantly",
+      "b": "A lipid formulation of amphotericin B with significantly less nephrotoxicity",
       "c": "A more toxic version of the drug",
       "d": "An oral formulation of the same drug"
     },
@@ -2654,10 +2654,10 @@
   {
     "question_text": "What is the difference between LABA and LAMA in COPD?",
     "options": {
-      "a": "No difference",
+      "a": "No difference between the two classes",
       "b": "LABA are beta-2 agonists; LAMA are muscarinic antagonists",
-      "c": "LAMA is always better",
-      "d": "LABA is for asthma only"
+      "c": "LAMA is always better than LABA",
+      "d": "LABA is used for asthma only"
     },
     "correct_option": "b",
     "explanation": "LABA: stimulate beta-2 receptors → ↑cAMP → bronchodilation. LAMA: block M3 muscarinic receptors → prevent acetylcholine-mediated bronchoconstriction. Combination provides additive bronchodilation.\n\nNote: salmeterol, formoterol; tiotropium\n\nAdditional: antagonist — both cause bronchodilation through different mechanisms\n\nNote: LAMA is a muscarinic",
@@ -2690,7 +2690,7 @@
     "question_text": "What is the role of eosinophils in asthma pathophysiology?",
     "options": {
       "a": "No role in asthma development",
-      "b": "Eosinophils release inflammatory mediators that damage airway",
+      "b": "Eosinophils release inflammatory mediators that damage airway tissue",
       "c": "They only kill bacteria in the airways",
       "d": "They prevent asthma attacks entirely"
     },
@@ -2723,10 +2723,10 @@
   {
     "question_text": "What is the mechanism of action of metformin on peripheral tissues?",
     "options": {
-      "a": "It has no peripheral effect",
-      "b": "It enhances insulin-mediated glucose uptake in skeletal muscle and adipose",
-      "c": "It blocks glucose absorption",
-      "d": "It increases glucagon secretion"
+      "a": "It has no effect on peripheral tissues",
+      "b": "It enhances insulin-mediated glucose uptake in skeletal muscle and adipose tissue",
+      "c": "It blocks glucose absorption from the gut",
+      "d": "It increases glucagon secretion from the pancreas"
     },
     "correct_option": "b",
     "explanation": "Metformin improves peripheral insulin sensitivity: activates AMPK → increases GLUT4 transporter expression and translocation to cell membrane → enhanced glucose uptake in muscle and adipose tissue.\n\nAdditional: tissue by increasing GLUT4 translocation and improving insulin receptor signaling",
@@ -2758,7 +2758,7 @@
     "question_text": "What is the mechanism of action of leflunomide in rheumatoid arthritis?",
     "options": {
       "a": "COX inhibition like NSAIDs",
-      "b": "Inhibiting dihydroorotate dehydrogenase blocking de novo",
+      "b": "Inhibiting dihydroorotate dehydrogenase, blocking de novo pyrimidine synthesis",
       "c": "Blocking TNF-alpha with antibodies",
       "d": "Inhibiting JAK-STAT pathway"
     },
@@ -2792,7 +2792,7 @@
     "question_text": "What is the role of folic acid supplementation with methotrexate?",
     "options": {
       "a": "It is not needed",
-      "b": "Folic acid reduces methotrexate side effects:",
+      "b": "Folic acid reduces methotrexate side effects like stomatitis and cytopenias",
       "c": "It increases methotrexate toxicity",
       "d": "It replaces the need for methotrexate"
     },
@@ -2809,7 +2809,7 @@
     "question_text": "What is the role of pharmacists in oncology?",
     "options": {
       "a": "No role",
-      "b": "Chemotherapy preparation dosing calculations",
+      "b": "Chemotherapy preparation and dosing calculations",
       "c": "Only dispensing oral chemo drugs",
       "d": "Only compounding IV drugs"
     },
@@ -2826,7 +2826,7 @@
     "question_text": "What is the primary management of anaphylaxis?",
     "options": {
       "a": "Antihistamines only",
-      "b": "Intramuscular epinephrine 0.",
+      "b": "Intramuscular epinephrine 0.3-0.5 mg (1:1000)",
       "c": "IV fluids only",
       "d": "Corticosteroids only"
     },
@@ -2876,10 +2876,10 @@
   {
     "question_text": "What is the pharmacotherapy of status asthmaticus?",
     "options": {
-      "a": "Oral antihistamines",
-      "b": "Continuous nebulized SABA +",
-      "c": "Antibiotics only",
-      "d": "Epinephrine only"
+      "a": "Oral antihistamines for allergy",
+      "b": "Continuous nebulized SABA plus ipratropium and systemic steroids",
+      "c": "Antibiotics as the sole treatment",
+      "d": "Epinephrine as the sole treatment"
     },
     "correct_option": "b",
     "explanation": "Status asthmaticus: 1) Continuous nebulized albuterol + ipratropium. 2) Systemic corticosteroids (methylprednisolone IV or prednisone PO). 3) IV magnesium sulfate (smooth muscle relaxant). 4) High-flow O2. 5) Consider IV epinephrine in life-threatening cases.\n\nNote: magnesium sulfate IV, and supplemental oxygen\n\nAdditional: ipratropium systemic corticosteroids IV",
@@ -2945,7 +2945,7 @@
     "question_text": "What is the role of pharmacists in warfarin management?",
     "options": {
       "a": "No role",
-      "b": "Dose adjustments",
+      "b": "Dose adjustments based on INR",
       "c": "Only dispensing warfarin tablets",
       "d": "Only counting warfarin pills"
     },
@@ -2961,10 +2961,10 @@
   {
     "question_text": "What is the difference between DVT and PE treatment?",
     "options": {
-      "a": "Exactly the same treatment for both",
+      "a": "Exactly the same treatment for both conditions",
       "b": "DVT and PE are treated similarly with anticoagulation, though PE may need more aggressive therapy",
-      "c": "DVT needs surgery while PE does not",
-      "d": "PE does not need any anticoagulation"
+      "c": "DVT needs surgery while PE never does",
+      "d": "PE does not require anticoagulation at all"
     },
     "correct_option": "b",
     "explanation": "Uncomplicated DVT and PE: anticoagulation (LMWH/heparin bridging to warfarin or DOACs). MassPE with hemodynamic instability: thrombolytics (alteplase). Recurrent PE despite anticoagulation: IVC filter.\n\nNote: heparin → warfarin/DOACs\n\nAdditional: massive PE may require thrombolysis or embolectomy",
@@ -2980,7 +2980,7 @@
     "question_text": "What are direct oral anticoagulants (DOACs)?",
     "options": {
       "a": "They are just warfarin substitutes",
-      "b": "Dabigatran, rivaroxaban/apixaban/edoxaban — oral",
+      "b": "Dabigatran, rivaroxaban/apixaban/edoxaban — oral direct factor inhibitors",
       "c": "They are only injectable",
       "d": "They are antiplatelet agents"
     },
@@ -3029,10 +3029,10 @@
   {
     "question_text": "What is the principle of antimicrobial stewardship?",
     "options": {
-      "a": "Use the broadest spectrum possible",
-      "b": "Optimizing antimicrobial therapy to improve patient",
-      "c": "Use antibiotics for all infections",
-      "d": "Avoid all antibiotics"
+      "a": "Use the broadest spectrum antibiotic possible",
+      "b": "Optimizing antimicrobial therapy to improve patient outcomes and limit resistance",
+      "c": "Use antibiotics for every type of infection",
+      "d": "Avoid antibiotics in all situations"
     },
     "correct_option": "b",
     "explanation": "Antimicrobial stewardship: right drug, right dose, right duration, right route. Goals: improve outcomes, reduce adverse effects, minimize resistance development, and reduce unnecessary costs.\n\nNote: and cost\n\nAdditional: outcomes while minimizing resistance toxicity",
@@ -3045,10 +3045,10 @@
   {
     "question_text": "What is the concept of de-escalation in antibiotic therapy?",
     "options": {
-      "a": "Stopping all antibiotics",
-      "b": "Switching from broad-spectrum to narrow-spectrum antibiotics once",
-      "c": "Increasing the antibiotic dose",
-      "d": "Adding more antibiotics"
+      "a": "Stopping antibiotics as soon as possible",
+      "b": "Switching from broad-spectrum to narrow-spectrum antibiotics once culture results are known",
+      "c": "Increasing the antibiotic dose further",
+      "d": "Adding more broad-spectrum antibiotics"
     },
     "correct_option": "b",
     "explanation": "De-escalation (streamlining): start with empiric broad-spectrum therapy, then narrow to targeted therapy based on culture results. This reduces selective pressure for resistance and minimizes side effects.\n\nAdditional: the causative organism and sensitivity are identified",
@@ -3063,7 +3063,7 @@
     "question_text": "What is the role of pharmacists in antimicrobial stewardship?",
     "options": {
       "a": "No role",
-      "b": "Recommending appropriate antibiotics",
+      "b": "Recommending appropriate antibiotics and reviewing therapy",
       "c": "Only dispensing antibiotics",
       "d": "Only counting pills"
     },
@@ -3079,10 +3079,10 @@
   {
     "question_text": "What is the mechanism of action of vancomycin?",
     "options": {
-      "a": "Inhibiting bacterial DNA replication",
+      "a": "Inhibiting bacterial DNA replication machinery",
       "b": "Binding to D-Ala-D-Ala terminal of peptidoglycan precursors, inhibiting cell wall synthesis",
-      "c": "Inhibiting bacterial protein synthesis",
-      "d": "Disrupting the bacterial cell membrane"
+      "c": "Inhibiting the bacterial ribosome's protein synthesis",
+      "d": "Disrupting the integrity of the bacterial cell membrane"
     },
     "correct_option": "b",
     "explanation": "Vancomycin binds to the D-Ala-D-Ala terminus of peptidoglycan precursors, sterically preventing both transglycosylation (polymerization) and transpeptidation (cross-linking), inhibiting cell wall synthesis.\n\nAdditional: cell wall synthesis by preventing transglycosylation and transpeptidation",
@@ -3114,7 +3114,7 @@
     "question_text": "What is the importance of therapeutic drug monitoring (TDM)?",
     "options": {
       "a": "All drugs need monitoring",
-      "b": "Monitoring drug levels for drugs with narrow therapeutic",
+      "b": "Monitoring drug levels for drugs with a narrow therapeutic index",
       "c": "TDM is only for antibiotics",
       "d": "TDM is only for psychiatric drugs"
     },
@@ -3147,7 +3147,7 @@
     "question_text": "What is the role of pharmacists in pain management?",
     "options": {
       "a": "No role",
-      "b": "Pain assessment, multimodal analgesia strategies",
+      "b": "Pain assessment and multimodal analgesia strategies",
       "c": "Only dispensing painkillers",
       "d": "Only counting tablets"
     },
@@ -3180,10 +3180,10 @@
   {
     "question_text": "What is the advantage of dexamethasone over prednisolone in some settings?",
     "options": {
-      "a": "Dexamethasone is always better",
-      "b": "Dexamethasone has 6x the potency of cortisol and has no mineralocorticoid",
-      "c": "Prednisolone is always better",
-      "d": "They are identical"
+      "a": "Dexamethasone is always better in every setting",
+      "b": "Dexamethasone has 6x the potency of cortisol and has no mineralocorticoid activity",
+      "c": "Prednisolone is always better in every setting",
+      "d": "They are completely identical drugs"
     },
     "correct_option": "b",
     "explanation": "Dexamethasone: 6x cortisol potency, no mineralocorticoid activity (no sodium/water retention), long half-life (36-72h). Prednisolone: 4x potency, some mineralocorticoid activity. Choice depends on clinical context.\n\nNote: vs 4x for prednisolone\n\nAdditional: activity useful in patients needing potent anti-inflammatory without fluid retention",
