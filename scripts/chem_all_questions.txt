@@ -1,0 +1,199 @@
+[0] chem-i-unit-1 :: A pharmacopoeial monograph includes all of the following EXCEPT:
+[1] chem-i-unit-2 :: According to the Brønsted-Lowry concept, an acid is defined as:
+[2] chem-i-unit-2 :: Boric acid is used as:
+[3] chem-i-unit-2 :: Sodium benzoate is primarily used as:
+[4] chem-i-unit-2 :: BHA and BHT are classified as:
+[5] chem-i-unit-3 :: Aluminum hydroxide gel is classified as:
+[6] chem-i-unit-3 :: Magnesium trisilicate acts as an antacid by:
+[7] chem-i-unit-3 :: Magnesium sulphate is used as:
+[8] chem-i-unit-4 :: Calamine is primarily used as:
+[9] chem-i-unit-4 :: Hydrogen peroxide (H₂O₂) acts as an antimicrobial agent by:
+[10] chem-i-unit-5 :: Sodium fluoride is used in dentistry as:
+[11] chem-i-unit-6 :: Ammonium chloride is used as:
+[12] chem-i-unit-6 :: Activated charcoal is used as an antidote because it:
+[13] chem-i-unit-6 :: Ferrous fumarate is classified as a:
+[14] chem-i-unit-7 :: ORS (Oral Rehydration Salts) contain primarily:
+[15] chem-i-unit-7 :: Ringer Lactate solution is used for:
+[16] chem-i-unit-8 :: Barium sulphate is used as:
+[17] chem-i-unit-9 :: The limit test for chloride is based on the reaction of chloride ions with:
+[18] chem-i-unit-9 :: A primary standard should have all EXCEPT:
+[19] chem-i-unit-9 :: 1 M (Molar) solution contains:
+[20] chem-i-unit-10 :: In an acid-base titration, methyl orange indicator changes color from:
+[21] chem-i-unit-10 :: Iodometry involves:
+[22] chem-i-unit-11 :: Column chromatography separates compounds based on:
+[23] chem-i-unit-11 :: HPLC stands for:
+[24] chem-i-unit-2 :: Bronsted-Lowry acid is a:
+[25] chem-i-unit-2 :: Sodium bicarbonate is used as:
+[26] chem-i-unit-2 :: Buffer capacity depends on:
+[27] chem-i-unit-2 :: Sodium metabisulphite is used as:
+[28] chem-i-unit-2 :: Methylparaben is classified as:
+[29] chem-i-unit-3 :: Aluminum hydroxide gel is used as:
+[30] chem-i-unit-3 :: Magnesium hydroxide has:
+[31] chem-i-unit-3 :: Magnesium trisilicate is used as:
+[32] chem-i-unit-3 :: Light kaolin is used as:
+[33] chem-i-unit-3 :: Calcium carbonate is an:
+[34] chem-i-unit-4 :: Zinc oxide is used as:
+[35] chem-i-unit-4 :: Calamine is:
+[36] chem-i-unit-4 :: Povidone iodine is classified as:
+[37] chem-i-unit-4 :: Talc is used in pharmacy as:
+[38] chem-i-unit-4 :: Silver nitrate is used as:
+[39] chem-i-unit-6 :: Activated charcoal is used as:
+[40] chem-i-unit-6 :: Ferrous fumarate is a:
+[41] chem-i-unit-7 :: ORS contains all EXCEPT:
+[42] chem-i-unit-7 :: Calcium gluconate is used for:
+[43] chem-i-unit-7 :: Potassium chloride supplements are given for:
+[44] chem-i-unit-7 :: Sodium bicarbonate is used in:
+[45] chem-i-unit-10 :: In acid-base titration, the endpoint is:
+[46] chem-i-unit-10 :: Molarity is defined as:
+[47] chem-i-unit-10 :: Phenolphthalein changes color in the range:
+[48] chem-i-unit-10 :: Iodometric titration involves:
+[49] chem-i-unit-11 :: In column chromatography, the mobile phase is called:
+[50] chem-i-unit-11 :: Rf value in TLC is:
+[51] chem-i-unit-9 :: Limit test for chloride involves:
+[52] chem-i-unit-9 :: Limit test for sulphate uses:
+[53] chem-i-unit-9 :: Identification test for iron involves:
+[54] chem-i-unit-9 :: Melting point determination is used for:
+[55] chem-i-unit-9 :: Precision in analytical chemistry refers to:
+[56] none :: What is pharmaceutical chemistry?
+[57] none :: What is medicinal chemistry?
+[58] none :: What is a functional group in organic chemistry?
+[59] none :: Which functional group is present in alcohols?
+[60] none :: Which functional group is present in carboxylic acids?
+[61] none :: What is the IUPAC name of aspirin?
+[62] none :: What is the chemical formula of paracetamol (acetaminophen)?
+[63] none :: What is the chemical name of paracetamol?
+[64] none :: What is the synthesis of aspirin?
+[65] none :: What is the role of H2SO4 in aspirin synthesis?
+[66] none :: What is the theory of drug action?
+[67] none :: What is a pharmacophore?
+[68] none :: What is structure-activity relationship (SAR)?
+[69] none :: What is a lead compound?
+[70] none :: What is bioisosterism?
+[71] none :: What is a prodrug?
+[72] none :: Give an example of a prodrug.
+[73] none :: What is the difference between a drug and a medicine?
+[74] none :: What is an excipient?
+[75] none :: What is the difference between a pure substance and a mixture?
+[76] none :: What is the pH scale?
+[77] none :: What is a buffer solution?
+[78] none :: What is a salt in pharmaceutical chemistry?
+[79] none :: Why are drugs often converted to salt forms?
+[80] none :: What is the difference between a racemic mixture and an enantiopure compound?
+[81] none :: What is chirality in drug molecules?
+[82] none :: Give an example where drug enantiomers have different activities.
+[83] none :: What is a functional group interconversion (FGI)?
+[84] none :: What is nucleophilic substitution?
+[85] none :: What is the difference between SN1 and SN2 reactions?
+[86] none :: What is an esterification reaction?
+[87] none :: What is hydrolysis in pharmaceutical chemistry?
+[88] none :: What is an amide bond (peptide bond)?
+[89] none :: What is oxidation in organic chemistry?
+[90] none :: What is reduction in organic chemistry?
+[91] none :: What are common reducing agents used in drug synthesis?
+[92] none :: What are common oxidizing agents used in drug synthesis?
+[93] none :: What is an aromatic compound?
+[94] none :: What is electrophilic aromatic substitution (EAS)?
+[95] none :: What is the Friedel-Crafts reaction?
+[96] none :: What is the significance of nitro group reduction in drug synthesis?
+[97] none :: What is diazotization?
+[98] none :: What is the Baeyer-Villiger oxidation?
+[99] none :: What is a heterocyclic compound?
+[100] none :: Name common nitrogen-containing heterocyclic rings in drugs.
+[101] none :: What is the Beilstein test?
+[102] none :: What is the Lassaigne test used for?
+[103] none :: What is a carbonyl group?
+[104] none :: What is the Schiff test used for?
+[105] none :: What is Tollens' test?
+[106] none :: What is the significance of sulfonamide drugs?
+[107] none :: What is the structure-activity relationship of sulfonamides?
+[108] none :: What is the general structure of a barbiturate?
+[109] none :: How do barbiturates act as sedatives?
+[110] none :: What is the general structure of a benzodiazepine?
+[111] none :: How do benzodiazepines differ from barbiturates in mechanism?
+[112] none :: What is the general structure of a sulfonamide antibiotic?
+[113] none :: What is paracetamol (acetaminophen) synthesized from?
+[114] none :: What are the metabolites of paracetamol?
+[115] none :: What is NAPQI?
+[116] none :: What is the antidote for paracetamol poisoning?
+[117] none :: What is the general structure of a quinolone antibiotic?
+[118] none :: What is the mechanism of action of fluoroquinolones?
+[119] none :: What is the general structure of a cephalosporin?
+[120] none :: What is the difference between penicillins and cephalosporins structurally?
+[121] none :: What is the role of the beta-lactam ring in penicillin activity?
+[122] none :: What is the significance of the 6-aminopenicillanic acid (6-APA) nucleus?
+[123] none :: What is the Claisen condensation?
+[124] none :: What is the Knoevenagel condensation?
+[125] none :: What is the Grignard reaction?
+[126] none :: What is hydrogen bonding and its significance in drug-receptor interaction?
+[127] none :: What is the significance of lipophilicity in drug design?
+[128] none :: What is logP in medicinal chemistry?
+[129] none :: What is the importance of pKa in drug design?
+[130] none :: What is Lipinski's Rule of Five?
+[131] none :: What is a Michael acceptor in drug chemistry?
+[132] none :: What is the Robinson annulation?
+[133] none :: What is diazepam's chemical classification?
+[134] none :: What is the general structure of a sulfonamide drug?
+[135] none :: What is ibuprofen's chemical classification?
+[136] none :: What is the mechanism of action of aspirin?
+[137] none :: What is the difference between COX-1 and COX-2?
+[138] none :: What is the structural difference between aspirin and salicylic acid?
+[139] none :: What is the chemical name of caffeine?
+[140] none :: What is the structural relationship between caffeine, theophylline, and theobromine?
+[141] none :: What is the significance of methylation of the xanthine ring?
+[142] none :: What is the synthesis of paracetamol from phenol?
+[143] none :: What is the condensation reaction between an amine and a carboxylic acid?
+[144] none :: What is the Grignard reagent?
+[145] none :: What is the Cannizzaro reaction?
+[146] none :: What is the purpose of drug chirality in pharmaceutical chemistry?
+[147] none :: What is a pharmacological antagonist?
+[148] none :: What is the difference between competitive and non-competitive antagonism?
+[149] none :: What is the Hammett equation in drug design?
+[150] none :: What is a bioisostere?
+[151] none :: Give examples of classical bioisosteres.
+[152] none :: What is the significance of the Michaelis-Menten equation in pharmacology?
+[153] none :: What is the difference between Km and Vmax?
+[154] none :: What is a Lineweaver-Burk plot?
+[155] none :: What is bioavailability?
+[156] none :: What is the first-pass effect?
+[157] none :: What is the biological source of digitalis?
+[158] none :: What is the difference between inhibitory constant (Ki) and IC50?
+[159] none :: What is a Michaelis-Menten inhibitor?
+[160] none :: What is an uncompetitive inhibitor?
+[161] none :: What is the Henderson-Hasselbalch equation?
+[162] none :: What is the significance of drug ionization for absorption?
+[163] none :: What is the drug's partition coefficient?
+[164] none :: What is crystal polymorphism in pharmaceutical chemistry?
+[165] none :: What is the significance of salt selection in drug formulation?
+[166] none :: What is a soft drug?
+[167] none :: What is a hard drug?
+[168] none :: What is the significance of the amide bond in peptides and proteins?
+[169] none :: What is the Bischler-Napieralski reaction?
+[170] none :: What is the Pictet-Spengler reaction?
+[171] none :: What is the Curtius rearrangement?
+[172] none :: What is the Hofmann rearrangement?
+[173] none :: What is the Gabriel phthalimide synthesis?
+[174] none :: What is the significance of the phenol group in drug molecules?
+[175] none :: What is the significance of the carboxylic acid group in drugs?
+[176] none :: What is the significance of the amino group in drug molecules?
+[177] none :: What is the significance of the halogen atom in drug design?
+[178] none :: What is the difference between a drug's intrinsic activity and efficacy?
+[179] none :: What is the Clark's occupancy theory?
+[180] none :: What is the difference between affinity and potency?
+[181] none :: What is the chemical structure of penicillin G (benzylpenicillin)?
+[182] none :: Why is penicillin G acid-labile (destroyed in stomach acid)?
+[183] none :: How were acid-stable penicillins developed?
+[184] none :: What is the role of the acyl side chain in penicillin activity?
+[185] none :: What is the Vilsmeier-Haack reaction?
+[186] none :: What is the Sandmeyer reaction?
+[187] none :: What is the Fries rearrangement?
+[188] none :: What is the significance of the oxazolidinone ring?
+[189] none :: What is the chemical structure of morphine?
+[190] none :: What is the SAR of morphine?
+[191] none :: What is the difference between morphine and naloxone structurally?
+[192] none :: What is the Beckett-Casy hypothesis for opioid receptor binding?
+[193] none :: What is the significance of the 3-OH group in morphine?
+[194] none :: What is the Weerman degradation?
+[195] none :: What is the Zincke reaction?
+[196] none :: What is the Hinsberg test?
+[197] none :: What is the Hinsberg reagent?
+[198] none :: What is the importance of prodrug design in overcoming the first-pass effect?
