@@ -1276,10 +1276,10 @@
   {
     "question_text": "Who is responsible for managing the hospital pharmacy?",
     "options": {
-      "a": "Medical superintendent",
-      "b": "Hospital pharmacist",
+      "a": "Medical superintendent of the hospital",
+      "b": "Any duty pharmacist in the department",
       "c": "Pharmacist-in-charge or chief pharmacist",
-      "d": "Nursing officer"
+      "d": "Nursing officer in charge of the ward"
     },
     "correct_option": "c",
     "explanation": "The pharmacist-in-charge or chief pharmacist is responsible for all pharmacy operations, drug procurement, storage, dispensing, and staff management.",
@@ -1478,10 +1478,10 @@
   {
     "question_text": "What is a drug store management information system (DMIS)?",
     "options": {
-      "a": "A manual record keeping book",
+      "a": "A manual record keeping register used in stores",
       "b": "A computerized system for managing drug store operations",
-      "c": "A type of drug delivery system",
-      "d": "A quality control instrument"
+      "c": "A type of drug delivery system for controlled release",
+      "d": "A quality control instrument for testing drug purity"
     },
     "correct_option": "b",
     "explanation": "DMIS is a computerized system that automates and manages inventory, procurement, dispensing, billing, and record keeping in a drug store or pharmacy.",
@@ -1660,10 +1660,10 @@
   {
     "question_text": "What is cold chain management in pharmaceuticals?",
     "options": {
-      "a": "Storing all drugs in a freezer",
+      "a": "Storing every drug in the pharmacy in a deep freezer",
       "b": "Maintaining temperature-controlled storage and transport of vaccines",
-      "c": "A type of drug formulation process",
-      "d": "Managing a chain of retail pharmacies"
+      "c": "A type of drug formulation process used in manufacturing",
+      "d": "Managing a chain of retail pharmacy branches"
     },
     "correct_option": "b",
     "explanation": "Cold chain management ensures temperature-sensitive products (vaccines, insulin, biologics) are stored and transported within required temperature ranges throughout the supply chain.\n\nAdditional: transport for sensitive products",
@@ -2009,10 +2009,10 @@
   {
     "question_text": "What is a medication error?",
     "options": {
-      "a": "A drug with expected side effects",
+      "a": "A drug that produces its expected side effects",
       "b": "Any preventable event that may lead to inappropriate medication use",
-      "c": "A manufacturing defect in a batch",
-      "d": "A natural drug reaction in the body"
+      "c": "A manufacturing defect found in a drug batch",
+      "d": "A natural pharmacological reaction of the body to a drug"
     },
     "correct_option": "b",
     "explanation": "Medication errors include prescribing errors, dispensing errors, administration errors, and monitoring errors that are preventable.\n\nAdditional: inappropriate medication use or patient harm",

@@ -833,10 +833,10 @@
     "unit_id": "phs-unit-4",
     "question_text": "SODIS water purification involves:",
     "options": [
-      "Adding chlorine to the water",
+      "Adding chlorine tablets to the stored water",
       "Transparent PET bottles exposed to sunlight for 6 or more hours",
-      "Boiling the water for 30 minutes",
-      "Using an electric water purifier"
+      "Boiling the water for thirty minutes before use",
+      "Using an electric water purifier in the home"
     ],
     "correct_index": 1,
     "explanation": "SODIS uses sunlight and PET bottles for UV water disinfection.\n\nAdditional: to sunlight 6+ hours",
@@ -1556,10 +1556,10 @@
   {
     "question_text": "What is Integrated Management of Childhood Illness (IMCI)?",
     "options": {
-      "a": "A program that treats only pneumonia in children",
+      "a": "A program that treats only pneumonia in children under five",
       "b": "A WHO strategy integrating management of major childhood illnesses with nutrition and immunization",
-      "c": "Surgical treatment of children in hospital settings",
-      "d": "A vaccination-only program for children under five"
+      "c": "Surgical treatment of sick children in hospital settings",
+      "d": "A vaccination only program for children under five years"
     },
     "correct_option": "b",
     "explanation": "IMCI is a comprehensive approach that integrates management of major childhood illnesses (pneumonia, diarrhea, malaria, measles) with nutrition assessment and immunization.\n\nAdditional: childhood illnesses with nutrition and immunization",
@@ -2190,10 +2190,10 @@
   {
     "question_text": "What is the recommended supplementation of iron and folic acid during pregnancy in Nepal?",
     "options": {
-      "a": "Iron and folic acid throughout the entire pregnancy",
+      "a": "Iron and folic acid throughout the entire pregnancy only",
       "b": "Iron-folic acid supplementation from the first antenatal visit through the postpartum period",
-      "c": "Only during the last trimester of the pregnancy",
-      "d": "Only if the woman is found to be anemic"
+      "c": "Only during the last trimester of the pregnancy period",
+      "d": "Only if the woman is found to be anemic on testing"
     },
     "correct_option": "b",
     "explanation": "Nepal's national guideline recommends IFA supplementation (one tablet daily containing 60mg elemental iron + 0.4mg folic acid) from first ANC visit throughout pregnancy and 42 days postpartum.",
@@ -2207,10 +2207,10 @@
   {
     "question_text": "What is the role of calcium supplementation in pregnancy?",
     "options": {
-      "a": "It has no role in pregnancy at all",
+      "a": "It has no proven role at all during pregnancy",
       "b": "Reduces the risk of pre-eclampsia, especially where dietary calcium intake is low",
-      "c": "Causes birth defects in the developing fetus",
-      "d": "Increases blood pressure and worsens anemia"
+      "c": "Causes major birth defects in the developing fetus",
+      "d": "Increases blood pressure and worsens maternal anemia"
     },
     "correct_option": "b",
     "explanation": "Calcium supplementation (1.5-2g/day) during pregnancy reduces the risk of pre-eclampsia, particularly in populations with low calcium intake, as recommended by WHO.\n\nAdditional: in populations with low dietary calcium intake",
@@ -2258,10 +2258,10 @@
   {
     "question_text": "What is neonatal tetanus?",
     "options": {
-      "a": "Tetanus that occurs in adults after a wound",
+      "a": "Tetanus that occurs in adults after an infected wound",
       "b": "A fatal newborn infection caused by Clostridium tetani spores entering through the umbilical stump",
-      "c": "Tetanus that develops as a side effect of vaccination",
-      "d": "Tetanus acquired from a contaminated wound"
+      "c": "Tetanus that develops as a rare side effect of vaccination",
+      "d": "Tetanus acquired from a contaminated deep wound"
     },
     "correct_option": "b",
     "explanation": "Neonatal tetanus occurs when C. tetani spores contaminate the umbilical stump during unhygienic delivery/cutting. It causes fatal muscle spasms. Prevention: maternal immunization + clean delivery.\n\nAdditional: tetani entering through the umbilical cord stump",
@@ -2275,10 +2275,10 @@
   {
     "question_text": "What is child health in public health context?",
     "options": {
-      "a": "Treating only the diseases that affect children",
+      "a": "Treating only the diseases that commonly affect children",
       "b": "A comprehensive approach to promoting the physical, mental and social well-being of children",
-      "c": "Providing only routine vaccinations",
-      "d": "Providing only nutritional supplements"
+      "c": "Providing only routine childhood vaccinations",
+      "d": "Providing only nutritional supplements to children"
     },
     "correct_option": "b",
     "explanation": "Child health encompasses nutrition, immunization, disease prevention, growth monitoring, mental health, and creating environments that support healthy child development.\n\nNote: and social well-being of children from birth to adolescence",
@@ -2291,10 +2291,10 @@
   {
     "question_text": "What is the Integrated Management of Neonatal and Childhood Illness (IMNCI)?",
     "options": {
-      "a": "A surgical program for children in hospitals",
+      "a": "A surgical program for children in hospital settings",
       "b": "A strategy integrating management of major causes of childhood illness with a focus on newborn care",
-      "c": "A program that only provides infant vaccinations",
-      "d": "A nutrition program that targets only pregnant mothers"
+      "c": "A program that only provides infant vaccinations at birth",
+      "d": "A nutrition program targeting only pregnant mothers and infants"
     },
     "correct_option": "b",
     "explanation": "IMNCI (updated version of IMCI) provides an integrated approach to managing sick children, combining treatment of illness with preventive measures like immunization and nutrition counseling.\n\nNote: and immunization\n\nAdditional: neonatal and childhood illness with growth nutrition",
@@ -2524,10 +2524,10 @@
   {
     "question_text": "What is indoor air pollution?",
     "options": {
-      "a": "Pollution that comes only from factory chimneys",
+      "a": "Pollution that comes only from factory chimneys outdoors",
       "b": "Harmful substances in indoor air, usually from burning solid fuels for cooking and heating",
-      "c": "Dust and smoke that blow in from outdoors",
-      "d": "Vehicle exhaust fumes produced outside the home"
+      "c": "Dust and smoke that blow in from the outdoors",
+      "d": "Vehicle exhaust fumes produced outside the home area"
     },
     "correct_option": "b",
     "explanation": "Indoor air pollution from solid fuel burning (wood, dung, coal) for cooking/heating causes respiratory diseases and is a major health risk in developing countries.\n\nNote: smoking, or building materials\n\nAdditional: from cooking with solid fuels",

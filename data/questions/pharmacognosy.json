@@ -291,10 +291,10 @@
     "unit_id": "pharmaco-unit-5",
     "question_text": "Alkaloids are:",
     "options": [
-      "Carbohydrate derivatives",
+      "Carbohydrate derivatives of plant origin",
       "Nitrogen-containing basic compounds from plants",
-      "Fatty acid derivatives",
-      "Protein derivatives"
+      "Fatty acid derivatives of plant origin",
+      "Protein derivatives found in plants"
     ],
     "correct_index": 1,
     "explanation": "Alkaloids are naturally occurring organic compounds containing nitrogen, usually basic in nature, with physiological effects.",
@@ -1021,10 +1021,10 @@
   {
     "question_text": "What is pharmacognosy?",
     "options": {
-      "a": "Study of synthetic drugs",
+      "a": "Study of drugs prepared by chemical synthesis",
       "b": "The study of drugs obtained from natural sources",
-      "c": "Study of drug interactions",
-      "d": "Study of drug pricing"
+      "c": "Study of interactions between different drugs",
+      "d": "Study of drug pricing and market analysis"
     },
     "correct_option": "b",
     "explanation": "Pharmacognosy is the branch of pharmacology dealing with natural drugs obtained from plants, animals, minerals, and microorganisms, including their chemistry, cultivation, and uses.\n\nNote: plants, animals, minerals",
@@ -1055,10 +1055,10 @@
   {
     "question_text": "What is the biological source of opium?",
     "options": {
-      "a": "Dried leaves of Cannabis sativa",
+      "a": "Dried leaves and flowers of Cannabis sativa",
       "b": "Dried latex obtained from unripe capsules of Papaver somniferum",
-      "c": "Dried roots of Rauwolfia serpentina",
-      "d": "Dried leaves of Digitalis purpurea"
+      "c": "Dried roots of Rauwolfia serpentina plant",
+      "d": "Dried leaves of Digitalis purpurea plant"
     },
     "correct_option": "b",
     "explanation": "Opium is the dried latex (oleoresin) obtained by incising the unripe capsules of Papaver somniferum (opium poppy), belonging to family Papaveraceae.\n\nAdditional: capsules of Papaver somniferum",
@@ -1193,9 +1193,9 @@
     "question_text": "What is the biological source of belladonna?",
     "options": {
       "a": "Atropa belladonna - dried leaves and flowering tops",
-      "b": "Datura stramonium leaves",
-      "c": "Hyoscyamus niger leaves",
-      "d": "Duboisia myoporoides leaves"
+      "b": "Datura stramonium - dried leaves only",
+      "c": "Hyoscyamus niger - dried leaves only",
+      "d": "Duboisia myoporoides - dried leaves only"
     },
     "correct_option": "a",
     "explanation": "Belladonna consists of dried leaves and flowering tops of Atropa belladonna Linn. (family Solanaceae), containing tropane alkaloids like atropine, hyoscyamine, and scopolamine.",
@@ -1513,10 +1513,10 @@
   {
     "question_text": "What is the biological source of peppermint oil?",
     "options": {
-      "a": "Mentha spicata - leaves",
+      "a": "Mentha spicata - dried leaves by distillation",
       "b": "Mentha piperita - fresh leaves by steam distillation",
-      "c": "Mentha arvensis - dried herb",
-      "d": "Mentha aquatica - flowers"
+      "c": "Mentha arvensis - dried herb by distillation",
+      "d": "Mentha aquatica - flowers by steam distillation"
     },
     "correct_option": "b",
     "explanation": "Peppermint oil is obtained from fresh leaves of Mentha piperita Linn. (family Lamiaceae) by steam distillation. Its chief constituent is menthol (30-50%).",
@@ -1548,9 +1548,9 @@
     "question_text": "What is the biological source of clove oil?",
     "options": {
       "a": "Syzygium aromaticum - flower buds by steam distillation",
-      "b": "Cinnamomum zeylanicum - bark",
-      "c": "Elettaria cardamomum - seeds",
-      "d": "Coriandrum sativum - fruits"
+      "b": "Cinnamomum zeylanicum - bark by steam distillation",
+      "c": "Elettaria cardamomum - seeds by steam distillation",
+      "d": "Coriandrum sativum - fruits by steam distillation"
     },
     "correct_option": "a",
     "explanation": "Clove oil is obtained from dried flower buds of Syzygium aromaticum (family Myrtaceae). Its chief constituent is eugenol (70-90%), used as a dental analgesic.",
@@ -1714,10 +1714,10 @@
   {
     "question_text": "What is the biological source of aloe?",
     "options": {
-      "a": "Aloe vera - fresh leaf gel",
+      "a": "Aloe vera - fresh leaf gel by cold pressing",
       "b": "Aloe barbadensis - dried latex from pericyclic cells",
-      "c": "Aloe ferox - leaves only",
-      "d": "Aloe perryi - dried leaf gel"
+      "c": "Aloe ferox - dried leaves by maceration",
+      "d": "Aloe perryi - dried leaf gel by maceration"
     },
     "correct_option": "b",
     "explanation": "Pharmacological aloe is the dried latex (juice) from pericyclic cells of Aloe barbadensis leaves. Aloe vera gel (from parenchyma) is used topically for burns.\n\nNote: A. vera",
@@ -1765,10 +1765,10 @@
   {
     "question_text": "What is the biological source of frankincense (olibanum)?",
     "options": {
-      "a": "Commiphora myrrha - dried resin",
+      "a": "Commiphora myrrha - dried resin from incised bark",
       "b": "Boswellia serrata/frereana - oleo-gum-resin from incised bark",
-      "c": "Pinus palustris - oleoresin",
-      "d": "Styrax benzoin - balsam"
+      "c": "Pinus palustris - oleoresin from tapped trunks",
+      "d": "Styrax benzoin - balsam from incised trunks"
     },
     "correct_option": "b",
     "explanation": "Frankincense (Olibanum) is an oleo-gum-resin from Boswellia serrata or B. frereana (family Burseraceae). It contains boswellic acids with anti-inflammatory properties.",
@@ -3728,9 +3728,9 @@
     "question_text": "What is the Rf value in TLC?",
     "options": {
       "a": "Retardation factor - ratio of distance moved by the solute to that of the solvent front",
-      "b": "Reflection factor of the plate surface area",
-      "c": "Recovery factor of the applied sample volume",
-      "d": "Retention factor measured in HPLC columns only"
+      "b": "Reflection factor of the plate surface used for the run",
+      "c": "Recovery factor of the applied sample volume in the run",
+      "d": "Retention factor measured only in HPLC columns at high pressure"
     },
     "correct_option": "a",
     "explanation": "Rf (Retardation/Retention factor) = Distance moved by compound / Distance moved by solvent front. It is characteristic for a compound under specific conditions and used for identification.\n\nAdditional: compound to distance moved by solvent front",
@@ -3845,10 +3845,10 @@
   {
     "question_text": "What is total ash value in pharmacognosy?",
     "options": {
-      "a": "The total weight of the fresh drug sample",
+      "a": "The total weight of the fresh drug sample taken",
       "b": "Residue remaining after complete incineration of the drug, indicating its mineral content",
-      "c": "The weight of volatile oil present in the sample",
-      "d": "The weight of extract obtained with a solvent"
+      "c": "The weight of volatile oil present in the drug sample",
+      "d": "The weight of extract obtained with a solvent during analysis"
     },
     "correct_option": "b",
     "explanation": "Total ash is the residue after complete incineration. It indicates mineral content; unusually high values suggest contamination with earth/sand. Determined by official methods.\n\nAdditional: 450-600°C indicating mineral content and purity",
@@ -3862,10 +3862,10 @@
   {
     "question_text": "What is acid-insoluble ash?",
     "options": {
-      "a": "Ash that dissolves in acid",
+      "a": "The portion of ash that dissolves completely in acid",
       "b": "The residue after treating total ash with dilute acid",
-      "c": "Ash that is acidic in nature",
-      "d": "Ash from acidic plants"
+      "c": "Ash that is acidic in nature due to its minerals",
+      "d": "Ash obtained only from acidic plants"
     },
     "correct_option": "b",
     "explanation": "Acid-insoluble ash is the residue after treating total ash with dilute hydrochloric acid. High values indicate contamination with silica (sand, earth) in crude drugs.\n\nNote: contamination\n\nAdditional: dilute HCl indicating silica and siliceous matter",

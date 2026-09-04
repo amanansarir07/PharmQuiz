@@ -632,10 +632,10 @@
     "unit_id": "bio-unit-5",
     "question_text": "Vaccination provides:",
     "options": [
-      "Passive immunity only",
+      "Passive immunity transferred from the mother only",
       "Active immunity by stimulating the body's own immune response",
-      "No immunity at all to the disease",
-      "Artificial passive immunity only"
+      "Temporary immunity that lasts only a few hours",
+      "Artificial passive immunity from ready-made antibodies"
     ],
     "correct_index": 1,
     "explanation": "Vaccination stimulates the body's own immune system to produce antibodies and memory cells (active immunity).",
@@ -972,10 +972,10 @@
     "unit_id": "micro-unit-3",
     "question_text": "Normal flora refers to:",
     "options": [
-      "Pathogenic bacteria causing disease",
+      "Disease causing bacteria that invade sterile tissues",
       "Microorganisms that normally inhabit the body without causing disease",
-      "Bacteria used in lab experiments",
-      "Antibiotic-resistant bacteria"
+      "Bacteria grown only in laboratory culture media",
+      "Bacteria that are resistant to multiple antibiotics"
     ],
     "correct_index": 1,
     "explanation": "Normal flora (microbiota) are commensal/symbiotic microorganisms that normally colonize the body without causing disease.",
@@ -1105,10 +1105,10 @@
   {
     "question_text": "What is glycogen?",
     "options": {
-      "a": "A plant storage polysaccharide",
+      "a": "A plant storage polysaccharide found in starch granules",
       "b": "The storage form of glucose in animals, found mainly in liver and muscles",
-      "c": "A structural polysaccharide in insects",
-      "d": "A type of lipid stored in adipose tissue"
+      "c": "A structural polysaccharide in insects and crustaceans",
+      "d": "A type of lipid stored in adipose tissue for energy"
     },
     "correct_option": "b",
     "explanation": "Glycogen is a highly branched polysaccharide of glucose units, serving as the energy reserve in animal cells, primarily stored in liver (100-120g) and skeletal muscle (200-400g).",
@@ -1309,10 +1309,10 @@
   {
     "question_text": "What are lipids?",
     "options": {
-      "a": "Water-soluble biomolecules stored in cells",
+      "a": "Water soluble biomolecules that dissolve easily in plasma",
       "b": "A heterogeneous group of naturally occurring molecules that are insoluble in water",
-      "c": "Proteins wrapped in protective lipid coats",
-      "d": "Carbohydrates coated with fatty materials"
+      "c": "Proteins wrapped in protective coats made of lipids",
+      "d": "Carbohydrates coated with fatty materials in the diet"
     },
     "correct_option": "b",
     "explanation": "Lipids are a diverse group of hydrophobic molecules (fats, oils, waxes, steroids, phospholipids) that are insoluble in water but soluble in organic solvents like chloroform and ether.\n\nAdditional: insoluble in water but soluble in organic solvents",
@@ -2052,10 +2052,10 @@
   {
     "question_text": "What is the lysogenic cycle of a virus?",
     "options": {
-      "a": "Virus immediately lyses the cell",
+      "a": "Virus immediately lyses the host cell upon entry",
       "b": "Viral DNA integrates into the host genome and remains latent",
-      "c": "Virus is destroyed by the host",
-      "d": "Virus cannot enter the cell"
+      "c": "Virus is destroyed by the host immune response",
+      "d": "Virus attaches but cannot enter the host cell at all"
     },
     "correct_option": "b",
     "explanation": "In the lysogenic cycle, viral DNA integrates into the host chromosome (becoming a prophage/provirus) and is replicated passively with the host cell. It can later enter the lytic cycle.\n\nAdditional: replicates with the host without killing it",
@@ -2709,10 +2709,10 @@
   {
     "question_text": "What is antibiotic resistance?",
     "options": {
-      "a": "Allergy to antibiotic drugs",
+      "a": "An allergic reaction to a particular antibiotic drug",
       "b": "The ability of bacteria to survive and grow in the presence of antibiotics",
-      "c": "Antibiotics becoming expired over time",
-      "d": "Side effects caused by antibiotics"
+      "c": "Antibiotics losing potency after their expiry date",
+      "d": "Unwanted side effects caused by taking antibiotics"
     },
     "correct_option": "b",
     "explanation": "Antibiotic resistance occurs when bacteria evolve mechanisms to resist the effects of antibiotics, making infections harder to treat. It is driven by overuse and misuse of antibiotics.\n\nAdditional: presence of an antibiotic that was previously effective against them",
@@ -2960,10 +2960,10 @@
   {
     "question_text": "What is innate immunity?",
     "options": {
-      "a": "Immunity acquired after infection",
+      "a": "Immunity acquired only after recovering from infection",
       "b": "The non-specific defense mechanisms that are present from birth",
-      "c": "Immunity from vaccination only",
-      "d": "Antibody-mediated immunity"
+      "c": "Immunity obtained only through vaccination",
+      "d": "Immunity mediated entirely by circulating antibodies"
     },
     "correct_option": "b",
     "explanation": "Innate (non-specific) immunity includes physical barriers (skin, mucous membranes), chemical barriers ( stomach acid, lysozyme), phagocytes (neutrophils, macrophages), and inflammation.\n\nAdditional: present from birth and act immediately",
@@ -3149,10 +3149,10 @@
   {
     "question_text": "What is a vaccine?",
     "options": {
-      "a": "An antibiotic given to prevent infection",
+      "a": "An antibiotic given routinely to prevent infection",
       "b": "A preparation of antigens that stimulates the immune system to produce immunity",
-      "c": "An antiviral drug used to treat infections",
-      "d": "A disinfectant used to clean surfaces"
+      "c": "An antiviral drug used to treat viral infections",
+      "d": "A disinfectant used to clean hospital surfaces"
     },
     "correct_option": "b",
     "explanation": "Vaccines contain antigens (attenuated/killed organisms, subunit components, toxoids, or mRNA) that stimulate the immune system to produce antibodies and memory cells without causing disease.\n\nNote: weakened/killed pathogens or their components",
@@ -3216,10 +3216,10 @@
   {
     "question_text": "What is an inactivated (killed) vaccine?",
     "options": {
-      "a": "Contains live but weakened pathogen",
+      "a": "Contains a live but weakened form of the pathogen",
       "b": "Contains pathogens that have been killed or inactivated and cannot replicate",
-      "c": "Contains purified protein subunits only",
-      "d": "Contains mRNA instructions"
+      "c": "Contains purified protein subunits of the pathogen",
+      "d": "Contains mRNA instructions for making the antigen"
     },
     "correct_option": "b",
     "explanation": "Inactivated vaccines use pathogens killed by heat, chemicals (formaldehyde), or radiation. They cannot cause disease but typically require multiple doses and boosters for adequate immunity.",

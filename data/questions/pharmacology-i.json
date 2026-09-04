@@ -1057,10 +1057,10 @@
     "unit_id": "pharmaco-i-unit-2",
     "question_text": "Ondansetron is a:",
     "options": [
-      "H1 blocker",
+      "H1 receptor antagonist",
       "5-HT3 receptor antagonist",
-      "D2 antagonist",
-      "H2 blocker"
+      "Dopamine D2 receptor antagonist",
+      "H2 receptor antagonist"
     ],
     "correct_index": 1,
     "explanation": "Ondansetron is a selective 5-HT3 antagonist used for chemotherapy and postoperative nausea/vomiting.",
