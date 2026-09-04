@@ -101,29 +101,29 @@ begin
   )
   select
     row_number() over (order by
-      case when qualified then 1 else 2 end,
-      score desc,
-      accuracy desc,
-      quizzes_taken desc
+      case when ranked.qualified then 1 else 2 end,
+      ranked.score desc,
+      ranked.accuracy desc,
+      ranked.quizzes_taken desc
     ) as rank,
-    user_id,
-    name,
-    email,
-    quizzes_taken,
-    total_correct,
-    total_attempted,
-    accuracy,
-    avg_accuracy,
-    score,
-    qualified,
-    quizzes_needed
+    ranked.user_id,
+    ranked.name,
+    ranked.email,
+    ranked.quizzes_taken,
+    ranked.total_correct,
+    ranked.total_attempted,
+    ranked.accuracy,
+    ranked.avg_accuracy,
+    ranked.score,
+    ranked.qualified,
+    ranked.quizzes_needed
   from ranked
-  where quizzes_taken > 0
+  where ranked.quizzes_taken > 0
   order by
-    case when qualified then 1 else 2 end,
-    score desc,
-    accuracy desc,
-    quizzes_taken desc
+    case when ranked.qualified then 1 else 2 end,
+    ranked.score desc,
+    ranked.accuracy desc,
+    ranked.quizzes_taken desc
   limit p_limit offset p_offset;
 end;
 $$;
@@ -197,15 +197,15 @@ begin
       and coalesce(us.quizzes_taken, 0) > 0
   )
   select
-    rank,
-    total_participants,
-    qualified,
-    quizzes_needed,
-    quizzes_taken,
-    total_correct,
-    accuracy
+    ranked.rank,
+    ranked.total_participants,
+    ranked.qualified,
+    ranked.quizzes_needed,
+    ranked.quizzes_taken,
+    ranked.total_correct,
+    ranked.accuracy
   from ranked
-  where user_id = p_user_id;
+  where ranked.user_id = p_user_id;
 end;
 $$;
 
