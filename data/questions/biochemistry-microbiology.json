@@ -3629,5 +3629,2555 @@
       "pharmacy",
       "role"
     ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "Biochemistry is best defined as the branch of science that deals with:",
+    "options": [
+      "Chemical processes and substances occurring within living organisms",
+      "The classification of rocks and minerals",
+      "The motion of planets and stars",
+      "The structure of machines and engines"
+    ],
+    "correct_index": 0,
+    "explanation": "Biochemistry studies the chemical composition and reactions of living matter — biomolecules, metabolism, enzymes and the molecular basis of life.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "introduction"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "Biochemistry is important for pharmacy students mainly because it:",
+    "options": [
+      "Explains drug metabolism, disease processes and the action of medicines",
+      "Teaches the art of compounding herbal cosmetics",
+      "Deals only with the price of medicines",
+      "Replaces the need for pharmacology completely"
+    ],
+    "correct_index": 0,
+    "explanation": "Understanding normal and abnormal body chemistry helps pharmacists grasp how drugs act, how diseases alter metabolism and how to advise patients.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "importance"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "Water constitutes approximately what percentage of the adult human body?",
+    "options": [
+      "About 60%",
+      "About 20%",
+      "About 90%",
+      "About 10%"
+    ],
+    "correct_index": 0,
+    "explanation": "Water makes up roughly 60% of adult body weight, serving as the solvent and medium for nearly all biochemical reactions.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "body fluids"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "The fluid present inside the body cells is called:",
+    "options": [
+      "Intracellular fluid",
+      "Plasma",
+      "Cerebrospinal fluid",
+      "Synovial fluid"
+    ],
+    "correct_index": 0,
+    "explanation": "Intracellular fluid is the water inside cells (about two-thirds of body water); extracellular fluid includes plasma, interstitial and transcellular fluids.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "body fluids"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "The normal pH range of human arterial blood is approximately:",
+    "options": [
+      "7.35 to 7.45",
+      "6.0 to 6.5",
+      "8.5 to 9.0",
+      "5.0 to 5.5"
+    ],
+    "correct_index": 0,
+    "explanation": "Blood pH is tightly maintained between 7.35 and 7.45 by buffer systems, the lungs and the kidneys; deviations cause acidosis or alkalosis.",
+    "difficulty": "medium",
+    "tags": [
+      "biochemistry",
+      "pH"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "Homeostasis refers to the:",
+    "options": [
+      "Maintenance of a relatively stable internal environment of the body",
+      "Breakdown of glucose into lactic acid",
+      "Synthesis of proteins from amino acids",
+      "Movement of drugs across cell membranes"
+    ],
+    "correct_index": 0,
+    "explanation": "Homeostasis is the body's ability to keep internal conditions such as pH, temperature and glucose concentration within narrow limits.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "homeostasis"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "Anabolism differs from catabolism in that anabolism:",
+    "options": [
+      "Builds larger molecules from smaller ones using energy",
+      "Breaks down large molecules to release energy",
+      "Never involves any enzymes",
+      "Occurs only during fasting"
+    ],
+    "correct_index": 0,
+    "explanation": "Anabolic reactions synthesise complex molecules (e.g., proteins, glycogen) and consume energy, while catabolic reactions degrade molecules and release energy.",
+    "difficulty": "medium",
+    "tags": [
+      "biochemistry",
+      "metabolism"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "The approximate energy value of carbohydrates and proteins is:",
+    "options": [
+      "4 kilocalories per gram each",
+      "9 kilocalories per gram each",
+      "2 kilocalories per gram each",
+      "12 kilocalories per gram each"
+    ],
+    "correct_index": 0,
+    "explanation": "Carbohydrates and proteins each yield about 4 kcal/g, while fats are more energy-dense at about 9 kcal/g.",
+    "difficulty": "medium",
+    "tags": [
+      "biochemistry",
+      "energy"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "The major cation of the extracellular fluid is:",
+    "options": [
+      "Sodium",
+      "Potassium",
+      "Magnesium",
+      "Calcium"
+    ],
+    "correct_index": 0,
+    "explanation": "Sodium is the chief extracellular cation maintaining fluid volume and osmotic pressure, while potassium dominates inside the cells.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "electrolytes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "The major cation of the intracellular fluid is:",
+    "options": [
+      "Potassium",
+      "Sodium",
+      "Chloride",
+      "Bicarbonate"
+    ],
+    "correct_index": 0,
+    "explanation": "Potassium is the principal intracellular cation, essential for cell volume, nerve conduction and muscle contraction.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "electrolytes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "Clinical biochemistry is the branch that deals with:",
+    "options": [
+      "Analysis of blood, urine and other body fluids to diagnose and monitor disease",
+      "Dispensing prescribed medicines to patients across the pharmacy counter",
+      "Large-scale manufacturing of tablets and capsules in the industry",
+      "Supervision of inventory and accounts of a hospital pharmacy"
+    ],
+    "correct_index": 0,
+    "explanation": "Clinical biochemistry laboratories measure glucose, enzymes, electrolytes and other analytes to aid diagnosis, prognosis and treatment monitoring.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "clinical"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "Which of the following is NOT one of the four major classes of biomolecules?",
+    "options": [
+      "Alkaloids",
+      "Carbohydrates",
+      "Proteins",
+      "Nucleic acids"
+    ],
+    "correct_index": 0,
+    "explanation": "The four major classes of biomolecules are carbohydrates, proteins, lipids and nucleic acids; alkaloids are plant secondary metabolites, not a primary biomolecule class.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "biomolecules"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "Enzymes are important in pharmacy because they:",
+    "options": [
+      "Serve as drug targets, digestive aids and diagnostic reagents",
+      "Are used only as tablet colouring agents",
+      "Never participate in drug metabolism",
+      "Act as sweetening excipients"
+    ],
+    "correct_index": 0,
+    "explanation": "Many drugs act by inhibiting enzymes, some enzymes are used therapeutically (e.g., streptokinase, digestive enzymes) and serum enzymes help diagnose disease.",
+    "difficulty": "medium",
+    "tags": [
+      "biochemistry",
+      "enzymes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "The study of the molecular basis of disease and drug action is called:",
+    "options": [
+      "Molecular biology applied to medicine",
+      "Pharmacognosy of crude drugs",
+      "Organoleptic evaluation",
+      "Hospital formulary management"
+    ],
+    "correct_index": 0,
+    "explanation": "Molecular medicine links biochemistry to health: gene defects, receptor changes and metabolic errors explain disease, and drugs act on these molecular targets.",
+    "difficulty": "easy",
+    "tags": [
+      "biochemistry",
+      "importance"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-1",
+    "question_text": "Acidosis is a condition in which the blood pH:",
+    "options": [
+      "Falls below the normal range of 7.35",
+      "Rises above 7.45",
+      "Remains exactly 7.40",
+      "Cannot be measured by any test"
+    ],
+    "correct_index": 0,
+    "explanation": "Acidosis is an abnormal increase in hydrogen ions causing blood pH below 7.35; alkalosis is the opposite, with pH above 7.45.",
+    "difficulty": "medium",
+    "tags": [
+      "biochemistry",
+      "pH"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Fructose is classified as a:",
+    "options": [
+      "Ketose monosaccharide",
+      "Aldose monosaccharide",
+      "Disaccharide",
+      "Polysaccharide"
+    ],
+    "correct_index": 0,
+    "explanation": "Fructose is a ketohexose containing a ketone group, while glucose and galactose are aldoses with an aldehyde group.",
+    "difficulty": "medium",
+    "tags": [
+      "biomolecules",
+      "carbohydrates"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Which of the following sugars is a non-reducing sugar?",
+    "options": [
+      "Sucrose",
+      "Glucose",
+      "Lactose",
+      "Fructose"
+    ],
+    "correct_index": 0,
+    "explanation": "Sucrose has its reducing groups of glucose and fructose linked together, so it does not reduce Fehling's or Benedict's solution.",
+    "difficulty": "medium",
+    "tags": [
+      "biomolecules",
+      "carbohydrates"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Pyruvate produced in glycolysis is converted to acetyl CoA by the enzyme complex:",
+    "options": [
+      "Pyruvate dehydrogenase",
+      "Hexokinase",
+      "Phosphofructokinase",
+      "Lactate dehydrogenase"
+    ],
+    "correct_index": 0,
+    "explanation": "Pyruvate dehydrogenase links glycolysis to the citric acid cycle by oxidatively decarboxylating pyruvate to acetyl CoA.",
+    "difficulty": "hard",
+    "tags": [
+      "biomolecules",
+      "glycolysis"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Ketone bodies (acetoacetate, beta-hydroxybutyrate) are mainly produced when:",
+    "options": [
+      "Fatty acids are oxidised rapidly during starvation or uncontrolled diabetes",
+      "Carbohydrates are eaten in far excess of the daily requirement",
+      "Dietary protein intake is extremely high in the regular diet",
+      "The body is fully hydrated with adequate stores of glucose"
+    ],
+    "correct_index": 0,
+    "explanation": "When glucose is scarce, the liver oxidises fatty acids to acetyl CoA faster than the TCA cycle can use it, shunting it into ketone bodies.",
+    "difficulty": "medium",
+    "tags": [
+      "biomolecules",
+      "lipids"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "The urea cycle, which detoxifies ammonia, occurs mainly in the:",
+    "options": [
+      "Liver",
+      "Kidneys",
+      "Muscles",
+      "Red blood cells"
+    ],
+    "correct_index": 0,
+    "explanation": "Ammonia produced from amino acid deamination is converted to urea in the liver through the urea cycle, then excreted by the kidneys.",
+    "difficulty": "medium",
+    "tags": [
+      "biomolecules",
+      "amino acids"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "In proteins, adjacent amino acids are joined by:",
+    "options": [
+      "Peptide bonds between the alpha-carboxyl and alpha-amino groups",
+      "Hydrogen bonds only between side chains",
+      "Disulphide bonds exclusively",
+      "Ester linkages between hydroxyl groups"
+    ],
+    "correct_index": 0,
+    "explanation": "A peptide bond forms between the carboxyl group of one amino acid and the amino group of the next, with elimination of a water molecule.",
+    "difficulty": "easy",
+    "tags": [
+      "biomolecules",
+      "proteins"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "At its isoelectric pH, an amino acid exists mainly as:",
+    "options": [
+      "A zwitterion with no net electric charge",
+      "A purely positive cation",
+      "A purely negative anion",
+      "An uncharged nonpolar molecule"
+    ],
+    "correct_index": 0,
+    "explanation": "At the isoelectric point the amino acid carries equal positive and negative charges (zwitterion) and does not migrate in an electric field.",
+    "difficulty": "hard",
+    "tags": [
+      "biomolecules",
+      "amino acids"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Linoleic acid is classified as an:",
+    "options": [
+      "Essential fatty acid that the body cannot synthesise",
+      "Non-essential saturated fatty acid",
+      "Amino acid with a basic side chain",
+      "Monosaccharide found in honey"
+    ],
+    "correct_index": 0,
+    "explanation": "Linoleic and linolenic acids are essential polyunsaturated fatty acids that must come from the diet because the body cannot make them.",
+    "difficulty": "medium",
+    "tags": [
+      "biomolecules",
+      "lipids"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Cholesterol is carried in the blood mainly in the form of:",
+    "options": [
+      "Lipoproteins such as LDL and HDL",
+      "Free glucose molecules",
+      "Amino acid chains",
+      "Nucleotide triphosphates"
+    ],
+    "correct_index": 0,
+    "explanation": "Being insoluble in water, cholesterol and other lipids travel in plasma bound to lipoproteins — LDL, HDL, VLDL and chylomicrons.",
+    "difficulty": "medium",
+    "tags": [
+      "biomolecules",
+      "lipids"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Deficiency of vitamin B1 (thiamine) classically causes:",
+    "options": [
+      "Beriberi affecting the nerves and heart",
+      "Scurvy with bleeding gums",
+      "Pellagra with dermatitis and diarrhoea",
+      "Night blindness"
+    ],
+    "correct_index": 0,
+    "explanation": "Thiamine deficiency causes beriberi (dry and wet forms) because thiamine pyrophosphate is essential for carbohydrate metabolism.",
+    "difficulty": "easy",
+    "tags": [
+      "biomolecules",
+      "vitamins"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Pellagra, characterised by dermatitis, diarrhoea and dementia, results from deficiency of:",
+    "options": [
+      "Niacin (vitamin B3)",
+      "Vitamin C (ascorbic acid)",
+      "Vitamin A (retinol)",
+      "Vitamin K (phylloquinone)"
+    ],
+    "correct_index": 0,
+    "explanation": "Niacin deficiency causes pellagra, the 'three Ds' — dermatitis, diarrhoea and dementia — since NAD and NADP are derived from niacin.",
+    "difficulty": "medium",
+    "tags": [
+      "biomolecules",
+      "vitamins"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Pernicious anaemia results from deficiency of vitamin B12, which occurs because:",
+    "options": [
+      "Intrinsic factor from the stomach is lacking, preventing B12 absorption",
+      "Vitamin B12 is not present in any food source at all",
+      "The body produces too many red blood cells every day",
+      "Iron is absorbed from the gut in excessive amounts"
+    ],
+    "correct_index": 0,
+    "explanation": "Vitamin B12 needs intrinsic factor secreted by gastric parietal cells for ileal absorption; its absence causes pernicious (megaloblastic) anaemia.",
+    "difficulty": "hard",
+    "tags": [
+      "biomolecules",
+      "vitamins"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "Folic acid deficiency during pregnancy is particularly important because it increases the risk of:",
+    "options": [
+      "Neural tube defects in the developing baby",
+      "Dental caries in the mother",
+      "Excessive weight gain only",
+      "Kidney stones in the newborn"
+    ],
+    "correct_index": 0,
+    "explanation": "Folate is required for DNA synthesis and neural tube closure in early pregnancy; supplementation prevents spina bifida and anencephaly.",
+    "difficulty": "medium",
+    "tags": [
+      "biomolecules",
+      "vitamins"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "The value of Km of an enzyme-substrate reaction represents the:",
+    "options": [
+      "Substrate concentration at which the reaction velocity is half of Vmax",
+      "Maximum velocity of the reaction",
+      "Concentration of the enzyme itself",
+      "Temperature at which the enzyme denatures"
+    ],
+    "correct_index": 0,
+    "explanation": "Km (Michaelis constant) is the substrate concentration giving half-maximal velocity; a low Km means high affinity between enzyme and substrate.",
+    "difficulty": "hard",
+    "tags": [
+      "biomolecules",
+      "enzymes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-2",
+    "question_text": "An enzyme that is secreted in an inactive form and later activated is called a:",
+    "options": [
+      "Zymogen or proenzyme",
+      "Coenzyme (organic non-protein helper)",
+      "Isoenzyme (multiple molecular forms)",
+      "Apoenzyme (protein part of holoenzyme)"
+    ],
+    "correct_index": 0,
+    "explanation": "Zymogens such as pepsinogen and trypsinogen are inactive precursors activated by cleavage, protecting the cells that produce them.",
+    "difficulty": "medium",
+    "tags": [
+      "biomolecules",
+      "enzymes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "A nucleotide is composed of:",
+    "options": [
+      "A nitrogenous base, a pentose sugar and a phosphate group",
+      "An amino acid and a fatty acid",
+      "Glycerol and three fatty acids",
+      "Glucose and fructose linked together"
+    ],
+    "correct_index": 0,
+    "explanation": "Each nucleotide has three parts: a nitrogenous base (purine or pyrimidine), a five-carbon sugar and one or more phosphate groups.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "nucleotides"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "Which of the following are purine bases found in nucleic acids?",
+    "options": [
+      "Adenine and guanine",
+      "Cytosine and thymine",
+      "Uracil and cytosine",
+      "Thymine and uracil"
+    ],
+    "correct_index": 0,
+    "explanation": "Purines are the double-ring bases adenine and guanine; cytosine, thymine and uracil are single-ring pyrimidines.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "bases"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "In the double helix of DNA, adenine always pairs with:",
+    "options": [
+      "Thymine",
+      "Cytosine",
+      "Guanine",
+      "Uracil"
+    ],
+    "correct_index": 0,
+    "explanation": "Complementary base pairing joins adenine with thymine (two hydrogen bonds) and guanine with cytosine (three hydrogen bonds), keeping the helix uniform.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "base pairing"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "The enzyme that unwinds the DNA double helix during replication is:",
+    "options": [
+      "Helicase",
+      "DNA ligase",
+      "Primase",
+      "Topoisomerase only"
+    ],
+    "correct_index": 0,
+    "explanation": "Helicase breaks the hydrogen bonds between base pairs, separating the strands so DNA polymerase can copy each template.",
+    "difficulty": "medium",
+    "tags": [
+      "nucleic acids",
+      "replication"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "DNA polymerase adds new nucleotides to the growing strand in which direction?",
+    "options": [
+      "5' to 3' direction only",
+      "3' to 5' direction only",
+      "Both directions at random",
+      "It does not add nucleotides at all"
+    ],
+    "correct_index": 0,
+    "explanation": "DNA polymerases synthesise DNA only in the 5' to 3' direction, which is why one daughter strand is made discontinuously as Okazaki fragments.",
+    "difficulty": "hard",
+    "tags": [
+      "nucleic acids",
+      "replication"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "Okazaki fragments are short pieces of DNA produced during replication of the:",
+    "options": [
+      "Lagging strand",
+      "Leading strand",
+      "RNA primer",
+      "Coding template strand only"
+    ],
+    "correct_index": 0,
+    "explanation": "Because synthesis is 5' to 3', the lagging strand is assembled in short Okazaki fragments later joined by DNA ligase.",
+    "difficulty": "hard",
+    "tags": [
+      "nucleic acids",
+      "replication"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "Ribosomal RNA (rRNA) is mainly involved in:",
+    "options": [
+      "Forming the structural and catalytic core of ribosomes for protein synthesis",
+      "Carrying amino acids to the ribosome",
+      "Copying the genetic message from DNA",
+      "Storing the genetic information of the cell"
+    ],
+    "correct_index": 0,
+    "explanation": "rRNA makes up the bulk of ribosomes and catalyses peptide bond formation; tRNA carries amino acids and mRNA carries the genetic message.",
+    "difficulty": "medium",
+    "tags": [
+      "nucleic acids",
+      "RNA types"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "Transfer RNA (tRNA) functions to:",
+    "options": [
+      "Carry specific amino acids to the ribosome and match them to codons",
+      "Store hereditary information in the nucleus",
+      "Form the cell membrane structure",
+      "Act as the template for DNA replication"
+    ],
+    "correct_index": 0,
+    "explanation": "Each tRNA has an anticodon that pairs with an mRNA codon and carries the corresponding amino acid, translating the message into protein.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "RNA types"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "In recombinant DNA technology, the enzyme that cuts DNA at specific recognition sequences is:",
+    "options": [
+      "Restriction endonuclease",
+      "DNA ligase",
+      "RNA polymerase",
+      "Reverse transcriptase"
+    ],
+    "correct_index": 0,
+    "explanation": "Restriction endonucleases recognise short palindromic sequences and cut DNA, producing fragments that can be spliced into a vector by ligase.",
+    "difficulty": "medium",
+    "tags": [
+      "rDNA",
+      "restriction enzymes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "DNA ligase is used in genetic engineering to:",
+    "options": [
+      "Join DNA fragments together by forming phosphodiester bonds",
+      "Cut the vector at its origin of replication",
+      "Unwind the double-stranded DNA helix",
+      "Synthesise RNA from a DNA template"
+    ],
+    "correct_index": 0,
+    "explanation": "DNA ligase seals the sugar-phosphate backbone between an insert and a vector, creating a stable recombinant molecule.",
+    "difficulty": "medium",
+    "tags": [
+      "rDNA",
+      "ligase"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "A plasmid commonly used as a vector in recombinant DNA technology is:",
+    "options": [
+      "A small circular extrachromosomal DNA molecule that replicates independently",
+      "The protein shell that surrounds and protects a virus particle",
+      "A single strand of messenger RNA carrying the genetic code",
+      "A lipid bilayer vesicle used for drug delivery experiments"
+    ],
+    "correct_index": 0,
+    "explanation": "Plasmids are small circular DNA molecules in bacteria that replicate on their own and can carry foreign genes into host cells.",
+    "difficulty": "easy",
+    "tags": [
+      "rDNA",
+      "vectors"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "The enzyme Taq polymerase is specially used in PCR because it:",
+    "options": [
+      "Remains stable at the high temperatures needed to denature DNA",
+      "Works only at freezing temperatures",
+      "Cannot copy DNA at all",
+      "Degrades RNA in the sample"
+    ],
+    "correct_index": 0,
+    "explanation": "Taq polymerase, isolated from Thermus aquaticus, survives the ~95°C denaturation steps, allowing repeated cycles of DNA amplification.",
+    "difficulty": "medium",
+    "tags": [
+      "nucleic acids",
+      "PCR"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "Gel electrophoresis is a technique used to:",
+    "options": [
+      "Separate DNA fragments by size through an electric field in a gel",
+      "Amplify a single gene into millions of copies",
+      "Join two pieces of DNA together",
+      "Cut DNA into sticky-ended fragments"
+    ],
+    "correct_index": 0,
+    "explanation": "In gel electrophoresis DNA fragments migrate through agarose or polyacrylamide according to size; smaller fragments move faster, enabling analysis and purification.",
+    "difficulty": "medium",
+    "tags": [
+      "nucleic acids",
+      "electrophoresis"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "A gene is best defined as:",
+    "options": [
+      "A segment of DNA that codes for a polypeptide or functional RNA",
+      "The whole set of chromosomes of an organism",
+      "A type of transfer RNA molecule",
+      "A protein that packages DNA in the nucleus"
+    ],
+    "correct_index": 0,
+    "explanation": "A gene is a specific sequence of DNA that carries the information for one protein or RNA product; the genome is the complete set of genes.",
+    "difficulty": "easy",
+    "tags": [
+      "nucleic acids",
+      "gene"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-3",
+    "question_text": "Restriction fragments cut by the same enzyme often have 'sticky ends', which are:",
+    "options": [
+      "Short single-stranded overhangs that base-pair with complementary fragments",
+      "Long double-stranded blunt regions that repel each other",
+      "Lipid tails that anchor fragments to membranes",
+      "Sugar groups that stain the fragment red"
+    ],
+    "correct_index": 0,
+    "explanation": "Staggered cuts leave single-stranded overhangs (sticky ends) that hydrogen-bond with complementary ends from another fragment cut by the same enzyme, easing splicing.",
+    "difficulty": "hard",
+    "tags": [
+      "rDNA",
+      "restriction enzymes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "The normal haemoglobin concentration in adult males is approximately:",
+    "options": [
+      "13 to 17 g/dL",
+      "6 to 9 g/dL",
+      "20 to 25 g/dL",
+      "1 to 3 g/dL"
+    ],
+    "correct_index": 0,
+    "explanation": "Adult male haemoglobin is roughly 13-17 g/dL and adult female 12-16 g/dL; lower levels indicate anaemia.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "CBC"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "The normal total white blood cell count in a healthy adult is about:",
+    "options": [
+      "4,000 to 11,000 per cubic millimetre",
+      "100 to 500 per cubic millimetre",
+      "40,000 to 80,000 per cubic millimetre",
+      "1 to 10 per cubic millimetre"
+    ],
+    "correct_index": 0,
+    "explanation": "Total leucocyte count is normally 4,000-11,000/mm³; raised counts suggest infection while low counts occur in marrow suppression.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "CBC"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Haematocrit (packed cell volume) measures the:",
+    "options": [
+      "Percentage of blood volume occupied by red blood cells",
+      "Number of platelets in the blood",
+      "Amount of glucose in plasma",
+      "Concentration of albumin in serum"
+    ],
+    "correct_index": 0,
+    "explanation": "PCV is the proportion of whole blood made up of red cells after centrifugation, normally about 40-50% in men and 36-46% in women.",
+    "difficulty": "medium",
+    "tags": [
+      "diagnostics",
+      "CBC"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Which enzyme is most specifically elevated in damage to liver cells (hepatocytes)?",
+    "options": [
+      "SGPT (ALT)",
+      "Amylase",
+      "Creatine kinase",
+      "Alkaline phosphatase"
+    ],
+    "correct_index": 0,
+    "explanation": "ALT (SGPT) is concentrated in liver cells, so hepatocellular injury (hepatitis) raises it markedly; AST rises too but is less specific.",
+    "difficulty": "medium",
+    "tags": [
+      "diagnostics",
+      "LFT"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Raised serum alkaline phosphatase is classically associated with:",
+    "options": [
+      "Biliary obstruction and bone disease",
+      "Myocardial infarction",
+      "Iron deficiency anaemia",
+      "Diabetic ketoacidosis"
+    ],
+    "correct_index": 0,
+    "explanation": "Alkaline phosphatase rises in cholestasis (biliary obstruction) and in bone conditions with increased osteoblastic activity.",
+    "difficulty": "hard",
+    "tags": [
+      "diagnostics",
+      "LFT"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "In obstructive jaundice, the urine typically shows:",
+    "options": [
+      "Bilirubin in the urine with dark urine and pale stools",
+      "No appreciable change in the colour or composition of the urine",
+      "Large amounts of ketone bodies with an acetone-like smell",
+      "Excess sodium chloride with very dilute and clear urine"
+    ],
+    "correct_index": 0,
+    "explanation": "Conjugated bilirubin is water-soluble and spills into urine in obstructive jaundice, darkening it, while absence of bile pigment pales the stools.",
+    "difficulty": "medium",
+    "tags": [
+      "diagnostics",
+      "LFT"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "The normal serum creatinine level in adults is approximately:",
+    "options": [
+      "0.6 to 1.2 mg/dL",
+      "5 to 10 mg/dL",
+      "20 to 30 mg/dL",
+      "0.01 to 0.05 mg/dL"
+    ],
+    "correct_index": 0,
+    "explanation": "Serum creatinine is normally about 0.6-1.2 mg/dL; rising levels indicate declining glomerular filtration in kidney disease.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "KFT"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Elevated TSH with a low free T4 level most typically indicates:",
+    "options": [
+      "Primary hypothyroidism",
+      "Hyperthyroidism",
+      "Normal thyroid function",
+      "Diabetes mellitus"
+    ],
+    "correct_index": 0,
+    "explanation": "In primary hypothyroidism the pituitary raises TSH to stimulate a failing thyroid, so TSH is high while T4 is low.",
+    "difficulty": "hard",
+    "tags": [
+      "diagnostics",
+      "thyroid"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Which lipoprotein fraction is regarded as the 'good cholesterol' because it protects the heart?",
+    "options": [
+      "HDL (high-density lipoprotein)",
+      "LDL (low-density lipoprotein)",
+      "VLDL",
+      "Chylomicrons"
+    ],
+    "correct_index": 0,
+    "explanation": "HDL removes cholesterol from arteries and carries it to the liver for disposal, so higher HDL lowers cardiovascular risk.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "lipid profile"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "A fasting blood sugar of 126 mg/dL or above on two occasions is diagnostic of:",
+    "options": [
+      "Diabetes mellitus",
+      "Hypoglycaemia",
+      "Renal failure",
+      "Anaemia"
+    ],
+    "correct_index": 0,
+    "explanation": "Fasting plasma glucose of 126 mg/dL or higher confirms diabetes; 100-125 mg/dL is impaired fasting glucose (prediabetes).",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "blood sugar"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Glycated haemoglobin (HbA1c) reflects the average blood glucose level over the previous:",
+    "options": [
+      "Two to three months",
+      "Two to three days",
+      "Two to three hours",
+      "Two to three years"
+    ],
+    "correct_index": 0,
+    "explanation": "HbA1c measures glucose attached to haemoglobin over the red cell's life, giving a 2-3 month average for monitoring diabetic control.",
+    "difficulty": "medium",
+    "tags": [
+      "diagnostics",
+      "blood sugar"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "The presence of glucose in the urine (glycosuria) most commonly indicates:",
+    "options": [
+      "Raised blood glucose beyond the renal threshold",
+      "Normal glucose metabolism",
+      "Excessive protein in the diet",
+      "Dehydration only"
+    ],
+    "correct_index": 0,
+    "explanation": "When blood glucose exceeds the renal threshold (about 180 mg/dL), glucose spills into urine, classically in uncontrolled diabetes.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "urine analysis"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Ketone bodies detected in urine are most suggestive of:",
+    "options": [
+      "Diabetic ketoacidosis or prolonged fasting",
+      "A urinary tract infection causing pus and bacteria in the urine",
+      "Drinking unusually large volumes of water during the day",
+      "Chronic liver cirrhosis without any other metabolic problem"
+    ],
+    "correct_index": 0,
+    "explanation": "Ketones appear in urine when fat is being metabolised excessively, as in diabetic ketoacidosis, starvation or very low-carbohydrate diets.",
+    "difficulty": "medium",
+    "tags": [
+      "diagnostics",
+      "urine analysis"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "A positive occult blood test in stool is used to screen for:",
+    "options": [
+      "Bleeding in the gastrointestinal tract",
+      "Urinary tract infection",
+      "Gallbladder stones only",
+      "Lung infection"
+    ],
+    "correct_index": 0,
+    "explanation": "Faecal occult blood testing detects hidden blood from ulcers, polyps or colorectal cancer, guiding further investigation.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "stool analysis"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-4",
+    "question_text": "Serum uric acid estimation is chiefly useful in the diagnosis and monitoring of:",
+    "options": [
+      "Gout",
+      "Malaria",
+      "Tuberculosis",
+      "Anaemia"
+    ],
+    "correct_index": 0,
+    "explanation": "Hyperuricaemia causes urate crystal deposition in joints, producing gout; serum uric acid also rises in renal failure.",
+    "difficulty": "easy",
+    "tags": [
+      "diagnostics",
+      "biochemistry"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Which cells provide long-lasting immunological memory after an infection or vaccination?",
+    "options": [
+      "Memory B and T lymphocytes",
+      "Neutrophils",
+      "Red blood cells",
+      "Platelets"
+    ],
+    "correct_index": 0,
+    "explanation": "Memory lymphocytes survive for years after an immune response, enabling a rapid, strong secondary response on re-exposure.",
+    "difficulty": "medium",
+    "tags": [
+      "immunology",
+      "memory cells"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Immunoglobulin G (IgG) is the only antibody that:",
+    "options": [
+      "Crosses the placenta to give the newborn passive immunity",
+      "Is found only in tears and saliva",
+      "Causes allergic reactions in all people",
+      "Cannot activate complement at all"
+    ],
+    "correct_index": 0,
+    "explanation": "IgG is actively transported across the placenta, protecting the infant during the first months of life before its own immunity matures.",
+    "difficulty": "medium",
+    "tags": [
+      "immunology",
+      "immunoglobulins"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Antigen-presenting cells such as macrophages and dendritic cells function by:",
+    "options": [
+      "Processing antigens and presenting them on their surface to T lymphocytes",
+      "Producing large quantities of antibodies against the invading antigen",
+      "Engulfing and destroying the body's own red blood cells",
+      "Clotting the blood rapidly at the site of an infection"
+    ],
+    "correct_index": 0,
+    "explanation": "APCs digest antigens and display peptide fragments on MHC molecules, which T cells recognise to start the adaptive immune response.",
+    "difficulty": "hard",
+    "tags": [
+      "immunology",
+      "antigen presentation"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Natural killer (NK) cells destroy virus-infected and tumour cells:",
+    "options": [
+      "Without prior sensitisation, as part of innate immunity",
+      "Only after producing specific antibodies",
+      "By secreting large amounts of histamine",
+      "By forming memory cells first"
+    ],
+    "correct_index": 0,
+    "explanation": "NK cells recognise stressed or infected cells directly and kill them early, bridging innate and adaptive immunity without prior exposure.",
+    "difficulty": "medium",
+    "tags": [
+      "immunology",
+      "NK cells"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "An increase in which white blood cell is characteristic of allergic conditions and worm infestations?",
+    "options": [
+      "Eosinophils",
+      "Neutrophils",
+      "Basophils",
+      "Monocytes"
+    ],
+    "correct_index": 0,
+    "explanation": "Eosinophilia (raised eosinophils) is seen in allergy, asthma and helminth infections because these cells attack parasites and modulate allergy.",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "white blood cells"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "DPT vaccine protects against diphtheria, pertussis and tetanus and is an example of a:",
+    "options": [
+      "Combination vaccine containing toxoids and killed bacteria",
+      "A live attenuated vaccine prepared from weakened viruses",
+      "A pure DNA vaccine encoding a single microbial protein",
+      "A sugar solution containing no antigenic material at all"
+    ],
+    "correct_index": 0,
+    "explanation": "DPT combines diphtheria and tetanus toxoids with killed whole-cell (or acellular) pertussis bacteria in one injection.",
+    "difficulty": "medium",
+    "tags": [
+      "immunology",
+      "vaccines"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Anaphylaxis, the rapid severe allergic reaction, is a type of hypersensitivity mediated chiefly by:",
+    "options": [
+      "IgE antibodies triggering mast cell degranulation",
+      "Cytotoxic T lymphocytes only",
+      "Neutrophil accumulation",
+      "Red cell haemolysis"
+    ],
+    "correct_index": 0,
+    "explanation": "Type I (immediate) hypersensitivity is IgE-mediated: allergen cross-links IgE on mast cells, releasing histamine and causing anaphylaxis.",
+    "difficulty": "medium",
+    "tags": [
+      "immunology",
+      "hypersensitivity"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Type 1 diabetes mellitus is best described as an autoimmune disease in which:",
+    "options": [
+      "The immune system destroys the insulin-producing beta cells of the pancreas",
+      "The kidneys fail to reabsorb glucose back into the blood",
+      "The pancreas secretes insulin in greatly excessive amounts",
+      "The liver loses its ability to store glucose as glycogen"
+    ],
+    "correct_index": 0,
+    "explanation": "In type 1 diabetes, autoantibodies and T cells destroy pancreatic beta cells, causing absolute insulin deficiency.",
+    "difficulty": "medium",
+    "tags": [
+      "immunology",
+      "autoimmunity"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Interferons are best described as:",
+    "options": [
+      "Antiviral proteins released by infected cells that protect neighbouring cells",
+      "Antibodies that neutralise bacterial toxins",
+      "Enzymes that digest bacterial cell walls",
+      "Hormones that raise blood glucose"
+    ],
+    "correct_index": 0,
+    "explanation": "Interferons are cytokines induced by viral infection; they signal nearby cells to produce antiviral proteins, limiting viral spread.",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "interferons"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "T lymphocytes mature in the:",
+    "options": [
+      "Thymus gland",
+      "Bone marrow",
+      "Liver",
+      "Spleen only"
+    ],
+    "correct_index": 0,
+    "explanation": "Lymphocyte precursors mature into T cells in the thymus, while B cells mature in the bone marrow.",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "lymphocytes"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "A toxoid is a:",
+    "options": [
+      "Detoxified bacterial toxin that retains its ability to stimulate immunity",
+      "A living weakened bacterium used as a vaccine against disease",
+      "A type of white blood cell that destroys foreign proteins",
+      "A serum protein that destroys antibodies in the circulation"
+    ],
+    "correct_index": 0,
+    "explanation": "Toxoids (e.g., tetanus, diphtheria) are toxins treated with heat or formalin so they are harmless but still provoke protective antitoxin antibodies.",
+    "difficulty": "medium",
+    "tags": [
+      "immunology",
+      "toxoids"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Antitoxin serum provides protection by:",
+    "options": [
+      "Supplying ready-made antibodies against a specific toxin",
+      "Stimulating the patient's own T killer cells",
+      "Interfering with viral DNA replication",
+      "Raising the body temperature to kill bacteria"
+    ],
+    "correct_index": 0,
+    "explanation": "Antitoxins are preformed antibodies (e.g., anti-tetanus serum) that neutralise toxins quickly — passive immunity given after exposure.",
+    "difficulty": "medium",
+    "tags": [
+      "immunology",
+      "antisera"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "The secondary immune response differs from the primary response in that it is:",
+    "options": [
+      "Faster, larger and sustained because of memory cells",
+      "Slower and weaker than the first response",
+      "Produced only by neutrophils",
+      "Identical in every way to the primary response"
+    ],
+    "correct_index": 0,
+    "explanation": "On second exposure, memory cells proliferate rapidly producing high antibody titres within days, unlike the slow first response.",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "immune response"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "The complement system assists immunity mainly by:",
+    "options": [
+      "Lysing microbes, opsonising them and promoting inflammation",
+      "Producing all the antibodies in blood",
+      "Transporting oxygen to infected tissues",
+      "Digesting food in the intestine"
+    ],
+    "correct_index": 0,
+    "explanation": "Complement proteins cascade to punch holes in microbial membranes (lysis), coat microbes for phagocytosis (opsonisation) and attract inflammatory cells.",
+    "difficulty": "medium",
+    "tags": [
+      "immunology",
+      "complement"
+    ]
+  },
+  {
+    "unit_id": "bio-unit-5",
+    "question_text": "Active immunity differs from passive immunity because active immunity:",
+    "options": [
+      "Develops when the body's own immune system responds and produces memory",
+      "Is always transferred ready-made from another person",
+      "Lasts only for a few days",
+      "Requires no involvement of lymphocytes"
+    ],
+    "correct_index": 0,
+    "explanation": "Active immunity follows infection or vaccination, with the host producing antibodies and memory cells that persist; passive immunity is borrowed and short-lived.",
+    "difficulty": "easy",
+    "tags": [
+      "immunology",
+      "immunity types"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Microbiology is the branch of science that studies:",
+    "options": [
+      "Microorganisms such as bacteria, viruses, fungi and protozoa",
+      "Only plants of the mountain region",
+      "The behaviour of large mammals",
+      "The chemistry of metals"
+    ],
+    "correct_index": 0,
+    "explanation": "Microbiology deals with organisms too small to be seen clearly with the naked eye, including their structure, growth and effects.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "introduction"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Antonie van Leeuwenhoek is remembered in microbiology for:",
+    "options": [
+      "First observing bacteria and protozoa with his simple microscope",
+      "Discovering the antibiotic penicillin",
+      "Developing the smallpox vaccine",
+      "Proposing the theory of evolution"
+    ],
+    "correct_index": 0,
+    "explanation": "In the 1670s Leeuwenhoek improved lenses and was the first to describe 'animalcules' — bacteria and protozoa.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "history"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Louis Pasteur is famous for:",
+    "options": [
+      "Disproving spontaneous generation and developing pasteurisation and vaccines",
+      "Discovering the double-helical structure of deoxyribonucleic acid",
+      "Inventing the first compound microscope for observing cells",
+      "Classifying all flowering plants into their natural families"
+    ],
+    "correct_index": 0,
+    "explanation": "Pasteur showed microbes cause fermentation and disease, developed pasteurisation and vaccines against rabies and anthrax.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "history"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Alexander Fleming discovered penicillin in 1928 when he observed that:",
+    "options": [
+      "A mould (Penicillium) inhibited the growth of Staphylococcus bacteria",
+      "Bacteria could be grown in pure culture on solid media",
+      "Viruses could pass through the finest porcelain filters",
+      "Yeast ferments sugar to alcohol and carbon dioxide gas"
+    ],
+    "correct_index": 0,
+    "explanation": "Fleming noticed a contaminating Penicillium mould had destroyed surrounding staphylococci, leading to the first antibiotic.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "history"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "The branch of microbiology that specifically studies viruses is called:",
+    "options": [
+      "Virology",
+      "Bacteriology",
+      "Mycology",
+      "Parasitology"
+    ],
+    "correct_index": 0,
+    "explanation": "Virology studies viruses; bacteriology bacteria, mycology fungi and parasitology parasites.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "branches"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Pharmaceutical microbiology is chiefly concerned with:",
+    "options": [
+      "Microbial quality, sterility and safety of medicines and pharmaceutical products",
+      "Growing medicinal vegetables for large-scale drug extraction",
+      "Studying the migration patterns of birds and other wildlife",
+      "Designing and testing tablet compression machines for industry"
+    ],
+    "correct_index": 0,
+    "explanation": "Pharmaceutical microbiology ensures medicines are free from harmful microbes, tests preservatives and sterility, and investigates contamination.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "applications"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Which microorganism is commercially used to produce the antibiotic penicillin?",
+    "options": [
+      "Penicillium chrysogenum (a mould)",
+      "Escherichia coli",
+      "Saccharomyces cerevisiae",
+      "Mycobacterium tuberculosis"
+    ],
+    "correct_index": 0,
+    "explanation": "Penicillin is produced industrially by fermentation with the mould Penicillium chrysogenum.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "applications"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Streptomyces species are important in pharmacy because they are the source of:",
+    "options": [
+      "Antibiotics such as streptomycin and tetracyclines",
+      "Digoxin and digitoxin obtained from Digitalis plant leaves",
+      "Morphine and codeine extracted from the opium poppy plant",
+      "Human insulin prepared from genetically engineered plants"
+    ],
+    "correct_index": 0,
+    "explanation": "The actinomycete Streptomyces produces many antibiotics including streptomycin, tetracyclines and erythromycin.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "applications"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Prokaryotic cells differ from eukaryotic cells in that prokaryotes:",
+    "options": [
+      "Lack a membrane-bound nucleus and membrane organelles",
+      "Always contain mitochondria and chloroplasts",
+      "Are always multicellular organisms",
+      "Never contain ribosomes"
+    ],
+    "correct_index": 0,
+    "explanation": "Bacteria are prokaryotes: their DNA lies free in the cytoplasm without a nuclear membrane, and membrane-bound organelles are absent.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "cell types"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Ribosomes of bacterial (prokaryotic) cells are of which type?",
+    "options": [
+      "70S ribosomes",
+      "80S ribosomes",
+      "100S ribosomes",
+      "Bacteria have no ribosomes"
+    ],
+    "correct_index": 0,
+    "explanation": "Bacteria contain 70S ribosomes (30S + 50S subunits), the target of antibiotics like tetracyclines and aminoglycosides; eukaryotes have 80S ribosomes.",
+    "difficulty": "hard",
+    "tags": [
+      "microbiology",
+      "bacteria"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "The germ theory of disease, established by Pasteur and Koch, states that:",
+    "options": [
+      "Specific microorganisms cause specific infectious diseases",
+      "Diseases arise spontaneously from bad air",
+      "All diseases are inherited genetically",
+      "Microbes never cause human illness"
+    ],
+    "correct_index": 0,
+    "explanation": "The germ theory proved that microbes are the causative agents of infectious disease, the foundation of medical microbiology.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "history"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Immunology as a branch of microbiology deals with:",
+    "options": [
+      "The body's defence mechanisms against infection",
+      "The extraction of oils from plants",
+      "The classification of minerals",
+      "The flow of liquids through pipes"
+    ],
+    "correct_index": 0,
+    "explanation": "Immunology studies antigens, antibodies, immune cells and how the body recognises and defends against foreign invaders.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "branches"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Sterility testing of injectable products is an application of microbiology that ensures:",
+    "options": [
+      "The product is free from living microorganisms",
+      "The injection has a pleasant colour",
+      "The vial is labelled correctly",
+      "The price of the product is controlled"
+    ],
+    "correct_index": 0,
+    "explanation": "Sterility tests on parenterals and ophthalmic products confirm absence of viable microorganisms before release.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "applications"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Fermentation is a microbial process used in pharmacy to produce:",
+    "options": [
+      "Antibiotics, vitamins, alcohol and organic acids",
+      "Plastic packaging materials and glass containers for medicines",
+      "Sterile glass ampoules and vials for injectable products",
+      "Paper labels and cardboard boxes used for tablet strips"
+    ],
+    "correct_index": 0,
+    "explanation": "Large-scale fermentation by bacteria, moulds and yeasts yields antibiotics, vitamins (B12, riboflavin), citric acid and ethanol.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "applications"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-1",
+    "question_text": "Robert Koch contributed to microbiology by:",
+    "options": [
+      "Introducing solid culture media, pure culture technique and postulates to prove causation",
+      "Inventing the pasteurisation process for preserving milk",
+      "Discovering the first vaccine against smallpox disease",
+      "Describing the nucleus and organelles of plant cells"
+    ],
+    "correct_index": 0,
+    "explanation": "Koch's postulates and his methods of isolating bacteria on solid media (agar plates) revolutionised the study and identification of pathogens.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "history"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "When cocci are seen arranged in chains, the correct descriptive term is:",
+    "options": [
+      "Streptococci",
+      "Staphylococci",
+      "Diplococci",
+      "Sarcinae"
+    ],
+    "correct_index": 0,
+    "explanation": "Cocci dividing in one plane and remaining attached in chains are streptococci; grape-like clusters are staphylococci and pairs are diplococci.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "bacterial morphology"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Bacteria that require oxygen for growth are called:",
+    "options": [
+      "Obligate aerobes",
+      "Obligate anaerobes",
+      "Facultative anaerobes",
+      "Aerotolerant anaerobes"
+    ],
+    "correct_index": 0,
+    "explanation": "Obligate aerobes need oxygen for energy production; obligate anaerobes are killed by oxygen and facultative anaerobes grow with or without it.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "bacterial growth"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Bacteria that grow best at human body temperature (about 37°C) are classified as:",
+    "options": [
+      "Mesophiles",
+      "Psychrophiles",
+      "Thermophiles",
+      "Halophiles"
+    ],
+    "correct_index": 0,
+    "explanation": "Mesophiles grow optimally at 20-45°C, including most human pathogens at 37°C; psychrophiles prefer cold and thermophiles high temperatures.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "bacterial growth"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "The Ziehl-Neelsen (acid-fast) staining method is used chiefly to identify:",
+    "options": [
+      "Mycobacterium tuberculosis and leprosy bacilli",
+      "Streptococcus pyogenes causing throat infections",
+      "Vibrio cholerae causing watery diarrhoea",
+      "Neisseria meningitidis causing meningitis"
+    ],
+    "correct_index": 0,
+    "explanation": "Mycobacteria have a waxy mycolic-acid cell wall that resists ordinary stains, so they are detected by the acid-fast Ziehl-Neelsen technique.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "staining"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Mycoplasma is unusual among bacteria because it:",
+    "options": [
+      "Lacks a cell wall and is the smallest free-living bacterium",
+      "Contains both chlorophyll and cellulose",
+      "Grows only inside insect cells",
+      "Has a nucleus enclosed by a membrane"
+    ],
+    "correct_index": 0,
+    "explanation": "Mycoplasmas have no peptidoglycan cell wall, making them resistant to penicillins and giving them a pleomorphic appearance.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "bacteria"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Rickettsiae and chlamydiae are special bacteria that:",
+    "options": [
+      "Are obligate intracellular parasites that cannot grow outside living cells",
+      "Grow freely in any simple laboratory broth",
+      "Are types of viruses rather than bacteria",
+      "Produce their own food by photosynthesis"
+    ],
+    "correct_index": 0,
+    "explanation": "Rickettsiae and chlamydiae depend on host cells for energy and nutrients, so they are cultivated only in living tissues or eggs.",
+    "difficulty": "hard",
+    "tags": [
+      "microbiology",
+      "bacteria"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Mannitol salt agar is a selective medium used to grow:",
+    "options": [
+      "Staphylococci",
+      "Escherichia coli",
+      "Salmonella typhi",
+      "Pseudomonas aeruginosa"
+    ],
+    "correct_index": 0,
+    "explanation": "The high salt concentration of mannitol salt agar inhibits most bacteria but allows salt-tolerant staphylococci to grow.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "culture media"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Nutrient agar is best described as a:",
+    "options": [
+      "General-purpose (basal) medium supporting growth of most non-fastidious bacteria",
+      "A highly selective medium that grows only a single species",
+      "A living tissue culture system used for growing viruses",
+      "A medium used exclusively for growing bacteriophages"
+    ],
+    "correct_index": 0,
+    "explanation": "Nutrient agar is a simple general-purpose medium containing peptone, beef extract, sodium chloride and agar, used to grow common bacteria.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "culture media"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "An enrichment medium is designed to:",
+    "options": [
+      "Increase the number of a desired organism while suppressing others",
+      "Prevent the growth of all organisms completely",
+      "Preserve organisms without allowing growth",
+      "Change the colour of the colonies"
+    ],
+    "correct_index": 0,
+    "explanation": "Enrichment media contain special nutrients that favour multiplication of the organism sought (e.g., selenite broth for Salmonella) from mixed samples.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "culture media"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "A transport medium is used to:",
+    "options": [
+      "Keep a clinical specimen viable during transit to the laboratory",
+      "Grow bacteria for antibiotic assay",
+      "Sterilise the surface of the skin",
+      "Differentiate lactose fermenters from non-fermenters"
+    ],
+    "correct_index": 0,
+    "explanation": "Transport media such as Stuart's or Cary-Blair medium preserve organisms in clinical samples without allowing overgrowth until they reach the lab.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "culture media"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Bacteria that obtain their carbon from organic compounds are called:",
+    "options": [
+      "Heterotrophs",
+      "Autotrophs",
+      "Phototrophs only",
+      "Lithotrophs"
+    ],
+    "correct_index": 0,
+    "explanation": "Heterotrophs use preformed organic carbon (host tissues, culture media), whereas autotrophs fix carbon dioxide as their carbon source.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "nutrition"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "A yeast differs from a mould in that a yeast:",
+    "options": [
+      "Is unicellular and usually reproduces by budding",
+      "Always forms branching filaments called hyphae",
+      "Contains chlorophyll for photosynthesis",
+      "Is always a virus"
+    ],
+    "correct_index": 0,
+    "explanation": "Yeasts are unicellular fungi that multiply by budding, while moulds grow as multicellular filaments (hyphae) forming a mycelium.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "fungi"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Saccharomyces cerevisiae, used in baking and brewing, is a:",
+    "options": [
+      "Unicellular yeast fungus",
+      "Gram-negative bacillus",
+      "Spiral bacterium",
+      "Naked virus"
+    ],
+    "correct_index": 0,
+    "explanation": "Baker's yeast Saccharomyces cerevisiae is a unicellular ascomycete fungus that ferments sugars to alcohol and carbon dioxide.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "fungi"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "The outer layer of a virus particle made of protein subunits is called the:",
+    "options": [
+      "Capsid",
+      "Cell wall",
+      "Peptidoglycan layer",
+      "Lipid bilayer membrane"
+    ],
+    "correct_index": 0,
+    "explanation": "The capsid is the protein coat surrounding the viral nucleic acid; it protects the genome and helps the virus attach to host cells.",
+    "difficulty": "easy",
+    "tags": [
+      "microbiology",
+      "viruses"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-2",
+    "question_text": "Bacterial spores (endospores) are significant in medicine because they:",
+    "options": [
+      "Are highly resistant to heat, drying and disinfectants, surviving for years",
+      "Help the bacterium swim towards nutrients and away from poisons",
+      "Enable the bacterium to photosynthesise using sunlight energy",
+      "Are the reproductive gametes produced by the fungi"
+    ],
+    "correct_index": 0,
+    "explanation": "Endospores of genera such as Clostridium and Bacillus resist boiling, chemicals and radiation, demanding sterilisation conditions that kill spores.",
+    "difficulty": "medium",
+    "tags": [
+      "microbiology",
+      "endospores"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "The predominant bacterium of the normal flora of human skin is:",
+    "options": [
+      "Staphylococcus epidermidis",
+      "Vibrio cholerae",
+      "Clostridium tetani",
+      "Neisseria gonorrhoeae"
+    ],
+    "correct_index": 0,
+    "explanation": "Coagulase-negative staphylococci, especially Staphylococcus epidermidis, dominate the skin flora along with corynebacteria and micrococci.",
+    "difficulty": "easy",
+    "tags": [
+      "normal flora",
+      "skin"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "The normal flora of the adult human colon is dominated by:",
+    "options": [
+      "Anaerobic bacteria such as Bacteroides",
+      "Strictly aerobic spore formers",
+      "Obligate intracellular viruses",
+      "Photosynthetic cyanobacteria"
+    ],
+    "correct_index": 0,
+    "explanation": "Anaerobic organisms, chiefly Bacteroides and anaerobic streptococci, vastly outnumber aerobes in the large intestine.",
+    "difficulty": "medium",
+    "tags": [
+      "normal flora",
+      "GIT"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Normal flora of the intestine benefit the host by synthesising:",
+    "options": [
+      "Vitamin K and several B vitamins",
+      "Insulin and glucagon",
+      "Haemoglobin and myoglobin",
+      "Bile pigments only"
+    ],
+    "correct_index": 0,
+    "explanation": "Gut bacteria such as E. coli synthesise vitamin K and B-complex vitamins that are absorbed and used by the host.",
+    "difficulty": "easy",
+    "tags": [
+      "normal flora",
+      "GIT"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Lactobacilli in the vagina are protective because they:",
+    "options": [
+      "Produce lactic acid, keeping the vaginal pH acidic",
+      "Consume all glucose from the blood",
+      "Form spores that block pathogens",
+      "Produce large amounts of oxygen"
+    ],
+    "correct_index": 0,
+    "explanation": "Vaginal lactobacilli ferment glycogen to lactic acid, maintaining an acidic pH that suppresses pathogens such as Candida and Gardnerella.",
+    "difficulty": "medium",
+    "tags": [
+      "normal flora",
+      "genitourinary"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "The term 'colonisation resistance' refers to the ability of normal flora to:",
+    "options": [
+      "Prevent pathogenic organisms from establishing in the same site",
+      "Resist the action of all antibiotics",
+      "Survive in the stomach's acid",
+      "Travel through the bloodstream freely"
+    ],
+    "correct_index": 0,
+    "explanation": "Established commensal flora compete for nutrients and attachment sites and produce inhibitory substances, barring pathogen colonisation.",
+    "difficulty": "medium",
+    "tags": [
+      "normal flora",
+      "protection"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Staphylococcus aureus is a common member of the normal flora of the:",
+    "options": [
+      "Anterior nares (nose)",
+      "Small intestine only",
+      "Urinary bladder",
+      "Bloodstream"
+    ],
+    "correct_index": 0,
+    "explanation": "About a third of healthy people carry S. aureus in the anterior nares, a reservoir for skin and wound infections.",
+    "difficulty": "medium",
+    "tags": [
+      "normal flora",
+      "nose"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Streptococcus mutans, part of the oral flora, is important because it:",
+    "options": [
+      "Ferments sugars to acids that cause dental caries",
+      "Causes tuberculosis",
+      "Produces the antibiotic penicillin",
+      "Lives only in the stomach"
+    ],
+    "correct_index": 0,
+    "explanation": "S. mutans forms dental plaque and ferments sucrose to lactic acid, demineralising enamel and causing tooth decay.",
+    "difficulty": "medium",
+    "tags": [
+      "normal flora",
+      "oral"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Normal flora can produce disease when:",
+    "options": [
+      "Host defences are lowered, or they move to a normally sterile site",
+      "The host eats a balanced diet",
+      "They remain confined to their usual site",
+      "The body temperature is exactly 37°C"
+    ],
+    "correct_index": 0,
+    "explanation": "Commensals become opportunistic pathogens after surgery, immunosuppression or antibiotic therapy, or when they translocate to sterile areas (e.g., gut E. coli into peritoneum).",
+    "difficulty": "medium",
+    "tags": [
+      "normal flora",
+      "opportunistic infection"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Antibiotic therapy that kills normal gut flora can lead to overgrowth of which organism causing pseudomembranous colitis?",
+    "options": [
+      "Clostridium difficile",
+      "Escherichia coli only",
+      "Staphylococcus epidermidis",
+      "Lactobacillus acidophilus"
+    ],
+    "correct_index": 0,
+    "explanation": "When broad-spectrum antibiotics suppress gut flora, toxigenic Clostridium difficile multiplies and causes pseudomembranous colitis.",
+    "difficulty": "hard",
+    "tags": [
+      "normal flora",
+      "antibiotic effect"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "The gut of a newborn baby is first colonised by microorganisms:",
+    "options": [
+      "During and shortly after birth from the mother and environment",
+      "Only after the child starts school",
+      "In the second year of life",
+      "Never, the gut is permanently sterile"
+    ],
+    "correct_index": 0,
+    "explanation": "The sterile fetal gut is rapidly colonised during delivery from the maternal birth canal, skin and feeding, establishing the infant flora.",
+    "difficulty": "easy",
+    "tags": [
+      "normal flora",
+      "colonisation"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Which body site in a healthy person is normally free of resident flora?",
+    "options": [
+      "Blood and cerebrospinal fluid, which are normally sterile",
+      "Skin and the surface of the upper respiratory tract",
+      "Mouth and the whole of the gastrointestinal tract",
+      "Large intestine of all healthy adult human beings"
+    ],
+    "correct_index": 0,
+    "explanation": "Blood, CSF, internal organs and the urinary bladder are normally sterile; flora colonise surfaces in contact with the environment.",
+    "difficulty": "easy",
+    "tags": [
+      "normal flora",
+      "sterile sites"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "The presence of E. coli in drinking water is used as an indicator of:",
+    "options": [
+      "Faecal contamination of the water",
+      "Excessive fluoride content",
+      "Salt water intrusion",
+      "Perfectly pure spring water"
+    ],
+    "correct_index": 0,
+    "explanation": "E. coli is a normal inhabitant of the human gut, so its detection in water signals faecal pollution and risk of waterborne disease.",
+    "difficulty": "easy",
+    "tags": [
+      "normal flora",
+      "E. coli"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Probiotics are best described as:",
+    "options": [
+      "Live beneficial microorganisms that improve the health of the host when consumed",
+      "Antibiotics that kill the normal bacteria of the gut",
+      "Vaccines that protect against intestinal infections",
+      "Digestive enzymes that break down lactose present in milk"
+    ],
+    "correct_index": 0,
+    "explanation": "Probiotic preparations contain live cultures such as Lactobacillus and Bifidobacterium that restore or support beneficial gut flora.",
+    "difficulty": "easy",
+    "tags": [
+      "normal flora",
+      "probiotics"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "The normal flora of the upper respiratory tract mainly:",
+    "options": [
+      "Competes with and inhibits pathogens from colonising the airways",
+      "Produces antibodies against influenza",
+      "Digests inhaled food particles",
+      "Causes pneumonia in every carrier"
+    ],
+    "correct_index": 0,
+    "explanation": "Resident flora of the throat and nose, such as viridans streptococci, occupy receptors and block colonisation by pathogens like S. pneumoniae.",
+    "difficulty": "medium",
+    "tags": [
+      "normal flora",
+      "respiratory"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-3",
+    "question_text": "Bacteroides fragilis, a major gut anaerobe, most commonly causes infection when:",
+    "options": [
+      "It escapes into the peritoneum after bowel injury or surgery",
+      "It remains within the healthy colon",
+      "It is consumed as a probiotic",
+      "It colonises the skin surface"
+    ],
+    "correct_index": 0,
+    "explanation": "B. fragilis is harmless in the gut but causes peritonitis and abscesses when bowel contents spill into sterile abdominal sites.",
+    "difficulty": "hard",
+    "tags": [
+      "normal flora",
+      "opportunistic infection"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Autoclaving is unsuitable for sterilising which of the following materials?",
+    "options": [
+      "Oils, powders and heat-sensitive plastics",
+      "Aqueous injections in sealed ampoules",
+      "Surgical dressings that absorb steam",
+      "Culture media in glass bottles"
+    ],
+    "correct_index": 0,
+    "explanation": "Oils, fats, powders and many plastics cannot be penetrated or tolerate moist heat; they are sterilised by dry heat or other methods.",
+    "difficulty": "medium",
+    "tags": [
+      "sterilization",
+      "autoclave"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Gamma radiation sterilisation is most commonly used for:",
+    "options": [
+      "Presterilised disposable syringes, catheters and plastic products",
+      "Aqueous injections containing heat-stable antibiotics",
+      "Culture media that contain serum and blood products",
+      "Glass ampoules that are completely filled with fixed oils"
+    ],
+    "correct_index": 0,
+    "explanation": "Gamma rays penetrate and sterilise heat-labile disposable medical devices in their final sealed packaging without raising temperature.",
+    "difficulty": "medium",
+    "tags": [
+      "sterilization",
+      "radiation"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "The most effective concentration of ethanol used as a skin disinfectant is about:",
+    "options": [
+      "70%",
+      "95%",
+      "50%",
+      "30%"
+    ],
+    "correct_index": 0,
+    "explanation": "70% ethanol denatures proteins optimally because the water present aids penetration; higher concentrations coagulate surface proteins too quickly.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "disinfection"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "An antiseptic differs from a disinfectant in that an antiseptic:",
+    "options": [
+      "Is safe enough to be applied to living tissues such as skin",
+      "Is used only on inanimate surfaces",
+      "Always sterilises to spore level",
+      "Cannot kill any microorganisms"
+    ],
+    "correct_index": 0,
+    "explanation": "Antiseptics (e.g., povidone-iodine) are antimicrobials that can be used on living tissue, while disinfectants are for inert surfaces and are often toxic to tissue.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "terminology"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Glutaraldehyde is used in hospitals mainly as a:",
+    "options": [
+      "Cold sterilant for heat-sensitive instruments such as endoscopes",
+      "A general anaesthetic gas that is given by inhalation",
+      "A sweetening agent used in sugar-coated tablets",
+      "A radioactive tracer used in diagnostic imaging"
+    ],
+    "correct_index": 0,
+    "explanation": "Glutaraldehyde (2%) is a high-level disinfectant/chemical sterilant used to soak heat-sensitive equipment like endoscopes.",
+    "difficulty": "medium",
+    "tags": [
+      "sterilization",
+      "chemical agents"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "In sterility testing by membrane filtration, after filtering the product the membrane is:",
+    "options": [
+      "Transferred to culture media and incubated to detect any microbial growth",
+      "Discarded immediately without examination",
+      "Weighed to measure its thickness",
+      "Examined under a light microscope for viruses"
+    ],
+    "correct_index": 0,
+    "explanation": "The membrane that trapped any organisms is divided and placed in suitable media (e.g., fluid thioglycollate and soybean-casein digest) and incubated.",
+    "difficulty": "medium",
+    "tags": [
+      "sterilization",
+      "sterility testing"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "The LAL (Limulus amoebocyte lysate) test is used to detect:",
+    "options": [
+      "Bacterial endotoxins (pyrogens) in parenteral products",
+      "Live bacteria in sterilised water",
+      "Residual ethylene oxide gas",
+      "The pH of the injection"
+    ],
+    "correct_index": 0,
+    "explanation": "The LAL test uses horseshoe-crab blood lysate that gels in the presence of endotoxin, providing a sensitive pyrogen test for injections.",
+    "difficulty": "medium",
+    "tags": [
+      "sterilization",
+      "pyrogens"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Glassware for parenteral products is rendered pyrogen-free by:",
+    "options": [
+      "Dry heat at 250°C for 30 to 45 minutes",
+      "Autoclaving at 121°C for 15 minutes",
+      "Rinsing with cold water",
+      "Exposure to ultraviolet light"
+    ],
+    "correct_index": 0,
+    "explanation": "Depyrogenation requires strong dry heat (about 250°C) because endotoxins resist ordinary autoclaving temperatures.",
+    "difficulty": "hard",
+    "tags": [
+      "sterilization",
+      "pyrogens"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Boiling water at 100°C for 10 to 15 minutes will:",
+    "options": [
+      "Kill vegetative bacteria but not bacterial spores",
+      "Sterilise the water completely to spore level",
+      "Destroy only viruses and never bacteria",
+      "Produce pyrogen-free water for injections"
+    ],
+    "correct_index": 0,
+    "explanation": "Boiling kills vegetative pathogens and most viruses, but spores survive, so it is a method of disinfection rather than sterilisation.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "heat"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "HEPA filters in laminar airflow cabinets provide a sterile working environment by:",
+    "options": [
+      "Removing airborne particles and microorganisms from the air",
+      "Heating the air to 200°C",
+      "Spraying disinfectant continuously",
+      "Ionising the air with radiation"
+    ],
+    "correct_index": 0,
+    "explanation": "High-efficiency particulate air filters retain 99.97% of particles of 0.3 µm and larger, giving clean air for aseptic filling.",
+    "difficulty": "medium",
+    "tags": [
+      "sterilization",
+      "filtration"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Phenol is used as a disinfectant in the form of:",
+    "options": [
+      "A dilute solution such as 1% to 5% for surfaces",
+      "A saturated salt solution",
+      "Pure concentrated crystals applied directly",
+      "A colourless gas at room temperature"
+    ],
+    "correct_index": 0,
+    "explanation": "Phenol and its derivatives (e.g., lysol) are used in low concentration as surface disinfectants; concentrated phenol is corrosive.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "chemical agents"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Chlorine-releasing compounds such as hypochlorite are widely used to:",
+    "options": [
+      "Disinfect water, floors and contaminated surfaces",
+      "Sterilise heat-sensitive surgical steel",
+      "Preserve food by freezing",
+      "Anaesthetise patients before surgery"
+    ],
+    "correct_index": 0,
+    "explanation": "Hypochlorite (bleach) is a powerful, cheap disinfectant against bacteria, viruses and spores, commonly used for water and environmental disinfection.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "chemical agents"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "In aseptic technique, the purpose of working near a flame or in a laminar flow cabinet is to:",
+    "options": [
+      "Prevent airborne microorganisms from contaminating sterile materials",
+      "Warm the culture media to body temperature before use",
+      "Dry the cleaned glassware quickly before the experiment",
+      "Sterilise the culture media by boiling them completely"
+    ],
+    "correct_index": 0,
+    "explanation": "Aseptic manipulation minimises contamination by creating an updraft or filtered airflow that keeps airborne microbes away from sterile products.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "aseptic technique"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "Bactericidal agents are those that:",
+    "options": [
+      "Kill bacteria outright",
+      "Only stop bacterial growth temporarily",
+      "Neutralise bacterial toxins",
+      "Promote bacterial multiplication"
+    ],
+    "correct_index": 0,
+    "explanation": "Bactericidal agents (e.g., penicillins at adequate concentration, heat) kill organisms, whereas bacteriostatic agents merely inhibit growth.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "terminology"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-4",
+    "question_text": "The autoclave sterilises mainly by:",
+    "options": [
+      "Moist heat in the form of saturated steam under pressure",
+      "Dry radiant heat without any moisture",
+      "Ultraviolet radiation at 254 nm",
+      "Chemical gas without raising temperature"
+    ],
+    "correct_index": 0,
+    "explanation": "Pressurised saturated steam at 121°C coagulates microbial proteins and kills even spores by the latent heat released on condensation.",
+    "difficulty": "easy",
+    "tags": [
+      "sterilization",
+      "autoclave"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "A microbiological (microbial) assay of an antibiotic is performed to determine its:",
+    "options": [
+      "The potency or biological activity of the antibiotic",
+      "Colour intensity of the antibiotic solution",
+      "Molecular weight of the active ingredient",
+      "Expiry date printed on the product label"
+    ],
+    "correct_index": 0,
+    "explanation": "Microbial assays measure the biological activity of antibiotics and vitamins by their effect on a sensitive test organism, expressing potency in units.",
+    "difficulty": "medium",
+    "tags": [
+      "microbial assay",
+      "antibiotics"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "In the cylinder-plate (cup-plate) method of antibiotic assay, the antibiotic solution is placed in:",
+    "options": [
+      "Small cylinders or cups on an agar plate seeded with the test organism",
+      "Test tubes containing only sterile broth",
+      "A spectrophotometer cuvette",
+      "The patient's infusion bottle"
+    ],
+    "correct_index": 0,
+    "explanation": "Stainless cylinders or bored cups hold the antibiotic on inoculated agar; after incubation the zone of inhibition is measured.",
+    "difficulty": "medium",
+    "tags": [
+      "microbial assay",
+      "cylinder plate"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "In the cylinder-plate assay, the diameter of the zone of inhibition is proportional to the:",
+    "options": [
+      "Logarithm of the antibiotic concentration",
+      "Square of the antibiotic concentration",
+      "Viscosity of the antibiotic solution",
+      "Colour depth of the solution"
+    ],
+    "correct_index": 0,
+    "explanation": "Zone diameter is linearly related to the log of concentration over the effective range, so a standard curve of log dose versus zone size is plotted.",
+    "difficulty": "hard",
+    "tags": [
+      "microbial assay",
+      "cylinder plate"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "In the tube dilution method, the minimum inhibitory concentration (MIC) is the:",
+    "options": [
+      "Lowest concentration of antibiotic that inhibits visible growth of the test organism",
+      "Highest concentration that allows visible growth",
+      "Concentration that kills all cells instantly",
+      "Dose given to a patient daily"
+    ],
+    "correct_index": 0,
+    "explanation": "Serial dilutions of the antibiotic in broth are inoculated; the MIC is the lowest concentration showing no visible turbidity after incubation.",
+    "difficulty": "medium",
+    "tags": [
+      "microbial assay",
+      "MIC"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "The minimal bactericidal concentration (MBC) is the lowest antibiotic concentration that:",
+    "options": [
+      "Kills 99.9% or more of the test bacteria",
+      "Only slows bacterial growth",
+      "Prevents the organism from producing pigment",
+      "Sterilises the glassware"
+    ],
+    "correct_index": 0,
+    "explanation": "After MIC determination, subcultures from clear tubes onto agar show which concentration killed the organisms — that is the MBC.",
+    "difficulty": "hard",
+    "tags": [
+      "microbial assay",
+      "MBC"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "Cyanocobalamin (vitamin B12) is assayed microbiologically using the test organism:",
+    "options": [
+      "Lactobacillus leichmannii",
+      "Staphylococcus aureus",
+      "Escherichia coli",
+      "Candida albicans"
+    ],
+    "correct_index": 0,
+    "explanation": "Lactobacillus leichmannii requires cyanocobalamin for growth, so its growth response measures the vitamin's concentration.",
+    "difficulty": "medium",
+    "tags": [
+      "microbial assay",
+      "vitamins"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "In the microbial assay of vitamins, the amount of vitamin is deduced from the:",
+    "options": [
+      "Amount of growth (turbidity or acid production) of the test organism",
+      "The colour developed by the vitamin in the solution",
+      "The weight of the tablet or capsule sample taken",
+      "The temperature at which the assay is conducted"
+    ],
+    "correct_index": 0,
+    "explanation": "The test organism's growth is proportional to the vitamin present, so turbidity or acid produced is compared against a standard curve.",
+    "difficulty": "medium",
+    "tags": [
+      "microbial assay",
+      "vitamins"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "The two official methods of microbiological assay of antibiotics described in pharmacopoeias are:",
+    "options": [
+      "Cylinder-plate (diffusion) and turbidimetric methods",
+      "Gravimetric and titrimetric methods only",
+      "Polarimetry and refractometry",
+      "Flame photometry and chromatography"
+    ],
+    "correct_index": 0,
+    "explanation": "Pharmacopoeial antibiotic assays use either agar diffusion (cylinder-plate) or turbidimetric (broth) methods, both based on growth inhibition.",
+    "difficulty": "medium",
+    "tags": [
+      "microbial assay",
+      "methods"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "A turbidimetric antibiotic assay measures activity by:",
+    "options": [
+      "The reduction in turbidity (growth) of a broth culture of the test organism",
+      "The change in pH of the culture medium during incubation",
+      "The weight of filter paper used to harvest the culture",
+      "The fluorescence emitted by the antibiotic solution"
+    ],
+    "correct_index": 0,
+    "explanation": "In the turbidimetric method the antibiotic is added to broth cultures; after incubation, less growth means lower turbidity, read on a spectrophotometer.",
+    "difficulty": "medium",
+    "tags": [
+      "microbial assay",
+      "turbidimetric"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "The test organism used in an antibiotic microbial assay must be:",
+    "options": [
+      "A standard sensitive strain that gives clear, reproducible zones",
+      "A strain completely resistant to all drugs",
+      "A virus rather than a bacterium",
+      "Any organism present in the factory air"
+    ],
+    "correct_index": 0,
+    "explanation": "Reference strains with known, stable sensitivity to the antibiotic give consistent zones, allowing accurate potency measurement.",
+    "difficulty": "medium",
+    "tags": [
+      "microbial assay",
+      "test organism"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "A microbiological assay may be preferred over a chemical assay for antibiotics because it:",
+    "options": [
+      "Measures only the biologically active form of the drug",
+      "Is always cheaper than any chemical method",
+      "Does not need a standard preparation",
+      "Can measure the colour of the drug"
+    ],
+    "correct_index": 0,
+    "explanation": "Microbial assays reflect true biological activity, detecting active components even in mixtures of closely related antibiotics that chemical methods may not distinguish.",
+    "difficulty": "medium",
+    "tags": [
+      "microbial assay",
+      "advantages"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "The McFarland standard is used in antimicrobial testing to:",
+    "options": [
+      "Standardise the turbidity (number of bacteria) of the inoculum",
+      "Calibrate the pH meter before the test is performed",
+      "Weigh the antibiotic powder accurately for the assay",
+      "Measure the diameter of the zone of inhibition"
+    ],
+    "correct_index": 0,
+    "explanation": "A 0.5 McFarland standard approximates 1.5 × 10⁸ CFU/mL and is used to prepare a uniform bacterial suspension for sensitivity tests.",
+    "difficulty": "hard",
+    "tags": [
+      "microbial assay",
+      "McFarland"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "Plates in the disc diffusion sensitivity test are typically incubated at:",
+    "options": [
+      "35°C to 37°C for 16 to 24 hours",
+      "4°C for one week",
+      "60°C for 10 minutes",
+      "Room temperature for one hour"
+    ],
+    "correct_index": 0,
+    "explanation": "Inoculated plates are incubated overnight at 35-37°C to allow growth and measurable zones around the discs.",
+    "difficulty": "easy",
+    "tags": [
+      "microbial assay",
+      "disc diffusion"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "A zone of inhibition in the disc diffusion method is:",
+    "options": [
+      "A clear area of no growth around the antibiotic disc",
+      "The coloured ring around the disc",
+      "An area of dense bacterial growth",
+      "A crack in the agar surface"
+    ],
+    "correct_index": 0,
+    "explanation": "Antibiotic diffuses from the disc into the agar, inhibiting growth of the sensitive organism and leaving a clear zone whose size reflects susceptibility.",
+    "difficulty": "easy",
+    "tags": [
+      "microbial assay",
+      "zone of inhibition"
+    ]
+  },
+  {
+    "unit_id": "micro-unit-5",
+    "question_text": "Antibiotic sensitivity (susceptibility) testing of a clinical isolate is mainly performed to:",
+    "options": [
+      "Guide the choice of effective antibiotic therapy for the patient",
+      "Measure the potency of the antibiotic batch",
+      "Determine the purity of the culture medium",
+      "Estimate the expiry of the antibiotic"
+    ],
+    "correct_index": 0,
+    "explanation": "Sensitivity testing tells the clinician which antibiotics inhibit the patient's infecting organism, while assay measures the drug's potency.",
+    "difficulty": "easy",
+    "tags": [
+      "microbial assay",
+      "sensitivity testing"
+    ]
   }
 ]
