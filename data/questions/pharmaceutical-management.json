@@ -54,10 +54,10 @@
     "unit_id": "mgmt-unit-2",
     "question_text": "Supply chain management in pharmaceuticals involves:",
     "options": [
-      "Only manufacturing drugs",
-      "From raw material procurement to final product delivery",
-      "Only marketing drugs",
-      "Only selling drugs"
+      "Only the manufacturing of drugs in factories",
+      "Managing the flow from raw material procurement to final product delivery",
+      "Only the marketing and advertising of drugs",
+      "Only selling drugs directly to the patients"
     ],
     "correct_index": 1,
     "explanation": "Pharmaceutical supply chain management involves the entire process from raw material procurement, manufacturing, quality control, warehousing, distribution, and final delivery to patients.\n\nAdditional: final delivery to patients",
@@ -158,7 +158,7 @@
     "options": [
       "Study of drug prices only",
       "Application of economic theories to evaluate drug therapies",
-      "Counting pills",
+      "Counting the pills present in the bottle",
       "Manufacturing cost analysis only"
     ],
     "correct_index": 1,
@@ -173,10 +173,10 @@
     "unit_id": "mgmt-unit-5",
     "question_text": "Inventory management in pharmacy aims to:",
     "options": [
-      "Maximize stock at all times",
+      "Keeping maximum stock at all times to avoid shortage",
       "Ensure adequate supply while minimizing holding costs",
-      "Keep minimum stock always",
-      "Ignore expired products"
+      "Keeping only the minimum stock at all times",
+      "Ignoring the products that have expired"
     ],
     "correct_index": 1,
     "explanation": "Pharmaceutical inventory management aims to ensure adequate availability of medicines while minimizing holding costs, wastage (expiry), and stockouts.\n\nAdditional: minimizing costs and waste",
@@ -718,8 +718,8 @@
     "options": [
       "Only the local municipality",
       "Nepal Pharmacy Council and local authorities",
-      "Only the bank",
-      "Only the tax office"
+      "Only with the commercial bank",
+      "Only with the inland revenue tax office"
     ],
     "correct_index": 1,
     "explanation": "Pharmacy entrepreneurs in Nepal must register with Nepal Pharmacy Council for professional registration and Department of Drug Administration for drug license.\n\nAdditional: Department of Drug Administration",
@@ -767,10 +767,10 @@
     "unit_id": "mgmt-unit-5",
     "question_text": "Which of the following is a direct cost in pharmacoeconomics?",
     "options": [
-      "Patient's lost wages",
+      "The patient's lost wages during the illness",
       "Cost of medication and hospital stay",
-      "Pain and suffering",
-      "Reduced quality of life"
+      "The pain and suffering of the patient",
+      "The reduced quality of life of the patient"
     ],
     "correct_index": 1,
     "explanation": "Direct costs include tangible costs like medication, hospital stay, and medical procedures. Lost wages are indirect costs; pain/suffering are intangible costs.",
@@ -818,7 +818,7 @@
     "unit_id": "mgmt-unit-5",
     "question_text": "Insurance in healthcare in Nepal primarily helps:",
     "options": [
-      "Increase drug prices",
+      "Increasing the prices of the drugs",
       "Reduce out-of-pocket expenses for patients",
       "Increase hospital profits",
       "Replace government funding"
@@ -940,7 +940,7 @@
       "Physical location of a pharmacy",
       "The place a product occupies in the minds of consumers",
       "Arranging products on shelves",
-      "Setting up a new market"
+      "Setting up a new market in another area"
     ],
     "correct_index": 1,
     "explanation": "Market positioning is the process of creating an image or identity for a product/brand in the minds of the target market relative to competitors.\n\nAdditional: consumers' minds relative to competitors",
@@ -1024,8 +1024,8 @@
     "options": [
       "Increase in asset value over time",
       "Decrease in value of an asset over time due to wear and tear",
-      "Sudden loss of all assets",
-      "Increase in product prices"
+      "A sudden complete loss of all the assets",
+      "An increase in the prices of the products"
     ],
     "correct_index": 1,
     "explanation": "Depreciation is the systematic allocation of the cost of a tangible asset over its useful life, reflecting wear and tear, obsolescence, or age.",
@@ -1076,7 +1076,7 @@
       "All decisions made by top management",
       "Distribution of decision-making authority to lower levels of management",
       "Removing all management levels",
-      "Centralizing all resources"
+      "Keeping all the resources centralized at the top"
     ],
     "correct_index": 1,
     "explanation": "Decentralization distributes decision-making authority across various levels of management, empowering lower-level managers to make decisions within their areas.",
@@ -1295,8 +1295,8 @@
     "options": {
       "a": "Classification of drugs by alphabet",
       "b": "A method to classify inventory based on annual consumption value",
-      "c": "A quality control method",
-      "d": "A drug distribution system"
+      "c": "A method that is used for the quality control of drugs",
+      "d": "A system that is used for distributing drugs to patients"
     },
     "correct_option": "b",
     "explanation": "ABC (Always Better Control) analysis classifies inventory into A (high value, ~10% items, 70% cost), B (moderate, ~20% items, 20% cost), C (low value, ~70% items, 10% cost).",
@@ -1430,8 +1430,8 @@
     "options": {
       "a": "A receipt for delivered goods",
       "b": "A formal document sent to a supplier to purchase goods",
-      "c": "An internal request form",
-      "d": "A quality inspection report"
+      "c": "An internal request form for the store",
+      "d": "A report of the quality inspection of the goods"
     },
     "correct_option": "b",
     "explanation": "A purchase order is a formal, legally binding document issued by a buyer to a seller specifying the items, quantities, and agreed prices for products.",
@@ -1445,10 +1445,10 @@
   {
     "question_text": "What is tendering in pharmaceutical procurement?",
     "options": {
-      "a": "Direct purchase from one supplier",
+      "a": "Direct purchase of goods from a single selected supplier",
       "b": "A process where suppliers bid to supply goods at competitive prices",
-      "c": "Returning damaged goods",
-      "d": "Quality testing of drugs"
+      "c": "Returning damaged or expired goods to the supplier",
+      "d": "Quality testing of drugs in the laboratory"
     },
     "correct_option": "b",
     "explanation": "Tendering is a competitive bidding process where multiple suppliers submit bids for supplying drugs/equipment. It ensures fair pricing and transparency.\n\nAdditional: supply goods at competitive prices",
@@ -1462,7 +1462,7 @@
   {
     "question_text": "What is the difference between a quotation and a tender?",
     "options": {
-      "a": "No difference",
+      "a": "Both terms describe the same process of purchase",
       "b": "Quotation is informal pricing; tender is formal competitive bidding",
       "c": "Tender is for small purchases only",
       "d": "Quotation is government-mandated"
@@ -1512,10 +1512,10 @@
   {
     "question_text": "What is the main objective of quality assurance in pharmaceutical manufacturing?",
     "options": {
-      "a": "Maximize production speed",
-      "b": "Ensure products consistently meet",
-      "c": "Reduce the number of employees",
-      "d": "Increase profit margins"
+      "a": "Maximizing the speed of tablet production",
+      "b": "Ensure products consistently meet quality standards and regulatory requirements",
+      "c": "Reducing the number of employees in the factory",
+      "d": "Increasing the profit margins of the company"
     },
     "correct_option": "b",
     "explanation": "Quality assurance (QA) is a systematic approach to ensure that products are consistently manufactured to meet quality standards and regulatory requirements.\n\nAdditional: predetermined quality standards",
@@ -1578,10 +1578,10 @@
   {
     "question_text": "What is a batch record in pharmaceutical manufacturing?",
     "options": {
-      "a": "A sales record",
+      "a": "A record of the daily sales made of the batch",
       "b": "A document containing all details of a batch's manufacturing process",
-      "c": "An employee attendance sheet",
-      "d": "A customer complaint form"
+      "c": "A sheet recording the attendance of the employees",
+      "d": "A form that is used for recording customer complaints"
     },
     "correct_option": "b",
     "explanation": "A batch record (or batch manufacturing record) documents every step, material, and parameter used in manufacturing a specific batch of product for traceability.\n\nAdditional: manufacturing process for a specific batch",
@@ -1598,7 +1598,7 @@
       "a": "To test taste of the product",
       "b": "To determine shelf life and storage conditions",
       "c": "To check packaging aesthetics",
-      "d": "To test marketing appeal"
+      "d": "To test the marketing appeal of the product"
     },
     "correct_option": "b",
     "explanation": "Stability studies determine how factors like temperature, humidity, and light affect the product over time, establishing the expiry date and storage conditions.",
@@ -1777,9 +1777,9 @@
     "question_text": "Which organization globally monitors adverse drug reactions?",
     "options": {
       "a": "WHO through its Programme for International Drug Monitoring",
-      "b": "UNESCO",
-      "c": "World Trade Organization",
-      "d": "International Olympic Committee"
+      "b": "The United Nations Educational, Scientific and Cultural Organization (UNESCO)",
+      "c": "The World Trade Organization (WTO)",
+      "d": "The International Olympic Committee (IOC)"
     },
     "correct_option": "a",
     "explanation": "WHO's PIDM, coordinated through Uppsala Monitoring Centre (UMC), is the global system for ADR monitoring with member countries reporting to the VigiBase database.\n\nNote: PIDM",
@@ -1810,10 +1810,10 @@
   {
     "question_text": "What is rational drug use?",
     "options": {
-      "a": "Using the cheapest drug available",
+      "a": "Using the cheapest drug that is available in the market",
       "b": "Patients receive appropriate drug therapy for their clinical condition",
-      "c": "Using only brand-name drugs",
-      "d": "Prescribing maximum number of drugs"
+      "c": "Using only costly brand-name drugs for every condition",
+      "d": "Prescribing the maximum number of drugs to every patient"
     },
     "correct_option": "b",
     "explanation": "Rational drug use means patients receive medications appropriate to their clinical needs, in doses suited to their requirements, for an adequate period, at the lowest cost.\n\nAdditional: their clinical needs at proper doses",
@@ -1893,10 +1893,10 @@
   {
     "question_text": "What is bioequivalence?",
     "options": {
-      "a": "Two drugs having the same color",
-      "b": "A generic drug delivering the same active ingredient at",
-      "c": "Two drugs having the same price",
-      "d": "A drug having two active ingredients"
+      "a": "Two drugs that have the same color, shape and size",
+      "b": "A generic drug delivering the same active ingredient at the same rate and extent as the original brand drug",
+      "c": "Two drugs that are sold at exactly the same price",
+      "d": "A single drug that contains two different active ingredients"
     },
     "correct_option": "b",
     "explanation": "Bioequivalence means the generic drug and the reference brand-name drug deliver the same amount of active ingredient to the site of action at the same rate.\n\nAdditional: the same rate and extent as the reference drug",
@@ -1910,10 +1910,10 @@
   {
     "question_text": "What is the role of the Drug Advisory Committee in Nepal?",
     "options": {
-      "a": "Selling drugs to public",
+      "a": "Selling medicines directly to the general public",
       "b": "Advising the government on drug regulation and policy",
-      "c": "Manufacturing drugs",
-      "d": "Exporting drugs"
+      "c": "Manufacturing drugs in government factories",
+      "d": "Exporting drugs to other countries"
     },
     "correct_option": "b",
     "explanation": "The Drug Advisory Committee advises the government on drug policy matters, scheduling, essential medicines selection, and regulatory affairs.\n\nNote: and essential medicines\n\nAdditional: drug policy regulation",
@@ -1927,10 +1927,10 @@
   {
     "question_text": "What is drug scheduling (classification)?",
     "options": {
-      "a": "Arranging drugs by color",
-      "b": "Categorizing drugs based on their potential",
-      "c": "Setting drug prices",
-      "d": "Packaging drugs"
+      "a": "Arranging the drugs according to their color",
+      "b": "Categorizing drugs based on their potential for abuse and medical use",
+      "c": "Setting the prices of the drugs",
+      "d": "Packaging of the drugs into containers"
     },
     "correct_option": "b",
     "explanation": "Drug scheduling classifies medications into categories (e.g., prescription-only, pharmacy-only, over-the-counter) based on safety, abuse potential, and need for supervision.\n\nAdditional: for abuse and safety profile",
@@ -1961,10 +1961,10 @@
   {
     "question_text": "What is pharmaceutical care?",
     "options": {
-      "a": "Just dispensing medications",
-      "b": "Responsible provision of drug therapy to achieve definite",
-      "c": "Marketing pharmaceutical products",
-      "d": "Manufacturing drugs"
+      "a": "Dispensing the medications exactly as prescribed by the doctor",
+      "b": "Responsible provision of drug therapy to achieve definite outcomes that improve a patient's quality of life",
+      "c": "Marketing and promoting pharmaceutical products to the public",
+      "d": "Manufacturing dosage forms in pharmaceutical industries"
     },
     "correct_option": "b",
     "explanation": "Pharmaceutical care is a patient-centered approach where pharmacists take responsibility for drug therapy outcomes, monitoring and improving patient health.\n\nAdditional: outcomes that improve patient's quality of life",
@@ -1977,10 +1977,10 @@
   {
     "question_text": "What is clinical pharmacy?",
     "options": {
-      "a": "Working only in the dispensary",
-      "b": "The branch of pharmacy where pharmacists provide",
-      "c": "Selling OTC drugs",
-      "d": "Preparing drug formulations"
+      "a": "Working only in the dispensary of a hospital",
+      "b": "The branch of pharmacy in which pharmacists provide direct patient care",
+      "c": "Selling over-the-counter drugs to the customers",
+      "d": "Preparing drug formulations in the laboratory"
     },
     "correct_option": "b",
     "explanation": "Clinical pharmacy involves pharmacists working alongside physicians in hospitals/clinics to optimize drug therapy, monitor patients, and prevent adverse effects.\n\nAdditional: direct patient care in clinical settings",
@@ -2129,7 +2129,7 @@
       "a": "Reordering drugs from the suppliers",
       "b": "Comparing a patient's medication orders to their current medication list",
       "c": "Counting the pills present in bottles",
-      "d": "Updating the drug price lists"
+      "d": "Updating the price lists of all the drugs"
     },
     "correct_option": "b",
     "explanation": "Medication reconciliation is the process of comparing a patient's current medication list against new orders to identify discrepancies during care transitions.\n\nAdditional: all medications they are actually taking",
@@ -2142,10 +2142,10 @@
   {
     "question_text": "What is the purpose of a medication therapy management (MTM) service?",
     "options": {
-      "a": "Replace doctor consultations",
-      "b": "Optimize drug therapy outcomes and improve",
-      "c": "Increase drug sales",
-      "d": "Train medical students"
+      "a": "Replacing the consultations with the doctor entirely",
+      "b": "Optimize drug therapy outcomes and improve the patient's quality of life",
+      "c": "Increasing the sales of medicines in the pharmacy",
+      "d": "Training medical students in pharmacology"
     },
     "correct_option": "b",
     "explanation": "MTM is a comprehensive service where pharmacists review all medications, identify drug-related problems, and work with patients and physicians to optimize therapy.\n\nAdditional: patient health through pharmacist-led review",
@@ -2159,10 +2159,10 @@
   {
     "question_text": "What is a drug master file (DMF)?",
     "options": {
-      "a": "A patient medication record",
-      "b": "A confidential document submitted to a regulatory",
-      "c": "A price list of drugs",
-      "d": "A prescription pad"
+      "a": "A record of the medications that are given to a patient",
+      "b": "A confidential document submitted to the regulatory authority with full manufacturing details",
+      "c": "A list showing the prices of all the drugs",
+      "d": "A pad that doctors use to write prescriptions"
     },
     "correct_option": "b",
     "explanation": "A DMF is a document submitted to regulatory authorities (like FDA) containing confidential, detailed information about the manufacturing, processing, and packaging of drug substances.\n\nAdditional: authority containing detailed information about drug manufacturing",
@@ -2175,10 +2175,10 @@
   {
     "question_text": "What is Good Pharmacy Practice (GPP)?",
     "options": {
-      "a": "A marketing practice",
-      "b": "Guidelines ensuring pharmacy services meet",
-      "c": "A manufacturing standard",
-      "d": "A pricing regulation"
+      "a": "A practice that is used for the marketing of medicines",
+      "b": "Guidelines ensuring that pharmacy services meet accepted quality and care standards",
+      "c": "A standard that is used in drug manufacturing industries",
+      "d": "A regulation that fixes the prices of drugs"
     },
     "correct_option": "b",
     "explanation": "GPP is a set of standards established by WHO/FIP to ensure that pharmacy services are provided in a safe, effective, and quality manner.\n\nAdditional: quality standards for patient care",
@@ -2192,10 +2192,10 @@
   {
     "question_text": "What is a refrigerator temperature log in a pharmacy?",
     "options": {
-      "a": "A log of drug prices",
-      "b": "A record of temperature readings taken at",
-      "c": "A patient temperature record",
-      "d": "A daily sales record"
+      "a": "A log that records the prices of the drugs",
+      "b": "A record of temperature readings taken at regular intervals to monitor cold storage",
+      "c": "A record of the temperatures of patients with fever",
+      "d": "A daily record of the sales made in the pharmacy"
     },
     "correct_option": "b",
     "explanation": "Temperature logs document refrigerator temperatures (typically 2-8°C) at set intervals to ensure cold storage drugs remain within required conditions.\n\nAdditional: regular intervals to ensure proper storage conditions",
@@ -2211,8 +2211,8 @@
     "options": {
       "a": "Checking if patients have expired prescriptions",
       "b": "A system to track and manage medications approaching their expiry dates",
-      "c": "Monitoring stock prices",
-      "d": "Checking building expiry"
+      "c": "Monitoring the prices of the stock",
+      "d": "Checking whether the building has expired"
     },
     "correct_option": "b",
     "explanation": "Expiry monitoring involves regular review of stock to identify approaching expiry dates, enabling timely use, return, or disposal of medications.",
@@ -2225,10 +2225,10 @@
   {
     "question_text": "What is the economic order quantity (EOQ)?",
     "options": {
-      "a": "The maximum quantity to order",
+      "a": "The maximum quantity that may be ordered at one time",
       "b": "The optimal order size that minimizes total inventory cost",
-      "c": "The minimum quantity to order",
-      "d": "The average quantity ordered"
+      "c": "The minimum quantity that must be ordered each time",
+      "d": "The average quantity that is ordered each time"
     },
     "correct_option": "b",
     "explanation": "EOQ is the ideal order quantity that balances ordering costs and holding costs to minimize total inventory management costs.\n\nNote: ordering + holding\n\nAdditional: minimizes total inventory costs",
@@ -2290,7 +2290,7 @@
     ]
   },
   {
-    "question_text": "What is drug存货周转率 (inventory turnover rate)?",
+    "question_text": "What is the drug inventory turnover rate?",
     "options": {
       "a": "How fast drugs rotate on shelves",
       "b": "The number of times inventory is sold",
@@ -2308,10 +2308,10 @@
   {
     "question_text": "What is a pharmacy's break-even point?",
     "options": {
-      "a": "When the pharmacy closes",
+      "a": "The point at which the pharmacy closes down",
       "b": "When total revenue equals total costs, resulting in zero profit or loss",
-      "c": "When a drug expires",
-      "d": "When a patient leaves without buying"
+      "c": "The date on which a drug expires",
+      "d": "When a patient leaves the shop without making any purchase"
     },
     "correct_option": "b",
     "explanation": "The break-even point is where total costs (fixed + variable) equal total revenue. Below this, the pharmacy operates at a loss; above, it generates profit.",
@@ -2324,10 +2324,10 @@
   {
     "question_text": "What is fixed cost in pharmacy management?",
     "options": {
-      "a": "Cost of drugs sold",
+      "a": "The cost of the drugs that are sold each month",
       "b": "Costs that remain constant regardless of sales volume",
-      "c": "Cost of packaging materials",
-      "d": "Cost of drugs purchased"
+      "c": "The cost of the packaging materials used for the drugs",
+      "d": "The cost of the drugs purchased from the suppliers"
     },
     "correct_option": "b",
     "explanation": "Fixed costs (rent, utilities, permanent staff salaries) remain the same regardless of how much the pharmacy sells or dispenses.\n\nNote: e.g., rent, salaries",
@@ -2356,10 +2356,10 @@
   {
     "question_text": "What is markup in pharmaceutical pricing?",
     "options": {
-      "a": "The amount added to the cost",
-      "b": "A discount given to customers",
-      "c": "The manufacturing cost",
-      "d": "The tax on drugs"
+      "a": "The amount added to the cost price to determine the selling price",
+      "b": "A discount that is given to regular customers",
+      "c": "The cost that is incurred to manufacture the drug",
+      "d": "The tax that is levied on the sale of drugs"
     },
     "correct_option": "a",
     "explanation": "Markup is the percentage or amount added to the cost price of a drug to determine its selling price, covering operating expenses and profit.\n\nAdditional: price to determine the selling price",
@@ -2390,10 +2390,10 @@
   {
     "question_text": "What is a controlled substance?",
     "options": {
-      "a": "Any prescription drug",
-      "b": "A drug whose manufacture, distribution",
-      "c": "An over-the-counter drug",
-      "d": "A herbal medicine"
+      "a": "Any drug that requires a prescription from a doctor",
+      "b": "A drug whose manufacture, distribution and use is regulated and controlled by law",
+      "c": "A drug that is sold over the counter without a prescription",
+      "d": "A herbal medicine that is prepared from plant extracts"
     },
     "correct_option": "b",
     "explanation": "Controlled substances are regulated by law (e.g., Controlled Substances Act) due to potential for abuse or dependence. They are classified into schedules/categories.\n\nNote: and use are regulated by law due to abuse potential",
@@ -2407,9 +2407,9 @@
   {
     "question_text": "What is narcotic drug as defined legally?",
     "options": {
-      "a": "Any painkiller sold without a prescription",
+      "a": "Any painkiller that is sold without a prescription",
       "b": "A substance listed in the narcotics schedule that affects the central nervous system",
-      "c": "Any antibiotic used for bacterial infections",
+      "c": "Any antibiotic that is used for bacterial infections",
       "d": "Any sedative available in retail pharmacies"
     },
     "correct_option": "b",
@@ -2424,10 +2424,10 @@
   {
     "question_text": "What is a psychotropic substance?",
     "options": {
-      "a": "A vitamin supplement",
+      "a": "A vitamin or mineral supplement used for health",
       "b": "A substance that acts on the central nervous system",
-      "c": "An antiseptic",
-      "d": "A surgical instrument"
+      "c": "An antiseptic that is applied to the skin",
+      "d": "A surgical instrument used in operations"
     },
     "correct_option": "b",
     "explanation": "Psychotropic substances affect mental processes including perception, consciousness, cognition, and mood. They are regulated under psychotropic substance laws.\n\nNote: consciousness, or behavior\n\nAdditional: the mind affecting perception",
@@ -2460,7 +2460,7 @@
       "a": "Patient registration for drug delivery",
       "b": "The process of officially listing a drug in the national register",
       "c": "Recording drug side effects",
-      "d": "Counting drug stock"
+      "d": "Counting the stock of drugs in the store"
     },
     "correct_option": "b",
     "explanation": "Drug registration is the formal process where a regulatory authority evaluates and approves a drug for marketing in a country based on safety, efficacy, and quality data.\n\nAdditional: the national register to allow its marketing",
@@ -2506,10 +2506,10 @@
   {
     "question_text": "What is the purpose of drug price control?",
     "options": {
-      "a": "To increase drug company profits",
+      "a": "To increase the profits of the drug companies",
       "b": "To ensure essential medicines are available at affordable prices",
-      "c": "To ban all imported drugs",
-      "d": "To increase government revenue"
+      "c": "To ban the import of all foreign drugs",
+      "d": "To increase the revenue earned by the government"
     },
     "correct_option": "b",
     "explanation": "Drug price control aims to make essential medicines affordable and accessible by setting maximum retail prices or controlling profit margins.",
@@ -2525,8 +2525,8 @@
     "options": {
       "a": "The lowest price a drug can be sold at",
       "b": "The highest price at which a product can be sold to consumers",
-      "c": "The wholesale price",
-      "d": "The manufacturing cost"
+      "c": "The wholesale price of the drug",
+      "d": "The cost of manufacturing the drug"
     },
     "correct_option": "b",
     "explanation": "MRP is the maximum price fixed by the manufacturer that a retailer can charge, inclusive of all taxes. It protects consumers from price exploitation.\n\nNote: including all taxes",
@@ -2539,10 +2539,10 @@
   {
     "question_text": "What is a pharmaceutical company's product life cycle?",
     "options": {
-      "a": "The shelf life of a product",
+      "a": "The shelf life of the product in the warehouse",
       "b": "The stages a drug goes through from introduction to decline",
-      "c": "The time a pharmacist works",
-      "d": "The life of a pill"
+      "c": "The time that a pharmacist spends working in the store",
+      "d": "The life of a single pill once it is opened"
     },
     "correct_option": "b",
     "explanation": "Product life cycle includes: introduction, growth, maturity, and decline stages. Each stage has different marketing, pricing, and competitive strategies.\n\nAdditional: introduction to withdrawal from the market",
@@ -2573,10 +2573,10 @@
   {
     "question_text": "What is a pharmaceutical patent?",
     "options": {
-      "a": "A license to sell drugs in a country",
-      "b": "An intellectual property right granting exclusive rights to manufacture",
-      "c": "A prescription for drugs from a doctor",
-      "d": "A drug formulation method used in production"
+      "a": "A license that permits the sale of drugs in a country",
+      "b": "An intellectual property right granting exclusive rights to make and sell the drug for a fixed period",
+      "c": "A prescription written for a drug by a registered doctor",
+      "d": "A method of drug formulation used in large-scale production"
     },
     "correct_option": "b",
     "explanation": "A pharmaceutical patent gives the innovator company exclusive rights (usually 20 years) to manufacture and sell the drug, after which generic competition is allowed.\n\nAdditional: and sell a drug for a limited period",
@@ -2589,7 +2589,7 @@
   {
     "question_text": "What is a generic drug?",
     "options": {
-      "a": "A fake drug",
+      "a": "A fake or counterfeit drug product",
       "b": "A drug marketed after patent expiry containing the same active ingredient",
       "c": "A drug only available in government hospitals",
       "d": "A drug with no brand name at all"
@@ -2621,7 +2621,7 @@
   {
     "question_text": "What is the difference between medical representative (MR) and pharmacist?",
     "options": {
-      "a": "No difference",
+      "a": "Both professionals perform the same duties in practice",
       "b": "MR promotes drugs to doctors; a pharmacist dispenses and advises on medicines",
       "c": "MR works in hospital; pharmacist works in company",
       "d": "MR is a doctor; pharmacist is a nurse"
