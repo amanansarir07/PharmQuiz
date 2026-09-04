@@ -176,66 +176,74 @@ export default function DashboardPage() {
         <div className="mb-6 space-y-3">
           {exams.map((exam) => {
             const live = isExamLive(exam, now);
-            return (
-              <Card
-                key={exam.id}
-                className={
-                  live
-                    ? "border-green-500/50 bg-green-50 dark:bg-green-950/40"
-                    : "border-primary/40 bg-primary/5"
-                }
-              >
-                <CardContent className="flex flex-wrap items-center gap-3 p-4 sm:p-5">
-                  <div
-                    className={
-                      "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl " +
-                      (live
-                        ? "bg-green-600/15 text-green-600 dark:text-green-400"
-                        : "bg-primary/15 text-primary")
-                    }
-                  >
-                    <Megaphone className="h-5 w-5" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <p className="font-semibold">
-                        {live
-                          ? "Mock Test is LIVE now!"
-                          : "Mock Test coming soon"}
-                      </p>
-                      {live ? (
-                        <Badge className="bg-green-600 text-white">● LIVE</Badge>
-                      ) : (
-                        <Badge variant="secondary">Scheduled</Badge>
-                      )}
+            if (live) {
+              return (
+                <Card
+                  key={exam.id}
+                  className="border-green-500/50 bg-green-50 dark:bg-green-950/40"
+                >
+                  <CardContent className="flex flex-wrap items-center gap-3 p-4 sm:p-5">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-green-600/15 text-green-600 dark:text-green-400">
+                      <Megaphone className="h-5 w-5" />
                     </div>
-                    <p className="text-xs text-muted-foreground">
-                      {exam.title} · {formatInKathmandu(exam.starts_at, "short")}{" "}
-                      (Kathmandu) · {exam.duration_minutes} min
-                    </p>
-                    {!live && (
-                      <p className="mt-1 text-sm font-semibold tabular-nums text-primary">
-                        Starts in {countdownTo(exam.starts_at)}
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <p className="font-semibold">Mock Test is LIVE now!</p>
+                        <Badge className="bg-green-600 text-white">● LIVE</Badge>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        {exam.title} · {formatInKathmandu(exam.starts_at, "short")}{" "}
+                        (Kathmandu) · {exam.duration_minutes} min
                       </p>
-                    )}
-                  </div>
-                  {live ? (
+                    </div>
                     <Button onClick={() => startScheduled(exam)}>
                       <Play className="mr-1.5 h-4 w-4" />
                       Start Exam Now
                     </Button>
-                  ) : (
-                    <Link
-                      href="/mock-test"
-                      className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
-                    >
-                      Details
-                      <ChevronRight className="h-4 w-4" />
-                    </Link>
+                  </CardContent>
+                  {isAdmin && (
+                    <div className="-mt-1 px-4 pb-3">
+                      <Link
+                        href="/admin/mock-exams"
+                        className="text-xs text-muted-foreground hover:text-primary hover:underline"
+                      >
+                        Manage schedule →
+                      </Link>
+                    </div>
                   )}
-                </CardContent>
+                </Card>
+              );
+            }
+            // Upcoming: the WHOLE card is clickable and goes to the Mock Test
+            // page (where the countdown + locked start button live).
+            return (
+              <div key={exam.id}>
+                <Link href="/mock-test" className="block">
+                  <Card className="cursor-pointer border-primary/40 bg-primary/5 transition-all hover:shadow-md active:scale-[0.99]">
+                    <CardContent className="flex flex-wrap items-center gap-3 p-4 sm:p-5">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
+                        <Megaphone className="h-5 w-5" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="font-semibold">Mock Test coming soon</p>
+                          <Badge variant="secondary">Scheduled</Badge>
+                        </div>
+                        <p className="text-xs text-muted-foreground">
+                          {exam.title} ·{" "}
+                          {formatInKathmandu(exam.starts_at, "short")} (Kathmandu)
+                          · {exam.duration_minutes} min
+                        </p>
+                        <p className="mt-1 text-sm font-semibold tabular-nums text-primary">
+                          Starts in {countdownTo(exam.starts_at)}
+                        </p>
+                      </div>
+                      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                    </CardContent>
+                  </Card>
+                </Link>
                 {isAdmin && (
-                  <div className="px-4 pb-3 -mt-1">
+                  <div className="mt-1 px-1">
                     <Link
                       href="/admin/mock-exams"
                       className="text-xs text-muted-foreground hover:text-primary hover:underline"
@@ -244,7 +252,7 @@ export default function DashboardPage() {
                     </Link>
                   </div>
                 )}
-              </Card>
+              </div>
             );
           })}
         </div>
