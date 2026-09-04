@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { APP_NAME } from "@/lib/constants";
-import { GraduationCap, Coffee, Heart } from "lucide-react";
+import Image from "next/image";
+import { Coffee, Heart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         <div className="flex flex-col items-center gap-4 text-center">
           <div className="flex items-center gap-2 text-muted-foreground">
-            <GraduationCap className="h-5 w-5" />
+            <Image src="/icons/icon-192.png" alt="" width={192} height={192} className="h-6 w-6" />
             <span className="text-sm font-medium">{APP_NAME}</span>
           </div>
           <p className="text-xs text-muted-foreground max-w-md">

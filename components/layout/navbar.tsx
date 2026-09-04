@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -8,7 +9,6 @@ import { NAV_LINKS, APP_NAME } from "@/lib/constants";
 import { useAuth } from "@/lib/auth";
 import { useTheme } from "next-themes";
 import {
-  GraduationCap,
   Menu,
   X,
   Sun,
@@ -58,7 +58,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <GraduationCap className="h-7 w-7 text-primary" />
+          <Image src="/icons/icon-192.png" alt="" width={192} height={192} className="h-7 w-7" />
           <span className="text-xl font-bold tracking-tight">{APP_NAME}</span>
         </Link>
 
