@@ -2898,5 +2898,1025 @@
     "tags": [
       "zoonotic disease"
     ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "The mental dimension of health is best described as:",
+    "options": [
+      "The ability to think, learn and cope with the stresses of daily life",
+      "The absence of all physical illness",
+      "Having strong muscles and good eyesight",
+      "The size and weight of the body"
+    ],
+    "correct_index": 0,
+    "explanation": "Mental health covers emotional and cognitive well-being — the capacity to reason, learn and manage stress — one of the WHO dimensions of health.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "dimensions of health"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Which of the following is a determinant of health?",
+    "options": [
+      "Income, education and living conditions",
+      "The colour of a person's clothes",
+      "The brand of television a family owns",
+      "The distance of the house from a temple"
+    ],
+    "correct_index": 0,
+    "explanation": "Health is influenced by socioeconomic determinants such as income, education, housing, food and access to services, in addition to biology and lifestyle.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "determinants"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Tertiary prevention is mainly concerned with:",
+    "options": [
+      "Rehabilitation and limiting disability after disease has occurred",
+      "Immunisation before exposure to infection",
+      "Screening healthy people for early disease",
+      "Improving the quality of drinking water"
+    ],
+    "correct_index": 0,
+    "explanation": "Tertiary prevention acts after the disease is established, aiming to reduce complications and rehabilitate the patient to as normal a life as possible.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "prevention"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "In the health belief model, 'perceived susceptibility' refers to a person's belief about:",
+    "options": [
+      "Their own chances of getting the disease",
+      "The cost of the treatment",
+      "The doctor's professional skill",
+      "The number of medicines available"
+    ],
+    "correct_index": 0,
+    "explanation": "Perceived susceptibility is how vulnerable the individual feels to a condition; together with perceived severity, benefits and barriers it drives preventive action.",
+    "difficulty": "hard",
+    "tags": [
+      "health education",
+      "health belief model"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "In the communication process of health education, feedback is important because it:",
+    "options": [
+      "Tells the health educator whether the message has been understood",
+      "Replaces the need for any visual aids",
+      "Increases the volume of the spoken message",
+      "Confirms that the audience is fully literate"
+    ],
+    "correct_index": 0,
+    "explanation": "Feedback from the audience reveals how far the message was received and understood, allowing the educator to correct misunderstandings.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "communication"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Which of the following is a common barrier to effective health communication?",
+    "options": [
+      "Using technical jargon the audience cannot understand",
+      "Speaking in the local language of the people",
+      "Using simple words and short sentences",
+      "Showing pictures along with the talk"
+    ],
+    "correct_index": 0,
+    "explanation": "Technical jargon, cultural beliefs, illiteracy and poor listening are barriers; messages must match the language and literacy of the audience.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "communication"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "A panel discussion as a group method of health education involves:",
+    "options": [
+      "Several speakers discussing a topic before an audience with a moderator",
+      "One lecturer speaking to a very large hall of people",
+      "Two people role-playing a health problem privately",
+      "A film shown to the whole community"
+    ],
+    "correct_index": 0,
+    "explanation": "In a panel discussion three to six speakers present different views of a topic under a moderator, then the audience joins the discussion.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "group methods"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "A symposium as a method of health education is best described as:",
+    "options": [
+      "A series of short prepared speeches on different aspects of one topic",
+      "An unstructured chat between neighbours",
+      "A written notice pasted on the wall",
+      "A single question and answer between patient and pharmacist"
+    ],
+    "correct_index": 0,
+    "explanation": "A symposium presents several short formal talks, each covering one aspect of a subject, usually followed by audience questions.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "group methods"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "When selecting media for health education, the health educator should first consider:",
+    "options": [
+      "The message, the audience's literacy and the available resources",
+      "Which media look most expensive and modern",
+      "The personal preference of the educator only",
+      "The number of colours the media can display"
+    ],
+    "correct_index": 0,
+    "explanation": "Media choice depends on the nature of the message, the characteristics of the audience, cost, availability and the skills of the educator.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "media"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Which of the following is a projected visual aid used in health education?",
+    "options": [
+      "Slide projector or overhead projector",
+      "Poster printed on paper",
+      "Flannelgraph board",
+      "Real medicine bottles on a table"
+    ],
+    "correct_index": 0,
+    "explanation": "Projected aids need a projector and screen (slides, filmstrips, overhead transparencies), while posters, charts and flannelgraphs are non-projected aids.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "media"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "According to Bloom's taxonomy, learning that deals with knowledge and recall of facts belongs to the:",
+    "options": [
+      "Cognitive domain",
+      "Affective domain",
+      "Psychomotor domain",
+      "Social domain"
+    ],
+    "correct_index": 0,
+    "explanation": "The cognitive domain covers knowledge, comprehension and thinking; the affective domain covers attitudes, and the psychomotor domain covers physical skills.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "learning domains"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "The affective domain of learning is concerned with changes in the learner's:",
+    "options": [
+      "Attitudes, values and feelings",
+      "Ability to recall memorised facts",
+      "Skill in performing physical tasks",
+      "Speed of reading a textbook"
+    ],
+    "correct_index": 0,
+    "explanation": "Affective learning involves emotions and values — for example a person coming to value regular hand washing — rather than knowledge or manual skill.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "learning domains"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Demonstration of proper tooth brushing to a patient is an example of learning in the:",
+    "options": [
+      "Psychomotor domain",
+      "Cognitive domain",
+      "Affective domain",
+      "Analytical domain"
+    ],
+    "correct_index": 0,
+    "explanation": "Psychomotor learning builds manual skills through practice and imitation, such as brushing teeth, preparing ORS or giving an injection.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "learning domains"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "The principle of 'known to unknown' in health education means that the educator should:",
+    "options": [
+      "Begin with what the people already know and build new knowledge on it",
+      "Teach only completely unfamiliar topics",
+      "Avoid all traditional beliefs of the community",
+      "Use only foreign-language words in teaching"
+    ],
+    "correct_index": 0,
+    "explanation": "Learning is easier when new ideas are connected to existing knowledge, so effective educators start from the known and move to the unknown.",
+    "difficulty": "medium",
+    "tags": [
+      "health education",
+      "principles"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-1",
+    "question_text": "Repetition and practice improve learning mainly because they:",
+    "options": [
+      "Reinforce the new behaviour or knowledge until it is retained",
+      "Shorten the total teaching time needed",
+      "Remove the need for any feedback",
+      "Replace understanding with memorisation"
+    ],
+    "correct_index": 0,
+    "explanation": "Reinforcement through repetition, reward and practice strengthens retention, a key principle of the learning process.",
+    "difficulty": "easy",
+    "tags": [
+      "health education",
+      "learning"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The Declaration of Alma-Ata, which launched the Primary Health Care approach, was made in the year:",
+    "options": [
+      "1978",
+      "1948",
+      "1988",
+      "2000"
+    ],
+    "correct_index": 0,
+    "explanation": "In September 1978 the international conference at Alma-Ata, USSR, adopted the declaration calling for Health for All through Primary Health Care.",
+    "difficulty": "easy",
+    "tags": [
+      "healthcare delivery",
+      "Alma Ata"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The goal of 'Health for All by the Year 2000' was promoted mainly through:",
+    "options": [
+      "Primary Health Care as adopted at Alma-Ata in 1978",
+      "The invention of new surgical instruments",
+      "Building highways across mountain regions",
+      "Privatising all hospitals in Europe"
+    ],
+    "correct_index": 0,
+    "explanation": "Alma-Ata declared that Primary Health Care was the key to attaining a level of health allowing all people to lead socially and economically productive lives.",
+    "difficulty": "medium",
+    "tags": [
+      "healthcare delivery",
+      "Alma Ata"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The number of essential elements of Primary Health Care as declared at Alma-Ata is:",
+    "options": [
+      "Eight",
+      "Five",
+      "Ten",
+      "Twelve"
+    ],
+    "correct_index": 0,
+    "explanation": "PHC has eight elements: health education, food and nutrition, water and sanitation, maternal and child health including family planning, immunisation, control of endemic diseases, treatment of common diseases, and essential drugs.",
+    "difficulty": "medium",
+    "tags": [
+      "healthcare delivery",
+      "PHC elements"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The PHC principle of 'equity' means that health services should be:",
+    "options": [
+      "Accessible and affordable to all people regardless of income or location",
+      "Available only in the capital city",
+      "Provided free only to government employees",
+      "Restricted to private paying patients"
+    ],
+    "correct_index": 0,
+    "explanation": "Equity demands fair distribution of health care, giving more to those in greater need and removing barriers of geography, cost and social status.",
+    "difficulty": "easy",
+    "tags": [
+      "healthcare delivery",
+      "PHC principles"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Community participation in Primary Health Care means that people:",
+    "options": [
+      "Take part in planning and running their own health services",
+      "Only pay fees at the hospital counter",
+      "Wait passively for government help",
+      "Are excluded from all health decisions"
+    ],
+    "correct_index": 0,
+    "explanation": "PHC rests on communities identifying their own needs and contributing to planning, implementation and evaluation of health activities.",
+    "difficulty": "medium",
+    "tags": [
+      "healthcare delivery",
+      "PHC principles"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Intersectoral coordination in PHC refers to:",
+    "options": [
+      "Cooperation between health and sectors like agriculture, education and water supply",
+      "Coordination among the doctors of one single hospital only",
+      "Agreement between rival pharmaceutical manufacturing companies",
+      "The merging of two private clinics into a single firm"
+    ],
+    "correct_index": 0,
+    "explanation": "Health depends on many sectors, so PHC requires joint action across agriculture, education, housing, water and communication for lasting improvement.",
+    "difficulty": "medium",
+    "tags": [
+      "healthcare delivery",
+      "PHC principles"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "'Appropriate technology' in Primary Health Care means methods that are:",
+    "options": [
+      "Scientifically sound, acceptable, affordable and sustainable for the community",
+      "The most expensive imported equipment available",
+      "Only those used in western hospitals",
+      "Methods that require highly trained foreign staff"
+    ],
+    "correct_index": 0,
+    "explanation": "Appropriate technology is technically valid and suited to local conditions, culture and resources, such as ORS and locally made oral contraceptives.",
+    "difficulty": "medium",
+    "tags": [
+      "healthcare delivery",
+      "PHC principles"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The main purpose of a referral system in health care is to:",
+    "options": [
+      "Transfer patients from lower-level to higher-level facilities for appropriate care",
+      "Keep every patient permanently in the village health post",
+      "Send all patients abroad for their medical treatment",
+      "Stop patients from changing their treating doctor"
+    ],
+    "correct_index": 0,
+    "explanation": "Referral links community posts, health centres and hospitals so patients needing higher skills move upward and complex cases return for follow-up care.",
+    "difficulty": "easy",
+    "tags": [
+      "healthcare delivery",
+      "referral"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The Millennium Development Goals (MDGs) adopted in 2000 consisted of how many goals?",
+    "options": [
+      "Eight goals",
+      "Seventeen goals",
+      "Five goals",
+      "Twenty goals"
+    ],
+    "correct_index": 0,
+    "explanation": "The MDGs (2000-2015) had eight goals targeting poverty, education, gender, child and maternal health, HIV/malaria and environment; the SDGs later expanded to 17.",
+    "difficulty": "easy",
+    "tags": [
+      "healthcare delivery",
+      "MDG"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The Sustainable Development Goals (SDGs) consist of how many goals to be achieved by 2030?",
+    "options": [
+      "17 goals",
+      "8 goals",
+      "10 goals",
+      "25 goals"
+    ],
+    "correct_index": 0,
+    "explanation": "The 2030 Agenda for Sustainable Development contains 17 SDGs, with Goal 3 devoted to health and well-being for all at all ages.",
+    "difficulty": "easy",
+    "tags": [
+      "healthcare delivery",
+      "SDG"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Female Community Health Volunteers (FCHVs) in Nepal mainly work at the:",
+    "options": [
+      "Community level, providing health education and basic services in villages",
+      "The central ministry office located in Kathmandu",
+      "The provincial health headquarters of their region",
+      "Medical college operation theatres in the cities"
+    ],
+    "correct_index": 0,
+    "explanation": "FCHVs are local women volunteers who distribute family planning, ORS and Vitamin A, refer mothers and children, and spread health messages in communities.",
+    "difficulty": "medium",
+    "tags": [
+      "healthcare delivery",
+      "Nepal health system"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Maternal and child health care including family planning is significant in PHC because it:",
+    "options": [
+      "Is one of the eight essential elements of Primary Health Care",
+      "Has no effect on infant mortality",
+      "Concerns only elderly patients",
+      "Is carried out only in private nursing homes"
+    ],
+    "correct_index": 0,
+    "explanation": "Safe motherhood, child care, immunisation and family planning form the element of PHC that most directly reduces maternal and child mortality.",
+    "difficulty": "medium",
+    "tags": [
+      "healthcare delivery",
+      "PHC elements"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "The PHC element of 'provision of essential drugs' ensures that:",
+    "options": [
+      "Safe, effective and affordable medicines are available at all levels of health care",
+      "Only branded imported medicines are supplied everywhere",
+      "Medicines are sold only in private retail pharmacies",
+      "Patients receive free cosmetics from health posts"
+    ],
+    "correct_index": 0,
+    "explanation": "An essential-medicines policy guarantees continuous supply of a limited list of safe, effective, low-cost drugs to meet the priority needs of the population.",
+    "difficulty": "easy",
+    "tags": [
+      "healthcare delivery",
+      "PHC elements"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Health education is included as an element of Primary Health Care because it:",
+    "options": [
+      "Helps people understand health problems and change unhealthy behaviour",
+      "Replaces the need for all medical treatment",
+      "Is cheaper than conducting surveys",
+      "Is done only at medical colleges"
+    ],
+    "correct_index": 0,
+    "explanation": "Education about prevailing health problems and prevention methods empowers communities to protect their own health, a core PHC element.",
+    "difficulty": "easy",
+    "tags": [
+      "healthcare delivery",
+      "PHC elements"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-2",
+    "question_text": "Immunisation against major infectious diseases is included in PHC mainly to:",
+    "options": [
+      "Protect children through vaccines such as BCG, DPT and measles",
+      "Cure patients already suffering from infections",
+      "Replace the need for safe water supply",
+      "Treat chronic diseases of old age"
+    ],
+    "correct_index": 0,
+    "explanation": "Universal childhood immunisation prevents major killers like TB, diphtheria, whooping cough, tetanus and measles, a key element of PHC.",
+    "difficulty": "easy",
+    "tags": [
+      "healthcare delivery",
+      "PHC elements"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "The epidemiological triad of disease consists of:",
+    "options": [
+      "Agent, host and environment",
+      "Doctor, patient and hospital",
+      "Bacteria, virus and fungus",
+      "Heredity, diet and climate"
+    ],
+    "correct_index": 0,
+    "explanation": "Disease results from the interaction of an agent (cause), a susceptible host and the environment that brings them together — the epidemiological triad.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "triad"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "In epidemiology, the 'reservoir' of an infection is:",
+    "options": [
+      "The place where the infectious agent normally lives, grows and multiplies",
+      "The medicine used to treat the infection",
+      "The laboratory where the organism is cultured",
+      "The hospital ward where patients are kept"
+    ],
+    "correct_index": 0,
+    "explanation": "The reservoir is any human, animal or environmental site where the agent survives and from which it can be transmitted, e.g., humans for measles.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "chain of infection"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "In the chain of infection, the portal of exit is:",
+    "options": [
+      "The route by which the agent leaves the reservoir, e.g., the respiratory tract during coughing",
+      "The skin barrier that protects the susceptible host from infection",
+      "The microscope slide on which the organism is examined",
+      "The syringe used for giving immunisation to children"
+    ],
+    "correct_index": 0,
+    "explanation": "After multiplying in the reservoir, the agent must leave through a portal of exit (respiratory, intestinal, skin) to reach a new host.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "chain of infection"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Direct transmission of infection occurs when the agent is transferred:",
+    "options": [
+      "Immediately from an infected person or animal to a susceptible host",
+      "Through contaminated water or food",
+      "By an insect vector such as a mosquito",
+      "Through air over long distances"
+    ],
+    "correct_index": 0,
+    "explanation": "Direct transmission includes person-to-person contact, droplet spread over short distances and contact with soil, without any intermediate vehicle.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "transmission"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Transmission of infection through contaminated water, food or a fomite is called:",
+    "options": [
+      "Vehicle-borne (indirect) transmission",
+      "Vertical transmission",
+      "Direct contact transmission",
+      "Genetic transmission"
+    ],
+    "correct_index": 0,
+    "explanation": "Indirect transmission through vehicles occurs when the agent passes via water, food, blood or inanimate objects (fomites) to the host.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "transmission"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Transmission of an infection from a mother to her baby during pregnancy or birth is described as:",
+    "options": [
+      "Vertical transmission",
+      "Vehicle-borne transmission",
+      "Airborne transmission",
+      "Vector-borne transmission"
+    ],
+    "correct_index": 0,
+    "explanation": "Vertical transmission passes infection across the placenta, during delivery or through breast milk, as with HIV, syphilis or hepatitis B.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "transmission"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Infections such as measles and tuberculosis spread mainly by:",
+    "options": [
+      "Airborne droplet nuclei inhaled by the susceptible host",
+      "Contaminated drinking water supplies",
+      "The bite of female mosquitoes",
+      "Blood transfusion only"
+    ],
+    "correct_index": 0,
+    "explanation": "Droplet nuclei expelled during coughing or sneezing remain suspended in air and are inhaled, spreading measles, TB and influenza.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "transmission"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Virulence of an infectious agent refers to its:",
+    "options": [
+      "Ability to produce severe disease",
+      "Ability to enter the host",
+      "Speed of spread in the community",
+      "Resistance to antibiotics"
+    ],
+    "correct_index": 0,
+    "explanation": "Virulence is the capacity of an agent to cause severe illness (e.g., case fatality), while infectivity is its power to establish infection.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "agent"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Which of the following is a host factor that influences the occurrence of infectious disease?",
+    "options": [
+      "The nutritional and immune status of the person",
+      "The colour of the hospital building",
+      "The price of the vaccine",
+      "The number of doctors in a town"
+    ],
+    "correct_index": 0,
+    "explanation": "Age, sex, nutrition, immunity and genetic make-up of the host determine susceptibility to an infectious agent.",
+    "difficulty": "easy",
+    "tags": [
+      "epidemiology",
+      "host"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "Attack rate in an epidemic is calculated as:",
+    "options": [
+      "Number of persons who become ill divided by the population exposed, during an outbreak",
+      "Total deaths in the whole country in one full year",
+      "Number of cases recorded in the previous decade",
+      "Ratio of males to females living in the village"
+    ],
+    "correct_index": 0,
+    "explanation": "Attack rate is a special incidence rate used during outbreaks: cases among the exposed group divided by the total exposed, often over the epidemic period.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "attack rate"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "The secondary attack rate measures:",
+    "options": [
+      "Spread of disease among susceptible contacts of primary cases within a household",
+      "Deaths that occur among hospitalised patients only",
+      "Disease occurring in people with no contact at all",
+      "The annual birth rate of the whole community"
+    ],
+    "correct_index": 0,
+    "explanation": "Secondary attack rate = new cases among contacts of primary cases divided by the number of susceptible contacts, indicating person-to-person spread.",
+    "difficulty": "hard",
+    "tags": [
+      "epidemiology",
+      "attack rate"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "A cross-sectional (prevalence) study measures disease and exposure:",
+    "options": [
+      "At the same point in time in a defined population",
+      "By following people forward for many years",
+      "Only after the disease has caused death",
+      "In laboratory animals under controlled conditions"
+    ],
+    "correct_index": 0,
+    "explanation": "Cross-sectional surveys examine exposure and disease simultaneously in a population at one time, giving prevalence rather than incidence.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "study types"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "The neonatal mortality rate refers to deaths occurring within the first:",
+    "options": [
+      "28 days of life per 1000 live births",
+      "Year of life per 1000 live births",
+      "Five years of life",
+      "Week of pregnancy"
+    ],
+    "correct_index": 0,
+    "explanation": "Neonatal mortality counts deaths in the first 28 completed days of life per 1000 live births, a sensitive indicator of newborn care.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "mortality"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "The maternal mortality ratio (MMR) is expressed as the number of maternal deaths per:",
+    "options": [
+      "100,000 live births",
+      "1,000 live births",
+      "10,000 total population",
+      "100 pregnancies"
+    ],
+    "correct_index": 0,
+    "explanation": "MMR is maternal deaths from pregnancy-related causes per 100,000 live births, reflecting the quality of obstetric care.",
+    "difficulty": "medium",
+    "tags": [
+      "epidemiology",
+      "mortality"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-3",
+    "question_text": "The specificity of a screening test is its ability to:",
+    "options": [
+      "Correctly identify people who do not have the disease",
+      "Detect all those who truly have the disease",
+      "Predict future deaths in the population",
+      "Measure the severity of the disease"
+    ],
+    "correct_index": 0,
+    "explanation": "Specificity is the proportion of truly non-diseased persons correctly excluded by the test, while sensitivity detects those who are truly diseased.",
+    "difficulty": "hard",
+    "tags": [
+      "epidemiology",
+      "screening"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Turbidity of drinking water is a measure of its:",
+    "options": [
+      "Cloudiness caused by suspended particles",
+      "Temperature in degrees Celsius",
+      "Taste of dissolved salts",
+      "Colour of the storage container"
+    ],
+    "correct_index": 0,
+    "explanation": "Turbidity reflects suspended clay, silt and organic matter that scatter light; clear water should have turbidity below acceptable limits.",
+    "difficulty": "easy",
+    "tags": [
+      "environmental health",
+      "water quality"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Potable water is water that is:",
+    "options": [
+      "Safe to drink, free from harmful organisms and impurities",
+      "Only used for washing clothes",
+      "Salty water from the sea",
+      "Distilled water sold in batteries"
+    ],
+    "correct_index": 0,
+    "explanation": "Potable water is aesthetically acceptable and free from pathogens and harmful chemicals, fit for human consumption.",
+    "difficulty": "easy",
+    "tags": [
+      "environmental health",
+      "water quality"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Temporary hardness of water is caused by dissolved:",
+    "options": [
+      "Bicarbonates of calcium and magnesium",
+      "Sulphates of calcium and magnesium",
+      "Chlorides of sodium and potassium",
+      "Nitrates of iron and lead"
+    ],
+    "correct_index": 0,
+    "explanation": "Temporary hardness comes from calcium and magnesium bicarbonates and is removed simply by boiling, which precipitates the carbonates.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "hard water"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Permanent hardness of water, caused by sulphates and chlorides, is best removed by:",
+    "options": [
+      "Ion exchange or the addition of washing soda",
+      "Simple boiling of the water",
+      "Exposure of water to sunlight",
+      "Filtering through a cloth"
+    ],
+    "correct_index": 0,
+    "explanation": "Permanent hardness is not removed by boiling; ion-exchange (zeolite) softening or sodium carbonate precipitates the calcium and magnesium salts.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "hard water"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "In large-scale water treatment, alum (aluminium sulphate) is added to:",
+    "options": [
+      "Coagulate fine suspended particles so they settle quickly",
+      "Kill all the bacteria in the water instantly",
+      "Make the treated water taste naturally sweet",
+      "Remove the dissolved fluoride from the water"
+    ],
+    "correct_index": 0,
+    "explanation": "Alum acts as a coagulant, gathering tiny colloidal particles into larger flocs that settle in sedimentation tanks before filtration.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "water purification"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Chlorine is added during water treatment mainly to:",
+    "options": [
+      "Disinfect the water by destroying pathogenic microorganisms",
+      "Improve the colour of the treated water",
+      "Soften the hard water completely",
+      "Remove suspended sand particles"
+    ],
+    "correct_index": 0,
+    "explanation": "Chlorination is the standard disinfection step, killing bacteria and viruses; a residual chlorine level also protects water in the distribution pipes.",
+    "difficulty": "easy",
+    "tags": [
+      "environmental health",
+      "water purification"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Excess fluoride in drinking water over many years mainly causes:",
+    "options": [
+      "Dental and skeletal fluorosis",
+      "Anaemia and fatigue",
+      "Goitre and thyroid swelling",
+      "Kidney stones only"
+    ],
+    "correct_index": 0,
+    "explanation": "High fluoride levels (>1.5 mg/L) cause mottling of teeth (dental fluorosis) and, with higher exposure, crippling skeletal fluorosis.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "water quality"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Nitrate pollution of drinking water can cause 'blue baby syndrome' (methaemoglobinaemia), which mainly affects:",
+    "options": [
+      "Infants under six months of age",
+      "Elderly people above 80 years",
+      "Pregnant cows only",
+      "Adolescent boys only"
+    ],
+    "correct_index": 0,
+    "explanation": "Nitrates reduce haemoglobin to methaemoglobin, which cannot carry oxygen; infants' immature enzyme systems make them especially vulnerable.",
+    "difficulty": "hard",
+    "tags": [
+      "environmental health",
+      "water pollution"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "PM2.5 refers to airborne particles with a diameter of:",
+    "options": [
+      "2.5 micrometres or less, which reach deep into the lungs",
+      "2.5 millimetres, trapped in the nose",
+      "25 micrometres, visible to the naked eye",
+      "0.25 metres, falling quickly to the ground"
+    ],
+    "correct_index": 0,
+    "explanation": "Fine particulate matter of 2.5 µm or less penetrates to the alveoli and bloodstream, causing respiratory and cardiovascular disease.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "air pollution"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Carbon monoxide in vehicle exhaust is dangerous because it:",
+    "options": [
+      "Combines with haemoglobin and prevents oxygen transport in the blood",
+      "Damages only the skin surface",
+      "Makes the air smell of rotten eggs",
+      "Cools the body below normal temperature"
+    ],
+    "correct_index": 0,
+    "explanation": "Carbon monoxide binds haemoglobin about 250 times more avidly than oxygen, forming carboxyhaemoglobin and causing tissue hypoxia.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "air pollution"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "A sanitary landfill disposes of solid waste by:",
+    "options": [
+      "Compacting refuse in layers that are covered daily with earth at a prepared site",
+      "Burning all the collected refuse in the open air",
+      "Dumping the waste directly into the nearest river",
+      "Feeding the collected waste to stray animals"
+    ],
+    "correct_index": 0,
+    "explanation": "Sanitary landfilling spreads and compacts refuse in thin layers, covering each with soil to control odour, flies and rodents — an acceptable final disposal method.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "solid waste"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "A septic tank treats liquid waste (sewage) mainly by:",
+    "options": [
+      "Anaerobic bacterial decomposition with solids settling as sludge",
+      "Boiling the sewage at high temperature",
+      "Filtering sewage through activated charcoal only",
+      "Adding chlorine tablets to the tank daily"
+    ],
+    "correct_index": 0,
+    "explanation": "In a septic tank, sewage is retained long enough for anaerobic bacteria to decompose it; solids settle as sludge and the liquid effluent passes to a soakage pit.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "liquid waste"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "A soakage pit is used to:",
+    "options": [
+      "Disposing of septic tank effluent by letting it percolate into the soil",
+      "Collecting rainwater for household drinking purposes",
+      "Storing solid waste before it is sent for incineration",
+      "Breeding fish for community nutrition programmes"
+    ],
+    "correct_index": 0,
+    "explanation": "The soakage pit is a porous underground pit that receives septic-tank effluent and lets it seep safely into the surrounding soil.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "liquid waste"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Used needles and sharps in a health facility should be collected in:",
+    "options": [
+      "Puncture-proof containers before final disposal",
+      "Ordinary plastic shopping bags",
+      "Open cardboard boxes on the floor",
+      "Glass jars filled with tap water"
+    ],
+    "correct_index": 0,
+    "explanation": "Sharps must go into rigid, puncture-resistant, leak-proof containers to prevent needlestick injuries and infection spread during handling.",
+    "difficulty": "easy",
+    "tags": [
+      "environmental health",
+      "hospital waste"
+    ]
+  },
+  {
+    "unit_id": "phs-unit-4",
+    "question_text": "Food intoxication differs from food infection in that food intoxication:",
+    "options": [
+      "Results from toxins formed in the food before it is eaten",
+      "Requires living organisms to multiply in the body",
+      "Is always caused by viruses",
+      "Never produces vomiting or diarrhoea"
+    ],
+    "correct_index": 0,
+    "explanation": "In food intoxication (e.g., staphylococcal, botulism) preformed toxins in the food cause illness quickly, while food infection needs ingested organisms to multiply.",
+    "difficulty": "medium",
+    "tags": [
+      "environmental health",
+      "food hygiene"
+    ]
   }
 ]
