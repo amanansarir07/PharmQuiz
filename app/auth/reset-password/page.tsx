@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase/client";
+import { supabase, getCapturedRecovery } from "@/lib/supabase/client";
 import { GraduationCap, Lock, Eye, EyeOff, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,31 +22,46 @@ export default function ResetPasswordPage() {
   const [tokenValid, setTokenValid] = useState(false);
 
   useEffect(() => {
-    const hash = window.location.hash;
-    if (!hash) {
-      setValidating(false);
-      return;
-    }
-    const params = new URLSearchParams(hash.substring(1));
-    const accessToken = params.get("access_token");
-    const type = params.get("type");
+    const applyRecovery = async () => {
+      let accessToken: string | null = null;
+      let refreshToken = "";
 
-    if (accessToken && type === "recovery") {
-      supabase.auth.setSession({
-        access_token: accessToken,
-        refresh_token: params.get("refresh_token") || "",
-      }).then(({ error }) => {
+      // 1) Tokens in the URL fragment (direct hit on the reset link).
+      const hash = window.location.hash;
+      if (hash) {
+        const params = new URLSearchParams(hash.substring(1));
+        if (params.get("type") === "recovery") {
+          accessToken = params.get("access_token");
+          refreshToken = params.get("refresh_token") || "";
+        }
+      }
+
+      // 2) Tokens captured by the Supabase client module, in case the SDK's
+      //    URL auto-detection already stripped the fragment.
+      if (!accessToken) {
+        const captured = getCapturedRecovery();
+        if (captured) {
+          accessToken = captured.accessToken;
+          refreshToken = captured.refreshToken;
+        }
+      }
+
+      if (accessToken) {
+        const { error } = await supabase.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken,
+        });
         if (error) {
           setError("Invalid or expired reset link. Please request a new one.");
         } else {
           setTokenValid(true);
         }
-        setValidating(false);
-      });
-    } else {
-      setError("Invalid reset link. Please request a new one.");
+      } else {
+        setError("Invalid reset link. Please request a new one.");
+      }
       setValidating(false);
-    }
+    };
+    applyRecovery();
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -69,6 +84,9 @@ export default function ResetPasswordPage() {
     if (updateError) {
       setError(updateError.message);
     } else {
+      // End the recovery session so the user signs in fresh with the new
+      // password instead of being treated as already logged in.
+      await supabase.auth.signOut().catch(() => {});
       setSuccess(true);
     }
     setLoading(false);
