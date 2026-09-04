@@ -3313,5 +3313,2300 @@
       "suspensions",
       "sedimentation volume"
     ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "The main reason for formulating a drug into a suitable dosage form is to:",
+    "options": [
+      "Deliver the drug in an accurate and reproducible dose",
+      "Increase the cost of the therapy for the patient",
+      "Make the drug completely free of all side effects",
+      "Restrict the drug to act only on a single organ"
+    ],
+    "correct_index": 0,
+    "explanation": "Dosage forms are designed to deliver the correct amount of drug in a convenient, accurate and reproducible manner, and to protect the drug and ease administration.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "introduction"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Excipients (inactive ingredients) are included in a tablet formulation mainly to:",
+    "options": [
+      "Give the tablet the required bulk, shape and processing properties",
+      "Cure the disease in place of the active drug",
+      "Replace the active ingredient to reduce cost",
+      "Increase the dose of the active drug given to the patient"
+    ],
+    "correct_index": 0,
+    "explanation": "Excipients such as diluents, binders, disintegrants and lubricants provide bulk and aid manufacturing, stability and release of the active drug; they are not themselves therapeutic.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "excipients"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Hard gelatin capsules differ from soft gelatin capsules mainly because hard capsules:",
+    "options": [
+      "Contain dry powders or granules as the fill material",
+      "Are always filled with liquid oils and suspensions",
+      "Are manufactured in one piece without a body",
+      "Cannot contain any medicament at all"
+    ],
+    "correct_index": 0,
+    "explanation": "Hard gelatin capsules consist of a body and cap and are usually filled with powders, granules or pellets, while soft gelatin capsules are one-piece and hold liquids or semisolids.",
+    "difficulty": "medium",
+    "tags": [
+      "dosage forms",
+      "capsules"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "A paste differs from an ointment mainly because a paste:",
+    "options": [
+      "Contains a higher proportion of finely powdered solids",
+      "Contains no medicament at all",
+      "Is always a clear transparent gel",
+      "Is applied only inside the body cavities"
+    ],
+    "correct_index": 0,
+    "explanation": "Pastes contain a large amount (commonly 20-50%) of finely powdered solids in an ointment base, making them stiff, less greasy and more protective than ointments.",
+    "difficulty": "medium",
+    "tags": [
+      "dosage forms",
+      "semisolids"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "The function of a disintegrant in a tablet is to:",
+    "options": [
+      "Break the tablet into smaller particles when it reaches gastrointestinal fluids",
+      "Improve the flow of granules during compression only",
+      "Prevent the tablet from being swallowed",
+      "Impart colour to the finished tablet surface"
+    ],
+    "correct_index": 0,
+    "explanation": "Disintegrants swell or wick fluid into the tablet so it breaks apart in the stomach or intestine, releasing the drug for dissolution and absorption.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "tablets"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Sublingual tablets are placed under the tongue because that site:",
+    "options": [
+      "Has a rich blood supply that allows rapid absorption into systemic circulation",
+      "Is completely free of any blood capillaries",
+      "Digests the tablet instantly into inactive products",
+      "Avoids absorption of the drug altogether"
+    ],
+    "correct_index": 0,
+    "explanation": "The sublingual area is highly vascular, so the drug dissolves and is absorbed directly into the systemic circulation, bypassing the liver and giving rapid onset.",
+    "difficulty": "medium",
+    "tags": [
+      "dosage forms",
+      "sublingual"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Gels are semisolid preparations in which:",
+    "options": [
+      "A liquid phase is entrapped within a three-dimensional network of a gelling agent",
+      "Two immiscible liquids are shaken together without any agent",
+      "A gas is compressed inside a metal container",
+      "Solid drug particles are suspended in a dry powder"
+    ],
+    "correct_index": 0,
+    "explanation": "A gel consists of a gelling agent (e.g., carbomer, tragacanth) forming a network that traps the liquid phase, giving a jelly-like translucent mass.",
+    "difficulty": "medium",
+    "tags": [
+      "dosage forms",
+      "gels"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "A generic medicine contains:",
+    "options": [
+      "The same active ingredient in the same strength as the innovator brand",
+      "A completely different active ingredient from the branded product",
+      "Only herbal extracts with no chemical drug",
+      "Half the dose of the medicine written on the label"
+    ],
+    "correct_index": 0,
+    "explanation": "Generic medicines are pharmaceutically equivalent to the branded product, containing the same active ingredient in the same dose and intended for the same use.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "generic"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "A suspension dosage form is preferred over a solution when the drug is:",
+    "options": [
+      "Insoluble or unstable in the vehicle over long storage",
+      "Completely soluble in water at all temperatures",
+      "Highly volatile and escapes as vapour",
+      "Inactive by the oral route of administration"
+    ],
+    "correct_index": 0,
+    "explanation": "When a drug is poorly water-soluble or degrades in solution, it can be formulated as a suspension of finely divided particles in a suitable vehicle.",
+    "difficulty": "medium",
+    "tags": [
+      "dosage forms",
+      "suspension"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "A medicine labelled 'store in a refrigerator' must be kept at a temperature of:",
+    "options": [
+      "2°C to 8°C",
+      "25°C to 40°C",
+      "Below 0°C always",
+      "Room temperature up to 30°C"
+    ],
+    "correct_index": 0,
+    "explanation": "Refrigerated storage means 2°C to 8°C, which slows chemical and microbial degradation of thermolabile medicines such as vaccines and insulin.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "storage"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Effervescent tablets contain:",
+    "options": [
+      "Sodium bicarbonate with an organic acid that react in water to release carbon dioxide",
+      "Only a lubricant and a colouring agent",
+      "Sugar and flavour with no chemical reaction",
+      "A highly hygroscopic salt that attracts moisture"
+    ],
+    "correct_index": 0,
+    "explanation": "Effervescent tablets contain sodium bicarbonate and citric or tartaric acid; in water they react to liberate carbon dioxide, which disperses and dissolves the tablet.",
+    "difficulty": "medium",
+    "tags": [
+      "dosage forms",
+      "effervescent"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "An orodispersible (mouth-dissolving) tablet is designed to:",
+    "options": [
+      "Disintegrate rapidly in the mouth without the need for water",
+      "Be swallowed whole with a large glass of water",
+      "Remain intact in the mouth for several hours",
+      "Release its drug only in the large intestine"
+    ],
+    "correct_index": 0,
+    "explanation": "Orodispersible tablets disintegrate within seconds to a minute in the saliva, making them convenient for patients who have difficulty swallowing.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "orodispersible"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Flavouring agents are added to oral liquid preparations mainly to:",
+    "options": [
+      "Mask the unpleasant taste and odour of the medicament",
+      "Increase the rate of drug absorption in the stomach",
+      "Prevent the growth of all bacteria permanently",
+      "Make the preparation completely sterile"
+    ],
+    "correct_index": 0,
+    "explanation": "Flavours and sweeteners improve palatability, encouraging patient compliance, particularly in paediatric and geriatric liquid formulations.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "additives"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "A dry powder for reconstitution is preferred when the drug is:",
+    "options": [
+      "Unstable in liquid form over prolonged storage",
+      "More soluble when mixed with oil than water",
+      "Effective only as an inhalational powder",
+      "Completely insoluble in every vehicle"
+    ],
+    "correct_index": 0,
+    "explanation": "Some antibiotics and other drugs hydrolyse in solution, so they are supplied as dry powders or granules to be reconstituted with water at the time of dispensing.",
+    "difficulty": "medium",
+    "tags": [
+      "dosage forms",
+      "reconstitution"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-1",
+    "question_text": "Creams intended for external use are semisolid preparations that are best described as:",
+    "options": [
+      "Emulsions of oil and water applied to the skin",
+      "Dried powders compressed into a flat disc",
+      "Clear alcoholic solutions of volatile substances",
+      "Solid monoliths softened only by body heat"
+    ],
+    "correct_index": 0,
+    "explanation": "Creams are semisolid emulsions (oil-in-water or water-in-oil) that spread easily on the skin and are used for cosmetic, protective or therapeutic purposes.",
+    "difficulty": "easy",
+    "tags": [
+      "dosage forms",
+      "creams"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "The first British Pharmacopoeia (BP) was published in the year:",
+    "options": [
+      "1864",
+      "1901",
+      "1948",
+      "1776"
+    ],
+    "correct_index": 0,
+    "explanation": "The first British Pharmacopoeia appeared in 1864, replacing earlier London, Edinburgh and Dublin pharmacopoeias with a single national standard.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacopoeia",
+      "history"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "The Indian Pharmacopoeia (IP) is published under the authority of the:",
+    "options": [
+      "Government of India through its pharmacopoeia commission",
+      "World Health Organization regional office",
+      "British Pharmacopoeia Commission itself",
+      "United States Pharmacopeial Convention"
+    ],
+    "correct_index": 0,
+    "explanation": "The Indian Pharmacopoeia is an official compendium brought out by the Indian Pharmacopoeia Commission under the Ministry of Health and Family Welfare, Government of India.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeia",
+      "IP"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "The assay section of a pharmacopoeial monograph is mainly intended to:",
+    "options": [
+      "Determine the quantity or strength of the drug substance",
+      "Describe the colour and odour of the drug only",
+      "List the trade names of marketed brands",
+      "Give the price of the drug in the market"
+    ],
+    "correct_index": 0,
+    "explanation": "The assay is the quantitative test that establishes the amount of active constituent present, ensuring the sample meets the stated strength limits.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeia",
+      "monograph"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "An addendum or supplement to a pharmacopoeia is issued to:",
+    "options": [
+      "Introduce new standards and revisions between two main editions",
+      "Replace the whole pharmacopoeia with a new book",
+      "Advertise newly launched branded medicines",
+      "Remove all existing monographs permanently"
+    ],
+    "correct_index": 0,
+    "explanation": "Supplements and addenda update a pharmacopoeia between editions with new monographs, amended limits and corrected methods without waiting for the next full edition.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacopoeia",
+      "supplement"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "Martindale: The Complete Drug Reference is best described as:",
+    "options": [
+      "A non-official reference book providing comprehensive drug information",
+      "The legally binding pharmacopoeia of the United Kingdom",
+      "A book containing only plant monographs",
+      "A compulsory price list for all medicines"
+    ],
+    "correct_index": 0,
+    "explanation": "Martindale is an extensive reference source of drug monographs, uses, doses and preparations, but it is non-official and carries no legal compendial status.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeia",
+      "reference books"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "Official compendia such as the BP and USP differ from reference books because official compendia:",
+    "options": [
+      "Have legal standing under the drug legislation of their countries",
+      "Are written only for pharmacy students",
+      "Contain no analytical test procedures",
+      "Are updated only once every century"
+    ],
+    "correct_index": 0,
+    "explanation": "Pharmacopoeias published under governmental authority are enforceable by law; products must comply with their standards to be sold as official preparations.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacopoeia",
+      "official"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "The authority responsible for drug registration, quality control and market surveillance in Nepal is the:",
+    "options": [
+      "Department of Drug Administration (DDA)",
+      "Nepal Medical Council",
+      "Ministry of Finance only",
+      "Nepal Tourism Board"
+    ],
+    "correct_index": 0,
+    "explanation": "The Department of Drug Administration, established under the Drug Act of Nepal, regulates manufacture, import, registration and quality control of medicines in the country.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeia",
+      "Nepal"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "A reference standard used in pharmacopoeial analysis is:",
+    "options": [
+      "A highly purified authentic specimen used to standardise tests and assays",
+      "Any tablet purchased from the local market",
+      "A crude extract of the plant material",
+      "A solution of unknown concentration"
+    ],
+    "correct_index": 0,
+    "explanation": "Reference standards are certified pure materials against which the identity, purity and content of the sample under test are compared.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacopoeia",
+      "reference standards"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "New editions of pharmacopoeias are published periodically mainly to:",
+    "options": [
+      "Include new drugs, delete obsolete ones and adopt improved analytical methods",
+      "Change the currency in which medicines are priced",
+      "Rename all the chemical drugs with new letters",
+      "Reduce the number of pages in the book"
+    ],
+    "correct_index": 0,
+    "explanation": "Periodic revision keeps compendial standards current with newly introduced drugs, removed outdated preparations and modernised test procedures.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeia",
+      "revision"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "The USP-NF is best described as:",
+    "options": [
+      "The combined United States Pharmacopeia and National Formulary published as one volume",
+      "An annual journal of new pharmaceutical research findings",
+      "A Nepali formulary listing herbal medicine preparations",
+      "A trade name of a particular drug manufacturing company"
+    ],
+    "correct_index": 0,
+    "explanation": "The USP and the National Formulary are combined in a single publication that provides official standards for drugs, excipients and dietary supplements in the USA.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeia",
+      "USP-NF"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "The term 'official drug' means a drug that:",
+    "options": [
+      "Complies with the standards given in a recognised pharmacopoeia",
+      "Is sold without any quality testing",
+      "Is prepared only in the pharmacy itself",
+      "Has been banned by the government"
+    ],
+    "correct_index": 0,
+    "explanation": "An official drug is one recognised by and complying with the standards of an official compendium such as the BP, USP or IP.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeia",
+      "official drug"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "A National Formulary is primarily a compilation that:",
+    "options": [
+      "Lists selected drugs with prescribing and dispensing information for clinical use",
+      "Describes methods of preparing plant cosmetics",
+      "Contains standards only for surgical instruments",
+      "Serves as a dictionary of chemical reactions"
+    ],
+    "correct_index": 0,
+    "explanation": "A national formulary provides practical prescribing, formulation and dispensing information about selected therapeutic agents used in a country's health services.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacopoeia",
+      "formulary"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "Descriptive solubility terms used in monographs, such as 'freely soluble', are defined by:",
+    "options": [
+      "The number of parts of solvent needed to dissolve one part of solute",
+      "The colour developed when the drug is burnt",
+      "The time the powder takes to dissolve in the mouth",
+      "The density of the solvent used"
+    ],
+    "correct_index": 0,
+    "explanation": "Pharmacopoeias define solubility descriptively, e.g., 'freely soluble' means 1 g of solute dissolves in 1-10 mL of solvent, giving reproducible guidance.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacopoeia",
+      "solubility"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "Quality control testing of medicines against pharmacopoeial standards ensures that they are:",
+    "options": [
+      "Pure, safe and of the correct identity and strength",
+      "Packaged in the most attractive containers",
+      "Sold at the lowest possible price",
+      "Produced only from herbal sources"
+    ],
+    "correct_index": 0,
+    "explanation": "Compendial testing verifies identity, purity, potency and safety so that marketed medicines meet the minimum acceptable quality standards.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacopoeia",
+      "quality control"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-2",
+    "question_text": "The International Pharmacopoeia (Ph.Int.) published by WHO mainly aims to:",
+    "options": [
+      "Provide international quality standards, especially for countries without their own pharmacopoeia",
+      "Replace the national drug laws of all member countries",
+      "Fix a single retail price for medicines sold worldwide",
+      "Compile the manufacturing trade secrets of drug companies"
+    ],
+    "correct_index": 0,
+    "explanation": "The WHO International Pharmacopoeia offers harmonised specifications for medicines and assists developing countries that lack national compendial standards.",
+    "difficulty": "medium",
+    "tags": [
+      "pharmacopoeia",
+      "WHO"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "A cutter mill is the most suitable equipment for size reduction of:",
+    "options": [
+      "Fibrous and tough vegetable drugs",
+      "Very hard metallic ores",
+      "Thermolabile biological materials",
+      "Volatile liquids and gases"
+    ],
+    "correct_index": 0,
+    "explanation": "The cutter mill cuts fibrous and tough materials (roots, barks, herbs) between rotating and stationary knives to a moderately coarse powder.",
+    "difficulty": "medium",
+    "tags": [
+      "size reduction",
+      "cutter mill"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "The end runner mill reduces particle size mainly by:",
+    "options": [
+      "Rubbing and grinding action of a pestle in a shallow mortar",
+      "Impact from rapidly rotating steel hammers",
+      "Attrition between two abrasive discs",
+      "Cutting action of sharp stationary blades"
+    ],
+    "correct_index": 0,
+    "explanation": "In the end runner mill a pestle moves in a circular path over material in a shallow mortar, grinding by rubbing and shearing, useful for wet and sticky materials.",
+    "difficulty": "medium",
+    "tags": [
+      "size reduction",
+      "end runner mill"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "The hardness, toughness and moisture content of the feed material are factors that mainly affect:",
+    "options": [
+      "The efficiency of the size-reduction process",
+      "The colour of the final product",
+      "The price of the raw material",
+      "The route of drug administration"
+    ],
+    "correct_index": 0,
+    "explanation": "Material properties such as hardness, toughness, stickiness and moisture determine the energy needed and the equipment best suited for milling.",
+    "difficulty": "medium",
+    "tags": [
+      "size reduction",
+      "factors"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "A sieve number such as sieve number 60 denotes the:",
+    "options": [
+      "Number of meshes present in one linear inch of the sieve",
+      "Weight in grams of one square metre of the sieve cloth",
+      "Diameter in millimetres of the sieve frame",
+      "Number of grams the sieve can hold safely"
+    ],
+    "correct_index": 0,
+    "explanation": "Sieve number indicates mesh count per linear inch; higher sieve numbers mean finer apertures and finer powders passing through them.",
+    "difficulty": "easy",
+    "tags": [
+      "sieving",
+      "sieve number"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "In powder mixing, the mechanism in which whole groups of particles move from one region to another is called:",
+    "options": [
+      "Convective mixing",
+      "Diffusive mixing",
+      "Shear mixing",
+      "Electrostatic separation"
+    ],
+    "correct_index": 0,
+    "explanation": "Convective (bulk) mixing transfers large groups of particles between regions of the mixer, while diffusive and shear mechanisms act at smaller scales.",
+    "difficulty": "medium",
+    "tags": [
+      "mixing",
+      "mechanisms"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "A V-cone (tumbler) blender is most suitable for mixing:",
+    "options": [
+      "Dry free-flowing powders of similar particle size and density",
+      "Heavy sticky ointment masses",
+      "Very fine dusts that tend to explode",
+      "Liquids that react with each other"
+    ],
+    "correct_index": 0,
+    "explanation": "Tumbler mixers such as the V-cone blend free-flowing dry powders by gentle tumbling; cohesive or dense materials need other mixers.",
+    "difficulty": "easy",
+    "tags": [
+      "mixing",
+      "blenders"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "The sigma blade mixer is used in pharmacy for mixing:",
+    "options": [
+      "Heavy semisolid masses such as ointments and pastes",
+      "Compressed gases into a liquid propellant",
+      "Sterile solutions under laminar flow",
+      "Volatile oils into aqueous syrups"
+    ],
+    "correct_index": 0,
+    "explanation": "The sigma (Z-shaped) blade mixer kneads and shears viscous semisolid materials, making it standard for ointments, pastes and thick slurries.",
+    "difficulty": "medium",
+    "tags": [
+      "mixing",
+      "sigma blade"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Filter aids such as kieselguhr are added during filtration to:",
+    "options": [
+      "Form a porous layer on the filter medium that prevents clogging",
+      "Dissolve the solid particles completely",
+      "Increase the temperature of the slurry",
+      "Colour the filtrate uniformly"
+    ],
+    "correct_index": 0,
+    "explanation": "Filter aids deposit a porous cake on the medium, trapping slimy solids on its surface so the filter does not clog and the filtrate stays clear.",
+    "difficulty": "medium",
+    "tags": [
+      "filtration",
+      "filter aids"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "The rate of filtration of a slurry can be increased by:",
+    "options": [
+      "Increasing the pressure difference across the filter medium",
+      "Cooling the slurry to below room temperature",
+      "Reducing the area of the filter surface",
+      "Making the cake thicker and more compact"
+    ],
+    "correct_index": 0,
+    "explanation": "Filtration rate rises with greater pressure drop and filter area, and falls with higher liquid viscosity and thicker or denser cake.",
+    "difficulty": "medium",
+    "tags": [
+      "filtration",
+      "rate"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "Membrane filters used to render solutions sterile have a pore size of about:",
+    "options": [
+      "0.22 micrometre",
+      "2.2 millimetre",
+      "22 micrometre",
+      "0.22 centimetre"
+    ],
+    "correct_index": 0,
+    "explanation": "Membrane filters with 0.22 um pores retain bacteria and most microorganisms, giving sterile filtrates without the use of heat.",
+    "difficulty": "easy",
+    "tags": [
+      "filtration",
+      "membrane"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "A vacuum dryer is preferred for drying materials that are:",
+    "options": [
+      "Heat-sensitive and liable to decompose at high temperature",
+      "Hard crystalline ores that need strong heat",
+      "Highly radioactive waste products",
+      "Completely dry and moisture-free already"
+    ],
+    "correct_index": 0,
+    "explanation": "Reducing pressure lowers the boiling point of the solvent, so moisture is removed at lower temperature, protecting thermolabile products.",
+    "difficulty": "medium",
+    "tags": [
+      "drying",
+      "vacuum dryer"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "A drum (roller) dryer is best suited for drying:",
+    "options": [
+      "Solutions or slurries into thin flakes or sheets",
+      "Bulky fibrous plant materials",
+      "Large batches of tablets",
+      "Gases by chemical absorption"
+    ],
+    "correct_index": 0,
+    "explanation": "In drum drying, liquid or slurry is spread as a thin film on heated rotating drums, evaporating rapidly and scraping off as dry flakes.",
+    "difficulty": "medium",
+    "tags": [
+      "drying",
+      "drum dryer"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "During the constant-rate period of drying, the moisture being removed is mainly:",
+    "options": [
+      "Unbound surface moisture that behaves like free water",
+      "Chemically bound water inside the crystal lattice",
+      "Water of crystallisation of the salt",
+      "Moisture held only at very high humidity"
+    ],
+    "correct_index": 0,
+    "explanation": "In the constant-rate phase, unbound surface moisture evaporates at a steady rate controlled by external conditions; the falling-rate phase removes bound moisture by diffusion.",
+    "difficulty": "hard",
+    "tags": [
+      "drying",
+      "drying curve"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "A hygroscopic material is one that:",
+    "options": [
+      "Readily absorbs moisture from the surrounding air",
+      "Loses all moisture even in a sealed container",
+      "Never contains any water of crystallisation",
+      "Repels water completely from its surface"
+    ],
+    "correct_index": 0,
+    "explanation": "Hygroscopic substances take up atmospheric moisture, so they must be stored in airtight containers, often with a desiccant.",
+    "difficulty": "easy",
+    "tags": [
+      "drying",
+      "hygroscopicity"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-3",
+    "question_text": "A ball mill must be run below the critical speed because at or above that speed the:",
+    "options": [
+      "Balls are carried round by centrifugal force and no grinding occurs",
+      "The balls melt down from the heat of constant friction",
+      "The mill shell develops cracks from the heavy impacts",
+      "The powder inside becomes sterile from the tumbling action"
+    ],
+    "correct_index": 0,
+    "explanation": "Above critical speed, centrifugal force holds the balls against the shell so they cease cascading and impacting, and grinding stops.",
+    "difficulty": "hard",
+    "tags": [
+      "size reduction",
+      "ball mill"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Multiple-effect evaporators are employed mainly to:",
+    "options": [
+      "Economise steam by reusing vapour from one effect to heat the next",
+      "Evaporate liquids without any heating medium",
+      "Remove all colour from the concentrated liquid",
+      "Increase the boiling point of the solution"
+    ],
+    "correct_index": 0,
+    "explanation": "In multiple-effect evaporation, vapour produced in the first effect heats the second, and so on, greatly reducing total steam consumption per kilogram of water removed.",
+    "difficulty": "hard",
+    "tags": [
+      "evaporation",
+      "multiple effect"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Evaporation under reduced pressure is preferred for solutions that:",
+    "options": [
+      "Contain heat-sensitive substances decomposing at high temperature",
+      "Contain only inorganic salts stable to heat",
+      "Must be evaporated at boiling point under normal pressure",
+      "Are highly viscous and cold"
+    ],
+    "correct_index": 0,
+    "explanation": "Applying a vacuum lowers the boiling point so the solvent evaporates at a lower temperature, protecting thermolabile active constituents.",
+    "difficulty": "medium",
+    "tags": [
+      "evaporation",
+      "vacuum"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "In a rising (climbing) film evaporator, the liquid rises up the heated tubes because:",
+    "options": [
+      "Vapour bubbles formed at the bottom lift the liquid as a thin film",
+      "A mechanical pump forces liquid upward only",
+      "The tubes are coated with a waxy lubricant",
+      "Capillary action alone draws the liquid up"
+    ],
+    "correct_index": 0,
+    "explanation": "As liquid boils in the tubes, expanding vapour pushes slugs of liquid upward, creating a thin climbing film with a large evaporating surface.",
+    "difficulty": "hard",
+    "tags": [
+      "evaporation",
+      "film evaporator"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "The chief advantage of film-type evaporators over pan evaporators is:",
+    "options": [
+      "Short contact time of the liquid with the heating surface",
+      "No requirement of any heat source",
+      "Ability to handle solid crystalline masses",
+      "Zero loss of solvent during operation"
+    ],
+    "correct_index": 0,
+    "explanation": "In film evaporators liquid passes over heated surfaces as a thin film very quickly, minimising thermal damage to heat-sensitive products.",
+    "difficulty": "medium",
+    "tags": [
+      "evaporation",
+      "film evaporator"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Steam is a widely used industrial heating medium in evaporation because it:",
+    "options": [
+      "Has a high latent heat and gives a uniform, controllable temperature",
+      "Is the coldest available heating fluid",
+      "Needs no boiler to be generated",
+      "Cannot transfer heat through metal walls"
+    ],
+    "correct_index": 0,
+    "explanation": "Steam condenses at constant temperature releasing a large amount of latent heat, giving uniform heating that is easy to control by adjusting pressure.",
+    "difficulty": "medium",
+    "tags": [
+      "heat transfer",
+      "steam"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Lagging (insulation) applied to the outside of an evaporator vessel serves to:",
+    "options": [
+      "Reduce heat loss to the surroundings and protect operators",
+      "Increase the rate of chemical reaction inside",
+      "Make the vessel heavier for stability",
+      "Prevent the liquid from boiling"
+    ],
+    "correct_index": 0,
+    "explanation": "Insulating lagging cuts heat losses from the hot surface, improving thermal efficiency and reducing the risk of burns to personnel.",
+    "difficulty": "easy",
+    "tags": [
+      "heat transfer",
+      "lagging"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "The rate of evaporation of a liquid increases when:",
+    "options": [
+      "The surface area of the liquid and the temperature are increased",
+      "The vapour pressure of the liquid is decreased",
+      "The liquid surface is covered with an oil layer",
+      "The surrounding air is saturated with vapour"
+    ],
+    "correct_index": 0,
+    "explanation": "Evaporation is faster with a larger exposed surface, higher temperature and removal of vapour, because more molecules escape from the liquid surface per unit time.",
+    "difficulty": "easy",
+    "tags": [
+      "evaporation",
+      "rate"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Boiling-point elevation of a solution is caused by:",
+    "options": [
+      "Dissolved solutes lowering the vapour pressure of the solvent",
+      "The solvent becoming lighter on heating",
+      "Impurities that lower the temperature of the solution",
+      "The presence of suspended insoluble particles"
+    ],
+    "correct_index": 0,
+    "explanation": "Dissolved solids reduce the vapour pressure of the solvent, so a higher temperature is needed for the solution to boil, raising its boiling point.",
+    "difficulty": "hard",
+    "tags": [
+      "evaporation",
+      "boiling point"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "A simple open evaporating pan is most suitable for:",
+    "options": [
+      "Small-scale evaporation of aqueous extracts and syrups",
+      "Large-scale handling of inflammable solvents",
+      "Evaporation of volatile essential oils",
+      "Drying of compressed tablets"
+    ],
+    "correct_index": 0,
+    "explanation": "Open pans with steam jackets or direct heat are simple and cheap, suited to small batches of aqueous liquids that tolerate atmospheric boiling.",
+    "difficulty": "medium",
+    "tags": [
+      "evaporation",
+      "evaporating pan"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "In an open pan evaporator, heat is transferred from the bottom to the bulk of the liquid mainly by:",
+    "options": [
+      "Convection currents set up as the heated liquid rises",
+      "Radiation from the pan rim only",
+      "Pure conduction through stagnant liquid",
+      "Ultrasonic vibration of the pan"
+    ],
+    "correct_index": 0,
+    "explanation": "Liquid heated at the bottom becomes less dense and rises while cooler liquid descends, setting up convection currents that distribute heat through the mass.",
+    "difficulty": "medium",
+    "tags": [
+      "heat transfer",
+      "convection"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "The function of a vacuum pump attached to a vacuum evaporator is to:",
+    "options": [
+      "Maintain the reduced pressure by removing vapours and non-condensable gases",
+      "Push the concentrate back into the boiler",
+      "Cool the heating steam before it enters the jacket",
+      "Stir the liquid mechanically inside the pan"
+    ],
+    "correct_index": 0,
+    "explanation": "The vacuum pump continuously withdraws vapour and leaked air so the low pressure needed for low-temperature boiling is sustained.",
+    "difficulty": "medium",
+    "tags": [
+      "evaporation",
+      "vacuum pump"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Latent heat of vaporisation is the heat required to:",
+    "options": [
+      "Convert a liquid into vapour at its boiling point without any rise in temperature",
+      "Raise the temperature of a liquid by one degree",
+      "Melt a solid into liquid at the melting point",
+      "Cool a vapour back into the liquid state"
+    ],
+    "correct_index": 0,
+    "explanation": "Latent heat of vaporisation is absorbed during boiling to change state from liquid to vapour while temperature remains constant.",
+    "difficulty": "easy",
+    "tags": [
+      "heat transfer",
+      "latent heat"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "Sensible heat is the heat that causes:",
+    "options": [
+      "A rise in the temperature of a substance without changing its state",
+      "A change of state at constant temperature",
+      "Chemical decomposition of the substance",
+      "Only radiation without any warming effect"
+    ],
+    "correct_index": 0,
+    "explanation": "Sensible heat warms a body and is sensed as a temperature rise; unlike latent heat it does not change the physical state.",
+    "difficulty": "easy",
+    "tags": [
+      "heat transfer",
+      "sensible heat"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "In a forced-circulation evaporator the liquid is:",
+    "options": [
+      "Rapidly pumped through the heating tubes to improve heat transfer",
+      "Allowed to remain completely stagnant over the tubes",
+      "Circulated only by natural convection",
+      "Evaporated without any contact with heated surfaces"
+    ],
+    "correct_index": 0,
+    "explanation": "A pump drives liquid at high velocity through the heating tubes, giving high heat-transfer coefficients and preventing deposition on the tube walls.",
+    "difficulty": "hard",
+    "tags": [
+      "evaporation",
+      "forced circulation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-4",
+    "question_text": "The concentrated liquid left behind after evaporation of the solvent is called the:",
+    "options": [
+      "Concentrate or residue of the evaporation process",
+      "Distillate collected from the condenser",
+      "Azeotrope formed during boiling",
+      "Entrainment carried by the vapour"
+    ],
+    "correct_index": 0,
+    "explanation": "Evaporation leaves the non-volatile solutes behind as a concentrate; the removed solvent vapour is condensed separately only if it is to be recovered.",
+    "difficulty": "easy",
+    "tags": [
+      "evaporation",
+      "terminology"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Distillation separates the components of a liquid mixture on the basis of differences in their:",
+    "options": [
+      "Boiling points",
+      "Colours",
+      "Electrical conductivities",
+      "Crystalline shapes"
+    ],
+    "correct_index": 0,
+    "explanation": "Distillation vaporises the more volatile component first and condenses it separately, so separation depends on the difference in boiling points.",
+    "difficulty": "easy",
+    "tags": [
+      "distillation",
+      "principle"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Rectification is another term used for:",
+    "options": [
+      "Fractional distillation",
+      "Simple distillation of water",
+      "Destructive distillation of wood",
+      "Steam distillation of volatile oils"
+    ],
+    "correct_index": 0,
+    "explanation": "Rectification is fractional distillation in which repeated vaporisation and condensation through a column sharpen the separation of close-boiling liquids.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "rectification"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Raoult's law states that the partial vapour pressure of a component in an ideal solution is:",
+    "options": [
+      "Proportional to its mole fraction in the liquid mixture",
+      "Inversely proportional to the temperature of the mixture",
+      "Equal to the total pressure of the atmosphere",
+      "Independent of the composition of the mixture"
+    ],
+    "correct_index": 0,
+    "explanation": "According to Raoult's law the partial pressure of each component equals its mole fraction times the vapour pressure of the pure component at that temperature.",
+    "difficulty": "hard",
+    "tags": [
+      "distillation",
+      "Raoult's law"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Steam distillation of volatile oils is based on Dalton's law of:",
+    "options": [
+      "Partial pressures of immiscible liquids",
+      "Conservation of mass during boiling",
+      "Definite proportions of elements",
+      "Multiple proportions of gases"
+    ],
+    "correct_index": 0,
+    "explanation": "With immiscible liquids each exerts its own vapour pressure independently, so the mixture boils when their sum equals atmospheric pressure, below 100°C.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "steam distillation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Azeotropic mixtures such as ethanol and water cannot be completely separated by ordinary fractional distillation because the azeotrope:",
+    "options": [
+      "Distils over at a constant composition and boiling point like a single substance",
+      "Sublimes directly from solid to vapour",
+      "Decomposes into carbon and hydrogen on heating",
+      "Has an infinitely high boiling point"
+    ],
+    "correct_index": 0,
+    "explanation": "At the azeotropic composition the vapour has the same composition as the liquid, so the mixture distils unchanged and cannot be split by simple fractionation.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "azeotrope"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "The packing material inside a fractionating column mainly provides:",
+    "options": [
+      "A large surface area for intimate contact between rising vapour and returning liquid",
+      "Electrical heating of the vapour stream rising up the column",
+      "Mechanical stirring of the boiling liquid in the still pot",
+      "A colour indicator that shows when the distillate is pure"
+    ],
+    "correct_index": 0,
+    "explanation": "Packing (rings, saddles) offers a large wetted surface where rising vapour repeatedly condenses and re-vaporises, enriching the more volatile component.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "fractionating column"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Returning part of the condensed vapour (reflux) back to the fractionating column improves:",
+    "options": [
+      "The purity of the distillate obtained",
+      "The colour of the residue",
+      "The speed of destructive decomposition",
+      "The moisture content of the product"
+    ],
+    "correct_index": 0,
+    "explanation": "Reflux keeps liquid flowing down the column so rising vapour contacts it repeatedly, giving purer separation of close-boiling components.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "reflux"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "The reflux ratio is defined as the ratio of:",
+    "options": [
+      "Liquid returned to the column to the distillate collected",
+      "Heat supplied to the heat lost from the still",
+      "Vapour condensed to vapour escaping the condenser",
+      "Residue drawn off to feed solution added"
+    ],
+    "correct_index": 0,
+    "explanation": "Reflux ratio compares the condensate sent back down the column with the amount withdrawn as product; higher ratios give purer but slower distillation.",
+    "difficulty": "hard",
+    "tags": [
+      "distillation",
+      "reflux ratio"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Purified water produced by distillation is free of:",
+    "options": [
+      "Dissolved solids and microorganisms",
+      "Only colour but not dissolved salts",
+      "Dissolved oxygen only",
+      "Nothing, it is identical to tap water"
+    ],
+    "correct_index": 0,
+    "explanation": "When water is boiled and the steam condensed, non-volatile salts and microorganisms are left behind, giving purified water suitable for pharmacy.",
+    "difficulty": "easy",
+    "tags": [
+      "distillation",
+      "purified water"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "During distillation of fermented alcohol, the first portion of the vapour condensed (the 'foreshots') is:",
+    "options": [
+      "Rejected because it contains low-boiling impurities such as aldehydes",
+      "Collected separately as the finest and purest alcohol fraction",
+      "Used directly as the main medicinal alcohol product",
+      "Returned unchanged to the fermenter for another cycle"
+    ],
+    "correct_index": 0,
+    "explanation": "Low-boiling aldehydes and other impurities come over first as foreshots, which distillers discard before collecting the main alcohol fraction.",
+    "difficulty": "hard",
+    "tags": [
+      "distillation",
+      "foreshots"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "An azeotrope is a liquid mixture that:",
+    "options": [
+      "Boils at a constant temperature with vapour of the same composition as the liquid",
+      "Separates into distinct layers as soon as it is heated",
+      "Never boils at any temperature however high the heat",
+      "Contains only one single pure chemical component"
+    ],
+    "correct_index": 0,
+    "explanation": "At the azeotropic point the vapour and liquid compositions are identical, so the mixture behaves like one pure liquid with a fixed boiling point.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "azeotrope"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Absolute (anhydrous) alcohol cannot be made by simple distillation of rectified spirit because:",
+    "options": [
+      "Ethanol and water form a constant-boiling azeotrope at about 95% alcohol",
+      "Ethanol decomposes below its boiling point",
+      "Water cannot be vaporised at any temperature",
+      "Rectified spirit contains no water at all"
+    ],
+    "correct_index": 0,
+    "explanation": "Rectified spirit is about 95% alcohol because further water removal is blocked by the ethanol-water azeotrope; anhydrous alcohol needs special dehydration methods.",
+    "difficulty": "hard",
+    "tags": [
+      "distillation",
+      "absolute alcohol"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Destructive distillation is a process in which:",
+    "options": [
+      "Organic material is heated in the absence of air and decomposes into new products",
+      "A volatile oil is distilled with steam",
+      "Sea water is evaporated to obtain salt",
+      "Two miscible liquids are separated by a column"
+    ],
+    "correct_index": 0,
+    "explanation": "Destructive distillation heats material such as coal or wood without air, causing chemical decomposition into new substances like charcoal, tar and gases.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "destructive distillation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "Rectified spirit is best described as:",
+    "options": [
+      "A concentrated aqueous alcohol distillate containing about 90% alcohol",
+      "Pure alcohol free of all water",
+      "A dilute beer containing 5% alcohol",
+      "An alcoholic extract of a medicinal plant"
+    ],
+    "correct_index": 0,
+    "explanation": "Rectified spirit is the concentrated distillate from fermented wash, around 90% alcohol by volume, further purified from the weaker first fermentation product.",
+    "difficulty": "medium",
+    "tags": [
+      "distillation",
+      "rectified spirit"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-5",
+    "question_text": "A water-cooled condenser is more efficient than an air-cooled condenser because water:",
+    "options": [
+      "Absorbs and carries away the latent heat of the vapour rapidly",
+      "Cannot remove heat from the vapour at all",
+      "Raises the temperature of the vapour further",
+      "Mixes freely with the distillate collected"
+    ],
+    "correct_index": 0,
+    "explanation": "Circulating cold water has a high heat capacity and continuously removes the latent heat, condensing vapour far faster than still air around a tube.",
+    "difficulty": "easy",
+    "tags": [
+      "distillation",
+      "condenser"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "The buffer capacity of a buffer solution is maximum when the pH of the solution:",
+    "options": [
+      "Equals the pKa of the weak acid or base used",
+      "Is far above the pKa of the buffering species",
+      "Is far below the pKa of the buffering species",
+      "Is exactly 14 in every case"
+    ],
+    "correct_index": 0,
+    "explanation": "Buffer action is strongest at pH equal to pKa, where the concentrations of the acid and its conjugate base are equal, so buffer capacity peaks there.",
+    "difficulty": "hard",
+    "tags": [
+      "buffers",
+      "buffer capacity"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "The principal buffer system that maintains the pH of human blood near 7.4 is the:",
+    "options": [
+      "Bicarbonate-carbonic acid buffer system",
+      "Phosphate buffer system of urine only",
+      "Acetate buffer used in the laboratory",
+      "Borate buffer of boric acid"
+    ],
+    "correct_index": 0,
+    "explanation": "Plasma pH is regulated chiefly by the bicarbonate-carbonic acid buffer pair, assisted by haemoglobin, protein and phosphate buffers.",
+    "difficulty": "easy",
+    "tags": [
+      "buffers",
+      "blood buffer"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "The CGS unit of dynamic viscosity is the:",
+    "options": [
+      "Poise",
+      "Stokes",
+      "Newton",
+      "Joule"
+    ],
+    "correct_index": 0,
+    "explanation": "Dynamic viscosity is expressed in poise in the CGS system (1 poise = 1 g cm⁻¹ s⁻¹); kinematic viscosity uses the stokes.",
+    "difficulty": "medium",
+    "tags": [
+      "rheology",
+      "viscosity units"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "The apparent viscosity of a non-Newtonian fluid:",
+    "options": [
+      "Changes with the rate of shear applied to the fluid",
+      "Is constant at every shear rate",
+      "Is always equal to the density of the fluid",
+      "Cannot be measured by any instrument"
+    ],
+    "correct_index": 0,
+    "explanation": "Unlike Newtonian liquids, non-Newtonian fluids show an apparent viscosity that varies with shear rate, which is why flow curves are nonlinear.",
+    "difficulty": "medium",
+    "tags": [
+      "rheology",
+      "non-Newtonian"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Kinematic viscosity is the ratio of dynamic viscosity to the:",
+    "options": [
+      "Density of the fluid",
+      "Temperature of the fluid",
+      "Surface tension of the fluid",
+      "Volume of the fluid"
+    ],
+    "correct_index": 0,
+    "explanation": "Kinematic viscosity = dynamic viscosity divided by density; it is expressed in stokes and is measured by capillary viscometers such as the Ostwald tube.",
+    "difficulty": "hard",
+    "tags": [
+      "rheology",
+      "kinematic viscosity"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "An emulsifying agent with a low HLB value (about 3 to 6) is most suitable for preparing:",
+    "options": [
+      "Water-in-oil (W/O) emulsions",
+      "Oil-in-water (O/W) emulsions",
+      "Microemulsions of gases",
+      "Dry powder mixtures"
+    ],
+    "correct_index": 0,
+    "explanation": "Low-HLB surfactants are lipophilic and favour the formation of water-in-oil emulsions, while high-HLB agents (about 8-18) favour oil-in-water emulsions.",
+    "difficulty": "medium",
+    "tags": [
+      "emulsions",
+      "HLB"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Creaming of an emulsion can be retarded by:",
+    "options": [
+      "Reducing the droplet size and increasing the viscosity of the continuous phase",
+      "Increasing the droplet size and lowering viscosity",
+      "Adding more oil to the emulsion",
+      "Heating the emulsion to body temperature"
+    ],
+    "correct_index": 0,
+    "explanation": "According to Stokes' law, smaller globules and a more viscous continuous phase slow the rise or settling of droplets, delaying creaming.",
+    "difficulty": "medium",
+    "tags": [
+      "emulsions",
+      "creaming"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "In the dilution test to identify an emulsion type, addition of water to an oil-in-water emulsion will:",
+    "options": [
+      "Mix and dilute the emulsion easily",
+      "Separate the emulsion into two oily layers",
+      "Cause immediate coagulation of all globules",
+      "Produce a dry powder at the bottom"
+    ],
+    "correct_index": 0,
+    "explanation": "An O/W emulsion has water as the continuous phase, so added water mixes freely with it; a W/O emulsion instead rejects and separates from added water.",
+    "difficulty": "medium",
+    "tags": [
+      "emulsions",
+      "emulsion type test"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Lyophilic (solvent-loving) colloidal sols are characterised by being:",
+    "options": [
+      "Reversible and formed readily when the solid is brought into contact with the liquid",
+      "Irreversible and needing special stabilisers always",
+      "Unstable and coagulated by the slightest impurity",
+      "Visible to the naked eye as large crystals"
+    ],
+    "correct_index": 0,
+    "explanation": "Lyophilic colloids such as gelatin and acacia disperse spontaneously in the solvent, are stable, and can be reformed after coagulation, hence reversible.",
+    "difficulty": "medium",
+    "tags": [
+      "colloids",
+      "lyophilic"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Coagulation of a lyophobic colloidal sol can be brought about by adding:",
+    "options": [
+      "A small amount of electrolyte",
+      "Large amounts of pure solvent",
+      "A drop of surfactant-free oil",
+      "Any quantity of sugar syrup"
+    ],
+    "correct_index": 0,
+    "explanation": "Lyophobic sols are sensitive to electrolytes: ions neutralise the surface charge and compress the double layer, causing particles to clump and settle.",
+    "difficulty": "medium",
+    "tags": [
+      "colloids",
+      "coagulation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "The unit of the rate constant of a first-order reaction is:",
+    "options": [
+      "Reciprocal time, for example per hour",
+      "Concentration per unit time",
+      "Moles per litre",
+      "No units at all"
+    ],
+    "correct_index": 0,
+    "explanation": "For a first-order reaction the rate is proportional to concentration, so the rate constant k has units of time⁻¹ (e.g., h⁻¹ or s⁻¹).",
+    "difficulty": "medium",
+    "tags": [
+      "kinetics",
+      "rate constant"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "The Arrhenius equation is used in pharmaceutical stability studies mainly to:",
+    "options": [
+      "Estimate the shelf life of a product at normal storage temperature from accelerated tests",
+      "Measure the surface tension of the formulated product",
+      "Calculate the HLB value needed for a chosen emulsifier",
+      "Determine the colour change of the drug on exposure to light"
+    ],
+    "correct_index": 0,
+    "explanation": "The Arrhenius relationship links reaction rate to temperature, so data from high-temperature accelerated studies can predict degradation at lower storage temperatures.",
+    "difficulty": "hard",
+    "tags": [
+      "kinetics",
+      "Arrhenius"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Accelerated stability testing of pharmaceutical products is commonly carried out at:",
+    "options": [
+      "40°C with 75% relative humidity",
+      "2°C to 8°C in a refrigerator",
+      "-20°C in a deep freezer",
+      "100°C in boiling water"
+    ],
+    "correct_index": 0,
+    "explanation": "ICH-style accelerated conditions (e.g., 40°C/75% RH) speed up degradation so the shelf life at room temperature can be predicted over a shorter period.",
+    "difficulty": "easy",
+    "tags": [
+      "kinetics",
+      "stability testing"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Hydrolysis as a degradation pathway is of greatest concern for drugs containing:",
+    "options": [
+      "Ester or amide linkages in their structure",
+      "Only saturated hydrocarbon chains",
+      "Purely inorganic metallic salts",
+      "Inert noble gases"
+    ],
+    "correct_index": 0,
+    "explanation": "Esters and amides react with water, especially under acid or alkaline conditions, so aspirin, procaine and many penicillins hydrolyse on storage.",
+    "difficulty": "medium",
+    "tags": [
+      "kinetics",
+      "hydrolysis"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-6",
+    "question_text": "Antioxidants such as sodium metabisulphite are added to formulations to:",
+    "options": [
+      "Retard the oxidative degradation of easily oxidisable drugs",
+      "Sweeten the taste of the product",
+      "Increase the hardness of tablets",
+      "Make the solution completely sterile"
+    ],
+    "correct_index": 0,
+    "explanation": "Antioxidants are oxidised in preference to the drug, protecting oxygen-sensitive active ingredients such as adrenaline and ascorbic acid.",
+    "difficulty": "easy",
+    "tags": [
+      "kinetics",
+      "antioxidants"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Aromatic waters are best defined as:",
+    "options": [
+      "Saturated aqueous solutions of volatile substances such as volatile oils",
+      "Concentrated alcoholic extracts of fresh plants",
+      "Suspensions of insoluble powders in water",
+      "Sterile oily injections for intramuscular use"
+    ],
+    "correct_index": 0,
+    "explanation": "Aromatic waters are clear, water-saturated solutions of aromatic volatile materials, used chiefly as pleasant flavoured vehicles.",
+    "difficulty": "medium",
+    "tags": [
+      "monophasic liquids",
+      "aromatic waters"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "In simple syrup BP, the high concentration of sucrose (about 66.7% w/w) acts to preserve the syrup by:",
+    "options": [
+      "Making water unavailable to microorganisms through osmosis",
+      "Killing microbes by its alkaline pH",
+      "Turning the syrup into a solid mass",
+      "Absorbing oxygen from the air"
+    ],
+    "correct_index": 0,
+    "explanation": "Concentrated sugar creates a high osmotic pressure that plasmolyses microorganisms, so simple syrup needs no chemical preservative.",
+    "difficulty": "medium",
+    "tags": [
+      "monophasic liquids",
+      "syrups"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Invert sugar is sometimes added to syrups in place of part of the sucrose to:",
+    "options": [
+      "Prevent the crystallisation of sucrose on storage",
+      "Increase the sweetness of the syrup only",
+      "Make the syrup alkaline in reaction",
+      "Colour the syrup deep brown"
+    ],
+    "correct_index": 0,
+    "explanation": "Invert sugar (glucose-fructose mixture from sucrose hydrolysis) is more soluble than sucrose, so its presence prevents sugar crystals forming in the syrup.",
+    "difficulty": "medium",
+    "tags": [
+      "monophasic liquids",
+      "invert sugar"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "A tincture is a preparation that is best described as:",
+    "options": [
+      "An alcoholic or hydroalcoholic solution of vegetable or chemical substances",
+      "A purely aqueous solution that contains no alcohol at all",
+      "A dried powdered drug filled into hard gelatin capsules",
+      "A sterile suspension intended for use in the eye"
+    ],
+    "correct_index": 0,
+    "explanation": "Tinctures are made by extracting drugs with alcohol or alcohol-water mixtures, typically containing 10-20% drug and used for their medicinal constituents.",
+    "difficulty": "medium",
+    "tags": [
+      "monophasic liquids",
+      "tinctures"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Spirits (essences) are alcoholic solutions of:",
+    "options": [
+      "Volatile substances such as volatile oils",
+      "Only inorganic non-volatile salts",
+      "Dried powdered plant materials",
+      "Insoluble mineral pigments"
+    ],
+    "correct_index": 0,
+    "explanation": "Spirits contain volatile aromatic materials dissolved in alcohol, for example spirit of peppermint or aromatic spirit of ammonia.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "spirits"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Glycerites are pharmaceutical preparations that contain:",
+    "options": [
+      "Glycerin as the main vehicle or solvent",
+      "Alcohol as the only vehicle",
+      "Water with no glycerin at all",
+      "Fixed oils as the continuous phase"
+    ],
+    "correct_index": 0,
+    "explanation": "Glycerites use glycerin as the vehicle; glycerin is a good solvent for tannins, boric acid and iodine and is non-volatile and hygroscopic.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "glycerites"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Collodion is a preparation consisting of:",
+    "options": [
+      "Pyroxylin dissolved in a mixture of ether and alcohol",
+      "Sugar dissolved in purified water",
+      "Kaolin suspended in liquid paraffin",
+      "Gelatin in warm glycerin"
+    ],
+    "correct_index": 0,
+    "explanation": "Flexible collodion contains pyroxylin (nitrocellulose) in ether-alcohol; the solvents evaporate on the skin leaving a protective film.",
+    "difficulty": "medium",
+    "tags": [
+      "monophasic liquids",
+      "collodion"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Paints are liquid preparations that are applied with a brush to the:",
+    "options": [
+      "Skin or mucous membranes, drying to leave a film of medicament",
+      "The hair roots only, for colouring or cosmetic purposes",
+      "The surface of tablets during the sugar-coating process",
+      "The inside of infusion bottles before they are filled"
+    ],
+    "correct_index": 0,
+    "explanation": "Paints are brushed onto skin or mucosa (for example the throat), leaving a medicated film, as with compound iodine paint.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "paints"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "An enema is a liquid preparation that is administered:",
+    "options": [
+      "Into the rectum for local or systemic action",
+      "Into the ear canal",
+      "By inhalation through the nose",
+      "Onto the skin surface only"
+    ],
+    "correct_index": 0,
+    "explanation": "Enemas are introduced into the rectum for evacuation of the bowel, for local effects or for systemic drugs (e.g., retention enemas).",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "enemas"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "A douche is best described as a liquid preparation meant for:",
+    "options": [
+      "Irrigating a body cavity such as the vagina",
+      "Dropping into the eye",
+      "Injection into a vein",
+      "Rubbing into intact skin"
+    ],
+    "correct_index": 0,
+    "explanation": "Douches are aqueous solutions used to wash out or medicate a cavity, most commonly the vagina, using a special appliance.",
+    "difficulty": "medium",
+    "tags": [
+      "monophasic liquids",
+      "douches"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Cosolvents such as alcohol, glycerin and propylene glycol are added to aqueous formulations to:",
+    "options": [
+      "Increase the solubility of poorly water-soluble drugs",
+      "Decrease the solubility of all active ingredients",
+      "Make the preparation effervescent",
+      "Solidify the product at room temperature"
+    ],
+    "correct_index": 0,
+    "explanation": "Cosolvents lower the polarity of water enough to dissolve hydrophobic drugs that are otherwise insoluble, giving clear solutions.",
+    "difficulty": "medium",
+    "tags": [
+      "monophasic liquids",
+      "cosolvents"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Methyl and propyl parabens are commonly added to oral liquid preparations as:",
+    "options": [
+      "Antimicrobial preservatives",
+      "Colouring agents",
+      "Thickening agents",
+      "Buffering salts"
+    ],
+    "correct_index": 0,
+    "explanation": "Parabens are effective preservatives against moulds, yeasts and bacteria; combinations of methyl and propyl paraben give broad-spectrum protection.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "preservatives"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "A well-formulated oral suspension should be shaken before use because the:",
+    "options": [
+      "Dispersed solid particles settle gradually on standing",
+      "Liquid evaporates during shaking",
+      "Shaking sterilises the contents",
+      "Shaking changes the dose written on the label"
+    ],
+    "correct_index": 0,
+    "explanation": "Suspensions are not permanently stable; on standing the particles sediment, so re-dispersion by shaking ensures each dose is uniform.",
+    "difficulty": "easy",
+    "tags": [
+      "monophasic liquids",
+      "suspension use"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "Eye drops are required to be:",
+    "options": [
+      "Sterile and isotonic with the lachrymal fluid",
+      "Strongly hypertonic and coloured",
+      "Warm and freshly boiled each time",
+      "Free of any buffer or preservative"
+    ],
+    "correct_index": 0,
+    "explanation": "Ophthalmic preparations must be sterile, and ideally isotonic and buffered near tear pH, to avoid irritating the delicate eye tissues.",
+    "difficulty": "medium",
+    "tags": [
+      "monophasic liquids",
+      "eye drops"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-7",
+    "question_text": "In elixirs, the alcohol present serves mainly to:",
+    "options": [
+      "Dissolve alcohol-soluble medicaments and act as a preservative",
+      "Neutralise the acidity of the stomach",
+      "Prevent any absorption of the drug",
+      "Give a deep red colour to the product"
+    ],
+    "correct_index": 0,
+    "explanation": "Alcohol keeps poorly water-soluble drugs in solution and, at sufficient strength, also protects the elixir against microbial growth.",
+    "difficulty": "medium",
+    "tags": [
+      "monophasic liquids",
+      "elixirs"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "The abbreviation LADME in biopharmaceutics stands for:",
+    "options": [
+      "Liberation, Absorption, Distribution, Metabolism, Excretion",
+      "Loading, Administration, Dosage, Mixing, Elimination",
+      "Liberation, Action, Duration, Movement, Effect",
+      "Liver, Arteries, Duodenum, Muscle, Epidermis"
+    ],
+    "correct_index": 0,
+    "explanation": "LADME describes the fate of a drug after administration: liberation from the dosage form, absorption, distribution, metabolism and excretion.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "LADME"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "For most orally administered drugs, the principal site of absorption is the:",
+    "options": [
+      "Small intestine",
+      "Stomach",
+      "Large intestine only",
+      "Oesophagus"
+    ],
+    "correct_index": 0,
+    "explanation": "The small intestine offers an enormous absorptive surface with villi and microvilli, high blood flow and long transit time, making it the main absorption site.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "absorption site"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Passive diffusion of a drug across a membrane occurs:",
+    "options": [
+      "Along a concentration gradient without the expenditure of energy",
+      "Only against the concentration gradient using ATP",
+      "Exclusively through specialised carrier proteins",
+      "Only in the presence of insulin"
+    ],
+    "correct_index": 0,
+    "explanation": "Passive diffusion follows Fick's law: the drug moves down its concentration gradient through the lipid membrane without needing energy or a carrier.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "passive diffusion"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Active transport of a drug across a membrane requires:",
+    "options": [
+      "Energy (ATP) and a carrier that can move the drug against its gradient",
+      "Only a steep downhill concentration gradient",
+      "No carrier and no energy in any form",
+      "The drug to be completely unionised"
+    ],
+    "correct_index": 0,
+    "explanation": "Active transport uses energy and membrane carriers to move drugs such as levodopa and some vitamins against a concentration gradient.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "active transport"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "First-pass metabolism of an orally administered drug occurs mainly in the:",
+    "options": [
+      "Liver before the drug reaches the systemic circulation",
+      "The stomach lumen during the digestion of food",
+      "The skin at the site where the drug is applied",
+      "The lungs while the drug is being exhaled"
+    ],
+    "correct_index": 0,
+    "explanation": "After absorption from the gut, the drug travels through the portal vein to the liver, where a large fraction may be metabolised before reaching general circulation.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "first-pass effect"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "A drug that undergoes extensive first-pass hepatic metabolism is best administered by:",
+    "options": [
+      "A route that bypasses the liver, such as sublingual or parenteral",
+      "The oral route in a very large dose",
+      "Rectal route at the same dose as oral",
+      "Any route with identical results"
+    ],
+    "correct_index": 0,
+    "explanation": "Sublingual, buccal, intravenous and other non-oral routes avoid the portal circulation, sparing the drug from first-pass hepatic loss.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "first-pass effect"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Enterohepatic recirculation of a drug results in:",
+    "options": [
+      "Prolongation of the drug's action as it is reabsorbed from the gut",
+      "Immediate termination of the drug's effect",
+      "Complete prevention of drug metabolism",
+      "Rapid excretion of the drug unchanged"
+    ],
+    "correct_index": 0,
+    "explanation": "Drugs excreted in bile may be reabsorbed from the intestine and returned to the liver, cycling repeatedly and extending their duration of action.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "enterohepatic circulation"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "A drug that is bound to plasma proteins is:",
+    "options": [
+      "Pharmacologically inactive and not available for filtration at the kidney",
+      "Pharmacologically more active than the free unbound drug",
+      "Excreted much faster by the kidney into the urine",
+      "Always toxic regardless of the dose administered"
+    ],
+    "correct_index": 0,
+    "explanation": "Only the unbound (free) fraction exerts pharmacological action, distributes to tissues and is filtered; the bound fraction acts as a reservoir.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "protein binding"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Relative bioavailability of a product is assessed by comparing it with:",
+    "options": [
+      "Another oral formulation of the same drug used as a reference",
+      "An intravenous injection of the same drug",
+      "A completely different drug",
+      "Placebo tablets only"
+    ],
+    "correct_index": 0,
+    "explanation": "Relative bioavailability compares the test oral product against a reference oral product (e.g., innovator's), whereas absolute bioavailability compares with the IV dose.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "bioavailability"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Dissolution is said to be the rate-limiting step in absorption when the drug:",
+    "options": [
+      "Is poorly water-soluble and dissolves slowly in gastrointestinal fluids",
+      "Is highly soluble and dissolves instantly",
+      "Is given by the intravenous route",
+      "Is absorbed only by active transport"
+    ],
+    "correct_index": 0,
+    "explanation": "For slowly dissolving, poorly soluble drugs the dissolution process is slower than absorption itself, so it controls how fast the drug reaches the blood.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "dissolution"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "In the USP dissolution test, the apparatus commonly designated as Apparatus 1 consists of a:",
+    "options": [
+      "Rotating basket",
+      "Paddle only without any basket",
+      "Reciprocating cylinder",
+      "Flow-through cell"
+    ],
+    "correct_index": 0,
+    "explanation": "USP Apparatus 1 is the rotating-basket assembly; Apparatus 2 uses a paddle, both immersed in a dissolution medium held at 37°C.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "dissolution apparatus"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "In the official dissolution test, the temperature of the dissolution medium is maintained at:",
+    "options": [
+      "37°C ± 0.5°C",
+      "25°C ± 1°C",
+      "45°C ± 2°C",
+      "Room temperature without control"
+    ],
+    "correct_index": 0,
+    "explanation": "The medium is held at 37 ± 0.5°C to simulate body temperature, so release data reflects in vivo behaviour.",
+    "difficulty": "easy",
+    "tags": [
+      "biopharmaceutics",
+      "dissolution"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "Two products are considered bioequivalent when their:",
+    "options": [
+      "Rate and extent of absorption (Cmax and AUC) are within acceptable limits",
+      "Colours and shapes are identical",
+      "Prices are exactly equal",
+      "Packaging inserts are word-for-word the same"
+    ],
+    "correct_index": 0,
+    "explanation": "Bioequivalence requires comparable Cmax, Tmax and AUC after the same dose, indicating similar rate and extent of drug absorption.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "bioequivalence"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "An osmotic-pump (OROS) tablet releases its drug at a constant rate because:",
+    "options": [
+      "Water entering by osmosis pushes drug solution out through a laser-drilled hole",
+      "The tablet dissolves all at once in the stomach",
+      "Bacteria digest the tablet shell slowly",
+      "The drug diffuses only during the night"
+    ],
+    "correct_index": 0,
+    "explanation": "In osmotic pumps, the osmotic pressure of the core draws water in steadily, expelling dissolved drug at an approximately zero-order, constant rate.",
+    "difficulty": "hard",
+    "tags": [
+      "biopharmaceutics",
+      "osmotic pump"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-8",
+    "question_text": "A prodrug is best defined as:",
+    "options": [
+      "An inactive chemical derivative that is converted into the active drug in the body",
+      "A drug that shows its action only outside the living body",
+      "A counterfeit medicine that is manufactured illegally",
+      "A drug that never produces any pharmacological effect"
+    ],
+    "correct_index": 0,
+    "explanation": "Prodrugs are pharmacologically inert until biotransformed in vivo to the active moiety, often improving absorption, taste or targeting.",
+    "difficulty": "medium",
+    "tags": [
+      "biopharmaceutics",
+      "prodrug"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "The number of minims contained in one fluid dram is:",
+    "options": [
+      "60",
+      "8",
+      "480",
+      "100"
+    ],
+    "correct_index": 0,
+    "explanation": "In the apothecaries' system 60 minims equal 1 fluid dram, and 8 fluid drams equal 1 fluid ounce.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "apothecary system"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "One gram is approximately equal to how many grains?",
+    "options": [
+      "15 grains",
+      "60 grains",
+      "2 grains",
+      "480 grains"
+    ],
+    "correct_index": 0,
+    "explanation": "One gram equals about 15.43 grains, so the common approximation used in pharmacy is 1 g ≈ 15 grains.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "grains"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "One apothecaries' ounce is equal to:",
+    "options": [
+      "480 grains",
+      "60 grains",
+      "100 grains",
+      "1000 grains"
+    ],
+    "correct_index": 0,
+    "explanation": "In the apothecaries' system 1 ounce = 8 drams = 480 grains, roughly 31.1 g.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "apothecary system"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "A 1% w/w ointment contains 1 g of the drug in:",
+    "options": [
+      "100 g of the ointment",
+      "100 mL of the ointment",
+      "1 kg of the ointment",
+      "10 g of the ointment"
+    ],
+    "correct_index": 0,
+    "explanation": "Percent w/w means grams of drug per 100 g of preparation, so 1% w/w ointment holds 1 g drug in every 100 g of ointment.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "percentage"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "A 0.5% w/v solution expressed as a ratio strength is:",
+    "options": [
+      "1 in 200",
+      "1 in 50",
+      "1 in 5000",
+      "1 in 20"
+    ],
+    "correct_index": 0,
+    "explanation": "0.5% w/v means 0.5 g in 100 mL, i.e., 1 g in 200 mL, so the ratio strength is 1 in 200.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "ratio strength"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "A 1 in 10,000 solution is the same as which percentage strength?",
+    "options": [
+      "0.01% w/v",
+      "0.1% w/v",
+      "1% w/v",
+      "10% w/v"
+    ],
+    "correct_index": 0,
+    "explanation": "1 in 10,000 means 1 g in 10,000 mL, which equals 0.01 g per 100 mL, i.e., 0.01% w/v.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "ratio strength"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Dilling's rule for calculating a child's dose uses the formula:",
+    "options": [
+      "(Age in years ÷ 20) × adult dose",
+      "(Age ÷ 30) × adult dose",
+      "Adult dose ÷ age in years",
+      "Adult dose × 20 ÷ age"
+    ],
+    "correct_index": 0,
+    "explanation": "Dilling's rule estimates the paediatric dose as age/20 of the adult dose, applicable mainly for children older than about one year.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "child dose"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "An intravenous infusion of 500 mL is to run over 5 hours with a drip factor of 20 drops/mL. The required rate in drops per minute is approximately:",
+    "options": [
+      "33 drops per minute",
+      "100 drops per minute",
+      "20 drops per minute",
+      "5 drops per minute"
+    ],
+    "correct_index": 0,
+    "explanation": "Total drops = 500 × 20 = 10,000; time = 300 minutes; rate = 10,000 ÷ 300 ≈ 33 drops per minute.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "infusion rate"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "One milligram is equal to how many micrograms?",
+    "options": [
+      "1000 micrograms",
+      "100 micrograms",
+      "10 micrograms",
+      "0.1 microgram"
+    ],
+    "correct_index": 0,
+    "explanation": "The metric prefixes step by thousands: 1 mg = 1000 micrograms (µg), just as 1 g = 1000 mg.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "metric conversions"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "The sodium chloride equivalent (E value) of a drug is used to:",
+    "options": [
+      "Calculate how much sodium chloride is needed to make a solution isotonic",
+      "Express the colour intensity of the drug solution",
+      "Find the expiry date of the finished product",
+      "Convert the drug weight from milligrams into grains"
+    ],
+    "correct_index": 0,
+    "explanation": "The E value is the weight of NaCl that produces the same osmotic effect as 1 g of the drug, enabling isotonicity calculations by the NaCl-equivalent method.",
+    "difficulty": "hard",
+    "tags": [
+      "calculations",
+      "isotonicity"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "To prepare 500 mL of 0.9% w/v sodium chloride solution, the weight of NaCl required is:",
+    "options": [
+      "4.5 g",
+      "0.45 g",
+      "45 g",
+      "9 g"
+    ],
+    "correct_index": 0,
+    "explanation": "0.9% w/v = 0.9 g per 100 mL, so 500 mL needs 5 × 0.9 = 4.5 g of sodium chloride.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "percentage"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "If 100 mL of a 10% w/v solution is diluted with water to a final volume of 200 mL, the resulting percentage strength is:",
+    "options": [
+      "5% w/v",
+      "10% w/v",
+      "20% w/v",
+      "2.5% w/v"
+    ],
+    "correct_index": 0,
+    "explanation": "Dilution halves the concentration: the drug content stays 10 g while the volume doubles to 200 mL, giving 10 g/200 mL = 5% w/v.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "dilution"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "Dissolving 15 g of dextrose in sufficient water to make 500 mL of solution gives a percentage strength of:",
+    "options": [
+      "3% w/v",
+      "15% w/v",
+      "30% w/v",
+      "0.3% w/v"
+    ],
+    "correct_index": 0,
+    "explanation": "15 g in 500 mL = 15/500 g per mL = 3 g per 100 mL, i.e., 3% w/v.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "percentage"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "One grain is approximately equal to which weight in milligrams?",
+    "options": [
+      "65 mg",
+      "6.5 mg",
+      "650 mg",
+      "1.5 mg"
+    ],
+    "correct_index": 0,
+    "explanation": "One grain (gr) equals 64.8 mg, commonly approximated as 65 mg in dosage calculations.",
+    "difficulty": "medium",
+    "tags": [
+      "calculations",
+      "grains"
+    ]
+  },
+  {
+    "unit_id": "pharm-i-unit-9",
+    "question_text": "A patient is prescribed one 250 mg tablet twice daily for 7 days. The total quantity of drug dispensed, expressed in grams, is:",
+    "options": [
+      "3.5 g",
+      "0.5 g",
+      "35 g",
+      "1.75 g"
+    ],
+    "correct_index": 0,
+    "explanation": "Daily intake = 250 mg × 2 = 500 mg; over 7 days = 3500 mg = 3.5 g.",
+    "difficulty": "easy",
+    "tags": [
+      "calculations",
+      "dose quantity"
+    ]
   }
 ]
