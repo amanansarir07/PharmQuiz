@@ -4,12 +4,12 @@
     "question_text": "WHO defines health as:",
     "options": [
       "Absence of disease only",
-      "State of complete physical, mental, and social well-being",
+      "State of complete physical, mental",
       "Being free from infection",
       "Having good nutrition"
     ],
     "correct_index": 1,
-    "explanation": "WHO defines health as 'a state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity.'",
+    "explanation": "WHO defines health as 'a state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity.'\n\nNote: and social well-being",
     "difficulty": "easy",
     "tags": [
       "health education",
@@ -55,12 +55,12 @@
     "question_text": "Learning is defined as:",
     "options": [
       "Memorizing facts only",
-      "A relatively permanent change in behavior through experience",
+      "A relatively permanent change",
       "Reading textbooks",
       "Attending lectures only"
     ],
     "correct_index": 1,
-    "explanation": "Learning is defined as a relatively permanent change in behavior (or behavioral potential) resulting from experience, practice, or training.",
+    "explanation": "Learning is defined as a relatively permanent change in behavior (or behavioral potential) resulting from experience, practice, or training.\n\nAdditional: in behavior through experience",
     "difficulty": "medium",
     "tags": [
       "health education",
@@ -72,12 +72,12 @@
     "question_text": "Primary Health Care (PHC) was declared at the:",
     "options": [
       "UN General Assembly",
-      "Alma Ata Conference (1978)",
+      "Alma Ata Conference",
       "WHO Headquarters",
       "World Health Assembly"
     ],
     "correct_index": 1,
-    "explanation": "Primary Health Care was declared at the International Conference on Primary Health Care held at Alma Ata, Kazakhstan (then USSR) in 1978.",
+    "explanation": "Primary Health Care was declared at the International Conference on Primary Health Care held at Alma Ata, Kazakhstan (then USSR) in 1978.\n\nNote: 1978",
     "difficulty": "easy",
     "tags": [
       "healthcare delivery",
@@ -106,12 +106,12 @@
     "question_text": "Epidemiology is defined as the study of:",
     "options": [
       "Treatment of diseases",
-      "Distribution of health-related states in populations",
+      "Distribution of health-related",
       "Manufacturing of drugs",
       "Pharmacology of drugs"
     ],
     "correct_index": 1,
-    "explanation": "Epidemiology is the study of the distribution (who, where, when) and determinants (why, how) of health-related states and events in defined populations, and the application of this knowledge to control health problems.",
+    "explanation": "Epidemiology is the study of the distribution (who, where, when) and determinants (why, how) of health-related states and events in defined populations, and the application of this knowledge to control health problems.\n\nAdditional: states in populations",
     "difficulty": "easy",
     "tags": [
       "epidemiology",
@@ -123,12 +123,12 @@
     "question_text": "An epidemic differs from endemic in that an epidemic:",
     "options": [
       "Always exists in a region",
-      "Occurs in greater numbers than expected in a community at a particular time",
+      "Occurs in greater numbers than expected in",
       "Only affects one person",
       "Never occurs naturally"
     ],
     "correct_index": 1,
-    "explanation": "An epidemic is the occurrence of cases of disease in excess of what would normally be expected in a defined community, area, or season. Endemic refers to constant presence of a disease in a population.",
+    "explanation": "An epidemic is the occurrence of cases of disease in excess of what would normally be expected in a defined community, area, or season. Endemic refers to constant presence of a disease in a population.\n\nAdditional: a community at a particular time",
     "difficulty": "medium",
     "tags": [
       "epidemiology",
@@ -225,12 +225,12 @@
     "question_text": "Health education is defined as:",
     "options": [
       "Treating diseases",
-      "A process of providing information to improve health behavior",
+      "A process of providing information",
       "Manufacturing medicines",
       "Running a hospital"
     ],
     "correct_index": 1,
-    "explanation": "Health education is a process of providing information and awareness to improve health knowledge, attitudes, and practices.",
+    "explanation": "Health education is a process of providing information and awareness to improve health knowledge, attitudes, and practices.\n\nAdditional: to improve health behavior",
     "difficulty": "easy",
     "tags": [
       "health education",
@@ -344,12 +344,12 @@
     "question_text": "Selective perception in learning means:",
     "options": [
       "Learning everything equally",
-      "Individuals tend to perceive information aligning with existing beliefs",
+      "Individuals tend to perceive information",
       "Forgetting everything learned",
       "Learning only from textbooks"
     ],
     "correct_index": 1,
-    "explanation": "Selective perception is a cognitive bias where people notice info confirming their beliefs.",
+    "explanation": "Selective perception is a cognitive bias where people notice info confirming their beliefs.\n\nAdditional: aligning with existing beliefs",
     "difficulty": "medium",
     "tags": [
       "learning",
@@ -429,12 +429,12 @@
     "question_text": "Nepal health care delivery system follows:",
     "options": [
       "Single-tier",
-      "Three-tier (primary, secondary, tertiary)",
+      "Three-tier",
       "Two-tier",
       "Four-tier"
     ],
     "correct_index": 1,
-    "explanation": "Nepal follows a three-tier health care delivery system.",
+    "explanation": "Nepal follows a three-tier health care delivery system.\n\nNote: primary, secondary, tertiary",
     "difficulty": "easy",
     "tags": [
       "Nepal health system"
@@ -478,12 +478,12 @@
     "question_text": "SDG Goal 3 aims to:",
     "options": [
       "End poverty",
-      "Ensure healthy lives and promote well-being for all",
+      "Ensure healthy lives and",
       "Provide quality education",
       "Achieve gender equality"
     ],
     "correct_index": 1,
-    "explanation": "SDG Goal 3 covers health and well-being for all ages.",
+    "explanation": "SDG Goal 3 covers health and well-being for all ages.\n\nAdditional: promote well-being for all",
     "difficulty": "easy",
     "tags": [
       "SDGs",
@@ -495,12 +495,12 @@
     "question_text": "Nepal health policy emphasizes:",
     "options": [
       "Only urban healthcare",
-      "Equitable access to basic health services for all citizens",
+      "Equitable access to basic health",
       "Only traditional medicine",
       "Only private healthcare"
     ],
     "correct_index": 1,
-    "explanation": "Nepal emphasizes equitable access to health services for all citizens.",
+    "explanation": "Nepal emphasizes equitable access to health services for all citizens.\n\nAdditional: services for all citizens",
     "difficulty": "easy",
     "tags": [
       "Nepal health policy"
@@ -529,11 +529,11 @@
     "options": [
       "Only new cases",
       "Only fatal cases",
-      "Both new and existing cases at a given time",
+      "Both new and existing cases",
       "Only cured cases"
     ],
     "correct_index": 2,
-    "explanation": "Prevalence includes ALL existing cases at a specific point in time.",
+    "explanation": "Prevalence includes ALL existing cases at a specific point in time.\n\nAdditional: at a given time",
     "difficulty": "medium",
     "tags": [
       "epidemiology",
@@ -545,12 +545,12 @@
     "question_text": "R0 represents:",
     "options": [
       "Total deaths",
-      "Average number of secondary cases from one infected person",
+      "Average number of secondary cases",
       "Number of hospitals",
       "Number of drugs needed"
     ],
     "correct_index": 1,
-    "explanation": "R0 is the average secondary infections from one person in a susceptible population.",
+    "explanation": "R0 is the average secondary infections from one person in a susceptible population.\n\nAdditional: from one infected person",
     "difficulty": "medium",
     "tags": [
       "epidemiology",
@@ -681,12 +681,12 @@
     "question_text": "Endemic disease means:",
     "options": [
       "Occurs suddenly",
-      "Constantly present in a specific geographic area",
+      "Constantly present in a",
       "Has been eliminated",
       "Affects only one person"
     ],
     "correct_index": 1,
-    "explanation": "Endemic diseases are constantly present in a specific area.",
+    "explanation": "Endemic diseases are constantly present in a specific area.\n\nAdditional: specific geographic area",
     "difficulty": "easy",
     "tags": [
       "epidemiology",
@@ -715,12 +715,12 @@
     "question_text": "Specific mortality rate measures deaths:",
     "options": [
       "From all causes",
-      "From a specific disease in a specific age/sex group",
+      "From a specific disease in",
       "Only in hospitals",
       "Only in urban areas"
     ],
     "correct_index": 1,
-    "explanation": "Specific mortality measures deaths from a particular cause in a subgroup.",
+    "explanation": "Specific mortality measures deaths from a particular cause in a subgroup.\n\nAdditional: a specific age/sex group",
     "difficulty": "medium",
     "tags": [
       "epidemiology",
@@ -732,12 +732,12 @@
     "question_text": "Attributable risk measures:",
     "options": [
       "Total disease burden",
-      "Excess risk in exposed vs unexposed group",
+      "Excess risk in exposed",
       "Cure rate",
       "Prevention rate"
     ],
     "correct_index": 1,
-    "explanation": "Attributable risk measures excess risk due to exposure.",
+    "explanation": "Attributable risk measures excess risk due to exposure.\n\nAdditional: vs unexposed group",
     "difficulty": "medium",
     "tags": [
       "epidemiology",
@@ -749,12 +749,12 @@
     "question_text": "Descriptive epidemiology involves:",
     "options": [
       "Testing a new drug",
-      "Describing disease by person, place, and time",
+      "Describing disease by person, place",
       "Conducting clinical trials",
       "Analyzing drug costs"
     ],
     "correct_index": 1,
-    "explanation": "Descriptive epi characterizes by person, place, and time.",
+    "explanation": "Descriptive epi characterizes by person, place, and time.\n\nNote: and time",
     "difficulty": "medium",
     "tags": [
       "epidemiology",
@@ -766,12 +766,12 @@
     "question_text": "Analytical epidemiology:",
     "options": [
       "Only observes",
-      "Tests hypotheses about exposure-disease relationships",
+      "Tests hypotheses about",
       "Only collects samples",
       "Only interviews"
     ],
     "correct_index": 1,
-    "explanation": "Analytical epi tests hypotheses about disease causation.",
+    "explanation": "Analytical epi tests hypotheses about disease causation.\n\nAdditional: exposure-disease relationships",
     "difficulty": "medium",
     "tags": [
       "epidemiology",
@@ -783,12 +783,12 @@
     "question_text": "Confounding is:",
     "options": [
       "A type of treatment",
-      "A variable distorting exposure-outcome association",
+      "A variable distorting",
       "A statistical test",
       "A data collection method"
     ],
     "correct_index": 1,
-    "explanation": "Confounders distort the true exposure-outcome relationship.",
+    "explanation": "Confounders distort the true exposure-outcome relationship.\n\nAdditional: exposure-outcome association",
     "difficulty": "medium",
     "tags": [
       "epidemiology",
@@ -834,12 +834,12 @@
     "question_text": "SODIS water purification involves:",
     "options": [
       "Adding chlorine",
-      "Transparent PET bottles exposed to sunlight 6+ hours",
+      "Transparent PET bottles exposed",
       "Boiling 30 minutes",
       "Electric purifier"
     ],
     "correct_index": 1,
-    "explanation": "SODIS uses sunlight and PET bottles for UV water disinfection.",
+    "explanation": "SODIS uses sunlight and PET bottles for UV water disinfection.\n\nAdditional: to sunlight 6+ hours",
     "difficulty": "medium",
     "tags": [
       "environmental health",
@@ -968,12 +968,12 @@
     "question_text": "Hospital waste segregation reduces:",
     "options": [
       "Waste quantity only",
-      "Infection risk and enables proper disposal",
+      "Infection risk and",
       "Costs only",
       "Waste weight"
     ],
     "correct_index": 1,
-    "explanation": "Segregation reduces infection risk and ensures proper treatment.",
+    "explanation": "Segregation reduces infection risk and ensures proper treatment.\n\nAdditional: enables proper disposal",
     "difficulty": "easy",
     "tags": [
       "waste management"
@@ -1001,12 +1001,12 @@
     "question_text": "Occupational health in pharmacy deals with:",
     "options": [
       "Patient safety only",
-      "Preventing work-related illnesses among pharmacy workers",
+      "Preventing work-related illnesses",
       "Marketing products",
       "Drug development"
     ],
     "correct_index": 1,
-    "explanation": "Occupational health prevents work-related hazards for pharmacy staff.",
+    "explanation": "Occupational health prevents work-related hazards for pharmacy staff.\n\nAdditional: among pharmacy workers",
     "difficulty": "easy",
     "tags": [
       "occupational health"
@@ -1017,12 +1017,12 @@
     "question_text": "Food poisoning is caused by:",
     "options": [
       "Eating too much",
-      "Food contaminated with bacteria, viruses, or toxins",
+      "Food contaminated with bacteria, viruses",
       "Eating quickly",
       "Spicy food"
     ],
     "correct_index": 1,
-    "explanation": "Food poisoning from pathogenic microorganisms or toxins.",
+    "explanation": "Food poisoning from pathogenic microorganisms or toxins.\n\nNote: or toxins",
     "difficulty": "easy",
     "tags": [
       "food hygiene"
@@ -1083,12 +1083,12 @@
     "question_text": "Food fortification means:",
     "options": [
       "Adding preservatives",
-      "Adding essential micronutrients to improve nutritional value",
+      "Adding essential micronutrients to",
       "Removing nutrients",
       "Making food taste better"
     ],
     "correct_index": 1,
-    "explanation": "Fortification adds micronutrients to food.",
+    "explanation": "Fortification adds micronutrients to food.\n\nAdditional: improve nutritional value",
     "difficulty": "easy",
     "tags": [
       "food hygiene",
@@ -1100,12 +1100,12 @@
     "question_text": "Composting is:",
     "options": [
       "Water purification",
-      "Solid waste disposal through biological decomposition",
+      "Solid waste disposal",
       "Air purification",
       "Nuclear waste disposal"
     ],
     "correct_index": 1,
-    "explanation": "Composting biologically decomposes organic waste into manure.",
+    "explanation": "Composting biologically decomposes organic waste into manure.\n\nAdditional: through biological decomposition",
     "difficulty": "easy",
     "tags": [
       "waste management",
@@ -1118,11 +1118,11 @@
     "options": [
       "General waste",
       "Infectious waste",
-      "Sharps (needles, blades)",
+      "Sharps",
       "Food waste"
     ],
     "correct_index": 2,
-    "explanation": "Blue/white bins are for sharps waste.",
+    "explanation": "Blue/white bins are for sharps waste.\n\nNote: needles, blades",
     "difficulty": "medium",
     "tags": [
       "waste management",
@@ -1134,12 +1134,12 @@
     "question_text": "Pharmacy occupational diseases commonly involve:",
     "options": [
       "Heart disease",
-      "Allergic reactions and respiratory issues",
+      "Allergic reactions and",
       "Bone fractures",
       "Vision loss"
     ],
     "correct_index": 1,
-    "explanation": "Pharmacy workers commonly get allergies from drug exposure.",
+    "explanation": "Pharmacy workers commonly get allergies from drug exposure.\n\nAdditional: respiratory issues",
     "difficulty": "easy",
     "tags": [
       "occupational health"
@@ -1167,12 +1167,12 @@
     "question_text": "Slow sand filtration works through:",
     "options": [
       "Chemical reaction only",
-      "Biological activity in biofilm and physical straining",
+      "Biological activity in biofilm",
       "Heating",
       "Adding chemicals"
     ],
     "correct_index": 1,
-    "explanation": "Slow sand filtration uses biological schmutzdecke layer.",
+    "explanation": "Slow sand filtration uses biological schmutzdecke layer.\n\nAdditional: and physical straining",
     "difficulty": "medium",
     "tags": [
       "water purification"
@@ -1199,12 +1199,12 @@
     "question_text": "What is public health pharmacy?",
     "options": {
       "a": "Selling drugs to the public",
-      "b": "The application of pharmacy practice to improve health outcomes at a population level",
+      "b": "The application of pharmacy practice to improve",
       "c": "Working only in hospitals",
       "d": "Manufacturing drugs for public use"
     },
     "correct_option": "b",
-    "explanation": "Public health pharmacy applies pharmaceutical knowledge and skills to promote health, prevent disease, and improve healthcare access at the community and population level.",
+    "explanation": "Public health pharmacy applies pharmaceutical knowledge and skills to promote health, prevent disease, and improve healthcare access at the community and population level.\n\nAdditional: health outcomes at a population level",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1216,12 +1216,12 @@
     "question_text": "What is the role of pharmacists in public health?",
     "options": {
       "a": "Only dispensing medications",
-      "b": "Health promotion, disease prevention, immunization, screening, and patient education",
+      "b": "Health promotion, disease prevention",
       "c": "Only manufacturing drugs",
       "d": "Only working in hospitals"
     },
     "correct_option": "b",
-    "explanation": "Pharmacists in public health engage in health promotion, vaccination, disease screening, patient education, tobacco cessation counseling, and community health programs.",
+    "explanation": "Pharmacists in public health engage in health promotion, vaccination, disease screening, patient education, tobacco cessation counseling, and community health programs.\n\nNote: immunization, screening, and patient education",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1233,12 +1233,12 @@
     "question_text": "What is immunization (vaccination)?",
     "options": {
       "a": "Treating an existing infection",
-      "b": "Administration of a vaccine to stimulate the immune system and provide protection against disease",
+      "b": "Administration of a vaccine to stimulate the",
       "c": "A type of surgery",
       "d": "Taking antibiotics preventively"
     },
     "correct_option": "b",
-    "explanation": "Immunization involves administering antigens (vaccines) to stimulate the immune system, producing antibodies and memory cells that protect against future infections.",
+    "explanation": "Immunization involves administering antigens (vaccines) to stimulate the immune system, producing antibodies and memory cells that protect against future infections.\n\nAdditional: immune system and provide protection against disease",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1302,12 +1302,12 @@
     "question_text": "What is a booster dose?",
     "options": {
       "a": "The first dose of a vaccine",
-      "b": "An additional dose given after the primary series to boost immunity",
+      "b": "An additional dose given after the",
       "c": "A dose given during pregnancy",
       "d": "A dose given to adults only"
     },
     "correct_option": "b",
-    "explanation": "A booster dose is administered after the primary vaccine series to re-stimulate the immune system and maintain protective immunity.",
+    "explanation": "A booster dose is administered after the primary vaccine series to re-stimulate the immune system and maintain protective immunity.\n\nAdditional: primary series to boost immunity",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1318,12 +1318,12 @@
     "question_text": "What is herd immunity?",
     "options": {
       "a": "Immunity of farmers",
-      "b": "Protection of a population when a sufficient proportion is immune to a disease",
+      "b": "Protection of a population when a sufficient",
       "c": "Immunity from eating meat",
       "d": "Immunity of doctors only"
     },
     "correct_option": "b",
-    "explanation": "Herd immunity occurs when enough people are immune to a disease (through vaccination or prior infection), making its spread unlikely, thus protecting those who are not immune.",
+    "explanation": "Herd immunity occurs when enough people are immune to a disease (through vaccination or prior infection), making its spread unlikely, thus protecting those who are not immune.\n\nAdditional: proportion is immune to a disease",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1352,12 +1352,12 @@
     "question_text": "What is cold chain in immunization?",
     "options": {
       "a": "A type of vaccine",
-      "b": "The system of storing and transporting vaccines at recommended temperatures from manufacturer to administration",
+      "b": "The system of storing and transporting vaccines",
       "c": "A method of sterilization",
       "d": "A type of syringe"
     },
     "correct_option": "b",
-    "explanation": "Cold chain maintains vaccines at recommended temperatures (usually 2-8°C) throughout storage and transportation to preserve their potency and effectiveness.",
+    "explanation": "Cold chain maintains vaccines at recommended temperatures (usually 2-8°C) throughout storage and transportation to preserve their potency and effectiveness.\n\nAdditional: at recommended temperatures from manufacturer to administration",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1403,12 +1403,12 @@
     "question_text": "What is the Expanded Programme on Immunization (EPI)?",
     "options": {
       "a": "A private company's marketing program",
-      "b": "WHO's global initiative to ensure all children are immunized against preventable diseases",
+      "b": "WHO's global initiative to ensure all",
       "c": "A program to expand pharmacies",
       "d": "An education program for pharmacists"
     },
     "correct_option": "b",
-    "explanation": "EPI was launched by WHO in 1974 to make vaccines available to all children worldwide. Nepal adopted EPI in 1978, targeting diseases like polio, measles, diphtheria, and tetanus.",
+    "explanation": "EPI was launched by WHO in 1974 to make vaccines available to all children worldwide. Nepal adopted EPI in 1978, targeting diseases like polio, measles, diphtheria, and tetanus.\n\nAdditional: children are immunized against preventable diseases",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1421,12 +1421,12 @@
     "question_text": "What is the vaccine vial monitor (VVM)?",
     "options": {
       "a": "A syringe",
-      "b": "A heat-sensitive label on vaccine vials indicating if the vaccine has been exposed to excessive heat",
+      "b": "A heat-sensitive label on vaccine vials indicating if",
       "c": "A thermometer",
       "d": "A storage box"
     },
     "correct_option": "b",
-    "explanation": "VVM is a circular label that changes color when exposed to heat over time. If the inner square becomes darker than the outer circle, the vaccine should not be used.",
+    "explanation": "VVM is a circular label that changes color when exposed to heat over time. If the inner square becomes darker than the outer circle, the vaccine should not be used.\n\nAdditional: the vaccine has been exposed to excessive heat",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1438,12 +1438,12 @@
     "question_text": "What is an adverse event following immunization (AEFI)?",
     "options": {
       "a": "A manufacturing defect",
-      "b": "Any untoward medical occurrence after vaccination, whether or not it is caused by the vaccine",
+      "b": "Any untoward medical occurrence after vaccination whether or",
       "c": "A benefit of vaccination",
       "d": "A normal immune response"
     },
     "correct_option": "b",
-    "explanation": "AEFI encompasses any undesirable event occurring after immunization, including vaccine-related reactions, coincidental events, and programmatic errors.",
+    "explanation": "AEFI encompasses any undesirable event occurring after immunization, including vaccine-related reactions, coincidental events, and programmatic errors.\n\nAdditional: not it is caused by the vaccine",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1455,12 +1455,12 @@
     "question_text": "What is anaphylaxis as an AEFI?",
     "options": {
       "a": "Mild rash at injection site",
-      "b": "A severe, life-threatening allergic reaction occurring within minutes of vaccination",
+      "b": "A severe life-threatening allergic reaction",
       "c": "Fever after vaccination",
       "d": "Soreness at the injection site"
     },
     "correct_option": "b",
-    "explanation": "Anaphylaxis is a rare but serious AEFI characterized by sudden onset of difficulty breathing, swelling, low blood pressure, requiring immediate treatment with epinephrine.",
+    "explanation": "Anaphylaxis is a rare but serious AEFI characterized by sudden onset of difficulty breathing, swelling, low blood pressure, requiring immediate treatment with epinephrine.\n\nAdditional: occurring within minutes of vaccination",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1472,12 +1472,12 @@
     "question_text": "What is the contraindication for BCG vaccine?",
     "options": {
       "a": "Being underweight",
-      "b": "HIV infection with severe immunosuppression",
+      "b": "HIV infection with",
       "c": "Having a cold",
       "d": "Being a newborn"
     },
     "correct_option": "b",
-    "explanation": "BCG is contraindicated in severely immunocompromised individuals (e.g., advanced HIV) due to risk of disseminated BCG infection. It is safe for HIV-positive children with normal immunity.",
+    "explanation": "BCG is contraindicated in severely immunocompromised individuals (e.g., advanced HIV) due to risk of disseminated BCG infection. It is safe for HIV-positive children with normal immunity.\n\nAdditional: severe immunosuppression",
     "subject": "public-health-pharmacy",
     "difficulty": "hard",
     "tags": [
@@ -1489,12 +1489,12 @@
     "question_text": "What is the primary target disease of the Pentavalent vaccine?",
     "options": {
       "a": "Measles only",
-      "b": "Diphtheria, Tetanus, Pertussis, Hepatitis B, and Haemophilus influenzae type b",
+      "b": "Diphtheria, Tetanus",
       "c": "Polio only",
       "d": "Tuberculosis only"
     },
     "correct_option": "b",
-    "explanation": "Pentavalent vaccine protects against 5 diseases: Diphtheria, Tetanus, Pertussis (whooping cough), Hepatitis B, and Hib (which causes meningitis and pneumonia).",
+    "explanation": "Pentavalent vaccine protects against 5 diseases: Diphtheria, Tetanus, Pertussis (whooping cough), Hepatitis B, and Hib (which causes meningitis and pneumonia).\n\nNote: Pertussis, Hepatitis B, and Haemophilus influenzae type b",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1506,12 +1506,12 @@
     "question_text": "What is the schedule for Hepatitis B vaccine in Nepal?",
     "options": {
       "a": "Single dose at birth",
-      "b": "3 doses: at birth, 6 weeks, and 10 weeks",
+      "b": "3 doses: at birth, 6 weeks",
       "c": "2 doses at 6 months",
       "d": "1 dose at 5 years"
     },
     "correct_option": "b",
-    "explanation": "Nepal's schedule gives Hepatitis B vaccine as: dose 0 at birth (within 24 hours), dose 1 at 6 weeks, dose 2 at 10 weeks, with booster at 14 weeks (as part of Pentavalent).",
+    "explanation": "Nepal's schedule gives Hepatitis B vaccine as: dose 0 at birth (within 24 hours), dose 1 at 6 weeks, dose 2 at 10 weeks, with booster at 14 weeks (as part of Pentavalent).\n\nNote: and 10 weeks",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1522,13 +1522,13 @@
   {
     "question_text": "What is the oral rehydration salt (ORS) formula?",
     "options": {
-      "a": "Sugar and salt dissolved in water in specific proportions",
+      "a": "Sugar and salt dissolved in",
       "b": "Antibiotic solution",
       "c": "Electrolyte-free sugar water",
       "d": "Pure salt water"
     },
     "correct_option": "a",
-    "explanation": "ORS contains specific amounts of sodium chloride, potassium chloride, trisodium citrate, and glucose dissolved in water. WHO's low-osmolarity ORS formula is the standard for treating dehydration.",
+    "explanation": "ORS contains specific amounts of sodium chloride, potassium chloride, trisodium citrate, and glucose dissolved in water. WHO's low-osmolarity ORS formula is the standard for treating dehydration.\n\nAdditional: water in specific proportions",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1540,12 +1540,12 @@
     "question_text": "What is Zinc supplementation used for in childhood diarrhea?",
     "options": {
       "a": "To stop the diarrhea immediately",
-      "b": "To reduce duration and severity of diarrhea and prevent recurrence for 2-3 months",
+      "b": "To reduce duration and severity of diarrhea",
       "c": "To treat bacterial infection",
       "d": "To increase appetite"
     },
     "correct_option": "b",
-    "explanation": "Zinc supplementation (10mg/day for 10-14 days for children under 6 months, 20mg/day for older children) reduces diarrhea duration, severity, and recurrence.",
+    "explanation": "Zinc supplementation (10mg/day for 10-14 days for children under 6 months, 20mg/day for older children) reduces diarrhea duration, severity, and recurrence.\n\nAdditional: and prevent recurrence for 2-3 months",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1557,12 +1557,12 @@
     "question_text": "What is Integrated Management of Childhood Illness (IMCI)?",
     "options": {
       "a": "Treating only fever in children",
-      "b": "A WHO strategy combining management of multiple childhood illnesses with nutrition and immunization",
+      "b": "A WHO strategy combining management of multiple",
       "c": "Surgical treatment of children",
       "d": "A vaccination-only program"
     },
     "correct_option": "b",
-    "explanation": "IMCI is a comprehensive approach that integrates management of major childhood illnesses (pneumonia, diarrhea, malaria, measles) with nutrition assessment and immunization.",
+    "explanation": "IMCI is a comprehensive approach that integrates management of major childhood illnesses (pneumonia, diarrhea, malaria, measles) with nutrition assessment and immunization.\n\nAdditional: childhood illnesses with nutrition and immunization",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1574,12 +1574,12 @@
     "question_text": "What is the first-line treatment for uncomplicated Plasmodium falciparum malaria?",
     "options": {
       "a": "Chloroquine",
-      "b": "Artemisinin-based Combination Therapy (ACT)",
+      "b": "Artemisinin-based Combination Therapy",
       "c": "Penicillin",
       "d": "Paracetamol alone"
     },
     "correct_option": "b",
-    "explanation": "WHO recommends ACT (like Artemether-Lumefantrine) as first-line treatment for uncomplicated P. falciparum malaria due to widespread chloroquine resistance.",
+    "explanation": "WHO recommends ACT (like Artemether-Lumefantrine) as first-line treatment for uncomplicated P. falciparum malaria due to widespread chloroquine resistance.\n\nNote: ACT",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1591,12 +1591,12 @@
     "question_text": "What is Directly Observed Treatment Short-course (DOTS) for tuberculosis?",
     "options": {
       "a": "Self-medication at home",
-      "b": "A strategy where a healthcare worker watches the patient take each dose of TB medication",
+      "b": "A strategy where a healthcare worker watches the",
       "c": "Treating TB with surgery",
       "d": "Using only herbal medicine"
     },
     "correct_option": "b",
-    "explanation": "DOTS ensures treatment adherence by having a trained person observe and record each dose. It includes: political commitment, good diagnostics, reliable drug supply, recording system, and direct observation.",
+    "explanation": "DOTS ensures treatment adherence by having a trained person observe and record each dose. It includes: political commitment, good diagnostics, reliable drug supply, recording system, and direct observation.\n\nAdditional: patient take each dose of TB medication",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1608,12 +1608,12 @@
     "question_text": "How long is the standard anti-TB treatment regimen (Category I)?",
     "options": {
       "a": "3 months",
-      "b": "6 months (2 months intensive + 4 months continuation)",
+      "b": "6 months",
       "c": "12 months",
       "d": "2 months only"
     },
     "correct_option": "b",
-    "explanation": "Category I TB treatment: Intensive phase (2 months: Isoniazid, Rifampicin, Pyrazinamide, Ethambutol) followed by continuation phase (4 months: Isoniazid + Rifampicin).",
+    "explanation": "Category I TB treatment: Intensive phase (2 months: Isoniazid, Rifampicin, Pyrazinamide, Ethambutol) followed by continuation phase (4 months: Isoniazid + Rifampicin).\n\nNote: 2 months intensive + 4 months continuation",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1624,7 +1624,7 @@
   {
     "question_text": "What are the first-line anti-TB drugs (RIPE)?",
     "options": {
-      "a": "Rifampicin, Isoniazid, Pyrazinamide, Ethambutol",
+      "a": "Rifampicin, Isoniazid, Pyrazinamide",
       "b": "Penicillin, Amoxicillin, Erythromycin",
       "c": "Metformin, Insulin, Glipizide",
       "d": "Paracetamol, Ibuprofen, Aspirin"
@@ -1642,12 +1642,12 @@
     "question_text": "What is multi-drug resistant TB (MDR-TB)?",
     "options": {
       "a": "TB resistant to one drug",
-      "b": "TB resistant to at least Isoniazid and Rifampicin, the two most powerful first-line drugs",
+      "b": "TB resistant to at least Isoniazid and",
       "c": "TB that cannot be treated",
       "d": "TB caused by multiple bacteria"
     },
     "correct_option": "b",
-    "explanation": "MDR-TB is defined as resistance to at least Isoniazid and Rifampicin. It requires longer treatment (9-20 months) with second-line drugs that are more toxic and expensive.",
+    "explanation": "MDR-TB is defined as resistance to at least Isoniazid and Rifampicin. It requires longer treatment (9-20 months) with second-line drugs that are more toxic and expensive.\n\nAdditional: Rifampicin the two most powerful first-line drugs",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1659,12 +1659,12 @@
     "question_text": "What is directly observed therapy (DOT) in TB control?",
     "options": {
       "a": "Patient self-administers medication",
-      "b": "A trained person directly observes the patient swallowing TB medications",
+      "b": "A trained person directly observes",
       "c": "A surgical procedure",
       "d": "An X-ray examination"
     },
     "correct_option": "b",
-    "explanation": "DOT ensures the patient takes every dose as prescribed, reducing the chance of treatment failure, relapse, and development of drug resistance.",
+    "explanation": "DOT ensures the patient takes every dose as prescribed, reducing the chance of treatment failure, relapse, and development of drug resistance.\n\nAdditional: the patient swallowing TB medications",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1676,12 +1676,12 @@
     "question_text": "What is the RNTCP (Revised National Tuberculosis Control Programme) in Nepal?",
     "options": {
       "a": "A private TB clinic",
-      "b": "The national government program for TB prevention, diagnosis, and treatment",
+      "b": "The national government program",
       "c": "A TB research lab",
       "d": "An international TB charity"
     },
     "correct_option": "b",
-    "explanation": "RNTCP (now called National Tuberculosis Programme) is Nepal's government initiative implementing DOTS strategy for TB control with standardized treatment protocols.",
+    "explanation": "RNTCP (now called National Tuberculosis Programme) is Nepal's government initiative implementing DOTS strategy for TB control with standardized treatment protocols.\n\nNote: and treatment\n\nAdditional: for TB prevention diagnosis",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1710,12 +1710,12 @@
     "question_text": "What is the DOTS-Plus programme?",
     "options": {
       "a": "Standard DOTS with extra funding",
-      "b": "DOTS strategy adapted for MDR-TB management using second-line drugs",
+      "b": "DOTS strategy adapted for MDR-TB",
       "c": "A children's TB program",
       "d": "A TB prevention program only"
     },
     "correct_option": "b",
-    "explanation": "DOTS-Plus extends the DOTS framework to manage MDR-TB cases with second-line anti-TB drugs under supervised conditions.",
+    "explanation": "DOTS-Plus extends the DOTS framework to manage MDR-TB cases with second-line anti-TB drugs under supervised conditions.\n\nAdditional: management using second-line drugs",
     "subject": "public-health-pharmacy",
     "difficulty": "hard",
     "tags": [
@@ -1760,12 +1760,12 @@
     "question_text": "What is the primary treatment for cholera?",
     "options": {
       "a": "Antibiotics first",
-      "b": "Aggressive fluid replacement with ORS and IV fluids",
+      "b": "Aggressive fluid replacement with",
       "c": "Surgery",
       "d": "Vaccination"
     },
     "correct_option": "b",
-    "explanation": "The cornerstone of cholera treatment is aggressive rehydration. ORS for mild-moderate cases, IV Ringer's lactate for severe dehydration. Antibiotics are secondary.",
+    "explanation": "The cornerstone of cholera treatment is aggressive rehydration. ORS for mild-moderate cases, IV Ringer's lactate for severe dehydration. Antibiotics are secondary.\n\nAdditional: ORS and IV fluids",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1777,12 +1777,12 @@
     "question_text": "What is the most effective way to prevent cholera?",
     "options": {
       "a": "Taking antibiotics daily",
-      "b": "Access to safe drinking water and proper sanitation",
+      "b": "Access to safe drinking",
       "c": "Avoiding all food",
       "d": "Wearing masks"
     },
     "correct_option": "b",
-    "explanation": "Safe water, adequate sanitation, and good hygiene (WASH) are the most effective cholera prevention measures. Vaccination provides additional protection.",
+    "explanation": "Safe water, adequate sanitation, and good hygiene (WASH) are the most effective cholera prevention measures. Vaccination provides additional protection.\n\nAdditional: water and proper sanitation",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1810,12 +1810,12 @@
     "question_text": "What is the first-line antibiotic treatment for typhoid fever?",
     "options": {
       "a": "Amoxicillin",
-      "b": "Ciprofloxacin or Azithromycin (Ceftriaxone for resistant cases)",
+      "b": "Ciprofloxacin or Azithromycin",
       "c": "Metronidazole",
       "d": "Paracetamol alone"
     },
     "correct_option": "b",
-    "explanation": "Ciprofloxacin (fluoroquinolone) is first-line for uncomplicated typhoid. Azithromycin is an alternative. For MDR typhoid, Ceftriaxone (third-gen cephalosporin) is used.",
+    "explanation": "Ciprofloxacin (fluoroquinolone) is first-line for uncomplicated typhoid. Azithromycin is an alternative. For MDR typhoid, Ceftriaxone (third-gen cephalosporin) is used.\n\nNote: Ceftriaxone for resistant cases",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1827,7 +1827,7 @@
     "question_text": "What is a vector-borne disease?",
     "options": {
       "a": "A disease spread by food",
-      "b": "A disease transmitted by an intermediate organism (vector) like a mosquito or tick",
+      "b": "A disease transmitted by an intermediate organism like a mosquito or tick",
       "c": "A disease spread through water",
       "d": "A disease caused by vitamin deficiency"
     },
@@ -1877,12 +1877,12 @@
     "question_text": "What is the treatment for dengue fever?",
     "options": {
       "a": "Antibiotics",
-      "b": "Supportive care with fluids, rest, and paracetamol (avoid aspirin/ibuprofen)",
+      "b": "Supportive care with fluids, rest",
       "c": "Antimalarial drugs",
       "d": "Antiviral drugs"
     },
     "correct_option": "b",
-    "explanation": "Dengue has no specific antiviral treatment. Management is supportive: adequate hydration, rest, and paracetamol for fever. NSAIDs are avoided due to bleeding risk.",
+    "explanation": "Dengue has no specific antiviral treatment. Management is supportive: adequate hydration, rest, and paracetamol for fever. NSAIDs are avoided due to bleeding risk.\n\nNote: and paracetamol; avoid aspirin/ibuprofen",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1894,12 +1894,12 @@
     "question_text": "What is the danger sign in dengue that indicates progression to dengue hemorrhagic fever?",
     "options": {
       "a": "Mild headache",
-      "b": "Severe abdominal pain, persistent vomiting, bleeding from gums/nose, and plasma leakage",
+      "b": "Severe abdominal pain",
       "c": "Mild fever",
       "d": "Runny nose"
     },
     "correct_option": "b",
-    "explanation": "Danger signs include: severe abdominal pain, persistent vomiting, bleeding manifestations, lethargy, hepatomegaly, and rising hematocrit with dropping platelets.",
+    "explanation": "Danger signs include: severe abdominal pain, persistent vomiting, bleeding manifestations, lethargy, hepatomegaly, and rising hematocrit with dropping platelets.\n\nNote: bleeding from gums/nose, and plasma leakage\n\nAdditional: persistent vomiting",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -1911,12 +1911,12 @@
     "question_text": "What is the role of an Environmental Health Officer (EHO)?",
     "options": {
       "a": "Treating patients in hospital",
-      "b": "Monitoring and controlling environmental factors affecting public health including water, sanitation, and food safety",
+      "b": "Monitoring and controlling environmental factors affecting",
       "c": "Dispensing medications",
       "d": "Performing surgery"
     },
     "correct_option": "b",
-    "explanation": "EHOs inspect food establishments, monitor water quality, manage waste disposal, control vector breeding sites, and enforce public health regulations.",
+    "explanation": "EHOs inspect food establishments, monitor water quality, manage waste disposal, control vector breeding sites, and enforce public health regulations.\n\nNote: and food safety\n\nAdditional: public health including water sanitation",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1927,12 +1927,12 @@
     "question_text": "What is food safety in public health?",
     "options": {
       "a": "Only about cooking temperature",
-      "b": "Ensuring food is handled, prepared, and stored to prevent foodborne illness",
+      "b": "Ensuring food is handled, prepared",
       "c": "Only about expiry dates",
       "d": "Only about food coloring"
     },
     "correct_option": "b",
-    "explanation": "Food safety encompasses the proper handling, preparation, storage, and serving of food to prevent contamination and foodborne illnesses (the 5 keys to food safety).",
+    "explanation": "Food safety encompasses the proper handling, preparation, storage, and serving of food to prevent contamination and foodborne illnesses (the 5 keys to food safety).\n\nNote: and stored to prevent foodborne illness",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1943,12 +1943,12 @@
     "question_text": "What is WHO's 5 keys to food safety?",
     "options": {
       "a": "Only keep food cold",
-      "b": "Keep clean, separate raw and cooked, cook thoroughly, keep food at safe temperatures, use safe water and raw materials",
+      "b": "Keep clean, separate raw and cooked",
       "c": "Wash hands once a day",
       "d": "Only eat cooked food"
     },
     "correct_option": "b",
-    "explanation": "WHO's 5 keys: 1) Keep clean, 2) Separate raw and cooked, 3) Cook thoroughly, 4) Keep food at safe temperatures, 5) Use safe water and raw materials.",
+    "explanation": "WHO's 5 keys: 1) Keep clean, 2) Separate raw and cooked, 3) Cook thoroughly, 4) Keep food at safe temperatures, 5) Use safe water and raw materials.\n\nNote: cook thoroughly, keep food at safe temperatures, use safe water and raw materials",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1976,12 +1976,12 @@
     "question_text": "What is antimicrobial resistance (AMR)?",
     "options": {
       "a": "The ability of the body to fight infection",
-      "b": "Microorganisms becoming resistant to antimicrobial drugs, making infections harder to treat",
+      "b": "Microorganisms becoming resistant to antimicrobial drugs",
       "c": "An allergic reaction to antibiotics",
       "d": "The strength of an antibiotic"
     },
     "correct_option": "b",
-    "explanation": "AMR occurs when bacteria, viruses, fungi, and parasites evolve to resist the effects of antimicrobial drugs, making standard treatments ineffective and infections harder to treat.",
+    "explanation": "AMR occurs when bacteria, viruses, fungi, and parasites evolve to resist the effects of antimicrobial drugs, making standard treatments ineffective and infections harder to treat.\n\nAdditional: making infections harder to treat",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -1992,12 +1992,12 @@
     "question_text": "What is the main cause of antimicrobial resistance?",
     "options": {
       "a": "Natural disasters",
-      "b": "Overuse and misuse of antimicrobial drugs in humans, animals, and agriculture",
+      "b": "Overuse and misuse of antimicrobial",
       "c": "Exercise",
       "d": "Healthy diet"
     },
     "correct_option": "b",
-    "explanation": "AMR is primarily driven by overuse (prescribing antibiotics for viral infections), misuse (incomplete courses), and agricultural use (growth promotion in livestock).",
+    "explanation": "AMR is primarily driven by overuse (prescribing antibiotics for viral infections), misuse (incomplete courses), and agricultural use (growth promotion in livestock).\n\nNote: and agriculture\n\nAdditional: drugs in humans animals",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2009,12 +2009,12 @@
     "question_text": "What is the WHO Global Action Plan on AMR?",
     "options": {
       "a": "A plan to increase antibiotic sales",
-      "b": "A comprehensive strategy with 5 objectives to combat antimicrobial resistance globally",
+      "b": "A comprehensive strategy with 5 objectives",
       "c": "A plan to ban all antibiotics",
       "d": "A research-only program"
     },
     "correct_option": "b",
-    "explanation": "WHO's GAP on AMR includes 5 objectives: awareness, surveillance, rational use, infection prevention, and investment in R&D for new drugs and diagnostics.",
+    "explanation": "WHO's GAP on AMR includes 5 objectives: awareness, surveillance, rational use, infection prevention, and investment in R&D for new drugs and diagnostics.\n\nAdditional: to combat antimicrobial resistance globally",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2026,12 +2026,12 @@
     "question_text": "What is antibiotic stewardship?",
     "options": {
       "a": "Selling antibiotics",
-      "b": "A coordinated program to promote appropriate antibiotic use and reduce resistance",
+      "b": "A coordinated program to promote appropriate",
       "c": "Manufacturing antibiotics",
       "d": "Storing antibiotics properly only"
     },
     "correct_option": "b",
-    "explanation": "Antibiotic stewardship involves coordinated interventions to optimize antibiotic use, ensure correct drug/dose/duration, and minimize the development of resistance.",
+    "explanation": "Antibiotic stewardship involves coordinated interventions to optimize antibiotic use, ensure correct drug/dose/duration, and minimize the development of resistance.\n\nAdditional: antibiotic use and reduce resistance",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2043,12 +2043,12 @@
     "question_text": "What is a public health emergency?",
     "options": {
       "a": "A personal medical emergency",
-      "b": "An event or situation that poses an immediate risk to the health of a population",
+      "b": "An event or situation that poses an immediate",
       "c": "A hospital fire",
       "d": "A traffic accident"
     },
     "correct_option": "b",
-    "explanation": "Public health emergencies include epidemics, pandemics, natural disasters, bioterrorism, or chemical events that require an immediate coordinated public health response.",
+    "explanation": "Public health emergencies include epidemics, pandemics, natural disasters, bioterrorism, or chemical events that require an immediate coordinated public health response.\n\nAdditional: risk to the health of a population",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2059,12 +2059,12 @@
     "question_text": "What is the International Health Regulations (IHR)?",
     "options": {
       "a": "A trade agreement",
-      "b": "A legal framework requiring countries to detect, report, and respond to public health emergencies of international concern",
+      "b": "A legal framework requiring",
       "c": "A drug pricing regulation",
       "d": "A food safety law"
     },
     "correct_option": "b",
-    "explanation": "IHR (2005) is a legally binding international agreement requiring 196 countries to build capacity to detect, assess, report, and respond to public health events.",
+    "explanation": "IHR (2005) is a legally binding international agreement requiring 196 countries to build capacity to detect, assess, report, and respond to public health events.\n\nNote: and respond to public health emergencies of international concern\n\nAdditional: countries to detect report",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2076,12 +2076,12 @@
     "question_text": "What is a pandemic?",
     "options": {
       "a": "An epidemic confined to one city",
-      "b": "An epidemic that has spread across multiple countries or continents affecting a large number of people",
+      "b": "An epidemic that has spread across multiple countries",
       "c": "A single case of a disease",
       "d": "An endemic disease"
     },
     "correct_option": "b",
-    "explanation": "A pandemic is an epidemic that spreads globally across multiple countries/continents. COVID-19 was declared a pandemic by WHO in March 2020.",
+    "explanation": "A pandemic is an epidemic that spreads globally across multiple countries/continents. COVID-19 was declared a pandemic by WHO in March 2020.\n\nAdditional: or continents affecting a large number of people",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2092,12 +2092,12 @@
     "question_text": "What is the difference between epidemic and endemic?",
     "options": {
       "a": "No difference",
-      "b": "Epidemic is a sudden increase in disease above normal; endemic is the constant presence of a disease in a population",
+      "b": "Epidemic is a sudden increase in disease above normal; endemic",
       "c": "Endemic is worse than epidemic",
       "d": "Epidemic is always deadly"
     },
     "correct_option": "b",
-    "explanation": "Endemic diseases are constantly present in a region (e.g., malaria in tropics). Epidemics are sudden increases above expected levels (e.g., dengue outbreak).",
+    "explanation": "Endemic diseases are constantly present in a region (e.g., malaria in tropics). Epidemics are sudden increases above expected levels (e.g., dengue outbreak).\n\nAdditional: is the constant presence of a disease in a population",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2108,12 +2108,12 @@
     "question_text": "What is surveillance in public health?",
     "options": {
       "a": "Watching TV",
-      "b": "Continuous, systematic collection, analysis, and interpretation of health data for disease prevention and control",
+      "b": "Continuous, systematic collection",
       "c": "A type of treatment",
       "d": "Patient registration"
     },
     "correct_option": "b",
-    "explanation": "Public health surveillance is the ongoing systematic collection, analysis, and interpretation of health data to detect outbreaks, monitor trends, and evaluate control measures.",
+    "explanation": "Public health surveillance is the ongoing systematic collection, analysis, and interpretation of health data to detect outbreaks, monitor trends, and evaluate control measures.\n\nNote: analysis, and interpretation of health data for disease prevention and control",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2125,12 +2125,12 @@
     "question_text": "What is contact tracing?",
     "options": {
       "a": "Tracing a phone call",
-      "b": "Identifying and monitoring people who have been in close contact with an infected person",
+      "b": "Identifying and monitoring people who have been",
       "c": "Contacting drug suppliers",
       "d": "Following up with patients after surgery"
     },
     "correct_option": "b",
-    "explanation": "Contact tracing involves identifying, notifying, and monitoring individuals who may have been exposed to an infectious disease to break the chain of transmission.",
+    "explanation": "Contact tracing involves identifying, notifying, and monitoring individuals who may have been exposed to an infectious disease to break the chain of transmission.\n\nAdditional: in close contact with an infected person",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2142,12 +2142,12 @@
     "question_text": "What is an outbreak investigation?",
     "options": {
       "a": "Investigating a single patient case",
-      "b": "A systematic process to identify the cause, source, and control measures for an epidemic",
+      "b": "A systematic process to identify the cause, source",
       "c": "A police investigation",
       "d": "An audit of drug inventory"
     },
     "correct_option": "b",
-    "explanation": "Outbreak investigation follows steps: verify diagnosis, establish case definition, search for cases, describe data, develop hypotheses, test hypotheses, implement control, and report.",
+    "explanation": "Outbreak investigation follows steps: verify diagnosis, establish case definition, search for cases, describe data, develop hypotheses, test hypotheses, implement control, and report.\n\nNote: and control measures for an epidemic",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2158,12 +2158,12 @@
     "question_text": "What is a case definition in epidemiology?",
     "options": {
       "a": "A legal definition of disease",
-      "b": "A set of criteria for deciding whether a person has a particular disease or health condition",
+      "b": "A set of criteria for deciding whether a",
       "c": "A drug definition",
       "d": "A medical textbook entry"
     },
     "correct_option": "b",
-    "explanation": "A case definition specifies criteria (clinical symptoms, laboratory results, time, place, person) to classify cases as confirmed, probable, or suspected during an investigation.",
+    "explanation": "A case definition specifies criteria (clinical symptoms, laboratory results, time, place, person) to classify cases as confirmed, probable, or suspected during an investigation.\n\nAdditional: person has a particular disease or health condition",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2175,12 +2175,12 @@
     "question_text": "What is maternal health in public health?",
     "options": {
       "a": "Health of the fetus only",
-      "b": "The health of women during pregnancy, childbirth, and the postpartum period",
+      "b": "The health of women during pregnancy, childbirth",
       "c": "Health of elderly women",
       "d": "Child vaccination"
     },
     "correct_option": "b",
-    "explanation": "Maternal health encompasses the health of women during pregnancy, labor, delivery, and postpartum, including prevention and management of complications.",
+    "explanation": "Maternal health encompasses the health of women during pregnancy, labor, delivery, and postpartum, including prevention and management of complications.\n\nNote: and the postpartum period",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2191,7 +2191,7 @@
     "question_text": "What is the recommended supplementation of iron and folic acid during pregnancy in Nepal?",
     "options": {
       "a": "Iron and folic acid for the entire pregnancy",
-      "b": "Iron-folic acid (IFA) supplementation from first antenatal visit through postpartum",
+      "b": "Iron-folic acid supplementation from first antenatal visit through postpartum",
       "c": "Only during the last trimester",
       "d": "Only if anemic"
     },
@@ -2208,12 +2208,12 @@
     "question_text": "What is the role of calcium supplementation in pregnancy?",
     "options": {
       "a": "No role",
-      "b": "Reduces risk of pre-eclampsia and eclampsia, especially in populations with low dietary calcium intake",
+      "b": "Reduces risk of pre-eclampsia and eclampsia especially",
       "c": "Causes birth defects",
       "d": "Increases blood pressure"
     },
     "correct_option": "b",
-    "explanation": "Calcium supplementation (1.5-2g/day) during pregnancy reduces the risk of pre-eclampsia, particularly in populations with low calcium intake, as recommended by WHO.",
+    "explanation": "Calcium supplementation (1.5-2g/day) during pregnancy reduces the risk of pre-eclampsia, particularly in populations with low calcium intake, as recommended by WHO.\n\nAdditional: in populations with low dietary calcium intake",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2225,12 +2225,12 @@
     "question_text": "What is postpartum hemorrhage (PPH)?",
     "options": {
       "a": "Bleeding during pregnancy",
-      "b": "Loss of 500ml or more of blood within 24 hours after delivery",
+      "b": "Loss of 500ml or more of",
       "c": "Normal bleeding after delivery",
       "d": "Nosebleed after delivery"
     },
     "correct_option": "b",
-    "explanation": "PPH is defined as blood loss of 500ml or more after vaginal delivery or 1000ml after cesarean section. It is a leading cause of maternal mortality worldwide.",
+    "explanation": "PPH is defined as blood loss of 500ml or more after vaginal delivery or 1000ml after cesarean section. It is a leading cause of maternal mortality worldwide.\n\nAdditional: blood within 24 hours after delivery",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2242,12 +2242,12 @@
     "question_text": "What is the drug of choice for preventing postpartum hemorrhage?",
     "options": {
       "a": "Paracetamol",
-      "b": "Oxytocin (injected) or Misoprostol (oral/rectal)",
+      "b": "Oxytocin or Misoprostol",
       "c": "Amoxicillin",
       "d": "Ibuprofen"
     },
     "correct_option": "b",
-    "explanation": "Oxytocin is the gold standard for PPH prevention (10 IU IM after delivery). Misoprostol (600mcg oral) is an alternative when oxytocin is unavailable, especially in community settings.",
+    "explanation": "Oxytocin is the gold standard for PPH prevention (10 IU IM after delivery). Misoprostol (600mcg oral) is an alternative when oxytocin is unavailable, especially in community settings.\n\nNote: oral/rectal\n\nNote: injected",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2259,12 +2259,12 @@
     "question_text": "What is neonatal tetanus?",
     "options": {
       "a": "Tetanus in adults",
-      "b": "A fatal infection of newborns caused by Clostridium tetani entering through the umbilical cord stump",
+      "b": "A fatal infection of newborns caused by Clostridium",
       "c": "Tetanus after vaccination",
       "d": "Tetanus from a wound"
     },
     "correct_option": "b",
-    "explanation": "Neonatal tetanus occurs when C. tetani spores contaminate the umbilical stump during unhygienic delivery/cutting. It causes fatal muscle spasms. Prevention: maternal immunization + clean delivery.",
+    "explanation": "Neonatal tetanus occurs when C. tetani spores contaminate the umbilical stump during unhygienic delivery/cutting. It causes fatal muscle spasms. Prevention: maternal immunization + clean delivery.\n\nAdditional: tetani entering through the umbilical cord stump",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2276,12 +2276,12 @@
     "question_text": "What is child health in public health context?",
     "options": {
       "a": "Only treating childhood diseases",
-      "b": "Comprehensive approach to promoting physical, mental, and social well-being of children from birth to adolescence",
+      "b": "Comprehensive approach to promoting physical, mental",
       "c": "Only vaccination",
       "d": "Only nutrition"
     },
     "correct_option": "b",
-    "explanation": "Child health encompasses nutrition, immunization, disease prevention, growth monitoring, mental health, and creating environments that support healthy child development.",
+    "explanation": "Child health encompasses nutrition, immunization, disease prevention, growth monitoring, mental health, and creating environments that support healthy child development.\n\nNote: and social well-being of children from birth to adolescence",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2292,12 +2292,12 @@
     "question_text": "What is the Integrated Management of Neonatal and Childhood Illness (IMNCI)?",
     "options": {
       "a": "A surgical program",
-      "b": "A strategy integrating management of major causes of neonatal and childhood illness with growth, nutrition, and immunization",
+      "b": "A strategy integrating management of major causes of",
       "c": "A vaccination-only program",
       "d": "A nutrition program only"
     },
     "correct_option": "b",
-    "explanation": "IMNCI (updated version of IMCI) provides an integrated approach to managing sick children, combining treatment of illness with preventive measures like immunization and nutrition counseling.",
+    "explanation": "IMNCI (updated version of IMCI) provides an integrated approach to managing sick children, combining treatment of illness with preventive measures like immunization and nutrition counseling.\n\nNote: and immunization\n\nAdditional: neonatal and childhood illness with growth nutrition",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2309,12 +2309,12 @@
     "question_text": "What is the leading cause of death in children under 5 globally?",
     "options": {
       "a": "Accidents",
-      "b": "Neonatal conditions (preterm birth complications, birth asphyxia, infections)",
+      "b": "Neonatal conditions",
       "c": "Cancer",
       "d": "Heart disease"
     },
     "correct_option": "b",
-    "explanation": "Neonatal conditions are the leading cause of under-5 mortality globally, followed by pneumonia, diarrhea, and malaria. Most of these deaths are preventable.",
+    "explanation": "Neonatal conditions are the leading cause of under-5 mortality globally, followed by pneumonia, diarrhea, and malaria. Most of these deaths are preventable.\n\nNote: preterm birth complications, birth asphyxia, infections",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2326,12 +2326,12 @@
     "question_text": "What is Vitamin A supplementation used for in children?",
     "options": {
       "a": "Treating diabetes",
-      "b": "Preventing blindness (xerophthalmia), reducing child mortality, and boosting immunity",
+      "b": "Preventing blindness, reducing child mortality",
       "c": "Treating bone fractures",
       "d": "Treating heart disease"
     },
     "correct_option": "b",
-    "explanation": "Vitamin A supplementation reduces child mortality by 23-34%, prevents xerophthalmia (blindness), and enhances immunity against measles and diarrhea in children aged 6-59 months.",
+    "explanation": "Vitamin A supplementation reduces child mortality by 23-34%, prevents xerophthalmia (blindness), and enhances immunity against measles and diarrhea in children aged 6-59 months.\n\nNote: and boosting immunity",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2360,12 +2360,12 @@
     "question_text": "What is severe acute malnutrition (SAM)?",
     "options": {
       "a": "BMI above 30",
-      "b": "A condition where weight-for-height is below -3 Z-score, or visible severe wasting, or mid-upper arm circumference < 115mm",
+      "b": "A condition where weight-for-height is below",
       "c": "Being slightly underweight",
       "d": "Being tall for age"
     },
     "correct_option": "b",
-    "explanation": "SAM is the most dangerous form of malnutrition with very high mortality risk. It requires therapeutic feeding with Ready-to-Use Therapeutic Food (RUTF) and medical management.",
+    "explanation": "SAM is the most dangerous form of malnutrition with very high mortality risk. It requires therapeutic feeding with Ready-to-Use Therapeutic Food (RUTF) and medical management.\n\nNote: or mid-upper arm circumference < 115mm\n\nAdditional: -3 Z-score or visible severe wasting",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2376,12 +2376,12 @@
     "question_text": "What is Ready-to-Use Therapeutic Food (RUTF)?",
     "options": {
       "a": "Intravenous nutrition",
-      "b": "A energy-dense, nutrient-rich food paste used to treat severe acute malnutrition in children",
+      "b": "A energy-dense nutrient-rich food paste used to",
       "c": "Baby formula",
       "d": "Vitamin tablet"
     },
     "correct_option": "b",
-    "explanation": "RUTF (like Plumpy'Nut) is a paste made from peanut/groundnut, milk powder, sugar, oil, and micronutrients. It doesn't require water or refrigeration, making it ideal for community treatment.",
+    "explanation": "RUTF (like Plumpy'Nut) is a paste made from peanut/groundnut, milk powder, sugar, oil, and micronutrients. It doesn't require water or refrigeration, making it ideal for community treatment.\n\nAdditional: treat severe acute malnutrition in children",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2393,12 +2393,12 @@
     "question_text": "What is community-based management of acute malnutrition (CMAM)?",
     "options": {
       "a": "Hospital-only treatment",
-      "b": "A strategy that uses community health workers to screen, refer, and treat malnutrition in the community",
+      "b": "A strategy that uses community health workers to screen, refer",
       "c": "A research program",
       "d": "A feeding program for adults only"
     },
     "correct_option": "b",
-    "explanation": "CMAM enables treatment of severe acute malnutrition in the community using RUTF, avoiding the need for costly therapeutic centers for every case.",
+    "explanation": "CMAM enables treatment of severe acute malnutrition in the community using RUTF, avoiding the need for costly therapeutic centers for every case.\n\nNote: and treat malnutrition in the community",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2410,12 +2410,12 @@
     "question_text": "What is mental health in public health?",
     "options": {
       "a": "Only about treating psychosis",
-      "b": "A state of well-being enabling individuals to realize their potential, cope with life stresses, and contribute to community",
+      "b": "A state of well-being enabling individuals to",
       "c": "Only about mental illness",
       "d": "Only about drug therapy"
     },
     "correct_option": "b",
-    "explanation": "WHO defines mental health as a state of well-being including emotional, psychological, and social aspects. Mental health promotion and disorder prevention are key public health goals.",
+    "explanation": "WHO defines mental health as a state of well-being including emotional, psychological, and social aspects. Mental health promotion and disorder prevention are key public health goals.\n\nNote: and contribute to community\n\nAdditional: realize their potential cope with life stresses",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2426,12 +2426,12 @@
     "question_text": "What is the role of pharmacists in mental health?",
     "options": {
       "a": "No role",
-      "b": "Dispensing psychotropic medications, monitoring side effects, adherence counseling, and identifying patients needing referral",
+      "b": "Dispensing psychotropic medications, monitoring side effects",
       "c": "Prescribing psychotropic drugs",
       "d": "Performing psychotherapy"
     },
     "correct_option": "b",
-    "explanation": "Pharmacists support mental health by ensuring correct dispensing of psychotropic drugs, monitoring for side effects (weight gain, sedation), checking adherence, and referring when needed.",
+    "explanation": "Pharmacists support mental health by ensuring correct dispensing of psychotropic drugs, monitoring for side effects (weight gain, sedation), checking adherence, and referring when needed.\n\nNote: adherence counseling, and identifying patients needing referral",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2443,12 +2443,12 @@
     "question_text": "What is substance abuse?",
     "options": {
       "a": "Using prescription drugs as directed",
-      "b": "Harmful or hazardous use of psychoactive substances including alcohol, tobacco, and illicit drugs",
+      "b": "Harmful or hazardous use of",
       "c": "Taking over-the-counter vitamins",
       "d": "Using herbal medicine"
     },
     "correct_option": "b",
-    "explanation": "Substance abuse involves the harmful use of psychoactive substances leading to dependence, health problems, social issues, and sometimes death.",
+    "explanation": "Substance abuse involves the harmful use of psychoactive substances leading to dependence, health problems, social issues, and sometimes death.\n\nNote: and illicit drugs\n\nAdditional: psychoactive substances including alcohol tobacco",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2476,12 +2476,12 @@
     "question_text": "What is tobacco cessation?",
     "options": {
       "a": "Starting to use tobacco",
-      "b": "The process of quitting tobacco use, with or without pharmacological support",
+      "b": "The process of quitting tobacco use",
       "c": "Manufacturing tobacco",
       "d": "Selling tobacco products"
     },
     "correct_option": "b",
-    "explanation": "Tobacco cessation programs help people quit smoking through counseling, nicotine replacement therapy (patches, gum), and medications like Varenicline and Bupropion.",
+    "explanation": "Tobacco cessation programs help people quit smoking through counseling, nicotine replacement therapy (patches, gum), and medications like Varenicline and Bupropion.\n\nAdditional: with or without pharmacological support",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2492,12 +2492,12 @@
     "question_text": "What pharmacological options are available for smoking cessation?",
     "options": {
       "a": "Only willpower",
-      "b": "Nicotine replacement therapy (NRT), Varenicline, and Bupropion",
+      "b": "Nicotine replacement",
       "c": "Only herbal remedies",
       "d": "Only antibiotics"
     },
     "correct_option": "b",
-    "explanation": "Pharmacological aids include NRT (patches, gum, lozenges), Varenicline (Champix) which blocks nicotine receptors, and Bupropion (Zyban) an antidepressant that reduces cravings.",
+    "explanation": "Pharmacological aids include NRT (patches, gum, lozenges), Varenicline (Champix) which blocks nicotine receptors, and Bupropion (Zyban) an antidepressant that reduces cravings.\n\nNote: and Bupropion\n\nAdditional: therapy Varenicline",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2509,12 +2509,12 @@
     "question_text": "What is environmental health?",
     "options": {
       "a": "Health of forests only",
-      "b": "The branch of public health concerned with how the environment affects human health",
+      "b": "The branch of public health concerned with",
       "c": "Environmental science in college",
       "d": "Recycling programs"
     },
     "correct_option": "b",
-    "explanation": "Environmental health examines how environmental factors (air, water, soil, chemicals, radiation, built environment) affect human health and what can be done to mitigate risks.",
+    "explanation": "Environmental health examines how environmental factors (air, water, soil, chemicals, radiation, built environment) affect human health and what can be done to mitigate risks.\n\nAdditional: how the environment affects human health",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2525,12 +2525,12 @@
     "question_text": "What is indoor air pollution?",
     "options": {
       "a": "Pollution from factories only",
-      "b": "Harmful substances in indoor air, often from cooking with solid fuels, smoking, or building materials",
+      "b": "Harmful substances in indoor air often",
       "c": "Outdoor dust",
       "d": "Vehicle exhaust outside"
     },
     "correct_option": "b",
-    "explanation": "Indoor air pollution from solid fuel burning (wood, dung, coal) for cooking/heating causes respiratory diseases and is a major health risk in developing countries.",
+    "explanation": "Indoor air pollution from solid fuel burning (wood, dung, coal) for cooking/heating causes respiratory diseases and is a major health risk in developing countries.\n\nNote: smoking, or building materials\n\nAdditional: from cooking with solid fuels",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2542,12 +2542,12 @@
     "question_text": "What is a health education?",
     "options": {
       "a": "Medical school curriculum",
-      "b": "Information and activities that increase awareness and motivate individuals to adopt healthy behaviors",
+      "b": "Information and activities that increase awareness and",
       "c": "Teaching pharmacology",
       "d": "Training pharmacists"
     },
     "correct_option": "b",
-    "explanation": "Health education aims to inform and motivate people to adopt health-promoting behaviors, make informed decisions, and change lifestyles to improve health outcomes.",
+    "explanation": "Health education aims to inform and motivate people to adopt health-promoting behaviors, make informed decisions, and change lifestyles to improve health outcomes.\n\nAdditional: motivate individuals to adopt healthy behaviors",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2558,12 +2558,12 @@
     "question_text": "What is the difference between health promotion and disease prevention?",
     "options": {
       "a": "Same thing",
-      "b": "Health promotion builds overall well-being; disease prevention specifically aims to avoid particular diseases",
+      "b": "Health promotion builds overall well-being; disease prevention",
       "c": "Health promotion is only for the wealthy",
       "d": "Disease prevention is only for old people"
     },
     "correct_option": "b",
-    "explanation": "Health promotion is broader, focusing on overall well-being (education, social support, environment). Disease prevention targets specific diseases through vaccination, screening, and prophylaxis.",
+    "explanation": "Health promotion is broader, focusing on overall well-being (education, social support, environment). Disease prevention targets specific diseases through vaccination, screening, and prophylaxis.\n\nAdditional: specifically aims to avoid particular diseases",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2574,12 +2574,12 @@
     "question_text": "What is the Ottawa Charter for Health Promotion?",
     "options": {
       "a": "A charter for hospital management",
-      "b": "A landmark WHO document (1986) outlining 5 action areas for health promotion",
+      "b": "A landmark WHO document outlining 5",
       "c": "A drug control agreement",
       "d": "A food safety treaty"
     },
     "correct_option": "b",
-    "explanation": "The Ottawa Charter (1986) established 5 action areas: build healthy public policy, create supportive environments, strengthen community action, develop personal skills, and reorient health services.",
+    "explanation": "The Ottawa Charter (1986) established 5 action areas: build healthy public policy, create supportive environments, strengthen community action, develop personal skills, and reorient health services.\n\nAdditional: action areas for health promotion",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2591,12 +2591,12 @@
     "question_text": "What is the role of pharmacists in health promotion?",
     "options": {
       "a": "No role at all",
-      "b": "Counseling on lifestyle changes, smoking cessation, weight management, safe medication use, and disease prevention",
+      "b": "Counseling on lifestyle changes, smoking cessation",
       "c": "Only dispensing prescriptions",
       "d": "Only compounding medications"
     },
     "correct_option": "b",
-    "explanation": "Pharmacists are accessible healthcare providers who promote health through medication counseling, smoking cessation advice, obesity management, health screenings, and immunization.",
+    "explanation": "Pharmacists are accessible healthcare providers who promote health through medication counseling, smoking cessation advice, obesity management, health screenings, and immunization.\n\nNote: weight management, safe medication use, and disease prevention",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2608,12 +2608,12 @@
     "question_text": "What is NCD (Non-Communicable Disease) in public health?",
     "options": {
       "a": "Infectious diseases",
-      "b": "Chronic diseases that are not transmitted from person to person (e.g., diabetes, heart disease, cancer)",
+      "b": "Chronic diseases that are not",
       "c": "Diseases spread by air",
       "d": "Childhood diseases"
     },
     "correct_option": "b",
-    "explanation": "NCDs are chronic diseases including cardiovascular disease, diabetes, cancer, and chronic respiratory diseases. They are the leading cause of death globally.",
+    "explanation": "NCDs are chronic diseases including cardiovascular disease, diabetes, cancer, and chronic respiratory diseases. They are the leading cause of death globally.\n\nNote: e.g., diabetes, heart disease, cancer\n\nAdditional: transmitted from person to person",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2624,12 +2624,12 @@
     "question_text": "What are the four main types of NCDs?",
     "options": {
       "a": "Diabetes, hypertension, asthma, allergy",
-      "b": "Cardiovascular diseases, cancers, chronic respiratory diseases, and diabetes",
+      "b": "Cardiovascular diseases, cancers",
       "c": "HIV, TB, malaria, pneumonia",
       "d": "Measles, polio, diphtheria, tetanus"
     },
     "correct_option": "b",
-    "explanation": "The 4 main NCDs are: cardiovascular diseases (heart disease, stroke), cancers, chronic respiratory diseases (COPD, asthma), and diabetes. They share common risk factors.",
+    "explanation": "The 4 main NCDs are: cardiovascular diseases (heart disease, stroke), cancers, chronic respiratory diseases (COPD, asthma), and diabetes. They share common risk factors.\n\nNote: chronic respiratory diseases, and diabetes",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2640,12 +2640,12 @@
     "question_text": "What are the shared risk factors for NCDs?",
     "options": {
       "a": "Vaccination and exercise",
-      "b": "Tobacco use, unhealthy diet, physical inactivity, and harmful alcohol use",
+      "b": "Tobacco use, unhealthy diet",
       "c": "Good sleep and healthy eating",
       "d": "Mental health and hygiene"
     },
     "correct_option": "b",
-    "explanation": "Four behavioral risk factors drive most NCDs: tobacco use, unhealthy diet, physical inactivity, and harmful alcohol consumption. These are modifiable through public health interventions.",
+    "explanation": "Four behavioral risk factors drive most NCDs: tobacco use, unhealthy diet, physical inactivity, and harmful alcohol consumption. These are modifiable through public health interventions.\n\nNote: physical inactivity, and harmful alcohol use",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2657,12 +2657,12 @@
     "question_text": "What is the pharmacist's role in NCD management?",
     "options": {
       "a": "No role",
-      "b": "Medication counseling, adherence support, lifestyle modification advice, blood pressure/glucose monitoring, and referral",
+      "b": "Medication counseling, adherence support",
       "c": "Prescribing NCD medications",
       "d": "Performing surgery for NCDs"
     },
     "correct_option": "b",
-    "explanation": "Pharmacists play a crucial role in NCD management through patient education, medication therapy management, adherence monitoring, health screenings, and lifestyle counseling.",
+    "explanation": "Pharmacists play a crucial role in NCD management through patient education, medication therapy management, adherence monitoring, health screenings, and lifestyle counseling.\n\nNote: lifestyle modification advice, blood pressure/glucose monitoring, and referral",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2674,12 +2674,12 @@
     "question_text": "What is medication adherence?",
     "options": {
       "a": "Taking medication with food",
-      "b": "The extent to which a patient takes medications as prescribed by their healthcare provider",
+      "b": "The extent to which a patient takes",
       "c": "Following a diet",
       "d": "Exercising regularly"
     },
     "correct_option": "b",
-    "explanation": "Medication adherence is the degree to which a patient's behavior corresponds with agreed recommendations from a healthcare provider regarding timing, dosage, and frequency.",
+    "explanation": "Medication adherence is the degree to which a patient's behavior corresponds with agreed recommendations from a healthcare provider regarding timing, dosage, and frequency.\n\nAdditional: medications as prescribed by their healthcare provider",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2690,12 +2690,12 @@
     "question_text": "What is a major barrier to medication adherence?",
     "options": {
       "a": "Too many pharmacists",
-      "b": "Complex dosing regimens, side effects, cost, lack of understanding, and forgetfulness",
+      "b": "Complex dosing regimens, side effects",
       "c": "Availability of drugs",
       "d": "Clean water supply"
     },
     "correct_option": "b",
-    "explanation": "Barriers include: complex schedules, side effects, high cost, low health literacy, forgetfulness, lack of social support, and distrust in healthcare system.",
+    "explanation": "Barriers include: complex schedules, side effects, high cost, low health literacy, forgetfulness, lack of social support, and distrust in healthcare system.\n\nNote: cost, lack of understanding, and forgetfulness",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2706,12 +2706,12 @@
     "question_text": "What is a pill organizer (dosette box)?",
     "options": {
       "a": "A medicine cabinet",
-      "b": "A container with compartments to organize medications by day and time",
+      "b": "A container with compartments to organize",
       "c": "A type of tablet",
       "d": "A prescription pad"
     },
     "correct_option": "b",
-    "explanation": "Pill organizers help patients manage multiple medications by pre-sorting pills into labeled compartments for each day/time, improving adherence and reducing errors.",
+    "explanation": "Pill organizers help patients manage multiple medications by pre-sorting pills into labeled compartments for each day/time, improving adherence and reducing errors.\n\nAdditional: medications by day and time",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2723,12 +2723,12 @@
     "question_text": "What is a medication reminder system?",
     "options": {
       "a": "A pharmacist's notebook",
-      "b": "Tools like alarms, apps, text messages, or blister packs that help patients remember to take medications",
+      "b": "Tools like alarms, apps",
       "c": "A type of drug",
       "d": "A storage system"
     },
     "correct_option": "b",
-    "explanation": "Medication reminder systems include smartphone apps, alarm clocks, text message reminders, and specially designed packaging to help patients take medications on time.",
+    "explanation": "Medication reminder systems include smartphone apps, alarm clocks, text message reminders, and specially designed packaging to help patients take medications on time.\n\nNote: text messages, or blister packs that help patients remember to take medications",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2740,12 +2740,12 @@
     "question_text": "What is health literacy?",
     "options": {
       "a": "Reading ability only",
-      "b": "The ability to obtain, process, and understand basic health information and services to make appropriate health decisions",
+      "b": "The ability to obtain, process",
       "c": "Medical school education",
       "d": "Knowing drug names"
     },
     "correct_option": "b",
-    "explanation": "Health literacy encompasses reading, listening, analytical, and decision-making skills applied to health situations. Low health literacy leads to poor health outcomes.",
+    "explanation": "Health literacy encompasses reading, listening, analytical, and decision-making skills applied to health situations. Low health literacy leads to poor health outcomes.\n\nNote: and understand basic health information and services to make appropriate health decisions",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2756,12 +2756,12 @@
     "question_text": "How can pharmacists improve health literacy?",
     "options": {
       "a": "Use complex medical jargon",
-      "b": "Use plain language, teach-back method, visual aids, and written materials appropriate for patients' reading level",
+      "b": "Use plain language, teach-back method",
       "c": "Avoid talking to patients",
       "d": "Only talk to doctors"
     },
     "correct_option": "b",
-    "explanation": "Pharmacists improve health literacy by using simple language, confirming understanding through teach-back, providing pictograms and written guides, and avoiding medical jargon.",
+    "explanation": "Pharmacists improve health literacy by using simple language, confirming understanding through teach-back, providing pictograms and written guides, and avoiding medical jargon.\n\nNote: visual aids, and written materials appropriate for patients' reading level",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2773,12 +2773,12 @@
     "question_text": "What is patient counseling in pharmacy?",
     "options": {
       "a": "Selling more drugs",
-      "b": "Providing patients with information about their medications, proper use, side effects, and storage",
+      "b": "Providing patients with information about",
       "c": "Only giving prescription drugs",
       "d": "Filling out forms"
     },
     "correct_option": "b",
-    "explanation": "Patient counseling involves communicating drug information to patients including: drug name, purpose, dose, route, timing, side effects, storage, and when to seek medical help.",
+    "explanation": "Patient counseling involves communicating drug information to patients including: drug name, purpose, dose, route, timing, side effects, storage, and when to seek medical help.\n\nNote: side effects, and storage\n\nAdditional: their medications proper use",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2789,12 +2789,12 @@
     "question_text": "What information should be included when counseling a patient about a new medication?",
     "options": {
       "a": "Only the drug name",
-      "b": "Name, purpose, dose, how to take, timing, food interactions, side effects, storage, and what to do if a dose is missed",
+      "b": "Name, purpose",
       "c": "Only the price",
       "d": "Only the brand name"
     },
     "correct_option": "b",
-    "explanation": "Comprehensive counseling covers: drug name and purpose, dose and route, timing (before/after food), common side effects, storage, drug interactions, missed dose instructions, and refill information.",
+    "explanation": "Comprehensive counseling covers: drug name and purpose, dose and route, timing (before/after food), common side effects, storage, drug interactions, missed dose instructions, and refill information.\n\nNote: dose, how to take, timing, food interactions, side effects, storage, and what to do if a dose is missed",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2805,12 +2805,12 @@
     "question_text": "What is the 'teach-back' method in health communication?",
     "options": {
       "a": "Writing on the blackboard",
-      "b": "Asking patients to explain in their own words what they understood about their medication/instructions",
+      "b": "Asking patients to explain in their own",
       "c": "Reading aloud to patients",
       "d": "Showing a video"
     },
     "correct_option": "b",
-    "explanation": "The teach-back method involves asking patients to repeat instructions in their own words to confirm understanding. It's a key tool for improving health literacy.",
+    "explanation": "The teach-back method involves asking patients to repeat instructions in their own words to confirm understanding. It's a key tool for improving health literacy.\n\nAdditional: words what they understood about their medication/instructions",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2822,12 +2822,12 @@
     "question_text": "What is community pharmacy practice?",
     "options": {
       "a": "Pharmacy in a hospital only",
-      "b": "Pharmacy services provided in retail/outlet settings to the general public",
+      "b": "Pharmacy services provided in retail/outlet",
       "c": "Online pharmacy only",
       "d": "Manufacturing pharmacy"
     },
     "correct_option": "b",
-    "explanation": "Community pharmacy practice involves dispensing, patient counseling, OTC recommendations, health screenings, immunizations, and disease prevention services in retail pharmacy settings.",
+    "explanation": "Community pharmacy practice involves dispensing, patient counseling, OTC recommendations, health screenings, immunizations, and disease prevention services in retail pharmacy settings.\n\nAdditional: settings to the general public",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2838,12 +2838,12 @@
     "question_text": "What is a minor ailment management by pharmacists?",
     "options": {
       "a": "Treating serious diseases",
-      "b": "Pharmacists assessing and recommending treatment for common, self-limiting conditions like cough, cold, headache, and skin rashes",
+      "b": "Pharmacists assessing and recommending treatment for",
       "c": "Performing surgery",
       "d": "Giving injections only"
     },
     "correct_option": "b",
-    "explanation": "Minor ailment management allows pharmacists to assess symptoms of common conditions, recommend appropriate OTC treatments, and refer to doctors when needed.",
+    "explanation": "Minor ailment management allows pharmacists to assess symptoms of common conditions, recommend appropriate OTC treatments, and refer to doctors when needed.\n\nNote: cold, headache, and skin rashes\n\nAdditional: common self-limiting conditions like cough",
     "subject": "public-health-pharmacy",
     "difficulty": "easy",
     "tags": [
@@ -2855,12 +2855,12 @@
     "question_text": "What is the role of pharmacists in pandemic preparedness?",
     "options": {
       "a": "No role",
-      "b": "Vaccination, dispensing prophylactic/treatment medications, public education, supply chain management, and infection control",
+      "b": "Vaccination dispensing",
       "c": "Only making drugs",
       "d": "Only working from home"
     },
     "correct_option": "b",
-    "explanation": "Pharmacists are frontline responders in pandemics: administering vaccines, dispensing antivirals, educating the public on prevention, ensuring drug supply, and supporting infection control measures.",
+    "explanation": "Pharmacists are frontline responders in pandemics: administering vaccines, dispensing antivirals, educating the public on prevention, ensuring drug supply, and supporting infection control measures.\n\nNote: public education, supply chain management, and infection control\n\nAdditional: prophylactic/treatment medications",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [
@@ -2871,12 +2871,12 @@
     "question_text": "What is One Health approach?",
     "options": {
       "a": "Only human health",
-      "b": "An approach recognizing that human health, animal health, and environmental health are interconnected",
+      "b": "An approach recognizing that",
       "c": "Animal health only",
       "d": "Environmental health only"
     },
     "correct_option": "b",
-    "explanation": "One Health recognizes the interconnection between humans, animals, and the environment. It addresses zoonotic diseases, food safety, antimicrobial resistance, and environmental health holistically.",
+    "explanation": "One Health recognizes the interconnection between humans, animals, and the environment. It addresses zoonotic diseases, food safety, antimicrobial resistance, and environmental health holistically.\n\nNote: and environmental health are interconnected\n\nAdditional: human health animal health",
     "subject": "public-health-pharmacy",
     "difficulty": "medium",
     "tags": [

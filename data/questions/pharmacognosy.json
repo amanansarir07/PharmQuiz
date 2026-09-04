@@ -38,12 +38,12 @@
     "question_text": "The biological source of a crude drug refers to:",
     "options": [
       "Chemical composition",
-      "The plant or animal species from which the drug is derived",
+      "The plant or animal species from",
       "The method of extraction",
       "The therapeutic use"
     ],
     "correct_index": 1,
-    "explanation": "The biological source specifies the scientific name (genus and species), family, part of the organism used, and geographical source of the crude drug.",
+    "explanation": "The biological source specifies the scientific name (genus and species), family, part of the organism used, and geographical source of the crude drug.\n\nAdditional: which the drug is derived",
     "difficulty": "easy",
     "tags": [
       "biological source"
@@ -71,12 +71,12 @@
     "question_text": "Extractive values are used to measure:",
     "options": [
       "Ash content",
-      "Amount of chemical constituents extracted by specific solvents",
+      "Amount of chemical constituents",
       "Moisture content",
       "Microbial load"
     ],
     "correct_index": 1,
-    "explanation": "Extractive values measure the amount of chemical constituents extracted by specific solvents (water, alcohol, ether). They help in evaluating the quality and detecting adulteration.",
+    "explanation": "Extractive values measure the amount of chemical constituents extracted by specific solvents (water, alcohol, ether). They help in evaluating the quality and detecting adulteration.\n\nAdditional: extracted by specific solvents",
     "difficulty": "medium",
     "tags": [
       "evaluation",
@@ -88,12 +88,12 @@
     "question_text": "Morphine is an alkaloid obtained from:",
     "options": [
       "Cinchona bark",
-      "Opium (Papaver somniferum)",
+      "Opium",
       "Rauwolfia root",
       "Nux vomica seeds"
     ],
     "correct_index": 1,
-    "explanation": "Morphine is the principal alkaloid obtained from the dried latex (opium) of Papaver somniferum. It is a potent analgesic acting on opioid receptors.",
+    "explanation": "Morphine is the principal alkaloid obtained from the dried latex (opium) of Papaver somniferum. It is a potent analgesic acting on opioid receptors.\n\nNote: Papaver somniferum",
     "difficulty": "easy",
     "tags": [
       "alkaloids",
@@ -139,12 +139,12 @@
     "question_text": "Cardiac glycosides are obtained from:",
     "options": [
       "Senna leaves",
-      "Foxglove (Digitalis purpurea)",
+      "Foxglove",
       "Glycyrrhiza root",
       "Dioscorea"
     ],
     "correct_index": 1,
-    "explanation": "Cardiac glycosides (e.g., digoxin, digitoxin) are obtained from Digitalis purpurea (foxglove) leaves. They increase the force of cardiac contraction.",
+    "explanation": "Cardiac glycosides (e.g., digoxin, digitoxin) are obtained from Digitalis purpurea (foxglove) leaves. They increase the force of cardiac contraction.\n\nNote: Digitalis purpurea",
     "difficulty": "easy",
     "tags": [
       "glycosides",
@@ -207,12 +207,12 @@
     "question_text": "Resins are defined as:",
     "options": [
       "Volatile oils",
-      "Solid or semi-solid amorphous products of oxidation of volatile oils",
+      "Solid or semi-solid amorphous products",
       "Fixed oils",
       "Glycosides"
     ],
     "correct_index": 1,
-    "explanation": "Resins are solid or semi-solid amorphous products formed by the oxidative decomposition of volatile oils (oleoresins) or by chemical reactions in plant tissues.",
+    "explanation": "Resins are solid or semi-solid amorphous products formed by the oxidative decomposition of volatile oils (oleoresins) or by chemical reactions in plant tissues.\n\nAdditional: of oxidation of volatile oils",
     "difficulty": "medium",
     "tags": [
       "resins",
@@ -258,12 +258,12 @@
     "question_text": "Papain is obtained from:",
     "options": [
       "Pineapple",
-      "Papaya (Carica papaya)",
+      "Papaya",
       "Ficus species",
       "Aloe vera"
     ],
     "correct_index": 1,
-    "explanation": "Papain is a proteolytic enzyme obtained from the latex of unripe papaya fruit (Carica papaya). It is used as a meat tenderizer and in wound debridement.",
+    "explanation": "Papain is a proteolytic enzyme obtained from the latex of unripe papaya fruit (Carica papaya). It is used as a meat tenderizer and in wound debridement.\n\nNote: Carica papaya",
     "difficulty": "easy",
     "tags": [
       "enzymes",
@@ -275,12 +275,12 @@
     "question_text": "Drug discovery from natural sources involves:",
     "options": [
       "Only synthetic chemistry",
-      "Isolation, identification, and modification of natural compounds",
+      "Isolation, identification",
       "Only computer modeling",
       "Only animal testing"
     ],
     "correct_index": 1,
-    "explanation": "Natural product drug discovery involves ethnobotanical leads, isolation and identification of active compounds, structure elucidation, and structural modification to improve efficacy.",
+    "explanation": "Natural product drug discovery involves ethnobotanical leads, isolation and identification of active compounds, structure elucidation, and structural modification to improve efficacy.\n\nNote: and modification of natural compounds",
     "difficulty": "medium",
     "tags": [
       "drug discovery",
@@ -309,7 +309,7 @@
     "question_text": "Morphine is obtained from:",
     "options": [
       "Cinchona bark",
-      "Opium (Papaver somniferum) seeds",
+      "Opium seeds",
       "Rauwolfia root",
       "Nux vomica seeds"
     ],
@@ -360,12 +360,12 @@
     "question_text": "Atropine is obtained from:",
     "options": [
       "Opium",
-      "Belladonna (Atropa belladonna)",
+      "Belladonna",
       "Cinchona",
       "Rauwolfia"
     ],
     "correct_index": 1,
-    "explanation": "Atropine is a tropane alkaloid from Atropa belladonna (deadly nightshade) leaves and roots.",
+    "explanation": "Atropine is a tropane alkaloid from Atropa belladonna (deadly nightshade) leaves and roots.\n\nNote: Atropa belladonna",
     "difficulty": "easy",
     "tags": [
       "alkaloids",
@@ -377,12 +377,12 @@
     "question_text": "Ephedrine is obtained from:",
     "options": [
       "Opium",
-      "Ephedra sinica (Ma Huang)",
+      "Ephedra sinica",
       "Cinchona",
       "Nux vomica"
     ],
     "correct_index": 1,
-    "explanation": "Ephedrine is obtained from the stems of Ephedra sinica, used as a bronchodilator and nasal decongestant.",
+    "explanation": "Ephedrine is obtained from the stems of Ephedra sinica, used as a bronchodilator and nasal decongestant.\n\nNote: Ma Huang",
     "difficulty": "easy",
     "tags": [
       "alkaloids",
@@ -394,12 +394,12 @@
     "question_text": "Strychnine is obtained from:",
     "options": [
       "Cinchona bark",
-      "Nux vomica (Strychnos nux-vomica) seeds",
+      "Nux vomica seeds",
       "Opium",
       "Rauwolfia root"
     ],
     "correct_index": 1,
-    "explanation": "Strychnine is obtained from Nux vomica seeds. It is a convulsant poison but brucine (also from Nux vomica) is less toxic.",
+    "explanation": "Strychnine is obtained from Nux vomica seeds. It is a convulsant poison but brucine (also from Nux vomica) is less toxic.\n\nNote: Strychnos nux-vomica",
     "difficulty": "medium",
     "tags": [
       "alkaloids",
@@ -411,12 +411,12 @@
     "question_text": "Reserpine is obtained from:",
     "options": [
       "Cinchona",
-      "Rauwolfia serpentina (Sarpagandha)",
+      "Rauwolfia serpentina",
       "Opium",
       "Nux vomica"
     ],
     "correct_index": 1,
-    "explanation": "Reserpine is an indole alkaloid from Rauwolfia serpentina, used as an antihypertensive agent.",
+    "explanation": "Reserpine is an indole alkaloid from Rauwolfia serpentina, used as an antihypertensive agent.\n\nNote: Sarpagandha",
     "difficulty": "easy",
     "tags": [
       "alkaloids",
@@ -445,12 +445,12 @@
     "question_text": "Glycosides are:",
     "options": [
       "Simple sugars",
-      "Compounds that yield sugar + non-sugar (aglycone) on hydrolysis",
+      "Compounds that yield sugar",
       "Fatty acids",
       "Amino acids"
     ],
     "correct_index": 1,
-    "explanation": "Glycosides consist of a sugar part (glycone) and a non-sugar part (aglycone/genin), linked by a glycosidic bond.",
+    "explanation": "Glycosides consist of a sugar part (glycone) and a non-sugar part (aglycone/genin), linked by a glycosidic bond.\n\nAdditional: + non-sugar on hydrolysis",
     "difficulty": "easy",
     "tags": [
       "glycosides",
@@ -462,12 +462,12 @@
     "question_text": "Digitalis glycosides are used for:",
     "options": [
       "Hypertension",
-      "Heart failure (cardiac glycosides)",
+      "Heart failure",
       "Diabetes",
       "Infections"
     ],
     "correct_index": 1,
-    "explanation": "Cardiac glycosides from Digitalis purpurea increase the force of cardiac contraction, used in congestive heart failure.",
+    "explanation": "Cardiac glycosides from Digitalis purpurea increase the force of cardiac contraction, used in congestive heart failure.\n\nNote: cardiac glycosides",
     "difficulty": "easy",
     "tags": [
       "glycosides",
@@ -479,12 +479,12 @@
     "question_text": "Senna contains anthraquinone glycosides used as:",
     "options": [
       "Cardiac tonic",
-      "Purgative (laxative)",
+      "Purgative",
       "Antimalarial",
       "Analgesic"
     ],
     "correct_index": 1,
-    "explanation": "Senna contains sennosides (anthraquinone glycosides) that stimulate large intestine peristalsis, acting as a laxative.",
+    "explanation": "Senna contains sennosides (anthraquinone glycosides) that stimulate large intestine peristalsis, acting as a laxative.\n\nNote: laxative",
     "difficulty": "easy",
     "tags": [
       "glycosides",
@@ -496,12 +496,12 @@
     "question_text": "Liquorice contains glycosides used as:",
     "options": [
       "Cardiotonic",
-      "Demulcent, expectorant, and anti-ulcer",
+      "Demulcent, expectorant",
       "Purgative",
       "Antimalarial"
     ],
     "correct_index": 1,
-    "explanation": "Glycyrrhizin from liquorice has demulcent, expectorant, anti-inflammatory, and anti-ulcer properties.",
+    "explanation": "Glycyrrhizin from liquorice has demulcent, expectorant, anti-inflammatory, and anti-ulcer properties.\n\nNote: and anti-ulcer",
     "difficulty": "easy",
     "tags": [
       "glycosides",
@@ -513,12 +513,12 @@
     "question_text": "Keller-Killiani test is used for identification of:",
     "options": [
       "Anthraquinone glycosides",
-      "Cardiac glycosides (deoxy sugars)",
+      "Cardiac glycosides",
       "Saponin glycosides",
       "Tannins"
     ],
     "correct_index": 1,
-    "explanation": "Keller-Killiani test identifies cardiac glycosides containing deoxy sugars (like digitoxose) - produces blue color.",
+    "explanation": "Keller-Killiani test identifies cardiac glycosides containing deoxy sugars (like digitoxose) - produces blue color.\n\nNote: deoxy sugars",
     "difficulty": "medium",
     "tags": [
       "glycosides",
@@ -530,12 +530,12 @@
     "question_text": "Volatile (essential) oils are:",
     "options": [
       "Fixed oils that don't evaporate",
-      "Aromatic, volatile, steam-distillable plant products",
+      "Aromatic, volatile",
       "Fatty acid esters",
       "Waxes"
     ],
     "correct_index": 1,
-    "explanation": "Volatile oils are complex mixtures of terpenes and other compounds, aromatic and evaporate readily at room temperature.",
+    "explanation": "Volatile oils are complex mixtures of terpenes and other compounds, aromatic and evaporate readily at room temperature.\n\nNote: steam-distillable plant products",
     "difficulty": "easy",
     "tags": [
       "volatile oils",
@@ -649,12 +649,12 @@
     "question_text": "Resins are:",
     "options": [
       "Water-soluble plant products",
-      "Amorphous, insoluble products from plant exudates or extracted from natural sources",
+      "Amorphous insoluble products from plant exudates",
       "Fixed oils",
       "Waxes"
     ],
     "correct_index": 1,
-    "explanation": "Resins are complex amorphous mixtures of organic acids, insoluble in water but soluble in alcohol and有机溶剂.",
+    "explanation": "Resins are complex amorphous mixtures of organic acids, insoluble in water but soluble in alcohol and有机溶剂.\n\nAdditional: or extracted from natural sources",
     "difficulty": "easy",
     "tags": [
       "resins",
@@ -666,12 +666,12 @@
     "question_text": "Myrrh is a resin used as:",
     "options": [
       "Laxative only",
-      "Antiseptic mouthwash and wound healing agent",
+      "Antiseptic mouthwash and",
       "Analgesic",
       "Antimalarial"
     ],
     "correct_index": 1,
-    "explanation": "Myrrh has antiseptic, astringent, and wound-healing properties, used in mouthwashes and throat preparations.",
+    "explanation": "Myrrh has antiseptic, astringent, and wound-healing properties, used in mouthwashes and throat preparations.\n\nAdditional: wound healing agent",
     "difficulty": "easy",
     "tags": [
       "resins",
@@ -683,12 +683,12 @@
     "question_text": "Asafoetida (hing) is used for:",
     "options": [
       "Heart problems",
-      "Flatulence, colic, and as carminative",
+      "Flatulence, colic",
       "Skin infections",
       "Bone fractures"
     ],
     "correct_index": 1,
-    "explanation": "Asafoetida is a gum-resin used as a carminative for flatulence, colic, and as a flavoring agent.",
+    "explanation": "Asafoetida is a gum-resin used as a carminative for flatulence, colic, and as a flavoring agent.\n\nNote: and as carminative",
     "difficulty": "easy",
     "tags": [
       "resins",
@@ -700,12 +700,12 @@
     "question_text": "Castor oil is used as:",
     "options": [
       "Skin moisturizer only",
-      "Purgative (castor oil is a ricinoleic acid source)",
+      "Purgative",
       "Analgesic",
       "Antimalarial"
     ],
     "correct_index": 1,
-    "explanation": "Castor oil contains ricinoleic acid, which stimulates intestinal peristalsis, used as an effective purgative.",
+    "explanation": "Castor oil contains ricinoleic acid, which stimulates intestinal peristalsis, used as an effective purgative.\n\nNote: castor oil is a ricinoleic acid source",
     "difficulty": "easy",
     "tags": [
       "lipids",
@@ -734,12 +734,12 @@
     "question_text": "Beeswax is classified as:",
     "options": [
       "Fixed oil",
-      "Natural wax (ester of fatty acid and long-chain alcohol)",
+      "Natural wax",
       "Resin",
       "Alkaloid"
     ],
     "correct_index": 1,
-    "explanation": "Beeswax is a natural wax composed mainly of myricyl palmitate (an ester), used in ointments and cosmetic preparations.",
+    "explanation": "Beeswax is a natural wax composed mainly of myricyl palmitate (an ester), used in ointments and cosmetic preparations.\n\nNote: ester of fatty acid and long-chain alcohol",
     "difficulty": "easy",
     "tags": [
       "waxes",
@@ -785,12 +785,12 @@
     "question_text": "Agar is obtained from:",
     "options": [
       "Animals",
-      "Red algae (Gelidium and Gracilaria species)",
+      "Red algae",
       "Plants",
       "Fungi"
     ],
     "correct_index": 1,
-    "explanation": "Agar is obtained from red marine algae (Gelidium amansii). It is used as a culture medium and laxative.",
+    "explanation": "Agar is obtained from red marine algae (Gelidium amansii). It is used as a culture medium and laxative.\n\nNote: Gelidium and Gracilaria species",
     "difficulty": "easy",
     "tags": [
       "gums",
@@ -819,12 +819,12 @@
     "question_text": "Sera are preparations containing:",
     "options": [
       "Vaccines",
-      "Preformed antibodies (immunoglobulins)",
+      "Preformed antibodies",
       "Antibiotics",
       "Vitamins"
     ],
     "correct_index": 1,
-    "explanation": "Sera contain preformed antibodies obtained from immunized animals or humans, providing passive immunity.",
+    "explanation": "Sera contain preformed antibodies obtained from immunized animals or humans, providing passive immunity.\n\nNote: immunoglobulins",
     "difficulty": "easy",
     "tags": [
       "biological products",
@@ -870,12 +870,12 @@
     "question_text": "Organoleptic evaluation involves:",
     "options": [
       "Chemical analysis",
-      "Assessment of color, odor, taste, and texture",
+      "Assessment of color, odor",
       "Microscopic examination",
       "Biological assays"
     ],
     "correct_index": 1,
-    "explanation": "Organoleptic evaluation uses sensory organs to assess physical characteristics: color, odor, taste, texture.",
+    "explanation": "Organoleptic evaluation uses sensory organs to assess physical characteristics: color, odor, taste, texture.\n\nNote: taste, and texture",
     "difficulty": "easy",
     "tags": [
       "evaluation",
@@ -887,12 +887,12 @@
     "question_text": "Ash value represents:",
     "options": [
       "Moisture content",
-      "Total inorganic mineral content of crude drug",
+      "Total inorganic mineral content",
       "Organic matter content",
       "Volatile oil content"
     ],
     "correct_index": 1,
-    "explanation": "Ash value indicates total inorganic residue (mineral content) after incineration, used for purity assessment.",
+    "explanation": "Ash value indicates total inorganic residue (mineral content) after incineration, used for purity assessment.\n\nAdditional: of crude drug",
     "difficulty": "easy",
     "tags": [
       "evaluation",
@@ -904,12 +904,12 @@
     "question_text": "Moisture content is determined by:",
     "options": [
       "Ash value determination",
-      "Loss on drying (LOD) method",
+      "Loss on drying method",
       "Extractive value",
       "Chromatography"
     ],
     "correct_index": 1,
-    "explanation": "Moisture content is determined by drying a weighed sample at 105°C until constant weight (Loss on Drying).",
+    "explanation": "Moisture content is determined by drying a weighed sample at 105°C until constant weight (Loss on Drying).\n\nNote: LOD",
     "difficulty": "easy",
     "tags": [
       "evaluation",
@@ -938,12 +938,12 @@
     "question_text": "Senna leaves are used as:",
     "options": [
       "Cardiac tonic",
-      "Purgative (laxative)",
+      "Purgative",
       "Antimalarial",
       "Analgesic"
     ],
     "correct_index": 1,
-    "explanation": "Senna leaves contain anthraquinone glycosides (sennosides) used as a stimulant laxative.",
+    "explanation": "Senna leaves contain anthraquinone glycosides (sennosides) used as a stimulant laxative.\n\nNote: laxative",
     "difficulty": "easy",
     "tags": [
       "plant parts",
@@ -972,12 +972,12 @@
     "question_text": "Pharmacognosy is defined as:",
     "options": [
       "Study of drugs from synthetic sources",
-      "Study of crude drugs from natural (plant, animal, mineral) sources",
+      "Study of crude drugs from natural (plant, animal",
       "Study of drug pricing",
       "Study of drug marketing"
     ],
     "correct_index": 1,
-    "explanation": "Pharmacognosy is the branch of knowledge concerned with crude drugs obtained from natural sources.",
+    "explanation": "Pharmacognosy is the branch of knowledge concerned with crude drugs obtained from natural sources.\n\nNote: mineral) sources",
     "difficulty": "easy",
     "tags": [
       "pharmacognosy",
@@ -989,12 +989,12 @@
     "question_text": "Crude drugs are:",
     "options": [
       "Pure chemical compounds",
-      "Natural drugs in the state in which they are collected",
+      "Natural drugs in the state",
       "Synthetic drugs",
       "Manufactured formulations"
     ],
     "correct_index": 1,
-    "explanation": "Crude drugs are natural drugs collected and prepared with minimal processing, before isolation of active constituents.",
+    "explanation": "Crude drugs are natural drugs collected and prepared with minimal processing, before isolation of active constituents.\n\nAdditional: in which they are collected",
     "difficulty": "easy",
     "tags": [
       "pharmacognosy",
@@ -1006,12 +1006,12 @@
     "question_text": "Phytopharmaceuticals are:",
     "options": [
       "Synthetic drugs",
-      "Drugs derived from plants with standardized active constituents",
+      "Drugs derived from plants",
       "Animal-derived drugs",
       "Mineral drugs"
     ],
     "correct_index": 1,
-    "explanation": "Phytopharmaceuticals are plant-derived drugs with defined and standardized active pharmaceutical ingredients.",
+    "explanation": "Phytopharmaceuticals are plant-derived drugs with defined and standardized active pharmaceutical ingredients.\n\nAdditional: with standardized active constituents",
     "difficulty": "easy",
     "tags": [
       "natural products",
@@ -1022,12 +1022,12 @@
     "question_text": "What is pharmacognosy?",
     "options": {
       "a": "Study of synthetic drugs",
-      "b": "The study of drugs obtained from natural sources (plants, animals, minerals)",
+      "b": "The study of drugs obtained from natural sources",
       "c": "Study of drug interactions",
       "d": "Study of drug pricing"
     },
     "correct_option": "b",
-    "explanation": "Pharmacognosy is the branch of pharmacology dealing with natural drugs obtained from plants, animals, minerals, and microorganisms, including their chemistry, cultivation, and uses.",
+    "explanation": "Pharmacognosy is the branch of pharmacology dealing with natural drugs obtained from plants, animals, minerals, and microorganisms, including their chemistry, cultivation, and uses.\n\nNote: plants, animals, minerals",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1039,12 +1039,12 @@
     "question_text": "What are crude drugs?",
     "options": {
       "a": "Pure chemical compounds",
-      "b": "Naturally obtained drugs that have not yet been processed into pure chemical form",
+      "b": "Naturally obtained drugs that have not yet",
       "c": "Synthetic drugs",
       "d": "Patented drugs"
     },
     "correct_option": "b",
-    "explanation": "Crude drugs are natural drugs obtained from plant, animal, or mineral sources that haven't undergone purification to isolate active chemical constituents.",
+    "explanation": "Crude drugs are natural drugs obtained from plant, animal, or mineral sources that haven't undergone purification to isolate active chemical constituents.\n\nAdditional: been processed into pure chemical form",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1056,12 +1056,12 @@
     "question_text": "What is the biological source of opium?",
     "options": {
       "a": "Cannabis sativa",
-      "b": "Dried latex obtained from unripe capsules of Papaver somniferum",
+      "b": "Dried latex obtained from unripe",
       "c": "Rauwolfia serpentina",
       "d": "Digitalis purpurea"
     },
     "correct_option": "b",
-    "explanation": "Opium is the dried latex (oleoresin) obtained by incising the unripe capsules of Papaver somniferum (opium poppy), belonging to family Papaveraceae.",
+    "explanation": "Opium is the dried latex (oleoresin) obtained by incising the unripe capsules of Papaver somniferum (opium poppy), belonging to family Papaveraceae.\n\nAdditional: capsules of Papaver somniferum",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1091,12 +1091,12 @@
     "question_text": "What is the biological source of digitalis?",
     "options": {
       "a": "Thevetia peruviana",
-      "b": "Dried leaves of Digitalis purpurea (foxglove)",
+      "b": "Dried leaves of Digitalis purpurea",
       "c": "Strophanthus kombe",
       "d": "Nerium oleander"
     },
     "correct_option": "b",
-    "explanation": "Digitalis consists of dried leaves of Digitalis purpurea Linn. (family Plantaginaceae/Scrophulariaceae), collected from plants during the second year of growth.",
+    "explanation": "Digitalis consists of dried leaves of Digitalis purpurea Linn. (family Plantaginaceae/Scrophulariaceae), collected from plants during the second year of growth.\n\nNote: foxglove",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1125,12 +1125,12 @@
     "question_text": "What are the four main types of phytochemical constituents in crude drugs?",
     "options": {
       "a": "Acids, bases, salts, water",
-      "b": "Alkaloids, glycosides, volatile oils, and tannins",
+      "b": "Alkaloids, glycosides, volatile oils",
       "c": "Proteins, fats, carbohydrates, vitamins",
       "d": "Enzymes, hormones, vitamins, minerals"
     },
     "correct_option": "b",
-    "explanation": "The main phytochemical groups are: alkaloids (nitrogenous bases), glycosides (sugar-bound compounds), volatile oils (aromatic), tannins (phenolic), plus resins, fats, and carbohydrates.",
+    "explanation": "The main phytochemical groups are: alkaloids (nitrogenous bases), glycosides (sugar-bound compounds), volatile oils (aromatic), tannins (phenolic), plus resins, fats, and carbohydrates.\n\nNote: and tannins",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1142,12 +1142,12 @@
     "question_text": "What are alkaloids?",
     "options": {
       "a": "Sugars found in plants",
-      "b": "Nitrogen-containing organic compounds of plant origin with pronounced physiological effects",
+      "b": "Nitrogen-containing organic compounds of plant",
       "c": "Fatty acids",
       "d": "Vitamins from plants"
     },
     "correct_option": "b",
-    "explanation": "Alkaloids are naturally occurring nitrogenous compounds (usually basic) with potent pharmacological effects. Examples: morphine, quinine, atropine, caffeine, nicotine.",
+    "explanation": "Alkaloids are naturally occurring nitrogenous compounds (usually basic) with potent pharmacological effects. Examples: morphine, quinine, atropine, caffeine, nicotine.\n\nAdditional: origin with pronounced physiological effects",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1158,12 +1158,12 @@
     "question_text": "What is the biological source of cinchona bark?",
     "options": {
       "a": "Cinchona ledgeriana",
-      "b": "Dried bark of Cinchona calisaya, C. ledgeriana, C. officinalis, or C. pubescens",
+      "b": "Dried bark of Cinchona calisaya, C.",
       "c": "Cinchona succirubra only",
       "d": "Cinchona nitida"
     },
     "correct_option": "b",
-    "explanation": "Cinchona bark is obtained from various Cinchona species (family Rubiaceae). C. ledgeriana contains the highest quinine content (up to 13%).",
+    "explanation": "Cinchona bark is obtained from various Cinchona species (family Rubiaceae). C. ledgeriana contains the highest quinine content (up to 13%).\n\nNote: C. officinalis, or C. pubescens",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -1226,13 +1226,13 @@
   {
     "question_text": "What is the biological source of ipecacuanha?",
     "options": {
-      "a": "Cephaelis ipecacuanha - dried rhizome and roots",
+      "a": "Cephaelis ipecacuanha - dried",
       "b": "Cinchona bark",
       "c": "Digitalis leaves",
       "d": "Nux vomica seeds"
     },
     "correct_option": "a",
-    "explanation": "Ipecacuanha (Ipecac) is obtained from Cephaelis ipecacuanha (family Rubiaceae), dried rhizome and roots. It contains emetine and cephaeline as chief alkaloids.",
+    "explanation": "Ipecacuanha (Ipecac) is obtained from Cephaelis ipecacuanha (family Rubiaceae), dried rhizome and roots. It contains emetine and cephaeline as chief alkaloids.\n\nAdditional: rhizome and roots",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -1346,12 +1346,12 @@
     "question_text": "Which alkaloid from ergot is used to control postpartum hemorrhage?",
     "options": {
       "a": "Ergotamine",
-      "b": "Ergometrine (ergonovine)",
+      "b": "Ergometrine",
       "c": "Lysergic acid",
       "d": "Bromocriptine"
     },
     "correct_option": "b",
-    "explanation": "Ergometrine causes sustained uterine contraction and is used to prevent/treat postpartum hemorrhage. Ergotamine is used for migraine, not for uterine effects.",
+    "explanation": "Ergometrine causes sustained uterine contraction and is used to prevent/treat postpartum hemorrhage. Ergotamine is used for migraine, not for uterine effects.\n\nNote: ergonovine",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -1413,13 +1413,13 @@
   {
     "question_text": "What is the biological source of senna?",
     "options": {
-      "a": "Cassia angustifolia or C. acutifolia - dried leaflets",
+      "a": "Cassia angustifolia or C.",
       "b": "Cassia fistula - dried fruit pulp",
       "c": "Cassia tora - dried seeds",
       "d": "Cassia siamea - dried leaves"
     },
     "correct_option": "a",
-    "explanation": "Senna leaflets are obtained from Cassia angustifolia (Tinnevelly senna) or C. acutifolia (Alexandria senna), family Fabaceae. They contain sennosides A and B.",
+    "explanation": "Senna leaflets are obtained from Cassia angustifolia (Tinnevelly senna) or C. acutifolia (Alexandria senna), family Fabaceae. They contain sennosides A and B.\n\nNote: acutifolia - dried leaflets",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1447,13 +1447,13 @@
   {
     "question_text": "What is the biological source of digitalis lanata?",
     "options": {
-      "a": "Dried leaves of Digitalis lanata (woolly foxglove)",
+      "a": "Dried leaves of Digitalis lanata",
       "b": "Dried flowers of Digitalis purpurea",
       "c": "Dried roots of Digitalis ferruginea",
       "d": "Dried seeds of Digitalis grandiflora"
     },
     "correct_option": "a",
-    "explanation": "Digitalis lanata (family Plantaginaceae) leaves are the source of digoxin, a cardiac glycoside used for heart failure and atrial fibrillation.",
+    "explanation": "Digitalis lanata (family Plantaginaceae) leaves are the source of digoxin, a cardiac glycoside used for heart failure and atrial fibrillation.\n\nNote: woolly foxglove",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -1465,12 +1465,12 @@
     "question_text": "What is the primary chemical group of cardiac glycosides found in digitalis?",
     "options": {
       "a": "Flavonoid glycosides",
-      "b": "Steroidal glycosides (cardenolides)",
+      "b": "Steroidal glycosides",
       "c": "Triterpenoid glycosides",
       "d": "Phenolic glycosides"
     },
     "correct_option": "b",
-    "explanation": "Cardiac glycosides like digitoxin and digoxin are steroidal glycosides (cardenolides) containing a steroid nucleus linked to a five-membered lactone ring and sugar molecules.",
+    "explanation": "Cardiac glycosides like digitoxin and digoxin are steroidal glycosides (cardenolides) containing a steroid nucleus linked to a five-membered lactone ring and sugar molecules.\n\nNote: cardenolides",
     "subject": "pharmacognosy",
     "difficulty": "hard",
     "tags": [
@@ -1498,12 +1498,12 @@
     "question_text": "What are volatile oils (essential oils)?",
     "options": {
       "a": "Fixed fatty oils from seeds",
-      "b": "Aromatic, volatile, odorous liquid principles isolated from plants by distillation or expression",
+      "b": "Aromatic, volatile",
       "c": "Heavy non-volatile oils",
       "d": "Mineral oils from petroleum"
     },
     "correct_option": "b",
-    "explanation": "Volatile (essential) oils are complex mixtures of volatile aromatic compounds obtained by steam distillation, expression, or solvent extraction from plant materials.",
+    "explanation": "Volatile (essential) oils are complex mixtures of volatile aromatic compounds obtained by steam distillation, expression, or solvent extraction from plant materials.\n\nNote: odorous liquid principles isolated from plants by distillation or expression",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1581,13 +1581,13 @@
   {
     "question_text": "What is the biological source of cinnamon bark?",
     "options": {
-      "a": "Cinnamomum verum (C. zeylanicum) - dried inner bark",
+      "a": "Cinnamomum verum - dried inner bark",
       "b": "Cinnamomum cassia - dried bark only",
       "c": "Cinnamomum camphora - bark",
       "d": "Cinnamomum burmannii - leaves"
     },
     "correct_option": "a",
-    "explanation": "Ceylon cinnamon (true cinnamon) is obtained from Cinnamomum verum (family Lauraceae) dried inner bark. Cassia cinnamon comes from C. cassia and has higher coumarin content.",
+    "explanation": "Ceylon cinnamon (true cinnamon) is obtained from Cinnamomum verum (family Lauraceae) dried inner bark. Cassia cinnamon comes from C. cassia and has higher coumarin content.\n\nNote: C. zeylanicum",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -1631,12 +1631,12 @@
     "question_text": "What are the chief chemical constituents of ginger?",
     "options": {
       "a": "Eugenol and cinnamaldehyde",
-      "b": "Gingerols and shogaols (pungent principles)",
+      "b": "Gingerols and shogaols",
       "c": "Curcumin and turmerone",
       "d": "Menthol and menthone"
     },
     "correct_option": "b",
-    "explanation": "Ginger contains pungent principles gingerols (especially 6-gingerol) and shogaols (dehydration products of gingerols), plus volatile oil (1-3%).",
+    "explanation": "Ginger contains pungent principles gingerols (especially 6-gingerol) and shogaols (dehydration products of gingerols), plus volatile oil (1-3%).\n\nNote: pungent principles",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -1681,13 +1681,13 @@
   {
     "question_text": "What is the biological source of neem?",
     "options": {
-      "a": "Azadirachta indica - leaves, bark, and seeds",
+      "a": "Azadirachta indica - leaves, bark",
       "b": "Melia azedarach - leaves only",
       "c": "Azadirachta indica - only seeds",
       "d": "Tinospora cordifolia - stem"
     },
     "correct_option": "a",
-    "explanation": "Neem (Azadirachta indica A. Juss., family Meliaceae) is used from leaves, bark, seeds, and flowers. Its key compound is azadirachtin from seeds, with insecticidal properties.",
+    "explanation": "Neem (Azadirachta indica A. Juss., family Meliaceae) is used from leaves, bark, seeds, and flowers. Its key compound is azadirachtin from seeds, with insecticidal properties.\n\nNote: and seeds",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1698,12 +1698,12 @@
     "question_text": "What is the medicinal importance of neem?",
     "options": {
       "a": "Cardiac tonic only",
-      "b": "Antibacterial, antifungal, antiparasitic, anti-inflammatory, and insecticidal properties",
+      "b": "Antibacterial, antifungal",
       "c": "Laxative only",
       "d": "Analgesic only"
     },
     "correct_option": "b",
-    "explanation": "Neem has broad therapeutic uses: antibacterial, antifungal, antiviral, anti-inflammatory, antipyretic, antidiabetic, and insecticidal (azadirachtin) properties.",
+    "explanation": "Neem has broad therapeutic uses: antibacterial, antifungal, antiviral, anti-inflammatory, antipyretic, antidiabetic, and insecticidal (azadirachtin) properties.\n\nNote: antiparasitic, anti-inflammatory, and insecticidal properties",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1715,12 +1715,12 @@
     "question_text": "What is the biological source of aloe?",
     "options": {
       "a": "Aloe vera - fresh leaf gel",
-      "b": "Aloe barbadensis (A. vera) - dried latex from pericyclic cells",
+      "b": "Aloe barbadensis - dried latex from pericyclic cells",
       "c": "Aloe ferox - leaves only",
       "d": "Aloe perryi - dried leaf gel"
     },
     "correct_option": "b",
-    "explanation": "Pharmacological aloe is the dried latex (juice) from pericyclic cells of Aloe barbadensis leaves. Aloe vera gel (from parenchyma) is used topically for burns.",
+    "explanation": "Pharmacological aloe is the dried latex (juice) from pericyclic cells of Aloe barbadensis leaves. Aloe vera gel (from parenchyma) is used topically for burns.\n\nNote: A. vera",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -1817,12 +1817,12 @@
     "question_text": "What are tannins in pharmacognosy?",
     "options": {
       "a": "Nitrogenous alkaloids",
-      "b": "Water-soluble polyphenolic compounds that precipitate proteins and have astringent properties",
+      "b": "Water-soluble polyphenolic compounds that precipitate",
       "c": "Volatile aromatic oils",
       "d": "Steroidal glycosides"
     },
     "correct_option": "b",
-    "explanation": "Tannins are complex phenolic compounds (high molecular weight) that precipitate proteins. They have astringent, antimicrobial, and anti-inflammatory properties.",
+    "explanation": "Tannins are complex phenolic compounds (high molecular weight) that precipitate proteins. They have astringent, antimicrobial, and anti-inflammatory properties.\n\nAdditional: proteins and have astringent properties",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -1850,7 +1850,7 @@
     "question_text": "What is the chief alkaloid of tea?",
     "options": {
       "a": "Theobromine",
-      "b": "Caffeine (theine)",
+      "b": "Caffeine",
       "c": "Theophylline",
       "d": "Theobromine and caffeine equally"
     },
@@ -1866,7 +1866,7 @@
   {
     "question_text": "What is the biological source of coffee?",
     "options": {
-      "a": "Coffea arabica - dried seeds (beans)",
+      "a": "Coffea arabica - dried seeds",
       "b": "Coffea canephora - dried leaves",
       "c": "Coffea liberica - dried fruits",
       "d": "Coffea arabica - dried flowers"
@@ -1917,7 +1917,7 @@
   {
     "question_text": "What are the chief alkaloids of cinchona bark?",
     "options": {
-      "a": "Quinine, quinidine, cinchonine, cinchonidine",
+      "a": "Quinine, quinidine, cinchonine",
       "b": "Morphine, codeine, papaverine",
       "c": "Atropine, hyoscyamine, scopolamine",
       "d": "Strychnine, brucine"
@@ -1934,13 +1934,13 @@
   {
     "question_text": "What is the biological source of khair (Acacia catechu)?",
     "options": {
-      "a": "Heartwood of Acacia catechu - aqueous extract (cutch/khair)",
+      "a": "Heartwood of Acacia catechu - aqueous extract",
       "b": "Bark of Acacia arabica",
       "c": "Leaves of Acacia nilotica",
       "d": "Seeds of Acacia senegal"
     },
     "correct_option": "a",
-    "explanation": "Khair (Cutch) is the aqueous extract of heartwood of Acacia catechu (family Fabaceae). It is rich in catechu tannins and used in diarrhea and throat infections.",
+    "explanation": "Khair (Cutch) is the aqueous extract of heartwood of Acacia catechu (family Fabaceae). It is rich in catechu tannins and used in diarrhea and throat infections.\n\nNote: cutch/khair",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2003,12 +2003,12 @@
     "question_text": "Which class of compounds is responsible for the therapeutic activity of ashwagandha?",
     "options": {
       "a": "Alkaloids only",
-      "b": "Withanolides (steroidal lactones)",
+      "b": "Withanolides",
       "c": "Tannins",
       "d": "Volatile oils"
     },
     "correct_option": "b",
-    "explanation": "Withanolides (steroidal lactones) are the primary active compounds in ashwagandha responsible for its adaptogenic, anti-inflammatory, and immunomodulatory activities.",
+    "explanation": "Withanolides (steroidal lactones) are the primary active compounds in ashwagandha responsible for its adaptogenic, anti-inflammatory, and immunomodulatory activities.\n\nNote: steroidal lactones",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2037,12 +2037,12 @@
     "question_text": "Which active constituents of brahmi are responsible for its nootropic activity?",
     "options": {
       "a": "Withanolides",
-      "b": "Bacosides A and B (triterpenoid saponins)",
+      "b": "Bacosides A and B",
       "c": "Curcumin",
       "d": "Gingerols"
     },
     "correct_option": "b",
-    "explanation": "Bacosides A and B are dammarane-type triterpenoid saponins responsible for Brahmi's memory-enhancing, antioxidant, and neuroprotective properties.",
+    "explanation": "Bacosides A and B are dammarane-type triterpenoid saponins responsible for Brahmi's memory-enhancing, antioxidant, and neuroprotective properties.\n\nNote: triterpenoid saponins",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2138,11 +2138,11 @@
     "options": {
       "a": "Terminalia chebula - fruits",
       "b": "Terminalia bellirica - fruits",
-      "c": "Emblica officinalis (Phyllanthus emblica) - dried fruits",
+      "c": "Emblica officinalis - dried fruits",
       "d": "Garcinia cambogia - dried rind"
     },
     "correct_option": "c",
-    "explanation": "Amalaki is the dried fruit of Emblica officinalis Gaertn. (family Phyllanthaceae). It is the richest natural source of vitamin C and is one of the Triphala ingredients.",
+    "explanation": "Amalaki is the dried fruit of Emblica officinalis Gaertn. (family Phyllanthaceae). It is the richest natural source of vitamin C and is one of the Triphala ingredients.\n\nNote: Phyllanthus emblica",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2154,12 +2154,12 @@
     "question_text": "What is Triphala?",
     "options": {
       "a": "A single herb",
-      "b": "An Ayurvedic formulation containing equal parts of haritaki, vibhitaki, and amalaki",
+      "b": "An Ayurvedic formulation containing equal",
       "c": "A mineral drug",
       "d": "An animal product"
     },
     "correct_option": "b",
-    "explanation": "Triphala is a classical Ayurvedic preparation containing equal proportions of three fruits: Haritaki (Terminalia chebula), Vibhitaki (T. bellirica), and Amalaki (Emblica officinalis).",
+    "explanation": "Triphala is a classical Ayurvedic preparation containing equal proportions of three fruits: Haritaki (Terminalia chebula), Vibhitaki (T. bellirica), and Amalaki (Emblica officinalis).\n\nNote: and amalaki\n\nAdditional: parts of haritaki vibhitaki",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -2170,12 +2170,12 @@
     "question_text": "What are the therapeutic uses of Triphala?",
     "options": {
       "a": "Only laxative",
-      "b": "Laxative, antioxidant, anti-inflammatory, immunomodulatory, and adaptogenic",
+      "b": "Laxative, antioxidant",
       "c": "Analgesic only",
       "d": "Antimalarial only"
     },
     "correct_option": "b",
-    "explanation": "Triphala has multiple therapeutic properties: mild laxative, potent antioxidant, anti-inflammatory, immunomodulatory, adaptogenic, and anti-diabetic activities.",
+    "explanation": "Triphala has multiple therapeutic properties: mild laxative, potent antioxidant, anti-inflammatory, immunomodulatory, adaptogenic, and anti-diabetic activities.\n\nNote: anti-inflammatory, immunomodulatory, and adaptogenic",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2251,13 +2251,13 @@
   {
     "question_text": "What is the chief constituent of licorice?",
     "options": {
-      "a": "Glycyrrhizin (glycyrrhizic acid)",
+      "a": "Glycyrrhizin",
       "b": "Glabridin",
       "c": "Liquiritin",
       "d": "Isoliquiritigenin"
     },
     "correct_option": "a",
-    "explanation": "Glycyrrhizin (glycyrrhizic acid, 2-14%) is the chief constituent of licorice, 50 times sweeter than sugar. It has anti-inflammatory, antitussive, and hepatoprotective properties.",
+    "explanation": "Glycyrrhizin (glycyrrhizic acid, 2-14%) is the chief constituent of licorice, 50 times sweeter than sugar. It has anti-inflammatory, antitussive, and hepatoprotective properties.\n\nNote: glycyrrhizic acid",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2349,13 +2349,13 @@
   {
     "question_text": "What is the biological source of podophyllum?",
     "options": {
-      "a": "Podophyllum peltatum (May apple) - dried rhizome and roots",
+      "a": "Podophyllum peltatum - dried rhizome and roots",
       "b": "Berberis vulgaris - dried bark",
       "c": "Hydrastis canadensis - dried rhizome",
       "d": "Coptis chinensis - dried rhizome"
     },
     "correct_option": "a",
-    "explanation": "Podophyllum is the dried rhizome and roots of Podophyllum peltatum (family Berberidaceae). It contains podophyllotoxin, used topically for warts and as a precursor for anticancer drugs.",
+    "explanation": "Podophyllum is the dried rhizome and roots of Podophyllum peltatum (family Berberidaceae). It contains podophyllotoxin, used topically for warts and as a precursor for anticancer drugs.\n\nNote: May apple",
     "subject": "pharmacognosy",
     "difficulty": "hard",
     "tags": [
@@ -2367,12 +2367,12 @@
     "question_text": "What is podophyllotoxin used for?",
     "options": {
       "a": "Oral laxative",
-      "b": "Topical treatment of warts and condylomata; precursor for anticancer drugs (etoposide)",
+      "b": "Topical treatment of warts and",
       "c": "Antimalarial",
       "d": "Antihypertensive"
     },
     "correct_option": "b",
-    "explanation": "Podophyllotoxin is used topically to treat genital warts (condyloma acuminatum) and is the chemical precursor for the anticancer drugs etoposide and teniposide.",
+    "explanation": "Podophyllotoxin is used topically to treat genital warts (condyloma acuminatum) and is the chemical precursor for the anticancer drugs etoposide and teniposide.\n\nNote: etoposide\n\nAdditional: condylomata; precursor for anticancer drugs",
     "subject": "pharmacognosy",
     "difficulty": "hard",
     "tags": [
@@ -2484,13 +2484,13 @@
   {
     "question_text": "What are the main active constituents of Ginkgo biloba?",
     "options": {
-      "a": "Ginkgolides and bilobalide (terpene lactones) plus flavone glycosides",
+      "a": "Ginkgolides and bilobalide",
       "b": "Hypericin and hyperforin",
       "c": "Withanolides",
       "d": "Bacosides"
     },
     "correct_option": "a",
-    "explanation": "Ginkgo contains flavone glycosides (24%), terpene lactones including ginkgolides A, B, C, J and bilobalide (6%), used for cognitive function and peripheral circulation.",
+    "explanation": "Ginkgo contains flavone glycosides (24%), terpene lactones including ginkgolides A, B, C, J and bilobalide (6%), used for cognitive function and peripheral circulation.\n\nAdditional: plus flavone glycosides",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2518,13 +2518,13 @@
   {
     "question_text": "What are the active constituents of ginseng?",
     "options": {
-      "a": "Ginsenosides (steroidal saponins)",
+      "a": "Ginsenosides",
       "b": "Withanolides",
       "c": "Bacosides",
       "d": "Hyperforin"
     },
     "correct_option": "a",
-    "explanation": "Ginsenosides (protopanaxadiol and protopanaxatriol types) are the primary active compounds of ginseng, responsible for adaptogenic, immunomodulatory, and antifatigue effects.",
+    "explanation": "Ginsenosides (protopanaxadiol and protopanaxatriol types) are the primary active compounds of ginseng, responsible for adaptogenic, immunomodulatory, and antifatigue effects.\n\nNote: steroidal saponins",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2621,12 +2621,12 @@
     "question_text": "What is the chief active constituent of uva ursi?",
     "options": {
       "a": "Salicin",
-      "b": "Arbutin (hydroquinone glycoside)",
+      "b": "Arbutin",
       "c": "Hypericin",
       "d": "Berberine"
     },
     "correct_option": "b",
-    "explanation": "Arbutin (hydroquinone-β-D-glucopyranoside, 5-8%) is the chief constituent of uva ursi. It is hydrolyzed in the urinary tract to release hydroquinone with antiseptic action.",
+    "explanation": "Arbutin (hydroquinone-β-D-glucopyranoside, 5-8%) is the chief constituent of uva ursi. It is hydrolyzed in the urinary tract to release hydroquinone with antiseptic action.\n\nNote: hydroquinone glycoside",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2735,12 +2735,12 @@
     "question_text": "What is the chief active constituent of milk thistle?",
     "options": {
       "a": "Curcumin",
-      "b": "Silymarin (especially silybin)",
+      "b": "Silymarin",
       "c": "Ginkgolides",
       "d": "Hyperforin"
     },
     "correct_option": "b",
-    "explanation": "Silymarin is a flavonolignan complex containing silybin (silybinin), silychristin, and silydianin. Silybin is the most pharmacologically active component with hepatoprotective effects.",
+    "explanation": "Silymarin is a flavonolignan complex containing silybin (silybinin), silychristin, and silydianin. Silybin is the most pharmacologically active component with hepatoprotective effects.\n\nNote: especially silybin",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2769,12 +2769,12 @@
     "question_text": "What is the chief active principle of garlic?",
     "options": {
       "a": "Ajoene",
-      "b": "Allicin (diallyl thiosulfinate)",
+      "b": "Allicin",
       "c": "Diallyl disulfide",
       "d": "S-allyl cysteine"
     },
     "correct_option": "b",
-    "explanation": "Allicin is the principal bioactive compound of garlic, formed when alliin is cleaved by alliinase enzyme during crushing/chopping. It has antimicrobial, hypolipidemic, and cardiovascular benefits.",
+    "explanation": "Allicin is the principal bioactive compound of garlic, formed when alliin is cleaved by alliinase enzyme during crushing/chopping. It has antimicrobial, hypolipidemic, and cardiovascular benefits.\n\nNote: diallyl thiosulfinate",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2785,13 +2785,13 @@
   {
     "question_text": "What is the biological source of bitter orange?",
     "options": {
-      "a": "Citrus aurantium - dried unripe fruit (bergamot)",
+      "a": "Citrus aurantium - dried unripe fruit",
       "b": "Citrus sinensis - fresh fruit",
       "c": "Citrus limon - dried peel",
       "d": "Citrus paradisi - fresh fruit"
     },
     "correct_option": "a",
-    "explanation": "Bitter orange is the dried unripe fruit of Citrus aurantium Linn. (family Rutaceae). It contains synephrine, octopamine, and volatile oil, used as a digestive and carminative.",
+    "explanation": "Bitter orange is the dried unripe fruit of Citrus aurantium Linn. (family Rutaceae). It contains synephrine, octopamine, and volatile oil, used as a digestive and carminative.\n\nNote: bergamot",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -2903,12 +2903,12 @@
     "question_text": "What is the chief constituent of eucalyptus oil?",
     "options": {
       "a": "Menthol",
-      "b": "Eucalyptol (1,8-cineole)",
+      "b": "Eucalyptol",
       "c": "Eugenol",
       "d": "Thymol"
     },
     "correct_option": "b",
-    "explanation": "Eucalyptol (1,8-cineole, 70-85%) is the chief constituent of eucalyptus oil. It has expectorant, anti-inflammatory, and antiseptic properties, used in cough and cold preparations.",
+    "explanation": "Eucalyptol (1,8-cineole, 70-85%) is the chief constituent of eucalyptus oil. It has expectorant, anti-inflammatory, and antiseptic properties, used in cough and cold preparations.\n\nNote: 1,8-cineole",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3021,13 +3021,13 @@
   {
     "question_text": "What is the biological source of lanolin?",
     "options": {
-      "a": "Fat from sheep's wool (sebaceous glands)",
+      "a": "Fat from sheep's wool",
       "b": "Butter from sheep's milk",
       "c": "Fat from pig's skin",
       "d": "Fat from cow's milk"
     },
     "correct_option": "a",
-    "explanation": "Lanolin (wool fat/wool wax) is obtained from the sebaceous glands of sheep, purified from wool washing water. It is used as an emollient and ointment base.",
+    "explanation": "Lanolin (wool fat/wool wax) is obtained from the sebaceous glands of sheep, purified from wool washing water. It is used as an emollient and ointment base.\n\nNote: sebaceous glands",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3055,7 +3055,7 @@
   {
     "question_text": "What is the biological source of shellac?",
     "options": {
-      "a": "Lac insects (Kerria lacca) on Butea monosperma",
+      "a": "Lac insects on Butea monosperma",
       "b": "Shellfish from the ocean",
       "c": "Beetle wings",
       "d": "Tree bark resin"
@@ -3073,12 +3073,12 @@
     "question_text": "What is the biological source of cantharides (Spanish fly)?",
     "options": {
       "a": "Cantharis vesicatoria - dried beetle",
-      "b": "Blister beetle (Lytta vesicatoria) - dried insect",
+      "b": "Blister beetle - dried insect",
       "c": "Coccus cacti - dried insect",
       "d": "Blatta orientalis - dried cockroach"
     },
     "correct_option": "b",
-    "explanation": "Cantharides is the dried blister beetle Lytta (Cantharis) vesicatoria containing cantharidin, used topically as a vesicant and for wart removal.",
+    "explanation": "Cantharides is the dried blister beetle Lytta (Cantharis) vesicatoria containing cantharidin, used topically as a vesicant and for wart removal.\n\nNote: Lytta vesicatoria",
     "subject": "pharmacognosy",
     "difficulty": "hard",
     "tags": [
@@ -3089,12 +3089,12 @@
     "question_text": "What is the active principle of cantharides?",
     "options": {
       "a": "Muscuzine",
-      "b": "Cantharidin (terpenoid)",
+      "b": "Cantharidin",
       "c": "Propolis",
       "d": "Royal jelly"
     },
     "correct_option": "b",
-    "explanation": "Cantharidin is a terpenoid vesicant produced by blister beetles. It causes blistering of skin and was historically used as a wart remover and aphrodisiac (dangerously toxic).",
+    "explanation": "Cantharidin is a terpenoid vesicant produced by blister beetles. It causes blistering of skin and was historically used as a wart remover and aphrodisiac (dangerously toxic).\n\nNote: terpenoid",
     "subject": "pharmacognosy",
     "difficulty": "hard",
     "tags": [
@@ -3137,13 +3137,13 @@
   {
     "question_text": "What is the biological source of royal jelly?",
     "options": {
-      "a": "Secretion from hypopharyngeal glands of worker bees fed to queen bee",
+      "a": "Secretion from hypopharyngeal glands of worker",
       "b": "Pollen collected by bees",
       "c": "Honey from wild bees",
       "d": "Bee venom"
     },
     "correct_option": "a",
-    "explanation": "Royal jelly is a milky secretion from hypopharyngeal glands of worker Apis mellifera bees, fed exclusively to the queen. It contains proteins, fatty acids (10-HDA), and vitamins.",
+    "explanation": "Royal jelly is a milky secretion from hypopharyngeal glands of worker Apis mellifera bees, fed exclusively to the queen. It contains proteins, fatty acids (10-HDA), and vitamins.\n\nAdditional: bees fed to queen bee",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3153,13 +3153,13 @@
   {
     "question_text": "What is the biological source of musk?",
     "options": {
-      "a": "Moschus moschiferus - dried secretion from preputial gland of male musk deer",
+      "a": "Moschus moschiferus - dried secretion from",
       "b": "Moschus moschiferus - dried skin",
       "c": "Moschus moschiferus - dried antlers",
       "d": "Moschus moschiferus - dried bones"
     },
     "correct_option": "a",
-    "explanation": "Musk is the dried secretion from the preputial gland (musking gland) of the male musk deer (Moschus moschiferus, family Moschidae). It contains muscone as chief aromatic compound.",
+    "explanation": "Musk is the dried secretion from the preputial gland (musking gland) of the male musk deer (Moschus moschiferus, family Moschidae). It contains muscone as chief aromatic compound.\n\nAdditional: preputial gland of male musk deer",
     "subject": "pharmacognosy",
     "difficulty": "hard",
     "tags": [
@@ -3204,13 +3204,13 @@
   {
     "question_text": "What is the biological source of pearl?",
     "options": {
-      "a": "Pinctada margaritifera or P. vulgari - calcareous concretion from shell",
+      "a": "Pinctada margaritifera or P.",
       "b": "Haliotis species - dried shell",
       "c": "Crassostrea gigas - dried meat",
       "d": "Mytilus edulis - dried shell"
     },
     "correct_option": "a",
-    "explanation": "Pearl is a calcareous concretion formed within the shell of Pinctada species (pearl oyster). It contains calcium carbonate, conchiolin, and trace elements, used in traditional medicine.",
+    "explanation": "Pearl is a calcareous concretion formed within the shell of Pinctada species (pearl oyster). It contains calcium carbonate, conchiolin, and trace elements, used in traditional medicine.\n\nNote: vulgari - calcareous concretion from shell",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3238,13 +3238,13 @@
   {
     "question_text": "What is the biological source of agar-agar?",
     "options": {
-      "a": "Gelidium amansii or Gracilaria species - dried seaweed (red algae)",
+      "a": "Gelidium amansii or Gracilaria species - dried seaweed",
       "b": "Laminaria digitata - brown algae",
       "c": "Chlorella vulgaris - green algae",
       "d": "Spirulina platensis - blue-green algae"
     },
     "correct_option": "a",
-    "explanation": "Agar-agar is obtained from dried red algae (Gelidium, Gracilaria, Eucheuma species). It is a gelatinous substance used as a microbiological culture medium and pharmaceutical excipient.",
+    "explanation": "Agar-agar is obtained from dried red algae (Gelidium, Gracilaria, Eucheuma species). It is a gelatinous substance used as a microbiological culture medium and pharmaceutical excipient.\n\nNote: red algae",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3255,13 +3255,13 @@
   {
     "question_text": "What is the biological source of carrageenan?",
     "options": {
-      "a": "Chondrus crispus (Irish moss) and other red seaweeds",
+      "a": "Chondrus crispus and other red seaweeds",
       "b": "Laminaria digitata (kelp)",
       "c": "Fucus vesiculosus (bladderwrack)",
       "d": "Ulva lactuca (sea lettuce)"
     },
     "correct_option": "a",
-    "explanation": "Carrageenan is obtained from red seaweeds (Chondrus crispus, Eucheuma, Kappaphycus species). It is used as a suspending agent, emulsifier, and thickener in pharmaceutical formulations.",
+    "explanation": "Carrageenan is obtained from red seaweeds (Chondrus crispus, Eucheuma, Kappaphycus species). It is used as a suspending agent, emulsifier, and thickener in pharmaceutical formulations.\n\nNote: Irish moss",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3272,13 +3272,13 @@
   {
     "question_text": "What is the biological source of alginate (sodium alginate)?",
     "options": {
-      "a": "Laminaria digitata, Macrocystis pyrifera, or other brown seaweeds",
+      "a": "Laminaria digitata, Macrocystis pyrifera",
       "b": "Gelidium amansii - red algae",
       "c": "Chlorella vulgaris - green algae",
       "d": "Spirulina platensis - cyanobacteria"
     },
     "correct_option": "a",
-    "explanation": "Sodium alginate is extracted from brown seaweeds (Laminaria, Macrocystis, Durvillaea species). It is used as a tablet excipient, emulsifier, and in wound dressings.",
+    "explanation": "Sodium alginate is extracted from brown seaweeds (Laminaria, Macrocystis, Durvillaea species). It is used as a tablet excipient, emulsifier, and in wound dressings.\n\nNote: or other brown seaweeds",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3305,13 +3305,13 @@
   {
     "question_text": "What is the biological source of petroleum jelly (petrolatum)?",
     "options": {
-      "a": "Refined semi-solid mixture of hydrocarbons from petroleum",
+      "a": "Refined semi-solid mixture of",
       "b": "Animal fat from rendering",
       "c": "Plant wax from jojoba",
       "d": "Mineral oil from limestone"
     },
     "correct_option": "a",
-    "explanation": "Petroleum jelly is a semi-solid mixture of hydrocarbons obtained by refining petroleum. It is used as an ointment base, emollient, and protective barrier.",
+    "explanation": "Petroleum jelly is a semi-solid mixture of hydrocarbons obtained by refining petroleum. It is used as an ointment base, emollient, and protective barrier.\n\nAdditional: hydrocarbons from petroleum",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3321,13 +3321,13 @@
   {
     "question_text": "What is the biological source of kaolin?",
     "options": {
-      "a": "Natural hydrated aluminum silicate (clay mineral)",
+      "a": "Natural hydrated aluminum silicate",
       "b": "Calcium carbonate from seashells",
       "c": "Magnesium trisilicate from mineral springs",
       "d": "Zinc oxide from zinc ores"
     },
     "correct_option": "a",
-    "explanation": "Kaolin is a naturally occurring hydrated aluminum silicate (clay). It is used as a protective dusting powder, in antidiarrheal mixtures, and as a pharmaceutical adsorbent.",
+    "explanation": "Kaolin is a naturally occurring hydrated aluminum silicate (clay). It is used as a protective dusting powder, in antidiarrheal mixtures, and as a pharmaceutical adsorbent.\n\nNote: clay mineral",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3338,13 +3338,13 @@
   {
     "question_text": "What is the biological source of bentonite?",
     "options": {
-      "a": "Natural colloidal hydrated aluminum silicate (montmorillonite)",
+      "a": "Natural colloidal hydrated aluminum silicate",
       "b": "Natural calcium carbonate",
       "c": "Natural magnesium hydroxide",
       "d": "Natural sodium bicarbonate"
     },
     "correct_option": "a",
-    "explanation": "Bentonite is a native colloidal hydrated aluminum silicate (montmorillonite) that swells in water. It is used as a suspending agent, emulsifying agent, and adsorbent.",
+    "explanation": "Bentonite is a native colloidal hydrated aluminum silicate (montmorillonite) that swells in water. It is used as a suspending agent, emulsifying agent, and adsorbent.\n\nNote: montmorillonite",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3372,13 +3372,13 @@
   {
     "question_text": "What is the biological source of calcium carbonate (natural chalk)?",
     "options": {
-      "a": "Natural calcium carbonate from limestone, marble, or shells",
+      "a": "Natural calcium carbonate from limestone, marble",
       "b": "Synthetic calcium hydroxide",
       "c": "Natural sodium bicarbonate",
       "d": "Natural magnesium carbonate"
     },
     "correct_option": "a",
-    "explanation": "Natural calcium carbonate (CaCO₃) is obtained from limestone, marble, or oyster shells. It is used as an antacid and calcium supplement.",
+    "explanation": "Natural calcium carbonate (CaCO₃) is obtained from limestone, marble, or oyster shells. It is used as an antacid and calcium supplement.\n\nNote: or shells",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3389,13 +3389,13 @@
   {
     "question_text": "What is the biological source of Epsom salt?",
     "options": {
-      "a": "Natural magnesium sulfate heptahydrate (MgSO₄·7H₂O)",
+      "a": "Natural magnesium sulfate heptahydrate",
       "b": "Natural sodium chloride",
       "c": "Natural potassium chloride",
       "d": "Natural calcium sulfate"
     },
     "correct_option": "a",
-    "explanation": "Epsom salt is magnesium sulfate heptahydrate, obtained from mineral springs or natural deposits. It is used as a saline purgative and in bath preparations.",
+    "explanation": "Epsom salt is magnesium sulfate heptahydrate, obtained from mineral springs or natural deposits. It is used as a saline purgative and in bath preparations.\n\nNote: MgSO₄·7H₂O",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3406,13 +3406,13 @@
   {
     "question_text": "What is the biological source of fuller's earth?",
     "options": {
-      "a": "Natural hydrated aluminum silicate (bentonite type)",
+      "a": "Natural hydrated aluminum silicate",
       "b": "Natural calcium carbonate",
       "c": "Natural diatomaceous earth",
       "d": "Natural kaolin"
     },
     "correct_option": "a",
-    "explanation": "Fuller's earth is a natural hydrated aluminum silicate with good adsorptive properties. It is used as a filtering agent, in face packs, and as a protective dusting powder.",
+    "explanation": "Fuller's earth is a natural hydrated aluminum silicate with good adsorptive properties. It is used as a filtering agent, in face packs, and as a protective dusting powder.\n\nNote: bentonite type",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3423,13 +3423,13 @@
   {
     "question_text": "What is the biological source of diatomaceous earth (kieselguhr)?",
     "options": {
-      "a": "Fossilized remains of diatoms (siliceous algae)",
+      "a": "Fossilized remains of diatoms",
       "b": "Crystalline silica from mountains",
       "c": "Volcanic ash deposits",
       "d": "Coral reef sediments"
     },
     "correct_option": "a",
-    "explanation": "Kieselguhr (diatomaceous earth) consists of fossilized remains of diatoms (siliceous unicellular algae). It is used as a filter aid and as a pharmaceutical extender.",
+    "explanation": "Kieselguhr (diatomaceous earth) consists of fossilized remains of diatoms (siliceous unicellular algae). It is used as a filter aid and as a pharmaceutical extender.\n\nNote: siliceous algae",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3441,12 +3441,12 @@
     "question_text": "What is the difference between glycosides and alkaloids?",
     "options": {
       "a": "No difference",
-      "b": "Glycosides contain a sugar moiety; alkaloids contain nitrogen and are basic",
+      "b": "Glycosides contain a sugar moiety;",
       "c": "Glycosides are always toxic; alkaloids are always safe",
       "d": "Alkaloids are found in animals; glycosides in plants only"
     },
     "correct_option": "b",
-    "explanation": "Glycosides are compounds containing a sugar part (glycone) bound to a non-sugar part (aglycone). Alkaloids are nitrogen-containing, usually basic compounds with physiological effects.",
+    "explanation": "Glycosides are compounds containing a sugar part (glycone) bound to a non-sugar part (aglycone). Alkaloids are nitrogen-containing, usually basic compounds with physiological effects.\n\nNote: alkaloids contain nitrogen and are basic",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3458,12 +3458,12 @@
     "question_text": "What are the main types of glycosides based on the aglycone?",
     "options": {
       "a": "Sugars and starches",
-      "b": "Cardiac glycosides, anthraquinone glycosides, saponin glycosides, flavonoid glycosides, cyanogenic glycosides",
+      "b": "Cardiac glycosides, anthraquinone glycosides",
       "c": "Alkaloids and vitamins",
       "d": "Fats and waxes"
     },
     "correct_option": "b",
-    "explanation": "Glycosides are classified by their aglycone: cardiac (digitoxin), anthraquinone (sennosides), saponin (diosgenin), flavonoid (rutin), cyanogenic (amygdalin), etc.",
+    "explanation": "Glycosides are classified by their aglycone: cardiac (digitoxin), anthraquinone (sennosides), saponin (diosgenin), flavonoid (rutin), cyanogenic (amygdalin), etc.\n\nNote: saponin glycosides, flavonoid glycosides, cyanogenic glycosides",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3491,12 +3491,12 @@
     "question_text": "What are the sources of cardiac glycosides?",
     "options": {
       "a": "Only from Digitalis species",
-      "b": "Digitalis, Strophanthus, Thevetia, Nerium, and Convallaria species",
+      "b": "Digitalis, Strophanthus",
       "c": "Only from animal sources",
       "d": "Only from synthetic chemistry"
     },
     "correct_option": "b",
-    "explanation": "Cardiac glycosides come from multiple plant sources: Digitalis (digitoxin, digoxin), Strophanthus (ouabain), Thevetia (thevetin), Nerium (oleandrin), Convallaria (convallatoxin).",
+    "explanation": "Cardiac glycosides come from multiple plant sources: Digitalis (digitoxin, digoxin), Strophanthus (ouabain), Thevetia (thevetin), Nerium (oleandrin), Convallaria (convallatoxin).\n\nNote: Thevetia, Nerium, and Convallaria species",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3508,12 +3508,12 @@
     "question_text": "What is the Kedde test used for?",
     "options": {
       "a": "Testing for alkaloids",
-      "b": "Chemical identification test for cardenolides (cardiac glycosides) using 3,5-dinitrobenzoic acid",
+      "b": "Chemical identification test for cardenolides",
       "c": "Testing for tannins",
       "d": "Testing for volatile oils"
     },
     "correct_option": "b",
-    "explanation": "The Kedde test is a colorimetric test for cardenolides: the drug extract with 3,5-dinitrobenzoic acid and alkali produces a violet/purple color indicating the unsaturated lactone ring.",
+    "explanation": "The Kedde test is a colorimetric test for cardenolides: the drug extract with 3,5-dinitrobenzoic acid and alkali produces a violet/purple color indicating the unsaturated lactone ring.\n\nNote: cardiac glycosides\n\nAdditional: using 3 5-dinitrobenzoic acid",
     "subject": "pharmacognosy",
     "difficulty": "hard",
     "tags": [
@@ -3525,12 +3525,12 @@
     "question_text": "What is the Keller-Kiliani test used for?",
     "options": {
       "a": "Testing for alkaloids",
-      "b": "Identification test for cardenolides containing a 2-deoxy sugar (like digitoxose)",
+      "b": "Identification test for cardenolides",
       "c": "Testing for tannins",
       "d": "Testing for saponins"
     },
     "correct_option": "b",
-    "explanation": "The Keller-Kiliani test detects 2-deoxy sugars in cardiac glycosides. Glacial acetic acid with ferric chloride and concentrated sulfuric acid produces a blue-green color at the junction.",
+    "explanation": "The Keller-Kiliani test detects 2-deoxy sugars in cardiac glycosides. Glacial acetic acid with ferric chloride and concentrated sulfuric acid produces a blue-green color at the junction.\n\nNote: like digitoxose\n\nAdditional: containing a 2-deoxy sugar",
     "subject": "pharmacognosy",
     "difficulty": "hard",
     "tags": [
@@ -3542,12 +3542,12 @@
     "question_text": "What are saponin glycosides?",
     "options": {
       "a": "Glycosides with sweet taste only",
-      "b": "Glycosides that produce soap-like foam in aqueous solution and have hemolytic activity",
+      "b": "Glycosides that produce soap-like foam in",
       "c": "Glycosides with bitter taste only",
       "d": "Glycosides that are always toxic"
     },
     "correct_option": "b",
-    "explanation": "Saponins are glycosides that form stable foam (like soap) in aqueous solution and have the ability to lyse red blood cells (hemolysis). They have surfactant properties.",
+    "explanation": "Saponins are glycosides that form stable foam (like soap) in aqueous solution and have the ability to lyse red blood cells (hemolysis). They have surfactant properties.\n\nAdditional: aqueous solution and have hemolytic activity",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3558,12 +3558,12 @@
     "question_text": "What is a hemolytic test for saponins?",
     "options": {
       "a": "Blood group testing",
-      "b": "Adding saponin solution to blood causes lysis of red blood cells (hemolysis)",
+      "b": "Adding saponin solution to blood causes",
       "c": "Testing blood clotting time",
       "d": "Measuring blood pressure"
     },
     "correct_option": "b",
-    "explanation": "Saponins disrupt cell membranes due to their surfactant nature. When added to blood, they lyse RBCs, causing release of hemoglobin — this is the hemolytic test for saponins.",
+    "explanation": "Saponins disrupt cell membranes due to their surfactant nature. When added to blood, they lyse RBCs, causing release of hemoglobin — this is the hemolytic test for saponins.\n\nNote: hemolysis\n\nAdditional: lysis of red blood cells",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3575,12 +3575,12 @@
     "question_text": "What is the foaming test for saponins?",
     "options": {
       "a": "Testing if water boils",
-      "b": "Shaking an aqueous extract produces stable, persistent foam due to surfactant properties",
+      "b": "Shaking an aqueous extract produces stable",
       "c": "Testing for volatile oil",
       "d": "Testing for alkaloids"
     },
     "correct_option": "b",
-    "explanation": "When an aqueous solution containing saponins is shaken, it produces a persistent foam due to the surface-active (surfactant) nature of saponins — this is a simple qualitative test.",
+    "explanation": "When an aqueous solution containing saponins is shaken, it produces a persistent foam due to the surface-active (surfactant) nature of saponins — this is a simple qualitative test.\n\nAdditional: persistent foam due to surfactant properties",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3592,12 +3592,12 @@
     "question_text": "What are volatile oils composed of?",
     "options": {
       "a": "Pure single compounds",
-      "b": "Complex mixtures of terpenes (monoterpenes, sesquiterpenes), phenylpropanoids, and oxygenated compounds",
+      "b": "Complex mixtures of terpenes",
       "c": "Proteins and amino acids",
       "d": "Simple sugars"
     },
     "correct_option": "b",
-    "explanation": "Volatile oils are complex mixtures of hydrocarbons and oxygenated compounds including monoterpenes (limonene), sesquiterpenes (bisabolol), phenylpropanoids (eugenol), and alcohols (menthol).",
+    "explanation": "Volatile oils are complex mixtures of hydrocarbons and oxygenated compounds including monoterpenes (limonene), sesquiterpenes (bisabolol), phenylpropanoids (eugenol), and alcohols (menthol).\n\nNote: phenylpropanoids, and oxygenated compounds\n\nNote: monoterpenes, sesquiterpenes",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3626,12 +3626,12 @@
     "question_text": "What is the Molisch test used for?",
     "options": {
       "a": "Testing for alkaloids",
-      "b": "General identification test for carbohydrates (all types)",
+      "b": "General identification test",
       "c": "Testing for proteins",
       "d": "Testing for lipids"
     },
     "correct_option": "b",
-    "explanation": "Molisch test uses α-naphthol in alcohol with sulfuric acid. A violet/purple ring at the junction indicates the presence of carbohydrates (monosaccharides, disaccharides, polysaccharides).",
+    "explanation": "Molisch test uses α-naphthol in alcohol with sulfuric acid. A violet/purple ring at the junction indicates the presence of carbohydrates (monosaccharides, disaccharides, polysaccharides).\n\nNote: all types\n\nAdditional: for carbohydrates",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3660,12 +3660,12 @@
     "question_text": "What is the Mayer's reagent used for?",
     "options": {
       "a": "Testing for carbohydrates",
-      "b": "Identification test for alkaloids — produces a white/cream precipitate",
+      "b": "Identification test for alkaloids —",
       "c": "Testing for tannins",
       "d": "Testing for glycosides"
     },
     "correct_option": "b",
-    "explanation": "Mayer's reagent (potassium mercuric iodide) produces a white or cream-colored precipitate with alkaloids, serving as a general test for alkaloid detection.",
+    "explanation": "Mayer's reagent (potassium mercuric iodide) produces a white or cream-colored precipitate with alkaloids, serving as a general test for alkaloid detection.\n\nAdditional: produces a white/cream precipitate",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3677,12 +3677,12 @@
     "question_text": "What is the ferric chloride test used for?",
     "options": {
       "a": "Testing for alkaloids",
-      "b": "Identification test for phenolic compounds and tannins (produces blue-black or green color)",
+      "b": "Identification test for phenolic",
       "c": "Testing for carbohydrates",
       "d": "Testing for volatile oils"
     },
     "correct_option": "b",
-    "explanation": "Ferric chloride (FeCl₃) test produces blue-black, green, or violet colors with phenolic compounds and tannins, helping identify these groups in crude drugs.",
+    "explanation": "Ferric chloride (FeCl₃) test produces blue-black, green, or violet colors with phenolic compounds and tannins, helping identify these groups in crude drugs.\n\nNote: produces blue-black or green color\n\nAdditional: compounds and tannins",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3694,12 +3694,12 @@
     "question_text": "What is the vanillin-sulfuric acid test used for?",
     "options": {
       "a": "Testing for alkaloids",
-      "b": "Identification test for steroids and triterpenoids (various color reactions)",
+      "b": "Identification test for steroids and triterpenoids",
       "c": "Testing for carbohydrates",
       "d": "Testing for tannins"
     },
     "correct_option": "b",
-    "explanation": "Vanillin-sulfuric acid reagent produces characteristic colors (red, violet, blue, green) with steroids and triterpenoids, useful for identifying these compound classes.",
+    "explanation": "Vanillin-sulfuric acid reagent produces characteristic colors (red, violet, blue, green) with steroids and triterpenoids, useful for identifying these compound classes.\n\nNote: various color reactions",
     "subject": "pharmacognosy",
     "difficulty": "hard",
     "tags": [
@@ -3711,12 +3711,12 @@
     "question_text": "What is the significance of thin layer chromatography (TLC) in pharmacognosy?",
     "options": {
       "a": "Only for synthetic drugs",
-      "b": "Used for identification, purity testing, and fingerprinting of crude drugs and their extracts",
+      "b": "Used for identification, purity testing",
       "c": "Only for quantitative analysis",
       "d": "Only for isolating compounds"
     },
     "correct_option": "b",
-    "explanation": "TLC is widely used in pharmacognosy for qualitative identification of active constituents, checking purity, comparing crude drug samples, and creating fingerprints for standardization.",
+    "explanation": "TLC is widely used in pharmacognosy for qualitative identification of active constituents, checking purity, comparing crude drug samples, and creating fingerprints for standardization.\n\nNote: and fingerprinting of crude drugs and their extracts",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3727,13 +3727,13 @@
   {
     "question_text": "What is the Rf value in TLC?",
     "options": {
-      "a": "Retardation factor - ratio of distance moved by compound to distance moved by solvent front",
+      "a": "Retardation factor - ratio of distance moved by",
       "b": "Reflection factor",
       "c": "Recovery factor",
       "d": "Retention factor in HPLC"
     },
     "correct_option": "a",
-    "explanation": "Rf (Retardation/Retention factor) = Distance moved by compound / Distance moved by solvent front. It is characteristic for a compound under specific conditions and used for identification.",
+    "explanation": "Rf (Retardation/Retention factor) = Distance moved by compound / Distance moved by solvent front. It is characteristic for a compound under specific conditions and used for identification.\n\nAdditional: compound to distance moved by solvent front",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3745,12 +3745,12 @@
     "question_text": "What is high-performance liquid chromatography (HPLC) used for in pharmacognosy?",
     "options": {
       "a": "Only for separating pigments",
-      "b": "Quantitative analysis and standardization of active constituents in crude drugs and formulations",
+      "b": "Quantitative analysis and standardization of active",
       "c": "Only for qualitative analysis",
       "d": "Only for purification"
     },
     "correct_option": "b",
-    "explanation": "HPLC is used for precise quantification and quality control of active constituents (alkaloids, glycosides, flavonoids) in crude drugs, extracts, and pharmaceutical formulations.",
+    "explanation": "HPLC is used for precise quantification and quality control of active constituents (alkaloids, glycosides, flavonoids) in crude drugs, extracts, and pharmaceutical formulations.\n\nAdditional: constituents in crude drugs and formulations",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3762,12 +3762,12 @@
     "question_text": "What is the significance of macroscopic and microscopic evaluation in pharmacognosy?",
     "options": {
       "a": "Only for education",
-      "b": "Identifying and authenticating crude drugs through physical characteristics and cellular structure",
+      "b": "Identifying and authenticating crude drugs through",
       "c": "Only for chemical analysis",
       "d": "Only for determining potency"
     },
     "correct_option": "b",
-    "explanation": "Macroscopic evaluation examines organoleptic features (color, odor, taste, texture). Microscopic evaluation studies cellular structure, trichomes, starch grains, and crystals for drug authentication.",
+    "explanation": "Macroscopic evaluation examines organoleptic features (color, odor, taste, texture). Microscopic evaluation studies cellular structure, trichomes, starch grains, and crystals for drug authentication.\n\nAdditional: physical characteristics and cellular structure",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3778,12 +3778,12 @@
     "question_text": "What are trichomes in pharmacognosy?",
     "options": {
       "a": "Chemical compounds",
-      "b": "Hair-like outgrowths on plant surfaces used for microscopic identification",
+      "b": "Hair-like outgrowths on plant surfaces",
       "c": "Type of crystals",
       "d": "Starch grains"
     },
     "correct_option": "b",
-    "explanation": "Trichomes are epidermal appendages (hair-like structures) on leaves, stems, and other plant parts. Their type (glandular, non-glandular, unicellular, multicellular) helps identify drugs microscopically.",
+    "explanation": "Trichomes are epidermal appendages (hair-like structures) on leaves, stems, and other plant parts. Their type (glandular, non-glandular, unicellular, multicellular) helps identify drugs microscopically.\n\nAdditional: used for microscopic identification",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3795,12 +3795,12 @@
     "question_text": "What are calcium oxalate crystals in pharmacognosy used for?",
     "options": {
       "a": "No significance",
-      "b": "Microscopic identification markers for crude drugs — types includeraphides, druses, and prismatic crystals",
+      "b": "Microscopic identification markers for crude",
       "c": "Only found in animal drugs",
       "d": "Only used for chemical analysis"
     },
     "correct_option": "b",
-    "explanation": "Calcium oxalate crystals (raphides = needle-shaped, druses = star-shaped, prismatic) are characteristic features in many plant drugs used for microscopic authentication.",
+    "explanation": "Calcium oxalate crystals (raphides = needle-shaped, druses = star-shaped, prismatic) are characteristic features in many plant drugs used for microscopic authentication.\n\nNote: and prismatic crystals\n\nAdditional: drugs — types includeraphides druses",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3812,12 +3812,12 @@
     "question_text": "What are starch grains used for in drug microscopy?",
     "options": {
       "a": "They have no diagnostic value",
-      "b": "Their shape, size, hilum position, and layers help identify specific crude drugs",
+      "b": "Their shape, size",
       "c": "They are only found in roots",
       "d": "They dissolve during sample preparation"
     },
     "correct_option": "b",
-    "explanation": "Starch grains vary in shape (round, oval, polygonal), size, hilum position, and striation patterns between species, making them useful microscopic identification markers.",
+    "explanation": "Starch grains vary in shape (round, oval, polygonal), size, hilum position, and striation patterns between species, making them useful microscopic identification markers.\n\nNote: hilum position, and layers help identify specific crude drugs",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3829,12 +3829,12 @@
     "question_text": "What is the concept of pharmacognostic evaluation?",
     "options": {
       "a": "Only chemical testing",
-      "b": "A systematic approach to evaluate crude drugs using morphological, microscopic, physical, chemical, and biological methods",
+      "b": "A systematic approach to evaluate",
       "c": "Only tasting the drug",
       "d": "Only measuring weight"
     },
     "correct_option": "b",
-    "explanation": "Pharmacognostic evaluation is a comprehensive evaluation including organoleptic, macroscopic, microscopic, physical (ash, moisture, extractive), chemical, and biological parameters for drug standardization.",
+    "explanation": "Pharmacognostic evaluation is a comprehensive evaluation including organoleptic, macroscopic, microscopic, physical (ash, moisture, extractive), chemical, and biological parameters for drug standardization.\n\nNote: physical, chemical, and biological methods\n\nAdditional: crude drugs using morphological microscopic",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3846,12 +3846,12 @@
     "question_text": "What is total ash value in pharmacognosy?",
     "options": {
       "a": "Weight of the drug",
-      "b": "Residue remaining after incineration of drug at 450-600°C, indicating mineral content and purity",
+      "b": "Residue remaining after incineration of drug at",
       "c": "Weight of volatile oil",
       "d": "Weight of extract"
     },
     "correct_option": "b",
-    "explanation": "Total ash is the residue after complete incineration. It indicates mineral content; unusually high values suggest contamination with earth/sand. Determined by official methods.",
+    "explanation": "Total ash is the residue after complete incineration. It indicates mineral content; unusually high values suggest contamination with earth/sand. Determined by official methods.\n\nAdditional: 450-600°C indicating mineral content and purity",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3863,12 +3863,12 @@
     "question_text": "What is acid-insoluble ash?",
     "options": {
       "a": "Ash that dissolves in acid",
-      "b": "The residue after treating total ash with dilute HCl, indicating silica and siliceous matter (contamination)",
+      "b": "The residue after treating total ash with",
       "c": "Ash that is acidic in nature",
       "d": "Ash from acidic plants"
     },
     "correct_option": "b",
-    "explanation": "Acid-insoluble ash is the residue after treating total ash with dilute hydrochloric acid. High values indicate contamination with silica (sand, earth) in crude drugs.",
+    "explanation": "Acid-insoluble ash is the residue after treating total ash with dilute hydrochloric acid. High values indicate contamination with silica (sand, earth) in crude drugs.\n\nNote: contamination\n\nAdditional: dilute HCl indicating silica and siliceous matter",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3880,12 +3880,12 @@
     "question_text": "What is water-soluble ash?",
     "options": {
       "a": "Ash that dissolves in water",
-      "b": "The difference between total ash and residue after treatment with water, indicating water-soluble inorganic matter",
+      "b": "The difference between total ash and residue after",
       "c": "Ash that absorbs water",
       "d": "Ash from water plants"
     },
     "correct_option": "b",
-    "explanation": "Water-soluble ash = Total ash - Residue after water treatment. It gives information about water-soluble inorganic constituents and can indicate the nature of inorganic material.",
+    "explanation": "Water-soluble ash = Total ash - Residue after water treatment. It gives information about water-soluble inorganic constituents and can indicate the nature of inorganic material.\n\nAdditional: treatment with water indicating water-soluble inorganic matter",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3897,12 +3897,12 @@
     "question_text": "What is extractive value in pharmacognosy?",
     "options": {
       "a": "Weight of the whole drug",
-      "b": "The amount of crude drug extracted by a specific solvent, indicating the amount of soluble constituents",
+      "b": "The amount of crude drug extracted by a",
       "c": "Weight of residue after burning",
       "d": "Weight of volatile oil only"
     },
     "correct_option": "b",
-    "explanation": "Extractive values (water-soluble, alcohol-soluble, ether-soluble) indicate the nature and amount of chemical constituents. They help assess quality and detect adulteration.",
+    "explanation": "Extractive values (water-soluble, alcohol-soluble, ether-soluble) indicate the nature and amount of chemical constituents. They help assess quality and detect adulteration.\n\nAdditional: specific solvent indicating the amount of soluble constituents",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3914,12 +3914,12 @@
     "question_text": "What is moisture content determination important for in pharmacognosy?",
     "options": {
       "a": "For taste testing",
-      "b": "To assess quality, shelf life, and prevent microbial growth in crude drugs",
+      "b": "To assess quality, shelf life",
       "c": "For color measurement",
       "d": "For odor assessment"
     },
     "correct_option": "b",
-    "explanation": "Moisture content affects shelf life, microbial growth, and potency of crude drugs. Excess moisture leads to mold, fermentation, and degradation of active constituents.",
+    "explanation": "Moisture content affects shelf life, microbial growth, and potency of crude drugs. Excess moisture leads to mold, fermentation, and degradation of active constituents.\n\nNote: and prevent microbial growth in crude drugs",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3931,12 +3931,12 @@
     "question_text": "What is the volatile oil content determination?",
     "options": {
       "a": "Measuring fat content",
-      "b": "Determining the percentage of volatile oil in a crude drug by steam distillation (Clevenger apparatus)",
+      "b": "Determining the percentage of volatile oil in",
       "c": "Measuring alkaloid content",
       "d": "Measuring glycoside content"
     },
     "correct_option": "b",
-    "explanation": "Volatile oil content is determined by steam distillation using a Clevenger apparatus. The drug is distilled and the volume of oil collected is measured. Official limits are specified.",
+    "explanation": "Volatile oil content is determined by steam distillation using a Clevenger apparatus. The drug is distilled and the volume of oil collected is measured. Official limits are specified.\n\nNote: Clevenger apparatus\n\nAdditional: a crude drug by steam distillation",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3948,12 +3948,12 @@
     "question_text": "What is the foreign organic matter in pharmacognosy?",
     "options": {
       "a": "Active constituents",
-      "b": "Any material other than the official drug (stems, dirt, insects, other plant parts) that should be limited",
+      "b": "Any material other than the",
       "c": "Valuable constituents",
       "d": "The main drug itself"
     },
     "correct_option": "b",
-    "explanation": "Foreign organic matter includes non-drug plant parts, insects, dirt, sand, and other contaminants. Pharmacopoeias set limits (usually not more than 2%) for these impurities.",
+    "explanation": "Foreign organic matter includes non-drug plant parts, insects, dirt, sand, and other contaminants. Pharmacopoeias set limits (usually not more than 2%) for these impurities.\n\nNote: insects, other plant parts) that should be limited\n\nAdditional: official drug (stems dirt",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3965,12 +3965,12 @@
     "question_text": "What is adulteration in crude drugs?",
     "options": {
       "a": "Adding active ingredients",
-      "b": "Intentional or unintentional substitution or addition of inferior, cheaper, or harmful material",
+      "b": "Intentional or unintentional substitution or",
       "c": "Improving drug quality",
       "d": "Adding preservatives"
     },
     "correct_option": "b",
-    "explanation": "Adulteration is adding inferior/substitute materials to increase bulk or simulate the drug. It can be deliberate (economic fraud) or accidental (poor collection practices).",
+    "explanation": "Adulteration is adding inferior/substitute materials to increase bulk or simulate the drug. It can be deliberate (economic fraud) or accidental (poor collection practices).\n\nNote: or harmful material\n\nAdditional: addition of inferior cheaper",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -3982,12 +3982,12 @@
     "question_text": "What is substitution in crude drugs?",
     "options": {
       "a": "Using a cheaper excipient",
-      "b": "Replacing a drug with another species (related or unrelated) that may or may not have similar therapeutic action",
+      "b": "Replacing a drug with another species that may",
       "c": "Adding more active ingredient",
       "d": "Changing the package"
     },
     "correct_option": "b",
-    "explanation": "Substitution is replacing the official drug with a different plant species. It may be done due to scarcity, cost, or ignorance. The substitute may have different therapeutic properties.",
+    "explanation": "Substitution is replacing the official drug with a different plant species. It may be done due to scarcity, cost, or ignorance. The substitute may have different therapeutic properties.\n\nNote: related or unrelated\n\nAdditional: or may not have similar therapeutic action",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -3999,12 +3999,12 @@
     "question_text": "What is the concept of drug standardization in pharmacognosy?",
     "options": {
       "a": "Making all drugs taste the same",
-      "b": "Ensuring crude drugs meet defined quality standards through physical, chemical, and biological parameters",
+      "b": "Ensuring crude drugs meet defined",
       "c": "Making drugs uniform in color",
       "d": "Packaging drugs in same containers"
     },
     "correct_option": "b",
-    "explanation": "Drug standardization ensures uniform quality by specifying limits for identity, purity, and quality parameters including ash values, extractive values, volatile oil content, and active constituent limits.",
+    "explanation": "Drug standardization ensures uniform quality by specifying limits for identity, purity, and quality parameters including ash values, extractive values, volatile oil content, and active constituent limits.\n\nNote: and biological parameters\n\nAdditional: quality standards through physical chemical",
     "subject": "pharmacognosy",
     "difficulty": "easy",
     "tags": [
@@ -4015,12 +4015,12 @@
     "question_text": "What is the WHO guideline for quality control of herbal drugs?",
     "options": {
       "a": "No guidelines exist",
-      "b": "WHO has published guidelines for assessing safety, efficacy, quality control, and clinical evaluation of herbal medicines",
+      "b": "WHO has published guidelines",
       "c": "Only for synthetic drugs",
       "d": "Only for animal products"
     },
     "correct_option": "b",
-    "explanation": "WHO has published comprehensive guidelines for herbal drug quality control covering: botanical identification, chemical standardization, toxicological evaluation, and clinical assessment.",
+    "explanation": "WHO has published comprehensive guidelines for herbal drug quality control covering: botanical identification, chemical standardization, toxicological evaluation, and clinical assessment.\n\nNote: quality control, and clinical evaluation of herbal medicines\n\nAdditional: for assessing safety efficacy",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [
@@ -4032,12 +4032,12 @@
     "question_text": "What is chromatography in pharmacognosy?",
     "options": {
       "a": "Color measurement",
-      "b": "A group of techniques for separating mixtures based on differential partitioning between stationary and mobile phases",
+      "b": "A group of techniques for separating mixtures based",
       "c": "A type of distillation",
       "d": "A type of extraction"
     },
     "correct_option": "b",
-    "explanation": "Chromatography (TLC, HPLC, GC, column) separates plant extract components based on their different affinities for stationary phase (solid/liquid) and mobile phase (liquid/gas).",
+    "explanation": "Chromatography (TLC, HPLC, GC, column) separates plant extract components based on their different affinities for stationary phase (solid/liquid) and mobile phase (liquid/gas).\n\nAdditional: on differential partitioning between stationary and mobile phases",
     "subject": "pharmacognosy",
     "difficulty": "medium",
     "tags": [

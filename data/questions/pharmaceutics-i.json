@@ -140,12 +140,12 @@
     "question_text": "A monograph in a pharmacopoeia typically contains:",
     "options": [
       "Only the chemical formula",
-      "Name, preparation, tests, and storage details",
+      "Name, preparation",
       "Only the price of the drug",
       "Only the manufacturer details"
     ],
     "correct_index": 1,
-    "explanation": "A pharmacopoeial monograph contains comprehensive information including name (official/generic), molecular formula, method of preparation, description, identification tests, purity tests, assay, storage conditions, and uses.",
+    "explanation": "A pharmacopoeial monograph contains comprehensive information including name (official/generic), molecular formula, method of preparation, description, identification tests, purity tests, assay, storage conditions, and uses.\n\nNote: tests, and storage details",
     "difficulty": "medium",
     "tags": [
       "monograph",
@@ -260,11 +260,11 @@
     "options": [
       "Milling",
       "Filtration",
-      "Size separation (sifting)",
+      "Size separation",
       "Centrifugation"
     ],
     "correct_index": 2,
-    "explanation": "Size separation (sifting/screening) is the process of separating particles according to their size using sieves or screens of different mesh sizes.",
+    "explanation": "Size separation (sifting/screening) is the process of separating particles according to their size using sieves or screens of different mesh sizes.\n\nNote: sifting",
     "difficulty": "easy",
     "tags": [
       "size separation",
@@ -310,12 +310,12 @@
     "question_text": "A sintered glass filter is used for:",
     "options": [
       "Coarse filtration only",
-      "Clarification of liquids and sterile filtration",
+      "Clarification of liquids",
       "Drying of powders",
       "Mixing of liquids"
     ],
     "correct_index": 1,
-    "explanation": "Sintered glass filters are used for clarification of liquids and can be used for sterile filtration. They have controlled pore sizes and are chemically resistant.",
+    "explanation": "Sintered glass filters are used for clarification of liquids and can be used for sterile filtration. They have controlled pore sizes and are chemically resistant.\n\nAdditional: and sterile filtration",
     "difficulty": "medium",
     "tags": [
       "filtration",
@@ -429,12 +429,12 @@
     "question_text": "Fractional distillation is used to separate:",
     "options": [
       "A single pure liquid",
-      "Two or more miscible liquids with different boiling points",
+      "Two or more miscible liquids",
       "Solid from liquid",
       "Immiscible liquids"
     ],
     "correct_index": 1,
-    "explanation": "Fractional distillation is used to separate two or more miscible liquids with different boiling points. A fractionating column provides multiple theoretical plates for separation.",
+    "explanation": "Fractional distillation is used to separate two or more miscible liquids with different boiling points. A fractionating column provides multiple theoretical plates for separation.\n\nAdditional: with different boiling points",
     "difficulty": "medium",
     "tags": [
       "distillation",
@@ -718,12 +718,12 @@
     "question_text": "Volume of Distribution (Vd) is a theoretical volume that:",
     "options": [
       "Represents actual body water",
-      "Relates the amount of drug in body to plasma concentration",
+      "Relates the amount of drug",
       "Measures renal clearance",
       "Indicates drug potency"
     ],
     "correct_index": 1,
-    "explanation": "Volume of Distribution (Vd) is a theoretical volume that relates the total amount of drug in the body to the plasma concentration (Vd = Amount in body / Plasma concentration).",
+    "explanation": "Volume of Distribution (Vd) is a theoretical volume that relates the total amount of drug in the body to the plasma concentration (Vd = Amount in body / Plasma concentration).\n\nAdditional: in body to plasma concentration",
     "difficulty": "medium",
     "tags": [
       "pharmacokinetics",
@@ -837,12 +837,12 @@
     "question_text": "Sieving is a method of:",
     "options": [
       "Mixing",
-      "Size separation (particle size analysis)",
+      "Size separation",
       "Filtration",
       "Drying"
     ],
     "correct_index": 1,
-    "explanation": "Sieving separates particles based on size using standard sieve series (Tyler/IP standards).",
+    "explanation": "Sieving separates particles based on size using standard sieve series (Tyler/IP standards).\n\nNote: particle size analysis",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -854,12 +854,12 @@
     "question_text": "Cyclone separator works on the principle of:",
     "options": [
       "Filtration",
-      "Centrifugal force for particle separation",
+      "Centrifugal force for",
       "Evaporation",
       "Distillation"
     ],
     "correct_index": 1,
-    "explanation": "Cyclone separators use centrifugal force to separate particles from air streams.",
+    "explanation": "Cyclone separators use centrifugal force to separate particles from air streams.\n\nAdditional: particle separation",
     "difficulty": "medium",
     "tags": [
       "unit operations",
@@ -888,12 +888,12 @@
     "question_text": "Fluidized bed dryer works by:",
     "options": [
       "Heating trays from above",
-      "Suspending particles in hot air stream for rapid drying",
+      "Suspending particles in hot air",
       "Vacuum drying",
       "Spray drying"
     ],
     "correct_index": 1,
-    "explanation": "FBD suspends particles in an upward hot air stream, providing maximum surface area for rapid drying.",
+    "explanation": "FBD suspends particles in an upward hot air stream, providing maximum surface area for rapid drying.\n\nAdditional: stream for rapid drying",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -905,12 +905,12 @@
     "question_text": "Membrane filtration is used for:",
     "options": [
       "Milling",
-      "Sterile filtration of heat-sensitive solutions",
+      "Sterile filtration of",
       "Distillation",
       "Crystallization"
     ],
     "correct_index": 1,
-    "explanation": "Membrane filters (0.22 micron) sterilize heat-sensitive solutions by removing bacteria.",
+    "explanation": "Membrane filters (0.22 micron) sterilize heat-sensitive solutions by removing bacteria.\n\nAdditional: heat-sensitive solutions",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -922,12 +922,12 @@
     "question_text": "Triple roller mill is used for:",
     "options": [
       "Dry powder mixing",
-      "Grinding and mixing semi-solid preparations (ointments, pastes)",
+      "Grinding and mixing",
       "Sterilization",
       "Filtration"
     ],
     "correct_index": 1,
-    "explanation": "Triple roller mill grinds and mixes semi-solid preparations by passing between three rotating rollers.",
+    "explanation": "Triple roller mill grinds and mixes semi-solid preparations by passing between three rotating rollers.\n\nNote: ointments, pastes\n\nAdditional: semi-solid preparations",
     "difficulty": "medium",
     "tags": [
       "unit operations",
@@ -956,12 +956,12 @@
     "question_text": "Buffer capacity refers to:",
     "options": [
       "Volume of buffer solution",
-      "Ability of a buffer to resist pH change upon addition of acid or base",
+      "Ability of a buffer to resist pH",
       "Concentration of buffer",
       "Temperature of buffer"
     ],
     "correct_index": 1,
-    "explanation": "Buffer capacity is the ability of a buffer solution to resist pH change when acid or base is added.",
+    "explanation": "Buffer capacity is the ability of a buffer solution to resist pH change when acid or base is added.\n\nAdditional: change upon addition of acid or base",
     "difficulty": "medium",
     "tags": [
       "physicochemical",
@@ -1007,12 +1007,12 @@
     "question_text": "Surface tension is measured by:",
     "options": [
       "Viscometer",
-      "Capillary tube method (stalagmometer)",
+      "Capillary tube method",
       "Barometer",
       "Spectrophotometer"
     ],
     "correct_index": 1,
-    "explanation": "Surface tension can be measured using the capillary rise method or drop weight method with a stalagmometer.",
+    "explanation": "Surface tension can be measured using the capillary rise method or drop weight method with a stalagmometer.\n\nNote: stalagmometer",
     "difficulty": "medium",
     "tags": [
       "physicochemical",
@@ -1024,12 +1024,12 @@
     "question_text": "Surfactants work by:",
     "options": [
       "Increasing surface tension",
-      "Reducing surface/interfacial tension between immiscible phases",
+      "Reducing surface/interfacial tension",
       "Increasing viscosity",
       "Decreasing solubility"
     ],
     "correct_index": 1,
-    "explanation": "Surfactants (surface-active agents) reduce surface/interfacial tension due to their amphiphilic nature.",
+    "explanation": "Surfactants (surface-active agents) reduce surface/interfacial tension due to their amphiphilic nature.\n\nAdditional: between immiscible phases",
     "difficulty": "easy",
     "tags": [
       "physicochemical",
@@ -1075,12 +1075,12 @@
     "question_text": "Syrups are:",
     "options": [
       "Alcoholic solutions",
-      "Concentrated sugar solutions (66.7% w/w) containing drug",
+      "Concentrated sugar solutions",
       "Water for injection",
       "Emulsions"
     ],
     "correct_index": 1,
-    "explanation": "Syrups are concentrated sugar solutions (typically 66.7% w/w sucrose) with or without medicaments.",
+    "explanation": "Syrups are concentrated sugar solutions (typically 66.7% w/w sucrose) with or without medicaments.\n\nAdditional: containing drug",
     "difficulty": "easy",
     "tags": [
       "monophasic liquids",
@@ -1092,7 +1092,7 @@
     "question_text": "Elixirs differ from syrups because:",
     "options": [
       "They contain no sugar",
-      "They are clear, hydroalcoholic (sweetened) preparations",
+      "They are clear, hydroalcoholic preparations",
       "They are always colored",
       "They contain alcohol above 25%"
     ],
@@ -1313,12 +1313,12 @@
     "question_text": "Alligation method is used for:",
     "options": [
       "Calculating dose",
-      "Mixing solutions of different concentrations to get desired concentration",
+      "Mixing solutions of different concentrations",
       "Calculating bioavailability",
       "Determining particle size"
     ],
     "correct_index": 1,
-    "explanation": "Alligation is an arithmetic method for calculating proportions when mixing solutions of different strengths.",
+    "explanation": "Alligation is an arithmetic method for calculating proportions when mixing solutions of different strengths.\n\nAdditional: to get desired concentration",
     "difficulty": "medium",
     "tags": [
       "calculations",
@@ -1330,12 +1330,12 @@
     "question_text": "Dosage forms are classified as:",
     "options": [
       "Only solid",
-      "Solid, liquid, semisolid, and gaseous",
+      "Solid, liquid",
       "Only liquid",
       "Only semisolid"
     ],
     "correct_index": 1,
-    "explanation": "Dosage forms are classified into four categories: solid (tablets, capsules), liquid (solutions, syrups), semisolid (ointments, creams), and gaseous (aerosols).",
+    "explanation": "Dosage forms are classified into four categories: solid (tablets, capsules), liquid (solutions, syrups), semisolid (ointments, creams), and gaseous (aerosols).\n\nNote: semisolid, and gaseous",
     "difficulty": "easy",
     "tags": [
       "dosage forms",
@@ -1415,12 +1415,12 @@
     "question_text": "Simple distillation is used for:",
     "options": [
       "Mixing two liquids",
-      "Separating liquids with widely different boiling points",
+      "Separating liquids with widely",
       "Separating solids",
       "Measuring pH"
     ],
     "correct_index": 1,
-    "explanation": "Simple distillation separates liquids with boiling points differing by at least 25-30°C.",
+    "explanation": "Simple distillation separates liquids with boiling points differing by at least 25-30°C.\n\nAdditional: different boiling points",
     "difficulty": "easy",
     "tags": [
       "distillation",
@@ -1449,12 +1449,12 @@
     "question_text": "Vacuum distillation is used for:",
     "options": [
       "High boiling point substances",
-      "Substances that decompose at their atmospheric boiling point",
+      "Substances that decompose at",
       "Small scale operations only",
       "Mixing liquids"
     ],
     "correct_index": 1,
-    "explanation": "Vacuum distillation lowers the boiling point, allowing distillation of thermolabile substances at lower temperatures.",
+    "explanation": "Vacuum distillation lowers the boiling point, allowing distillation of thermolabile substances at lower temperatures.\n\nAdditional: their atmospheric boiling point",
     "difficulty": "medium",
     "tags": [
       "distillation",
@@ -1534,12 +1534,12 @@
     "question_text": "Liquid dosage forms include:",
     "options": [
       "Tablets and capsules",
-      "Solutions, syrups, elixirs, suspensions, emulsions",
+      "Solutions, syrups",
       "Ointments and creams",
       "Suppositories and pessaries"
     ],
     "correct_index": 1,
-    "explanation": "Liquid dosage forms include solutions, syrups, elixirs, suspensions, emulsions, lotions, liniments, and injections.",
+    "explanation": "Liquid dosage forms include solutions, syrups, elixirs, suspensions, emulsions, lotions, liniments, and injections.\n\nNote: elixirs, suspensions, emulsions",
     "difficulty": "easy",
     "tags": [
       "dosage forms",
@@ -1551,12 +1551,12 @@
     "question_text": "Semisolid dosage forms include:",
     "options": [
       "Tablets and pills",
-      "Ointments, creams, pastes, gels",
+      "Ointments, creams",
       "Solutions and syrups",
       "Inhalers and aerosols"
     ],
     "correct_index": 1,
-    "explanation": "Semisolid dosage forms include ointments, creams, pastes, gels, and poultices for topical application.",
+    "explanation": "Semisolid dosage forms include ointments, creams, pastes, gels, and poultices for topical application.\n\nNote: pastes, gels",
     "difficulty": "easy",
     "tags": [
       "dosage forms",
@@ -1619,12 +1619,12 @@
     "question_text": "A pharmacopoeial monograph typically contains:",
     "options": [
       "Only drug price",
-      "Official name, synonym, formula, description, identification tests, purity tests, assay, storage",
+      "Official name, synonym",
       "Only chemical formula",
       "Only manufacturing process"
     ],
     "correct_index": 1,
-    "explanation": "A monograph contains official name, synonym, chemical formula, description, identification tests, tests of purity, assay, and storage conditions.",
+    "explanation": "A monograph contains official name, synonym, chemical formula, description, identification tests, tests of purity, assay, and storage conditions.\n\nNote: formula, description, identification tests, purity tests, assay, storage",
     "difficulty": "easy",
     "tags": [
       "pharmacopoeias",
@@ -1670,12 +1670,12 @@
     "question_text": "WHO publishes:",
     "options": [
       "Its own pharmacopoeia for all countries",
-      "International Pharmacopoeia (recommended standards for member countries)",
+      "International Pharmacopoeia",
       "Only guidelines",
       "Only drug pricing lists"
     ],
     "correct_index": 1,
-    "explanation": "WHO publishes the International Pharmacopoeia which provides recommended specifications for medicines, especially for developing countries.",
+    "explanation": "WHO publishes the International Pharmacopoeia which provides recommended specifications for medicines, especially for developing countries.\n\nNote: recommended standards for member countries",
     "difficulty": "easy",
     "tags": [
       "pharmacopoeias",
@@ -1687,12 +1687,12 @@
     "question_text": "Colloidal mill is used for:",
     "options": [
       "Dry powder grinding",
-      "Reducing particle size of suspensions and emulsions by shearing",
+      "Reducing particle size of suspensions",
       "Sieving powders",
       "Sterilizing solutions"
     ],
     "correct_index": 1,
-    "explanation": "Colloidal mill reduces particle size of suspensions, emulsions, and pastes by high-speed shearing between rotor and stator.",
+    "explanation": "Colloidal mill reduces particle size of suspensions, emulsions, and pastes by high-speed shearing between rotor and stator.\n\nAdditional: and emulsions by shearing",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -1704,12 +1704,12 @@
     "question_text": "Hammer mill produces particles of size:",
     "options": [
       "Very coarse only",
-      "Medium to fine particles (depending on screen size)",
+      "Medium to fine particles",
       "Only very fine particles",
       "Only nano-sized particles"
     ],
     "correct_index": 1,
-    "explanation": "Hammer mill produces medium to fine particles depending on the screen size used. Commonly used for size reduction in pharmacy.",
+    "explanation": "Hammer mill produces medium to fine particles depending on the screen size used. Commonly used for size reduction in pharmacy.\n\nNote: depending on screen size",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -1721,12 +1721,12 @@
     "question_text": "Wet grinding in a ball mill uses:",
     "options": [
       "Dry powder only",
-      "Liquid (water, solvent) as grinding medium along with balls",
+      "Liquid as grinding medium along with balls",
       "Only balls without any medium",
       "Only liquid without balls"
     ],
     "correct_index": 1,
-    "explanation": "Wet grinding uses a liquid medium (water or solvent) along with grinding balls, producing finer particles and reducing dust.",
+    "explanation": "Wet grinding uses a liquid medium (water or solvent) along with grinding balls, producing finer particles and reducing dust.\n\nNote: water, solvent",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -1738,12 +1738,12 @@
     "question_text": "In filtration, the filter medium is:",
     "options": [
       "The substance being filtered",
-      "The material through which the liquid passes (filter paper, membrane)",
+      "The material through which the liquid passes",
       "The collected residue",
       "The container holding the mixture"
     ],
     "correct_index": 1,
-    "explanation": "The filter medium (filter paper, cloth, sintered glass, membrane) allows liquid (filtrate) to pass while retaining solid particles.",
+    "explanation": "The filter medium (filter paper, cloth, sintered glass, membrane) allows liquid (filtrate) to pass while retaining solid particles.\n\nNote: filter paper, membrane",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -1772,12 +1772,12 @@
     "question_text": "Pug mill is used in pharmacy for:",
     "options": [
       "Size reduction of solids",
-      "Kneading and mixing of wet masses (for pill and tablet masses)",
+      "Kneading and mixing of wet masses",
       "Distillation",
       "Sterilization"
     ],
     "correct_index": 1,
-    "explanation": "Pug mill kneads and mixes wet masses uniformly, used in preparing tablet granulations and pill masses.",
+    "explanation": "Pug mill kneads and mixes wet masses uniformly, used in preparing tablet granulations and pill masses.\n\nNote: for pill and tablet masses",
     "difficulty": "medium",
     "tags": [
       "unit operations",
@@ -1789,12 +1789,12 @@
     "question_text": "Shaking sieve shaker is used for:",
     "options": [
       "Mixing two powders",
-      "Particle size analysis by sieving (determining particle size distribution)",
+      "Particle size analysis by sieving",
       "Sterilization",
       "Emulsification"
     ],
     "correct_index": 1,
-    "explanation": "Sieve shakers vibrate a stack of standard sieves to separate particles by size, used for particle size analysis.",
+    "explanation": "Sieve shakers vibrate a stack of standard sieves to separate particles by size, used for particle size analysis.\n\nNote: determining particle size distribution",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -1806,12 +1806,12 @@
     "question_text": "Spray dryer is used for:",
     "options": [
       "Milling only",
-      "Converting liquid feed into dry powder by atomizing in hot air",
+      "Converting liquid feed into dry powder",
       "Filtration",
       "Crystallization only"
     ],
     "correct_index": 1,
-    "explanation": "Spray dryer atomizes liquid into fine droplets in a hot air stream, producing dry powder particles (used for milk powder, extract powders).",
+    "explanation": "Spray dryer atomizes liquid into fine droplets in a hot air stream, producing dry powder particles (used for milk powder, extract powders).\n\nAdditional: by atomizing in hot air",
     "difficulty": "medium",
     "tags": [
       "unit operations",
@@ -1823,12 +1823,12 @@
     "question_text": "Spray drying produces particles that are typically:",
     "options": [
       "Irregular and coarse",
-      "Hollow, spherical, and fine",
+      "Hollow, spherical",
       "Needle-shaped only",
       "Plate-shaped only"
     ],
     "correct_index": 1,
-    "explanation": "Spray-dried particles are typically hollow, spherical, and free-flowing with uniform size distribution.",
+    "explanation": "Spray-dried particles are typically hollow, spherical, and free-flowing with uniform size distribution.\n\nNote: and fine",
     "difficulty": "medium",
     "tags": [
       "unit operations",
@@ -1857,12 +1857,12 @@
     "question_text": "Percolation in pharmacy involves:",
     "options": [
       "Filtration of solutions",
-      "Passage of solvent through packed bed of crude drug to extract soluble matter",
+      "Passage of solvent through packed bed of",
       "Distillation of liquids",
       "Evaporation of solvents"
     ],
     "correct_index": 1,
-    "explanation": "Percolation involves continuous passage of solvent through a packed column of powdered crude drug to extract active constituents.",
+    "explanation": "Percolation involves continuous passage of solvent through a packed column of powdered crude drug to extract active constituents.\n\nAdditional: crude drug to extract soluble matter",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -1874,12 +1874,12 @@
     "question_text": "Maceration differs from percolation because:",
     "options": [
       "Maceration uses pressure",
-      "Maceration involves soaking in closed vessel without continuous solvent flow",
+      "Maceration involves soaking in closed",
       "Maceration is faster",
       "Maceration uses heat"
     ],
     "correct_index": 1,
-    "explanation": "Maceration involves soaking the drug in solvent in a closed container for a period, while percolation uses continuous flow through the drug bed.",
+    "explanation": "Maceration involves soaking the drug in solvent in a closed container for a period, while percolation uses continuous flow through the drug bed.\n\nAdditional: vessel without continuous solvent flow",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -1891,12 +1891,12 @@
     "question_text": "Convection in heat transfer involves:",
     "options": [
       "Direct molecular conduction",
-      "Heat transfer through movement of fluid (liquid or gas) particles",
+      "Heat transfer through movement of fluid particles",
       "Radiation of electromagnetic waves",
       "No heat transfer"
     ],
     "correct_index": 1,
-    "explanation": "Convection involves heat transfer by the bulk movement of fluid particles, transferring heat from one place to another.",
+    "explanation": "Convection involves heat transfer by the bulk movement of fluid particles, transferring heat from one place to another.\n\nNote: liquid or gas",
     "difficulty": "easy",
     "tags": [
       "heat transfer",
@@ -1908,12 +1908,12 @@
     "question_text": "Radiation heat transfer requires:",
     "options": [
       "Direct contact between objects",
-      "No medium (heat travels as electromagnetic waves through vacuum)",
+      "No medium",
       "A liquid medium only",
       "A solid medium only"
     ],
     "correct_index": 1,
-    "explanation": "Radiation transfers heat as electromagnetic waves and does not require any medium (works through vacuum, like solar energy).",
+    "explanation": "Radiation transfers heat as electromagnetic waves and does not require any medium (works through vacuum, like solar energy).\n\nNote: heat travels as electromagnetic waves through vacuum",
     "difficulty": "easy",
     "tags": [
       "heat transfer",
@@ -1925,12 +1925,12 @@
     "question_text": "In evaporation, the boiling point of the liquid can be lowered by:",
     "options": [
       "Increasing pressure",
-      "Decreasing pressure (vacuum evaporation)",
+      "Decreasing pressure",
       "Increasing temperature only",
       "Adding more solute"
     ],
     "correct_index": 1,
-    "explanation": "Reducing pressure lowers the boiling point, allowing evaporation at lower temperatures (vacuum evaporation protects heat-sensitive materials).",
+    "explanation": "Reducing pressure lowers the boiling point, allowing evaporation at lower temperatures (vacuum evaporation protects heat-sensitive materials).\n\nNote: vacuum evaporation",
     "difficulty": "easy",
     "tags": [
       "evaporation",
@@ -1942,12 +1942,12 @@
     "question_text": "The principle of a water bath (thermostatically controlled) is:",
     "options": [
       "Direct heating with flame",
-      "Heating by immersion in water at controlled temperature",
+      "Heating by immersion in",
       "Dry heat sterilization",
       "Microwave heating"
     ],
     "correct_index": 1,
-    "explanation": "Water baths provide gentle, uniform heating at controlled temperatures (below 100°C) for evaporation, dissolution, and sterility testing.",
+    "explanation": "Water baths provide gentle, uniform heating at controlled temperatures (below 100°C) for evaporation, dissolution, and sterility testing.\n\nAdditional: water at controlled temperature",
     "difficulty": "easy",
     "tags": [
       "heat transfer",
@@ -1959,12 +1959,12 @@
     "question_text": "In steam distillation, the volatile oil distills:",
     "options": [
       "At its normal boiling point",
-      "At a temperature below 100°C (below the boiling point of water)",
+      "At a temperature below 100°C",
       "At very high temperatures above 200°C",
       "Only at room temperature"
     ],
     "correct_index": 1,
-    "explanation": "In steam distillation, volatile oils distill below 100°C because the total vapor pressure equals atmospheric pressure when oil vapor + water vapor combine.",
+    "explanation": "In steam distillation, volatile oils distill below 100°C because the total vapor pressure equals atmospheric pressure when oil vapor + water vapor combine.\n\nNote: below the boiling point of water",
     "difficulty": "medium",
     "tags": [
       "distillation",
@@ -1976,12 +1976,12 @@
     "question_text": "Molecular distillation is carried out under:",
     "options": [
       "Atmospheric pressure",
-      "Very high vacuum (10^-4 to 10^-6 mm Hg)",
+      "Very high vacuum",
       "High temperature only",
       "No vacuum needed"
     ],
     "correct_index": 1,
-    "explanation": "Molecular distillation operates under extremely high vacuum, where the mean free path of molecules is greater than the distance between evaporator and condenser.",
+    "explanation": "Molecular distillation operates under extremely high vacuum, where the mean free path of molecules is greater than the distance between evaporator and condenser.\n\nNote: 10^-4 to 10^-6 mm Hg",
     "difficulty": "hard",
     "tags": [
       "distillation",
@@ -1993,12 +1993,12 @@
     "question_text": "The purpose of a fractionating column in fractional distillation is to:",
     "options": [
       "Cool the vapor",
-      "Provide multiple theoretical plates for repeated condensation-vaporization cycles, improving separation",
+      "Provide multiple theoretical plates for",
       "Heat the mixture",
       "Filter impurities"
     ],
     "correct_index": 1,
-    "explanation": "A fractionating column provides surface area for repeated condensation and vaporization, effectively performing multiple simple distillations in one apparatus.",
+    "explanation": "A fractionating column provides surface area for repeated condensation and vaporization, effectively performing multiple simple distillations in one apparatus.\n\nAdditional: repeated condensation-vaporization cycles improving separation",
     "difficulty": "medium",
     "tags": [
       "distillation",
@@ -2027,12 +2027,12 @@
     "question_text": "Pseudoplastic (shear-thinning) fluids show:",
     "options": [
       "Increasing viscosity with shear rate",
-      "Decreasing viscosity with increasing shear rate (become thinner when stirred)",
+      "Decreasing viscosity with increasing shear rate",
       "Constant viscosity",
       "No flow"
     ],
     "correct_index": 1,
-    "explanation": "Pseudoplastic fluids (e.g., methylcellulose solutions, blood) become thinner when stirred or poured (shear-thinning).",
+    "explanation": "Pseudoplastic fluids (e.g., methylcellulose solutions, blood) become thinner when stirred or poured (shear-thinning).\n\nNote: become thinner when stirred",
     "difficulty": "medium",
     "tags": [
       "rheology",
@@ -2044,12 +2044,12 @@
     "question_text": "Thixotropy is:",
     "options": [
       "Permanently reduced viscosity",
-      "Reversible gel-to-sol transition on shaking (gel becomes liquid, then returns to gel at rest)",
+      "Reversible gel-to-sol transition on shaking",
       "Irreversible viscosity change",
       "Temperature-dependent viscosity only"
     ],
     "correct_index": 1,
-    "explanation": "Thixotropy is the reversible property where a gel structure breaks down on shaking (liquefies) and rebuilds at rest (re-gelation).",
+    "explanation": "Thixotropy is the reversible property where a gel structure breaks down on shaking (liquefies) and rebuilds at rest (re-gelation).\n\nNote: gel becomes liquid, then returns to gel at rest",
     "difficulty": "medium",
     "tags": [
       "rheology",
@@ -2078,12 +2078,12 @@
     "question_text": "Viscosity is measured using:",
     "options": [
       "Barometer",
-      "Viscometer (Ostwald, Brookfield, capillary)",
+      "Viscometer",
       "Spectrophotometer",
       "pH meter"
     ],
     "correct_index": 1,
-    "explanation": "Viscosity is measured with viscometers: Ostwald (capillary), Brookfield (rotational), falling sphere, or cup-and-bob types.",
+    "explanation": "Viscosity is measured with viscometers: Ostwald (capillary), Brookfield (rotational), falling sphere, or cup-and-bob types.\n\nNote: Ostwald, Brookfield, capillary",
     "difficulty": "easy",
     "tags": [
       "rheology",
@@ -2095,12 +2095,12 @@
     "question_text": "Micelles are formed when surfactant concentration exceeds:",
     "options": [
       "Any concentration",
-      "Critical micelle concentration (CMC)",
+      "Critical micelle concentration",
       "Zero concentration",
       "Half saturation"
     ],
     "correct_index": 1,
-    "explanation": "At CMC, surfactant molecules spontaneously aggregate into micelles with hydrophilic heads facing outward and hydrophobic tails inward.",
+    "explanation": "At CMC, surfactant molecules spontaneously aggregate into micelles with hydrophilic heads facing outward and hydrophobic tails inward.\n\nNote: CMC",
     "difficulty": "easy",
     "tags": [
       "surface phenomena",
@@ -2112,12 +2112,12 @@
     "question_text": "Contact angle measures:",
     "options": [
       "Temperature of surface",
-      "Wettability of a surface (low angle = good wetting, high angle = poor wetting)",
+      "Wettability of a surface",
       "Surface area",
       "pH of solution"
     ],
     "correct_index": 1,
-    "explanation": "Contact angle indicates wettability: <90° means good wetting (hydrophilic surface), >90° means poor wetting (hydrophobic surface).",
+    "explanation": "Contact angle indicates wettability: <90° means good wetting (hydrophilic surface), >90° means poor wetting (hydrophobic surface).\n\nNote: low angle = good wetting, high angle = poor wetting",
     "difficulty": "medium",
     "tags": [
       "surface phenomena",
@@ -2129,12 +2129,12 @@
     "question_text": "Tyndall effect is observed in:",
     "options": [
       "True solutions",
-      "Colloidal solutions (scattering of light by colloidal particles)",
+      "Colloidal solutions",
       "Gases",
       "Pure liquids"
     ],
     "correct_index": 1,
-    "explanation": "Tyndall effect: colloidal particles scatter light, making a visible beam when light passes through the colloidal solution.",
+    "explanation": "Tyndall effect: colloidal particles scatter light, making a visible beam when light passes through the colloidal solution.\n\nNote: scattering of light by colloidal particles",
     "difficulty": "easy",
     "tags": [
       "colloids",
@@ -2146,12 +2146,12 @@
     "question_text": "Brownian motion in colloids refers to:",
     "options": [
       "Color change",
-      "Random zigzag motion of colloidal particles due to bombardment by molecules of dispersion medium",
+      "Random zigzag motion of colloidal particles due",
       "Settling of particles",
       "Evaporation of solvent"
     ],
     "correct_index": 1,
-    "explanation": "Brownian motion is the continuous random movement of colloidal particles caused by collision with molecules of the dispersion medium.",
+    "explanation": "Brownian motion is the continuous random movement of colloidal particles caused by collision with molecules of the dispersion medium.\n\nAdditional: to bombardment by molecules of dispersion medium",
     "difficulty": "easy",
     "tags": [
       "colloids",
@@ -2163,12 +2163,12 @@
     "question_text": "Zeta potential measures:",
     "options": [
       "Particle size of colloids",
-      "Surface charge on colloidal particles (determines stability)",
+      "Surface charge on colloidal particles",
       "Temperature of colloids",
       "pH of colloids"
     ],
     "correct_index": 1,
-    "explanation": "Zeta potential is the electrical potential at the slipping plane of a colloidal particle. Higher zeta potential = more stable colloidal system.",
+    "explanation": "Zeta potential is the electrical potential at the slipping plane of a colloidal particle. Higher zeta potential = more stable colloidal system.\n\nNote: determines stability",
     "difficulty": "medium",
     "tags": [
       "colloids",
@@ -2180,12 +2180,12 @@
     "question_text": "Creaming in an emulsion means:",
     "options": [
       "Emulsion breaking completely",
-      "Rising of oil droplets (or sedimentation of water droplets) to form a layer (reversible)",
+      "Rising of oil droplets to form a layer",
       "Irreversible phase separation",
       "Color change"
     ],
     "correct_index": 1,
-    "explanation": "Creaming is the reversible upward movement of dispersed phase droplets due to density difference. It can be reversed by shaking.",
+    "explanation": "Creaming is the reversible upward movement of dispersed phase droplets due to density difference. It can be reversed by shaking.\n\nNote: reversible\n\nNote: or sedimentation of water droplets",
     "difficulty": "easy",
     "tags": [
       "emulsions",
@@ -2196,13 +2196,13 @@
     "unit_id": "pharm-i-unit-6",
     "question_text": "Coalescence in emulsions means:",
     "options": [
-      "Droplets merging to form larger droplets (irreversible breaking)",
+      "Droplets merging to form larger droplets",
       "Droplets becoming smaller",
       "Creaming only",
       "Reversible separation"
     ],
     "correct_index": 0,
-    "explanation": "Coalescence is the irreversible merging of small droplets into larger ones, eventually leading to complete phase separation (emulsion breaking).",
+    "explanation": "Coalescence is the irreversible merging of small droplets into larger ones, eventually leading to complete phase separation (emulsion breaking).\n\nNote: irreversible breaking",
     "difficulty": "medium",
     "tags": [
       "emulsions",
@@ -2213,13 +2213,13 @@
     "unit_id": "pharm-i-unit-7",
     "question_text": "Linctuses are:",
     "options": [
-      "Liquid preparations for oral use, viscous, used for cough",
+      "Liquid preparations for oral use, viscous",
       "Liquid preparations for external use",
       "Semisolid preparations",
       "Solid preparations"
     ],
     "correct_index": 0,
-    "explanation": "Linctuses are viscous, liquid oral preparations containing high concentration of sugar (80% w/w), used for cough relief.",
+    "explanation": "Linctuses are viscous, liquid oral preparations containing high concentration of sugar (80% w/w), used for cough relief.\n\nNote: used for cough",
     "difficulty": "easy",
     "tags": [
       "monophasic liquids",
@@ -2231,12 +2231,12 @@
     "question_text": "Gargles are:",
     "options": [
       "Swallowed preparations",
-      "Aqueous solutions used for gargling to treat throat conditions",
+      "Aqueous solutions used for gargling",
       "Injected preparations",
       "Applied to skin only"
     ],
     "correct_index": 1,
-    "explanation": "Gargles are aqueous solutions containing antiseptics, astringents, or anti-inflammatory agents, used by gargling for throat conditions.",
+    "explanation": "Gargles are aqueous solutions containing antiseptics, astringents, or anti-inflammatory agents, used by gargling for throat conditions.\n\nAdditional: to treat throat conditions",
     "difficulty": "easy",
     "tags": [
       "monophasic liquids",
@@ -2248,12 +2248,12 @@
     "question_text": "Mouthwashes differ from gargles because:",
     "options": [
       "They are swallowed",
-      "They are used for rinsing the mouth (not held in throat)",
+      "They are used for rinsing the mouth",
       "They are always medicated",
       "They contain alcohol only"
     ],
     "correct_index": 1,
-    "explanation": "Mouthwashes are used for rinsing the oral cavity; gargles are held in the throat. Both are for external use only.",
+    "explanation": "Mouthwashes are used for rinsing the oral cavity; gargles are held in the throat. Both are for external use only.\n\nNote: not held in throat",
     "difficulty": "easy",
     "tags": [
       "monophasic liquids",
@@ -2265,12 +2265,12 @@
     "question_text": "Ear drops are:",
     "options": [
       "Oral preparations",
-      "Liquid preparations for instillation into the ear canal",
+      "Liquid preparations for instillation",
       "Eye preparations",
       "Nasal preparations"
     ],
     "correct_index": 1,
-    "explanation": "Ear drops are sterile or non-sterile liquid preparations designed for instillation into the external auditory canal.",
+    "explanation": "Ear drops are sterile or non-sterile liquid preparations designed for instillation into the external auditory canal.\n\nAdditional: into the ear canal",
     "difficulty": "easy",
     "tags": [
       "monophasic liquids",
@@ -2316,12 +2316,12 @@
     "question_text": "Volume of distribution (Vd) of a drug that stays mostly in plasma is:",
     "options": [
       "Very large",
-      "Small (close to plasma volume ~3-5L)",
+      "Small",
       "Infinite",
       "Zero"
     ],
     "correct_index": 1,
-    "explanation": "Small Vd (3-5L) means the drug is largely confined to plasma. Large Vd means drug distributes extensively into tissues.",
+    "explanation": "Small Vd (3-5L) means the drug is largely confined to plasma. Large Vd means drug distributes extensively into tissues.\n\nNote: close to plasma volume ~3-5L",
     "difficulty": "medium",
     "tags": [
       "biopharmaceutics",
@@ -2350,12 +2350,12 @@
     "question_text": "Half-life (t1/2) of a drug is directly proportional to:",
     "options": [
       "Clearance",
-      "Volume of distribution and inversely to clearance (Vd/Cl)",
+      "Volume of distribution and",
       "Dose administered",
       "Drug concentration"
     ],
     "correct_index": 1,
-    "explanation": "t1/2 = 0.693 × Vd / Cl. Half-life increases with larger Vd and decreases with higher clearance.",
+    "explanation": "t1/2 = 0.693 × Vd / Cl. Half-life increases with larger Vd and decreases with higher clearance.\n\nNote: Vd/Cl\n\nAdditional: inversely to clearance",
     "difficulty": "medium",
     "tags": [
       "biopharmaceutics",
@@ -2384,12 +2384,12 @@
     "question_text": "Loading dose is calculated using:",
     "options": [
       "Clearance and Css",
-      "Volume of distribution and target Css (LD = Vd x Css / F)",
+      "Volume of distribution and target Css",
       "Only half-life",
       "Only body weight"
     ],
     "correct_index": 1,
-    "explanation": "Loading dose = (Vd x Css) / F, where F is bioavailability. It depends on Vd, not clearance.",
+    "explanation": "Loading dose = (Vd x Css) / F, where F is bioavailability. It depends on Vd, not clearance.\n\nNote: LD = Vd x Css / F",
     "difficulty": "medium",
     "tags": [
       "biopharmaceutics",
@@ -2401,12 +2401,12 @@
     "question_text": "Maintenance dose is calculated using:",
     "options": [
       "Volume of distribution",
-      "Clearance, Css, dosing interval, and bioavailability (MD = Cl x Css x tau / F)",
+      "Clearance, Css",
       "Only weight",
       "Only age"
     ],
     "correct_index": 1,
-    "explanation": "Maintenance dose = (Cl x Css x tau) / F, where tau is dosing interval. It depends on clearance, not Vd.",
+    "explanation": "Maintenance dose = (Cl x Css x tau) / F, where tau is dosing interval. It depends on clearance, not Vd.\n\nNote: dosing interval, and bioavailability; MD = Cl x Css x tau / F",
     "difficulty": "medium",
     "tags": [
       "biopharmaceutics",
@@ -2418,12 +2418,12 @@
     "question_text": "GI motility affects drug absorption by:",
     "options": [
       "Not affecting it at all",
-      "Faster motility reduces absorption time (decreased absorption for some drugs)",
+      "Faster motility reduces absorption time",
       "Always increasing absorption",
       "Only affecting IV drugs"
     ],
     "correct_index": 1,
-    "explanation": "Increased GI motility reduces contact time between drug and absorption site, potentially decreasing absorption of slowly absorbed drugs.",
+    "explanation": "Increased GI motility reduces contact time between drug and absorption site, potentially decreasing absorption of slowly absorbed drugs.\n\nNote: decreased absorption for some drugs",
     "difficulty": "easy",
     "tags": [
       "biopharmaceutics",
@@ -2503,12 +2503,12 @@
     "question_text": "1 dram (dr) equals:",
     "options": [
       "1 g",
-      "4 g (approx 60 grains)",
+      "4 g",
       "10 g",
       "100 g"
     ],
     "correct_index": 1,
-    "explanation": "1 dram ≈ 3.89 g (approximately 4 g). 1 ounce (oz) ≈ 31.1 g. 1 pound (lb) ≈ 453.6 g.",
+    "explanation": "1 dram ≈ 3.89 g (approximately 4 g). 1 ounce (oz) ≈ 31.1 g. 1 pound (lb) ≈ 453.6 g.\n\nNote: approx 60 grains",
     "difficulty": "easy",
     "tags": [
       "calculations",
@@ -2554,12 +2554,12 @@
     "question_text": "A 1:1000 w/v solution means:",
     "options": [
       "1 g in 100 mL",
-      "1 g in 1000 mL (1 L)",
+      "1 g in 1000 mL",
       "1 mg in 1 mL",
       "1000 g in 1 L"
     ],
     "correct_index": 1,
-    "explanation": "1:1000 w/v means 1 g of drug in 1000 mL (1 liter) of solution, equivalent to 0.1% w/v or 1 mg/mL.",
+    "explanation": "1:1000 w/v means 1 g of drug in 1000 mL (1 liter) of solution, equivalent to 0.1% w/v or 1 mg/mL.\n\nNote: 1 L",
     "difficulty": "easy",
     "tags": [
       "calculations",
@@ -2571,12 +2571,12 @@
     "question_text": "Allegation medial is used when:",
     "options": [
       "Mixing two solutions of different strengths",
-      "Finding the proportion of two ingredients to produce a desired concentration",
+      "Proportioning ingredients for desired concentration",
       "Calculating dose from body weight",
       "Determining bioavailability"
     ],
     "correct_index": 1,
-    "explanation": "Alligation medial calculates the mean concentration when two or more ingredients of known strength are mixed in known proportions.",
+    "explanation": "Alligation medial calculates the mean concentration when two or more ingredients of known strength are mixed in known proportions.\n\nNote: Finding the proportion of two ingredients to produce a desired concentration",
     "difficulty": "medium",
     "tags": [
       "calculations",
@@ -2588,12 +2588,12 @@
     "question_text": "Alligation alternate is used when:",
     "options": [
       "Finding average concentration",
-      "Determining amounts of two ingredients of different strengths needed to produce a desired concentration",
+      "Determining amounts of two ingredients of different",
       "Calculating half-life",
       "Measuring pH"
     ],
     "correct_index": 1,
-    "explanation": "Alligation alternate determines the proportions of two ingredients (one stronger, one weaker) needed to prepare a desired intermediate strength.",
+    "explanation": "Alligation alternate determines the proportions of two ingredients (one stronger, one weaker) needed to prepare a desired intermediate strength.\n\nAdditional: strengths needed to produce a desired concentration",
     "difficulty": "medium",
     "tags": [
       "calculations",
@@ -2605,7 +2605,7 @@
     "question_text": "Dose for a child can be calculated by Young's rule:",
     "options": [
       "Adult dose x (age / 12)",
-      "Adult dose x (age / (age + 12))",
+      "Adult dose x)",
       "Adult dose x weight / 70",
       "Adult dose / 2"
     ],
@@ -2622,12 +2622,12 @@
     "question_text": "Clark's rule calculates child dose based on:",
     "options": [
       "Age only",
-      "Body weight (Child dose = Adult dose x weight in lbs / 150)",
+      "Body weight",
       "Height only",
       "Body surface area only"
     ],
     "correct_index": 1,
-    "explanation": "Clark's rule: Child dose = Adult dose x (child's weight in lbs / 150). Based on weight ratio to average adult weight.",
+    "explanation": "Clark's rule: Child dose = Adult dose x (child's weight in lbs / 150). Based on weight ratio to average adult weight.\n\nNote: Child dose = Adult dose x weight in lbs / 150",
     "difficulty": "easy",
     "tags": [
       "calculations",
@@ -2639,12 +2639,12 @@
     "question_text": "Fried's rule is used for:",
     "options": [
       "Adult dosing",
-      "Infant dosing (up to 2 years): Adult dose x (age in months / 150)",
+      "Infant dosing:",
       "Elderly dosing",
       "Pregnancy dosing"
     ],
     "correct_index": 1,
-    "explanation": "Fried's rule: Infant dose = Adult dose x (infant age in months / 150). Used for children under 2 years.",
+    "explanation": "Fried's rule: Infant dose = Adult dose x (infant age in months / 150). Used for children under 2 years.\n\nNote: age in months / 150\n\nNote: up to 2 years",
     "difficulty": "easy",
     "tags": [
       "calculations",
@@ -2672,13 +2672,13 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Falling ball viscometer measures viscosity based on:",
     "options": [
-      "Time for ball to fall through liquid (Stokes' law)",
+      "Time for ball to fall through liquid",
       "Flow through capillary",
       "Rotation of spindle",
       "Pressure difference"
     ],
     "correct_index": 0,
-    "explanation": "Falling ball viscometer uses Stokes' law: viscosity is proportional to the time a sphere takes to fall through the liquid.",
+    "explanation": "Falling ball viscometer uses Stokes' law: viscosity is proportional to the time a sphere takes to fall through the liquid.\n\nNote: Stokes' law",
     "difficulty": "medium",
     "tags": [
       "unit operations",
@@ -2690,12 +2690,12 @@
     "question_text": "Emulsions are thermodynamically:",
     "options": [
       "Stable",
-      "Unstable (tend to separate over time)",
+      "Unstable",
       "Always stable with emulsifiers",
       "More stable than suspensions"
     ],
     "correct_index": 1,
-    "explanation": "Emulsions are thermodynamically unstable and tend to separate (cream, crack). Emulsifiers slow this process by reducing interfacial tension.",
+    "explanation": "Emulsions are thermodynamically unstable and tend to separate (cream, crack). Emulsifiers slow this process by reducing interfacial tension.\n\nNote: tend to separate over time",
     "difficulty": "easy",
     "tags": [
       "emulsions",
@@ -2707,12 +2707,12 @@
     "question_text": "HLB (Hydrophilic-Lipophilic Balance) value helps in:",
     "options": [
       "Measuring viscosity",
-      "Selecting appropriate emulsifier for oil-in-water or water-in-oil emulsions",
+      "Selecting appropriate emulsifier for",
       "Measuring pH",
       "Measuring particle size"
     ],
     "correct_index": 1,
-    "explanation": "HLB scale (0-20) indicates the emulsifier's affinity. High HLB (8-18) = O/W emulsifier; Low HLB (3-6) = W/O emulsifier.",
+    "explanation": "HLB scale (0-20) indicates the emulsifier's affinity. High HLB (8-18) = O/W emulsifier; Low HLB (3-6) = W/O emulsifier.\n\nAdditional: oil-in-water or water-in-oil emulsions",
     "difficulty": "medium",
     "tags": [
       "emulsions",
@@ -2741,12 +2741,12 @@
     "question_text": "Fluid energy mill (micronizer) produces:",
     "options": [
       "Coarse particles",
-      "Ultrafine particles (5-20 microns) using high-velocity air jets",
+      "Ultrafine particles using",
       "Tablets only",
       "Capsules only"
     ],
     "correct_index": 1,
-    "explanation": "Fluid energy mill uses high-velocity compressed air to collide particles against each other, producing ultrafine particles.",
+    "explanation": "Fluid energy mill uses high-velocity compressed air to collide particles against each other, producing ultrafine particles.\n\nNote: 5-20 microns\n\nAdditional: high-velocity air jets",
     "difficulty": "medium",
     "tags": [
       "unit operations",
@@ -2775,12 +2775,12 @@
     "question_text": "First-order drug release means:",
     "options": [
       "Constant rate of release",
-      "Release rate proportional to remaining drug concentration",
+      "Release rate proportional to",
       "No release",
       "Only initial burst release"
     ],
     "correct_index": 1,
-    "explanation": "First-order release: rate of release is proportional to the amount of drug remaining, producing an exponential decline.",
+    "explanation": "First-order release: rate of release is proportional to the amount of drug remaining, producing an exponential decline.\n\nAdditional: remaining drug concentration",
     "difficulty": "medium",
     "tags": [
       "biopharmaceutics",
@@ -2809,12 +2809,12 @@
     "question_text": "Dialysis is used to:",
     "options": [
       "Increase viscosity of colloids",
-      "Remove crystalloids (small molecules) from colloidal solutions (purification)",
+      "Remove crystalloids from colloidal solutions",
       "Increase particle size",
       "Sterilize solutions"
     ],
     "correct_index": 1,
-    "explanation": "Dialysis purifies colloidal solutions by removing small crystalloid molecules through a semi-permeable membrane while retaining colloidal particles.",
+    "explanation": "Dialysis purifies colloidal solutions by removing small crystalloid molecules through a semi-permeable membrane while retaining colloidal particles.\n\nNote: purification\n\nNote: small molecules",
     "difficulty": "medium",
     "tags": [
       "colloids",
@@ -2826,12 +2826,12 @@
     "question_text": "Electrophoresis is the movement of colloidal particles under:",
     "options": [
       "Gravity only",
-      "Influence of electric field (toward oppositely charged electrode)",
+      "Influence of electric field",
       "Magnetic field",
       "Centrifugal force"
     ],
     "correct_index": 1,
-    "explanation": "Electrophoresis: colloidal particles migrate toward the electrode of opposite charge when an electric field is applied.",
+    "explanation": "Electrophoresis: colloidal particles migrate toward the electrode of opposite charge when an electric field is applied.\n\nNote: toward oppositely charged electrode",
     "difficulty": "easy",
     "tags": [
       "colloids",
@@ -2860,7 +2860,7 @@
     "question_text": "Lyophilization (freeze drying) is used to prepare:",
     "options": [
       "Ointments",
-      "Thermolabile (heat-sensitive) parenteral preparations",
+      "Thermolabile parenteral preparations",
       "Tablets only",
       "Suppositories only"
     ],
@@ -2877,12 +2877,12 @@
     "question_text": "Planetary ball mill works by:",
     "options": [
       "Only rotation",
-      "Cylinders rotating around central axis AND on their own axis simultaneously",
+      "Cylinders rotating around central axis AND",
       "Vibration only",
       "Impact only"
     ],
     "correct_index": 1,
-    "explanation": "Planetary ball mill has jars rotating on their own axis while orbiting a central axis, creating high-energy collisions for fine grinding.",
+    "explanation": "Planetary ball mill has jars rotating on their own axis while orbiting a central axis, creating high-energy collisions for fine grinding.\n\nAdditional: on their own axis simultaneously",
     "difficulty": "medium",
     "tags": [
       "unit operations",
@@ -2894,12 +2894,12 @@
     "question_text": "Sedimentation in suspensions is caused by:",
     "options": [
       "Chemical reaction",
-      "Gravity acting on particles denser than dispersion medium",
+      "Gravity acting on particles",
       "Evaporation",
       "Temperature change"
     ],
     "correct_index": 1,
-    "explanation": "Sedimentation occurs when particles denser than the dispersion medium settle under gravity, reduced by adding suspending agents.",
+    "explanation": "Sedimentation occurs when particles denser than the dispersion medium settle under gravity, reduced by adding suspending agents.\n\nAdditional: denser than dispersion medium",
     "difficulty": "easy",
     "tags": [
       "unit operations",
@@ -2911,12 +2911,12 @@
     "question_text": "Cyclone separator separates particles based on:",
     "options": [
       "Size only",
-      "Density and particle size using centrifugal force",
+      "Density and particle size",
       "Color",
       "Chemical composition"
     ],
     "correct_index": 1,
-    "explanation": "Cyclone separators use centrifugal force to separate particles based on their size and density from air or gas streams.",
+    "explanation": "Cyclone separators use centrifugal force to separate particles based on their size and density from air or gas streams.\n\nAdditional: using centrifugal force",
     "difficulty": "medium",
     "tags": [
       "unit operations",
@@ -2928,12 +2928,12 @@
     "question_text": "Flocculation in suspensions means:",
     "options": [
       "Complete settling of all particles",
-      "Loose aggregation of particles into open structures (re-suspendable)",
+      "Loose aggregation of particles into open structures",
       "Irreversible clumping",
       "Dissolution of particles"
     ],
     "correct_index": 1,
-    "explanation": "Flocculation: particles form loose, open aggregates (flocs) that can be easily re-suspended by gentle shaking, preferred over deflocculated systems.",
+    "explanation": "Flocculation: particles form loose, open aggregates (flocs) that can be easily re-suspended by gentle shaking, preferred over deflocculated systems.\n\nNote: re-suspendable",
     "difficulty": "medium",
     "tags": [
       "suspensions",
@@ -2945,12 +2945,12 @@
     "question_text": "Deflocculated suspensions tend to:",
     "options": [
       "Re-suspend easily",
-      "Cake (form hard sediment that is difficult to redisperse)",
+      "Cake",
       "Have lower viscosity",
       "Be more stable than flocculated systems"
     ],
     "correct_index": 1,
-    "explanation": "In deflocculated suspensions, particles settle individually forming a dense, hard-to-redisperse cake at the bottom.",
+    "explanation": "In deflocculated suspensions, particles settle individually forming a dense, hard-to-redisperse cake at the bottom.\n\nNote: form hard sediment that is difficult to redisperse",
     "difficulty": "medium",
     "tags": [
       "suspensions",
@@ -2979,12 +2979,12 @@
     "question_text": "Gastroretentive drug delivery systems are designed to:",
     "options": [
       "Release drug in the colon",
-      "Remain in the stomach for extended periods for local or systemic action",
+      "Remain in the stomach for extended",
       "Be absorbed in the intestine only",
       "Be excreted immediately"
     ],
     "correct_index": 1,
-    "explanation": "Gastroretentive systems (floating, bioadhesive, expandable) stay in the stomach longer, useful for drugs absorbed from stomach or acting locally.",
+    "explanation": "Gastroretentive systems (floating, bioadhesive, expandable) stay in the stomach longer, useful for drugs absorbed from stomach or acting locally.\n\nAdditional: periods for local or systemic action",
     "difficulty": "medium",
     "tags": [
       "biopharmaceutics",
@@ -2996,12 +2996,12 @@
     "question_text": "Sustained-release dosage forms aim to:",
     "options": [
       "Release drug all at once immediately",
-      "Maintain therapeutic drug levels over an extended period with reduced dosing frequency",
+      "Maintain therapeutic drug levels over an",
       "Release drug only in the colon",
       "Dissolve faster than conventional tablets"
     ],
     "correct_index": 1,
-    "explanation": "Sustained-release (SR) forms release drug slowly over 8-12+ hours, maintaining steady plasma levels and reducing dosing frequency.",
+    "explanation": "Sustained-release (SR) forms release drug slowly over 8-12+ hours, maintaining steady plasma levels and reducing dosing frequency.\n\nAdditional: extended period with reduced dosing frequency",
     "difficulty": "easy",
     "tags": [
       "biopharmaceutics",
@@ -3081,12 +3081,12 @@
     "question_text": "Freezing point depression method for isotonicity: NaCl solution that freezes at -0.52°C is:",
     "options": [
       "Hypotonic",
-      "Isotonic (0.9% NaCl freezes at -0.52°C)",
+      "Isotonic",
       "Hypertonic",
       "Cannot be determined"
     ],
     "correct_index": 1,
-    "explanation": "0.9% NaCl (normal saline) freezes at -0.52°C, which equals the freezing point of blood plasma, making it isotonic.",
+    "explanation": "0.9% NaCl (normal saline) freezes at -0.52°C, which equals the freezing point of blood plasma, making it isotonic.\n\nNote: 0.9% NaCl freezes at -0.52°C",
     "difficulty": "medium",
     "tags": [
       "calculations",
@@ -3098,12 +3098,12 @@
     "question_text": "In simple distillation, the thermometer bulb should be placed:",
     "options": [
       "In the boiling liquid",
-      "At the branch of the distillation flask (where vapor enters condenser)",
+      "At the branch of the distillation flask",
       "At the bottom of the flask",
       "At the top of the condenser"
     ],
     "correct_index": 1,
-    "explanation": "The thermometer bulb is placed at the branch (side arm) to measure the temperature of vapor entering the condenser = boiling point of distillate.",
+    "explanation": "The thermometer bulb is placed at the branch (side arm) to measure the temperature of vapor entering the condenser = boiling point of distillate.\n\nNote: where vapor enters condenser",
     "difficulty": "easy",
     "tags": [
       "distillation",
@@ -3115,12 +3115,12 @@
     "question_text": "Condenser in distillation apparatus serves to:",
     "options": [
       "Heat the liquid",
-      "Cool and condense hot vapors back into liquid",
+      "Cool and condense hot",
       "Filter impurities",
       "Measure temperature"
     ],
     "correct_index": 1,
-    "explanation": "The condenser cools hot vapors using cold water flowing around an inner tube, converting them back to liquid (distillate).",
+    "explanation": "The condenser cools hot vapors using cold water flowing around an inner tube, converting them back to liquid (distillate).\n\nAdditional: vapors back into liquid",
     "difficulty": "easy",
     "tags": [
       "distillation",
@@ -3149,12 +3149,12 @@
     "question_text": "Reflux condenser is used during:",
     "options": [
       "Distillation of volatile oils",
-      "Extraction of drugs by boiling solvent without losing solvent (continuous extraction)",
+      "Extraction of drugs by boiling",
       "Filtration of solutions",
       "Sterilization of equipment"
     ],
     "correct_index": 1,
-    "explanation": "Reflux condenser returns evaporated solvent back to the extraction vessel, allowing prolonged boiling without solvent loss (Soxhlet extraction).",
+    "explanation": "Reflux condenser returns evaporated solvent back to the extraction vessel, allowing prolonged boiling without solvent loss (Soxhlet extraction).\n\nNote: continuous extraction\n\nAdditional: solvent without losing solvent",
     "difficulty": "medium",
     "tags": [
       "heat process",
@@ -3166,12 +3166,12 @@
     "question_text": "Lotions are applied to the skin using:",
     "options": [
       "Fingers only",
-      "Cotton swab, gauze, or by pouring/spraying",
+      "Cotton swab, gauze",
       "Injection",
       "Inhalation"
     ],
     "correct_index": 1,
-    "explanation": "Lotions are applied externally using cotton, gauze, or sprayers. They are pourable liquids, thinner than creams but thicker than solutions.",
+    "explanation": "Lotions are applied externally using cotton, gauze, or sprayers. They are pourable liquids, thinner than creams but thicker than solutions.\n\nNote: or by pouring/spraying",
     "difficulty": "easy",
     "tags": [
       "monophasic liquids",
@@ -3183,12 +3183,12 @@
     "question_text": "Liniments are:",
     "options": [
       "Always aqueous preparations",
-      "Alcoholic or oily preparations rubbed into the skin for counter-irritant effect",
+      "Alcoholic or oily preparations rubbed into",
       "Oral preparations",
       "Eye preparations"
     ],
     "correct_index": 1,
-    "explanation": "Liniments are medicated oily/alcoholic preparations applied by rubbing into the skin, acting as counter-irritants or rubefacients.",
+    "explanation": "Liniments are medicated oily/alcoholic preparations applied by rubbing into the skin, acting as counter-irritants or rubefacients.\n\nAdditional: the skin for counter-irritant effect",
     "difficulty": "easy",
     "tags": [
       "monophasic liquids",
@@ -3200,12 +3200,12 @@
     "question_text": "History of pharmacy in Nepal includes establishment of:",
     "options": [
       "Only modern pharmacies",
-      "Traditional healers (Jhankri/Baidhya) and later modern pharmacy practice",
+      "Traditional healers and later",
       "Only government hospitals",
       "Only manufacturing units"
     ],
     "correct_index": 1,
-    "explanation": "Nepal's pharmacy history began with traditional healers, evolved to traditional medicine (Ayurveda), and later adopted modern pharmaceutical practice.",
+    "explanation": "Nepal's pharmacy history began with traditional healers, evolved to traditional medicine (Ayurveda), and later adopted modern pharmaceutical practice.\n\nNote: Jhankri/Baidhya\n\nAdditional: modern pharmacy practice",
     "difficulty": "easy",
     "tags": [
       "history",
@@ -3234,12 +3234,12 @@
     "question_text": "Nernst diffusion layer (h) in dissolution is:",
     "options": [
       "The entire vessel thickness",
-      "A thin, stagnant layer of solvent surrounding the dissolving particle",
+      "A thin stagnant layer of",
       "The filter paper thickness",
       "The container wall"
     ],
     "correct_index": 1,
-    "explanation": "The Nernst diffusion layer is a thin, stationary layer of solvent at the solid-liquid interface through which dissolved drug must diffuse.",
+    "explanation": "The Nernst diffusion layer is a thin, stationary layer of solvent at the solid-liquid interface through which dissolved drug must diffuse.\n\nAdditional: solvent surrounding the dissolving particle",
     "difficulty": "medium",
     "tags": [
       "dissolution",
@@ -3268,12 +3268,12 @@
     "question_text": "Cosseting in pharmaceutical manufacturing involves:",
     "options": [
       "Final product testing",
-      "Applying a thin coat of sugar or other substance onto granules or cores",
+      "Applying a thin coat of sugar or",
       "Packaging medicines",
       "Labeling products"
     ],
     "correct_index": 1,
-    "explanation": "Cosseting (coating) applies thin layers of sugar, film, or enteric coating onto granules, pellets, or tablet cores for protection or taste masking.",
+    "explanation": "Cosseting (coating) applies thin layers of sugar, film, or enteric coating onto granules, pellets, or tablet cores for protection or taste masking.\n\nAdditional: other substance onto granules or cores",
     "difficulty": "easy",
     "tags": [
       "unit operations",

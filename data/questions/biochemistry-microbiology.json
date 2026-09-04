@@ -140,12 +140,12 @@
     "question_text": "Antibodies (immunoglobulins) are produced by:",
     "options": [
       "T-lymphocytes",
-      "B-lymphocytes (plasma cells)",
+      "B-lymphocytes",
       "Red blood cells",
       "Platelets"
     ],
     "correct_index": 1,
-    "explanation": "Antibodies (immunoglobulins) are produced by B-lymphocytes that have differentiated into plasma cells. Each antibody is specific to a particular antigen.",
+    "explanation": "Antibodies (immunoglobulins) are produced by B-lymphocytes that have differentiated into plasma cells. Each antibody is specific to a particular antigen.\n\nNote: plasma cells",
     "difficulty": "easy",
     "tags": [
       "immunology",
@@ -191,12 +191,12 @@
     "question_text": "The bacterial growth curve shows which phases in order?",
     "options": [
       "Log, Lag, Stationary, Death",
-      "Lag, Log (exponential), Stationary, Death",
+      "Lag, Log",
       "Death, Stationary, Log, Lag",
       "Stationary, Lag, Death, Log"
     ],
     "correct_index": 1,
-    "explanation": "The bacterial growth curve has four phases: Lag phase (adaptation), Log/Exponential phase (rapid division), Stationary phase (growth = death), and Death phase (decline).",
+    "explanation": "The bacterial growth curve has four phases: Lag phase (adaptation), Log/Exponential phase (rapid division), Stationary phase (growth = death), and Death phase (decline).\n\nNote: Stationary, Death\n\nNote: exponential",
     "difficulty": "medium",
     "tags": [
       "microbiology",
@@ -225,7 +225,7 @@
     "question_text": "Autoclaving sterilization uses:",
     "options": [
       "Dry heat at 160°C",
-      "Moist heat (steam under pressure) at 121°C for 15-20 minutes",
+      "Moist heat at 121°C for 15-20 minutes",
       "UV radiation",
       "Chemical disinfection"
     ],
@@ -259,12 +259,12 @@
     "question_text": "Membrane filtration is used for sterilization of:",
     "options": [
       "Heat-stable materials",
-      "Heat-labile (heat-sensitive) liquids",
+      "Heat-labile liquids",
       "Dry powders",
       "Glassware only"
     ],
     "correct_index": 1,
-    "explanation": "Membrane filtration (0.22 μm pore size) is used for sterilizing heat-labile liquids such as antibiotics, enzyme solutions, and serum that cannot withstand autoclaving.",
+    "explanation": "Membrane filtration (0.22 μm pore size) is used for sterilizing heat-labile liquids such as antibiotics, enzyme solutions, and serum that cannot withstand autoclaving.\n\nNote: heat-sensitive",
     "difficulty": "medium",
     "tags": [
       "sterilization",
@@ -276,12 +276,12 @@
     "question_text": "The Kirby-Bauer disc diffusion method is used to:",
     "options": [
       "Count bacteria",
-      "Determine antibiotic sensitivity of bacteria",
+      "Determine antibiotic sensitivity",
       "Sterilize media",
       "Identify virus"
     ],
     "correct_index": 1,
-    "explanation": "The Kirby-Bauer disc diffusion method determines antibiotic susceptibility by placing antibiotic discs on an inoculated agar plate. Zones of inhibition are measured to determine sensitivity.",
+    "explanation": "The Kirby-Bauer disc diffusion method determines antibiotic susceptibility by placing antibiotic discs on an inoculated agar plate. Zones of inhibition are measured to determine sensitivity.\n\nAdditional: of bacteria",
     "difficulty": "easy",
     "tags": [
       "microbial assay",
@@ -412,12 +412,12 @@
     "question_text": "Vitamin D deficiency causes:",
     "options": [
       "Scurvy",
-      "Rickets in children and osteomalacia in adults",
+      "Rickets in children and",
       "Beriberi",
       "Night blindness"
     ],
     "correct_index": 1,
-    "explanation": "Vitamin D deficiency impairs calcium absorption, causing rickets (children) and osteomalacia (adults).",
+    "explanation": "Vitamin D deficiency impairs calcium absorption, causing rickets (children) and osteomalacia (adults).\n\nAdditional: osteomalacia in adults",
     "difficulty": "easy",
     "tags": [
       "biochemistry",
@@ -429,12 +429,12 @@
     "question_text": "Enzymes are:",
     "options": [
       "Lipids",
-      "Biological catalysts (usually proteins)",
+      "Biological catalysts",
       "Nucleic acids",
       "Carbohydrates"
     ],
     "correct_index": 1,
-    "explanation": "Enzymes are biological catalysts that speed up chemical reactions without being consumed in the process.",
+    "explanation": "Enzymes are biological catalysts that speed up chemical reactions without being consumed in the process.\n\nNote: usually proteins",
     "difficulty": "easy",
     "tags": [
       "biochemistry",
@@ -446,12 +446,12 @@
     "question_text": "Coenzymes are:",
     "options": [
       "Inorganic metal ions",
-      "Organic non-protein molecules that assist enzyme function",
+      "Organic non-protein molecules that",
       "The protein part of enzymes",
       "Substrate molecules"
     ],
     "correct_index": 1,
-    "explanation": "Coenzymes are organic non-protein helpers (often derived from vitamins) that assist enzyme catalytic activity.",
+    "explanation": "Coenzymes are organic non-protein helpers (often derived from vitamins) that assist enzyme catalytic activity.\n\nAdditional: assist enzyme function",
     "difficulty": "easy",
     "tags": [
       "biochemistry",
@@ -565,12 +565,12 @@
     "question_text": "rDNA (recombinant DNA) technology involves:",
     "options": [
       "Only studying natural DNA",
-      "Combining DNA from different sources to create new genetic combinations",
+      "Combining DNA from different sources",
       "Breaking down DNA",
       "Measuring DNA concentration"
     ],
     "correct_index": 1,
-    "explanation": "rDNA technology combines DNA from different sources using restriction enzymes and ligases to create recombinant molecules.",
+    "explanation": "rDNA technology combines DNA from different sources using restriction enzymes and ligases to create recombinant molecules.\n\nAdditional: to create new genetic combinations",
     "difficulty": "easy",
     "tags": [
       "nucleic acids",
@@ -582,12 +582,12 @@
     "question_text": "Antibodies are produced by:",
     "options": [
       "Red blood cells",
-      "B-lymphocytes (plasma cells)",
+      "B-lymphocytes",
       "T-lymphocytes",
       "Platelets"
     ],
     "correct_index": 1,
-    "explanation": "B-lymphocytes differentiate into plasma cells that produce and secrete antibodies (immunoglobulins).",
+    "explanation": "B-lymphocytes differentiate into plasma cells that produce and secrete antibodies (immunoglobulins).\n\nNote: plasma cells",
     "difficulty": "easy",
     "tags": [
       "immunology",
@@ -599,12 +599,12 @@
     "question_text": "IgG is:",
     "options": [
       "Found only in saliva",
-      "The most abundant immunoglobulin in blood, crosses placenta",
+      "The most abundant immunoglobulin",
       "Present only in breast milk",
       "The largest antibody"
     ],
     "correct_index": 1,
-    "explanation": "IgG is the most abundant (75-80%) immunoglobulin in serum, crosses the placenta, and provides long-term immunity.",
+    "explanation": "IgG is the most abundant (75-80%) immunoglobulin in serum, crosses the placenta, and provides long-term immunity.\n\nAdditional: in blood crosses placenta",
     "difficulty": "easy",
     "tags": [
       "immunology",
@@ -616,12 +616,12 @@
     "question_text": "IgE is associated with:",
     "options": [
       "Bacterial infections",
-      "Allergic reactions and parasitic infections",
+      "Allergic reactions and",
       "Viral infections",
       "Autoimmune diseases"
     ],
     "correct_index": 1,
-    "explanation": "IgE mediates type I hypersensitivity (allergic) reactions and provides defense against parasitic worms.",
+    "explanation": "IgE mediates type I hypersensitivity (allergic) reactions and provides defense against parasitic worms.\n\nAdditional: parasitic infections",
     "difficulty": "easy",
     "tags": [
       "immunology",
@@ -735,12 +735,12 @@
     "question_text": "Bacterial cell wall is primarily composed of:",
     "options": [
       "Lipids",
-      "Peptidoglycan (murein)",
+      "Peptidoglycan",
       "Nucleic acids",
       "Proteins only"
     ],
     "correct_index": 1,
-    "explanation": "Bacterial cell walls contain peptidoglycan, a polymer of sugars and amino acids that provides structural support.",
+    "explanation": "Bacterial cell walls contain peptidoglycan, a polymer of sugars and amino acids that provides structural support.\n\nNote: murein",
     "difficulty": "easy",
     "tags": [
       "microbiology",
@@ -752,12 +752,12 @@
     "question_text": "Viruses are:",
     "options": [
       "Cellular organisms",
-      "Obligate intracellular parasites (acellular)",
+      "Obligate intracellular parasites",
       "Always pathogenic",
       "Free-living organisms"
     ],
     "correct_index": 1,
-    "explanation": "Viruses are acellular, obligate intracellular parasites that can only replicate inside living host cells.",
+    "explanation": "Viruses are acellular, obligate intracellular parasites that can only replicate inside living host cells.\n\nNote: acellular",
     "difficulty": "easy",
     "tags": [
       "microbiology",
@@ -803,12 +803,12 @@
     "question_text": "MacConkey agar is a:",
     "options": [
       "Blood agar",
-      "Selective and differential culture medium for gram-negative bacteria",
+      "Selective and differential culture",
       "Enriched medium for all bacteria",
       "Anaerobic medium"
     ],
     "correct_index": 1,
-    "explanation": "MacConkey agar selects for gram-negative bacteria and differentiates lactose fermenters (pink colonies) from non-fermenters.",
+    "explanation": "MacConkey agar selects for gram-negative bacteria and differentiates lactose fermenters (pink colonies) from non-fermenters.\n\nAdditional: medium for gram-negative bacteria",
     "difficulty": "medium",
     "tags": [
       "microbiology",
@@ -871,12 +871,12 @@
     "question_text": "Ethylene oxide is used for:",
     "options": [
       "Water sterilization",
-      "Sterilization of heat-sensitive medical devices and plastics",
+      "Sterilization of heat-sensitive medical",
       "Food preservation",
       "Air purification only"
     ],
     "correct_index": 1,
-    "explanation": "Ethylene oxide gas penetrates materials and kills all microorganisms, used for heat-sensitive equipment like catheters.",
+    "explanation": "Ethylene oxide gas penetrates materials and kills all microorganisms, used for heat-sensitive equipment like catheters.\n\nAdditional: devices and plastics",
     "difficulty": "easy",
     "tags": [
       "sterilization",
@@ -888,12 +888,12 @@
     "question_text": "Tyndallization involves:",
     "options": [
       "Single autoclaving",
-      "Intermittent sterilization by heating at 100°C for 30 minutes on 3 consecutive days",
+      "Intermittent sterilization by heating at 100°C for",
       "Dry heat sterilization",
       "Chemical sterilization"
     ],
     "correct_index": 1,
-    "explanation": "Tyndallization (fractional sterilization) uses repeated heating at 100°C to kill vegetative forms, then spores germinate and are killed on subsequent days.",
+    "explanation": "Tyndallization (fractional sterilization) uses repeated heating at 100°C to kill vegetative forms, then spores germinate and are killed on subsequent days.\n\nAdditional: 30 minutes on 3 consecutive days",
     "difficulty": "medium",
     "tags": [
       "sterilization",
@@ -1023,12 +1023,12 @@
     "question_text": "What is biochemistry?",
     "options": {
       "a": "Study of biological machines",
-      "b": "The study of chemical processes within and relating to living organisms",
+      "b": "The study of chemical processes within",
       "c": "Study of cell phones",
       "d": "Study of biomechanics"
     },
     "correct_option": "b",
-    "explanation": "Biochemistry is the branch of science that explores the chemical processes within and related to living organisms, bridging biology and chemistry.",
+    "explanation": "Biochemistry is the branch of science that explores the chemical processes within and related to living organisms, bridging biology and chemistry.\n\nAdditional: and relating to living organisms",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1039,12 +1039,12 @@
     "question_text": "What are the four major classes of biomolecules?",
     "options": {
       "a": "Lipids, vitamins, minerals, water",
-      "b": "Carbohydrates, proteins, lipids, and nucleic acids",
+      "b": "Carbohydrates, proteins",
       "c": "Sugars, fats, salts, vitamins",
       "d": "DNA, RNA, enzymes, hormones"
     },
     "correct_option": "b",
-    "explanation": "The four major biomolecules are carbohydrates (energy source), proteins (structural/functional), lipids (energy storage/membranes), and nucleic acids (genetic information).",
+    "explanation": "The four major biomolecules are carbohydrates (energy source), proteins (structural/functional), lipids (energy storage/membranes), and nucleic acids (genetic information).\n\nNote: lipids, and nucleic acids",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1089,12 +1089,12 @@
     "question_text": "What is the difference between monosaccharides and polysaccharides?",
     "options": {
       "a": "No difference",
-      "b": "Monosaccharides are single sugar units; polysaccharides are long chains of monosaccharides",
+      "b": "Monosaccharides are single sugar units; polysaccharides",
       "c": "Polysaccharides are sweeter",
       "d": "Monosaccharides have more carbons"
     },
     "correct_option": "b",
-    "explanation": "Monosaccharides (glucose, fructose) are single sugar units. Polysaccharides (starch, glycogen, cellulose) are polymers of many monosaccharide units linked by glycosidic bonds.",
+    "explanation": "Monosaccharides (glucose, fructose) are single sugar units. Polysaccharides (starch, glycogen, cellulose) are polymers of many monosaccharide units linked by glycosidic bonds.\n\nAdditional: are long chains of monosaccharides",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1123,12 +1123,12 @@
     "question_text": "What is starch?",
     "options": {
       "a": "Animal storage carbohydrate",
-      "b": "The storage polysaccharide of plants, composed of amylose and amylopectin",
+      "b": "The storage polysaccharide of plants",
       "c": "A structural polysaccharide",
       "d": "A nucleic acid"
     },
     "correct_option": "b",
-    "explanation": "Starch is the plant energy reserve consisting of amylose (linear α-1,4 linked glucose) and amylopectin (branched with α-1,6 linkages). It is the major dietary carbohydrate.",
+    "explanation": "Starch is the plant energy reserve consisting of amylose (linear α-1,4 linked glucose) and amylopectin (branched with α-1,6 linkages). It is the major dietary carbohydrate.\n\nAdditional: composed of amylose and amylopectin",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1175,12 +1175,12 @@
     "question_text": "How many essential amino acids are there for humans?",
     "options": {
       "a": "5",
-      "b": "10 (9 for adults, 10 including histidine for infants)",
+      "b": "10 (9 for adults 10",
       "c": "20",
       "d": "15"
     },
     "correct_option": "b",
-    "explanation": "There are 10 essential amino acids (including histidine for infants) that cannot be synthesized by the body and must come from diet: histidine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, valine, and arginine (conditionally).",
+    "explanation": "There are 10 essential amino acids (including histidine for infants) that cannot be synthesized by the body and must come from diet: histidine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, valine, and arginine (conditionally).\n\nAdditional: including histidine for infants)",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1192,12 +1192,12 @@
     "question_text": "What is the primary function of hemoglobin?",
     "options": {
       "a": "Blood clotting",
-      "b": "Transport oxygen from lungs to tissues and carbon dioxide back to lungs",
+      "b": "Transport oxygen from lungs to tissues",
       "c": "Fighting infection",
       "d": "Hormone transport"
     },
     "correct_option": "b",
-    "explanation": "Hemoglobin (Hb) is an iron-containing protein in red blood cells that binds O₂ in lungs (forming oxyhemoglobin) and releases it in tissues, also carrying CO₂ back.",
+    "explanation": "Hemoglobin (Hb) is an iron-containing protein in red blood cells that binds O₂ in lungs (forming oxyhemoglobin) and releases it in tissues, also carrying CO₂ back.\n\nAdditional: and carbon dioxide back to lungs",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1209,12 +1209,12 @@
     "question_text": "What is an enzyme?",
     "options": {
       "a": "A structural protein",
-      "b": "A biological catalyst that speeds up chemical reactions without being consumed",
+      "b": "A biological catalyst that speeds up",
       "c": "A type of carbohydrate",
       "d": "A lipid molecule"
     },
     "correct_option": "b",
-    "explanation": "Enzymes are biological catalysts (usually proteins) that accelerate chemical reactions by lowering activation energy, without being permanently altered in the process.",
+    "explanation": "Enzymes are biological catalysts (usually proteins) that accelerate chemical reactions by lowering activation energy, without being permanently altered in the process.\n\nAdditional: chemical reactions without being consumed",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1225,12 +1225,12 @@
     "question_text": "What is the lock-and-key model of enzyme action?",
     "options": {
       "a": "Enzymes are shaped like keys",
-      "b": "The substrate fits perfectly into the active site of the enzyme like a key into a lock",
+      "b": "The substrate fits perfectly into the active site of",
       "c": "Enzymes lock up substrates",
       "d": "Enzymes are always locked in position"
     },
     "correct_option": "b",
-    "explanation": "The lock-and-key model proposes that the enzyme's active site has a specific shape that precisely complements the substrate's shape, allowing only specific substrates to bind.",
+    "explanation": "The lock-and-key model proposes that the enzyme's active site has a specific shape that precisely complements the substrate's shape, allowing only specific substrates to bind.\n\nAdditional: the enzyme like a key into a lock",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1259,12 +1259,12 @@
     "question_text": "What affects enzyme activity?",
     "options": {
       "a": "Only temperature",
-      "b": "Temperature, pH, substrate concentration, enzyme concentration, and inhibitors",
+      "b": "Temperature, pH",
       "c": "Only pH",
       "d": "Only substrate concentration"
     },
     "correct_option": "b",
-    "explanation": "Enzyme activity is affected by: temperature (optimum ~37°C), pH (each enzyme has an optimum), substrate concentration (until Vmax), and inhibitors (competitive, non-competitive).",
+    "explanation": "Enzyme activity is affected by: temperature (optimum ~37°C), pH (each enzyme has an optimum), substrate concentration (until Vmax), and inhibitors (competitive, non-competitive).\n\nNote: substrate concentration, enzyme concentration, and inhibitors",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1275,13 +1275,13 @@
   {
     "question_text": "What is competitive inhibition of enzymes?",
     "options": {
-      "a": "Inhibitor binds to the active site, competing with the substrate",
+      "a": "Inhibitor binds to the active site",
       "b": "Inhibitor binds to a site other than the active site",
       "c": "Inhibitor destroys the enzyme",
       "d": "Substrate destroys the inhibitor"
     },
     "correct_option": "a",
-    "explanation": "In competitive inhibition, the inhibitor resembles the substrate and competes for the same active site. It can be overcome by increasing substrate concentration.",
+    "explanation": "In competitive inhibition, the inhibitor resembles the substrate and competes for the same active site. It can be overcome by increasing substrate concentration.\n\nNote: competing with the substrate",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1293,12 +1293,12 @@
     "question_text": "What is non-competitive inhibition?",
     "options": {
       "a": "Inhibitor binds to the active site",
-      "b": "Inhibitor binds to an allosteric site (not the active site), changing enzyme shape and activity",
+      "b": "Inhibitor binds to an allosteric site",
       "c": "Substrate competes with another substrate",
       "d": "Inhibitor is the same as the substrate"
     },
     "correct_option": "b",
-    "explanation": "In non-competitive inhibition, the inhibitor binds at a site other than the active site (allosteric site), changing the enzyme's conformation and reducing its activity. Cannot be overcome by adding more substrate.",
+    "explanation": "In non-competitive inhibition, the inhibitor binds at a site other than the active site (allosteric site), changing the enzyme's conformation and reducing its activity. Cannot be overcome by adding more substrate.\n\nNote: not the active site\n\nNote: changing enzyme shape and activity",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1310,12 +1310,12 @@
     "question_text": "What are lipids?",
     "options": {
       "a": "Water-soluble biomolecules",
-      "b": "A heterogeneous group of naturally occurring molecules that are insoluble in water but soluble in organic solvents",
+      "b": "A heterogeneous group of naturally occurring molecules that are",
       "c": "Proteins with lipid coats",
       "d": "Carbohydrates with fat coatings"
     },
     "correct_option": "b",
-    "explanation": "Lipids are a diverse group of hydrophobic molecules (fats, oils, waxes, steroids, phospholipids) that are insoluble in water but soluble in organic solvents like chloroform and ether.",
+    "explanation": "Lipids are a diverse group of hydrophobic molecules (fats, oils, waxes, steroids, phospholipids) that are insoluble in water but soluble in organic solvents like chloroform and ether.\n\nAdditional: insoluble in water but soluble in organic solvents",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1326,12 +1326,12 @@
     "question_text": "What is the difference between saturated and unsaturated fatty acids?",
     "options": {
       "a": "No difference",
-      "b": "Saturated have no double bonds; unsaturated have one or more double bonds",
+      "b": "Saturated have no double bonds;",
       "c": "Saturated are liquid; unsaturated are solid",
       "d": "Unsaturated have more hydrogen atoms"
     },
     "correct_option": "b",
-    "explanation": "Saturated fatty acids (palmitic, stearic) have no carbon-carbon double bonds, are typically solid at room temperature. Unsaturated (oleic, linoleic) have double bonds, are typically liquid.",
+    "explanation": "Saturated fatty acids (palmitic, stearic) have no carbon-carbon double bonds, are typically solid at room temperature. Unsaturated (oleic, linoleic) have double bonds, are typically liquid.\n\nNote: unsaturated have one or more double bonds",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1343,12 +1343,12 @@
     "question_text": "What is the main function of cholesterol?",
     "options": {
       "a": "Energy storage",
-      "b": "Component of cell membranes, precursor for steroid hormones and bile acids",
+      "b": "Component of cell membranes precursor for",
       "c": "Oxygen transport",
       "d": "DNA synthesis"
     },
     "correct_option": "b",
-    "explanation": "Cholesterol is a sterol that is a vital component of cell membranes (maintaining fluidity) and serves as the precursor for steroid hormones (cortisol, testosterone) and bile acids.",
+    "explanation": "Cholesterol is a sterol that is a vital component of cell membranes (maintaining fluidity) and serves as the precursor for steroid hormones (cortisol, testosterone) and bile acids.\n\nAdditional: steroid hormones and bile acids",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1360,12 +1360,12 @@
     "question_text": "What are triglycerides (triacylglycerols)?",
     "options": {
       "a": "Type of protein",
-      "b": "Three fatty acids esterified to a glycerol backbone — the main form of fat storage",
+      "b": "Three fatty acids esterified to a glycerol backbone",
       "c": "Type of sugar",
       "d": "Type of nucleic acid"
     },
     "correct_option": "b",
-    "explanation": "Triglycerides consist of one glycerol molecule esterified with three fatty acids. They are the main form of energy storage in adipose tissue, providing 9 kcal/g.",
+    "explanation": "Triglycerides consist of one glycerol molecule esterified with three fatty acids. They are the main form of energy storage in adipose tissue, providing 9 kcal/g.\n\nAdditional: — the main form of fat storage",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1377,12 +1377,12 @@
     "question_text": "What are the functions of phospholipids?",
     "options": {
       "a": "Energy storage only",
-      "b": "Major component of biological membranes (lipid bilayer), emulsification",
+      "b": "Major component of",
       "c": "Carrying oxygen",
       "d": "Catalyzing reactions"
     },
     "correct_option": "b",
-    "explanation": "Phospholipids are the primary structural components of cell membranes, forming the lipid bilayer with their hydrophilic heads and hydrophobic tails (amphipathic nature).",
+    "explanation": "Phospholipids are the primary structural components of cell membranes, forming the lipid bilayer with their hydrophilic heads and hydrophobic tails (amphipathic nature).\n\nAdditional: biological membranes emulsification",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1394,12 +1394,12 @@
     "question_text": "What are nucleic acids?",
     "options": {
       "a": "Type of carbohydrates",
-      "b": "Polymers of nucleotides that store and transmit genetic information (DNA and RNA)",
+      "b": "Polymers of nucleotides that store",
       "c": "Type of lipids",
       "d": "Type of proteins"
     },
     "correct_option": "b",
-    "explanation": "Nucleic acids (DNA and RNA) are polymers of nucleotides. Each nucleotide has a nitrogenous base, a pentose sugar, and a phosphate group. They carry genetic information.",
+    "explanation": "Nucleic acids (DNA and RNA) are polymers of nucleotides. Each nucleotide has a nitrogenous base, a pentose sugar, and a phosphate group. They carry genetic information.\n\nNote: DNA and RNA\n\nAdditional: and transmit genetic information",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1410,12 +1410,12 @@
     "question_text": "What is the difference between DNA and RNA?",
     "options": {
       "a": "No difference",
-      "b": "DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil",
+      "b": "DNA is double-stranded with deoxyribose and thymine;",
       "c": "DNA has ribose; RNA has deoxyribose",
       "d": "DNA is single-stranded; RNA is double-stranded"
     },
     "correct_option": "b",
-    "explanation": "DNA is double-stranded, contains deoxyribose sugar and bases A, T, G, C. RNA is single-stranded, contains ribose sugar and bases A, U, G, C (uracil replaces thymine).",
+    "explanation": "DNA is double-stranded, contains deoxyribose sugar and bases A, T, G, C. RNA is single-stranded, contains ribose sugar and bases A, U, G, C (uracil replaces thymine).\n\nAdditional: RNA is single-stranded with ribose and uracil",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1428,12 +1428,12 @@
     "question_text": "What is the central dogma of molecular biology?",
     "options": {
       "a": "DNA → Protein → RNA",
-      "b": "DNA → RNA → Protein (replication → transcription → translation)",
+      "b": "DNA → RNA → Protein",
       "c": "Protein → RNA → DNA",
       "d": "RNA → DNA → Protein"
     },
     "correct_option": "b",
-    "explanation": "The central dogma: DNA is replicated to make more DNA (replication), transcribed to make RNA (transcription), and RNA is translated to make proteins (translation).",
+    "explanation": "The central dogma: DNA is replicated to make more DNA (replication), transcribed to make RNA (transcription), and RNA is translated to make proteins (translation).\n\nNote: replication → transcription → translation",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1445,12 +1445,12 @@
     "question_text": "What is metabolism?",
     "options": {
       "a": "Only energy production",
-      "b": "All chemical reactions occurring in the body, including catabolism and anabolism",
+      "b": "All chemical reactions occurring in the body",
       "c": "Only breakdown of food",
       "d": "Only building of molecules"
     },
     "correct_option": "b",
-    "explanation": "Metabolism encompasses all chemical reactions in the body: catabolism (breakdown of complex molecules, releasing energy) and anabolism (building complex molecules, requiring energy).",
+    "explanation": "Metabolism encompasses all chemical reactions in the body: catabolism (breakdown of complex molecules, releasing energy) and anabolism (building complex molecules, requiring energy).\n\nNote: including catabolism and anabolism",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1461,12 +1461,12 @@
     "question_text": "What is glycolysis?",
     "options": {
       "a": "Breakdown of proteins",
-      "b": "The metabolic pathway that converts glucose to pyruvate, producing ATP and NADH",
+      "b": "The metabolic pathway that converts glucose",
       "c": "Breakdown of lipids",
       "d": "Synthesis of glucose from amino acids"
     },
     "correct_option": "b",
-    "explanation": "Glycolysis occurs in the cytoplasm, converting one glucose molecule into two pyruvate molecules, with a net gain of 2 ATP and 2 NADH. It is common to both aerobic and anaerobic respiration.",
+    "explanation": "Glycolysis occurs in the cytoplasm, converting one glucose molecule into two pyruvate molecules, with a net gain of 2 ATP and 2 NADH. It is common to both aerobic and anaerobic respiration.\n\nAdditional: to pyruvate producing ATP and NADH",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1478,12 +1478,12 @@
     "question_text": "What is the end product of glycolysis?",
     "options": {
       "a": "Glucose",
-      "b": "Pyruvate (pyruvic acid)",
+      "b": "Pyruvate",
       "c": "Lactate",
       "d": "Ethanol"
     },
     "correct_option": "b",
-    "explanation": "The end product of glycolysis is pyruvate (pyruvic acid). Under aerobic conditions it enters the Krebs cycle; under anaerobic conditions it is converted to lactate (in humans).",
+    "explanation": "The end product of glycolysis is pyruvate (pyruvic acid). Under aerobic conditions it enters the Krebs cycle; under anaerobic conditions it is converted to lactate (in humans).\n\nNote: pyruvic acid",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1495,12 +1495,12 @@
     "question_text": "How many ATP molecules are produced per glucose molecule in glycolysis?",
     "options": {
       "a": "1",
-      "b": "2 net ATP (4 produced - 2 used)",
+      "b": "2 net ATP",
       "c": "36-38",
       "d": "10"
     },
     "correct_option": "b",
-    "explanation": "Glycolysis produces 4 ATP by substrate-level phosphorylation but uses 2 ATP in the energy investment phase, giving a net yield of 2 ATP per glucose molecule.",
+    "explanation": "Glycolysis produces 4 ATP by substrate-level phosphorylation but uses 2 ATP in the energy investment phase, giving a net yield of 2 ATP per glucose molecule.\n\nNote: 4 produced - 2 used",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1512,12 +1512,12 @@
     "question_text": "What is the Krebs cycle (citric acid cycle)?",
     "options": {
       "a": "A pathway for glucose synthesis",
-      "b": "A series of reactions in the mitochondrial matrix that oxidizes acetyl-CoA, producing CO₂, NADH, FADH₂, and GTP",
+      "b": "A series of reactions in the mitochondrial",
       "c": "A pathway for fatty acid synthesis",
       "d": "A pathway for amino acid synthesis"
     },
     "correct_option": "b",
-    "explanation": "The Krebs cycle occurs in the mitochondrial matrix. Acetyl-CoA (2C) combines with oxaloacetate (4C) to form citrate (6C), which is progressively oxidized, producing 3 NADH, 1 FADH₂, 1 GTP, and 2 CO₂ per turn.",
+    "explanation": "The Krebs cycle occurs in the mitochondrial matrix. Acetyl-CoA (2C) combines with oxaloacetate (4C) to form citrate (6C), which is progressively oxidized, producing 3 NADH, 1 FADH₂, 1 GTP, and 2 CO₂ per turn.\n\nNote: NADH, FADH₂, and GTP\n\nAdditional: matrix that oxidizes acetyl-CoA producing CO₂",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1545,12 +1545,12 @@
     "question_text": "What is the electron transport chain (ETC)?",
     "options": {
       "a": "A chain of amino acids",
-      "b": "A series of protein complexes in the inner mitochondrial membrane that transfer electrons to generate ATP",
+      "b": "A series of protein complexes in the inner",
       "c": "A chain of nucleotides",
       "d": "A chain of sugar molecules"
     },
     "correct_option": "b",
-    "explanation": "The ETC consists of complexes I-IV in the inner mitochondrial membrane. Electrons from NADH and FADH₂ pass through these complexes, creating a proton gradient that drives ATP synthesis via ATP synthase.",
+    "explanation": "The ETC consists of complexes I-IV in the inner mitochondrial membrane. Electrons from NADH and FADH₂ pass through these complexes, creating a proton gradient that drives ATP synthesis via ATP synthase.\n\nAdditional: mitochondrial membrane that transfer electrons to generate ATP",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1562,12 +1562,12 @@
     "question_text": "What is the total ATP yield from complete oxidation of one glucose molecule?",
     "options": {
       "a": "2 ATP",
-      "b": "30-32 ATP (approximately)",
+      "b": "30-32 ATP",
       "c": "4 ATP",
       "d": "100 ATP"
     },
     "correct_option": "b",
-    "explanation": "Complete oxidation of glucose (glycolysis + Krebs + ETC) yields approximately 30-32 ATP per glucose molecule (previous estimates of 36-38 have been revised downward).",
+    "explanation": "Complete oxidation of glucose (glycolysis + Krebs + ETC) yields approximately 30-32 ATP per glucose molecule (previous estimates of 36-38 have been revised downward).\n\nNote: approximately",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1595,12 +1595,12 @@
     "question_text": "What is the difference between lactic acid fermentation and alcoholic fermentation?",
     "options": {
       "a": "No difference",
-      "b": "Lactic acid fermentation reduces pyruvate to lactate; alcoholic fermentation produces ethanol and CO₂",
+      "b": "Lactic acid fermentation reduces pyruvate to lactate;",
       "c": "Lactic acid fermentation produces alcohol",
       "d": "Alcoholic fermentation produces lactate"
     },
     "correct_option": "b",
-    "explanation": "Lactic acid fermentation (muscles, Lactobacillus): pyruvate → lactate. Alcoholic fermentation (yeast, Saccharomyces): pyruvate → acetaldehyde + CO₂ → ethanol.",
+    "explanation": "Lactic acid fermentation (muscles, Lactobacillus): pyruvate → lactate. Alcoholic fermentation (yeast, Saccharomyces): pyruvate → acetaldehyde + CO₂ → ethanol.\n\nAdditional: alcoholic fermentation produces ethanol and CO₂",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1612,12 +1612,12 @@
     "question_text": "What is the role of coenzymes in enzyme reactions?",
     "options": {
       "a": "They are structural components",
-      "b": "They assist enzymes by carrying electrons, atoms, or functional groups during reactions",
+      "b": "They assist enzymes by carrying electrons, atoms",
       "c": "They inhibit enzyme activity",
       "d": "They replace enzymes when needed"
     },
     "correct_option": "b",
-    "explanation": "Coenzymes are organic molecules (often derived from vitamins) that work with enzymes to facilitate reactions by acting as carriers of specific groups or electrons.",
+    "explanation": "Coenzymes are organic molecules (often derived from vitamins) that work with enzymes to facilitate reactions by acting as carriers of specific groups or electrons.\n\nNote: or functional groups during reactions",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1629,7 +1629,7 @@
     "question_text": "Which vitamin is a precursor of coenzyme NAD⁺ (nicotinamide adenine dinucleotide)?",
     "options": {
       "a": "Vitamin C",
-      "b": "Niacin (Vitamin B₃)",
+      "b": "Niacin",
       "c": "Riboflavin (Vitamin B₂)",
       "d": "Thiamine (Vitamin B₁)"
     },
@@ -1646,12 +1646,12 @@
     "question_text": "Which vitamin is a precursor of coenzyme FAD (flavin adenine dinucleotide)?",
     "options": {
       "a": "Niacin",
-      "b": "Riboflavin (Vitamin B₂)",
+      "b": "Riboflavin",
       "c": "Thiamine",
       "d": "Pyridoxine"
     },
     "correct_option": "b",
-    "explanation": "Riboflavin (Vitamin B₂) is the precursor of FAD and FMN, coenzymes that carry hydrogen/electrons in oxidation-reduction reactions, especially in the ETC.",
+    "explanation": "Riboflavin (Vitamin B₂) is the precursor of FAD and FMN, coenzymes that carry hydrogen/electrons in oxidation-reduction reactions, especially in the ETC.\n\nNote: Vitamin B₂",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1663,12 +1663,12 @@
     "question_text": "What is the role of vitamin C (ascorbic acid) in the body?",
     "options": {
       "a": "Blood clotting",
-      "b": "Antioxidant, collagen synthesis, and immune function support",
+      "b": "Antioxidant, collagen synthesis",
       "c": "Bone mineralization",
       "d": "Vision improvement"
     },
     "correct_option": "b",
-    "explanation": "Vitamin C is a powerful antioxidant, essential for collagen synthesis (hydroxylation of proline and lysine), iron absorption, and immune function. Deficiency causes scurvy.",
+    "explanation": "Vitamin C is a powerful antioxidant, essential for collagen synthesis (hydroxylation of proline and lysine), iron absorption, and immune function. Deficiency causes scurvy.\n\nNote: and immune function support",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1680,12 +1680,12 @@
     "question_text": "Which vitamin deficiency causes scurvy?",
     "options": {
       "a": "Vitamin A",
-      "b": "Vitamin C (ascorbic acid)",
+      "b": "Vitamin C",
       "c": "Vitamin D",
       "d": "Vitamin K"
     },
     "correct_option": "b",
-    "explanation": "Scurvy is caused by vitamin C deficiency, characterized by bleeding gums, poor wound healing, joint pain, and bruising due to impaired collagen synthesis.",
+    "explanation": "Scurvy is caused by vitamin C deficiency, characterized by bleeding gums, poor wound healing, joint pain, and bruising due to impaired collagen synthesis.\n\nNote: ascorbic acid",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1748,12 +1748,12 @@
     "question_text": "What is hemoglobin?",
     "options": {
       "a": "A carbohydrate in blood",
-      "b": "An iron-containing protein in red blood cells that transports oxygen",
+      "b": "An iron-containing protein in red",
       "c": "A white blood cell",
       "d": "A blood clotting factor"
     },
     "correct_option": "b",
-    "explanation": "Hemoglobin (Hb) is a tetrameric protein (4 subunits: 2α, 2β) containing heme groups with iron that binds oxygen reversibly, transporting O₂ from lungs to tissues.",
+    "explanation": "Hemoglobin (Hb) is a tetrameric protein (4 subunits: 2α, 2β) containing heme groups with iron that binds oxygen reversibly, transporting O₂ from lungs to tissues.\n\nAdditional: blood cells that transports oxygen",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1765,12 +1765,12 @@
     "question_text": "What is the structure of a heme group?",
     "options": {
       "a": "A sugar ring",
-      "b": "A porphyrin ring with a central iron (Fe²⁺) atom",
+      "b": "A porphyrin ring with",
       "c": "An amino acid chain",
       "d": "A nucleotide base"
     },
     "correct_option": "b",
-    "explanation": "The heme group consists of a porphyrin ring (four pyrrole rings) with a central ferrous iron (Fe²⁺) that binds one molecule of O₂. This iron must remain in Fe²⁺ state for oxygen binding.",
+    "explanation": "The heme group consists of a porphyrin ring (four pyrrole rings) with a central ferrous iron (Fe²⁺) that binds one molecule of O₂. This iron must remain in Fe²⁺ state for oxygen binding.\n\nAdditional: a central iron atom",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1782,12 +1782,12 @@
     "question_text": "What is the Bohr effect?",
     "options": {
       "a": "Effect of exercise on muscles",
-      "b": "Decreased hemoglobin affinity for oxygen at lower pH and higher CO₂ concentration",
+      "b": "Decreased hemoglobin affinity for oxygen at",
       "c": "Effect of temperature on enzyme activity",
       "d": "Effect of light on vision"
     },
     "correct_option": "b",
-    "explanation": "The Bohr effect: hemoglobin releases oxygen more readily in acidic (lower pH) and high CO₂ environments (like active tissues), facilitating oxygen delivery where it's needed most.",
+    "explanation": "The Bohr effect: hemoglobin releases oxygen more readily in acidic (lower pH) and high CO₂ environments (like active tissues), facilitating oxygen delivery where it's needed most.\n\nAdditional: lower pH and higher CO₂ concentration",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1799,12 +1799,12 @@
     "question_text": "What causes sickle cell anemia?",
     "options": {
       "a": "Vitamin deficiency",
-      "b": "A point mutation in the β-globin gene (Glu→Val at position 6) causing abnormal hemoglobin (HbS)",
+      "b": "A point mutation in the",
       "c": "Bacterial infection",
       "d": "Iron overload"
     },
     "correct_option": "b",
-    "explanation": "Sickle cell anemia is caused by a single nucleotide substitution (GAG→GTG) in the β-globin gene, replacing glutamic acid with valine at position 6, producing abnormal HbS that polymerizes under low oxygen.",
+    "explanation": "Sickle cell anemia is caused by a single nucleotide substitution (GAG→GTG) in the β-globin gene, replacing glutamic acid with valine at position 6, producing abnormal HbS that polymerizes under low oxygen.\n\nNote: HbS\n\nNote: Glu→Val at position 6\n\nAdditional: β-globin gene causing abnormal hemoglobin",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1834,12 +1834,12 @@
     "question_text": "What is the role of mRNA in protein synthesis?",
     "options": {
       "a": "Stores genetic information",
-      "b": "Carries the genetic code from DNA to ribosomes for translation into protein",
+      "b": "Carries the genetic code from DNA",
       "c": "Transfers amino acids",
       "d": "Forms the ribosome structure"
     },
     "correct_option": "b",
-    "explanation": "Messenger RNA (mRNA) carries the genetic message from DNA in the nucleus to ribosomes in the cytoplasm, where it is translated into a protein sequence.",
+    "explanation": "Messenger RNA (mRNA) carries the genetic message from DNA in the nucleus to ribosomes in the cytoplasm, where it is translated into a protein sequence.\n\nAdditional: to ribosomes for translation into protein",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1851,12 +1851,12 @@
     "question_text": "What is the role of tRNA in protein synthesis?",
     "options": {
       "a": "Carries genetic code",
-      "b": "Transfers specific amino acids to the ribosome according to the mRNA codon",
+      "b": "Transfers specific amino acids to the",
       "c": "Forms ribosomes",
       "d": "Stores genetic information"
     },
     "correct_option": "b",
-    "explanation": "Transfer RNA (tRNA) carries specific amino acids to the ribosome. Each tRNA has an anticodon that pairs with the complementary codon on mRNA, ensuring the correct amino acid is added.",
+    "explanation": "Transfer RNA (tRNA) carries specific amino acids to the ribosome. Each tRNA has an anticodon that pairs with the complementary codon on mRNA, ensuring the correct amino acid is added.\n\nAdditional: ribosome according to the mRNA codon",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1885,12 +1885,12 @@
     "question_text": "What are start and stop codons?",
     "options": {
       "a": "Signals to start and stop cell division",
-      "b": "AUG (start/methionine) signals protein synthesis initiation; UAA, UAG, UGA signal termination",
+      "b": "AUG signals protein synthesis initiation; UAA, UAG",
       "c": "Signals to start and stop DNA replication",
       "d": "Start and stop of cell growth"
     },
     "correct_option": "b",
-    "explanation": "AUG is the start codon (codes for methionine and signals initiation of translation). UAA, UAG, and UGA are stop codons that signal termination of protein synthesis.",
+    "explanation": "AUG is the start codon (codes for methionine and signals initiation of translation). UAA, UAG, and UGA are stop codons that signal termination of protein synthesis.\n\nNote: UGA signal termination\n\nNote: start/methionine",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1902,12 +1902,12 @@
     "question_text": "What is the genetic code?",
     "options": {
       "a": "A cipher for decoding messages",
-      "b": "The set of rules by which the nucleotide sequence of a gene is translated into amino acid sequence of a protein",
+      "b": "The set of rules by which the nucleotide sequence of a",
       "c": "A type of encryption",
       "d": "A software code"
     },
     "correct_option": "b",
-    "explanation": "The genetic code is the set of rules by which the 64 possible three-nucleotide codons are translated into 20 amino acids plus stop signals. It is nearly universal across all life forms.",
+    "explanation": "The genetic code is the set of rules by which the 64 possible three-nucleotide codons are translated into 20 amino acids plus stop signals. It is nearly universal across all life forms.\n\nAdditional: gene is translated into amino acid sequence of a protein",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -1918,12 +1918,12 @@
     "question_text": "What is microbiology?",
     "options": {
       "a": "Study of large organisms",
-      "b": "The study of microorganisms (bacteria, viruses, fungi, protozoa, algae)",
+      "b": "The study of microorganisms",
       "c": "Study of human anatomy",
       "d": "Study of pharmaceutical chemistry"
     },
     "correct_option": "b",
-    "explanation": "Microbiology is the branch of science dealing with the study of microorganisms including bacteria, viruses, fungi, protozoa, and algae — their structure, function, and interactions.",
+    "explanation": "Microbiology is the branch of science dealing with the study of microorganisms including bacteria, viruses, fungi, protozoa, and algae — their structure, function, and interactions.\n\nNote: bacteria, viruses, fungi, protozoa, algae",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1935,12 +1935,12 @@
     "question_text": "What are the main types of microorganisms?",
     "options": {
       "a": "Only bacteria",
-      "b": "Bacteria, viruses, fungi, protozoa, algae, and archaea",
+      "b": "Bacteria, viruses",
       "c": "Only viruses and bacteria",
       "d": "Only fungi and protozoa"
     },
     "correct_option": "b",
-    "explanation": "Microorganisms include bacteria (prokaryotes), viruses (acellular), fungi (yeasts, molds), protozoa (single-celled eukaryotes), algae (photosynthetic), and archaea (extremophiles).",
+    "explanation": "Microorganisms include bacteria (prokaryotes), viruses (acellular), fungi (yeasts, molds), protozoa (single-celled eukaryotes), algae (photosynthetic), and archaea (extremophiles).\n\nNote: fungi, protozoa, algae, and archaea",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1952,12 +1952,12 @@
     "question_text": "What is the difference between prokaryotes and eukaryotes?",
     "options": {
       "a": "No difference",
-      "b": "Prokaryotes lack membrane-bound nucleus and organelles; eukaryotes have them",
+      "b": "Prokaryotes lack membrane-bound nucleus and",
       "c": "Prokaryotes are larger",
       "d": "Eukaryotes lack DNA"
     },
     "correct_option": "b",
-    "explanation": "Prokaryotes (bacteria, archaea) have no membrane-bound nucleus or organelles — their DNA is in the nucleoid region. Eukaryotes (animal, plant, fungal cells) have a true nucleus and membrane-bound organelles.",
+    "explanation": "Prokaryotes (bacteria, archaea) have no membrane-bound nucleus or organelles — their DNA is in the nucleoid region. Eukaryotes (animal, plant, fungal cells) have a true nucleus and membrane-bound organelles.\n\nAdditional: organelles; eukaryotes have them",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -1969,12 +1969,12 @@
     "question_text": "What is a virus?",
     "options": {
       "a": "A single-celled organism",
-      "b": "An acellular infectious agent consisting of nucleic acid (DNA or RNA) surrounded by a protein coat",
+      "b": "An acellular infectious agent consisting of nucleic",
       "c": "A type of bacterium",
       "d": "A type of fungus"
     },
     "correct_option": "b",
-    "explanation": "Viruses are obligate intracellular parasites — they are not cells but consist of genetic material (DNA or RNA) enclosed in a protein coat (capsid), sometimes with an outer envelope. They cannot reproduce outside a host cell.",
+    "explanation": "Viruses are obligate intracellular parasites — they are not cells but consist of genetic material (DNA or RNA) enclosed in a protein coat (capsid), sometimes with an outer envelope. They cannot reproduce outside a host cell.\n\nAdditional: acid surrounded by a protein coat",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2002,12 +2002,12 @@
     "question_text": "What are the main structural components of a virus?",
     "options": {
       "a": "Cell wall and membrane",
-      "b": "Nucleic acid core (DNA or RNA) surrounded by a protein coat (capsid)",
+      "b": "Nucleic acid core surrounded by a protein coat",
       "c": "Nucleus and mitochondria",
       "d": "Ribosomes and ER"
     },
     "correct_option": "b",
-    "explanation": "A virus consists of: nucleic acid (DNA or RNA, never both), capsid (protein coat made of capsomeres), and sometimes an outer lipid envelope (derived from host cell membrane).",
+    "explanation": "A virus consists of: nucleic acid (DNA or RNA, never both), capsid (protein coat made of capsomeres), and sometimes an outer lipid envelope (derived from host cell membrane).\n\nNote: capsid",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2036,12 +2036,12 @@
     "question_text": "What is the lytic cycle of a virus?",
     "options": {
       "a": "Virus remains dormant in the host cell",
-      "b": "Virus replicates inside the host cell and then lyses (bursts) the cell to release new virions",
+      "b": "Virus replicates inside the host cell and then",
       "c": "Virus integrates into host DNA",
       "d": "Virus exits the cell without killing it"
     },
     "correct_option": "b",
-    "explanation": "In the lytic cycle, the virus attaches, injects DNA, replicates using host machinery, assembles new virions, and lyses the host cell to release them, killing the host cell.",
+    "explanation": "In the lytic cycle, the virus attaches, injects DNA, replicates using host machinery, assembles new virions, and lyses the host cell to release them, killing the host cell.\n\nNote: bursts\n\nAdditional: lyses the cell to release new virions",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2053,12 +2053,12 @@
     "question_text": "What is the lysogenic cycle of a virus?",
     "options": {
       "a": "Virus immediately lyses the cell",
-      "b": "Viral DNA integrates into the host genome (prophage) and replicates with the host without killing it",
+      "b": "Viral DNA integrates into the host genome and",
       "c": "Virus is destroyed by the host",
       "d": "Virus cannot enter the cell"
     },
     "correct_option": "b",
-    "explanation": "In the lysogenic cycle, viral DNA integrates into the host chromosome (becoming a prophage/provirus) and is replicated passively with the host cell. It can later enter the lytic cycle.",
+    "explanation": "In the lysogenic cycle, viral DNA integrates into the host chromosome (becoming a prophage/provirus) and is replicated passively with the host cell. It can later enter the lytic cycle.\n\nAdditional: replicates with the host without killing it",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2070,12 +2070,12 @@
     "question_text": "What is a bacterium?",
     "options": {
       "a": "A virus",
-      "b": "A single-celled prokaryotic microorganism with a cell wall, no membrane-bound nucleus",
+      "b": "A single-celled prokaryotic microorganism with a",
       "c": "A type of fungus",
       "d": "A type of parasite"
     },
     "correct_option": "b",
-    "explanation": "Bacteria are single-celled prokaryotic organisms (0.5-5 μm) with a cell wall (peptidoglycan), circular DNA in the nucleoid region, and no membrane-bound organelles.",
+    "explanation": "Bacteria are single-celled prokaryotic organisms (0.5-5 μm) with a cell wall (peptidoglycan), circular DNA in the nucleoid region, and no membrane-bound organelles.\n\nAdditional: cell wall no membrane-bound nucleus",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2086,12 +2086,12 @@
     "question_text": "What is the difference between Gram-positive and Gram-negative bacteria?",
     "options": {
       "a": "No difference",
-      "b": "Gram-positive have thick peptidoglycan layer (retain crystal violet stain); Gram-negative have thin peptidoglycan with outer membrane (appear pink)",
+      "b": "Gram-positive have thick peptidoglycan layer; Gram-negative",
       "c": "Gram-positive are larger",
       "d": "Gram-negative have no cell wall"
     },
     "correct_option": "b",
-    "explanation": "Gram-positive bacteria have a thick peptidoglycan wall that retains crystal violet stain (appear purple). Gram-negative bacteria have a thin peptidoglycan layer and an outer membrane, appearing pink/red after counterstaining.",
+    "explanation": "Gram-positive bacteria have a thick peptidoglycan wall that retains crystal violet stain (appear purple). Gram-negative bacteria have a thin peptidoglycan layer and an outer membrane, appearing pink/red after counterstaining.\n\nNote: appear pink\n\nNote: retain crystal violet stain\n\nAdditional: have thin peptidoglycan with outer membrane",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2103,12 +2103,12 @@
     "question_text": "What is the Gram stain technique?",
     "options": {
       "a": "A method to count bacteria",
-      "b": "A differential staining method to classify bacteria based on cell wall structure into Gram-positive and Gram-negative",
+      "b": "A differential staining method to classify bacteria based",
       "c": "A method to grow bacteria",
       "d": "A method to kill bacteria"
     },
     "correct_option": "b",
-    "explanation": "Gram staining uses crystal violet, iodine, alcohol (decolorizer), and safranin to differentiate bacteria: Gram-positive = purple; Gram-negative = pink/red. It is the most important staining technique in microbiology.",
+    "explanation": "Gram staining uses crystal violet, iodine, alcohol (decolorizer), and safranin to differentiate bacteria: Gram-positive = purple; Gram-negative = pink/red. It is the most important staining technique in microbiology.\n\nAdditional: on cell wall structure into Gram-positive and Gram-negative",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2120,12 +2120,12 @@
     "question_text": "What is the cell wall of bacteria primarily made of?",
     "options": {
       "a": "Cellulose",
-      "b": "Peptidoglycan (murein)",
+      "b": "Peptidoglycan",
       "c": "Chitin",
       "d": "Keratin"
     },
     "correct_option": "b",
-    "explanation": "Bacterial cell walls are primarily composed of peptidoglycan (murein) — a mesh-like polymer of sugars (NAG and NAM) cross-linked by short peptide chains.",
+    "explanation": "Bacterial cell walls are primarily composed of peptidoglycan (murein) — a mesh-like polymer of sugars (NAG and NAM) cross-linked by short peptide chains.\n\nNote: murein",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2172,11 +2172,11 @@
     "options": {
       "a": "Coccus",
       "b": "Bacillus",
-      "c": "Spirillum (or spirochete)",
+      "c": "Spirillum",
       "d": "Vibrio"
     },
     "correct_option": "c",
-    "explanation": "Spiral bacteria include: Spirillum (rigid spiral), spirochete (flexible spiral, e.g., Treponema pallidum causing syphilis), and Vibrio (comma-shaped).",
+    "explanation": "Spiral bacteria include: Spirillum (rigid spiral), spirochete (flexible spiral, e.g., Treponema pallidum causing syphilis), and Vibrio (comma-shaped).\n\nNote: or spirochete",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2188,7 +2188,7 @@
     "question_text": "What is the function of bacterial flagella?",
     "options": {
       "a": "Nutrient absorption",
-      "b": "Locomotion (movement)",
+      "b": "Locomotion",
       "c": "DNA storage",
       "d": "Protein synthesis"
     },
@@ -2205,12 +2205,12 @@
     "question_text": "What are pili (fimbriae) on bacteria?",
     "options": {
       "a": "Flagella for movement",
-      "b": "Short hair-like appendages used for attachment to surfaces and conjugation (transfer of DNA)",
+      "b": "Short hair-like appendages used for",
       "c": "Cell wall structures",
       "d": "Internal organelles"
     },
     "correct_option": "b",
-    "explanation": "Pili (fimbriae) are short, hair-like protein appendages. Fimbriae aid in attachment to surfaces and host cells. Sex pili (longer) are involved in bacterial conjugation (DNA transfer).",
+    "explanation": "Pili (fimbriae) are short, hair-like protein appendages. Fimbriae aid in attachment to surfaces and host cells. Sex pili (longer) are involved in bacterial conjugation (DNA transfer).\n\nNote: transfer of DNA\n\nAdditional: attachment to surfaces and conjugation",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2222,12 +2222,12 @@
     "question_text": "What is a capsule in bacteria?",
     "options": {
       "a": "Internal storage granule",
-      "b": "A protective outer layer (polysaccharide) that helps bacteria evade the immune system",
+      "b": "A protective outer layer that helps",
       "c": "A cell wall component",
       "d": "A reproductive structure"
     },
     "correct_option": "b",
-    "explanation": "The capsule is a thick, organized polysaccharide layer outside the cell wall that protects bacteria from phagocytosis, desiccation, and antibiotics. It is a major virulence factor.",
+    "explanation": "The capsule is a thick, organized polysaccharide layer outside the cell wall that protects bacteria from phagocytosis, desiccation, and antibiotics. It is a major virulence factor.\n\nAdditional: bacteria evade the immune system",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2239,12 +2239,12 @@
     "question_text": "What are bacterial endospores?",
     "options": {
       "a": "Spores for sexual reproduction",
-      "b": "Highly resistant dormant structures formed by some bacteria to survive harsh environmental conditions",
+      "b": "Highly resistant dormant structures formed by some",
       "c": "Toxins released by bacteria",
       "d": "Bacterial reproductive cells"
     },
     "correct_option": "b",
-    "explanation": "Endospores are tough, dormant structures formed by some Gram-positive bacteria (Bacillus, Clostridium) in response to nutrient depletion. They resist heat, radiation, chemicals, and can survive for centuries.",
+    "explanation": "Endospores are tough, dormant structures formed by some Gram-positive bacteria (Bacillus, Clostridium) in response to nutrient depletion. They resist heat, radiation, chemicals, and can survive for centuries.\n\nAdditional: bacteria to survive harsh environmental conditions",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2273,12 +2273,12 @@
     "question_text": "What is binary fission?",
     "options": {
       "a": "Sexual reproduction in bacteria",
-      "b": "The primary method of bacterial reproduction where one cell divides into two identical daughter cells",
+      "b": "The primary method of bacterial reproduction where one",
       "c": "Viral replication",
       "d": "Spore formation"
     },
     "correct_option": "b",
-    "explanation": "Binary fission is the main method of bacterial reproduction: the cell duplicates its DNA, elongates, and divides into two genetically identical daughter cells. E. coli divides every 20 minutes.",
+    "explanation": "Binary fission is the main method of bacterial reproduction: the cell duplicates its DNA, elongates, and divides into two genetically identical daughter cells. E. coli divides every 20 minutes.\n\nAdditional: cell divides into two identical daughter cells",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2290,12 +2290,12 @@
     "question_text": "What is bacterial conjugation?",
     "options": {
       "a": "Fusion of two bacteria",
-      "b": "Transfer of genetic material (plasmid) between bacteria through direct cell-to-cell contact (via sex pilus)",
+      "b": "Transfer of genetic material between",
       "c": "Bacterial spore formation",
       "d": "Bacterial binary fission"
     },
     "correct_option": "b",
-    "explanation": "Conjugation is horizontal gene transfer where genetic material (usually plasmid DNA) is transferred from a donor (F⁺) to a recipient (F⁻) bacterium through a sex pilus.",
+    "explanation": "Conjugation is horizontal gene transfer where genetic material (usually plasmid DNA) is transferred from a donor (F⁺) to a recipient (F⁻) bacterium through a sex pilus.\n\nNote: via sex pilus\n\nAdditional: bacteria through direct cell-to-cell contact",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2307,12 +2307,12 @@
     "question_text": "What is a plasmid?",
     "options": {
       "a": "Bacterial chromosome",
-      "b": "A small, circular, extrachromosomal DNA molecule that replicates independently",
+      "b": "A small, circular",
       "c": "A viral particle",
       "d": "A bacterial ribosome"
     },
     "correct_option": "b",
-    "explanation": "Plasmids are small circular DNA molecules found in bacteria, separate from the main chromosome. They carry genes for antibiotic resistance, virulence factors, and can be transferred between bacteria.",
+    "explanation": "Plasmids are small circular DNA molecules found in bacteria, separate from the main chromosome. They carry genes for antibiotic resistance, virulence factors, and can be transferred between bacteria.\n\nNote: extrachromosomal DNA molecule that replicates independently",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2324,12 +2324,12 @@
     "question_text": "What is transformation in bacteria?",
     "options": {
       "a": "Changing shape",
-      "b": "Uptake of free DNA from the environment by competent bacterial cells",
+      "b": "Uptake of free DNA from the",
       "c": "Binary fission",
       "d": "Spore formation"
     },
     "correct_option": "b",
-    "explanation": "Transformation is one mechanism of horizontal gene transfer where bacteria take up naked/free DNA from the environment and incorporate it into their genome. Griffith's experiment demonstrated this.",
+    "explanation": "Transformation is one mechanism of horizontal gene transfer where bacteria take up naked/free DNA from the environment and incorporate it into their genome. Griffith's experiment demonstrated this.\n\nAdditional: environment by competent bacterial cells",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2341,12 +2341,12 @@
     "question_text": "What is transduction in bacteria?",
     "options": {
       "a": "Transformation",
-      "b": "Transfer of bacterial DNA from one cell to another via a bacteriophage (virus)",
+      "b": "Transfer of bacterial DNA from one",
       "c": "Conjugation",
       "d": "Spontaneous mutation"
     },
     "correct_option": "b",
-    "explanation": "Transduction is horizontal gene transfer mediated by bacteriophages. When a phage infects a bacterium, it may accidentally package bacterial DNA and transfer it to the next bacterium it infects.",
+    "explanation": "Transduction is horizontal gene transfer mediated by bacteriophages. When a phage infects a bacterium, it may accidentally package bacterial DNA and transfer it to the next bacterium it infects.\n\nNote: virus\n\nAdditional: cell to another via a bacteriophage",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2375,12 +2375,12 @@
     "question_text": "What is Koch's postulate?",
     "options": {
       "a": "Rules for drug manufacturing",
-      "b": "Four criteria to establish that a specific microorganism causes a specific disease",
+      "b": "Four criteria to establish that a",
       "c": "Rules for sterilization",
       "d": "Rules for vaccination"
     },
     "correct_option": "b",
-    "explanation": "Koch's postulates: 1) The organism must be found in all cases of the disease. 2) It must be isolated and grown in pure culture. 3) It must reproduce the disease in a healthy host. 4) It must be re-isolated from the experimentally infected host.",
+    "explanation": "Koch's postulates: 1) The organism must be found in all cases of the disease. 2) It must be isolated and grown in pure culture. 3) It must reproduce the disease in a healthy host. 4) It must be re-isolated from the experimentally infected host.\n\nAdditional: specific microorganism causes a specific disease",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2391,12 +2391,12 @@
     "question_text": "What is the difference between pathogenicity and virulence?",
     "options": {
       "a": "Same thing",
-      "b": "Pathogenicity is the ability to cause disease; virulence is the degree/severity of pathogenicity",
+      "b": "Pathogenicity is the ability to cause disease;",
       "c": "Virulence is weaker than pathogenicity",
       "d": "Pathogenicity is always severe"
     },
     "correct_option": "b",
-    "explanation": "Pathogenicity is the qualitative ability of a microorganism to cause disease. Virulence is the quantitative measure of the degree of pathogenicity (how severe the disease is).",
+    "explanation": "Pathogenicity is the qualitative ability of a microorganism to cause disease. Virulence is the quantitative measure of the degree of pathogenicity (how severe the disease is).\n\nAdditional: virulence is the degree/severity of pathogenicity",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2408,12 +2408,12 @@
     "question_text": "What is an endotoxin?",
     "options": {
       "a": "A toxin secreted by bacteria",
-      "b": "Lipopolysaccharide (LPS) component of Gram-negative bacterial outer membrane, released upon cell lysis",
+      "b": "Lipopolysaccharide component of Gram-negative bacterial outer",
       "c": "A toxin produced inside host cells",
       "d": "A fungal toxin"
     },
     "correct_option": "b",
-    "explanation": "Endotoxins are lipopolysaccharides (LPS) in the outer membrane of Gram-negative bacteria. They are released when bacteria die and lyse, causing fever, inflammation, and in severe cases, septic shock.",
+    "explanation": "Endotoxins are lipopolysaccharides (LPS) in the outer membrane of Gram-negative bacteria. They are released when bacteria die and lyse, causing fever, inflammation, and in severe cases, septic shock.\n\nAdditional: membrane released upon cell lysis",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2425,12 +2425,12 @@
     "question_text": "What is an exotoxin?",
     "options": {
       "a": "LPS from Gram-negative bacteria",
-      "b": "Proteins secreted by living bacteria that have specific toxic effects",
+      "b": "Proteins secreted by living bacteria",
       "c": "Toxin inside bacterial cells",
       "d": "Toxin from fungal cells"
     },
     "correct_option": "b",
-    "explanation": "Exotoxins are proteins secreted by bacteria (mainly Gram-positive) during growth. They are highly specific and potent (e.g., botulinum toxin, tetanus toxin, diphtheria toxin).",
+    "explanation": "Exotoxins are proteins secreted by bacteria (mainly Gram-positive) during growth. They are highly specific and potent (e.g., botulinum toxin, tetanus toxin, diphtheria toxin).\n\nAdditional: that have specific toxic effects",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2442,12 +2442,12 @@
     "question_text": "What is the difference between endotoxins and exotoxins?",
     "options": {
       "a": "No difference",
-      "b": "Endotoxins are LPS (Gram-negative, released on lysis); exotoxins are proteins (mostly Gram-positive, secreted by living bacteria)",
+      "b": "Endotoxins are LPS; exotoxins are proteins",
       "c": "Exotoxins are more common",
       "d": "Endotoxins are proteins"
     },
     "correct_option": "b",
-    "explanation": "Endotoxins: LPS, Gram-negative, released on lysis, less specific, fever-causing. Exotoxins: proteins, mostly Gram-positive, secreted, highly specific/potent, can be toxoid for vaccines.",
+    "explanation": "Endotoxins: LPS, Gram-negative, released on lysis, less specific, fever-causing. Exotoxins: proteins, mostly Gram-positive, secreted, highly specific/potent, can be toxoid for vaccines.\n\nNote: mostly Gram-positive, secreted by living bacteria",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2459,12 +2459,12 @@
     "question_text": "What is a toxoid?",
     "options": {
       "a": "A live attenuated bacteria",
-      "b": "A detoxified exotoxin that retains immunogenicity, used for vaccination",
+      "b": "A detoxified exotoxin that retains",
       "c": "An antibiotic",
       "d": "An antitoxin"
     },
     "correct_option": "b",
-    "explanation": "A toxoid is an exotoxin that has been treated (usually with formaldehyde) to destroy toxicity while retaining antigenicity. Tetanus toxoid and diphtheria toxoid are used as vaccines.",
+    "explanation": "A toxoid is an exotoxin that has been treated (usually with formaldehyde) to destroy toxicity while retaining antigenicity. Tetanus toxoid and diphtheria toxoid are used as vaccines.\n\nAdditional: immunogenicity used for vaccination",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2493,12 +2493,12 @@
     "question_text": "What is an opportunistic pathogen?",
     "options": {
       "a": "A highly virulent pathogen",
-      "b": "A microorganism that causes disease only when the host's immune defenses are compromised",
+      "b": "A microorganism that causes disease only when",
       "c": "A pathogen that causes disease in everyone",
       "d": "A non-pathogenic organism"
     },
     "correct_option": "b",
-    "explanation": "Opportunistic pathogens (e.g., Candida albicans, Pseudomonas aeruginosa, Pneumocystis jirovecii) normally don't cause disease in healthy people but cause infections in immunocompromised individuals.",
+    "explanation": "Opportunistic pathogens (e.g., Candida albicans, Pseudomonas aeruginosa, Pneumocystis jirovecii) normally don't cause disease in healthy people but cause infections in immunocompromised individuals.\n\nAdditional: the host's immune defenses are compromised",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2510,12 +2510,12 @@
     "question_text": "What is the normal flora (normal microbiota)?",
     "options": {
       "a": "Pathogenic bacteria on the body",
-      "b": "The community of microorganisms that normally reside on and in the human body without causing disease",
+      "b": "The community of microorganisms that normally reside on",
       "c": "Bacteria that cause infection",
       "d": "Fungi in the environment"
     },
     "correct_option": "b",
-    "explanation": "Normal flora are the microorganisms (bacteria, fungi) that colonize body surfaces (skin, gut, mouth, etc.) without causing disease. They provide protection against pathogens, aid digestion, and produce vitamins.",
+    "explanation": "Normal flora are the microorganisms (bacteria, fungi) that colonize body surfaces (skin, gut, mouth, etc.) without causing disease. They provide protection against pathogens, aid digestion, and produce vitamins.\n\nAdditional: and in the human body without causing disease",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2543,12 +2543,12 @@
     "question_text": "What is sterilization?",
     "options": {
       "a": "Reduction of microbial count",
-      "b": "Complete destruction or removal of all forms of microbial life including spores",
+      "b": "Complete destruction or removal of all",
       "c": "Cleaning with soap",
       "d": "Using hand sanitizer"
     },
     "correct_option": "b",
-    "explanation": "Sterilization is the complete elimination or destruction of all forms of microbial life, including bacterial spores, viruses, and fungi. Methods include autoclaving, dry heat, and chemical sterilants.",
+    "explanation": "Sterilization is the complete elimination or destruction of all forms of microbial life, including bacterial spores, viruses, and fungi. Methods include autoclaving, dry heat, and chemical sterilants.\n\nAdditional: forms of microbial life including spores",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2559,12 +2559,12 @@
     "question_text": "What is the most reliable method of sterilization?",
     "options": {
       "a": "Chemical disinfection",
-      "b": "Moist heat (autoclaving at 121°C, 15 psi for 15-20 minutes)",
+      "b": "Moist heat",
       "c": "UV radiation",
       "d": "Filtration"
     },
     "correct_option": "b",
-    "explanation": "Autoclaving (moist heat under pressure: 121°C, 15 psi, 15-20 minutes) is the most reliable and widely used sterilization method. It kills all microorganisms including endospores.",
+    "explanation": "Autoclaving (moist heat under pressure: 121°C, 15 psi, 15-20 minutes) is the most reliable and widely used sterilization method. It kills all microorganisms including endospores.\n\nNote: autoclaving at 121°C, 15 psi for 15-20 minutes",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2576,12 +2576,12 @@
     "question_text": "What is the difference between sterilization and disinfection?",
     "options": {
       "a": "Same thing",
-      "b": "Sterilization kills ALL microorganisms including spores; disinfection reduces pathogens but may not kill spores",
+      "b": "Sterilization kills ALL microorganisms including spores; disinfection",
       "c": "Disinfection is more complete",
       "d": "Sterilization is only for surfaces"
     },
     "correct_option": "b",
-    "explanation": "Sterilization eliminates all life forms (including spores). Disinfection reduces or eliminates most pathogenic microorganisms from surfaces but may not kill bacterial spores.",
+    "explanation": "Sterilization eliminates all life forms (including spores). Disinfection reduces or eliminates most pathogenic microorganisms from surfaces but may not kill bacterial spores.\n\nAdditional: reduces pathogens but may not kill spores",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2593,12 +2593,12 @@
     "question_text": "What is pasteurization?",
     "options": {
       "a": "Complete sterilization of milk",
-      "b": "Heat treatment (72°C for 15 seconds or 63°C for 30 minutes) to reduce microbial load and destroy pathogens in beverages",
+      "b": "Heat treatment to reduce microbial load",
       "c": "Freezing of food",
       "d": "Chemical treatment of water"
     },
     "correct_option": "b",
-    "explanation": "Pasteurization (named after Louis Pasteur) reduces microbial count and kills pathogens in milk and beverages without significantly affecting taste or nutritional value.",
+    "explanation": "Pasteurization (named after Louis Pasteur) reduces microbial count and kills pathogens in milk and beverages without significantly affecting taste or nutritional value.\n\nNote: 72°C for 15 seconds or 63°C for 30 minutes\n\nAdditional: and destroy pathogens in beverages",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2609,12 +2609,12 @@
     "question_text": "What is an antibiotic?",
     "options": {
       "a": "A chemical that kills viruses",
-      "b": "A substance produced by microorganisms (or synthetic) that kills or inhibits the growth of other microorganisms",
+      "b": "A substance produced by microorganisms that kills",
       "c": "A type of vitamin",
       "d": "A painkiller"
     },
     "correct_option": "b",
-    "explanation": "Antibiotics are antimicrobial agents that either kill bacteria (bactericidal) or inhibit their growth (bacteriostatic). They can be natural (penicillin), semi-synthetic, or synthetic.",
+    "explanation": "Antibiotics are antimicrobial agents that either kill bacteria (bactericidal) or inhibit their growth (bacteriostatic). They can be natural (penicillin), semi-synthetic, or synthetic.\n\nAdditional: or inhibits the growth of other microorganisms",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2625,12 +2625,12 @@
     "question_text": "What is the difference between bactericidal and bacteriostatic antibiotics?",
     "options": {
       "a": "No difference",
-      "b": "Bactericidal kill bacteria; bacteriostatic inhibit bacterial growth without killing",
+      "b": "Bactericidal kill bacteria; bacteriostatic inhibit",
       "c": "Bactericidal are weaker",
       "d": "Bacteriostatic are always better"
     },
     "correct_option": "b",
-    "explanation": "Bactericidal antibiotics (penicillin, gentamicin, ciprofloxacin) kill bacteria. Bacteriostatic antibiotics (tetracycline, erythromycin, chloramphenicol) inhibit growth, relying on immune system to clear the infection.",
+    "explanation": "Bactericidal antibiotics (penicillin, gentamicin, ciprofloxacin) kill bacteria. Bacteriostatic antibiotics (tetracycline, erythromycin, chloramphenicol) inhibit growth, relying on immune system to clear the infection.\n\nAdditional: bacterial growth without killing",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2642,12 +2642,12 @@
     "question_text": "What is the mechanism of action of penicillin?",
     "options": {
       "a": "Inhibits protein synthesis",
-      "b": "Inhibits cell wall synthesis by blocking peptidoglycan cross-linking (transpeptidase inhibition)",
+      "b": "Inhibits cell wall synthesis",
       "c": "Inhibits DNA replication",
       "d": "Inhibits folic acid synthesis"
     },
     "correct_option": "b",
-    "explanation": "Penicillin binds to penicillin-binding proteins (PBPs/transpeptidase), blocking the cross-linking of peptidoglycan in bacterial cell walls. This weakens the wall, causing cell lysis (bactericidal).",
+    "explanation": "Penicillin binds to penicillin-binding proteins (PBPs/transpeptidase), blocking the cross-linking of peptidoglycan in bacterial cell walls. This weakens the wall, causing cell lysis (bactericidal).\n\nNote: transpeptidase inhibition\n\nAdditional: by blocking peptidoglycan cross-linking",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2659,12 +2659,12 @@
     "question_text": "What is the mechanism of action of tetracycline?",
     "options": {
       "a": "Inhibits cell wall synthesis",
-      "b": "Inhibits protein synthesis by binding to 30S ribosomal subunit, blocking tRNA attachment",
+      "b": "Inhibits protein synthesis by binding to",
       "c": "Inhibits DNA gyrase",
       "d": "Inhibits folic acid synthesis"
     },
     "correct_option": "b",
-    "explanation": "Tetracycline binds to the 30S ribosomal subunit and blocks the attachment of aminoacyl-tRNA to the acceptor site, inhibiting protein synthesis. It is bacteriostatic.",
+    "explanation": "Tetracycline binds to the 30S ribosomal subunit and blocks the attachment of aminoacyl-tRNA to the acceptor site, inhibiting protein synthesis. It is bacteriostatic.\n\nAdditional: 30S ribosomal subunit blocking tRNA attachment",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2676,12 +2676,12 @@
     "question_text": "What is the mechanism of action of ciprofloxacin?",
     "options": {
       "a": "Inhibits cell wall synthesis",
-      "b": "Inhibits DNA gyrase and topoisomerase IV, preventing DNA replication",
+      "b": "Inhibits DNA gyrase and topoisomerase",
       "c": "Inhibits protein synthesis",
       "d": "Inhibits folic acid synthesis"
     },
     "correct_option": "b",
-    "explanation": "Ciprofloxacin (fluoroquinolone) inhibits DNA gyrase (topoisomerase II) and topoisomerase IV, preventing DNA replication and transcription. It is bactericidal.",
+    "explanation": "Ciprofloxacin (fluoroquinolone) inhibits DNA gyrase (topoisomerase II) and topoisomerase IV, preventing DNA replication and transcription. It is bactericidal.\n\nAdditional: IV preventing DNA replication",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2693,12 +2693,12 @@
     "question_text": "What is the mechanism of action of sulfonamides?",
     "options": {
       "a": "Inhibits cell wall synthesis",
-      "b": "Competitive inhibitor of dihydropteroate synthase, blocking folic acid synthesis",
+      "b": "Competitive inhibitor of dihydropteroate synthase",
       "c": "Inhibits protein synthesis",
       "d": "Inhibits DNA replication"
     },
     "correct_option": "b",
-    "explanation": "Sulfonamides are structural analogs of PABA (para-aminobenzoic acid) that competitively inhibit dihydropteroate synthase, blocking folic acid synthesis in bacteria (bacteriostatic).",
+    "explanation": "Sulfonamides are structural analogs of PABA (para-aminobenzoic acid) that competitively inhibit dihydropteroate synthase, blocking folic acid synthesis in bacteria (bacteriostatic).\n\nAdditional: blocking folic acid synthesis",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2710,12 +2710,12 @@
     "question_text": "What is antibiotic resistance?",
     "options": {
       "a": "Allergy to antibiotics",
-      "b": "The ability of bacteria to survive and grow in the presence of an antibiotic that was previously effective against them",
+      "b": "The ability of bacteria to survive and grow in the",
       "c": "Antibiotics becoming expired",
       "d": "Side effects of antibiotics"
     },
     "correct_option": "b",
-    "explanation": "Antibiotic resistance occurs when bacteria evolve mechanisms to resist the effects of antibiotics, making infections harder to treat. It is driven by overuse and misuse of antibiotics.",
+    "explanation": "Antibiotic resistance occurs when bacteria evolve mechanisms to resist the effects of antibiotics, making infections harder to treat. It is driven by overuse and misuse of antibiotics.\n\nAdditional: presence of an antibiotic that was previously effective against them",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2726,12 +2726,12 @@
     "question_text": "How do bacteria develop antibiotic resistance?",
     "options": {
       "a": "They become immune naturally",
-      "b": "Through mutation or acquisition of resistance genes via horizontal gene transfer (plasmids, transposons)",
+      "b": "Through mutation or acquisition of resistance",
       "c": "By taking antibiotics",
       "d": "By growing larger"
     },
     "correct_option": "b",
-    "explanation": "Bacteria develop resistance through: 1) Spontaneous mutation in DNA. 2) Horizontal gene transfer (conjugation, transformation, transduction) of resistance genes carried on plasmids or transposons.",
+    "explanation": "Bacteria develop resistance through: 1) Spontaneous mutation in DNA. 2) Horizontal gene transfer (conjugation, transformation, transduction) of resistance genes carried on plasmids or transposons.\n\nNote: plasmids, transposons\n\nAdditional: genes via horizontal gene transfer",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2743,12 +2743,12 @@
     "question_text": "What are the mechanisms of antibiotic resistance?",
     "options": {
       "a": "Only enzyme destruction",
-      "b": "Enzyme inactivation of drug, altered target site, decreased permeability, active efflux pumps, and metabolic bypass",
+      "b": "Enzyme inactivation of drug",
       "c": "Only efflux pumps",
       "d": "Only target alteration"
     },
     "correct_option": "b",
-    "explanation": "Mechanisms include: 1) Enzyme inactivation (β-lactamase). 2) Altered target (modified PBP). 3) Decreased permeability (porin loss). 4) Efflux pumps. 5) Metabolic bypass pathways.",
+    "explanation": "Mechanisms include: 1) Enzyme inactivation (β-lactamase). 2) Altered target (modified PBP). 3) Decreased permeability (porin loss). 4) Efflux pumps. 5) Metabolic bypass pathways.\n\nNote: decreased permeability, active efflux pumps, and metabolic bypass\n\nAdditional: altered target site",
     "subject": "biochemistry-microbiology",
     "difficulty": "hard",
     "tags": [
@@ -2777,12 +2777,12 @@
     "question_text": "What is β-lactamase?",
     "options": {
       "a": "An antibiotic",
-      "b": "An enzyme produced by resistant bacteria that destroys the β-lactam ring of penicillin and cephalosporins",
+      "b": "An enzyme produced by resistant bacteria that destroys",
       "c": "A type of bacteria",
       "d": "A type of virus"
     },
     "correct_option": "b",
-    "explanation": "β-lactamase is an enzyme produced by resistant bacteria that hydrolyzes the β-lactam ring in penicillins and cephalosporins, rendering them inactive. Clavulanic acid is a β-lactamase inhibitor.",
+    "explanation": "β-lactamase is an enzyme produced by resistant bacteria that hydrolyzes the β-lactam ring in penicillins and cephalosporins, rendering them inactive. Clavulanic acid is a β-lactamase inhibitor.\n\nAdditional: the β-lactam ring of penicillin and cephalosporins",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2794,12 +2794,12 @@
     "question_text": "What is a superbug?",
     "options": {
       "a": "A very large bacterium",
-      "b": "A bacterium that has developed resistance to multiple antibiotics",
+      "b": "A bacterium that has developed",
       "c": "A very virulent virus",
       "d": "A beneficial bacterium"
     },
     "correct_option": "b",
-    "explanation": "Superbugs are bacteria resistant to multiple antibiotics, making infections very difficult to treat. Examples include MRSA, VRE (vancomycin-resistant enterococci), and MDR-TB.",
+    "explanation": "Superbugs are bacteria resistant to multiple antibiotics, making infections very difficult to treat. Examples include MRSA, VRE (vancomycin-resistant enterococci), and MDR-TB.\n\nAdditional: resistance to multiple antibiotics",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2828,12 +2828,12 @@
     "question_text": "What is a culture medium?",
     "options": {
       "a": "A place to grow plants",
-      "b": "A nutrient substance used to grow microorganisms in the laboratory",
+      "b": "A nutrient substance used to",
       "c": "A type of petri dish",
       "d": "A type of microscope"
     },
     "correct_option": "b",
-    "explanation": "Culture media are preparations of nutrients (peptones, beef extract, agar, salts, sugars) used to grow microorganisms in vitro. Types include solid (agar), liquid (broth), and semi-solid.",
+    "explanation": "Culture media are preparations of nutrients (peptones, beef extract, agar, salts, sugars) used to grow microorganisms in vitro. Types include solid (agar), liquid (broth), and semi-solid.\n\nAdditional: grow microorganisms in the laboratory",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2844,12 +2844,12 @@
     "question_text": "What is the difference between selective and differential media?",
     "options": {
       "a": "No difference",
-      "b": "Selective media inhibit unwanted organisms and encourage desired ones; differential media distinguish between organisms based on colony characteristics",
+      "b": "Selective media inhibit unwanted organisms and encourage desired ones;",
       "c": "Selective media are liquid",
       "d": "Differential media kill bacteria"
     },
     "correct_option": "b",
-    "explanation": "Selective media (e.g., MacConkey agar, Mannitol Salt Agar) select for specific organisms. Differential media (e.g., Blood agar, MacConkey) distinguish organisms by colony appearance, hemolysis, or biochemical reactions.",
+    "explanation": "Selective media (e.g., MacConkey agar, Mannitol Salt Agar) select for specific organisms. Differential media (e.g., Blood agar, MacConkey) distinguish organisms by colony appearance, hemolysis, or biochemical reactions.\n\nAdditional: differential media distinguish between organisms based on colony characteristics",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2861,12 +2861,12 @@
     "question_text": "What is MacConkey agar used for?",
     "options": {
       "a": "Growing fungi",
-      "b": "Selective and differential medium for Gram-negative enteric bacteria; lactose fermenters appear pink",
+      "b": "Selective and differential medium for Gram-negative",
       "c": "Growing anaerobes only",
       "d": "Counting viruses"
     },
     "correct_option": "b",
-    "explanation": "MacConkey agar selects for Gram-negative bacteria (bile salts and crystal violet inhibit Gram-positives) and differentiates lactose fermenters (pink/red colonies) from non-fermenters (colorless).",
+    "explanation": "MacConkey agar selects for Gram-negative bacteria (bile salts and crystal violet inhibit Gram-positives) and differentiates lactose fermenters (pink/red colonies) from non-fermenters (colorless).\n\nAdditional: enteric bacteria; lactose fermenters appear pink",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2878,12 +2878,12 @@
     "question_text": "What is Blood agar?",
     "options": {
       "a": "Agar containing blood-borne pathogens",
-      "b": "A differential medium containing 5% sheep blood that detects hemolysis patterns (α, β, γ)",
+      "b": "A differential medium containing 5% sheep",
       "c": "A selective medium",
       "d": "A liquid medium"
     },
     "correct_option": "b",
-    "explanation": "Blood agar is an enriched differential medium. It detects hemolysis: β-hemolysis (complete clearing), α-hemolosis (partial green), γ-hemolysis (no hemolysis). Used for streptococci and other fastidious organisms.",
+    "explanation": "Blood agar is an enriched differential medium. It detects hemolysis: β-hemolysis (complete clearing), α-hemolosis (partial green), γ-hemolysis (no hemolysis). Used for streptococci and other fastidious organisms.\n\nNote: α, β, γ\n\nAdditional: blood that detects hemolysis patterns",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2895,12 +2895,12 @@
     "question_text": "What is the minimum inhibitory concentration (MIC)?",
     "options": {
       "a": "The maximum drug concentration",
-      "b": "The lowest concentration of an antibiotic that inhibits visible growth of a microorganism",
+      "b": "The lowest concentration of an antibiotic that",
       "c": "The drug dose given to patients",
       "d": "The concentration that kills all bacteria"
     },
     "correct_option": "b",
-    "explanation": "MIC is the lowest concentration of an antimicrobial agent that prevents visible growth of a microorganism after overnight incubation. It is used to determine antibiotic susceptibility.",
+    "explanation": "MIC is the lowest concentration of an antimicrobial agent that prevents visible growth of a microorganism after overnight incubation. It is used to determine antibiotic susceptibility.\n\nAdditional: inhibits visible growth of a microorganism",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2912,12 +2912,12 @@
     "question_text": "What is the Kirby-Bauer disk diffusion method?",
     "options": {
       "a": "A method to count bacteria",
-      "b": "An antibiotic susceptibility test where paper disks containing antibiotics are placed on an agar plate and zone of inhibition is measured",
+      "b": "An antibiotic susceptibility test where paper disks containing antibiotics are placed",
       "c": "A method to grow bacteria",
       "d": "A method to stain bacteria"
     },
     "correct_option": "b",
-    "explanation": "The Kirby-Bauer method: antibiotic-impregnated paper disks are placed on a bacterial lawn on Mueller-Hinton agar. After incubation, zones of inhibition are measured and compared to standardized tables to determine susceptibility.",
+    "explanation": "The Kirby-Bauer method: antibiotic-impregnated paper disks are placed on a bacterial lawn on Mueller-Hinton agar. After incubation, zones of inhibition are measured and compared to standardized tables to determine susceptibility.\n\nAdditional: on an agar plate and zone of inhibition is measured",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -2929,12 +2929,12 @@
     "question_text": "What is a zone of inhibition?",
     "options": {
       "a": "Area where bacteria grow well",
-      "b": "A clear area around an antibiotic disk where bacteria cannot grow, indicating susceptibility",
+      "b": "A clear area around an antibiotic disk",
       "c": "The entire agar plate",
       "d": "Area of bacterial contamination"
     },
     "correct_option": "b",
-    "explanation": "The zone of inhibition is the clear circular area around an antibiotic disk on an agar plate where bacterial growth is inhibited. Larger zones generally indicate greater susceptibility.",
+    "explanation": "The zone of inhibition is the clear circular area around an antibiotic disk on an agar plate where bacterial growth is inhibited. Larger zones generally indicate greater susceptibility.\n\nAdditional: where bacteria cannot grow indicating susceptibility",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2945,12 +2945,12 @@
     "question_text": "What is the immune system?",
     "options": {
       "a": "A single organ",
-      "b": "A complex network of cells, tissues, and organs that defend the body against infectious agents and foreign substances",
+      "b": "A complex network of cells, tissues",
       "c": "The digestive system",
       "d": "The nervous system"
     },
     "correct_option": "b",
-    "explanation": "The immune system is a defense network including white blood cells, antibodies, lymphoid organs (thymus, spleen, lymph nodes), and chemicals that identify and eliminate pathogens and foreign substances.",
+    "explanation": "The immune system is a defense network including white blood cells, antibodies, lymphoid organs (thymus, spleen, lymph nodes), and chemicals that identify and eliminate pathogens and foreign substances.\n\nNote: and organs that defend the body against infectious agents and foreign substances",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2961,12 +2961,12 @@
     "question_text": "What is innate immunity?",
     "options": {
       "a": "Immunity acquired after infection",
-      "b": "The non-specific defense mechanisms that are present from birth and act immediately",
+      "b": "The non-specific defense mechanisms that are",
       "c": "Immunity from vaccination only",
       "d": "Antibody-mediated immunity"
     },
     "correct_option": "b",
-    "explanation": "Innate (non-specific) immunity includes physical barriers (skin, mucous membranes), chemical barriers ( stomach acid, lysozyme), phagocytes (neutrophils, macrophages), and inflammation.",
+    "explanation": "Innate (non-specific) immunity includes physical barriers (skin, mucous membranes), chemical barriers ( stomach acid, lysozyme), phagocytes (neutrophils, macrophages), and inflammation.\n\nAdditional: present from birth and act immediately",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2978,12 +2978,12 @@
     "question_text": "What is adaptive (acquired) immunity?",
     "options": {
       "a": "Immunity present from birth",
-      "b": "Specific immunity that develops after exposure to a pathogen, with immunological memory",
+      "b": "Specific immunity that develops after exposure",
       "c": "Non-specific immunity",
       "d": "Physical barrier immunity"
     },
     "correct_option": "b",
-    "explanation": "Adaptive immunity is specific, develops after exposure to antigens, involves lymphocytes (B and T cells), produces antibodies, and has immunological memory for faster response on re-exposure.",
+    "explanation": "Adaptive immunity is specific, develops after exposure to antigens, involves lymphocytes (B and T cells), produces antibodies, and has immunological memory for faster response on re-exposure.\n\nAdditional: to a pathogen with immunological memory",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -2995,12 +2995,12 @@
     "question_text": "What is the difference between humoral and cell-mediated immunity?",
     "options": {
       "a": "No difference",
-      "b": "Humoral immunity involves B cells and antibodies; cell-mediated immunity involves T cells",
+      "b": "Humoral immunity involves B cells and",
       "c": "Humoral immunity is from animals",
       "d": "Cell-mediated immunity uses antibodies"
     },
     "correct_option": "b",
-    "explanation": "Humoral immunity: B cells produce antibodies that circulate in body fluids (humors) to fight extracellular pathogens. Cell-mediated immunity: T cells (helper and cytotoxic) directly attack infected cells.",
+    "explanation": "Humoral immunity: B cells produce antibodies that circulate in body fluids (humors) to fight extracellular pathogens. Cell-mediated immunity: T cells (helper and cytotoxic) directly attack infected cells.\n\nAdditional: antibodies; cell-mediated immunity involves T cells",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3013,12 +3013,12 @@
     "question_text": "What are antibodies (immunoglobulins)?",
     "options": {
       "a": "Type of white blood cell",
-      "b": "Y-shaped proteins produced by plasma cells (B lymphocytes) that specifically bind to antigens",
+      "b": "Y-shaped proteins produced by plasma cells",
       "c": "Type of bacteria",
       "d": "Type of virus"
     },
     "correct_option": "b",
-    "explanation": "Antibodies are glycoproteins (immunoglobulins) produced by plasma cells. They have two heavy chains and two light chains forming a Y-shape with variable regions that bind specific antigens.",
+    "explanation": "Antibodies are glycoproteins (immunoglobulins) produced by plasma cells. They have two heavy chains and two light chains forming a Y-shape with variable regions that bind specific antigens.\n\nNote: B lymphocytes\n\nAdditional: that specifically bind to antigens",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3116,12 +3116,12 @@
     "question_text": "What is active immunity?",
     "options": {
       "a": "Immunity from antibody injections",
-      "b": "Immunity developed by the body itself after exposure to an antigen (infection or vaccination)",
+      "b": "Immunity developed by the body itself after exposure to an antigen",
       "c": "Immunity from breast milk",
       "d": "Immunity present at birth"
     },
     "correct_option": "b",
-    "explanation": "Active immunity develops when the body's own immune system produces antibodies and memory cells after exposure to an antigen (natural infection or vaccination). It provides long-lasting protection.",
+    "explanation": "Active immunity develops when the body's own immune system produces antibodies and memory cells after exposure to an antigen (natural infection or vaccination). It provides long-lasting protection.\n\nNote: infection or vaccination",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3133,12 +3133,12 @@
     "question_text": "What is passive immunity?",
     "options": {
       "a": "Immunity from vaccination",
-      "b": "Immunity obtained by receiving pre-formed antibodies from another person or animal",
+      "b": "Immunity obtained by receiving pre-formed antibodies",
       "c": "Immunity developed after infection",
       "d": "Immunity from white blood cells"
     },
     "correct_option": "b",
-    "explanation": "Passive immunity is the transfer of pre-formed antibodies (e.g., anti-venom, IgG from mother to fetus, monoclonal antibodies). It provides immediate but temporary protection as no memory cells are formed.",
+    "explanation": "Passive immunity is the transfer of pre-formed antibodies (e.g., anti-venom, IgG from mother to fetus, monoclonal antibodies). It provides immediate but temporary protection as no memory cells are formed.\n\nAdditional: from another person or animal",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3150,12 +3150,12 @@
     "question_text": "What is a vaccine?",
     "options": {
       "a": "An antibiotic given to prevent infection",
-      "b": "A preparation of antigens (weakened/killed pathogens or their components) that stimulates the immune system to produce immunity",
+      "b": "A preparation of antigens that stimulates the immune system to produce immunity",
       "c": "An antiviral drug",
       "d": "A disinfectant"
     },
     "correct_option": "b",
-    "explanation": "Vaccines contain antigens (attenuated/killed organisms, subunit components, toxoids, or mRNA) that stimulate the immune system to produce antibodies and memory cells without causing disease.",
+    "explanation": "Vaccines contain antigens (attenuated/killed organisms, subunit components, toxoids, or mRNA) that stimulate the immune system to produce antibodies and memory cells without causing disease.\n\nNote: weakened/killed pathogens or their components",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3166,12 +3166,12 @@
     "question_text": "What are the types of vaccines?",
     "options": {
       "a": "Only live vaccines",
-      "b": "Live attenuated, inactivated (killed), subunit, toxoid, conjugate, and mRNA vaccines",
+      "b": "Live attenuated, inactivated",
       "c": "Only killed vaccines",
       "d": "Only toxoid vaccines"
     },
     "correct_option": "b",
-    "explanation": "Vaccine types: Live attenuated (MMR, BCG), Inactivated/killed (polio IPV, rabies), Subunit (Hepatitis B), Toxoid (tetanus, diphtheria), Conjugate (Hib), mRNA (COVID-19 Pfizer/Moderna).",
+    "explanation": "Vaccine types: Live attenuated (MMR, BCG), Inactivated/killed (polio IPV, rabies), Subunit (Hepatitis B), Toxoid (tetanus, diphtheria), Conjugate (Hib), mRNA (COVID-19 Pfizer/Moderna).\n\nNote: subunit, toxoid, conjugate, and mRNA vaccines",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3183,12 +3183,12 @@
     "question_text": "What is a live attenuated vaccine?",
     "options": {
       "a": "Contains killed bacteria",
-      "b": "Contains weakened (attenuated) living pathogens that can still replicate but don't cause disease",
+      "b": "Contains weakened living pathogens that can",
       "c": "Contains only purified proteins",
       "d": "Contains dead virus particles"
     },
     "correct_option": "b",
-    "explanation": "Live attenuated vaccines contain living but weakened pathogens. They stimulate strong, long-lasting immunity (both humoral and cell-mediated) but cannot be given to immunocompromised individuals.",
+    "explanation": "Live attenuated vaccines contain living but weakened pathogens. They stimulate strong, long-lasting immunity (both humoral and cell-mediated) but cannot be given to immunocompromised individuals.\n\nAdditional: still replicate but don't cause disease",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3200,12 +3200,12 @@
     "question_text": "Which is an example of a live attenuated vaccine?",
     "options": {
       "a": "Hepatitis B vaccine",
-      "b": "MMR (measles, mumps, rubella) vaccine",
+      "b": "MMR (measles, mumps",
       "c": "Tetanus toxoid",
       "d": "Hib conjugate vaccine"
     },
     "correct_option": "b",
-    "explanation": "MMR is a live attenuated vaccine. Other examples: BCG (tuberculosis), oral polio (Sabin), varicella, yellow fever, rotavirus vaccines.",
+    "explanation": "MMR is a live attenuated vaccine. Other examples: BCG (tuberculosis), oral polio (Sabin), varicella, yellow fever, rotavirus vaccines.\n\nNote: rubella) vaccine",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3234,12 +3234,12 @@
     "question_text": "What is an mRNA vaccine?",
     "options": {
       "a": "Contains live virus",
-      "b": "Contains messenger RNA that instructs cells to produce a viral protein (antigen) to stimulate immune response",
+      "b": "Contains messenger RNA that instructs cells to produce",
       "c": "Contains killed bacteria",
       "d": "Contains antibodies"
     },
     "correct_option": "b",
-    "explanation": "mRNA vaccines (e.g., Pfizer-BioNTech, Moderna COVID-19 vaccines) deliver mRNA that instructs cells to produce a viral protein (like spike protein), triggering an immune response without using live virus.",
+    "explanation": "mRNA vaccines (e.g., Pfizer-BioNTech, Moderna COVID-19 vaccines) deliver mRNA that instructs cells to produce a viral protein (like spike protein), triggering an immune response without using live virus.\n\nNote: antigen\n\nAdditional: a viral protein to stimulate immune response",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3251,12 +3251,12 @@
     "question_text": "What is the difference between primary and secondary immune response?",
     "options": {
       "a": "No difference",
-      "b": "Primary response occurs on first exposure to antigen (slow, mainly IgM); secondary is faster and stronger upon re-exposure (mainly IgG)",
+      "b": "Primary response occurs on first exposure to antigen;",
       "c": "Primary is always stronger",
       "d": "Secondary produces IgM"
     },
     "correct_option": "b",
-    "explanation": "Primary response: first exposure, lag phase 7-10 days, mainly IgM, lower antibody levels. Secondary response: re-exposure, shorter lag (1-3 days), mainly IgG, higher antibody levels, longer lasting (due to memory cells).",
+    "explanation": "Primary response: first exposure, lag phase 7-10 days, mainly IgM, lower antibody levels. Secondary response: re-exposure, shorter lag (1-3 days), mainly IgG, higher antibody levels, longer lasting (due to memory cells).\n\nNote: mainly IgG\n\nNote: slow, mainly IgM\n\nAdditional: secondary is faster and stronger upon re-exposure",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3268,12 +3268,12 @@
     "question_text": "What is the inflammatory response?",
     "options": {
       "a": "Response to emotional stress",
-      "b": "The body's protective response to tissue damage or infection, characterized by redness, heat, swelling, and pain",
+      "b": "The body's protective response to tissue",
       "c": "A type of immune deficiency",
       "d": "A type of allergy"
     },
     "correct_option": "b",
-    "explanation": "Inflammation is characterized by four cardinal signs: redness (rubor), heat (calor), swelling (tumor), and pain (dolor). It recruits immune cells to the site of injury/infection.",
+    "explanation": "Inflammation is characterized by four cardinal signs: redness (rubor), heat (calor), swelling (tumor), and pain (dolor). It recruits immune cells to the site of injury/infection.\n\nNote: heat, swelling, and pain\n\nAdditional: damage or infection characterized by redness",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3284,12 +3284,12 @@
     "question_text": "What are the cardinal signs of inflammation?",
     "options": {
       "a": "Fever, chills, sweating",
-      "b": "Redness, heat, swelling, pain (and sometimes loss of function)",
+      "b": "Redness, heat, swelling, pain",
       "c": "Rash, itching, blistering",
       "d": "Nausea, vomiting, diarrhea"
     },
     "correct_option": "b",
-    "explanation": "Cardinal signs: Rubor (redness), Calor (heat), Tumor (swelling), Dolor (pain), and Functio laesa (loss of function). Caused by vasodilation, increased vascular permeability, and immune cell infiltration.",
+    "explanation": "Cardinal signs: Rubor (redness), Calor (heat), Tumor (swelling), Dolor (pain), and Functio laesa (loss of function). Caused by vasodilation, increased vascular permeability, and immune cell infiltration.\n\nNote: and sometimes loss of function",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3301,12 +3301,12 @@
     "question_text": "What is phagocytosis?",
     "options": {
       "a": "Cell division",
-      "b": "The process by which phagocytes (neutrophils, macrophages) engulf and digest microorganisms and cellular debris",
+      "b": "The process by which phagocytes engulf",
       "c": "Virus replication",
       "d": "Antibody production"
     },
     "correct_option": "b",
-    "explanation": "Phagocytosis is the process where phagocytic cells (neutrophils, macrophages) engulf pathogens/debris into phagosomes, which fuse with lysosomes for digestion.",
+    "explanation": "Phagocytosis is the process where phagocytic cells (neutrophils, macrophages) engulf pathogens/debris into phagosomes, which fuse with lysosomes for digestion.\n\nAdditional: and digest microorganisms and cellular debris",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3317,12 +3317,12 @@
     "question_text": "What are the main types of white blood cells involved in immunity?",
     "options": {
       "a": "Red blood cells and platelets",
-      "b": "Neutrophils, lymphocytes (B and T cells), monocytes/macrophages, eosinophils, basophils",
+      "b": "Neutrophils, lymphocytes",
       "c": "Only lymphocytes",
       "d": "Only neutrophils"
     },
     "correct_option": "b",
-    "explanation": "White blood cells (leukocytes) include: Neutrophils (phagocytosis), Lymphocytes (B cells = antibodies, T cells = cell-mediated), Monocytes/Macrophages (phagocytosis, antigen presentation), Eosinophils (parasites, allergies), Basophils (histamine release).",
+    "explanation": "White blood cells (leukocytes) include: Neutrophils (phagocytosis), Lymphocytes (B cells = antibodies, T cells = cell-mediated), Monocytes/Macrophages (phagocytosis, antigen presentation), Eosinophils (parasites, allergies), Basophils (histamine release).\n\nNote: monocytes/macrophages, eosinophils, basophils\n\nNote: B and T cells",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3334,12 +3334,12 @@
     "question_text": "What is complement system?",
     "options": {
       "a": "A vitamin supplement",
-      "b": "A group of plasma proteins that enhance (complement) the ability of antibodies and phagocytes to destroy pathogens",
+      "b": "A group of plasma proteins that enhance the",
       "c": "A type of antibody",
       "d": "A type of white blood cell"
     },
     "correct_option": "b",
-    "explanation": "The complement system consists of ~30 plasma proteins that, when activated, enhance (complement) immune defense by: opsonization, chemotaxis, inflammation (C3a, C5a), and membrane attack complex (MAC) for cell lysis.",
+    "explanation": "The complement system consists of ~30 plasma proteins that, when activated, enhance (complement) immune defense by: opsonization, chemotaxis, inflammation (C3a, C5a), and membrane attack complex (MAC) for cell lysis.\n\nAdditional: ability of antibodies and phagocytes to destroy pathogens",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3350,12 +3350,12 @@
     "question_text": "What are cytokines?",
     "options": {
       "a": "Antibodies",
-      "b": "Small signaling proteins released by immune cells that regulate immune responses, inflammation, and hematopoiesis",
+      "b": "Small signaling proteins released by immune",
       "c": "Types of bacteria",
       "d": "Types of viruses"
     },
     "correct_option": "b",
-    "explanation": "Cytokines are small proteins (interleukins, interferons, TNF, chemokines) that act as messengers between immune cells, regulating inflammation, immune cell growth, differentiation, and activation.",
+    "explanation": "Cytokines are small proteins (interleukins, interferons, TNF, chemokines) that act as messengers between immune cells, regulating inflammation, immune cell growth, differentiation, and activation.\n\nNote: and hematopoiesis\n\nAdditional: cells that regulate immune responses inflammation",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3366,12 +3366,12 @@
     "question_text": "What is an autoimmune disease?",
     "options": {
       "a": "Disease caused by bacteria",
-      "b": "A condition where the immune system mistakenly attacks the body's own healthy cells and tissues",
+      "b": "A condition where the immune system mistakenly attacks",
       "c": "A disease that weakens the immune system",
       "d": "A disease caused by viruses"
     },
     "correct_option": "b",
-    "explanation": "Autoimmune diseases occur when the immune system loses self-tolerance and attacks the body's own tissues. Examples: rheumatoid arthritis, type 1 diabetes, lupus, multiple sclerosis.",
+    "explanation": "Autoimmune diseases occur when the immune system loses self-tolerance and attacks the body's own tissues. Examples: rheumatoid arthritis, type 1 diabetes, lupus, multiple sclerosis.\n\nAdditional: the body's own healthy cells and tissues",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3382,12 +3382,12 @@
     "question_text": "What is an allergy (hypersensitivity)?",
     "options": {
       "a": "Normal immune response",
-      "b": "An exaggerated or inappropriate immune response to a harmless substance (allergen)",
+      "b": "An exaggerated or inappropriate immune",
       "c": "A weakened immune response",
       "d": "An immune deficiency"
     },
     "correct_option": "b",
-    "explanation": "Allergies (hypersensitivity reactions) are excessive immune responses to harmless substances (pollen, dust, food, drugs). Type I (immediate) involves IgE and mast cell degranulation causing histamine release.",
+    "explanation": "Allergies (hypersensitivity reactions) are excessive immune responses to harmless substances (pollen, dust, food, drugs). Type I (immediate) involves IgE and mast cell degranulation causing histamine release.\n\nNote: allergen\n\nAdditional: response to a harmless substance",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3399,12 +3399,12 @@
     "question_text": "What is immunodeficiency?",
     "options": {
       "a": "Overactive immune system",
-      "b": "A state where the immune system's ability to fight infections is compromised or absent",
+      "b": "A state where the immune system's ability",
       "c": "Autoimmune disease",
       "d": "Normal immune function"
     },
     "correct_option": "b",
-    "explanation": "Immunodeficiency can be primary (genetic, e.g., SCID, DiGeorge syndrome) or secondary (acquired, e.g., HIV/AIDS, malnutrition, chemotherapy). It increases susceptibility to infections.",
+    "explanation": "Immunodeficiency can be primary (genetic, e.g., SCID, DiGeorge syndrome) or secondary (acquired, e.g., HIV/AIDS, malnutrition, chemotherapy). It increases susceptibility to infections.\n\nAdditional: to fight infections is compromised or absent",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3415,12 +3415,12 @@
     "question_text": "What is HIV?",
     "options": {
       "a": "A bacterium that causes AIDS",
-      "b": "Human Immunodeficiency Virus — a retrovirus that infects CD4+ T cells and causes AIDS",
+      "b": "Human Immunodeficiency Virus — a retrovirus that",
       "c": "A type of fungus",
       "d": "A parasite"
     },
     "correct_option": "b",
-    "explanation": "HIV is a retrovirus that targets CD4+ T lymphocytes. It uses reverse transcriptase to convert its RNA to DNA, which integrates into the host genome, gradually destroying the immune system and leading to AIDS.",
+    "explanation": "HIV is a retrovirus that targets CD4+ T lymphocytes. It uses reverse transcriptase to convert its RNA to DNA, which integrates into the host genome, gradually destroying the immune system and leading to AIDS.\n\nAdditional: infects CD4+ T cells and causes AIDS",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3432,12 +3432,12 @@
     "question_text": "How does HIV destroy the immune system?",
     "options": {
       "a": "By killing red blood cells",
-      "b": "By infecting and destroying CD4+ T helper cells, which are essential for coordinating immune responses",
+      "b": "By infecting and destroying CD4+ T helper cells",
       "c": "By destroying antibodies",
       "d": "By attacking bone marrow only"
     },
     "correct_option": "b",
-    "explanation": "HIV specifically infects CD4+ T helper cells (and macrophages). Progressive destruction of these cells leads to severe immunodeficiency (AIDS when CD4 count < 200 cells/μL), making patients vulnerable to opportunistic infections.",
+    "explanation": "HIV specifically infects CD4+ T helper cells (and macrophages). Progressive destruction of these cells leads to severe immunodeficiency (AIDS when CD4 count < 200 cells/μL), making patients vulnerable to opportunistic infections.\n\nAdditional: which are essential for coordinating immune responses",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3449,12 +3449,12 @@
     "question_text": "What is the difference between HIV and AIDS?",
     "options": {
       "a": "Same thing",
-      "b": "HIV is the virus; AIDS is the advanced stage of HIV infection (CD4 count < 200 cells/μL)",
+      "b": "HIV is the virus; AIDS is",
       "c": "AIDS is a type of HIV",
       "d": "HIV causes only mild illness"
     },
     "correct_option": "b",
-    "explanation": "HIV is the virus that infects people. AIDS (Acquired Immunodeficiency Syndrome) is the most advanced stage, defined by CD4 count < 200 cells/μL or presence of AIDS-defining illnesses (opportunistic infections, cancers).",
+    "explanation": "HIV is the virus that infects people. AIDS (Acquired Immunodeficiency Syndrome) is the most advanced stage, defined by CD4 count < 200 cells/μL or presence of AIDS-defining illnesses (opportunistic infections, cancers).\n\nNote: CD4 count < 200 cells/μL\n\nAdditional: the advanced stage of HIV infection",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3466,12 +3466,12 @@
     "question_text": "What is the enzyme reverse transcriptase?",
     "options": {
       "a": "An enzyme in bacteria",
-      "b": "An enzyme carried by retroviruses (HIV) that converts RNA to DNA",
+      "b": "An enzyme carried by retroviruses",
       "c": "An enzyme in the nucleus",
       "d": "A digestive enzyme"
     },
     "correct_option": "b",
-    "explanation": "Reverse transcriptase is an RNA-dependent DNA polymerase carried by retroviruses. It converts viral RNA into DNA, which is then integrated into the host cell's genome by integrase.",
+    "explanation": "Reverse transcriptase is an RNA-dependent DNA polymerase carried by retroviruses. It converts viral RNA into DNA, which is then integrated into the host cell's genome by integrase.\n\nNote: HIV\n\nAdditional: that converts RNA to DNA",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3483,12 +3483,12 @@
     "question_text": "What are common opportunistic infections in AIDS patients?",
     "options": {
       "a": "Common cold and flu",
-      "b": "Pneumocystis pneumonia, toxoplasmosis, candidiasis, CMV retinitis, tuberculosis",
+      "b": "Pneumocystis pneumonia, toxoplasmosis",
       "c": "Food poisoning",
       "d": "Skin rash only"
     },
     "correct_option": "b",
-    "explanation": "AIDS patients are vulnerable to opportunistic infections: Pneumocystis jirovecii pneumonia, cerebral toxoplasmosis, oral/vaginal candidiasis, CMV retinitis, M. tuberculosis, and cryptococcal meningitis.",
+    "explanation": "AIDS patients are vulnerable to opportunistic infections: Pneumocystis jirovecii pneumonia, cerebral toxoplasmosis, oral/vaginal candidiasis, CMV retinitis, M. tuberculosis, and cryptococcal meningitis.\n\nNote: candidiasis, CMV retinitis, tuberculosis",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3500,12 +3500,12 @@
     "question_text": "What is antiretroviral therapy (ART) for HIV?",
     "options": {
       "a": "A single antibiotic",
-      "b": "Combination of multiple antiretroviral drugs that suppress viral replication and preserve immune function",
+      "b": "Combination of multiple antiretroviral drugs that suppress",
       "c": "A vaccine for HIV",
       "d": "A type of surgery"
     },
     "correct_option": "b",
-    "explanation": "ART uses a combination (cocktail) of 3+ antiretroviral drugs from different classes (NRTIs, NNRTIs, protease inhibitors, integrase inhibitors) to suppress viral load, prevent resistance, and preserve immunity.",
+    "explanation": "ART uses a combination (cocktail) of 3+ antiretroviral drugs from different classes (NRTIs, NNRTIs, protease inhibitors, integrase inhibitors) to suppress viral load, prevent resistance, and preserve immunity.\n\nAdditional: viral replication and preserve immune function",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3517,12 +3517,12 @@
     "question_text": "What is the portal of entry for most pathogens?",
     "options": {
       "a": "Only through skin",
-      "b": "Respiratory tract (inhalation), gastrointestinal tract (ingestion), genitourinary tract, and skin wounds",
+      "b": "Respiratory tract, gastrointestinal tract",
       "c": "Only through injection",
       "d": "Only through eyes"
     },
     "correct_option": "b",
-    "explanation": "Pathogens enter through: Respiratory tract (airborne/droplet), GI tract (food/water), Genitourinary tract (sexual contact), Skin (wounds/bites), and Mucous membranes (conjunctiva).",
+    "explanation": "Pathogens enter through: Respiratory tract (airborne/droplet), GI tract (food/water), Genitourinary tract (sexual contact), Skin (wounds/bites), and Mucous membranes (conjunctiva).\n\nNote: genitourinary tract, and skin wounds\n\nNote: inhalation; ingestion",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3534,12 +3534,12 @@
     "question_text": "What is the difference between epidemic and pandemic?",
     "options": {
       "a": "No difference",
-      "b": "Epidemic is a disease outbreak in a community/region; pandemic is a worldwide epidemic",
+      "b": "Epidemic is a disease outbreak in a",
       "c": "Pandemic is milder",
       "d": "Epidemic is worldwide"
     },
     "correct_option": "b",
-    "explanation": "An epidemic is an unexpected increase in disease cases above normal in a specific area. A pandemic is an epidemic that spreads across multiple countries/continents globally (e.g., COVID-19, influenza pandemics).",
+    "explanation": "An epidemic is an unexpected increase in disease cases above normal in a specific area. A pandemic is an epidemic that spreads across multiple countries/continents globally (e.g., COVID-19, influenza pandemics).\n\nAdditional: community/region; pandemic is a worldwide epidemic",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [
@@ -3550,12 +3550,12 @@
     "question_text": "What is the chain of infection?",
     "options": {
       "a": "A metal chain used in hospitals",
-      "b": "The sequence of events required for infection to spread: reservoir → portal of exit → mode of transmission → portal of entry → susceptible host",
+      "b": "The sequence of events required for infection to spread:",
       "c": "DNA replication process",
       "d": "Antibody formation"
     },
     "correct_option": "b",
-    "explanation": "The chain of infection has 6 links: 1) Infectious agent, 2) Reservoir, 3) Portal of exit, 4) Mode of transmission, 5) Portal of entry, 6) Susceptible host. Breaking any link prevents infection.",
+    "explanation": "The chain of infection has 6 links: 1) Infectious agent, 2) Reservoir, 3) Portal of exit, 4) Mode of transmission, 5) Portal of entry, 6) Susceptible host. Breaking any link prevents infection.\n\nNote: reservoir → portal of exit → mode of transmission → portal of entry → susceptible host",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3567,12 +3567,12 @@
     "question_text": "What is nosocomial (hospital-acquired) infection?",
     "options": {
       "a": "Infection present at admission",
-      "b": "An infection acquired during or after hospitalization that was not present or incubating at the time of admission",
+      "b": "An infection acquired during or after hospitalization that was",
       "c": "Infection from community",
       "d": "Infection before surgery"
     },
     "correct_option": "b",
-    "explanation": "Nosocomial infections (healthcare-associated infections, HAI) are infections acquired in hospitals or healthcare settings, typically 48-72 hours after admission. Common types: UTI, pneumonia, surgical site infections, bloodstream infections.",
+    "explanation": "Nosocomial infections (healthcare-associated infections, HAI) are infections acquired in hospitals or healthcare settings, typically 48-72 hours after admission. Common types: UTI, pneumonia, surgical site infections, bloodstream infections.\n\nAdditional: not present or incubating at the time of admission",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3583,12 +3583,12 @@
     "question_text": "What is the most common cause of nosocomial infections?",
     "options": {
       "a": "Viruses",
-      "b": "Staphylococcus aureus (including MRSA) and other bacteria from normal flora or the hospital environment",
+      "b": "Staphylococcus aureus and other bacteria from",
       "c": "Fungi only",
       "d": "Parasites"
     },
     "correct_option": "b",
-    "explanation": "Common nosocomial pathogens include S. aureus (MRSA), E. coli, Klebsiella, Pseudomonas aeruginosa, Enterococcus, and Candida. Many are antibiotic-resistant.",
+    "explanation": "Common nosocomial pathogens include S. aureus (MRSA), E. coli, Klebsiella, Pseudomonas aeruginosa, Enterococcus, and Candida. Many are antibiotic-resistant.\n\nNote: including MRSA\n\nAdditional: normal flora or the hospital environment",
     "subject": "biochemistry-microbiology",
     "difficulty": "medium",
     "tags": [
@@ -3617,12 +3617,12 @@
     "question_text": "What is the role of a pharmacist in microbiology?",
     "options": {
       "a": "No role",
-      "b": "Ensuring appropriate antibiotic dispensing, patient education on antimicrobial use, and infection prevention",
+      "b": "Ensuring appropriate antibiotic dispensing patient",
       "c": "Diagnosing infections",
       "d": "Performing surgery"
     },
     "correct_option": "b",
-    "explanation": "Pharmacists play a key role in: appropriate antibiotic selection and dosing, preventing antibiotic resistance, educating patients on proper antimicrobial use, compounding sterile products, and infection control.",
+    "explanation": "Pharmacists play a key role in: appropriate antibiotic selection and dosing, preventing antibiotic resistance, educating patients on proper antimicrobial use, compounding sterile products, and infection control.\n\nNote: and infection prevention\n\nAdditional: education on antimicrobial use",
     "subject": "biochemistry-microbiology",
     "difficulty": "easy",
     "tags": [

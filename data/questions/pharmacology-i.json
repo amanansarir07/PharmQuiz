@@ -327,12 +327,12 @@
     "question_text": "Allopurinol is used for:",
     "options": [
       "Acute gout only",
-      "Chronic gout (urate-lowering therapy)",
+      "Chronic gout",
       "Pain relief",
       "Reducing inflammation only"
     ],
     "correct_index": 1,
-    "explanation": "Allopurinol is a xanthine oxidase inhibitor used for chronic gout. It reduces uric acid production by inhibiting the conversion of xanthine to uric acid.",
+    "explanation": "Allopurinol is a xanthine oxidase inhibitor used for chronic gout. It reduces uric acid production by inhibiting the conversion of xanthine to uric acid.\n\nNote: urate-lowering therapy",
     "difficulty": "medium",
     "tags": [
       "allopurinol",
@@ -378,12 +378,12 @@
     "question_text": "Atropine is classified as:",
     "options": [
       "Cholinergic agonist",
-      "Anticholinergic (muscarinic blocker)",
+      "Anticholinergic",
       "Adrenergic blocker",
       "Ganglionic blocker"
     ],
     "correct_index": 1,
-    "explanation": "Atropine is an anticholinergic (parasympatholytic) drug that competitively blocks muscarinic receptors. It causes mydriasis, dry mouth, tachycardia, and urinary retention.",
+    "explanation": "Atropine is an anticholinergic (parasympatholytic) drug that competitively blocks muscarinic receptors. It causes mydriasis, dry mouth, tachycardia, and urinary retention.\n\nNote: muscarinic blocker",
     "difficulty": "easy",
     "tags": [
       "ANS",
@@ -497,12 +497,12 @@
     "question_text": "Codeine is used as an antitussive because it:",
     "options": [
       "Dilates bronchi",
-      "Suppresses the cough center in the medulla",
+      "Suppresses the cough center",
       "Thins the mucus",
       "Reduces inflammation"
     ],
     "correct_index": 1,
-    "explanation": "Codeine is an opioid antitussive that acts directly on the cough center in the medulla oblongata, raising the threshold for the cough reflex.",
+    "explanation": "Codeine is an opioid antitussive that acts directly on the cough center in the medulla oblongata, raising the threshold for the cough reflex.\n\nAdditional: in the medulla",
     "difficulty": "medium",
     "tags": [
       "respiratory",
@@ -514,12 +514,12 @@
     "question_text": "Aminophylline is used in asthma because it:",
     "options": [
       "Blocks histamine",
-      "Acts as a bronchodilator (methylxanthine)",
+      "Acts as a bronchodilator",
       "Is a beta blocker",
       "Reduces mucus production"
     ],
     "correct_index": 1,
-    "explanation": "Aminophylline is a methylxanthine (theophylline + ethylenediamine) that causes bronchodilation by inhibiting phosphodiesterase (PDE), increasing cAMP levels in bronchial smooth muscle.",
+    "explanation": "Aminophylline is a methylxanthine (theophylline + ethylenediamine) that causes bronchodilation by inhibiting phosphodiesterase (PDE), increasing cAMP levels in bronchial smooth muscle.\n\nNote: methylxanthine",
     "difficulty": "medium",
     "tags": [
       "respiratory",
@@ -548,12 +548,12 @@
     "question_text": "Penicillin acts by inhibiting:",
     "options": [
       "Cell membrane synthesis",
-      "Cell wall synthesis (transpeptidation)",
+      "Cell wall synthesis",
       "Protein synthesis",
       "Nucleic acid synthesis"
     ],
     "correct_index": 1,
-    "explanation": "Penicillins are beta-lactam antibiotics that inhibit bacterial cell wall synthesis by blocking transpeptidase (penicillin-binding protein), preventing cross-linking of peptidoglycan.",
+    "explanation": "Penicillins are beta-lactam antibiotics that inhibit bacterial cell wall synthesis by blocking transpeptidase (penicillin-binding protein), preventing cross-linking of peptidoglycan.\n\nNote: transpeptidation",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -599,12 +599,12 @@
     "question_text": "The mechanism of action of fluoroquinolones (e.g., ciprofloxacin) is:",
     "options": [
       "Inhibiting cell wall synthesis",
-      "Inhibiting DNA gyrase (topoisomerase II)",
+      "Inhibiting DNA gyrase",
       "Inhibiting protein synthesis",
       "Inhibiting folate synthesis"
     ],
     "correct_index": 1,
-    "explanation": "Fluoroquinolones inhibit DNA gyrase (topoisomerase II) and topoisomerase IV, preventing DNA replication, transcription, and repair in bacteria.",
+    "explanation": "Fluoroquinolones inhibit DNA gyrase (topoisomerase II) and topoisomerase IV, preventing DNA replication, transcription, and repair in bacteria.\n\nNote: topoisomerase II",
     "difficulty": "medium",
     "tags": [
       "antimicrobials",
@@ -735,12 +735,12 @@
     "question_text": "Albendazole is used for:",
     "options": [
       "Bacterial infections",
-      "Worm infestations (helminthiasis)",
+      "Worm infestations",
       "Viral infections",
       "Fungal infections"
     ],
     "correct_index": 1,
-    "explanation": "Albendazole is an anthelmintic (antihelminthic) drug that inhibits tubulin polymerization, blocking glucose uptake by worms, leading to energy depletion and worm death.",
+    "explanation": "Albendazole is an anthelmintic (antihelminthic) drug that inhibits tubulin polymerization, blocking glucose uptake by worms, leading to energy depletion and worm death.\n\nNote: helminthiasis",
     "difficulty": "easy",
     "tags": [
       "antihelminthic",
@@ -820,12 +820,12 @@
     "question_text": "Bioavailability refers to:",
     "options": [
       "Drug concentration in urine",
-      "Fraction of drug reaching systemic circulation unchanged",
+      "Fraction of drug reaching",
       "Total drug administered",
       "Drug half-life"
     ],
     "correct_index": 1,
-    "explanation": "Bioavailability (F) is the fraction of administered drug that reaches the systemic circulation in its active form.",
+    "explanation": "Bioavailability (F) is the fraction of administered drug that reaches the systemic circulation in its active form.\n\nAdditional: systemic circulation unchanged",
     "difficulty": "easy",
     "tags": [
       "pharmacokinetics",
@@ -888,12 +888,12 @@
     "question_text": "Competitive antagonists differ from non-competitive antagonists because:",
     "options": [
       "They bind to the same receptor",
-      "Their effect can be overcome by increasing agonist concentration",
+      "Their effect can be overcome",
       "They have irreversible binding",
       "They destroy the receptor"
     ],
     "correct_index": 1,
-    "explanation": "Competitive antagonists bind reversibly to the same site as the agonist, so their effect can be overcome by increasing agonist dose.",
+    "explanation": "Competitive antagonists bind reversibly to the same site as the agonist, so their effect can be overcome by increasing agonist dose.\n\nAdditional: by increasing agonist concentration",
     "difficulty": "medium",
     "tags": [
       "general pharmacology",
@@ -922,12 +922,12 @@
     "question_text": "Enterohepatic recirculation involves:",
     "options": [
       "Drug excreted in urine",
-      "Drug excreted in bile, reabsorbed from intestine, returning to liver",
+      "Drug excreted in bile, reabsorbed from intestine",
       "Drug absorbed from lungs",
       "Drug stored in fat"
     ],
     "correct_index": 1,
-    "explanation": "Enterohepatic recirculation: drug is excreted in bile into intestine, reabsorbed, and returns to liver via portal circulation.",
+    "explanation": "Enterohepatic recirculation: drug is excreted in bile into intestine, reabsorbed, and returns to liver via portal circulation.\n\nNote: returning to liver",
     "difficulty": "medium",
     "tags": [
       "pharmacokinetics",
@@ -939,12 +939,12 @@
     "question_text": "Cytochrome P450 enzyme induction leads to:",
     "options": [
       "Increased drug levels",
-      "Decreased drug levels (faster metabolism)",
+      "Decreased drug levels",
       "No change in drug levels",
       "Increased drug absorption"
     ],
     "correct_index": 1,
-    "explanation": "CYP450 induction increases enzyme activity, leading to faster drug metabolism and decreased plasma levels.",
+    "explanation": "CYP450 induction increases enzyme activity, leading to faster drug metabolism and decreased plasma levels.\n\nNote: faster metabolism",
     "difficulty": "medium",
     "tags": [
       "drug metabolism",
@@ -1075,7 +1075,7 @@
     "question_text": "NSAIDs work by inhibiting:",
     "options": [
       "Lipoxygenase only",
-      "Cyclooxygenase (COX) enzymes",
+      "Cyclooxygenase enzymes",
       "Phospholipase A2",
       "Cytokine production"
     ],
@@ -1143,12 +1143,12 @@
     "question_text": "Paracetamol overdose is treated with:",
     "options": [
       "Aspirin",
-      "N-acetylcysteine (NAC)",
+      "N-acetylcysteine",
       "Vitamin C",
       "Morphine"
     ],
     "correct_index": 1,
-    "explanation": "NAC replenishes glutathione stores and prevents hepatotoxicity from the toxic metabolite NAPQI in paracetamol overdose.",
+    "explanation": "NAC replenishes glutathione stores and prevents hepatotoxicity from the toxic metabolite NAPQI in paracetamol overdose.\n\nNote: NAC",
     "difficulty": "easy",
     "tags": [
       "NSAIDs",
@@ -1194,12 +1194,12 @@
     "question_text": "Propranolol is a:",
     "options": [
       "Selective beta-1 blocker",
-      "Non-selective beta blocker (beta-1 and beta-2)",
+      "Non-selective beta blocker",
       "Alpha blocker",
       "Calcium channel blocker"
     ],
     "correct_index": 1,
-    "explanation": "Propranolol is a non-selective beta blocker blocking both beta-1 (heart) and beta-2 (bronchi, vessels) receptors.",
+    "explanation": "Propranolol is a non-selective beta blocker blocking both beta-1 (heart) and beta-2 (bronchi, vessels) receptors.\n\nNote: beta-1 and beta-2",
     "difficulty": "easy",
     "tags": [
       "ANS",
@@ -1279,12 +1279,12 @@
     "question_text": "Atropine can cause:",
     "options": [
       "Bradycardia",
-      "Tachycardia, dry mouth, blurred vision",
+      "Tachycardia, dry mouth",
       "Hypotension",
       "Diarrhea"
     ],
     "correct_index": 1,
-    "explanation": "Atropine causes tachycardia (block M2 on heart), dry mouth (block M3 on salivary glands), blurred vision (mydriasis).",
+    "explanation": "Atropine causes tachycardia (block M2 on heart), dry mouth (block M3 on salivary glands), blurred vision (mydriasis).\n\nNote: blurred vision",
     "difficulty": "easy",
     "tags": [
       "ANS",
@@ -1313,7 +1313,7 @@
     "question_text": "Theophylline works by:",
     "options": [
       "Blocking H1 receptors",
-      "Inhibiting phosphodiesterase (PDE) and blocking adenosine receptors",
+      "Inhibiting phosphodiesterase and blocking adenosine receptors",
       "Blocking leukotriene receptors",
       "Stimulating beta-2 receptors only"
     ],
@@ -1347,12 +1347,12 @@
     "question_text": "Cromoglycate sodium is used as:",
     "options": [
       "Rescue inhaler",
-      "Mast cell stabilizer for asthma prophylaxis",
+      "Mast cell stabilizer",
       "Bronchodilator",
       "Antitussive"
     ],
     "correct_index": 1,
-    "explanation": "Cromoglycate stabilizes mast cells, preventing histamine release. Used prophylactically for asthma.",
+    "explanation": "Cromoglycate stabilizes mast cells, preventing histamine release. Used prophylactically for asthma.\n\nAdditional: for asthma prophylaxis",
     "difficulty": "medium",
     "tags": [
       "respiratory",
@@ -1381,12 +1381,12 @@
     "question_text": "Penicillin works by:",
     "options": [
       "Inhibiting protein synthesis",
-      "Inhibiting cell wall synthesis (beta-lactam ring binds PBP)",
+      "Inhibiting cell wall synthesis",
       "Inhibiting DNA synthesis",
       "Inhibiting folic acid synthesis"
     ],
     "correct_index": 1,
-    "explanation": "Penicillins (beta-lactams) bind penicillin-binding proteins (PBPs), inhibiting peptidoglycan cell wall synthesis.",
+    "explanation": "Penicillins (beta-lactams) bind penicillin-binding proteins (PBPs), inhibiting peptidoglycan cell wall synthesis.\n\nNote: beta-lactam ring binds PBP",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -1432,12 +1432,12 @@
     "question_text": "Ciprofloxacin works by:",
     "options": [
       "Inhibiting cell wall synthesis",
-      "Inhibiting DNA gyrase (topoisomerase II)",
+      "Inhibiting DNA gyrase",
       "Inhibiting protein synthesis",
       "Inhibiting folate synthesis"
     ],
     "correct_index": 1,
-    "explanation": "Fluoroquinolones like ciprofloxacin inhibit DNA gyrase and topoisomerase IV, blocking bacterial DNA replication.",
+    "explanation": "Fluoroquinolones like ciprofloxacin inhibit DNA gyrase and topoisomerase IV, blocking bacterial DNA replication.\n\nNote: topoisomerase II",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -1551,12 +1551,12 @@
     "question_text": "Sulfonamides work by inhibiting:",
     "options": [
       "Cell wall synthesis",
-      "Folic acid synthesis (competitive inhibition of PABA)",
+      "Folic acid synthesis",
       "Protein synthesis",
       "DNA replication"
     ],
     "correct_index": 1,
-    "explanation": "Sulfonamides are structural analogs of PABA that competitively inhibit dihydropteroate synthase in folic acid synthesis.",
+    "explanation": "Sulfonamides are structural analogs of PABA that competitively inhibit dihydropteroate synthase in folic acid synthesis.\n\nNote: competitive inhibition of PABA",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -1568,12 +1568,12 @@
     "question_text": "The term pharmacovigilance refers to:",
     "options": [
       "Drug manufacturing",
-      "Detection, assessment, and prevention of adverse drug effects",
+      "Detection, assessment",
       "Drug marketing",
       "Drug formulation"
     ],
     "correct_index": 1,
-    "explanation": "Pharmacovigilance is the science of detecting, assessing, understanding, and preventing adverse effects of medicines.",
+    "explanation": "Pharmacovigilance is the science of detecting, assessing, understanding, and preventing adverse effects of medicines.\n\nNote: and prevention of adverse drug effects",
     "difficulty": "easy",
     "tags": [
       "general pharmacology",
@@ -1585,12 +1585,12 @@
     "question_text": "Therapeutic window refers to:",
     "options": [
       "Time taken for drug action",
-      "Concentration range between minimum effective concentration and minimum toxic concentration",
+      "Concentration range between minimum effective",
       "Maximum dose allowed",
       "Time of drug administration"
     ],
     "correct_index": 1,
-    "explanation": "The therapeutic window is the drug concentration range between MEC (minimum effective concentration) and MTC (minimum toxic concentration).",
+    "explanation": "The therapeutic window is the drug concentration range between MEC (minimum effective concentration) and MTC (minimum toxic concentration).\n\nAdditional: concentration and minimum toxic concentration",
     "difficulty": "medium",
     "tags": [
       "general pharmacology",
@@ -1618,13 +1618,13 @@
     "unit_id": "pharmaco-i-unit-1",
     "question_text": "Tachyphylaxis is:",
     "options": [
-      "Rapid tolerance to drug after single dose or few doses",
+      "Rapid tolerance to drug after",
       "Slow tolerance development",
       "Drug allergy",
       "Drug idiosyncrasy"
     ],
     "correct_index": 0,
-    "explanation": "Tachyphylaxis is a rapid decrease in response to a drug after a few doses (acute tolerance).",
+    "explanation": "Tachyphylaxis is a rapid decrease in response to a drug after a few doses (acute tolerance).\n\nAdditional: single dose or few doses",
     "difficulty": "medium",
     "tags": [
       "general pharmacology",
@@ -1653,12 +1653,12 @@
     "question_text": "Plasma protein binding of drugs means:",
     "options": [
       "Drug is inactive",
-      "Drug is bound to albumin and temporarily inactivated, acting as a reservoir",
+      "Drug is bound to albumin and",
       "Drug is destroyed",
       "Drug is excreted faster"
     ],
     "correct_index": 1,
-    "explanation": "Drug-protein complexes are pharmacologically inactive and act as reservoirs. Only free (unbound) drug is active.",
+    "explanation": "Drug-protein complexes are pharmacologically inactive and act as reservoirs. Only free (unbound) drug is active.\n\nAdditional: temporarily inactivated acting as a reservoir",
     "difficulty": "medium",
     "tags": [
       "pharmacokinetics",
@@ -1670,12 +1670,12 @@
     "question_text": "Renal excretion of drugs involves:",
     "options": [
       "Only glomerular filtration",
-      "Filtration, tubular secretion, and reabsorption",
+      "Filtration, tubular secretion",
       "Only reabsorption",
       "Only tubular secretion"
     ],
     "correct_index": 1,
-    "explanation": "Renal drug excretion involves three processes: glomerular filtration, active tubular secretion, and passive tubular reabsorption.",
+    "explanation": "Renal drug excretion involves three processes: glomerular filtration, active tubular secretion, and passive tubular reabsorption.\n\nNote: and reabsorption",
     "difficulty": "easy",
     "tags": [
       "pharmacokinetics",
@@ -1687,12 +1687,12 @@
     "question_text": "Prodrug is a drug that:",
     "options": [
       "Is active as administered",
-      "Requires metabolic conversion in the body to become active",
+      "Requires metabolic conversion in the",
       "Cannot be metabolized",
       "Has no side effects"
     ],
     "correct_index": 1,
-    "explanation": "A prodrug is pharmacologically inactive until metabolized in vivo to its active form (e.g., Enalapril -> Enalaprilat).",
+    "explanation": "A prodrug is pharmacologically inactive until metabolized in vivo to its active form (e.g., Enalapril -> Enalaprilat).\n\nAdditional: body to become active",
     "difficulty": "easy",
     "tags": [
       "general pharmacology",
@@ -1755,12 +1755,12 @@
     "question_text": "Intrinsic efficacy (intrinsic activity) of a drug is:",
     "options": [
       "Ability to bind receptor",
-      "Ability to activate receptor after binding (produce response)",
+      "Ability to activate receptor after binding",
       "Dose needed for effect",
       "Speed of absorption"
     ],
     "correct_index": 1,
-    "explanation": "Intrinsic efficacy is the ability of a drug to activate the receptor and produce a biological response after binding.",
+    "explanation": "Intrinsic efficacy is the ability of a drug to activate the receptor and produce a biological response after binding.\n\nNote: produce response",
     "difficulty": "medium",
     "tags": [
       "general pharmacology",
@@ -1806,12 +1806,12 @@
     "question_text": "Inverse agonist produces:",
     "options": [
       "Same effect as agonist",
-      "Opposite effect to agonist by reducing constitutive receptor activity",
+      "Opposite effect to agonist by",
       "No effect",
       "Enhanced agonist effect"
     ],
     "correct_index": 1,
-    "explanation": "Inverse agonists reduce constitutive (basal) receptor activity, producing effects opposite to agonists.",
+    "explanation": "Inverse agonists reduce constitutive (basal) receptor activity, producing effects opposite to agonists.\n\nAdditional: reducing constitutive receptor activity",
     "difficulty": "hard",
     "tags": [
       "general pharmacology",
@@ -1823,12 +1823,12 @@
     "question_text": "Supersensitivity to a drug occurs when:",
     "options": [
       "Drug dose is increased",
-      "Receptors increase in number after prolonged antagonist use",
+      "Receptors increase in number",
       "Drug is given IV",
       "Patient develops tolerance"
     ],
     "correct_index": 1,
-    "explanation": "Denervation supersensitivity: receptor number increases (up-regulation) when chronically exposed to an antagonist.",
+    "explanation": "Denervation supersensitivity: receptor number increases (up-regulation) when chronically exposed to an antagonist.\n\nAdditional: after prolonged antagonist use",
     "difficulty": "hard",
     "tags": [
       "general pharmacology",
@@ -1857,12 +1857,12 @@
     "question_text": "Phase I drug metabolism involves:",
     "options": [
       "Conjugation reactions only",
-      "Oxidation, reduction, and hydrolysis reactions",
+      "Oxidation, reduction",
       "Glucuronidation only",
       "Sulfation only"
     ],
     "correct_index": 1,
-    "explanation": "Phase I metabolism involves functionalization reactions: oxidation, reduction, and hydrolysis, primarily by CYP450 enzymes.",
+    "explanation": "Phase I metabolism involves functionalization reactions: oxidation, reduction, and hydrolysis, primarily by CYP450 enzymes.\n\nNote: and hydrolysis reactions",
     "difficulty": "easy",
     "tags": [
       "drug metabolism",
@@ -1874,12 +1874,12 @@
     "question_text": "Phase II drug metabolism involves:",
     "options": [
       "Oxidation reactions",
-      "Conjugation reactions (glucuronidation, sulfation, acetylation)",
+      "Conjugation reactions",
       "Reduction only",
       "Hydrolysis only"
     ],
     "correct_index": 1,
-    "explanation": "Phase II metabolism involves conjugation reactions that attach polar groups to the drug, making it more water-soluble for excretion.",
+    "explanation": "Phase II metabolism involves conjugation reactions that attach polar groups to the drug, making it more water-soluble for excretion.\n\nNote: glucuronidation, sulfation, acetylation",
     "difficulty": "easy",
     "tags": [
       "drug metabolism",
@@ -1907,13 +1907,13 @@
     "unit_id": "pharmaco-i-unit-2",
     "question_text": "Misoprostol (a PGE1 analog) is used for:",
     "options": [
-      "Treating ulcers and preventing NSAID-induced gastric ulcers",
+      "Treating ulcers and preventing",
       "Treating hypertension",
       "Treating asthma",
       "Treating diabetes"
     ],
     "correct_index": 0,
-    "explanation": "Misoprostol is a prostaglandin E1 analog that inhibits gastric acid secretion and protects gastric mucosa, preventing NSAID-induced ulcers.",
+    "explanation": "Misoprostol is a prostaglandin E1 analog that inhibits gastric acid secretion and protects gastric mucosa, preventing NSAID-induced ulcers.\n\nAdditional: NSAID-induced gastric ulcers",
     "difficulty": "easy",
     "tags": [
       "GI drugs",
@@ -1925,12 +1925,12 @@
     "question_text": "Bismuth subsalicylate (Pepto-Bismol) is used for:",
     "options": [
       "Hypertension",
-      "Diarrhea, nausea, and heartburn",
+      "Diarrhea, nausea",
       "Asthma",
       "Epilepsy"
     ],
     "correct_index": 1,
-    "explanation": "Bismuth subsalicylate has antimicrobial, anti-inflammatory, and antisecretory properties used for diarrhea and GI symptoms.",
+    "explanation": "Bismuth subsalicylate has antimicrobial, anti-inflammatory, and antisecretory properties used for diarrhea and GI symptoms.\n\nNote: and heartburn",
     "difficulty": "easy",
     "tags": [
       "GI drugs",
@@ -1976,12 +1976,12 @@
     "question_text": "Esomeprazole is:",
     "options": [
       "Racemic mixture",
-      "S-isomer of omeprazole (more potent)",
+      "S-isomer of omeprazole",
       "H2 blocker",
       "Antacid"
     ],
     "correct_index": 1,
-    "explanation": "Esomeprazole is the S-enantiomer of omeprazole with better bioavailability and more potent acid suppression.",
+    "explanation": "Esomeprazole is the S-enantiomer of omeprazole with better bioavailability and more potent acid suppression.\n\nNote: more potent",
     "difficulty": "medium",
     "tags": [
       "GI drugs",
@@ -2010,12 +2010,12 @@
     "question_text": "Aspirin is used in low doses for:",
     "options": [
       "Pain relief only",
-      "Antiplatelet effect (prevention of thrombosis)",
+      "Antiplatelet effect",
       "Fever only",
       "Inflammation only"
     ],
     "correct_index": 1,
-    "explanation": "Low-dose aspirin (75-150mg) irreversibly inhibits platelet COX-1, preventing thromboxane A2 production and platelet aggregation.",
+    "explanation": "Low-dose aspirin (75-150mg) irreversibly inhibits platelet COX-1, preventing thromboxane A2 production and platelet aggregation.\n\nNote: prevention of thrombosis",
     "difficulty": "easy",
     "tags": [
       "NSAIDs",
@@ -2044,12 +2044,12 @@
     "question_text": "Diclofenac is available in topical form because:",
     "options": [
       "Oral form is banned",
-      "Topical application provides local anti-inflammatory effect with less systemic side effects",
+      "Topical application provides local anti-inflammatory effect",
       "It cannot be given orally",
       "Topical is more potent"
     ],
     "correct_index": 1,
-    "explanation": "Topical diclofenac provides local anti-inflammatory effect at the site of application with reduced GI side effects compared to oral.",
+    "explanation": "Topical diclofenac provides local anti-inflammatory effect at the site of application with reduced GI side effects compared to oral.\n\nAdditional: with less systemic side effects",
     "difficulty": "easy",
     "tags": [
       "NSAIDs",
@@ -2095,12 +2095,12 @@
     "question_text": "Nephrotoxicity of NSAIDs is due to:",
     "options": [
       "Direct kidney damage",
-      "Inhibition of renal prostaglandins reducing renal blood flow",
+      "Inhibition of renal prostaglandins",
       "Kidney infection",
       "Kidney stones"
     ],
     "correct_index": 1,
-    "explanation": "NSAIDs inhibit renal COX, reducing vasodilatory prostaglandins (PGE2, PGI2), decreasing renal blood flow, especially in dehydrated patients.",
+    "explanation": "NSAIDs inhibit renal COX, reducing vasodilatory prostaglandins (PGE2, PGI2), decreasing renal blood flow, especially in dehydrated patients.\n\nAdditional: reducing renal blood flow",
     "difficulty": "medium",
     "tags": [
       "NSAIDs",
@@ -2112,12 +2112,12 @@
     "question_text": "Which NSAID is preferred in patients with asthma?",
     "options": [
       "Aspirin",
-      "Ibuprofen (low risk) but avoid in aspirin-sensitive asthma",
+      "Ibuprofen but avoid",
       "All NSAIDs are safe",
       "None are safe"
     ],
     "correct_index": 1,
-    "explanation": "Most NSAIDs can trigger asthma in aspirin-sensitive patients. Ibuprofen at low doses has lower risk, but all should be used cautiously.",
+    "explanation": "Most NSAIDs can trigger asthma in aspirin-sensitive patients. Ibuprofen at low doses has lower risk, but all should be used cautiously.\n\nNote: low risk\n\nAdditional: in aspirin-sensitive asthma",
     "difficulty": "medium",
     "tags": [
       "NSAIDs",
@@ -2129,12 +2129,12 @@
     "question_text": "Aspirin in pregnancy (especially 3rd trimester) can cause:",
     "options": [
       "Preterm labor",
-      "Premature closure of ductus arteriosus and bleeding in mother/fetus",
+      "Premature closure of ductus arteriosus",
       "Low birth weight only",
       "No effects"
     ],
     "correct_index": 1,
-    "explanation": "Aspirin in late pregnancy can close the ductus arteriosus in the fetus and increase bleeding risk in both mother and baby.",
+    "explanation": "Aspirin in late pregnancy can close the ductus arteriosus in the fetus and increase bleeding risk in both mother and baby.\n\nAdditional: and bleeding in mother/fetus",
     "difficulty": "medium",
     "tags": [
       "NSAIDs",
@@ -2146,12 +2146,12 @@
     "question_text": "Physostigmine is used for:",
     "options": [
       "Hypertension",
-      "Atropine overdose (anticholinergic toxicity)",
+      "Atropine overdose",
       "Asthma",
       "Diabetes"
     ],
     "correct_index": 1,
-    "explanation": "Physostigmine is an anticholinesterase that crosses the BBB, used to reverse central anticholinergic toxicity from atropine poisoning.",
+    "explanation": "Physostigmine is an anticholinesterase that crosses the BBB, used to reverse central anticholinergic toxicity from atropine poisoning.\n\nNote: anticholinergic toxicity",
     "difficulty": "medium",
     "tags": [
       "ANS",
@@ -2197,12 +2197,12 @@
     "question_text": "Succinylcholine is a:",
     "options": [
       "Non-depolarizing neuromuscular blocker",
-      "Depolarizing neuromuscular blocker (muscle relaxant)",
+      "Depolarizing neuromuscular blocker",
       "Beta blocker",
       "Alpha agonist"
     ],
     "correct_index": 1,
-    "explanation": "Succinylcholine is a depolarizing neuromuscular blocker that initially stimulates then desensitizes nicotinic receptors at NMJ.",
+    "explanation": "Succinylcholine is a depolarizing neuromuscular blocker that initially stimulates then desensitizes nicotinic receptors at NMJ.\n\nNote: muscle relaxant",
     "difficulty": "medium",
     "tags": [
       "ANS",
@@ -2214,12 +2214,12 @@
     "question_text": "Vecuronium is a:",
     "options": [
       "Depolarizing muscle relaxant",
-      "Non-depolarizing muscle relaxant (competes with ACh at NMJ)",
+      "Non-depolarizing muscle relaxant",
       "Beta blocker",
       "Alpha agonist"
     ],
     "correct_index": 1,
-    "explanation": "Vecuronium is a non-depolarizing competitive neuromuscular blocker used for surgical muscle relaxation.",
+    "explanation": "Vecuronium is a non-depolarizing competitive neuromuscular blocker used for surgical muscle relaxation.\n\nNote: competes with ACh at NMJ",
     "difficulty": "medium",
     "tags": [
       "ANS",
@@ -2231,12 +2231,12 @@
     "question_text": "Sotalol is classified as:",
     "options": [
       "Alpha blocker",
-      "Class III antiarrhythmic with non-selective beta-blocking properties",
+      "Class III antiarrhythmic with",
       "Calcium channel blocker",
       "Diuretic"
     ],
     "correct_index": 1,
-    "explanation": "Sotalol has both non-selective beta-blocking (Class II) and potassium channel blocking (Class III) antiarrhythmic properties.",
+    "explanation": "Sotalol has both non-selective beta-blocking (Class II) and potassium channel blocking (Class III) antiarrhythmic properties.\n\nAdditional: non-selective beta-blocking properties",
     "difficulty": "hard",
     "tags": [
       "ANS",
@@ -2248,12 +2248,12 @@
     "question_text": "Clonidine is a centrally acting:",
     "options": [
       "Alpha-1 agonist",
-      "Alpha-2 agonist (reduces sympathetic outflow)",
+      "Alpha-2 agonist",
       "Beta blocker",
       "Calcium channel blocker"
     ],
     "correct_index": 1,
-    "explanation": "Clonidine stimulates central alpha-2 receptors, reducing sympathetic outflow, used for hypertension and ADHD.",
+    "explanation": "Clonidine stimulates central alpha-2 receptors, reducing sympathetic outflow, used for hypertension and ADHD.\n\nNote: reduces sympathetic outflow",
     "difficulty": "easy",
     "tags": [
       "ANS",
@@ -2264,13 +2264,13 @@
     "unit_id": "pharmaco-i-unit-4",
     "question_text": "Organophosphate poisoning is treated with:",
     "options": [
-      "Atropine and pralidoxime (2-PAM)",
+      "Atropine and pralidoxime",
       "Adrenaline only",
       "Insulin only",
       "Vitamin K"
     ],
     "correct_index": 0,
-    "explanation": "Organophosphates inhibit acetylcholinesterase. Atropine blocks excess ACh effects; pralidoxime reactivates the enzyme (if given early).",
+    "explanation": "Organophosphates inhibit acetylcholinesterase. Atropine blocks excess ACh effects; pralidoxime reactivates the enzyme (if given early).\n\nNote: 2-PAM",
     "difficulty": "easy",
     "tags": [
       "ANS",
@@ -2282,12 +2282,12 @@
     "question_text": "Prazosin is a selective:",
     "options": [
       "Beta-1 blocker",
-      "Alpha-1 blocker (used in hypertension and BPH)",
+      "Alpha-1 blocker",
       "Alpha-2 agonist",
       "Muscarinic agonist"
     ],
     "correct_index": 1,
-    "explanation": "Prazosin selectively blocks alpha-1 receptors, reducing peripheral resistance (hypertension) and relaxing prostate smooth muscle (BPH).",
+    "explanation": "Prazosin selectively blocks alpha-1 receptors, reducing peripheral resistance (hypertension) and relaxing prostate smooth muscle (BPH).\n\nNote: used in hypertension and BPH",
     "difficulty": "easy",
     "tags": [
       "ANS",
@@ -2316,12 +2316,12 @@
     "question_text": "Timolol is used topically for:",
     "options": [
       "Hypertension",
-      "Glaucoma (reduces intraocular pressure)",
+      "Glaucoma",
       "Asthma",
       "Epilepsy"
     ],
     "correct_index": 1,
-    "explanation": "Timolol is a non-selective beta blocker applied as eye drops to reduce intraocular pressure in glaucoma.",
+    "explanation": "Timolol is a non-selective beta blocker applied as eye drops to reduce intraocular pressure in glaucoma.\n\nNote: reduces intraocular pressure",
     "difficulty": "easy",
     "tags": [
       "ANS",
@@ -2333,12 +2333,12 @@
     "question_text": "Nifedipine belongs to which class:",
     "options": [
       "Beta blocker",
-      "Calcium channel blocker (dihydropyridine)",
+      "Calcium channel blocker",
       "Alpha blocker",
       "ACE inhibitor"
     ],
     "correct_index": 1,
-    "explanation": "Nifedipine is a dihydropyridine calcium channel blocker that relaxes vascular smooth muscle, used for hypertension and angina.",
+    "explanation": "Nifedipine is a dihydropyridine calcium channel blocker that relaxes vascular smooth muscle, used for hypertension and angina.\n\nNote: dihydropyridine",
     "difficulty": "easy",
     "tags": [
       "ANS",
@@ -2350,7 +2350,7 @@
     "question_text": "Salmeterol is a:",
     "options": [
       "Short-acting beta-2 agonist (SABA)",
-      "Long-acting beta-2 agonist (LABA) for maintenance therapy",
+      "Long-acting beta-2 agonist for maintenance therapy",
       "Anticholinergic",
       "Corticosteroid"
     ],
@@ -2367,12 +2367,12 @@
     "question_text": "Formoterol differs from salmeterol because:",
     "options": [
       "It has shorter duration",
-      "It has fast onset (1-3 min) AND long duration (12h)",
+      "It has fast onset AND long duration",
       "It is a SABA",
       "It is an anticholinergic"
     ],
     "correct_index": 1,
-    "explanation": "Formoterol has a unique profile: fast onset (like SABAs) AND long duration (like LABAs), allowing use as both rescue and maintenance.",
+    "explanation": "Formoterol has a unique profile: fast onset (like SABAs) AND long duration (like LABAs), allowing use as both rescue and maintenance.\n\nNote: 12h\n\nNote: 1-3 min",
     "difficulty": "medium",
     "tags": [
       "respiratory",
@@ -2384,12 +2384,12 @@
     "question_text": "Budesonide is:",
     "options": [
       "A bronchodilator",
-      "An inhaled corticosteroid (ICS) for asthma maintenance",
+      "An inhaled corticosteroid",
       "An antihistamine",
       "A mucolytic"
     ],
     "correct_index": 1,
-    "explanation": "Budesonide is an inhaled corticosteroid that reduces airway inflammation, used as first-line maintenance therapy for persistent asthma.",
+    "explanation": "Budesonide is an inhaled corticosteroid that reduces airway inflammation, used as first-line maintenance therapy for persistent asthma.\n\nNote: ICS\n\nAdditional: for asthma maintenance",
     "difficulty": "easy",
     "tags": [
       "respiratory",
@@ -2402,11 +2402,11 @@
     "options": [
       "SABA",
       "LABA",
-      "Long-acting muscarinic antagonist (LAMA) for COPD",
+      "Long-acting muscarinic antagonist",
       "Corticosteroid"
     ],
     "correct_index": 2,
-    "explanation": "Tiotropium is a LAMA (24-hour duration) that blocks M3 receptors in airways, used for COPD maintenance therapy.",
+    "explanation": "Tiotropium is a LAMA (24-hour duration) that blocks M3 receptors in airways, used for COPD maintenance therapy.\n\nAdditional: for COPD",
     "difficulty": "medium",
     "tags": [
       "respiratory",
@@ -2418,12 +2418,12 @@
     "question_text": "N-acetylcysteine (NAC) is used as a mucolytic because it:",
     "options": [
       "Dilates bronchi",
-      "Breaks disulfide bonds in mucus, reducing viscosity",
+      "Breaks disulfide bonds in",
       "Blocks histamine",
       "Inhibits leukotrienes"
     ],
     "correct_index": 1,
-    "explanation": "NAC breaks disulfide bonds in mucus glycoproteins, thinning secretions and making them easier to expectorate.",
+    "explanation": "NAC breaks disulfide bonds in mucus glycoproteins, thinning secretions and making them easier to expectorate.\n\nAdditional: mucus reducing viscosity",
     "difficulty": "easy",
     "tags": [
       "respiratory",
@@ -2435,12 +2435,12 @@
     "question_text": "Dextromethorphan is:",
     "options": [
       "Expectorant",
-      "Antitussive (non-narcotic cough suppressant acting on cough center in medulla)",
+      "Antitussive",
       "Bronchodilator",
       "Mucolytic"
     ],
     "correct_index": 1,
-    "explanation": "Dextromethorphan acts on the cough center in the medulla to suppress cough. It is non-narcotic and non-addictive.",
+    "explanation": "Dextromethorphan acts on the cough center in the medulla to suppress cough. It is non-narcotic and non-addictive.\n\nNote: non-narcotic cough suppressant acting on cough center in medulla",
     "difficulty": "easy",
     "tags": [
       "respiratory",
@@ -2486,12 +2486,12 @@
     "question_text": "Ototoxicity is a major side effect of:",
     "options": [
       "Penicillins",
-      "Aminoglycosides (gentamicin, streptomycin)",
+      "Aminoglycosides",
       "Macrolides",
       "Tetracyclines"
     ],
     "correct_index": 1,
-    "explanation": "Aminoglycosides can damage the cochlea (hearing loss) and vestibular apparatus (vertigo, balance problems).",
+    "explanation": "Aminoglycosides can damage the cochlea (hearing loss) and vestibular apparatus (vertigo, balance problems).\n\nNote: gentamicin, streptomycin",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2554,12 +2554,12 @@
     "question_text": "Ethambutol is primarily used for:",
     "options": [
       "Malaria",
-      "Multidrug-resistant TB (MDR-TB) treatment",
+      "Multidrug-resistant TB treatment",
       "Fungal infections",
       "Viral infections"
     ],
     "correct_index": 1,
-    "explanation": "Ethambutol is a first-line anti-TB drug that inhibits arabinosyl transferase, preventing cell wall synthesis in M. tuberculosis.",
+    "explanation": "Ethambutol is a first-line anti-TB drug that inhibits arabinosyl transferase, preventing cell wall synthesis in M. tuberculosis.\n\nNote: MDR-TB",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2571,12 +2571,12 @@
     "question_text": "Ethambutol can cause:",
     "options": [
       "Hearing loss",
-      "Optic neuritis (visual disturbance)",
+      "Optic neuritis",
       "Kidney failure only",
       "Liver damage only"
     ],
     "correct_index": 1,
-    "explanation": "Ethambutol can cause dose-dependent optic neuritis with red-green color blindness. Visual acuity should be monitored.",
+    "explanation": "Ethambutol can cause dose-dependent optic neuritis with red-green color blindness. Visual acuity should be monitored.\n\nNote: visual disturbance",
     "difficulty": "medium",
     "tags": [
       "antimicrobials",
@@ -2588,12 +2588,12 @@
     "question_text": "Metronidazole should not be combined with:",
     "options": [
       "Amoxicillin",
-      "Alcohol (causes disulfiram-like reaction)",
+      "Alcohol",
       "Ibuprofen",
       "Vitamin C"
     ],
     "correct_index": 1,
-    "explanation": "Metronidazole inhibits aldehyde dehydrogenase, causing accumulation of acetaldehyde with alcohol = severe nausea, vomiting, flushing (disulfiram reaction).",
+    "explanation": "Metronidazole inhibits aldehyde dehydrogenase, causing accumulation of acetaldehyde with alcohol = severe nausea, vomiting, flushing (disulfiram reaction).\n\nNote: causes disulfiram-like reaction",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2605,12 +2605,12 @@
     "question_text": "Ciprofloxacin is contraindicated in:",
     "options": [
       "Elderly patients",
-      "Children and pregnant women (cartilage damage risk)",
+      "Children and pregnant women",
       "Hypertensive patients",
       "Diabetic patients"
     ],
     "correct_index": 1,
-    "explanation": "Fluoroquinolones can cause cartilage damage in growing joints. Avoided in children and pregnant women unless no alternative exists.",
+    "explanation": "Fluoroquinolones can cause cartilage damage in growing joints. Avoided in children and pregnant women unless no alternative exists.\n\nNote: cartilage damage risk",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2622,12 +2622,12 @@
     "question_text": "Tetracyclines should not be taken with:",
     "options": [
       "Water",
-      "Milk, calcium, iron, and antacids (chelation reduces absorption)",
+      "Milk, calcium",
       "Fruit juice",
       "Food in general"
     ],
     "correct_index": 1,
-    "explanation": "Tetracyclines chelate divalent/trivalent cations (Ca2+, Fe2+, Al3+), forming insoluble complexes that reduce absorption by up to 50%.",
+    "explanation": "Tetracyclines chelate divalent/trivalent cations (Ca2+, Fe2+, Al3+), forming insoluble complexes that reduce absorption by up to 50%.\n\nNote: iron, and antacids; chelation reduces absorption",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2639,12 +2639,12 @@
     "question_text": "Isoniazid (INH) can cause:",
     "options": [
       "Ototoxicity",
-      "Peripheral neuropathy (prevented by Vitamin B6 supplementation)",
+      "Peripheral neuropathy",
       "Optic neuritis",
       "Hearing loss"
     ],
     "correct_index": 1,
-    "explanation": "INH causes pyridoxine (Vitamin B6) deficiency leading to peripheral neuropathy. Pyridoxine supplementation prevents this.",
+    "explanation": "INH causes pyridoxine (Vitamin B6) deficiency leading to peripheral neuropathy. Pyridoxine supplementation prevents this.\n\nNote: prevented by Vitamin B6 supplementation",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2656,12 +2656,12 @@
     "question_text": "Pyrazinamide is used only in:",
     "options": [
       "Malaria treatment",
-      "Intensive phase of TB treatment (first 2 months)",
+      "Intensive phase of TB treatment",
       "HIV treatment",
       "Fungal infections"
     ],
     "correct_index": 1,
-    "explanation": "Pyrazinamide is used only in the intensive phase (first 2 months) of TB treatment for its sterilizing activity in acidic environments.",
+    "explanation": "Pyrazinamide is used only in the intensive phase (first 2 months) of TB treatment for its sterilizing activity in acidic environments.\n\nNote: first 2 months",
     "difficulty": "medium",
     "tags": [
       "antimicrobials",
@@ -2690,12 +2690,12 @@
     "question_text": "Fluconazole is effective against:",
     "options": [
       "Bacteria",
-      "Candida and Cryptococcus species (fungal infections)",
+      "Candida and Cryptococcus species",
       "Viruses",
       "Parasites"
     ],
     "correct_index": 1,
-    "explanation": "Fluconazole is a triazole antifungal that inhibits ergosterol synthesis, effective against Candida and Cryptococcus.",
+    "explanation": "Fluconazole is a triazole antifungal that inhibits ergosterol synthesis, effective against Candida and Cryptococcus.\n\nNote: fungal infections",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2707,12 +2707,12 @@
     "question_text": "Oseltamivir (Tamiflu) works by:",
     "options": [
       "Killing influenza virus directly",
-      "Inhibiting neuraminidase enzyme, preventing viral release from infected cells",
+      "Inhibiting neuraminidase enzyme preventing viral",
       "Blocking viral entry into cells",
       "Inhibiting viral RNA replication"
     ],
     "correct_index": 1,
-    "explanation": "Oseltamivir inhibits influenza neuraminidase, preventing release of new viral particles from infected cells.",
+    "explanation": "Oseltamivir inhibits influenza neuraminidase, preventing release of new viral particles from infected cells.\n\nAdditional: release from infected cells",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2724,7 +2724,7 @@
     "question_text": "Zidovudine (AZT) is a:",
     "options": [
       "Protease inhibitor",
-      "Nucleoside reverse transcriptase inhibitor (NRTI) for HIV",
+      "Nucleoside reverse transcriptase inhibitor for HIV",
       "Integrase inhibitor",
       "Non-nucleoside reverse transcriptase inhibitor"
     ],
@@ -2741,12 +2741,12 @@
     "question_text": "Sulfamethoxazole-trimethoprim (co-trimoxazole) works by:",
     "options": [
       "Cell wall synthesis inhibition",
-      "Sequential blockade of folic acid synthesis (sulfonamide + folate antagonist)",
+      "Sequential blockade of folic acid synthesis",
       "Protein synthesis inhibition",
       "DNA gyrase inhibition"
     ],
     "correct_index": 1,
-    "explanation": "SMX blocks dihydropteroate synthase (step 1) and TMP blocks dihydrofolate reductase (step 2) in folic acid synthesis.",
+    "explanation": "SMX blocks dihydropteroate synthase (step 1) and TMP blocks dihydrofolate reductase (step 2) in folic acid synthesis.\n\nNote: sulfonamide + folate antagonist",
     "difficulty": "medium",
     "tags": [
       "antimicrobials",
@@ -2758,12 +2758,12 @@
     "question_text": "Amphotericin B is known as:",
     "options": [
       "Broad-spectrum antibiotic",
-      "Gold standard antifungal for systemic fungal infections (but nephrotoxic)",
+      "Gold standard antifungal for",
       "Antiviral drug",
       "Antimalarial drug"
     ],
     "correct_index": 1,
-    "explanation": "Amphotericin B is the gold standard for severe systemic fungal infections but has significant nephrotoxicity (reason for lipid formulations).",
+    "explanation": "Amphotericin B is the gold standard for severe systemic fungal infections but has significant nephrotoxicity (reason for lipid formulations).\n\nNote: but nephrotoxic\n\nAdditional: systemic fungal infections",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2775,12 +2775,12 @@
     "question_text": "Mebendazole is effective against:",
     "options": [
       "Bacterial infections",
-      "Intestinal worm infections (roundworm, whipworm, hookworm)",
+      "Intestinal worm infections",
       "Fungal infections",
       "Viral infections"
     ],
     "correct_index": 1,
-    "explanation": "Mebendazole is a broad-spectrum anthelmintic that inhibits tubulin polymerization, causing worm paralysis and death.",
+    "explanation": "Mebendazole is a broad-spectrum anthelmintic that inhibits tubulin polymerization, causing worm paralysis and death.\n\nNote: roundworm, whipworm, hookworm",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -2791,13 +2791,13 @@
     "unit_id": "pharmaco-i-unit-6",
     "question_text": "Primaquine is used for:",
     "options": [
-      "Malaria (radical cure - kills liver hypnozoites of P. vivax)",
+      "Malaria",
       "Tuberculosis treatment",
       "HIV treatment",
       "Fungal infections"
     ],
     "correct_index": 0,
-    "explanation": "Primaquine is the only drug that kills P. vivax/P. ovale hypnozoites in the liver, providing radical cure and preventing relapse.",
+    "explanation": "Primaquine is the only drug that kills P. vivax/P. ovale hypnozoites in the liver, providing radical cure and preventing relapse.\n\nNote: radical cure - kills liver hypnozoites of P. vivax",
     "difficulty": "medium",
     "tags": [
       "antimicrobials",
@@ -2809,12 +2809,12 @@
     "question_text": "Artemisinin derivatives work in malaria by:",
     "options": [
       "Blocking heme polymerization",
-      "Generating free radicals that damage parasite proteins and membranes",
+      "Generating free radicals that damage",
       "Inhibiting folate synthesis",
       "Blocking ribosomes"
     ],
     "correct_index": 1,
-    "explanation": "Artemisinin contains an endoperoxide bridge that generates free radicals (reactive oxygen species), damaging parasite proteins and membranes.",
+    "explanation": "Artemisinin contains an endoperoxide bridge that generates free radicals (reactive oxygen species), damaging parasite proteins and membranes.\n\nAdditional: parasite proteins and membranes",
     "difficulty": "medium",
     "tags": [
       "antimicrobials",
@@ -2826,7 +2826,7 @@
     "question_text": "Enteral route of drug administration includes:",
     "options": [
       "IV, IM",
-      "Oral, sublingual, rectal",
+      "Oral, sublingual",
       "Inhalation, topical",
       "All routes"
     ],
@@ -2843,12 +2843,12 @@
     "question_text": "Parenteral routes include:",
     "options": [
       "Oral and sublingual",
-      "Intravenous, intramuscular, subcutaneous, intradermal",
+      "Intravenous, intramuscular",
       "Rectal only",
       "Inhalation only"
     ],
     "correct_index": 1,
-    "explanation": "Parenteral routes bypass the GI tract: IV, IM, SC, intradermal, intrathecal, intra-articular, etc.",
+    "explanation": "Parenteral routes bypass the GI tract: IV, IM, SC, intradermal, intrathecal, intra-articular, etc.\n\nNote: subcutaneous, intradermal",
     "difficulty": "easy",
     "tags": [
       "drug administration",
@@ -2911,12 +2911,12 @@
     "question_text": "Grade dose-response curve measures:",
     "options": [
       "Individual response",
-      "Group (population) average response to graded doses",
+      "Group average response to graded doses",
       "Binary yes/no response",
       "Time of response"
     ],
     "correct_index": 1,
-    "explanation": "Graded dose-response curves plot the magnitude of individual response against increasing doses of a drug.",
+    "explanation": "Graded dose-response curves plot the magnitude of individual response against increasing doses of a drug.\n\nNote: population",
     "difficulty": "medium",
     "tags": [
       "general pharmacology",
@@ -2928,12 +2928,12 @@
     "question_text": "Quantal dose-response curve is used to determine:",
     "options": [
       "EC50 and potency",
-      "TD50, ED50, and LD50 (all-or-none response in population)",
+      "TD50, ED50, and LD50",
       "Duration of action",
       "Mechanism of action"
     ],
     "correct_index": 1,
-    "explanation": "Quantal curves show the proportion of population responding at each dose, used to determine ED50, TD50, and LD50.",
+    "explanation": "Quantal curves show the proportion of population responding at each dose, used to determine ED50, TD50, and LD50.\n\nNote: all-or-none response in population",
     "difficulty": "medium",
     "tags": [
       "general pharmacology",
@@ -2979,12 +2979,12 @@
     "question_text": "Teratogenic drugs cause:",
     "options": [
       "Drug addiction in fetus",
-      "Congenital malformations when given during pregnancy",
+      "Congenital malformations when",
       "Fetal death only",
       "No harm to fetus"
     ],
     "correct_index": 1,
-    "explanation": "Teratogens are drugs that cross the placenta and cause developmental abnormalities (birth defects) when given during critical periods of pregnancy.",
+    "explanation": "Teratogens are drugs that cross the placenta and cause developmental abnormalities (birth defects) when given during critical periods of pregnancy.\n\nAdditional: given during pregnancy",
     "difficulty": "easy",
     "tags": [
       "general pharmacology",
@@ -3030,12 +3030,12 @@
     "question_text": "Aluminum hydroxide can cause:",
     "options": [
       "Diarrhea",
-      "Constipation (due to slowing of GI motility)",
+      "Constipation",
       "Nausea only",
       "No side effects"
     ],
     "correct_index": 1,
-    "explanation": "Al(OH)3 is constipating because aluminum slows GI motility. Often combined with Mg(OH)2 to balance GI effects.",
+    "explanation": "Al(OH)3 is constipating because aluminum slows GI motility. Often combined with Mg(OH)2 to balance GI effects.\n\nNote: due to slowing of GI motility",
     "difficulty": "easy",
     "tags": [
       "GI drugs",
@@ -3047,12 +3047,12 @@
     "question_text": "The 'rebound acid hypersecretion' phenomenon is associated with:",
     "options": [
       "PPIs",
-      "H2 blockers when abruptly discontinued (especially after prolonged use)",
+      "H2 blockers when abruptly discontinued",
       "Antacids",
       "Prokinetics"
     ],
     "correct_index": 1,
-    "explanation": "Abrupt withdrawal of acid-suppressing drugs (especially after prolonged H2 blocker use) can cause rebound increase in acid secretion.",
+    "explanation": "Abrupt withdrawal of acid-suppressing drugs (especially after prolonged H2 blocker use) can cause rebound increase in acid secretion.\n\nNote: especially after prolonged use",
     "difficulty": "medium",
     "tags": [
       "GI drugs",
@@ -3064,12 +3064,12 @@
     "question_text": "Ketorolac is an NSAID known for:",
     "options": [
       "Weak analgesic effect",
-      "Potent analgesic effect comparable to opioids (for short-term use)",
+      "Potent analgesic effect comparable to opioids",
       "Only antipyretic use",
       "Only anti-inflammatory use"
     ],
     "correct_index": 1,
-    "explanation": "Ketorolac is a potent NSAID analgesic used parenterally for short-term (max 5 days) severe pain management.",
+    "explanation": "Ketorolac is a potent NSAID analgesic used parenterally for short-term (max 5 days) severe pain management.\n\nNote: for short-term use",
     "difficulty": "medium",
     "tags": [
       "NSAIDs",
@@ -3081,7 +3081,7 @@
     "question_text": "NSAIDs inhibit which enzyme in the arachidonic acid pathway?",
     "options": [
       "Lipoxygenase",
-      "Cyclooxygenase (COX-1 and/or COX-2)",
+      "Cyclooxygenase",
       "Phospholipase A2",
       "5-lipoxygenase activating protein"
     ],
@@ -3097,13 +3097,13 @@
     "unit_id": "pharmaco-i-unit-3",
     "question_text": "Aspirin use in children with viral infections (like flu) can cause:",
     "options": [
-      "Reye syndrome (rare but potentially fatal hepatic encephalopathy)",
+      "Reye syndrome",
       "Gastric ulcer",
       "Kidney failure",
       "Asthma attack"
     ],
     "correct_index": 0,
-    "explanation": "Aspirin in children with viral infections can trigger Reye syndrome, a rare but serious condition affecting liver and brain.",
+    "explanation": "Aspirin in children with viral infections can trigger Reye syndrome, a rare but serious condition affecting liver and brain.\n\nNote: rare but potentially fatal hepatic encephalopathy",
     "difficulty": "easy",
     "tags": [
       "NSAIDs",
@@ -3132,12 +3132,12 @@
     "question_text": "Succinylcholine is used for:",
     "options": [
       "Long-term muscle relaxation",
-      "Rapid sequence intillation (short-acting muscle relaxant)",
+      "Rapid sequence intillation",
       "Chronic pain",
       "Hypertension emergency"
     ],
     "correct_index": 1,
-    "explanation": "Succinylcholine provides rapid onset (30-60s) and short duration (5-10 min) of neuromuscular blockade for rapid intubation.",
+    "explanation": "Succinylcholine provides rapid onset (30-60s) and short duration (5-10 min) of neuromuscular blockade for rapid intubation.\n\nNote: short-acting muscle relaxant",
     "difficulty": "easy",
     "tags": [
       "ANS",
@@ -3166,12 +3166,12 @@
     "question_text": "Neostigmine can reverse non-depolarizing muscle block because it:",
     "options": [
       "Directly stimulates muscle",
-      "Inhibits acetylcholinesterase, increasing ACh at NMJ",
+      "Inhibits acetylcholinesterase",
       "Blocks nicotinic receptors",
       "Destroys the muscle relaxant drug"
     ],
     "correct_index": 1,
-    "explanation": "Neostigmine inhibits AChE, increasing ACh concentration at the neuromuscular junction, which competes with and displaces non-depolarizing blockers.",
+    "explanation": "Neostigmine inhibits AChE, increasing ACh concentration at the neuromuscular junction, which competes with and displaces non-depolarizing blockers.\n\nNote: increasing ACh at NMJ",
     "difficulty": "medium",
     "tags": [
       "ANS",
@@ -3183,12 +3183,12 @@
     "question_text": "Reserpine depletes catecholamines by:",
     "options": [
       "Blocking their synthesis",
-      "Inhibiting vesicular monoamine transporter (VMAT), preventing storage in vesicles",
+      "Inhibiting vesicular monoamine transporter",
       "Blocking their receptors",
       "Increasing their metabolism"
     ],
     "correct_index": 1,
-    "explanation": "Reserpine inhibits VMAT, preventing storage of norepinephrine, dopamine, and serotonin in synaptic vesicles, leading to depletion.",
+    "explanation": "Reserpine inhibits VMAT, preventing storage of norepinephrine, dopamine, and serotonin in synaptic vesicles, leading to depletion.\n\nAdditional: preventing storage in vesicles",
     "difficulty": "medium",
     "tags": [
       "ANS",
@@ -3200,12 +3200,12 @@
     "question_text": "Phenoxybenzamine is a:",
     "options": [
       "Reversible alpha blocker",
-      "Irreversible alpha blocker (phenoxybenzamine) used in pheochromocytoma",
+      "Irreversible alpha blocker",
       "Selective beta blocker",
       "Muscarinic antagonist"
     ],
     "correct_index": 1,
-    "explanation": "Phenoxybenzamine irreversibly blocks alpha-1 and alpha-2 receptors, used in preoperative management of pheochromocytoma.",
+    "explanation": "Phenoxybenzamine irreversibly blocks alpha-1 and alpha-2 receptors, used in preoperative management of pheochromocytoma.\n\nNote: phenoxybenzamine\n\nAdditional: used in pheochromocytoma",
     "difficulty": "hard",
     "tags": [
       "ANS",
@@ -3217,7 +3217,7 @@
     "question_text": "Pirbuterol and salmeterol differ because pirbuterol is:",
     "options": [
       "Longer acting",
-      "Shorter acting (SABA) while salmeterol is LABA",
+      "Shorter acting while salmeterol is LABA",
       "An anticholinergic",
       "A corticosteroid"
     ],
@@ -3234,12 +3234,12 @@
     "question_text": "Dobutamine is primarily a:",
     "options": [
       "Alpha-1 agonist",
-      "Beta-1 selective agonist (increases cardiac contractility)",
+      "Beta-1 selective agonist",
       "Beta-2 agonist",
       "Alpha-2 agonist"
     ],
     "correct_index": 1,
-    "explanation": "Dobutamine is a synthetic catecholamine with predominant beta-1 agonist activity, used for acute heart failure to increase cardiac output.",
+    "explanation": "Dobutamine is a synthetic catecholamine with predominant beta-1 agonist activity, used for acute heart failure to increase cardiac output.\n\nNote: increases cardiac contractility",
     "difficulty": "medium",
     "tags": [
       "ANS",
@@ -3285,12 +3285,12 @@
     "question_text": "Nedocromil is used for:",
     "options": [
       "Acute asthma attack",
-      "Prophylaxis of asthma (mast cell stabilizer)",
+      "Prophylaxis of asthma",
       "COPD only",
       "Emphysema only"
     ],
     "correct_index": 1,
-    "explanation": "Nedocromil is a mast cell stabilizer used prophylactically to prevent asthma attacks, similar to cromoglycate.",
+    "explanation": "Nedocromil is a mast cell stabilizer used prophylactically to prevent asthma attacks, similar to cromoglycate.\n\nNote: mast cell stabilizer",
     "difficulty": "easy",
     "tags": [
       "respiratory",
@@ -3301,13 +3301,13 @@
     "unit_id": "pharmaco-i-unit-5",
     "question_text": "Terbutaline is a:",
     "options": [
-      "SABA (used subcutaneously for acute bronchospasm and orally for maintenance)",
+      "SABA",
       "LABA",
       "Anticholinergic",
       "Corticosteroid"
     ],
     "correct_index": 0,
-    "explanation": "Terbutaline is a SABA that can be given SC for acute severe bronchospasm or orally for maintenance therapy.",
+    "explanation": "Terbutaline is a SABA that can be given SC for acute severe bronchospasm or orally for maintenance therapy.\n\nNote: used subcutaneously for acute bronchospasm and orally for maintenance",
     "difficulty": "medium",
     "tags": [
       "respiratory",
@@ -3336,12 +3336,12 @@
     "question_text": "Azithromycin differs from erythromycin because:",
     "options": [
       "It is less potent",
-      "It has longer half-life, better tissue penetration, and less GI side effects",
+      "It has longer half-life, better tissue penetration",
       "It has more GI side effects",
       "It is only given IV"
     ],
     "correct_index": 1,
-    "explanation": "Azithromycin (macrolide) has a longer half-life (68h), better tissue penetration, fewer drug interactions, and less GI effects than erythromycin.",
+    "explanation": "Azithromycin (macrolide) has a longer half-life (68h), better tissue penetration, fewer drug interactions, and less GI effects than erythromycin.\n\nNote: and less GI side effects",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -3353,12 +3353,12 @@
     "question_text": "Linezolid belongs to which class:",
     "options": [
       "Beta-lactams",
-      "Oxazolidinones (protein synthesis inhibitor targeting 50S subunit)",
+      "Oxazolidinones",
       "Fluoroquinolones",
       "Aminoglycosides"
     ],
     "correct_index": 1,
-    "explanation": "Linezolid is an oxazolidinone that binds the 23S rRNA of the 50S subunit, preventing formation of the initiation complex. Used for MRSA.",
+    "explanation": "Linezolid is an oxazolidinone that binds the 23S rRNA of the 50S subunit, preventing formation of the initiation complex. Used for MRSA.\n\nNote: protein synthesis inhibitor targeting 50S subunit",
     "difficulty": "medium",
     "tags": [
       "antimicrobials",
@@ -3370,12 +3370,12 @@
     "question_text": "Colistimethate (colistin) is a last-resort antibiotic for:",
     "options": [
       "MRSA infections",
-      "Multidrug-resistant gram-negative infections (MDR Pseudomonas, Acinetobacter)",
+      "Multidrug-resistant gram-negative",
       "Tuberculosis",
       "Malaria"
     ],
     "correct_index": 1,
-    "explanation": "Colistin is a polymyxin antibiotic used as a last resort for extensively drug-resistant (XDR) gram-negative bacterial infections.",
+    "explanation": "Colistin is a polymyxin antibiotic used as a last resort for extensively drug-resistant (XDR) gram-negative bacterial infections.\n\nNote: MDR Pseudomonas, Acinetobacter\n\nAdditional: infections",
     "difficulty": "medium",
     "tags": [
       "antimicrobials",
@@ -3387,12 +3387,12 @@
     "question_text": "Daptomycin is used for:",
     "options": [
       "Gram-negative infections only",
-      "MRSA and VRE (vancomycin-resistant enterococci) skin infections",
+      "MRSA and VRE skin infections",
       "Viral infections",
       "Fungal infections"
     ],
     "correct_index": 1,
-    "explanation": "Daptomycin is a cyclic lipopeptide that disrupts bacterial cell membranes, effective against MRSA and VRE.",
+    "explanation": "Daptomycin is a cyclic lipopeptide that disrupts bacterial cell membranes, effective against MRSA and VRE.\n\nNote: vancomycin-resistant enterococci",
     "difficulty": "medium",
     "tags": [
       "antimicrobials",
@@ -3404,12 +3404,12 @@
     "question_text": "Tigecycline is:",
     "options": [
       "A beta-lactam",
-      "A glycylcycline (tetracycline derivative) effective against many resistant bacteria",
+      "A glycylcycline effective against",
       "A macrolide",
       "A fluoroquinolone"
     ],
     "correct_index": 1,
-    "explanation": "Tigecycline is a glycylcycline that overcomes tetracycline resistance mechanisms, effective against MRSA, VRE, and MDR gram-negatives.",
+    "explanation": "Tigecycline is a glycylcycline that overcomes tetracycline resistance mechanisms, effective against MRSA, VRE, and MDR gram-negatives.\n\nNote: tetracycline derivative\n\nAdditional: many resistant bacteria",
     "difficulty": "hard",
     "tags": [
       "antimicrobials",
@@ -3421,12 +3421,12 @@
     "question_text": "Moxifloxacin is a respiratory fluoroquinolone because it:",
     "options": [
       "Only works on gram-negative bacteria",
-      "Has enhanced activity against respiratory pathogens including atypicals (Mycoplasma, Legionella)",
+      "Has enhanced activity against respiratory pathogens including atypicals",
       "Is only used for UTI",
       "Has no gram-positive activity"
     ],
     "correct_index": 1,
-    "explanation": "Moxifloxacin has enhanced gram-positive and atypical coverage (Mycoplasma, Chlamydophila, Legionella), making it suitable for respiratory infections.",
+    "explanation": "Moxifloxacin has enhanced gram-positive and atypical coverage (Mycoplasma, Chlamydophila, Legionella), making it suitable for respiratory infections.\n\nNote: Mycoplasma, Legionella",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -3438,12 +3438,12 @@
     "question_text": "Clindamycin is particularly effective against:",
     "options": [
       "Gram-negative rods",
-      "Anaerobic bacteria and gram-positive cocci (including bone/joint infections)",
+      "Anaerobic bacteria and",
       "Viral infections",
       "Fungal infections"
     ],
     "correct_index": 1,
-    "explanation": "Clindamycin has excellent activity against anaerobes and gram-positive bacteria, particularly useful for dental, bone, and joint infections.",
+    "explanation": "Clindamycin has excellent activity against anaerobes and gram-positive bacteria, particularly useful for dental, bone, and joint infections.\n\nNote: including bone/joint infections\n\nAdditional: gram-positive cocci",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -3455,12 +3455,12 @@
     "question_text": "Trimethoprim-sulfamethoxazole is used for:",
     "options": [
       "Only respiratory infections",
-      "UTI, respiratory infections, PCP pneumonia, and MRSA skin infections",
+      "UTI, respiratory infections",
       "Only fungal infections",
       "Only viral infections"
     ],
     "correct_index": 1,
-    "explanation": "Co-trimoxazole has broad uses: UTI, respiratory infections, PCP prophylaxis/treatment in HIV, and community-acquired MRSA.",
+    "explanation": "Co-trimoxazole has broad uses: UTI, respiratory infections, PCP prophylaxis/treatment in HIV, and community-acquired MRSA.\n\nNote: PCP pneumonia, and MRSA skin infections",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
@@ -3472,12 +3472,12 @@
     "question_text": "Nitrofurantoin is primarily used for:",
     "options": [
       "Respiratory infections",
-      "Uncomplicated UTI (concentrated in urine, poor tissue distribution)",
+      "Uncomplicated UTI",
       "MRSA infections",
       "Fungal infections"
     ],
     "correct_index": 1,
-    "explanation": "Nitrofurantoin achieves high concentrations in urine but low tissue levels, making it ideal for uncomplicated lower UTI.",
+    "explanation": "Nitrofurantoin achieves high concentrations in urine but low tissue levels, making it ideal for uncomplicated lower UTI.\n\nNote: concentrated in urine, poor tissue distribution",
     "difficulty": "easy",
     "tags": [
       "antimicrobials",
