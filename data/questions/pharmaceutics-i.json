@@ -666,10 +666,10 @@
     "unit_id": "pharm-i-unit-8",
     "question_text": "Bioavailability is defined as:",
     "options": [
-      "Total amount of drug in the body",
-      "Rate and extent of drug absorption from dosage form",
-      "Only the peak plasma concentration",
-      "The half-life of a drug"
+      "The total amount of drug that is present in the body at any time",
+      "Rate and extent of drug absorption from the dosage form into the systemic circulation",
+      "Only the peak plasma concentration reached after a single dose",
+      "The time taken for half of the drug to be eliminated from the body"
     ],
     "correct_index": 1,
     "explanation": "Bioavailability is defined as the rate and extent (amount) of absorption of a drug from its dosage form into the systemic circulation.",
@@ -717,10 +717,10 @@
     "unit_id": "pharm-i-unit-8",
     "question_text": "Volume of Distribution (Vd) is a theoretical volume that:",
     "options": [
-      "Represents actual body water",
-      "Relates the amount of drug",
-      "Measures renal clearance",
-      "Indicates drug potency"
+      "Represents the actual amount of water in the body",
+      "Relates the amount of drug in the body to its plasma concentration",
+      "Measures the rate of renal clearance of the drug",
+      "Indicates the potency of the drug at its receptors"
     ],
     "correct_index": 1,
     "explanation": "Volume of Distribution (Vd) is a theoretical volume that relates the total amount of drug in the body to the plasma concentration (Vd = Amount in body / Plasma concentration).\n\nAdditional: in body to plasma concentration",
@@ -803,7 +803,7 @@
     "question_text": "The allegation method is used for:",
     "options": [
       "Mixing two solutions of different concentrations",
-      "Measuring pH",
+      "Measuring the pH of solutions",
       "Determining boiling point",
       "Calculating molecular weight"
     ],
@@ -836,10 +836,10 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Sieving is a method of:",
     "options": [
-      "Mixing",
+      "Mixing of powders",
       "Size separation",
       "Filtration",
-      "Drying"
+      "Drying of materials"
     ],
     "correct_index": 1,
     "explanation": "Sieving separates particles based on size using standard sieve series (Tyler/IP standards).\n\nNote: particle size analysis",
@@ -1161,7 +1161,7 @@
     "options": [
       "Total drug concentration",
       "Time required to reach maximum plasma concentration",
-      "Half-life of drug",
+      "The half-life of the drug",
       "Time for complete elimination"
     ],
     "correct_index": 1,
@@ -1212,8 +1212,8 @@
     "options": [
       "Loading dose and body weight",
       "Clearance rate and desired steady-state concentration",
-      "Only the half-life",
-      "Drug solubility"
+      "Only the half-life of the drug",
+      "The solubility of the drug in water"
     ],
     "correct_index": 1,
     "explanation": "Maintenance dose = (Css x Cl x tau) / F, based on clearance and desired steady-state concentration.",
@@ -1278,10 +1278,10 @@
     "unit_id": "pharm-i-unit-9",
     "question_text": "Isotonic solution has the same osmotic pressure as:",
     "options": [
-      "Distilled water",
-      "Blood plasma / body fluids",
-      "Pure ethanol",
-      "Concentrated盐水"
+      "Distilled water without any dissolved solutes",
+      "Blood plasma and other body fluids",
+      "Pure ethanol and other alcohols",
+      "A concentrated salt solution"
     ],
     "correct_index": 1,
     "explanation": "Isotonic solutions have the same osmotic pressure as body fluids (blood plasma, ~0.9% NaCl).",
@@ -1414,10 +1414,10 @@
     "unit_id": "pharm-i-unit-5",
     "question_text": "Simple distillation is used for:",
     "options": [
-      "Mixing two liquids",
-      "Separating liquids with widely",
-      "Separating solids",
-      "Measuring pH"
+      "Mixing two immiscible liquids into a uniform mixture",
+      "Separating liquids with widely different boiling points",
+      "Separating solid particles from a liquid by settling",
+      "Measuring the pH of the distillate that is collected"
     ],
     "correct_index": 1,
     "explanation": "Simple distillation separates liquids with boiling points differing by at least 25-30°C.\n\nAdditional: different boiling points",
@@ -1448,10 +1448,10 @@
     "unit_id": "pharm-i-unit-5",
     "question_text": "Vacuum distillation is used for:",
     "options": [
-      "High boiling point substances",
-      "Substances that decompose at",
-      "Small scale operations only",
-      "Mixing liquids"
+      "Substances that have very high boiling points",
+      "Substances that decompose at their atmospheric boiling point",
+      "Only small scale laboratory operations",
+      "Mixing two or more liquids together"
     ],
     "correct_index": 1,
     "explanation": "Vacuum distillation lowers the boiling point, allowing distillation of thermolabile substances at lower temperatures.\n\nAdditional: their atmospheric boiling point",
@@ -1485,7 +1485,7 @@
       "Movement of fluid particles",
       "Direct molecular transfer of heat through a material",
       "Radiation of heat waves",
-      "Convection currents"
+      "Movement of heat by convection currents"
     ],
     "correct_index": 1,
     "explanation": "Conduction is heat transfer through direct contact between molecules without bulk movement of material.",
@@ -1570,7 +1570,7 @@
       "Capsules only",
       "Aerosols and inhalants",
       "Suppositories",
-      "Lozenges"
+      "Lozenges for the throat"
     ],
     "correct_index": 1,
     "explanation": "Gaseous dosage forms include aerosols, inhalants, and medical gases for respiratory administration.",
@@ -1688,7 +1688,7 @@
     "options": [
       "Dry powder grinding",
       "Reducing particle size of suspensions",
-      "Sieving powders",
+      "Sieving of dry powders",
       "Sterilizing solutions"
     ],
     "correct_index": 1,
@@ -1790,8 +1790,8 @@
     "options": [
       "Mixing two powders",
       "Particle size analysis by sieving",
-      "Sterilization",
-      "Emulsification"
+      "Sterilization of equipment",
+      "Emulsification of oils"
     ],
     "correct_index": 1,
     "explanation": "Sieve shakers vibrate a stack of standard sieves to separate particles by size, used for particle size analysis.\n\nNote: determining particle size distribution",
@@ -1805,9 +1805,9 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Spray dryer is used for:",
     "options": [
-      "Milling only",
+      "Only milling of dry powders",
       "Converting liquid feed into dry powder",
-      "Filtration",
+      "Filtration of solutions",
       "Crystallization only"
     ],
     "correct_index": 1,
@@ -1841,8 +1841,8 @@
     "options": [
       "Particle size by sieving",
       "Specific surface area of fine powders",
-      "Melting point",
-      "pH of solutions"
+      "Melting point of powders",
+      "The pH of aqueous solutions"
     ],
     "correct_index": 1,
     "explanation": "Blaine air permeability apparatus measures specific surface area of fine powders (like cement, pharmaceutical powders) by air flow resistance.",
@@ -1856,10 +1856,10 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Percolation in pharmacy involves:",
     "options": [
-      "Filtration of solutions",
+      "Passing the solution through a filter paper",
       "Passage of solvent through a packed bed of drug powder",
-      "Distillation of liquids",
-      "Evaporation of solvents"
+      "Distillation of liquids at their boiling points",
+      "Evaporation of solvents by gentle heating"
     ],
     "correct_index": 1,
     "explanation": "Percolation involves continuous passage of solvent through a packed column of powdered crude drug to extract active constituents.\n\nAdditional: crude drug to extract soluble matter",
@@ -1873,10 +1873,10 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Maceration differs from percolation because:",
     "options": [
-      "Maceration uses pressure",
-      "Maceration involves soaking in closed",
-      "Maceration is faster",
-      "Maceration uses heat"
+      "Maceration uses pressure to speed up the extraction process",
+      "Maceration involves soaking in closed vessels at room temperature",
+      "Maceration is much faster than the percolation process",
+      "Maceration always uses heat during the extraction"
     ],
     "correct_index": 1,
     "explanation": "Maceration involves soaking the drug in solvent in a closed container for a period, while percolation uses continuous flow through the drug bed.\n\nAdditional: vessel without continuous solvent flow",
@@ -2062,8 +2062,8 @@
     "options": [
       "Flow immediately upon any shear",
       "Require a minimum yield stress before they start flowing",
-      "Have zero yield stress",
-      "Are always Newtonian"
+      "Have no yield stress at all and flow freely",
+      "Always behave as Newtonian fluids"
     ],
     "correct_index": 1,
     "explanation": "Bingham plastics (e.g., toothpaste, ointments) require a minimum applied stress (yield value) before they begin to flow.",
@@ -2094,10 +2094,10 @@
     "unit_id": "pharm-i-unit-6",
     "question_text": "Micelles are formed when surfactant concentration exceeds:",
     "options": [
-      "Any concentration",
+      "Any concentration of the surfactant",
       "Critical micelle concentration",
-      "Zero concentration",
-      "Half saturation"
+      "Zero concentration of the surfactant",
+      "Half of the saturation concentration"
     ],
     "correct_index": 1,
     "explanation": "At CMC, surfactant molecules spontaneously aggregate into micelles with hydrophilic heads facing outward and hydrophobic tails inward.\n\nNote: CMC",
@@ -2198,8 +2198,8 @@
     "options": [
       "Droplets merging to form larger droplets",
       "Droplets becoming smaller",
-      "Creaming only",
-      "Reversible separation"
+      "Only creaming of the emulsion",
+      "Reversible separation of the two phases"
     ],
     "correct_index": 0,
     "explanation": "Coalescence is the irreversible merging of small droplets into larger ones, eventually leading to complete phase separation (emulsion breaking).\n\nNote: irreversible breaking",
@@ -2264,10 +2264,10 @@
     "unit_id": "pharm-i-unit-7",
     "question_text": "Ear drops are:",
     "options": [
-      "Oral preparations",
-      "Liquid preparations for instillation",
-      "Eye preparations",
-      "Nasal preparations"
+      "Liquid preparations that are taken by mouth and swallowed",
+      "Liquid preparations for instillation into the ear canal",
+      "Sterile preparations for instillation into the eyes",
+      "Liquid preparations that are sprayed into the nasal passages"
     ],
     "correct_index": 1,
     "explanation": "Ear drops are sterile or non-sterile liquid preparations designed for instillation into the external auditory canal.\n\nAdditional: into the ear canal",
@@ -2587,10 +2587,10 @@
     "unit_id": "pharm-i-unit-9",
     "question_text": "Alligation alternate is used when:",
     "options": [
-      "Finding average concentration",
-      "Determining amounts of two ingredients of different",
-      "Calculating half-life",
-      "Measuring pH"
+      "Finding the average concentration of a mixture of many ingredients",
+      "Determining amounts of two ingredients of different strengths to get a desired strength",
+      "Calculating the half-life of a drug from its elimination rate",
+      "Measuring the pH of the resulting mixture"
     ],
     "correct_index": 1,
     "explanation": "Alligation alternate determines the proportions of two ingredients (one stronger, one weaker) needed to prepare a desired intermediate strength.\n\nAdditional: strengths needed to produce a desired concentration",
@@ -2740,10 +2740,10 @@
     "unit_id": "pharm-i-unit-3",
     "question_text": "Fluid energy mill (micronizer) produces:",
     "options": [
-      "Coarse particles",
-      "Ultrafine particles using",
-      "Tablets only",
-      "Capsules only"
+      "Coarse particles of large size",
+      "Ultrafine particles using high-velocity air jets",
+      "Only compressed tablets",
+      "Only hard gelatin capsules"
     ],
     "correct_index": 1,
     "explanation": "Fluid energy mill uses high-velocity compressed air to collide particles against each other, producing ultrafine particles.\n\nNote: 5-20 microns\n\nAdditional: high-velocity air jets",
@@ -2774,10 +2774,10 @@
     "unit_id": "pharm-i-unit-8",
     "question_text": "First-order drug release means:",
     "options": [
-      "Constant rate of release",
+      "Release at a constant rate that never changes over time",
       "Release rate proportional to the amount of drug remaining",
-      "No release",
-      "Only initial burst release"
+      "No release of the drug at any point in time",
+      "Only a sudden initial burst of release at the start"
     ],
     "correct_index": 1,
     "explanation": "First-order release: rate of release is proportional to the amount of drug remaining, producing an exponential decline.\n\nAdditional: remaining drug concentration",
@@ -2793,8 +2793,8 @@
     "options": [
       "Legal standards for drugs only",
       "Supplementary standards and monographs not covered in BP",
-      "Only veterinary drugs",
-      "Only herbal medicines"
+      "Standards for veterinary drugs only",
+      "Monographs for herbal medicines only"
     ],
     "correct_index": 1,
     "explanation": "BPC provides supplementary information to BP, including additional monographs, pharmaceutical data, and preparation details.",
@@ -2859,10 +2859,10 @@
     "unit_id": "pharm-i-unit-4",
     "question_text": "Lyophilization (freeze drying) is used to prepare:",
     "options": [
-      "Ointments",
+      "Ointments for external application",
       "Thermolabile parenteral preparations",
-      "Tablets only",
-      "Suppositories only"
+      "Tablets made only by direct compression",
+      "Suppositories that melt at body temperature"
     ],
     "correct_index": 1,
     "explanation": "Lyophilization removes water by sublimation under vacuum, preserving heat-sensitive materials like vaccines, antibiotics, and blood products.",
@@ -2879,7 +2879,7 @@
       "Rotation of the mill chamber only",
       "Cylinders rotating around a central axis with grinding balls",
       "Vibration of the grinding chamber only",
-      "Impact of falling balls only"
+      "Only the impact of balls falling under gravity"
     ],
     "correct_index": 1,
     "explanation": "Planetary ball mill has jars rotating on their own axis while orbiting a central axis, creating high-energy collisions for fine grinding.\n\nAdditional: on their own axis simultaneously",
@@ -3012,10 +3012,10 @@
     "unit_id": "pharm-i-unit-8",
     "question_text": "Enteric-coated tablets are designed to:",
     "options": [
-      "Dissolve in the stomach",
+      "Dissolve rapidly in the acidic stomach contents",
       "Resist stomach acid and dissolve in the alkaline intestine",
-      "Be absorbed through the cheek",
-      "Be given rectally"
+      "Be absorbed through the lining of the cheek",
+      "Be administered through the rectal route"
     ],
     "correct_index": 1,
     "explanation": "Enteric coatings (shellac, HPMCP, cellulose acetate phthalate) resist gastric acid and dissolve at intestinal pH, protecting drug or stomach.",
@@ -3184,8 +3184,8 @@
     "options": [
       "Always aqueous preparations",
       "Alcoholic or oily preparations rubbed into the skin",
-      "Oral preparations",
-      "Eye preparations"
+      "Preparations that are taken orally",
+      "Sterile preparations that are used in the eyes"
     ],
     "correct_index": 1,
     "explanation": "Liniments are medicated oily/alcoholic preparations applied by rubbing into the skin, acting as counter-irritants or rubefacients.\n\nAdditional: the skin for counter-irritant effect",
@@ -3233,10 +3233,10 @@
     "unit_id": "pharm-i-unit-6",
     "question_text": "Nernst diffusion layer (h) in dissolution is:",
     "options": [
-      "The entire vessel thickness",
+      "The entire thickness of the dissolution vessel wall",
       "A thin stagnant layer of liquid adjacent to the dissolving surface",
-      "The filter paper thickness",
-      "The container wall"
+      "The thickness of the filter paper used in sampling",
+      "The wall of the glass container itself"
     ],
     "correct_index": 1,
     "explanation": "The Nernst diffusion layer is a thin, stationary layer of solvent at the solid-liquid interface through which dissolved drug must diffuse.\n\nAdditional: solvent surrounding the dissolving particle",
@@ -3253,7 +3253,7 @@
       "Two drugs have different absorption rates",
       "Two formulations deliver the same rate and extent of drug absorption",
       "Two drugs are chemically identical",
-      "Two drugs have same price"
+      "The two drugs have exactly the same price"
     ],
     "correct_index": 1,
     "explanation": "Bioequivalence means two formulations (e.g., generic vs brand) deliver drug to the site of action at the same rate and extent.",
@@ -3265,12 +3265,12 @@
   },
   {
     "unit_id": "pharm-i-unit-3",
-    "question_text": "Cosseting in pharmaceutical manufacturing involves:",
+    "question_text": "Sugar coating in pharmaceutical manufacturing involves:",
     "options": [
-      "Final product testing",
+      "Final quality testing of the finished tablets",
       "Applying a thin coat of sugar or syrup to tablets",
-      "Packaging medicines",
-      "Labeling products"
+      "Packaging the tablets into blister packs",
+      "Printing labels for the medicine bottles"
     ],
     "correct_index": 1,
     "explanation": "Cosseting (coating) applies thin layers of sugar, film, or enteric coating onto granules, pellets, or tablet cores for protection or taste masking.\n\nAdditional: other substance onto granules or cores",
