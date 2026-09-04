@@ -134,6 +134,39 @@ export function pruneExpiredScratchKeys(): void {
   }
 }
 
+/**
+ * Unit ids actually covered by this device's saved quiz results for a
+ * subject. Returns null when there are no local results for that subject,
+ * so callers can fall back to an estimate (e.g. remote-only activity).
+ */
+export function getCoveredUnitIds(subject: string): Set<string> | null {
+  if (typeof window === "undefined") return null;
+  const covered = new Set<string>();
+  let found = false;
+  try {
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const key = window.localStorage.key(i);
+      if (!key || !key.startsWith(RESULTS_PREFIX)) continue;
+      const raw = safeGetItem(key);
+      if (!raw) continue;
+      try {
+        const data = JSON.parse(raw);
+        if (!data || !data.questions || !Array.isArray(data.questions)) continue;
+        if (data.config?.subject !== subject) continue;
+        found = true;
+        for (const q of data.questions) {
+          if (q && q.unitId) covered.add(q.unitId);
+        }
+      } catch {
+        // skip corrupt entry
+      }
+    }
+  } catch {
+    // ignore
+  }
+  return found ? covered : null;
+}
+
 function pruneOldestResults(count: number): boolean {
   if (typeof window === "undefined") return false;
   try {

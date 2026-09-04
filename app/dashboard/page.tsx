@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { subjects } from "@/data/subjects";
-import { safeSetItem } from "@/lib/storage";
+import { safeSetItem, getCoveredUnitIds } from "@/lib/storage";
 import {
   fetchUpcomingExams,
   formatCountdown,
@@ -365,8 +365,16 @@ export default function DashboardPage() {
         <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
           {subjects.map((subject) => {
             const breakdown = mounted ? s.subjectBreakdown[subject.slug] : null;
-            const unitsPracticed = breakdown ? Math.min(Math.ceil((breakdown.total / 10)), subject.units.length) : 0;
-            const accuracy = breakdown ? breakdown.accuracy : 0;
+            // Exact unit coverage from this device's saved quizzes; fall back
+            // to an estimate (~10 questions per unit) for remote-only activity.
+            const localUnits = breakdown ? getCoveredUnitIds(subject.slug) : null;
+            const unitsPracticed = breakdown
+              ? Math.min(
+                  localUnits ? localUnits.size : Math.ceil(breakdown.total / 10),
+                  subject.units.length
+                )
+              : 0;
+            const completion = subject.units.length > 0 ? Math.round((unitsPracticed / subject.units.length) * 100) : 0;
 
             return (
               <Link key={subject.id} href={"/subjects/" + subject.slug}>
@@ -378,9 +386,9 @@ export default function DashboardPage() {
                     </div>
                     <div className="flex items-center justify-between text-xs text-muted-foreground mb-1.5">
                       <span>{unitsPracticed}/{subject.units.length} units</span>
-                      <span>{accuracy}%</span>
+                      <span>{completion}%</span>
                     </div>
-                    <Progress value={accuracy} className="h-1.5" />
+                    <Progress value={completion} className="h-1.5" />
                   </CardContent>
                 </Card>
               </Link>
