@@ -2,8 +2,17 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { subjects } from "@/data/subjects";
+import { safeSetItem } from "@/lib/storage";
+import {
+  fetchUpcomingExams,
+  formatInKathmandu,
+  isExamLive,
+  scheduledMockConfig,
+  type MockExam,
+} from "@/lib/mock-exams";
 import { calculateStats } from "@/lib/stats";
 import type { UserStats } from "@/lib/stats";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
@@ -14,8 +23,10 @@ import {
   Flame,
   Brain,
   Play,
+  Timer,
   ArrowRight,
   ChevronRight,
+  Megaphone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,11 +34,57 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 export default function DashboardPage() {
-  const { user } = useAuth();
+  const { user, isAdmin } = useAuth();
+  const router = useRouter();
   const firstName = user?.name?.split(" ")[0] || "Student";
   const [stats, setStats] = useState<UserStats | null>(null);
   const [recent, setRecent] = useState<HistoryEntry[]>([]);
   const [mounted, setMounted] = useState(false);
+  const [exams, setExams] = useState<MockExam[]>([]);
+  const [now, setNow] = useState(() => new Date());
+
+  // Scheduled mock announcements. Fetch once (silently skips if the
+  // mock_exams table doesn't exist yet); tick every second while any
+  // upcoming/live exam is shown so the countdown stays alive.
+  useEffect(() => {
+    let alive = true;
+    fetchUpcomingExams().then((list) => {
+      if (alive) setExams(list);
+    });
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (exams.length === 0) return;
+    const t = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(t);
+  }, [exams.length]);
+
+  const countdownTo = (iso: string) => {
+    let diff = new Date(iso).getTime() - now.getTime();
+    if (diff <= 0) return "";
+    const d = Math.floor(diff / 86400000);
+    diff -= d * 86400000;
+    const h = Math.floor(diff / 3600000);
+    diff -= h * 3600000;
+    const m = Math.floor(diff / 60000);
+    diff -= m * 60000;
+    const s = Math.floor(diff / 1000);
+    if (d > 0) return `${d}d ${h}h ${m}m ${s}s`;
+    if (h > 0) return `${h}h ${m}m ${s}s`;
+    return `${m}m ${s}s`;
+  };
+
+  const startScheduled = (exam: MockExam) => {
+    const sessionId = crypto.randomUUID();
+    safeSetItem(
+      `quiz-config-${sessionId}`,
+      JSON.stringify(scheduledMockConfig(exam))
+    );
+    router.push(`/quiz/${sessionId}`);
+  };
 
   const refreshData = useCallback(async () => {
     if (!user) return;
@@ -114,6 +171,85 @@ export default function DashboardPage() {
         </p>
       </div>
 
+      {/* Scheduled mock announcement — shown when an exam is upcoming/live */}
+      {exams.length > 0 && (
+        <div className="mb-6 space-y-3">
+          {exams.map((exam) => {
+            const live = isExamLive(exam, now);
+            return (
+              <Card
+                key={exam.id}
+                className={
+                  live
+                    ? "border-green-500/50 bg-green-50 dark:bg-green-950/40"
+                    : "border-primary/40 bg-primary/5"
+                }
+              >
+                <CardContent className="flex flex-wrap items-center gap-3 p-4 sm:p-5">
+                  <div
+                    className={
+                      "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl " +
+                      (live
+                        ? "bg-green-600/15 text-green-600 dark:text-green-400"
+                        : "bg-primary/15 text-primary")
+                    }
+                  >
+                    <Megaphone className="h-5 w-5" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="font-semibold">
+                        {live
+                          ? "Mock Test is LIVE now!"
+                          : "Mock Test coming soon"}
+                      </p>
+                      {live ? (
+                        <Badge className="bg-green-600 text-white">● LIVE</Badge>
+                      ) : (
+                        <Badge variant="secondary">Scheduled</Badge>
+                      )}
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      {exam.title} · {formatInKathmandu(exam.starts_at, "short")}{" "}
+                      (Kathmandu) · {exam.duration_minutes} min
+                    </p>
+                    {!live && (
+                      <p className="mt-1 text-sm font-semibold tabular-nums text-primary">
+                        Starts in {countdownTo(exam.starts_at)}
+                      </p>
+                    )}
+                  </div>
+                  {live ? (
+                    <Button onClick={() => startScheduled(exam)}>
+                      <Play className="mr-1.5 h-4 w-4" />
+                      Start Exam Now
+                    </Button>
+                  ) : (
+                    <Link
+                      href="/mock-test"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                    >
+                      Details
+                      <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  )}
+                </CardContent>
+                {isAdmin && (
+                  <div className="px-4 pb-3 -mt-1">
+                    <Link
+                      href="/admin/mock-exams"
+                      className="text-xs text-muted-foreground hover:text-primary hover:underline"
+                    >
+                      Manage schedule →
+                    </Link>
+                  </div>
+                )}
+              </Card>
+            );
+          })}
+        </div>
+      )}
+
       {/* Start Quiz CTA — prominent, visible immediately */}
       <Link href="/quiz" className="block mb-6">
         <Card className="bg-primary text-primary-foreground transition-all hover:shadow-lg active:scale-[0.98] cursor-pointer">
@@ -126,6 +262,24 @@ export default function DashboardPage() {
               <p className="text-sm opacity-80">Choose a subject and begin</p>
             </div>
             <ArrowRight className="h-5 w-5 opacity-80" />
+          </CardContent>
+        </Card>
+      </Link>
+
+      {/* Mock Test CTA */}
+      <Link href="/mock-test" className="-mt-4 mb-6 block">
+        <Card className="cursor-pointer border-primary/30 bg-primary/5 transition-all hover:shadow-md active:scale-[0.98]">
+          <CardContent className="flex items-center gap-3 p-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
+              <Timer className="h-5 w-5" />
+            </div>
+            <div className="flex-1">
+              <p className="text-sm font-semibold">Take a Full Mock Test</p>
+              <p className="text-xs text-muted-foreground">
+                80 questions • 8 subjects • 80 min — exam-style, no negative marking
+              </p>
+            </div>
+            <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
           </CardContent>
         </Card>
       </Link>

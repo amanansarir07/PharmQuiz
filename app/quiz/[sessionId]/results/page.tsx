@@ -55,10 +55,34 @@ export default function QuizResultsPage({
   const displayScore = results ? (results.score ?? correct) : 0;
   const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
 
+  const isMock = results?.config?.mode === "mock";
+
+  // Contiguous subject blocks (mock papers are built subject-by-subject).
+  const subjectGroups =
+    results && isMock
+      ? (() => {
+          const groups: { slug: string; name: string; icon: string; start: number; count: number; correct: number }[] = [];
+          results.questions.forEach((q: any, i: number) => {
+            const slug = q.subjectSlug || "other";
+            const last = groups[groups.length - 1];
+            if (!last || last.slug !== slug) {
+              groups.push({ slug, name: q.subjectName || slug, icon: q.subjectIcon || "📘", start: i, count: 1, correct: results.answers[i]?.isCorrect ? 1 : 0 });
+            } else {
+              last.count += 1;
+              if (results.answers[i]?.isCorrect) last.correct += 1;
+            }
+          });
+          return groups;
+        })()
+      : [];
+
   const shareData = results
     ? (() => {
+        const cfgMock = results.config?.mode === "mock";
         const slug = results.config?.subject;
-        const subjectName = slug
+        const subjectName = cfgMock
+          ? results.config?.title || "Full Mock Test"
+          : slug
           ? getSubjectBySlug(slug)?.name ?? slug
           : "MCQ Practice";
         // Context line under the ring: questions • difficulty • timing
@@ -69,7 +93,9 @@ export default function QuizResultsPage({
             : "Mixed";
         const timing =
           cfg.timeLimit != null ? `${cfg.timeLimit} min limit` : "No time limit";
-        const metaLine = `${total} questions • ${difficultyLabel} • ${timing}`;
+        const metaLine = cfgMock
+          ? `${total} questions • 8 subjects • ${cfg.timeLimit ?? 80} min`
+          : `${total} questions • ${difficultyLabel} • ${timing}`;
         return {
           userName: user?.name,
           subjectName,
@@ -79,7 +105,7 @@ export default function QuizResultsPage({
           total,
           percentage,
           scoreNote:
-            results.score !== undefined && results.score !== correct
+            !cfgMock && results.score !== undefined && results.score !== correct
               ? `Final score ${displayScore}/${total} • negative marking`
               : null,
           metaLine,
@@ -128,6 +154,17 @@ export default function QuizResultsPage({
           <p className="mt-2 text-muted-foreground">
             Here&apos;s how you performed
           </p>
+          {isMock && (
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <Badge variant="secondary">
+                🎯 {results.config?.title ?? "Full Mock Test"}
+              </Badge>
+              <Badge variant="outline">8 subjects × 10 questions</Badge>
+              {results.timeTaken != null && (
+                <Badge variant="outline">⏱ {formatTime(results.timeTaken)}</Badge>
+              )}
+            </div>
+          )}
 
           <div className="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4 mb-4">
             <div className="rounded-xl bg-primary/5 p-3 sm:p-4 text-center">
@@ -166,6 +203,44 @@ export default function QuizResultsPage({
           )}
         </CardContent>
       </Card>
+
+      {/* Mock per-subject breakdown */}
+      {isMock && subjectGroups.length > 0 && (
+        <Card className="mb-6">
+          <CardContent className="p-5 sm:p-6">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-base font-semibold">Subject-wise Result</h2>
+              <Link href="/mock-test" className="text-xs text-primary hover:underline">
+                Take another
+              </Link>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {subjectGroups.map((g) => (
+                <div key={g.slug} className="rounded-xl border p-4">
+                  <div className="mb-2 flex items-center justify-between gap-2">
+                    <p className="flex min-w-0 items-center gap-2 text-sm font-medium">
+                      <span className="text-base">{g.icon}</span>
+                      <span className="truncate">{g.name}</span>
+                    </p>
+                    <span
+                      className={`shrink-0 text-sm font-bold ${
+                        g.correct >= 7
+                          ? "text-green-600 dark:text-green-400"
+                          : g.correct >= 5
+                          ? "text-yellow-600 dark:text-yellow-400"
+                          : "text-red-600 dark:text-red-400"
+                      }`}
+                    >
+                      {g.correct}/{g.count}
+                    </span>
+                  </div>
+                  <Progress value={(g.correct / g.count) * 100} className="h-1.5" />
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Action Buttons */}
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -244,11 +319,28 @@ export default function QuizResultsPage({
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Detailed Review</h2>
           {results.questions.map((q: any, i: number) => {
+            const isSectionStart =
+              isMock &&
+              i > 0 &&
+              results.questions[i - 1]?.subjectSlug !== q.subjectSlug;
+            const section = isSectionStart
+              ? subjectGroups.find((g) => g.start === i)
+              : null;
             const answer = results.answers[i];
             const isCorrect = answer.isCorrect;
             const wasSkipped = answer.selected === null;
 
             return (
+              <div key={i}>
+              {section && (
+                <h3 className="mt-6 mb-3 flex items-center gap-2 text-sm font-semibold text-primary">
+                  <span>{section.icon}</span>
+                  <span className="truncate">{section.name}</span>
+                  <Badge variant="outline" className="shrink-0">
+                    {section.correct}/{section.count} correct
+                  </Badge>
+                </h3>
+              )}
               <Card
                 key={i}
                 className={`border-l-4 ${
@@ -309,6 +401,7 @@ export default function QuizResultsPage({
                   </div>
                 </CardContent>
               </Card>
+              </div>
             );
           })}
         </div>

@@ -21,6 +21,7 @@ import {
   Gauge,
   CheckSquare,
   BookOpen,
+  Timer,
 } from "lucide-react";
 
 function QuizSetupInner() {
@@ -115,6 +116,26 @@ function QuizSetupInner() {
       </div>
 
       <div className="space-y-6">
+        {/* Mock Test Banner */}
+        <Card className="border-primary/30 bg-primary/5">
+          <CardContent className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                <Timer className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="font-semibold">Full Mock Test</p>
+                <p className="text-xs text-muted-foreground">
+                  80 questions • 8 subjects • 80 minutes • no negative marking
+                </p>
+              </div>
+            </div>
+            <Button onClick={() => router.push("/mock-test")} className="shrink-0">
+              Start Mock Test
+            </Button>
+          </CardContent>
+        </Card>
+
         {/* Subject Selection */}
         <Card>
           <CardHeader>

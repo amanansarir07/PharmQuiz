@@ -7,6 +7,7 @@ import bioMicroQuestions from "@/data/questions/biochemistry-microbiology.json";
 import pharmacotherapeuticsQuestions from "@/data/questions/pharmacotherapeutics-i.json";
 import managementQuestions from "@/data/questions/pharmaceutical-management.json";
 import publicHealthQuestions from "@/data/questions/public-health-pharmacy.json";
+import { subjects } from "@/data/subjects";
 
 const allQuestionsBySubject: Record<string, any[]> = {
   "pharmaceutics-i": pharmaceuticsQuestions,
@@ -27,6 +28,9 @@ export interface QuizQuestion {
   explanation: string;
   difficulty: string;
   unitId: string;
+  subjectSlug?: string;
+  subjectName?: string;
+  subjectIcon?: string;
 }
 
 export function getQuestionsForQuiz(
@@ -141,6 +145,67 @@ export function getQuestionCount(): number {
     (acc, q) => acc + q.length,
     0
   );
+}
+
+export interface MockSubjectSpec {
+  slug: string;
+  name: string;
+  icon: string;
+}
+
+/**
+ * Build a full mock-test paper: `perSubject` questions drawn at random from
+ * each of the 8 subjects, grouped subject-by-subject in syllabus order.
+ * Each returned question carries its subject so the UI can label sections.
+ */
+export function getMockQuestions(perSubject = 10): QuizQuestion[] {
+  const out: QuizQuestion[] = [];
+  const stamp = Date.now();
+  for (const s of subjects) {
+    const bank = allQuestionsBySubject[s.slug] || [];
+    if (bank.length === 0) continue;
+
+    const unitIds = new Set(s.units.map((u) => u.id));
+    let pool = bank.filter((q) => q.unit_id && unitIds.has(q.unit_id));
+    if (pool.length < perSubject) {
+      const seen = new Set(pool.map((q) => q.question_text));
+      const rest = bank.filter((q) => !seen.has(q.question_text));
+      pool = pool.concat(rest);
+    }
+    if (pool.length === 0) continue;
+
+    // Fisher–Yates shuffle
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+
+    pool.slice(0, perSubject).forEach((q, k) => {
+      const options = normalizeOptions(q);
+      const correctIndex = getCorrectIndex(q);
+      const shuffled = [...options];
+      let newCorrectIndex = correctIndex;
+      for (let j = shuffled.length - 1; j > 0; j--) {
+        const m = Math.floor(Math.random() * (j + 1));
+        [shuffled[j], shuffled[m]] = [shuffled[m], shuffled[j]];
+        if (j === newCorrectIndex) newCorrectIndex = m;
+        else if (m === newCorrectIndex) newCorrectIndex = j;
+      }
+      out.push({
+        id: `${s.slug}-mock-${stamp}-${k}-${Math.floor(Math.random() * 1e6)}`,
+        question: q.question_text,
+        options: shuffled,
+        correctIndex: newCorrectIndex,
+        explanation: q.explanation || "",
+        difficulty: q.difficulty || "medium",
+        unitId: q.unit_id || "",
+        subjectSlug: s.slug,
+        subjectName: s.name,
+        subjectIcon: s.icon,
+      });
+    });
+  }
+  return out;
 }
 
 /**

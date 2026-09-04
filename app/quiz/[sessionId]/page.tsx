@@ -6,7 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { getQuestionsForQuiz, type QuizQuestion } from "@/lib/quiz-loader";
+import {
+  getQuestionsForQuiz,
+  getMockQuestions,
+  type QuizQuestion,
+} from "@/lib/quiz-loader";
 import { supabase } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth";
 import {
@@ -22,6 +26,8 @@ import {
   ChevronRight,
   Flag,
   Send,
+  Eraser,
+  LayoutGrid,
   AlertTriangle,
 } from "lucide-react";
 
@@ -36,6 +42,7 @@ export default function ActiveQuizPage({
   const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [markedForReview, setMarkedForReview] = useState<Set<number>>(new Set());
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
+  const [showPalette, setShowPalette] = useState(false);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [quizConfig, setQuizConfig] = useState<any>(null);
@@ -46,6 +53,7 @@ export default function ActiveQuizPage({
   const timeLeftRef = useRef<number | null>(null);
   const submitRef = useRef<() => void>(() => {});
   const { user } = useAuth();
+  const isMock = quizConfig?.mode === "mock";
 
   useEffect(() => {
     pruneExpiredScratchKeys();
@@ -63,13 +71,31 @@ export default function ActiveQuizPage({
     if (stored) {
       const config = JSON.parse(stored);
       setQuizConfig(config);
-      const qs = getQuestionsForQuiz(
-        config.subject,
-        config.units || [],
-        config.difficulty || "mixed",
-        config.numQuestions || 20
-      );
-      const finalQs = qs.length > 0 ? qs : getFallbackQuestions();
+      let finalQs: QuizQuestion[] = [];
+      if (config.mode === "mock") {
+        // A mock paper must stay identical across refreshes so crash-resume
+        // keeps the same 80 questions. Snapshot the first generated set.
+        const snapshot = safeGetItem(`quiz-questions-${sessionId}`);
+        if (snapshot) {
+          try {
+            finalQs = JSON.parse(snapshot);
+          } catch {
+            finalQs = [];
+          }
+        }
+        if (finalQs.length === 0) {
+          finalQs = getMockQuestions();
+          safeSetItem(`quiz-questions-${sessionId}`, JSON.stringify(finalQs));
+        }
+      } else {
+        finalQs = getQuestionsForQuiz(
+          config.subject,
+          config.units || [],
+          config.difficulty || "mixed",
+          config.numQuestions || 20
+        );
+      }
+      if (finalQs.length === 0) finalQs = getFallbackQuestions();
       setQuestions(finalQs);
 
       // Try to restore saved progress (crash recovery)
@@ -172,8 +198,9 @@ export default function ActiveQuizPage({
           console.warn("Local quiz result save failed:", err);
         }
 
-        // Save to Supabase for shared stats/leaderboard (non-blocking, best-effort)
-        if (user) {
+        // Mock tests stay out of per-subject stats/leaderboards so
+        // 10-question mock rows can't inflate a subject board unfairly.
+        if (quizConfig?.mode !== "mock" && user) {
           try {
             const { error: rpcError } = await supabase.rpc("save_quiz_result", {
               p_user_id: user.id,
@@ -204,8 +231,9 @@ export default function ActiveQuizPage({
           }
         }
 
-        // Clear saved progress
+        // Clear saved progress and the mock paper snapshot
         safeRemoveItem(`quiz-progress-${sessionId}`);
+        safeRemoveItem(`quiz-questions-${sessionId}`);
         // replace() so the Back button can't return to this page and re-submit
         router.replace(`/quiz/${sessionId}/results`);
       } catch (err) {
@@ -256,6 +284,15 @@ export default function ActiveQuizPage({
     }
   };
 
+  const handleClear = () => {
+    setAnswers((prev) => {
+      const next = [...prev];
+      next[currentIndex] = null;
+      return next;
+    });
+    setShowExplanation(false);
+  };
+
   // Reset explanation when navigating
   useEffect(() => {
     setShowExplanation(false);
@@ -301,6 +338,11 @@ export default function ActiveQuizPage({
   const currentQuestion = questions[currentIndex];
   const answeredCount = answers.filter((a) => a !== null).length;
   const progress = (answeredCount / questions.length) * 100;
+  const answeredMarkedCount = answers.reduce<number>(
+    (acc, a, i) => acc + (a !== null && markedForReview.has(i) ? 1 : 0),
+    0
+  );
+  const markedOnlyCount = markedForReview.size - answeredMarkedCount;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
@@ -314,13 +356,37 @@ export default function ActiveQuizPage({
 
       {/* Top Bar */}
       <div className="mb-6 flex items-center justify-between gap-4 flex-wrap">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
           <h1 className="text-lg font-semibold">
-            Question {currentIndex + 1} / {questions.length}
+            {isMock ? "Mock Test" : "MCQ"} {currentIndex + 1} / {questions.length}
           </h1>
-          <Badge variant="outline">{currentQuestion.difficulty}</Badge>
+          {isMock && currentQuestion.subjectName ? (
+            <Badge variant="secondary" className="gap-1">
+              <span>{currentQuestion.subjectIcon}</span>
+              {currentQuestion.subjectName}
+            </Badge>
+          ) : (
+            <Badge variant="outline">{currentQuestion.difficulty}</Badge>
+          )}
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+          <Button
+            variant="outline"
+            size="sm"
+            className="lg:hidden"
+            onClick={() => setShowPalette((s) => !s)}
+          >
+            <LayoutGrid className="mr-1 h-4 w-4" />
+            {showPalette ? "Hide" : "Questions"}
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowSubmitConfirm(true)}
+          >
+            <Send className="mr-1 h-4 w-4" />
+            Finish
+          </Button>
           <div className="flex items-center gap-2 text-sm">
             <div className="h-2 w-2 rounded-full bg-green-500" />
             {answeredCount} answered
@@ -397,11 +463,17 @@ export default function ActiveQuizPage({
           </Card>
 
           {/* Navigation */}
-          <div className="mt-4 flex items-center justify-between">
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
             <Button variant="outline" onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))} disabled={currentIndex === 0}>
               <ChevronLeft className="mr-1 h-4 w-4" />
               Previous
             </Button>
+            {answers[currentIndex] !== null && (
+              <Button variant="ghost" size="sm" onClick={handleClear} className="text-muted-foreground">
+                <Eraser className="mr-1 h-4 w-4" />
+                Clear Response
+              </Button>
+            )}
             <Button variant="outline" onClick={toggleMark}>
               <Flag className="mr-1 h-4 w-4" />
               {markedForReview.has(currentIndex) ? "Unmark" : "Mark for Review"}
@@ -409,7 +481,7 @@ export default function ActiveQuizPage({
             {currentIndex === questions.length - 1 ? (
               <Button onClick={() => setShowSubmitConfirm(true)}>
                 <Send className="mr-1 h-4 w-4" />
-                Submit MCQs
+                {isMock ? "Finish Mock Test" : "Submit MCQs"}
               </Button>
             ) : (
               <Button onClick={() => setCurrentIndex((i) => Math.min(questions.length - 1, i + 1))}>
@@ -418,6 +490,55 @@ export default function ActiveQuizPage({
               </Button>
             )}
           </div>
+          {/* Mobile question palette (toggled from the header) */}
+          {showPalette && (
+            <div className="mt-4 lg:hidden">
+              <Card>
+                <CardContent className="p-4">
+                  <p className="mb-3 text-sm font-medium">Question Palette</p>
+                  <div className="grid grid-cols-5 gap-2 sm:grid-cols-10">
+                    {questions.map((_: any, i: number) => {
+                      let colorClass = "bg-muted hover:bg-muted/80";
+                      if (answers[i] !== null) colorClass = "bg-green-500 text-white";
+                      if (markedForReview.has(i)) colorClass = "bg-yellow-500 text-white";
+                      if (answers[i] !== null && markedForReview.has(i)) colorClass = "bg-blue-500 text-white";
+                      return (
+                        <button
+                          key={i}
+                          onClick={() => setCurrentIndex(i)}
+                          className={`flex h-9 w-9 items-center justify-center rounded-lg text-xs font-medium transition-all ${
+                            currentIndex === i
+                              ? "ring-2 ring-primary ring-offset-2 " + colorClass
+                              : colorClass
+                          }`}
+                        >
+                          {i + 1}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="mt-4 space-y-2 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <span className="h-3 w-3 rounded bg-green-500" />
+                      Answered ({answeredCount})
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="h-3 w-3 rounded bg-blue-500" />
+                      Answered &amp; marked ({answeredMarkedCount})
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="h-3 w-3 rounded bg-yellow-500" />
+                      Marked for review ({markedOnlyCount})
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="h-3 w-3 rounded bg-muted" />
+                      Unanswered ({questions.length - answeredCount})
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
         </div>
 
         {/* Question Palette */}
@@ -452,19 +573,23 @@ export default function ActiveQuizPage({
                   Answered ({answeredCount})
                 </div>
                 <div className="flex items-center gap-2">
+                  <span className="h-3 w-3 rounded bg-blue-500" />
+                  Answered &amp; marked ({answeredMarkedCount})
+                </div>
+                <div className="flex items-center gap-2">
                   <span className="h-3 w-3 rounded bg-yellow-500" />
-                  Marked ({markedForReview.size})
+                  Marked for review ({markedOnlyCount})
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="h-3 w-3 rounded bg-muted" />
-                  Not visited ({questions.length - answeredCount})
+                  Unanswered ({questions.length - answeredCount})
                 </div>
               </div>
             </CardContent>
           </Card>
           <Button className="mt-4 w-full" onClick={() => setShowSubmitConfirm(true)}>
             <Send className="mr-2 h-4 w-4" />
-            Submit Quiz
+            {isMock ? "Submit Mock Test" : "Submit Quiz"}
           </Button>
         </div>
       </div>
@@ -476,7 +601,9 @@ export default function ActiveQuizPage({
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="h-6 w-6 text-yellow-500" />
-                <h2 className="text-lg font-semibold">Submit MCQs?</h2>
+                <h2 className="text-lg font-semibold">
+                  {isMock ? "Finish Mock Test?" : "Submit MCQs?"}
+                </h2>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
                 You have answered {answeredCount} out of {questions.length} questions.
@@ -486,9 +613,14 @@ export default function ActiveQuizPage({
                   ⚠️ {questions.length - answeredCount} questions are unanswered.
                 </p>
               )}
+              {markedForReview.size > 0 && (
+                <p className="text-sm text-blue-600 dark:text-blue-400 mb-4">
+                  📌 {markedForReview.size} question(s) marked for review.
+                </p>
+              )}
               <div className="flex gap-3 justify-end">
                 <Button variant="outline" onClick={() => setShowSubmitConfirm(false)}>
-                  Continue MCQs
+                  {isMock ? "Continue Test" : "Continue MCQs"}
                 </Button>
                 <Button onClick={handleSubmit} disabled={submittingRef.current}>
                   {submittingRef.current ? "Submitting..." : "Confirm Submit"}
