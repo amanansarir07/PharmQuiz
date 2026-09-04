@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { ShareResultDialog } from "@/components/share-result-dialog";
+import { useAuth } from "@/lib/auth";
+import { getSubjectBySlug } from "@/data/subjects";
 import {
   Trophy,
   CheckCircle,
@@ -14,6 +17,7 @@ import {
   Clock,
   RotateCcw,
   BookOpen,
+  Share2,
 } from "lucide-react";
 
 export default function QuizResultsPage({
@@ -23,8 +27,10 @@ export default function QuizResultsPage({
 }) {
   const { sessionId } = use(params);
   const router = useRouter();
+  const { user } = useAuth();
   const [results, setResults] = useState<any>(null);
   const [showAnswers, setShowAnswers] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(`quiz-results-${sessionId}`);
@@ -32,6 +38,54 @@ export default function QuizResultsPage({
       setResults(JSON.parse(stored));
     }
   }, [sessionId]);
+
+  // All derivations stay above the early return so hook order never changes.
+  const correct = results
+    ? results.answers.filter((a: any) => a.isCorrect).length
+    : 0;
+  const incorrect = results
+    ? results.answers.filter((a: any) => !a.isCorrect && a.selected !== null)
+        .length
+    : 0;
+  const unattempted = results
+    ? results.answers.filter((a: any) => a.selected === null).length
+    : 0;
+  const total = results ? results.questions.length : 0;
+  // Use score from saved results if available (accounts for negative marking)
+  const displayScore = results ? (results.score ?? correct) : 0;
+  const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+  const shareData = results
+    ? (() => {
+        const slug = results.config?.subject;
+        const subjectName = slug
+          ? getSubjectBySlug(slug)?.name ?? slug
+          : "MCQ Practice";
+        // Context line under the ring: questions • difficulty • timing
+        const cfg = results.config || {};
+        const difficultyLabel =
+          cfg.difficulty && cfg.difficulty !== "mixed"
+            ? cfg.difficulty.charAt(0).toUpperCase() + cfg.difficulty.slice(1)
+            : "Mixed";
+        const timing =
+          cfg.timeLimit != null ? `${cfg.timeLimit} min limit` : "No time limit";
+        const metaLine = `${total} questions • ${difficultyLabel} • ${timing}`;
+        return {
+          userName: user?.name,
+          subjectName,
+          correct,
+          incorrect,
+          unattempted,
+          total,
+          percentage,
+          scoreNote:
+            results.score !== undefined && results.score !== correct
+              ? `Final score ${displayScore}/${total} • negative marking`
+              : null,
+          metaLine,
+        };
+      })()
+    : null;
 
   if (!results) {
     return (
@@ -45,18 +99,6 @@ export default function QuizResultsPage({
       </div>
     );
   }
-
-  const correct = results.answers.filter((a: any) => a.isCorrect).length;
-  const incorrect = results.answers.filter(
-    (a: any) => !a.isCorrect && a.selected !== null
-  ).length;
-  const unattempted = results.answers.filter(
-    (a: any) => a.selected === null
-  ).length;
-  const total = results.questions.length;
-  // Use score from saved results if available (accounts for negative marking)
-  const displayScore = results.score ?? correct;
-  const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
 
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60);
@@ -126,8 +168,16 @@ export default function QuizResultsPage({
       </Card>
 
       {/* Action Buttons */}
-      <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+      <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Button
+          className="flex-1"
+          onClick={() => setShareOpen(true)}
+        >
+          <Share2 className="mr-2 h-4 w-4" />
+          Share Result
+        </Button>
+        <Button
+          variant="outline"
           className="flex-1"
           onClick={() => {
             // Retake: create new session with same config
@@ -142,7 +192,7 @@ export default function QuizResultsPage({
           }}
         >
           <RotateCcw className="mr-2 h-4 w-4" />
-          Retake Same Quiz
+          Retake
         </Button>
         <Link href="/quiz" className="flex-1">
           <Button variant="outline" className="w-full">
@@ -155,9 +205,17 @@ export default function QuizResultsPage({
           className="flex-1"
           onClick={() => setShowAnswers(!showAnswers)}
         >
-          {showAnswers ? "Hide" : "Show"} Detailed Review
+          {showAnswers ? "Hide" : "Show"} Review
         </Button>
       </div>
+
+      {shareData && (
+        <ShareResultDialog
+          open={shareOpen}
+          onOpenChange={setShareOpen}
+          data={shareData}
+        />
+      )}
 
       {/* Quick Summary */}
       {!showAnswers && incorrect > 0 && (
