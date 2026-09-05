@@ -1,18 +1,20 @@
 -- Fair Leaderboard System with 4 time periods
 -- Run this in Supabase SQL Editor
 
--- Helper function to get period start
+-- Helper function to get period start.
+-- All periods follow Asia/Kathmandu (Nepal, UTC+5:45) so the daily board
+-- resets at Nepal midnight (00:00 IST/NPT), not UTC midnight.
 create or replace function get_period_start(period text)
 returns timestamptz
 language sql
 stable
 as $$
   select case period
-    when 'daily' then date_trunc('day', now())
-    when 'weekly' then date_trunc('week', now())::timestamptz
-    when 'monthly' then date_trunc('month', now())::timestamptz
+    when 'daily' then date_trunc('day', now() at time zone 'Asia/Kathmandu') at time zone 'Asia/Kathmandu'
+    when 'weekly' then date_trunc('week', now() at time zone 'Asia/Kathmandu') at time zone 'Asia/Kathmandu'
+    when 'monthly' then date_trunc('month', now() at time zone 'Asia/Kathmandu') at time zone 'Asia/Kathmandu'
     when 'all_time' then '1970-01-01'::timestamptz
-    else date_trunc('day', now())
+    else date_trunc('day', now() at time zone 'Asia/Kathmandu') at time zone 'Asia/Kathmandu'
   end;
 $$;
 
@@ -79,24 +81,25 @@ begin
   ),
   ranked as (
     select
-      p.id as user_id,
-      p.name,
-      p.email,
-      coalesce(us.quizzes_taken, 0) as quizzes_taken,
-      coalesce(us.total_correct, 0) as total_correct,
-      coalesce(us.total_attempted, 0) as total_attempted,
-      coalesce(us.overall_accuracy, 0) as accuracy,
-      coalesce(us.avg_accuracy, 0) as avg_accuracy,
+      us.user_id,
+      coalesce(nullif(p.name, ''), nullif(au.raw_user_meta_data ->> 'name', ''), split_part(au.email, '@', 1), 'User') as name,
+      au.email,
+      us.quizzes_taken,
+      us.total_correct,
+      us.total_attempted,
+      us.overall_accuracy as accuracy,
+      us.avg_accuracy,
       -- Score: weight by accuracy and volume (fair ranking)
       round(
-        (coalesce(us.total_correct, 0)::numeric * 0.7) +
-        (coalesce(us.overall_accuracy, 0)::numeric * 0.3) +
-        (least(coalesce(us.quizzes_taken, 0)::numeric / v_min_quizzes, 1) * 10)
+        (us.total_correct::numeric * 0.7) +
+        (us.overall_accuracy::numeric * 0.3) +
+        (least(us.quizzes_taken::numeric / v_min_quizzes, 1) * 10)
       , 2) as score,
-      case when coalesce(us.quizzes_taken, 0) >= v_min_quizzes then true else false end as qualified,
-      greatest(v_min_quizzes - coalesce(us.quizzes_taken, 0), 0) as quizzes_needed
-    from public.profiles p
-    left join user_stats us on p.id = us.user_id
+      case when us.quizzes_taken >= v_min_quizzes then true else false end as qualified,
+      greatest(v_min_quizzes - us.quizzes_taken, 0) as quizzes_needed
+    from user_stats us
+    left join public.profiles p on p.id = us.user_id
+    left join auth.users au on au.id = us.user_id
   )
   select
     row_number() over (order by
@@ -168,31 +171,29 @@ begin
   ),
   ranked as (
     select
-      p.id as user_id,
-      coalesce(us.quizzes_taken, 0) as quizzes_taken,
-      coalesce(us.total_correct, 0) as total_correct,
-      coalesce(us.overall_accuracy, 0) as accuracy,
-      case when coalesce(us.quizzes_taken, 0) >= v_min_quizzes then true else false end as qualified,
-      greatest(v_min_quizzes - coalesce(us.quizzes_taken, 0), 0) as quizzes_needed,
+      us.user_id,
+      us.quizzes_taken,
+      us.total_correct,
+      us.overall_accuracy as accuracy,
+      case when us.quizzes_taken >= v_min_quizzes then true else false end as qualified,
+      greatest(v_min_quizzes - us.quizzes_taken, 0) as quizzes_needed,
       round(
-        (coalesce(us.total_correct, 0)::numeric * 0.7) +
-        (coalesce(us.overall_accuracy, 0)::numeric * 0.3) +
-        (least(coalesce(us.quizzes_taken, 0)::numeric / v_min_quizzes, 1) * 10)
+        (us.total_correct::numeric * 0.7) +
+        (us.overall_accuracy::numeric * 0.3) +
+        (least(us.quizzes_taken::numeric / v_min_quizzes, 1) * 10)
       , 2) as score,
       row_number() over (order by
-        case when coalesce(us.quizzes_taken, 0) >= v_min_quizzes then 1 else 2 end,
+        case when us.quizzes_taken >= v_min_quizzes then 1 else 2 end,
         round(
-          (coalesce(us.total_correct, 0)::numeric * 0.7) +
-          (coalesce(us.overall_accuracy, 0)::numeric * 0.3) +
-          (least(coalesce(us.quizzes_taken, 0)::numeric / v_min_quizzes, 1) * 10)
+          (us.total_correct::numeric * 0.7) +
+          (us.overall_accuracy::numeric * 0.3) +
+          (least(us.quizzes_taken::numeric / v_min_quizzes, 1) * 10)
         , 2) desc,
-        coalesce(us.overall_accuracy, 0) desc,
-        coalesce(us.quizzes_taken, 0) desc
+        us.overall_accuracy desc,
+        us.quizzes_taken desc
       )::int as rank,
       count(*) over ()::int as total_participants
-    from public.profiles p
-    left join user_stats us on p.id = us.user_id
-    where coalesce(us.quizzes_taken, 0) > 0
+    from user_stats us
   )
   select
     ranked.rank,

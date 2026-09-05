@@ -102,6 +102,11 @@ export default function LeaderboardPage() {
   const podiumOrder = [top3.find((e) => e.rank === 2), top3.find((e) => e.rank === 1), top3.find((e) => e.rank === 3)].filter(Boolean) as LeaderboardEntry[];
   const podiumRanks = [2, 1, 3]; // visual order: left, center, right
 
+  // Podium needs all 3 spots filled; with fewer than 3 ranked users, fall back
+  // to showing everyone as plain list rows (otherwise a lone #1 would render nothing).
+  const showPodium = podiumOrder.length >= 3;
+  const listEntries = showPodium ? rest : entries;
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       {/* Header */}
@@ -168,7 +173,7 @@ export default function LeaderboardPage() {
       ) : (
         <>
           {/* Top 3 Podium */}
-          {podiumOrder.length >= 3 && (
+          {showPodium && (
             <div className="mb-8 flex items-end justify-center gap-2 sm:gap-4">
               {podiumOrder.map((entry, visualIdx) => {
                 const rank = podiumRanks[visualIdx];
@@ -209,9 +214,9 @@ export default function LeaderboardPage() {
           )}
 
           {/* Rest of entries */}
-          {rest.length > 0 && (
+          {listEntries.length > 0 && (
             <div className="rounded-xl border divide-y overflow-hidden">
-              {rest.map((entry) => {
+              {listEntries.map((entry) => {
                 const isMe = user?.id === entry.user_id;
                 return (
                   <div
