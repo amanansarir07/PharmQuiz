@@ -2,11 +2,43 @@
 // Backed by the `mock_exams` table (see supabase/migrations/005_mock_exams.sql).
 // All date math treats Kathmandu (Asia/Kathmandu, UTC+05:45, no DST) as the
 // single source of truth for scheduling and display.
+import { DEFAULT_PROGRAM_SLUG, getSubjectsForProgram } from "@/data/registry";
 import { getSupabase } from "@/lib/supabase/client";
+
+/** Questions drawn per subject in a full mock paper. */
+export const MOCK_QUESTIONS_PER_SUBJECT = 10;
+
+/** How many subjects a programme's mock paper covers. */
+export function getMockSubjectCount(
+  programSlug: string = DEFAULT_PROGRAM_SLUG
+): number {
+  return getSubjectsForProgram(programSlug).length;
+}
+
+/** Total questions in a full mock paper for a programme. */
+export function getMockQuestionCount(
+  programSlug: string = DEFAULT_PROGRAM_SLUG
+): number {
+  return getMockSubjectCount(programSlug) * MOCK_QUESTIONS_PER_SUBJECT;
+}
+
+/**
+ * Minutes a full mock paper runs for. One minute per question, which is what
+ * the 8-subject D.Pharm Y2 paper has always used (80 questions → 80 minutes).
+ * Derived rather than hard-coded so a programme with a different number of
+ * subjects doesn't inherit a paper length it can't fill.
+ */
+export function getMockDurationMinutes(
+  programSlug: string = DEFAULT_PROGRAM_SLUG
+): number {
+  return getMockQuestionCount(programSlug);
+}
 
 export interface MockExam {
   id: string;
   title: string;
+  /** Programme this paper is for. Null only on rows written before 008. */
+  program_slug?: string | null;
   starts_at: string;
   ends_at: string;
   duration_minutes: number;
@@ -21,7 +53,10 @@ const NEPAL_OFFSET_MS = (5 * 60 + 45) * 60 * 1000; // +05:45
  * timer runs from join-time but is capped at the exam window so a late joiner
  * doesn't finish long after everyone else.
  */
-export function scheduledMockConfig(exam: MockExam): Record<string, unknown> {
+export function scheduledMockConfig(
+  exam: MockExam,
+  programSlug: string = exam.program_slug || DEFAULT_PROGRAM_SLUG
+): Record<string, unknown> {
   const windowMs = new Date(exam.ends_at).getTime() - Date.now();
   const timeLimit = Math.max(
     1,
@@ -29,8 +64,9 @@ export function scheduledMockConfig(exam: MockExam): Record<string, unknown> {
   );
   return {
     mode: "mock",
+    program: programSlug,
     difficulty: "mixed",
-    numQuestions: 10 * 8, // 8 subjects x 10 questions
+    numQuestions: getMockQuestionCount(programSlug),
     timeLimit,
     negativeMarking: false,
     revisionMode: false,
@@ -139,15 +175,34 @@ export function isExamOver(exam: MockExam, now = new Date()): boolean {
 
 /**
  * Fetch scheduled mocks that haven't ended yet, soonest first.
+ *
+ * `programSlug` restricts the list to that programme's papers. On a
+ * deployment that hasn't run migration 008 the `program_slug` column (and its
+ * filter) doesn't exist, so the filtered query fails and we fall back to the
+ * unfiltered list — the way the page behaved before programmes existed.
  * Errors (e.g. table not created yet) resolve to [] so the UI never breaks.
  */
-export async function fetchUpcomingExams(): Promise<MockExam[]> {
+export async function fetchUpcomingExams(
+  programSlug?: string
+): Promise<MockExam[]> {
   try {
-    const { data, error } = await getSupabase()
-      .from("mock_exams")
-      .select("*")
-      .gt("ends_at", new Date().toISOString())
-      .order("starts_at", { ascending: true });
+    const client = getSupabase();
+    const upcoming = () =>
+      client
+        .from("mock_exams")
+        .select("*")
+        .gt("ends_at", new Date().toISOString())
+        .order("starts_at", { ascending: true });
+
+    if (programSlug) {
+      const { data, error } = await upcoming().eq(
+        "program_slug",
+        programSlug
+      );
+      if (!error) return (data || []) as MockExam[];
+    }
+
+    const { data, error } = await upcoming();
     if (error) {
       console.warn("fetchUpcomingExams:", error.message);
       return [];
@@ -160,33 +215,60 @@ export async function fetchUpcomingExams(): Promise<MockExam[]> {
 }
 
 /** Admin: fetch every scheduled exam, soonest first (past included). */
-export async function fetchAllExams(): Promise<MockExam[]> {
-  const { data, error } = await getSupabase()
-    .from("mock_exams")
-    .select("*")
-    .order("starts_at", { ascending: true });
+export async function fetchAllExams(
+  programSlug?: string
+): Promise<MockExam[]> {
+  const client = getSupabase();
+  const all = () =>
+    client.from("mock_exams").select("*").order("starts_at", { ascending: true });
+
+  if (programSlug) {
+    const { data, error } = await all().eq("program_slug", programSlug);
+    if (!error) return (data || []) as MockExam[];
+  }
+
+  const { data, error } = await all();
   if (error) throw new Error(error.message);
   return (data || []) as MockExam[];
 }
 
-/** Admin: create a scheduled mock. `startsAtIso` is a Nepal wall-clock string. */
+/**
+ * Admin: create a scheduled mock. `startsAt` is a Nepal wall-clock string.
+ *
+ * The programme column is attempted first and dropped on error, so an admin
+ * can still schedule on a deployment that hasn't run migration 008 (the row
+ * then counts as the default programme).
+ */
 export async function createMockExam(input: {
   title: string;
   startsAt: string; // "YYYY-MM-DDTHH:mm" in Kathmandu time
   durationMinutes: number;
+  programSlug?: string;
 }): Promise<MockExam> {
   const startsAt = kathmanduWallToUtc(input.startsAt);
   const endsAt = new Date(
     startsAt.getTime() + input.durationMinutes * 60 * 1000
   );
-  const { data, error } = await getSupabase()
+  const base = {
+    title: input.title.trim() || "Mock Test",
+    starts_at: startsAt.toISOString(),
+    ends_at: endsAt.toISOString(),
+    duration_minutes: input.durationMinutes,
+  };
+
+  const client = getSupabase();
+  if (input.programSlug) {
+    const { data, error } = await client
+      .from("mock_exams")
+      .insert({ ...base, program_slug: input.programSlug })
+      .select("*")
+      .single();
+    if (!error) return data as MockExam;
+  }
+
+  const { data, error } = await client
     .from("mock_exams")
-    .insert({
-      title: input.title.trim() || "Mock Test",
-      starts_at: startsAt.toISOString(),
-      ends_at: endsAt.toISOString(),
-      duration_minutes: input.durationMinutes,
-    })
+    .insert(base)
     .select("*")
     .single();
   if (error) throw new Error(error.message);
@@ -196,20 +278,38 @@ export async function createMockExam(input: {
 /** Admin: update (reschedule) a scheduled mock. `startsAt` is Nepal wall-clock. */
 export async function updateMockExam(
   id: string,
-  input: { title: string; startsAt: string; durationMinutes: number }
+  input: {
+    title: string;
+    startsAt: string;
+    durationMinutes: number;
+    programSlug?: string;
+  }
 ): Promise<MockExam> {
   const startsAt = kathmanduWallToUtc(input.startsAt);
   const endsAt = new Date(
     startsAt.getTime() + input.durationMinutes * 60 * 1000
   );
-  const { data, error } = await getSupabase()
+  const base = {
+    title: input.title.trim() || "Mock Test",
+    starts_at: startsAt.toISOString(),
+    ends_at: endsAt.toISOString(),
+    duration_minutes: input.durationMinutes,
+  };
+
+  const client = getSupabase();
+  if (input.programSlug) {
+    const { data, error } = await client
+      .from("mock_exams")
+      .update({ ...base, program_slug: input.programSlug })
+      .eq("id", id)
+      .select("*")
+      .single();
+    if (!error) return data as MockExam;
+  }
+
+  const { data, error } = await client
     .from("mock_exams")
-    .update({
-      title: input.title.trim() || "Mock Test",
-      starts_at: startsAt.toISOString(),
-      ends_at: endsAt.toISOString(),
-      duration_minutes: input.durationMinutes,
-    })
+    .update(base)
     .eq("id", id)
     .select("*")
     .single();

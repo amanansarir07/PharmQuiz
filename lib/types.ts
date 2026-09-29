@@ -4,6 +4,8 @@ export interface Profile {
   email: string;
   avatar_url: string | null;
   role: "user" | "admin";
+  /** Slug of the programme the student studies (see `data/programs.ts`). */
+  program_slug: string;
   created_at: string;
 }
 

@@ -3,13 +3,17 @@
 import { useState, useEffect, use } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { ShareResultDialog } from "@/components/share-result-dialog";
 import { useAuth } from "@/lib/auth";
-import { getSubjectBySlug } from "@/data/subjects";
+import { getProgramCardLabel, getSubjectBySlug, getUnitById, DEFAULT_PROGRAM_SLUG } from "@/data/registry";
+import { resolveResultProgram } from "@/lib/result-program";
+import { getMockSubjectCount } from "@/lib/mock-exams";
+import { safeSetItem } from "@/lib/storage";
+import { cn } from "@/lib/utils";
 import {
   Trophy,
   CheckCircle,
@@ -18,6 +22,10 @@ import {
   RotateCcw,
   BookOpen,
   Share2,
+  Sparkles,
+  ArrowRight,
+  Target,
+  Timer,
 } from "lucide-react";
 
 export default function QuizResultsPage({
@@ -76,6 +84,10 @@ export default function QuizResultsPage({
         })()
       : [];
 
+  // A mock paper covers every subject in the programme; prefer the subjects
+  // actually present in this attempt, falling back to the programme total.
+  const mockSubjectCount = subjectGroups.length || getMockSubjectCount();
+
   const shareData = results
     ? (() => {
         const cfgMock = results.config?.mode === "mock";
@@ -94,11 +106,17 @@ export default function QuizResultsPage({
         const timing =
           cfg.timeLimit != null ? `${cfg.timeLimit} min limit` : "No time limit";
         const metaLine = cfgMock
-          ? `${total} questions • 8 subjects • ${cfg.timeLimit ?? 80} min`
+          ? `${total} questions • ${mockSubjectCount} subjects • ${cfg.timeLimit ?? 80} min`
           : `${total} questions • ${difficultyLabel} • ${timing}`;
+        // The result's own programme, not whatever is active now — a student
+        // who switched programmes still shares the card for the paper they sat.
+        const programLabel = getProgramCardLabel(
+          resolveResultProgram(cfg.program, cfg.subject || "")
+        );
         return {
           userName: user?.name,
           subjectName,
+          programLabel,
           correct,
           incorrect,
           unattempted,
@@ -112,6 +130,74 @@ export default function QuizResultsPage({
         };
       })()
     : null;
+
+  // Extract questions where user made mistakes in this session
+  const sessionMistakes = results
+    ? results.questions.filter((_: any, idx: number) => {
+        const a = results.answers[idx];
+        return a && !a.isCorrect && a.selected !== null;
+      })
+    : [];
+
+  // Identify the weakest unit in this session
+  const weakestUnit = results
+    ? (() => {
+        const map = new Map<string, { total: number; correct: number; subjectSlug: string }>();
+        results.questions.forEach((q: any, idx: number) => {
+          if (!q.unitId) return;
+          const current = map.get(q.unitId) || {
+            total: 0,
+            correct: 0,
+            subjectSlug: q.subjectSlug || results.config?.subject || "",
+          };
+          current.total += 1;
+          if (results.answers[idx]?.isCorrect) current.correct += 1;
+          map.set(q.unitId, current);
+        });
+        const list = Array.from(map.entries()).map(([unitId, data]) => ({
+          unitId,
+          ...data,
+          accuracy: Math.round((data.correct / data.total) * 100),
+          unitData: getUnitById(unitId),
+        }));
+        list.sort((a, b) => a.accuracy - b.accuracy);
+        return list.find((u) => u.accuracy < 70 && u.unitData);
+      })()
+    : null;
+
+  const handlePracticeSessionMistakes = () => {
+    if (sessionMistakes.length === 0) return;
+    const newSessionId = crypto.randomUUID();
+    const config = {
+      mode: "mistakes",
+      title: "Retry Session Mistakes",
+      subject: results?.config?.subject || "all",
+      program: results?.config?.program || DEFAULT_PROGRAM_SLUG,
+      numQuestions: sessionMistakes.length,
+      timeLimit: Math.ceil(sessionMistakes.length * 1.5),
+      negativeMarking: false,
+      createdAt: new Date().toISOString(),
+    };
+    safeSetItem(`quiz-questions-${newSessionId}`, JSON.stringify(sessionMistakes));
+    safeSetItem(`quiz-config-${newSessionId}`, JSON.stringify(config));
+    router.push(`/quiz/${newSessionId}`);
+  };
+
+  const handlePracticeWeakUnit = (subjectSlug: string, unitId: string) => {
+    const newSessionId = crypto.randomUUID();
+    const config = {
+      subject: subjectSlug,
+      units: [unitId],
+      difficulty: "mixed",
+      numQuestions: 10,
+      timeLimit: 15,
+      negativeMarking: false,
+      program: results?.config?.program || DEFAULT_PROGRAM_SLUG,
+      createdAt: new Date().toISOString(),
+    };
+    safeSetItem(`quiz-config-${newSessionId}`, JSON.stringify(config));
+    router.push(`/quiz/${newSessionId}`);
+  };
 
   if (!results) {
     return (
@@ -144,24 +230,39 @@ export default function QuizResultsPage({
               <CheckCircle className="h-10 w-10 sm:h-16 sm:w-16 shrink-0 text-primary" />
             )}
           </div>
-          <h1 className="text-xl sm:text-3xl font-bold">
-            {percentage >= 70
-              ? "Great Job! 🎉"
-              : percentage >= 50
-              ? "Good Effort! 💪"
-              : "Keep Practicing! 📚"}
-          </h1>
-          <p className="mt-2 text-muted-foreground">
-            Here&apos;s how you performed
+          <div className="flex flex-wrap items-center gap-3 mb-2">
+            <h1 className="text-xl sm:text-3xl font-extrabold tracking-tight">
+              {percentage >= 80
+                ? "Excellent Performance"
+                : percentage >= 60
+                ? "Solid Practice Session"
+                : "Revision Recommended"}
+            </h1>
+            <Badge
+              variant={percentage >= 60 ? "default" : "secondary"}
+              className="text-xs"
+            >
+              {percentage >= 80 ? "High Distinction" : percentage >= 60 ? "Proficient" : "Needs Review"}
+            </Badge>
+          </div>
+          <p className="text-xs sm:text-sm text-muted-foreground">
+            Official examination assessment &middot; Verified scorecard
           </p>
           {isMock && (
             <div className="mt-3 flex flex-wrap items-center gap-2">
-              <Badge variant="secondary">
-                🎯 {results.config?.title ?? "Full Mock Test"}
+              <Badge variant="secondary" className="gap-1.5">
+                <Target className="h-3 w-3 text-primary" />
+                <span>{results.config?.title ?? "Full Mock Test"}</span>
               </Badge>
-              <Badge variant="outline">8 subjects × 10 questions</Badge>
+              <Badge variant="outline" className="gap-1.5">
+                <BookOpen className="h-3 w-3 text-muted-foreground" />
+                <span>{mockSubjectCount} subjects &middot; 80 questions</span>
+              </Badge>
               {results.timeTaken != null && (
-                <Badge variant="outline">⏱ {formatTime(results.timeTaken)}</Badge>
+                <Badge variant="outline" className="gap-1.5">
+                  <Clock className="h-3 w-3 text-muted-foreground" />
+                  <span>{formatTime(results.timeTaken)}</span>
+                </Badge>
               )}
             </div>
           )}
@@ -241,6 +342,117 @@ export default function QuizResultsPage({
           </CardContent>
         </Card>
       )}
+
+      {/* Personalized Next Practice Card (Feedback Loop) */}
+      <Card className="mb-6 border-2 border-primary/40 bg-primary/[0.03] shadow-md">
+        <CardContent className="p-5 sm:p-6">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2 text-primary font-bold text-base sm:text-lg">
+              <Sparkles className="h-5 w-5" />
+              <span>Personalized Next Practice</span>
+            </div>
+            <Badge variant="outline" className="text-xs bg-primary/10 text-primary border-primary/20">
+              <RotateCcw className="h-3 w-3 mr-1" /> Smart Practice Loop
+            </Badge>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {/* Recommendation 1: If user made mistakes */}
+            {sessionMistakes.length > 0 && (
+              <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-amber-500 text-white text-[11px]">
+                      {sessionMistakes.length} Mistakes
+                    </Badge>
+                    <span className="font-semibold text-sm">Retry Missed Questions</span>
+                  </div>
+                  <p className="mt-1.5 text-xs text-muted-foreground">
+                    Drill only the questions you got wrong to turn weaknesses into strengths before your board exams.
+                  </p>
+                </div>
+                <Button
+                  onClick={handlePracticeSessionMistakes}
+                  size="sm"
+                  className="mt-4 gap-1.5 w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold"
+                >
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  Practice {sessionMistakes.length} Missed Questions
+                </Button>
+              </div>
+            )}
+
+            {/* Recommendation 2: If a weak unit is detected */}
+            {weakestUnit && (
+              <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-red-500 text-white text-[11px]">
+                      {weakestUnit.accuracy}% Accuracy
+                    </Badge>
+                    <span className="font-semibold text-sm truncate">
+                      Weak Area: {weakestUnit.unitData?.name}
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-xs text-muted-foreground">
+                    This unit had the lowest score in your test. Practice 10 targeted MCQs to reinforce core concepts.
+                  </p>
+                </div>
+                <Button
+                  onClick={() => handlePracticeWeakUnit(weakestUnit.subjectSlug, weakestUnit.unitId)}
+                  size="sm"
+                  variant="outline"
+                  className="mt-4 gap-1.5 w-full font-semibold border-primary/40 hover:bg-primary/5"
+                >
+                  <Target className="h-3.5 w-3.5 text-primary" />
+                  Practice Unit ({weakestUnit.unitData?.name})
+                </Button>
+              </div>
+            )}
+
+            {/* Recommendation 3: If high score or mock test suggestion */}
+            {percentage >= 70 && (
+              <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-emerald-500 text-white text-[11px]">
+                      Exam Ready
+                    </Badge>
+                    <span className="font-semibold text-sm">Full Board Mock Exam</span>
+                  </div>
+                  <p className="mt-1.5 text-xs text-muted-foreground">
+                    Great performance! Challenge yourself with the full 80-question / 80-minute paper.
+                  </p>
+                </div>
+                <Link
+                  href="/mock-test"
+                  className={cn(buttonVariants({ variant: "outline", size: "sm" }), "mt-4 gap-1.5 w-full font-semibold")}
+                >
+                  <Timer className="h-3.5 w-3.5 text-emerald-500" />
+                  Enter Full Mock Exam
+                </Link>
+              </div>
+            )}
+
+            {/* Return to Personal Dashboard */}
+            <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
+              <div>
+                <span className="font-semibold text-sm">Personal Dashboard</span>
+                <p className="mt-1.5 text-xs text-muted-foreground">
+                  Check your updated leaderboard rank, accuracy streak, and explore other curriculum subjects.
+                </p>
+              </div>
+              <Link
+                href="/dashboard"
+                className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "mt-4 gap-1.5 w-full text-xs font-semibold hover:bg-muted")}
+              >
+                Go to Personal Dashboard
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Action Buttons */}
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">

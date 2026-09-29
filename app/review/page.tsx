@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { subjects } from "@/data/subjects";
-import { getAllQuestions, type QuizQuestion } from "@/lib/quiz-loader";
+import { useEffect, useMemo, useState } from "react";
+import { getProgramQuestions, type QuizQuestion } from "@/lib/quiz-loader";
 import { getSubjectForUnit, getUnitName } from "@/lib/quiz-helpers";
 import { useBookmarks } from "@/lib/bookmarks";
-import { getSubjectName } from "@/lib/stats";
+import { getSubjectName, getSubjectsForProgram } from "@/data/registry";
+import { useActiveProgram } from "@/lib/program";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,10 +26,45 @@ export default function ReviewPage() {
   const [showAnswers, setShowAnswers] = useState<Set<string>>(new Set());
   const [visibleCount, setVisibleCount] = useState(30);
   const { isBookmarked, toggleBookmark } = useBookmarks();
+  const { programSlug } = useActiveProgram();
+  const subjects = useMemo(
+    () => getSubjectsForProgram(programSlug),
+    [programSlug]
+  );
 
-  // Build the bank once: getAllQuestions() shuffles options, so calling it on
-  // every render made option positions jump around while typing/filtering.
-  const [allQuestions] = useState<QuizQuestion[]>(() => getAllQuestions());
+  // Load the bank once: option order is shuffled at load time, so holding it in
+  // state (rather than re-deriving it per render) stops options jumping around
+  // while the user types or changes filters. Banks load lazily, hence async.
+  //
+  // The loaded programme is stored alongside the questions so a programme
+  // switch never shows the previous syllabus's bank: questions for the wrong
+  // programme read as "still loading" instead.
+  const [bank, setBank] = useState<{
+    programSlug: string;
+    questions: QuizQuestion[];
+  } | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    getProgramQuestions(programSlug)
+      .then((qs) => {
+        if (!cancelled) setBank({ programSlug, questions: qs });
+      })
+      .catch((err) => console.error("Failed to load question bank:", err));
+    return () => {
+      cancelled = true;
+    };
+  }, [programSlug]);
+
+  const loadingQuestions = bank?.programSlug !== programSlug;
+  const allQuestions = loadingQuestions ? [] : bank.questions;
+
+  // A subject filter left over from another programme would match nothing, so
+  // fall back to "all" until the student picks one that exists here.
+  const activeSubjectFilter =
+    filterSubject === "all" || subjects.some((s) => s.slug === filterSubject)
+      ? filterSubject
+      : "all";
 
   const filtered = allQuestions.filter((q) => {
     const matchesSearch =
@@ -37,7 +72,7 @@ export default function ReviewPage() {
       q.question.toLowerCase().includes(searchQuery.toLowerCase());
     const subjectForQ = getSubjectForUnit(q.unitId);
     const matchesSubject =
-      filterSubject === "all" || subjectForQ === filterSubject;
+      activeSubjectFilter === "all" || subjectForQ === activeSubjectFilter;
     const matchesDifficulty =
       filterDifficulty === "all" || q.difficulty === filterDifficulty;
     return matchesSearch && matchesSubject && matchesDifficulty;
@@ -65,6 +100,19 @@ export default function ReviewPage() {
     });
   };
 
+  if (loadingQuestions) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <div className="text-center">
+          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+          <p className="text-sm text-muted-foreground">
+            Loading question bank...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
       <div className="mb-8">
@@ -88,7 +136,7 @@ export default function ReviewPage() {
             className="pl-10"
           />
         </div>
-        <Select value={filterSubject} onValueChange={(v) => setFilterSubject(v ?? "all")}>
+        <Select value={activeSubjectFilter} onValueChange={(v) => setFilterSubject(v ?? "all")}>
           <SelectTrigger className="w-full sm:w-[200px]">
             <SelectValue placeholder="All Subjects" />
           </SelectTrigger>

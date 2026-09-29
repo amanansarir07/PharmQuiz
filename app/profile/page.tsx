@@ -4,11 +4,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth";
+import { useActiveProgram } from "@/lib/program";
+import { ProgramPicker } from "@/components/program-picker";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { User, Mail, Calendar, ArrowLeft, CheckCircle, Lock, Eye, EyeOff, Trash2, LogOut, AlertTriangle, Loader2, ChevronDown, ChevronUp } from "lucide-react";
+import { User, Mail, Calendar, ArrowLeft, CheckCircle, GraduationCap, Lock, Eye, EyeOff, Trash2, LogOut, AlertTriangle, Loader2, ChevronDown, ChevronUp } from "lucide-react";
 
 export default function ProfilePage() {
   const { user, updateProfile, changePassword, deleteAccount, logout } = useAuth();
@@ -34,6 +36,9 @@ export default function ProfilePage() {
   const [deleteError, setDeleteError] = useState("");
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  const { program, setProgramSlug } = useActiveProgram();
+  const [programSaved, setProgramSaved] = useState(false);
 
   if (!user) {
     return (
@@ -84,6 +89,14 @@ export default function ProfilePage() {
     if (result.error) { setPwError(result.error); }
     else { setPwSuccess(true); setCurrentPassword(""); setNewPassword(""); setConfirmNewPassword(""); setTimeout(() => setPwSuccess(false), 3000); }
     setPwLoading(false);
+  };
+
+  const handleProgramChange = (slug: string) => {
+    // Switching applies immediately and, when signed in, is written to the
+    // profile so it follows the student to other devices.
+    setProgramSlug(slug);
+    setProgramSaved(true);
+    setTimeout(() => setProgramSaved(false), 2500);
   };
 
   const handleDeleteAccount = async () => {
@@ -171,6 +184,31 @@ export default function ProfilePage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Program */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <GraduationCap className="h-5 w-5" />
+              Program
+            </CardTitle>
+            <CardDescription>
+              Your program decides which subjects and MCQs you see across the
+              app. It&apos;s saved to your account, so it follows you to other
+              devices.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {programSaved && (
+              <div className="rounded-lg bg-green-50 dark:bg-green-950 p-3 text-sm text-green-600 dark:text-green-400 flex items-center gap-2">
+                <CheckCircle className="h-4 w-4" />
+                Program updated
+              </div>
+            )}
+            <ProgramPicker value={program.slug} onChange={handleProgramChange} />
+          </CardContent>
+        </Card>
+
         {/* Change Password */}
         <Card>
           <button onClick={() => setActiveSection(activeSection === "password" ? null : "password")} className="w-full text-left">

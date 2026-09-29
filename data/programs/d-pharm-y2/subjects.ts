@@ -1,24 +1,13 @@
-export interface SubjectData {
-  id: string;
-  name: string;
-  slug: string;
-  description: string;
-  icon: string;
-  examMarks: number;
-  totalHours: number;
-  units: UnitData[];
-}
+import type { SubjectData } from "@/data/types";
 
-export interface UnitData {
-  id: string;
-  name: string;
-  slug: string;
-  description: string;
-  examHours: number;
-  examMarks: number;
-  subtopics: string[];
-}
-
+/**
+ * D. Pharmacy · Year 2 curriculum (CTEVT syllabus).
+ *
+ * Slugs here are intentionally unprefixed and stable — students' locally saved
+ * quiz results and `quiz_results.subject` rows in Supabase reference them, so
+ * renaming any of them needs a migration. Every later programme should prefix
+ * its own subject slugs with its programme slug instead.
+ */
 export const subjects: SubjectData[] = [
   {
     id: "pharmaceutics-i",
@@ -1171,31 +1160,3 @@ export const subjects: SubjectData[] = [
     ],
   },
 ];
-
-// Helper functions
-export function getSubjectBySlug(slug: string): SubjectData | undefined {
-  return subjects.find((s) => s.slug === slug);
-}
-
-export function getUnitById(unitId: string): UnitData | undefined {
-  for (const subject of subjects) {
-    const unit = subject.units.find((u) => u.id === unitId);
-    if (unit) return unit;
-  }
-  return undefined;
-}
-
-export function getSubjectForUnit(unitId: string): SubjectData | undefined {
-  return subjects.find((s) => s.units.some((u) => u.id === unitId));
-}
-
-export function getTotalUnits(): number {
-  return subjects.reduce((acc, s) => acc + s.units.length, 0);
-}
-
-export function getTotalSubtopics(): number {
-  return subjects.reduce(
-    (acc, s) => acc + s.units.reduce((uAcc, u) => uAcc + u.subtopics.length, 0),
-    0
-  );
-}

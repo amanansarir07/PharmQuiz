@@ -51,6 +51,11 @@ export function safeSetItem(key: string, value: string): boolean {
 export interface LocalQuizResult {
   sessionId: string;
   subject: string;
+  /**
+   * Programme slug the quiz was taken in. Null for results saved before the
+   * quiz config carried one — callers resolve those from the subject instead.
+   */
+  program: string | null;
   correct: number;
   total: number;
   score: number;
@@ -76,6 +81,7 @@ export function getLocalQuizResults(): LocalQuizResult[] {
         results.push({
           sessionId: key.slice(RESULTS_PREFIX.length),
           subject: data.config?.subject || "unknown",
+          program: data.config?.program || null,
           correct,
           total,
           score: typeof data.score === "number" ? data.score : correct,

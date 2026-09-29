@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS, APP_NAME } from "@/lib/constants";
 import { useAuth } from "@/lib/auth";
+import { useActiveProgram } from "@/lib/program";
 import { useTheme } from "next-themes";
 import {
   Menu,
@@ -19,6 +20,7 @@ import {
   Bookmark,
   StickyNote,
   BookOpen,
+  GraduationCap,
 History,
 } from "lucide-react";
 
@@ -50,8 +52,35 @@ export function Navbar() {
 
   const { user, logout } = useAuth();
   const { theme, setTheme } = useTheme();
+  const { program, availablePrograms, setProgramSlug } = useActiveProgram();
   const router = useRouter();
   const isLoggedIn = !!user;
+  const [programOpen, setProgramOpen] = useState(false);
+  const programRef = useRef<HTMLDivElement>(null);
+
+  // Close the program dropdown when clicking outside
+  useEffect(() => {
+    if (!programOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (programRef.current && !programRef.current.contains(e.target as Node)) {
+        setProgramOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [programOpen]);
+
+  const programLabel = program.level
+    ? `${program.name} · ${program.level}`
+    : program.name;
+
+  // Hide the global website navbar during active test-taking
+  const isTakingQuiz =
+    pathname.startsWith("/quiz/") &&
+    pathname.split("/").length === 3 &&
+    !pathname.endsWith("/results");
+
+  if (isTakingQuiz) return null;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
@@ -121,9 +150,71 @@ export function Navbar() {
 
         {/* Right Side */}
         <div className="flex items-center gap-2">
+          {/* Active program — links out, or switches directly when more than
+              one programme has published content. */}
+          <div className="relative hidden md:block" ref={programRef}>
+            {availablePrograms.length > 1 ? (
+              <button
+                onClick={() => setProgramOpen((o) => !o)}
+                title={`Studying ${programLabel}`}
+                className={cn(
+                  "flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-sm font-medium transition-colors",
+                  programOpen
+                    ? "bg-muted text-foreground"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+              >
+                <span>{program.icon}</span>
+                <span className="max-w-[150px] truncate">
+                  {program.shortLabel}
+                </span>
+                <ChevronDown
+                  className={cn(
+                    "h-3.5 w-3.5 transition-transform",
+                    programOpen && "rotate-180"
+                  )}
+                />
+              </button>
+            ) : (
+              <Link
+                href="/programs"
+                title={`Studying ${programLabel} — browse all programs`}
+                className="flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              >
+                <span>{program.icon}</span>
+                <span className="max-w-[150px] truncate">
+                  {program.shortLabel}
+                </span>
+              </Link>
+            )}
+            {programOpen && (
+              <div
+                onMouseDown={(e) => e.preventDefault()}
+                className="absolute left-0 top-full mt-1 w-56 rounded-xl border bg-popover p-1.5 shadow-lg"
+              >
+                {availablePrograms.map((p) => (
+                  <button
+                    key={p.slug}
+                    onClick={() => {
+                      setProgramSlug(p.slug);
+                      setProgramOpen(false);
+                    }}
+                    className={cn(
+                      "flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors",
+                      p.slug === program.slug
+                        ? "bg-primary text-primary-foreground"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    )}
+                  >
+                    <span>{p.icon}</span>
+                    {p.shortLabel}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           {isLoggedIn ? (
             <div className="hidden md:flex items-center gap-2">
-              <Link href="/dashboard" className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">Dashboard</Link>
               <Link
                 href="/profile"
                 className="flex items-center gap-2 rounded-lg border px-2 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
@@ -160,6 +251,14 @@ export function Navbar() {
       {mobileOpen && (
         <div className="md:hidden border-t bg-background px-4 py-3 max-h-[70vh] overflow-y-auto">
           <nav className="flex flex-col gap-1">
+            <Link
+              href="/programs"
+              onClick={() => setMobileOpen(false)}
+              className="mb-1 flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium text-muted-foreground"
+            >
+              <GraduationCap className="h-4 w-4" />
+              {programLabel}
+            </Link>
             {NAV_LINKS.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === link.href ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted")}>
                 {link.label}

@@ -1,6 +1,6 @@
 export const APP_NAME = "Bujh";
 export const APP_DESCRIPTION =
-  "MCQ Practice Platform for D. Pharmacy 2nd Year — Bujh (understanding) in Nepali";
+  "MCQ practice platform for CTEVT diploma and certificate programmes and +2 streams — Bujh (understanding) in Nepali";
 
 export const QUIZ_QUESTION_OPTIONS = [10, 20, 30, 50] as const;
 
@@ -23,9 +23,11 @@ export const DIFFICULTY_OPTIONS = [
 ] as const;
 
 export const NAV_LINKS = [
-  { href: "/subjects", label: "Subjects" },
-  { href: "/quiz", label: "MCQs" },
+  { href: "/dashboard", label: "Dashboard" },
+  { href: "/quiz", label: "Practice" },
+  { href: "/mock-test", label: "Mock Test" },
   { href: "/leaderboard", label: "Leaderboard" },
+  { href: "/programs", label: "Syllabus" },
 ] as const;
 
 export const PROTECTED_ROUTES = [

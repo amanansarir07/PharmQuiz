@@ -5,6 +5,12 @@
 export interface ShareCardData {
   userName?: string | null;
   subjectName: string;
+  /**
+   * Programme the attempt belonged to, e.g. "D.PHARM · YEAR 2 • CTEVT".
+   * Rendered in the card header — a shared card is read out of context, so it
+   * has to say which syllabus this score is from.
+   */
+  programLabel?: string | null;
   correct: number;
   incorrect: number;
   unattempted: number;
@@ -158,7 +164,7 @@ export async function generateShareCard(data: ShareCardData): Promise<string> {
   ctx.font = font(600, 24);
   ctx.fillStyle = FAINT;
   ctx.textAlign = "right";
-  ctx.fillText("D.PHARM 2ND YEAR • CTEVT", W - pad, 116);
+  ctx.fillText(data.programLabel || "MCQ PRACTICE", W - pad, 116);
 
   // ---- Subject pill ----
   const pillText = data.subjectName || "MCQ Practice";
@@ -264,7 +270,7 @@ export async function generateShareCard(data: ShareCardData): Promise<string> {
   ctx.fillStyle = FAINT;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText("PRACTICE • REVISE • PASS YOUR CTEVT EXAMS", centerX, 1262);
+  ctx.fillText("PRACTICE • REVISE • PASS YOUR EXAMS", centerX, 1262);
 
   ctx.font = font(700, 58);
   ctx.fillStyle = INK;
@@ -280,9 +286,10 @@ export function buildShareMessage(
 ): string {
   const who = data.userName?.trim() ? data.userName.trim() : "I";
   const head = `🎯 ${who} scored ${data.percentage}% (${data.correct}/${data.total}) in ${data.subjectName} on Bujh!`;
+  // No stream name here: +2 students share these cards too.
   const nudge =
     data.percentage >= 70
-      ? "Acing the CTEVT prep! 🔥"
+      ? "Acing my exam prep! 🔥"
       : "Practice makes perfect — join me!";
   return `${head}\n${nudge}\nPractice free → ${origin}/quiz`;
 }

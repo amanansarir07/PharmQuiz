@@ -16,10 +16,13 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { useNotes } from "@/lib/notes";
-import { subjects } from "@/data/subjects";
+import { useActiveProgram } from "@/lib/program";
+import { getSubjectsForProgram } from "@/data/registry";
 
 export default function NotesPage() {
   const { notes, mounted, addNote, updateNote, deleteNote } = useNotes();
+  const { programSlug, program } = useActiveProgram();
+  const subjects = getSubjectsForProgram(programSlug);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [title, setTitle] = useState("");

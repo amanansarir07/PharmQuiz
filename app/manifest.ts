@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Bujh",
     short_name: "Bujh",
     description:
-      "Practice MCQs for D. Pharmacy 2nd year CTEVT examinations. Cover Pharmaceutics, Pharmacology, Chemistry, Pharmacognosy, Biochemistry, Microbiology, Pharmacotherapeutics, Management and Public Health Pharmacy.",
+      "Practice MCQs for CTEVT diploma and certificate programs — Pharmacy, Nursing, Health Assistant, Physiotherapy and CMLT — plus the +2 Science, Computer and Management streams.",
     start_url: "/",
     display: "standalone",
     background_color: "#121212",

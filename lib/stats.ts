@@ -1,6 +1,7 @@
 "use client";
 
 import { supabase } from "@/lib/supabase/client";
+import { resolveResultProgram } from "@/lib/result-program";
 
 export interface UserStats {
   quizzesTaken: number;
@@ -12,21 +13,94 @@ export interface UserStats {
   subjectBreakdown: Record<string, { correct: number; total: number; accuracy: number }>;
 }
 
-export async function calculateStats(userId?: string): Promise<UserStats> {
-  if (!userId) {
-    return getLocalStats();
-  }
+interface ResultRow {
+  subject: string;
+  correct: number;
+  total: number;
+  completed_at: string;
+  program?: string | null;
+}
 
-  try {
-    const { data: results, error } = await supabase
+/**
+ * Load the caller's results, optionally limited to one programme.
+ *
+ * The programme filter is applied in SQL when migration 008 has been run. On
+ * a deployment that hasn't run it yet the `program` column doesn't exist, so
+ * the query fails — we then retry unfiltered and filter in JS by resolving
+ * each row's programme from its subject. Either way the caller sees the same
+ * thing, and stats silently stop leaking across programmes the moment the
+ * migration lands.
+ */
+async function fetchResults(
+  userId: string,
+  programSlug?: string
+): Promise<ResultRow[] | null> {
+  const base = () =>
+    supabase
       .from("quiz_results")
-      .select("*")
+      .select("subject, correct, total, completed_at, program")
       .eq("user_id", userId)
       .order("completed_at", { ascending: false });
 
-    if (error || !results || results.length === 0) {
+  try {
+    if (programSlug) {
+      const filtered = await supabase
+        .from("quiz_results")
+        .select("subject, correct, total, completed_at, program")
+        .eq("user_id", userId)
+        .eq("program", programSlug)
+        .order("completed_at", { ascending: false });
+      if (!filtered.error) return (filtered.data || []) as ResultRow[];
+    }
+
+    const plain = await supabase
+      .from("quiz_results")
+      .select("subject, correct, total, completed_at")
+      .eq("user_id", userId)
+      .order("completed_at", { ascending: false });
+
+    if (!plain.error && plain.data) {
+      const rows = plain.data as ResultRow[];
+      return programSlug
+        ? rows.filter(
+            (r) => resolveResultProgram(null, r.subject) === programSlug
+          )
+        : rows;
+    }
+
+    // Last resort: the programme-aware shape, unfiltered.
+    const withProgram = await base();
+    if (withProgram.error || !withProgram.data) return null;
+    const rows = withProgram.data as ResultRow[];
+    return programSlug
+      ? rows.filter(
+          (r) =>
+            resolveResultProgram(r.program, r.subject) === programSlug
+        )
+      : rows;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Totals for one student. `programSlug` restricts the numbers to a single
+ * programme; omit it to count every programme they have practised in.
+ */
+export async function calculateStats(
+  userId?: string,
+  programSlug?: string
+): Promise<UserStats> {
+  if (!userId) {
+    return getLocalStats(programSlug);
+  }
+
+  try {
+    const results = await fetchResults(userId, programSlug);
+
+    if (!results || results.length === 0) {
       // Fallback to localStorage
-      return getLocalStats();
+      return getLocalStats(programSlug);
     }
 
     let totalCorrect = 0;
@@ -70,9 +144,10 @@ export async function calculateStats(userId?: string): Promise<UserStats> {
 
 /**
  * Build stats from localStorage quiz results (fallback when Supabase is unavailable).
- * Reads quiz-results-* keys written by the quiz page.
+ * Reads quiz-results-* keys written by the quiz page. Pass `programSlug` to
+ * count only the active programme's practice.
  */
-function getLocalStats(): UserStats {
+function getLocalStats(programSlug?: string): UserStats {
   if (typeof window === "undefined") {
     return emptyStats();
   }
@@ -92,6 +167,19 @@ function getLocalStats(): UserStats {
         }
       }
     }
+
+    // Older results predate the programme field, so resolve from the subject
+    // rather than dropping them — otherwise a student's history would appear
+    // to vanish the first time they look at a programme-scoped dashboard.
+    const scoped = programSlug
+      ? allResults.filter(
+          (r) =>
+            resolveResultProgram(r.config?.program, r.config?.subject || "") ===
+            programSlug
+        )
+      : allResults;
+    allResults.length = 0;
+    allResults.push(...scoped);
 
     if (allResults.length === 0) return emptyStats();
 
@@ -195,18 +283,4 @@ function calculateStreakFromResults(results: any[]): number {
   }
 
   return streak;
-}
-
-export function getSubjectName(slug: string): string {
-  const names: Record<string, string> = {
-    "pharmaceutics-i": "Pharmaceutics I",
-    "pharmacology-i": "Pharmacology I",
-    "pharmaceutical-chemistry-i": "Pharmaceutical Chemistry I",
-    pharmacognosy: "Pharmacognosy",
-    "biochemistry-microbiology": "Biochemistry & Microbiology",
-    "pharmacotherapeutics-i": "Pharmacotherapeutics I",
-    "pharmaceutical-management": "Pharmaceutical Management",
-    "public-health-pharmacy": "Public Health Pharmacy",
-  };
-  return names[slug] || slug;
 }

@@ -23,8 +23,10 @@ import {
   PERIOD_MIN_QUIZZES,
 } from "@/lib/leaderboard";
 import { useAuth } from "@/lib/auth";
+import { useActiveProgram } from "@/lib/program";
 import { supabase } from "@/lib/supabase/client";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const periods: { key: LeaderboardPeriod; icon: React.ElementType }[] = [
@@ -47,27 +49,30 @@ export default function LeaderboardPage() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [userPosition, setUserPosition] = useState<UserLeaderboardPosition | null>(null);
   const { user } = useAuth();
+  const { programSlug, program } = useActiveProgram();
 
+  // Rankings are per programme: a D.Pharm Y2 student competes with their own
+  // cohort, not with the whole site. Switching programme re-fetches.
   const fetchLeaderboard = useCallback(async () => {
     try {
-      const data = await getLeaderboard(activePeriod);
+      const data = await getLeaderboard(activePeriod, programSlug);
       setEntries(data);
     } catch (err) {
       console.error("Leaderboard fetch error:", err);
       setEntries([]);
     }
-  }, [activePeriod]);
+  }, [activePeriod, programSlug]);
 
   const fetchUserPosition = useCallback(async () => {
     if (!user) { setUserPosition(null); return; }
     try {
-      const pos = await getUserLeaderboardPosition(user.id, activePeriod);
+      const pos = await getUserLeaderboardPosition(user.id, activePeriod, programSlug);
       setUserPosition(pos);
     } catch (err) {
       console.error("User position error:", err);
       setUserPosition(null);
     }
-  }, [activePeriod, user]);
+  }, [activePeriod, programSlug, user]);
 
   useEffect(() => {
     setMounted(true);
@@ -78,7 +83,7 @@ export default function LeaderboardPage() {
   useEffect(() => {
     try {
       const channel = supabase
-        .channel(`lb-${activePeriod}`)
+        .channel(`lb-${activePeriod}-${programSlug}`)
         .on("postgres_changes", { event: "INSERT", schema: "public", table: "quiz_results" }, () => {
           fetchLeaderboard();
           fetchUserPosition();
@@ -86,7 +91,7 @@ export default function LeaderboardPage() {
         .subscribe();
       return () => { supabase.removeChannel(channel); };
     } catch {}
-  }, [activePeriod, fetchLeaderboard, fetchUserPosition]);
+  }, [activePeriod, programSlug, fetchLeaderboard, fetchUserPosition]);
 
   useEffect(() => {
     const h = () => { fetchLeaderboard(); fetchUserPosition(); };
@@ -113,7 +118,13 @@ export default function LeaderboardPage() {
       <div className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Trophy className="h-6 w-6 text-yellow-500" />
-          <h1 className="text-2xl font-bold tracking-tight">Leaderboard</h1>
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">Leaderboard</h1>
+            <p className="mt-0.5 flex items-center gap-1.5 text-xs text-muted-foreground">
+              <span>{program.icon}</span>
+              {program.name} rankings
+            </p>
+          </div>
         </div>
         <Button
           variant="ghost"
@@ -167,7 +178,8 @@ export default function LeaderboardPage() {
           <Users className="mx-auto h-10 w-10 text-muted-foreground/30 mb-3" />
           <p className="font-medium text-muted-foreground">No rankings yet</p>
           <p className="text-sm text-muted-foreground/60 mt-1">
-            Complete {PERIOD_MIN_QUIZZES[activePeriod]}+ quizzes to appear here
+            Complete {PERIOD_MIN_QUIZZES[activePeriod]}+ quizzes in{" "}
+            {program.name} to appear here
           </p>
         </div>
       ) : (
@@ -256,23 +268,47 @@ export default function LeaderboardPage() {
             </div>
           )}
 
-          {/* You at bottom — only when your row is NOT already in the visible list
-              (i.e. you're ranked beyond the fetched entries) */}
-          {user && userPosition && userPosition.qualified && userPosition.rank > entries.length && (
-            <div className="mt-3 rounded-xl border bg-primary/5 p-3 flex items-center gap-3">
-              <span className="w-7 text-center text-sm font-bold text-primary shrink-0">
-                #{userPosition.rank}
-              </span>
-              <Avatar className="h-9 w-9 shrink-0 ring-2 ring-primary">
-                <AvatarFallback className="text-xs font-semibold bg-primary/10 text-primary">
-                  {user?.name?.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2) || "?"}
-                </AvatarFallback>
-              </Avatar>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold">{user.name} <Badge variant="outline" className="text-[10px] px-1.5 py-0 h-4 bg-primary/10 text-primary border-primary/30">You</Badge></p>
-                <p className="text-xs text-muted-foreground">{userPosition.quizzesTaken} quizzes &middot; {userPosition.accuracy}%</p>
+          {/* Sticky Floating User Position Banner */}
+          {user && userPosition && (
+            <div className="sticky bottom-20 sm:bottom-6 z-20 mt-6 rounded-2xl border-2 border-primary/40 bg-card/95 backdrop-blur-md p-3.5 shadow-xl transition-all">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-xs font-black text-primary-foreground shadow-xs">
+                    {userPosition.qualified ? `#${userPosition.rank}` : "—"}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-bold truncate">{user.name}</p>
+                      <Badge variant="outline" className="text-[10px] px-1.5 py-0 h-4 bg-primary/10 text-primary border-primary/30">
+                        You
+                      </Badge>
+                    </div>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {userPosition.qualified
+                        ? `${userPosition.quizzesTaken} quizzes · ${userPosition.accuracy}% accuracy`
+                        : `${userPosition.quizzesNeeded} more quiz${userPosition.quizzesNeeded > 1 ? "zes" : ""} needed to qualify`}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="shrink-0 text-right">
+                  {userPosition.qualified ? (
+                    <div>
+                      <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide block">Standing</span>
+                      <span className="text-xs font-bold text-primary">
+                        Top {Math.max(1, Math.round((userPosition.rank / Math.max(1, userPosition.totalParticipants)) * 100))}%
+                      </span>
+                    </div>
+                  ) : (
+                    <Link
+                      href="/quiz"
+                      className={cn(buttonVariants({ size: "sm" }), "text-xs font-semibold h-8 px-3")}
+                    >
+                      Play Now
+                    </Link>
+                  )}
+                </div>
               </div>
-              <span className="text-base font-bold tabular-nums shrink-0">—</span>
             </div>
           )}
         </>

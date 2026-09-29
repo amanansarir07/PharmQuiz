@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { History, ArrowRight, BookOpen } from "lucide-react";
-import { getSubjectName } from "@/lib/stats";
+import { getSubjectName } from "@/data/registry";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { useAuth } from "@/lib/auth";
 
@@ -59,7 +59,9 @@ export default function HistoryPage() {
             <History className="mx-auto h-12 w-12 text-muted-foreground/50" />
             <p className="mt-4 text-muted-foreground">No quiz history yet</p>
             <p className="text-sm text-muted-foreground mb-4">Complete your first quiz to see it here</p>
-            <Link href="/quiz"><Button>Start MCQs</Button></Link>
+            <Link href="/quiz" className={buttonVariants()}>
+              Start MCQs
+            </Link>
           </CardContent>
         </Card>
       ) : (

@@ -2,11 +2,17 @@
 
 import { supabase } from "@/lib/supabase/client";
 import { getLocalQuizResults, type LocalQuizResult } from "@/lib/storage";
+import { resolveResultProgram } from "@/lib/result-program";
 
 export interface HistoryEntry {
   /** Stable key for React lists. */
   key: string;
   subject: string;
+  /**
+   * Programme this result counts towards, always resolved (never null) so
+   * callers can filter without worrying about when the row was written.
+   */
+  program: string;
   correct: number;
   total: number;
   score: number;
@@ -26,6 +32,7 @@ interface SupabaseQuizRow {
   score: number | null;
   time_taken: number | null;
   completed_at: string;
+  program?: string | null;
 }
 
 /**
@@ -40,6 +47,7 @@ export async function getQuizHistory(userId?: string): Promise<HistoryEntry[]> {
   const localEntries: HistoryEntry[] = local.map((r: LocalQuizResult) => ({
     key: `local-${r.sessionId}`,
     subject: r.subject,
+    program: resolveResultProgram(r.program, r.subject),
     correct: r.correct,
     total: r.total,
     score: r.score,
@@ -53,14 +61,27 @@ export async function getQuizHistory(userId?: string): Promise<HistoryEntry[]> {
 
   let remote: SupabaseQuizRow[] = [];
   try {
-    const { data, error } = await supabase
+    // `program` is selected first; on a deployment that hasn't run migration
+    // 008 that column doesn't exist, so fall back to the pre-008 select and
+    // resolve each row's programme from its subject instead.
+    const withProgram = await supabase
       .from("quiz_results")
-      .select("id, subject, correct, total, score, time_taken, completed_at")
+      .select("id, subject, correct, total, score, time_taken, completed_at, program")
       .eq("user_id", userId)
       .order("completed_at", { ascending: false });
 
-    if (!error && data && data.length > 0) {
-      remote = data as SupabaseQuizRow[];
+    if (!withProgram.error && withProgram.data) {
+      remote = withProgram.data as SupabaseQuizRow[];
+    } else {
+      const withoutProgram = await supabase
+        .from("quiz_results")
+        .select("id, subject, correct, total, score, time_taken, completed_at")
+        .eq("user_id", userId)
+        .order("completed_at", { ascending: false });
+
+      if (!withoutProgram.error && withoutProgram.data) {
+        remote = withoutProgram.data as SupabaseQuizRow[];
+      }
     }
   } catch {
     // Supabase unavailable — local history only
@@ -91,6 +112,7 @@ export async function getQuizHistory(userId?: string): Promise<HistoryEntry[]> {
     merged.push({
       key: `remote-${r.id}`,
       subject: r.subject,
+      program: resolveResultProgram(r.program, r.subject),
       correct: r.correct,
       total: r.total,
       score: typeof r.score === "number" ? r.score : r.correct,

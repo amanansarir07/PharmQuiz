@@ -1,18 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { subjects } from "@/data/subjects";
+import { getSubjectsForProgram } from "@/data/registry";
 import { safeSetItem } from "@/lib/storage";
 import { useAuth } from "@/lib/auth";
+import { useActiveProgram } from "@/lib/program";
 import {
   fetchUpcomingExams,
   formatCountdown,
   formatInKathmandu,
+  getMockDurationMinutes,
+  getMockQuestionCount,
   isExamLive,
   scheduledMockConfig,
   type MockExam,
@@ -38,12 +41,20 @@ export default function MockTestPage() {
   const [examsLoaded, setExamsLoaded] = useState(false);
   const [now, setNow] = useState(() => new Date());
   const { isAdmin } = useAuth();
+  const { programSlug, program } = useActiveProgram();
+  const subjects = useMemo(
+    () => getSubjectsForProgram(programSlug),
+    [programSlug]
+  );
+  const questionCount = getMockQuestionCount(programSlug);
+  const durationMinutes = getMockDurationMinutes(programSlug);
 
   // Load scheduled exams once; refresh the clock every 30s so LIVE and
-  // "starts in..." states stay honest without hammering Supabase.
+  // "starts in..." states stay honest without hammering Supabase. Scoped to
+  // the active programme so a student only sees their own papers.
   useEffect(() => {
     let alive = true;
-    fetchUpcomingExams().then((list) => {
+    fetchUpcomingExams(programSlug).then((list) => {
       if (alive) {
         setExams(list);
         setExamsLoaded(true);
@@ -52,7 +63,7 @@ export default function MockTestPage() {
     // Refresh the schedule every 60s so an admin reschedule shows up even
     // if the student keeps this page open.
     const refresh = setInterval(() => {
-      fetchUpcomingExams().then((list) => {
+      fetchUpcomingExams(programSlug).then((list) => {
         if (alive) {
           setExams(list);
           setExamsLoaded(true);
@@ -65,17 +76,18 @@ export default function MockTestPage() {
       clearInterval(t);
       clearInterval(refresh);
     };
-  }, []);
+  }, [programSlug]);
 
   const startMockTest = (exam?: MockExam) => {
     const sessionId = crypto.randomUUID();
     const config = exam
-      ? scheduledMockConfig(exam)
+      ? scheduledMockConfig(exam, programSlug)
       : {
           mode: "mock",
+          program: programSlug,
           difficulty: "mixed",
-          numQuestions: 10 * subjects.length,
-          timeLimit: 80, // minutes — 1 min per question
+          numQuestions: questionCount,
+          timeLimit: durationMinutes,
           negativeMarking: false,
           revisionMode: false,
         };
@@ -101,7 +113,7 @@ export default function MockTestPage() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Full Mock Test</h1>
           <p className="mt-1 text-muted-foreground">
-            One complete exam-style paper across all {subjects.length} subjects — exactly like the real thing.
+            One complete exam-style paper across all {subjects.length} subjects of {program.name} — exactly like the real thing.
           </p>
         </div>
       </div>
@@ -148,11 +160,11 @@ export default function MockTestPage() {
                       </div>
                       <p className="mt-1 flex flex-wrap items-center gap-x-1 text-sm text-muted-foreground">
                         <CalendarClock className="h-3.5 w-3.5" />
-                        {formatInKathmandu(exam.starts_at)} (Kathmandu)
+                        {formatInKathmandu(exam.starts_at)}
                         <span aria-hidden>·</span>
                         {exam.duration_minutes} min
                         <span aria-hidden>·</span>
-                        8 subjects × 10 questions
+                        {subjects.length} subjects × 10 questions
                       </p>
                     </div>
                     <Button
@@ -177,7 +189,7 @@ export default function MockTestPage() {
           <h2 className="mb-4 text-base font-semibold">Exam Format</h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             <div className="rounded-xl bg-muted/60 p-4 text-center">
-              <p className="text-2xl font-bold">{subjects.length * 10}</p>
+              <p className="text-2xl font-bold">{questionCount}</p>
               <p className="mt-1 text-xs text-muted-foreground">Questions</p>
             </div>
             <div className="rounded-xl bg-muted/60 p-4 text-center">
@@ -189,7 +201,7 @@ export default function MockTestPage() {
               <p className="mt-1 text-xs text-muted-foreground">Per Subject</p>
             </div>
             <div className="rounded-xl bg-muted/60 p-4 text-center">
-              <p className="text-2xl font-bold">80</p>
+              <p className="text-2xl font-bold">{durationMinutes}</p>
               <p className="mt-1 text-xs text-muted-foreground">Minutes</p>
             </div>
           </div>
@@ -221,7 +233,7 @@ export default function MockTestPage() {
           <ul className="space-y-2.5 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
               <Timer className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              You have <strong className="mx-1">80 minutes</strong> for all {subjects.length * 10} questions. The test submits automatically when time runs out.
+              You have <strong className="mx-1">{durationMinutes} minutes</strong> for all {questionCount} questions. The test submits automatically when time runs out.
             </li>
             <li className="flex items-start gap-2">
               <GraduationCap className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -302,7 +314,7 @@ export default function MockTestPage() {
               Start Mock Test
             </Button>
             <p className="mt-3 text-center text-xs text-muted-foreground">
-              {subjects.length * 10} random questions are picked fresh each time
+              {questionCount} random questions are picked fresh each time
               you start.
             </p>
           </>

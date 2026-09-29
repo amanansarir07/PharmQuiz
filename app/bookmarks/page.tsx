@@ -1,15 +1,14 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Bookmark, Eye, EyeOff, Trash2, BookOpen } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { useBookmarks } from "@/lib/bookmarks";
 import { findBankQuestion } from "@/lib/quiz-loader";
-import { getSubjectName } from "@/lib/stats";
-import { subjects } from "@/data/subjects";
+import { getSubjectBySlug, getSubjectName } from "@/data/registry";
 
 export default function BookmarksPage() {
   const { bookmarks, mounted, removeBookmark } = useBookmarks();
@@ -19,27 +18,40 @@ export default function BookmarksPage() {
 
   // Supabase bookmarks only store slim records (text + subject). Rehydrate
   // full options/answer/explanation from the local question bank so the page
-  // actually shows a usable question.
-  const enrichedBookmarks = useMemo(
-    () =>
-      bookmarks.map((b) => {
-        if (b.options.length > 0) return b;
-        const full = findBankQuestion(b.subjectSlug || undefined, b.questionText);
-        if (full) {
-          return {
-            ...b,
-            options: full.options,
-            correctIndex: full.correctIndex,
-            explanation: full.explanation,
-            difficulty: full.difficulty,
-            unitId: full.unitId || b.unitId,
-            subjectSlug: full.subjectSlug || b.subjectSlug,
-          };
-        }
-        return b;
-      }),
-    [bookmarks]
-  );
+  // actually shows a usable question. Banks load lazily, so this is async and
+  // renders from the slim records until the bank resolves.
+  const [enrichedBookmarks, setEnrichedBookmarks] = useState(bookmarks);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const enriched = await Promise.all(
+        bookmarks.map(async (b) => {
+          if (b.options.length > 0) return b;
+          const full = await findBankQuestion(
+            b.subjectSlug || undefined,
+            b.questionText
+          );
+          if (full) {
+            return {
+              ...b,
+              options: full.options,
+              correctIndex: full.correctIndex,
+              explanation: full.explanation,
+              difficulty: full.difficulty,
+              unitId: full.unitId || b.unitId,
+              subjectSlug: full.subjectSlug || b.subjectSlug,
+            };
+          }
+          return b;
+        })
+      );
+      if (!cancelled) setEnrichedBookmarks(enriched);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [bookmarks]);
 
   const toggleAnswer = (id: string) => {
     setShowAnswers((prev) => {
@@ -72,8 +84,8 @@ export default function BookmarksPage() {
             <p className="text-sm text-muted-foreground mb-4">
               Click the bookmark icon on any question in the Review section to save it here
             </p>
-            <Link href="/review">
-              <Button>Browse Questions</Button>
+            <Link href="/review" className={buttonVariants()}>
+              Browse Questions
             </Link>
           </CardContent>
         </Card>
@@ -85,7 +97,7 @@ export default function BookmarksPage() {
           <div className="space-y-4">
             {enrichedBookmarks.map((q) => {
               const subjectName = getSubjectName(q.subjectSlug);
-              const subject = subjects.find((s) => s.slug === q.subjectSlug);
+              const subject = q.subjectSlug ? getSubjectBySlug(q.subjectSlug) : undefined;
               const unitName = subject?.units.find((u) => u.id === q.unitId)?.name || "";
 
               return (

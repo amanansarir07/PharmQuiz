@@ -71,16 +71,36 @@ interface UserPositionRow {
   accuracy: number | string;
 }
 
+/**
+ * Fetch a leaderboard page.
+ *
+ * `programSlug` restricts the board to students of one programme, which is how
+ * the app calls it. Pass `null` explicitly for the cross-programme board.
+ *
+ * On a deployment that hasn't run migration 008 the `p_program` argument
+ * doesn't exist, so the call fails — we retry without it, which ranks everyone
+ * together the way the board behaved before programmes existed.
+ */
 export async function getLeaderboard(
   period: LeaderboardPeriod = "all_time",
+  programSlug: string | null = null,
   limit: number = 100,
   offset: number = 0
 ): Promise<LeaderboardEntry[]> {
-  const { data, error } = await supabase.rpc("get_leaderboard", {
+  let { data, error } = await supabase.rpc("get_leaderboard", {
     p_period: period,
+    p_program: programSlug,
     p_limit: limit,
     p_offset: offset,
   });
+
+  if (error && programSlug) {
+    ({ data, error } = await supabase.rpc("get_leaderboard", {
+      p_period: period,
+      p_limit: limit,
+      p_offset: offset,
+    }));
+  }
 
   if (error) {
     console.error("Leaderboard error:", error);
@@ -103,12 +123,21 @@ export async function getLeaderboard(
 
 export async function getUserLeaderboardPosition(
   userId: string,
-  period: LeaderboardPeriod = "all_time"
+  period: LeaderboardPeriod = "all_time",
+  programSlug: string | null = null
 ): Promise<UserLeaderboardPosition | null> {
-  const { data, error } = await supabase.rpc("get_user_leaderboard_position", {
+  let { data, error } = await supabase.rpc("get_user_leaderboard_position", {
     p_user_id: userId,
     p_period: period,
+    p_program: programSlug,
   });
+
+  if (error && programSlug) {
+    ({ data, error } = await supabase.rpc("get_user_leaderboard_position", {
+      p_user_id: userId,
+      p_period: period,
+    }));
+  }
 
   if (error) {
     console.error("User leaderboard position error:", error);

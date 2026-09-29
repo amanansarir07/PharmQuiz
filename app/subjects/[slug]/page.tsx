@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { subjects, getSubjectBySlug } from "@/data/subjects";
+import {
+  getAllSubjects,
+  getFaculty,
+  getProgramForSubject,
+  getSubjectBySlug,
+} from "@/data/registry";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,7 +17,7 @@ import {
 } from "lucide-react";
 
 export function generateStaticParams() {
-  return subjects.map((s) => ({ slug: s.slug }));
+  return getAllSubjects().map((s) => ({ slug: s.slug }));
 }
 
 export default async function SubjectPage({
@@ -24,6 +29,14 @@ export default async function SubjectPage({
   const subject = getSubjectBySlug(slug);
   if (!subject) notFound();
 
+  const program = getProgramForSubject(slug);
+  const faculty = program ? getFaculty(program.facultySlug) : undefined;
+  const programLabel = program
+    ? program.level
+      ? `${program.name} · ${program.level}`
+      : program.name
+    : null;
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
       {/* Back */}
@@ -34,6 +47,38 @@ export default async function SubjectPage({
         <ChevronLeft className="h-4 w-4" />
         All Subjects
       </Link>
+
+      {/* Breadcrumb: stream > award > programme > subject */}
+      {(faculty || programLabel) && (
+        <nav className="mb-4 flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
+          <Link href="/programs" className="hover:text-foreground">
+            Programs
+          </Link>
+          {faculty && (
+            <>
+              <span aria-hidden>/</span>
+              <span>{faculty.name}</span>
+            </>
+          )}
+          {programLabel && (
+            <>
+              <span aria-hidden>/</span>
+              {program ? (
+                <Link
+                  href={`/programs/${program.slug}`}
+                  className="hover:text-foreground"
+                >
+                  {programLabel}
+                </Link>
+              ) : (
+                <span>{programLabel}</span>
+              )}
+            </>
+          )}
+          <span aria-hidden>/</span>
+          <span className="font-medium text-foreground">{subject.name}</span>
+        </nav>
+      )}
 
       {/* Header */}
       <div className="mb-8">

@@ -8,7 +8,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useAuth } from "@/lib/auth";
+import { useActiveProgram } from "@/lib/program";
 import {
   createMockExam,
   deleteMockExam,
@@ -37,6 +45,14 @@ import {
 export default function AdminMockExamsPage() {
   const router = useRouter();
   const { isAdmin, isLoading } = useAuth();
+  const { programSlug: activeProgramSlug, availablePrograms } =
+    useActiveProgram();
+  // Which programme the admin is scheduling for. Null means "follow the
+  // programme the admin is currently browsing" — stored as an override rather
+  // than copied into state so switching programme elsewhere still applies.
+  // Also drives which exams are listed.
+  const [programChoice, setProgramChoice] = useState<string | null>(null);
+  const programSlug = programChoice ?? activeProgramSlug;
   const [exams, setExams] = useState<MockExam[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -50,11 +66,11 @@ export default function AdminMockExamsPage() {
   const load = useCallback(() => {
     setLoading(true);
     setError("");
-    fetchAllExams()
+    fetchAllExams(programSlug)
       .then(setExams)
       .catch((e) => setError("Could not load exams: " + e.message))
       .finally(() => setLoading(false));
-  }, []);
+  }, [programSlug]);
 
   useEffect(() => {
     if (isAdmin) load();
@@ -79,6 +95,7 @@ export default function AdminMockExamsPage() {
         title: title.trim(),
         startsAt,
         durationMinutes: dur,
+        programSlug,
       };
       if (editingId) {
         await updateMockExam(editingId, payload);
@@ -107,6 +124,7 @@ export default function AdminMockExamsPage() {
     setTitle(exam.title);
     setStartsAt(utcToKathmanduWall(exam.starts_at));
     setDuration(String(exam.duration_minutes));
+    if (exam.program_slug) setProgramChoice(exam.program_slug);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -216,6 +234,24 @@ export default function AdminMockExamsPage() {
           </p>
           <form onSubmit={submit} className="space-y-4">
             <div className="space-y-1.5">
+              <Label htmlFor="exam-program">Programme</Label>
+              <Select value={programSlug} onValueChange={(v) => setProgramChoice(v ?? null)}>
+                <SelectTrigger id="exam-program" className="w-full">
+                  <SelectValue placeholder="Choose a programme" />
+                </SelectTrigger>
+                <SelectContent>
+                  {availablePrograms.map((p) => (
+                    <SelectItem key={p.slug} value={p.slug}>
+                      {p.icon} {p.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <p className="text-xs text-muted-foreground">
+                Students only see the exams scheduled for their own programme.
+              </p>
+            </div>
+            <div className="space-y-1.5">
               <Label htmlFor="exam-title">Exam title</Label>
               <Input
                 id="exam-title"
@@ -271,7 +307,12 @@ export default function AdminMockExamsPage() {
       </Card>
 
       {/* Existing exams */}
-      <h2 className="mb-3 text-base font-semibold">Scheduled &amp; past exams</h2>
+      <h2 className="mb-3 text-base font-semibold">
+        Scheduled &amp; past exams
+        <span className="ml-2 text-sm font-normal text-muted-foreground">
+          {availablePrograms.find((p) => p.slug === programSlug)?.name ?? programSlug}
+        </span>
+      </h2>
       {loading ? (
         <div className="flex justify-center py-8">
           <Loader2 className="h-5 w-5 animate-spin text-primary" />
@@ -305,9 +346,15 @@ export default function AdminMockExamsPage() {
                     </div>
                     <p className="mt-1 flex flex-wrap items-center gap-x-1 text-sm text-muted-foreground">
                       <CalendarClock className="h-3.5 w-3.5" />
-                      {formatInKathmandu(exam.starts_at)} (Kathmandu)
+                      {formatInKathmandu(exam.starts_at)}
                       <span aria-hidden>·</span>
                       {exam.duration_minutes} min
+                      {exam.program_slug ? (
+                        <>
+                          <span aria-hidden>·</span>
+                          {exam.program_slug}
+                        </>
+                      ) : null}
                       {!over && (
                         <>
                           <span aria-hidden>·</span>ends{" "}

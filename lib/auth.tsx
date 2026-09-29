@@ -9,6 +9,12 @@ interface User {
   email: string;
   role: "user" | "admin";
   createdAt: string;
+  /**
+   * Programme slug the student studies. `null` when unknown — including on
+   * deployments where migration 007 hasn't been applied yet, so every read
+   * site must tolerate it.
+   */
+  programSlug: string | null;
 }
 
 interface AuthContextType {
@@ -16,9 +22,18 @@ interface AuthContextType {
   isLoading: boolean;
   isAdmin: boolean;
   login: (email: string, password: string) => Promise<{ error?: string }>;
-  register: (name: string, email: string, password: string) => Promise<{ error?: string }>;
+  register: (
+    name: string,
+    email: string,
+    password: string,
+    programSlug?: string
+  ) => Promise<{ error?: string }>;
   logout: () => void;
-  updateProfile: (name: string) => Promise<{ error?: string }>;
+  /** `programSlug` is optional — omit it to leave the stored programme alone. */
+  updateProfile: (
+    name: string,
+    programSlug?: string
+  ) => Promise<{ error?: string }>;
   changePassword: (currentPassword: string, newPassword: string) => Promise<{ error?: string }>;
   deleteAccount: (password: string) => Promise<{ error?: string }>;
   signInWithGoogle: () => Promise<{ error?: string }>;
@@ -54,6 +69,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       // profiles query fails, so default to the least privilege.
       role: "user",
       createdAt: u.created_at || new Date().toISOString(),
+      programSlug: meta.program_slug || null,
     };
   }, []);
 
@@ -74,6 +90,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           email: data.email,
           role: data.role,
           createdAt: data.created_at,
+          // Absent until migration 007 has been applied.
+          programSlug: data.program_slug ?? null,
         };
         setUser(loadedUser);
         return loadedUser;
@@ -147,12 +165,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => subscription.unsubscribe();
   }, [loadProfile]);
 
-  const register = useCallback(async (name: string, email: string, password: string) => {
+  const register = useCallback(async (
+    name: string,
+    email: string,
+    password: string,
+    programSlug?: string
+  ) => {
     const { data, error } = await getSupabase().auth.signUp({
       email,
       password,
       options: {
-        data: { name },
+        // The signup trigger copies program_slug onto the profile row.
+        data: {
+          name,
+          ...(programSlug ? { program_slug: programSlug } : {}),
+        },
       },
     });
 
@@ -201,38 +228,71 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return {};
   }, [loadProfile]);
 
-  const updateProfile = useCallback(async (name: string) => {
-    if (!user) return { error: "Not logged in" };
+  const updateProfile = useCallback(
+    async (name: string, programSlug?: string) => {
+      if (!user) return { error: "Not logged in" };
 
-    try {
-      // Use SECURITY DEFINER RPC to bypass RLS (publishable key issue)
-      const { error: rpcError } = await getSupabase().rpc("update_profile", {
+      // Only send the programme when the caller supplied one. Passing null
+      // would clear the student's programme, which is never what a rename
+      // wants to do.
+      const params: Record<string, unknown> = {
         p_user_id: user.id,
         p_name: name,
-      });
+      };
+      if (programSlug !== undefined) params.p_program_slug = programSlug;
 
-      if (rpcError) {
-        console.warn("RPC update failed, trying direct update:", rpcError.message);
-        // Fallback: try direct updates
-        const { error: dbError } = await getSupabase()
-          .from("profiles")
-          .update({ name })
-          .eq("id", user.id);
-        if (dbError) console.warn("Direct profile update failed:", dbError.message);
+      const profilePatch: { name: string; program_slug?: string } = { name };
+      if (programSlug !== undefined) profilePatch.program_slug = programSlug;
 
-        const { error: authError } = await getSupabase().auth.updateUser({ data: { name } });
-        if (authError) console.warn("Auth metadata update failed:", authError.message);
+      try {
+        // Use SECURITY DEFINER RPC to bypass RLS (publishable key issue)
+        const { error: rpcError } = await getSupabase().rpc(
+          "update_profile",
+          params
+        );
+
+        if (rpcError) {
+          console.warn("RPC update failed, trying direct update:", rpcError.message);
+          // Fallback: try direct updates. The RPC is the 3-arg overload added
+          // in migration 007, so on a pre-007 deployment this path is the one
+          // that runs — and a `program_slug` write will be rejected there.
+          const { error: dbError } = await getSupabase()
+            .from("profiles")
+            .update(profilePatch)
+            .eq("id", user.id);
+          if (dbError) console.warn("Direct profile update failed:", dbError.message);
+
+          const { error: authError } = await getSupabase().auth.updateUser({
+            data: {
+              name,
+              ...(programSlug !== undefined
+                ? { program_slug: programSlug }
+                : {}),
+            },
+          });
+          if (authError) console.warn("Auth metadata update failed:", authError.message);
+        }
+
+        // Update local state. This is what makes the programme switcher react
+        // immediately, even when every write above failed.
+        setUser((prev) =>
+          prev
+            ? {
+                ...prev,
+                name,
+                ...(programSlug !== undefined ? { programSlug } : {}),
+              }
+            : null
+        );
+
+        return {};
+      } catch (err) {
+        console.error("updateProfile error:", err);
+        return { error: "Failed to update profile" };
       }
-
-      // Update local state
-      setUser((prev) => prev ? { ...prev, name } : null);
-
-      return {};
-    } catch (err) {
-      console.error("updateProfile error:", err);
-      return { error: "Failed to update profile" };
-    }
-  }, [user]);
+    },
+    [user]
+  );
 
   const changePassword = useCallback(async (currentPassword: string, newPassword: string) => {
     if (!user) return { error: "Not logged in" };

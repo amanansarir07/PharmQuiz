@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { ProgramPicker } from "@/components/program-picker";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -19,6 +20,11 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  // Deliberately empty: choosing a programme is the single most important
+  // onboarding decision, and defaulting to the one live programme used to
+  // enrol nursing and +2 students into pharmacy content silently.
+  const [programSlug, setProgramSlug] = useState<string>("");
+  const [programError, setProgramError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -70,7 +76,14 @@ export default function RegisterPage() {
       return;
     }
 
-    const result = await register(name, email, password);
+    if (!programSlug) {
+      setProgramError(true);
+      setError("Choose the programme you are studying.");
+      setLoading(false);
+      return;
+    }
+
+    const result = await register(name, email, password, programSlug);
 
     if (result.error) {
       setError(result.error);
@@ -82,12 +95,12 @@ export default function RegisterPage() {
 
   return (
     <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-12">
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-lg">
         <CardHeader className="text-center">
           <Image src="/icons/icon-192.png" alt="Bujh logo" width={192} height={192} className="mx-auto mb-4 h-16 w-16" />
           <CardTitle className="text-2xl font-bold">Create your account</CardTitle>
           <CardDescription>
-            Start practicing MCQs for your CTEVT exams
+            Start practicing MCQs for your CTEVT or +2 exams
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
@@ -174,6 +187,37 @@ export default function RegisterPage() {
                   minLength={6}
                 />
               </div>
+            </div>
+            <div
+              className={
+                "space-y-3 border-t pt-4" +
+                (programError && !programSlug
+                  ? " -mx-2 rounded-lg bg-red-50/60 px-2 dark:bg-red-950/40"
+                  : "")
+              }
+            >
+              <div>
+                <Label>Which programme are you in?</Label>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  This decides which subjects and MCQs you see. You can change
+                  it later from your profile.
+                </p>
+              </div>
+              <ProgramPicker
+                value={programSlug}
+                onChange={(slug) => {
+                  setProgramSlug(slug);
+                  setProgramError(false);
+                  setError("");
+                }}
+                disabled={loading}
+              />
+              {programError && !programSlug && (
+                <p className="text-xs font-medium text-red-600 dark:text-red-400">
+                  Pick your programme to continue — tap the one that matches
+                  your course.
+                </p>
+              )}
             </div>
           </CardContent>
           <CardFooter className="flex flex-col gap-4">

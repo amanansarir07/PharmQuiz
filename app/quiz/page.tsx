@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, Suspense, useRef } from "react";
+import { useState, useEffect, useMemo, Suspense, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { subjects } from "@/data/subjects";
+import { getSubjectsForProgram } from "@/data/registry";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -13,10 +13,14 @@ import {
   DIFFICULTY_OPTIONS,
 } from "@/lib/constants";
 import { safeSetItem, pruneExpiredScratchKeys } from "@/lib/storage";
+import { useActiveProgram } from "@/lib/program";
 import {
   fetchUpcomingExams,
   formatCountdown,
   formatInKathmandu,
+  getMockDurationMinutes,
+  getMockQuestionCount,
+  getMockSubjectCount,
   isExamLive,
   scheduledMockConfig,
   type MockExam,
@@ -52,20 +56,27 @@ function QuizSetupInner() {
   const [examsLoaded, setExamsLoaded] = useState(false);
   const [now, setNow] = useState(() => new Date());
 
+  const { programSlug } = useActiveProgram();
+  const subjects = useMemo(
+    () => getSubjectsForProgram(programSlug),
+    [programSlug]
+  );
+
   useEffect(() => {
     pruneExpiredScratchKeys();
     const subjectParam = searchParams.get("subject");
     if (subjectParam && subjects.find((s) => s.slug === subjectParam)) {
       setSelectedSubject(subjectParam);
     }
-  }, [searchParams]);
+  }, [searchParams, subjects]);
 
   // Scheduled mock announcements — same rule as the Mock Test page: a
   // scheduled exam only starts at its admin-set time, never before.
+  // Programme-scoped: a student only sees their own programme's papers.
   useEffect(() => {
     let alive = true;
     const refreshExams = () => {
-      fetchUpcomingExams().then((list) => {
+      fetchUpcomingExams(programSlug).then((list) => {
         if (alive) {
           setExams(list);
           setExamsLoaded(true);
@@ -80,7 +91,7 @@ function QuizSetupInner() {
       clearInterval(t);
       clearInterval(refresh);
     };
-  }, []);
+  }, [programSlug]);
 
   const subject = subjects.find((s) => s.slug === selectedSubject);
 
@@ -121,6 +132,7 @@ function QuizSetupInner() {
     const config = {
       subject: subject.slug,
       subjectId: subject.id,
+      program: programSlug,
       units: selectedUnits.length > 0 ? selectedUnits : subject.units.map((u) => u.id),
       difficulty,
       numQuestions,
@@ -140,7 +152,7 @@ function QuizSetupInner() {
     const sessionId = crypto.randomUUID();
     safeSetItem(
       `quiz-config-${sessionId}`,
-      JSON.stringify(scheduledMockConfig(exam))
+      JSON.stringify(scheduledMockConfig(exam, programSlug))
     );
     router.push(`/quiz/${sessionId}`);
   };
@@ -185,15 +197,14 @@ function QuizSetupInner() {
                 </p>
                 {liveExam ? (
                   <p className="text-xs text-muted-foreground">
-                    {liveExam.title} · {liveExam.duration_minutes} minutes • 8
-                    subjects × 10 questions
+                    {liveExam.title} · {liveExam.duration_minutes} minutes •{' '}
+                    {getMockSubjectCount(programSlug)} subjects × 10 questions
                   </p>
                 ) : upcomingExam ? (
                   <>
                     <p className="text-xs text-muted-foreground">
                       {upcomingExam.title} · starts{" "}
-                      {formatInKathmandu(upcomingExam.starts_at, "short")}{" "}
-                      (Kathmandu)
+                      {formatInKathmandu(upcomingExam.starts_at, "short")}
                     </p>
                     <p className="mt-0.5 text-xs font-semibold tabular-nums text-primary">
                       Opens in {formatCountdown(upcomingExam.starts_at, now)}
@@ -201,7 +212,8 @@ function QuizSetupInner() {
                   </>
                 ) : (
                   <p className="text-xs text-muted-foreground">
-                    80 questions • 8 subjects • 80 minutes • no negative marking
+                    {getMockQuestionCount(programSlug)} questions • {getMockSubjectCount(programSlug)}{' '}
+                    subjects • {getMockDurationMinutes(programSlug)} minutes • no negative marking
                   </p>
                 )}
               </div>

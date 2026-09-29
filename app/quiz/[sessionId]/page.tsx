@@ -14,6 +14,13 @@ import {
 import { supabase } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth";
 import {
+  DEFAULT_PROGRAM_SLUG,
+  getSubjectsForProgram,
+} from "@/data/registry";
+import { getStoredProgramSlug } from "@/lib/program";
+import { MOCK_QUESTIONS_PER_SUBJECT } from "@/lib/mock-exams";
+import { resolveResultProgram } from "@/lib/result-program";
+import {
   safeGetItem,
   safeSetItem,
   safeRemoveItem,
@@ -29,7 +36,22 @@ import {
   Eraser,
   LayoutGrid,
   AlertTriangle,
+  CheckCircle2,
+  XCircle,
+  Lightbulb,
 } from "lucide-react";
+
+/**
+ * First subject of a programme — used when a session has no usable config
+ * (a stale link, or storage cleared) and still has to show something. Falls
+ * back to the programme's own syllabus rather than the pharmacy bank the app
+ * was originally built around.
+ */
+function firstSubjectSlug(slug?: string | null): string {
+  return (
+    getSubjectsForProgram(slug || DEFAULT_PROGRAM_SLUG)[0]?.slug ?? ""
+  );
+}
 
 export default function ActiveQuizPage({
   params,
@@ -48,6 +70,9 @@ export default function ActiveQuizPage({
   const [quizConfig, setQuizConfig] = useState<any>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [showResumedBanner, setShowResumedBanner] = useState(false);
+  const [loadError, setLoadError] = useState(false);
+  // Bumped by "Try Again" to re-run the loading effect after a failed fetch.
+  const [reloadKey, setReloadKey] = useState(0);
   const answersRef = useRef<(number | null)[]>([]);
   const submittingRef = useRef(false);
   const timeLeftRef = useRef<number | null>(null);
@@ -56,83 +81,134 @@ export default function ActiveQuizPage({
   const isMock = quizConfig?.mode === "mock";
 
   useEffect(() => {
-    pruneExpiredScratchKeys();
+    let cancelled = false;
 
-    // Already completed on this device (e.g. user pressed Back after
-    // submitting) — go straight to results instead of letting them
-    // re-submit and double-count a quiz.
-    if (safeGetItem(`quiz-results-${sessionId}`)) {
-      router.replace(`/quiz/${sessionId}/results`);
-      return;
-    }
+    (async () => {
+      pruneExpiredScratchKeys();
 
-    // Read config using the actual session ID from URL
-    const stored = safeGetItem(`quiz-config-${sessionId}`);
-    if (stored) {
-      const config = JSON.parse(stored);
-      setQuizConfig(config);
-      let finalQs: QuizQuestion[] = [];
-      if (config.mode === "mock") {
-        // A mock paper must stay identical across refreshes so crash-resume
-        // keeps the same 80 questions. Snapshot the first generated set.
-        const snapshot = safeGetItem(`quiz-questions-${sessionId}`);
-        if (snapshot) {
-          try {
-            finalQs = JSON.parse(snapshot);
-          } catch {
-            finalQs = [];
-          }
-        }
-        if (finalQs.length === 0) {
-          finalQs = getMockQuestions();
-          safeSetItem(`quiz-questions-${sessionId}`, JSON.stringify(finalQs));
-        }
-      } else {
-        finalQs = getQuestionsForQuiz(
-          config.subject,
-          config.units || [],
-          config.difficulty || "mixed",
-          config.numQuestions || 20
-        );
+      // Already completed on this device (e.g. user pressed Back after
+      // submitting) — go straight to results instead of letting them
+      // re-submit and double-count a quiz.
+      if (safeGetItem(`quiz-results-${sessionId}`)) {
+        router.replace(`/quiz/${sessionId}/results`);
+        return;
       }
-      if (finalQs.length === 0) finalQs = getFallbackQuestions();
-      setQuestions(finalQs);
 
-      // Try to restore saved progress (crash recovery)
-      const savedProgress = safeGetItem(`quiz-progress-${sessionId}`);
-      if (savedProgress) {
-        try {
-          const progress = JSON.parse(savedProgress);
-          if (
-            progress.savedAt &&
-            Date.now() - progress.savedAt < 4 * 60 * 60 * 1000 &&
-            progress.answers?.length === finalQs.length
-          ) {
-            setAnswers(progress.answers);
-            setCurrentIndex(progress.currentIndex || 0);
-            setMarkedForReview(new Set(progress.markedForReview || []));
-            if (config.timeLimit && progress.timeLeft != null && progress.timeLeft > 0) {
-              setTimeLeft(progress.timeLeft);
-            } else if (config.timeLimit) {
-              setTimeLeft(config.timeLimit * 60);
-            }
+      try {
+        // Read config using the actual session ID from URL
+        const stored = safeGetItem(`quiz-config-${sessionId}`);
+
+        if (!stored) {
+          const subjectSlug = firstSubjectSlug(getStoredProgramSlug());
+          if (!subjectSlug) {
+            if (!cancelled) setLoadError(true);
             return;
           }
-        } catch {}
-      }
+          const qs = await getQuestionsForQuiz({
+            subjectSlug,
+            unitIds: [],
+            difficulty: "mixed",
+            numQuestions: 12,
+          });
+          if (cancelled) return;
+          setQuestions(qs);
+          setAnswers(new Array(qs.length).fill(null));
+          return;
+        }
 
-      // Fresh start
-      setAnswers(new Array(Math.max(finalQs.length, 1)).fill(null));
-      if (config.timeLimit) {
-        setTimeLeft(config.timeLimit * 60);
+        const config = JSON.parse(stored);
+        if (cancelled) return;
+        setQuizConfig(config);
+
+        let finalQs: QuizQuestion[] = [];
+        if (config.mode === "mock" || config.mode === "mistakes") {
+          // A pre-seeded paper must stay identical across refreshes so crash-resume
+          // keeps the same questions. Snapshot the first generated set.
+          const snapshot = safeGetItem(`quiz-questions-${sessionId}`);
+          if (snapshot) {
+            try {
+              finalQs = JSON.parse(snapshot);
+            } catch {
+              finalQs = [];
+            }
+          }
+          if (finalQs.length === 0 && config.mode === "mock") {
+            finalQs = await getMockQuestions(
+              MOCK_QUESTIONS_PER_SUBJECT,
+              // Older configs (started before programmes existed) carry no
+              // programme; resolve it from whatever the paper is drawn from.
+              resolveResultProgram(config.program, "")
+            );
+            if (cancelled) return;
+            safeSetItem(`quiz-questions-${sessionId}`, JSON.stringify(finalQs));
+          }
+        } else {
+          finalQs = await getQuestionsForQuiz({
+            subjectSlug: config.subject,
+            unitIds: config.units || [],
+            difficulty: config.difficulty || "mixed",
+            numQuestions: config.numQuestions || 20,
+          });
+        }
+        if (cancelled) return;
+
+        if (finalQs.length === 0) {
+          const subjectSlug = firstSubjectSlug(config.program);
+          if (subjectSlug) {
+            finalQs = await getQuestionsForQuiz({
+              subjectSlug,
+              unitIds: [],
+              difficulty: "mixed",
+              numQuestions: 12,
+            });
+          }
+          if (cancelled) return;
+        }
+        setQuestions(finalQs);
+
+        // Try to restore saved progress (crash recovery)
+        const savedProgress = safeGetItem(`quiz-progress-${sessionId}`);
+        if (savedProgress) {
+          try {
+            const progress = JSON.parse(savedProgress);
+            if (
+              progress.savedAt &&
+              Date.now() - progress.savedAt < 4 * 60 * 60 * 1000 &&
+              progress.answers?.length === finalQs.length
+            ) {
+              setAnswers(progress.answers);
+              setCurrentIndex(progress.currentIndex || 0);
+              setMarkedForReview(new Set(progress.markedForReview || []));
+              if (config.timeLimit && progress.timeLeft != null && progress.timeLeft > 0) {
+                setTimeLeft(progress.timeLeft);
+              } else if (config.timeLimit) {
+                setTimeLeft(config.timeLimit * 60);
+              }
+              return;
+            }
+          } catch {}
+        }
+
+        // Fresh start
+        setAnswers(new Array(Math.max(finalQs.length, 1)).fill(null));
+        if (config.timeLimit) {
+          setTimeLeft(config.timeLimit * 60);
+        }
+      } catch (err) {
+        // Banks load over the network now, so a failed chunk fetch would
+        // otherwise leave the user on "Loading MCQs..." forever.
+        console.error("Failed to load quiz questions:", err);
+        if (!cancelled) setLoadError(true);
       }
-    } else {
-      // Fallback: load all Pharmaceutics questions
-      const qs = getQuestionsForQuiz("pharmaceutics-i", [], "mixed", 12);
-      setQuestions(qs);
-      setAnswers(new Array(qs.length).fill(null));
-    }
-  }, [sessionId, router]);
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+    // Loads the session exactly once: the programme is read at run time (never
+    // as a dependency), so switching programme mid-quiz can't regenerate the
+    // paper a student is already sitting.
+  }, [sessionId, router, reloadKey]);
 
   // Keep answersRef in sync with answers state
   useEffect(() => {
@@ -180,6 +256,14 @@ export default function ActiveQuizPage({
           ? quizConfig.timeLimit * 60 - (timeLeftRef.current || 0)
           : null;
 
+        // Which programme this result counts towards. Resolved rather than
+        // read straight off the config so sessions started before the
+        // programme field existed still file themselves correctly.
+        const program = resolveResultProgram(
+          quizConfig?.program,
+          quizConfig?.subject || ""
+        );
+
         // Save to localStorage for results page AND analytics. Failure here
         // must never block submission — it just means no detailed review.
         try {
@@ -188,6 +272,7 @@ export default function ActiveQuizPage({
             questions,
             config: {
               ...quizConfig,
+              program,
               completedAt: new Date().toISOString(),
             },
             score,
@@ -202,7 +287,7 @@ export default function ActiveQuizPage({
         // 10-question mock rows can't inflate a subject board unfairly.
         if (quizConfig?.mode !== "mock" && user) {
           try {
-            const { error: rpcError } = await supabase.rpc("save_quiz_result", {
+            const base = {
               p_user_id: user.id,
               p_subject: quizConfig?.subject || "unknown",
               p_score: score,
@@ -210,10 +295,19 @@ export default function ActiveQuizPage({
               p_correct: correct,
               p_accuracy: accuracy,
               p_time_taken: timeTaken,
+            };
+            let { error: rpcError } = await supabase.rpc("save_quiz_result", {
+              ...base,
+              p_program: program,
             });
             if (rpcError) {
+              // Pre-008 deployment — `p_program` doesn't exist yet, so retry
+              // with the original 7-argument signature.
+              ({ error: rpcError } = await supabase.rpc("save_quiz_result", base));
+            }
+            if (rpcError) {
               console.warn("RPC save failed, trying direct insert:", rpcError.message);
-              const { error: insertError } = await supabase.from("quiz_results").insert({
+              const row = {
                 user_id: user.id,
                 subject: quizConfig?.subject || "unknown",
                 score: score,
@@ -221,7 +315,15 @@ export default function ActiveQuizPage({
                 correct,
                 accuracy,
                 time_taken: timeTaken,
-              });
+              };
+              let { error: insertError } = await supabase
+                .from("quiz_results")
+                .insert({ ...row, program });
+              if (insertError) {
+                ({ error: insertError } = await supabase
+                  .from("quiz_results")
+                  .insert(row));
+              }
               if (insertError) {
                 console.warn("Direct insert also failed (localStorage only):", insertError.message);
               }
@@ -322,11 +424,55 @@ export default function ActiveQuizPage({
     });
   };
 
+  // Keyboard navigation on laptop / desktop
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (showSubmitConfirm) return;
+
+      const key = e.key.toLowerCase();
+      if (key === "1" || key === "a") handleAnswer(0);
+      else if (key === "2" || key === "b") handleAnswer(1);
+      else if (key === "3" || key === "c") handleAnswer(2);
+      else if (key === "4" || key === "d") handleAnswer(3);
+      else if (key === "arrowleft") setCurrentIndex((i) => Math.max(0, i - 1));
+      else if (key === "arrowright" || key === "enter") {
+        if (currentIndex === questions.length - 1) {
+          setShowSubmitConfirm(true);
+        } else {
+          setCurrentIndex((i) => Math.min(questions.length - 1, i + 1));
+        }
+      } else if (key === "m") {
+        toggleMark();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex, questions.length, showSubmitConfirm, handleAnswer, toggleMark]);
+
   if (questions.length === 0) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
         <div className="text-center">
-          <p className="text-muted-foreground">Loading MCQs...</p>
+          {loadError ? (
+            <p className="text-muted-foreground">
+              Couldn&apos;t load the questions for this quiz.
+            </p>
+          ) : (
+            <p className="text-muted-foreground">Loading MCQs...</p>
+          )}
+          {loadError && (
+            <Button
+              className="mt-4"
+              onClick={() => {
+                setLoadError(false);
+                setReloadKey((k) => k + 1);
+              }}
+            >
+              Try Again
+            </Button>
+          )}
           <Button variant="outline" className="mt-4" onClick={() => router.push("/quiz")}>
             Go Back to Setup
           </Button>
@@ -355,48 +501,57 @@ export default function ActiveQuizPage({
       )}
 
       {/* Top Bar */}
-      <div className="mb-6 flex items-center justify-between gap-4 flex-wrap">
-        <div className="flex items-center gap-3 flex-wrap">
-          <h1 className="text-lg font-semibold">
+      <div className="mb-4 flex items-center justify-between gap-3 border-b pb-4">
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => router.push("/quiz")}
+            className="text-xs text-muted-foreground hover:text-foreground -ml-2 gap-1"
+          >
+            <ChevronLeft className="h-4 w-4" />
+            Exit
+          </Button>
+          <div className="h-4 w-px bg-border hidden sm:block" />
+          <h1 className="text-base font-bold">
             {isMock ? "Mock Test" : "MCQ"} {currentIndex + 1} / {questions.length}
           </h1>
           {isMock && currentQuestion.subjectName ? (
-            <Badge variant="secondary" className="gap-1">
+            <Badge variant="secondary" className="gap-1 hidden sm:inline-flex">
               <span>{currentQuestion.subjectIcon}</span>
               {currentQuestion.subjectName}
             </Badge>
           ) : (
-            <Badge variant="outline">{currentQuestion.difficulty}</Badge>
+            <Badge variant="outline" className="hidden sm:inline-flex capitalize text-xs">
+              {currentQuestion.difficulty}
+            </Badge>
           )}
         </div>
-        <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
-          <Button
-            variant="outline"
-            size="sm"
-            className="lg:hidden"
-            onClick={() => setShowPalette((s) => !s)}
-          >
-            <LayoutGrid className="mr-1 h-4 w-4" />
-            {showPalette ? "Hide" : "Questions"}
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setShowSubmitConfirm(true)}
-          >
-            <Send className="mr-1 h-4 w-4" />
-            Finish
-          </Button>
-          <div className="flex items-center gap-2 text-sm">
-            <div className="h-2 w-2 rounded-full bg-green-500" />
-            {answeredCount} answered
-          </div>
+        <div className="flex items-center gap-2 sm:gap-3">
           {timeLeft !== null && (
-            <div className={`flex items-center gap-1 font-mono text-lg font-bold ${timeLeft < 300 ? "text-red-500" : "text-foreground"}`}>
-              <Clock className="h-4 w-4" />
+            <div className={`flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs sm:text-sm font-bold border ${timeLeft < 300 ? "border-red-500/40 bg-red-500/10 text-red-600 dark:text-red-400" : "bg-card text-foreground"}`}>
+              <Clock className="h-3.5 w-3.5" />
               {formatTime(timeLeft)}
             </div>
           )}
+          <Button
+            variant="outline"
+            size="sm"
+            className="lg:hidden text-xs"
+            onClick={() => setShowPalette((s) => !s)}
+          >
+            <LayoutGrid className="mr-1 h-3.5 w-3.5" />
+            {showPalette ? "Hide Grid" : "Palette"}
+          </Button>
+          <Button
+            size="sm"
+            variant="default"
+            className="text-xs font-semibold"
+            onClick={() => setShowSubmitConfirm(true)}
+          >
+            <Send className="mr-1.5 h-3.5 w-3.5" />
+            Finish
+          </Button>
         </div>
       </div>
 
@@ -438,58 +593,92 @@ export default function ActiveQuizPage({
               </div>
               {/* Revision Mode: show explanation immediately after answering */}
               {quizConfig?.revisionMode && showExplanation && answers[currentIndex] !== null ? (
-                <div className={`mt-6 rounded-lg p-4 text-sm ${
+                <div className={`mt-6 rounded-xl p-4 text-sm border ${
                   answers[currentIndex] === currentQuestion.correctIndex
-                    ? "bg-green-50 dark:bg-green-950 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800"
-                    : "bg-red-50 dark:bg-red-950 text-red-800 dark:text-red-300 border border-red-200 dark:border-red-800"
+                    ? "bg-green-500/10 text-green-900 dark:text-green-300 border-green-500/30"
+                    : "bg-red-500/10 text-red-900 dark:text-red-300 border-red-500/30"
                 }`}>
-                  <div className="flex items-center gap-2 mb-2 font-medium">
+                  <div className="flex items-center gap-2 mb-2 font-semibold text-xs sm:text-sm">
                     {answers[currentIndex] === currentQuestion.correctIndex ? (
-                      <>✅ Correct! Well done.</>
+                      <>
+                        <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400 shrink-0" />
+                        <span>Correct Answer</span>
+                      </>
                     ) : (
-                      <>❌ Incorrect. The correct answer is <strong>{String.fromCharCode(65 + currentQuestion.correctIndex)}. {currentQuestion.options[currentQuestion.correctIndex]}</strong></>
+                      <>
+                        <XCircle className="h-4 w-4 text-red-600 dark:text-red-400 shrink-0" />
+                        <span>Incorrect. Correct answer: <strong>{String.fromCharCode(65 + currentQuestion.correctIndex)}. {currentQuestion.options[currentQuestion.correctIndex]}</strong></span>
+                      </>
                     )}
                   </div>
-                  <div className="mt-2 opacity-90">
-                    💡 <strong>Explanation:</strong> {currentQuestion.explanation}
+                  <div className="mt-2.5 flex items-start gap-2 text-xs sm:text-sm border-t border-border/40 pt-2.5">
+                    <Lightbulb className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="font-semibold text-foreground">Explanation:</strong>{" "}
+                      <span>{currentQuestion.explanation}</span>
+                    </div>
                   </div>
                 </div>
               ) : (
-                <div className="mt-6 rounded-lg bg-muted/50 p-4 text-sm text-muted-foreground">
-                  {quizConfig?.revisionMode ? "💡 Select an answer to see the explanation" : "💡 Explanations will be shown after submission"}
+                <div className="mt-6 rounded-xl bg-muted/40 p-3.5 text-xs text-muted-foreground flex items-center gap-2">
+                  <Lightbulb className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
+                  <span>{quizConfig?.revisionMode ? "Select an option to reveal the verified explanation." : "Detailed explanations will unlock on the submission results screen."}</span>
                 </div>
               )}
             </CardContent>
           </Card>
 
-          {/* Navigation */}
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
-            <Button variant="outline" onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))} disabled={currentIndex === 0}>
+          {/* Navigation Controls: Sticky bottom bar on mobile, static on desktop */}
+          <div className="sticky bottom-0 z-30 mt-6 -mx-4 -mb-6 border-t bg-background/95 p-3.5 backdrop-blur-md sm:static sm:mx-0 sm:mb-0 sm:border-0 sm:bg-transparent sm:p-0 flex items-center justify-between gap-2 shadow-sm sm:shadow-none">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
+              disabled={currentIndex === 0}
+            >
               <ChevronLeft className="mr-1 h-4 w-4" />
               Previous
             </Button>
             {answers[currentIndex] !== null && (
-              <Button variant="ghost" size="sm" onClick={handleClear} className="text-muted-foreground">
-                <Eraser className="mr-1 h-4 w-4" />
-                Clear Response
+              <Button variant="ghost" size="sm" onClick={handleClear} className="text-xs text-muted-foreground">
+                <Eraser className="mr-1 h-3.5 w-3.5" />
+                Clear
               </Button>
             )}
-            <Button variant="outline" onClick={toggleMark}>
-              <Flag className="mr-1 h-4 w-4" />
-              {markedForReview.has(currentIndex) ? "Unmark" : "Mark for Review"}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={toggleMark}
+              className={markedForReview.has(currentIndex) ? "border-amber-500 text-amber-600" : ""}
+            >
+              <Flag className="mr-1 h-3.5 w-3.5" />
+              {markedForReview.has(currentIndex) ? "Marked" : "Review"}
             </Button>
             {currentIndex === questions.length - 1 ? (
-              <Button onClick={() => setShowSubmitConfirm(true)}>
-                <Send className="mr-1 h-4 w-4" />
-                {isMock ? "Finish Mock Test" : "Submit MCQs"}
+              <Button
+                size="sm"
+                onClick={() => setShowSubmitConfirm(true)}
+                className="bg-primary font-semibold"
+              >
+                <Send className="mr-1.5 h-3.5 w-3.5" />
+                Submit
               </Button>
             ) : (
-              <Button onClick={() => setCurrentIndex((i) => Math.min(questions.length - 1, i + 1))}>
+              <Button
+                size="sm"
+                onClick={() => setCurrentIndex((i) => Math.min(questions.length - 1, i + 1))}
+                className="font-semibold"
+              >
                 Next
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
             )}
           </div>
+
+          {/* Desktop keyboard hint */}
+          <p className="mt-3 hidden sm:block text-center text-[11px] text-muted-foreground/70">
+            Keyboard shortcuts: Press <kbd className="rounded border bg-muted px-1">1-4</kbd> or <kbd className="rounded border bg-muted px-1">A-D</kbd> to select &middot; <kbd className="rounded border bg-muted px-1">←</kbd> <kbd className="rounded border bg-muted px-1">→</kbd> to navigate &middot; <kbd className="rounded border bg-muted px-1">M</kbd> to flag
+          </p>
           {/* Mobile question palette (toggled from the header) */}
           {showPalette && (
             <div className="mt-4 lg:hidden">
@@ -632,8 +821,4 @@ export default function ActiveQuizPage({
       )}
     </div>
   );
-}
-
-function getFallbackQuestions(): QuizQuestion[] {
-  return getQuestionsForQuiz("pharmaceutics-i", [], "mixed", 12);
 }

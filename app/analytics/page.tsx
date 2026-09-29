@@ -5,10 +5,14 @@ import Link from "next/link";
 import { BarChart3, TrendingUp, Target, Flame, BookOpen, AlertTriangle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { calculateStats, getSubjectName } from "@/lib/stats";
+import { cn } from "@/lib/utils";
+import { calculateStats } from "@/lib/stats";
+import { getSubjectName } from "@/data/registry";
 import type { UserStats } from "@/lib/stats";
+import { useActiveProgram } from "@/lib/program";
+import { resolveResultProgram } from "@/lib/result-program";
 import { supabase } from "@/lib/supabase/client";
 import {
   BarChart,
@@ -30,11 +34,12 @@ export default function AnalyticsPage() {
   const [stats, setStats] = useState<UserStats | null>(null);
   const [mounted, setMounted] = useState(false);
   const [quizHistory, setQuizHistory] = useState<{ quiz: number; score: number }[]>([]);
+  const { programSlug, program } = useActiveProgram();
 
   useEffect(() => {
     setMounted(true);
     refreshStats();
-  }, []);
+  }, [programSlug]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const handler = () => refreshStats();
@@ -47,15 +52,15 @@ export default function AnalyticsPage() {
       window.removeEventListener("focus", handler);
       document.removeEventListener("visibilitychange", visHandler);
     };
-  }, []);
+  }, [programSlug]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function refreshStats() {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       const userId = user?.id;
 
-      // Get stats (with localStorage fallback built in)
-      const s = await calculateStats(userId);
+      // Get stats for the active programme (with localStorage fallback built in)
+      const s = await calculateStats(userId, programSlug);
       setStats(s);
 
       // Build progress history from Supabase, fallback to localStorage
@@ -63,17 +68,38 @@ export default function AnalyticsPage() {
 
       if (userId) {
         try {
-          const { data: results } = await supabase
+          const rows = (r: { correct: number; total: number }[]) =>
+            r.map((row, i) => ({
+              quiz: i + 1,
+              score: row.total > 0 ? Math.round((row.correct / row.total) * 100) : 0,
+            }));
+
+          // Prefer the programme-scoped query (migration 008); fall back to a
+          // plain select and filter in JS from the subject when the `program`
+          // column doesn't exist yet.
+          const scoped = await supabase
             .from("quiz_results")
-            .select("correct, total")
+            .select("correct, total, subject")
             .eq("user_id", userId)
+            .eq("program", programSlug)
             .order("completed_at", { ascending: true });
 
-          if (results && results.length > 0) {
-            history = results.map((r, i) => ({
-              quiz: i + 1,
-              score: r.total > 0 ? Math.round((r.correct / r.total) * 100) : 0,
-            }));
+          if (!scoped.error && scoped.data && scoped.data.length > 0) {
+            history = rows(scoped.data);
+          } else if (scoped.error) {
+            const { data: results } = await supabase
+              .from("quiz_results")
+              .select("correct, total, subject")
+              .eq("user_id", userId)
+              .order("completed_at", { ascending: true });
+
+            if (results && results.length > 0) {
+              history = rows(
+                results.filter(
+                  (r) => resolveResultProgram(null, r.subject) === programSlug
+                )
+              );
+            }
           }
         } catch {
           // Supabase query failed, fall through to localStorage
@@ -102,7 +128,15 @@ export default function AnalyticsPage() {
       if (key && key.startsWith("quiz-results-")) {
         try {
           const raw = JSON.parse(localStorage.getItem(key) || "{}");
-          if (raw && raw.answers && raw.questions) {
+          // Older results predate the programme field — resolve it from the
+          // subject so previously-saved practice still charts.
+          if (
+            raw &&
+            raw.answers &&
+            raw.questions &&
+            resolveResultProgram(raw.config?.program, raw.config?.subject || "") ===
+              programSlug
+          ) {
             allResults.push(raw);
           }
         } catch {
@@ -160,7 +194,7 @@ export default function AnalyticsPage() {
           Analytics
         </h1>
         <p className="mt-2 text-muted-foreground">
-          Track your progress and identify areas to improve
+          Track your progress in {program.name} and identify areas to improve
         </p>
       </div>
 
@@ -171,8 +205,8 @@ export default function AnalyticsPage() {
           <BarChart3 className="h-16 w-16 mx-auto text-muted-foreground/40 mb-4" />
           <h2 className="text-xl font-semibold mb-2">No Data Yet</h2>
           <p className="text-muted-foreground mb-6">Complete your first MCQ session to see analytics!</p>
-          <Link href="/quiz">
-            <Button>Start MCQs</Button>
+          <Link href="/quiz" className={buttonVariants()}>
+            Start MCQs
           </Link>
         </div>
       ) : (
@@ -315,10 +349,11 @@ export default function AnalyticsPage() {
                     No weak areas identified yet. Keep practicing!
                   </div>
                 )}
-                <Link href="/quiz">
-                  <Button variant="outline" className="w-full mt-2">
-                    Practice More
-                  </Button>
+                <Link
+                  href="/quiz"
+                  className={cn(buttonVariants({ variant: "outline" }), "w-full mt-2 font-semibold")}
+                >
+                  Practice More
                 </Link>
               </CardContent>
             </Card>
