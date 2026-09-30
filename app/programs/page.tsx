@@ -66,20 +66,22 @@ export default async function ProgramsPage() {
                       const body = (
                         <Card
                           className={
-                            "h-full transition-all " +
+                            "h-full transition-all cursor-pointer hover:shadow-md " +
                             (program.hasContent
-                              ? "cursor-pointer hover:border-primary/30 hover:shadow-md"
-                              : "border-dashed")
+                              ? "hover:border-primary/40"
+                              : "border-dashed hover:border-amber-500/50 bg-card/60 hover:bg-card")
                           }
                         >
                           <CardContent className="p-4">
                             <div className="flex items-start gap-3">
                               <span className="text-xl">{program.icon}</span>
                               <div className="min-w-0 flex-1">
-                                <p className="font-medium">
-                                  {program.name}
-                                  {program.level ? ` · ${program.level}` : ""}
-                                </p>
+                                <div className="flex items-center justify-between gap-2">
+                                  <p className="font-medium text-foreground">
+                                    {program.name}
+                                    {program.level ? ` · ${program.level}` : ""}
+                                  </p>
+                                </div>
                                 <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
                                   {program.description}
                                 </p>
@@ -93,19 +95,24 @@ export default async function ProgramsPage() {
                                         <BookOpen className="mr-1 h-3 w-3" />
                                         {count} questions
                                       </Badge>
-                                      <span className="inline-flex items-center gap-1 text-xs font-medium text-green-600 dark:text-green-400">
+                                      <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
                                         <CheckCircle2 className="h-3 w-3" />
                                         Ready
                                       </span>
                                     </>
                                   ) : (
-                                    <Badge
-                                      variant="outline"
-                                      className="text-xs text-muted-foreground"
-                                    >
-                                      <Clock className="mr-1 h-3 w-3" />
-                                      Coming soon
-                                    </Badge>
+                                    <>
+                                      <Badge
+                                        variant="outline"
+                                        className="border-amber-500/30 bg-amber-500/10 text-xs text-amber-700 dark:text-amber-400"
+                                      >
+                                        <Clock className="mr-1 h-3 w-3" />
+                                        In Development
+                                      </Badge>
+                                      <span className="text-[11px] font-medium text-muted-foreground hover:text-foreground">
+                                        View Roadmap &rarr;
+                                      </span>
+                                    </>
                                   )}
                                 </div>
                               </div>
@@ -114,15 +121,14 @@ export default async function ProgramsPage() {
                         </Card>
                       );
 
-                      return program.hasContent ? (
+                      return (
                         <Link
                           key={program.slug}
                           href={`/programs/${program.slug}`}
+                          className="block"
                         >
                           {body}
                         </Link>
-                      ) : (
-                        <div key={program.slug}>{body}</div>
                       );
                     })}
                   </div>

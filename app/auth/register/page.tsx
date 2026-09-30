@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
 import { useAuth } from "@/lib/auth";
+import { safeSetItem } from "@/lib/storage";
 import Image from "next/image";
 import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,17 +14,30 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ProgramPicker } from "@/components/program-picker";
 
 export default function RegisterPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+        </div>
+      }
+    >
+      <RegisterForm />
+    </Suspense>
+  );
+}
+
+function RegisterForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const initialProgram = searchParams.get("program") || "";
   const { register, signInWithGoogle, user, isLoading } = useAuth();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  // Deliberately empty: choosing a programme is the single most important
-  // onboarding decision, and defaulting to the one live programme used to
-  // enrol nursing and +2 students into pharmacy content silently.
-  const [programSlug, setProgramSlug] = useState<string>("");
+  const [programSlug, setProgramSlug] = useState<string>(initialProgram);
   const [programError, setProgramError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -233,6 +247,9 @@ export default function RegisterPage() {
               </div>
             </div>
             <Button type="button" variant="outline" className="w-full" onClick={async () => {
+              if (programSlug) {
+                safeSetItem("bujh-active-program", programSlug);
+              }
               const result = await signInWithGoogle();
               if (result.error) setError(result.error);
             }} disabled={loading}>

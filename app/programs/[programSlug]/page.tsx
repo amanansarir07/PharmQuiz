@@ -16,6 +16,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/site";
 import { Card, CardContent } from "@/components/ui/card";
+import { getCurriculumPreview } from "@/data/curriculum-previews";
+import { CurriculumDevPreview } from "@/components/curriculum-dev-preview";
 import {
   ArrowRight,
   Award,
@@ -170,32 +172,12 @@ export default async function ProgramPage({
             </div>
           </>
         ) : (
-          <Card className="mt-5 border-dashed">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-3">
-                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
-                <div>
-                  <p className="font-semibold">
-                    This programme&apos;s question bank is coming soon
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {program.name}
-                    {program.level ? ` ${program.level}` : ""} is on the
-                    roadmap but its syllabus and MCQs haven&apos;t been added
-                    yet. You can keep practising{" "}
-                    {getProgram(DEFAULT_PROGRAM_SLUG)?.name}{" "}
-                    {getProgram(DEFAULT_PROGRAM_SLUG)?.level} in the meantime.
-                  </p>
-                  <Link href="/subjects" className="mt-4 inline-block">
-                    <Button variant="outline">
-                      Go to available subjects
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="mt-6">
+            <CurriculumDevPreview
+              program={program}
+              preview={getCurriculumPreview(program.slug)}
+            />
+          </div>
         )}
       </div>
 

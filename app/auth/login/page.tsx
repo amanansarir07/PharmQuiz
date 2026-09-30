@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
 import { useAuth } from "@/lib/auth";
 import Image from "next/image";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
@@ -12,7 +12,23 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function LoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+        </div>
+      }
+    >
+      <LoginForm />
+    </Suspense>
+  );
+}
+
+function LoginForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const programParam = searchParams.get("program");
   const { login, signInWithGoogle, user, isLoading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -138,7 +154,14 @@ export default function LoginPage() {
             </Button>
             <p className="text-center text-sm text-muted-foreground">
               New to Bujh?{" "}
-              <Link href="/auth/register" className="text-primary font-medium hover:underline">
+              <Link
+                href={
+                  programParam
+                    ? `/auth/register?program=${programParam}`
+                    : "/auth/register"
+                }
+                className="text-primary font-medium hover:underline"
+              >
                 Create an account
               </Link>
             </p>

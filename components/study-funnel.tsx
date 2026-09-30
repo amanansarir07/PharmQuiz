@@ -37,7 +37,6 @@ interface FunnelState {
   // +2 branch
   plusTwoStream: string | null;
   plusTwoGrade: string | null;
-  plusTwoSubject: string | null;
 }
 
 const CTEVT_CATEGORIES = [
@@ -155,10 +154,9 @@ export function StudyFunnel({ id }: { id?: string }) {
     ctevtYear: null,
     plusTwoStream: null,
     plusTwoGrade: null,
-    plusTwoSubject: null,
   });
 
-  // Calculate current active step (1 to 4)
+  // Calculate current active step (1 to 4 for CTEVT, 1 to 3 for +2)
   let currentStep = 1;
   if (!state.board) {
     currentStep = 1;
@@ -168,8 +166,7 @@ export function StudyFunnel({ id }: { id?: string }) {
     else currentStep = 4;
   } else if (state.board === "plus-two") {
     if (!state.plusTwoStream) currentStep = 2;
-    else if (!state.plusTwoGrade) currentStep = 3;
-    else currentStep = 4;
+    else currentStep = 3;
   }
 
   const handleReset = () => {
@@ -180,7 +177,6 @@ export function StudyFunnel({ id }: { id?: string }) {
       ctevtYear: null,
       plusTwoStream: null,
       plusTwoGrade: null,
-      plusTwoSubject: null,
     });
   };
 
@@ -191,19 +187,22 @@ export function StudyFunnel({ id }: { id?: string }) {
       else if (state.ctevtCategory) setState((s) => ({ ...s, ctevtCategory: null }));
       else setState((s) => ({ ...s, board: null }));
     } else if (state.board === "plus-two") {
-      if (state.plusTwoSubject) setState((s) => ({ ...s, plusTwoSubject: null }));
-      else if (state.plusTwoGrade) setState((s) => ({ ...s, plusTwoGrade: null }));
+      if (state.plusTwoGrade) setState((s) => ({ ...s, plusTwoGrade: null }));
       else if (state.plusTwoStream) setState((s) => ({ ...s, plusTwoStream: null }));
       else setState((s) => ({ ...s, board: null }));
     }
   };
 
-  // Launch the active curriculum (d-pharm-y2 or d-pharm-y3)
-  const handleLaunchActive = (destination: "dashboard" | "register") => {
+  // Launch active curriculum (d-pharm-y2 or d-pharm-y3 or specified slug)
+  const handleLaunchActive = (
+    destination: "dashboard" | "register",
+    explicitSlug?: string
+  ) => {
     const activeSlug =
-      state.ctevtProgram === "d-pharm" && state.ctevtYear === "y3"
+      explicitSlug ||
+      (state.ctevtProgram === "d-pharm" && state.ctevtYear === "y3"
         ? "d-pharm-y3"
-        : "d-pharm-y2";
+        : "d-pharm-y2");
     setProgramSlug(activeSlug);
     if (destination === "register") {
       router.push(`/auth/register?program=${activeSlug}`);
@@ -276,15 +275,19 @@ export function StudyFunnel({ id }: { id?: string }) {
                 <span className={`flex h-6 w-6 items-center justify-center rounded-full border text-xs ${currentStep >= 3 ? "border-primary bg-primary text-primary-foreground" : "border-muted"}`}>
                   3
                 </span>
-                <span>{state.board === "plus-two" ? "Grade" : "Program"}</span>
+                <span>{state.board === "plus-two" ? "Grade & Track" : "Program"}</span>
               </li>
-              <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/40" />
-              <li className={`flex items-center gap-1.5 ${currentStep >= 4 ? "text-primary font-semibold" : ""}`}>
-                <span className={`flex h-6 w-6 items-center justify-center rounded-full border text-xs ${currentStep >= 4 ? "border-primary bg-primary text-primary-foreground" : "border-muted"}`}>
-                  4
-                </span>
-                <span>{state.board === "plus-two" ? "Subject" : "Year / Sem"}</span>
-              </li>
+              {state.board !== "plus-two" && (
+                <>
+                  <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/40" />
+                  <li className={`flex items-center gap-1.5 ${currentStep >= 4 ? "text-primary font-semibold" : ""}`}>
+                    <span className={`flex h-6 w-6 items-center justify-center rounded-full border text-xs ${currentStep >= 4 ? "border-primary bg-primary text-primary-foreground" : "border-muted"}`}>
+                      4
+                    </span>
+                    <span>Year / Sem</span>
+                  </li>
+                </>
+              )}
             </ol>
           </nav>
 
@@ -636,54 +639,83 @@ export function StudyFunnel({ id }: { id?: string }) {
                 </div>
               )}
 
-              {/* Step 4: +2 Subject */}
-              {state.plusTwoStream && state.plusTwoGrade && !state.plusTwoSubject && (
-                <div>
-                  <h3 className="mb-3 text-lg font-semibold">Select Target Subject Focus</h3>
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    {(PLUS_TWO_SUBJECTS[state.plusTwoStream] || []).map((sub) => (
-                      <button
-                        key={sub}
-                        type="button"
-                        onClick={() => setState((s) => ({ ...s, plusTwoSubject: sub }))}
-                        className="rounded-xl border p-4 text-center font-medium transition-all hover:border-primary hover:bg-primary/[0.02]"
-                      >
-                        {sub}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Completion Screen for +2 */}
-              {state.plusTwoStream && state.plusTwoGrade && state.plusTwoSubject && (
+              {/* Completion Screen for +2 Grade Track */}
+              {state.plusTwoStream && state.plusTwoGrade && (
                 <div className="rounded-2xl border bg-card p-6 shadow-sm sm:p-8">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-600">
-                      <Clock className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-xl font-bold">
-                          +2 {state.plusTwoStream.toUpperCase()} · Grade {state.plusTwoGrade} ({state.plusTwoSubject})
-                        </h3>
-                        <Badge variant="outline" className="text-xs">Coming Soon</Badge>
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                        <Sparkles className="h-6 w-6" />
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        NEB question banks and chapter-wise MCQs are currently under development.
-                      </p>
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="text-xl font-bold">
+                            +2 {state.plusTwoStream === "science" ? "Science" : state.plusTwoStream === "computer" ? "Computer Science" : "Management"} · Grade {state.plusTwoGrade}
+                          </h3>
+                          <Badge variant="outline" className="border-amber-500/30 bg-amber-500/10 text-xs text-amber-700 dark:text-amber-400">
+                            Roadmap Ready
+                          </Badge>
+                        </div>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          National Examinations Board (NEB) curriculum track. All core subjects for Grade {state.plusTwoGrade} are included in this syllabus:
+                        </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  {/* List all subjects in this track together */}
+                  <div className="mt-6">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                      Included Subjects in this Track:
+                    </p>
+                    <div className="grid gap-2 sm:grid-cols-3">
+                      {(PLUS_TWO_SUBJECTS[state.plusTwoStream] || []).map((sub) => (
+                        <div
+                          key={sub}
+                          className="flex items-center gap-2.5 rounded-xl border bg-muted/20 p-3 text-sm font-medium"
+                        >
+                          <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                          <span>{sub}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action buttons */}
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                     <Button
-                      onClick={() => handleLaunchActive("dashboard")}
-                      className="gap-2"
+                      size="lg"
+                      onClick={() => {
+                        const targetSlug =
+                          state.plusTwoStream === "science"
+                            ? "plus-two-science-bio"
+                            : state.plusTwoStream === "computer"
+                            ? "plus-two-computer"
+                            : "plus-two-management";
+                        router.push(`/programs/${targetSlug}`);
+                      }}
+                      className="gap-2 bg-primary font-semibold shadow-md"
                     >
-                      Try D.Pharm Year 2 Live Demo
+                      <BookOpen className="h-4 w-4" />
+                      Explore +2 Curriculum Roadmap
+                    </Button>
+
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      onClick={() => handleLaunchActive("dashboard", "d-pharm-y3")}
+                      className="gap-2 font-medium"
+                    >
+                      Try D.Pharm Year 3 (Live MCQs)
                       <ArrowRight className="h-4 w-4" />
                     </Button>
-                    <Button variant="outline" onClick={handleReset}>
+
+                    <Button
+                      size="lg"
+                      variant="ghost"
+                      onClick={handleReset}
+                      className="text-xs text-muted-foreground"
+                    >
                       Explore CTEVT Streams
                     </Button>
                   </div>

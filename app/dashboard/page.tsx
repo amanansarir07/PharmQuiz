@@ -43,12 +43,14 @@ import {
   Bookmark,
   Keyboard,
   Compass,
+  Clock,
 } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
+import { OnboardingDepartmentModal } from "@/components/onboarding-department-modal";
 
 type DashboardPillar = "study" | "practice" | "progress";
 
@@ -56,7 +58,7 @@ export default function DashboardPage() {
   const { user, isAdmin } = useAuth();
   const router = useRouter();
   const firstName = user?.name?.split(" ")[0] || "Student";
-  const { programSlug, program } = useActiveProgram();
+  const { programSlug, program, setProgramSlug } = useActiveProgram();
   const subjects = useMemo(
     () => getSubjectsForProgram(programSlug),
     [programSlug]
@@ -195,7 +197,9 @@ export default function DashboardPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 sm:py-10 sm:px-6">
-      
+      {/* Auto-Prompt for Department Selection if Unset */}
+      <OnboardingDepartmentModal />
+
       {/* ================= HEADER & QUICK STATUS ================= */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -208,12 +212,16 @@ export default function DashboardPage() {
               {program.shortLabel}
             </span>
             <span>•</span>
-            <span>CTEVT Health Sciences</span>
+            <span>
+              {program.facultySlug === "ctevt"
+                ? "CTEVT Health Sciences"
+                : "+2 Higher Secondary (NEB)"}
+            </span>
             <Link
               href="/programs"
               className="text-xs text-primary hover:underline ml-1"
             >
-              (Switch)
+              (Switch Department)
             </Link>
           </div>
         </div>
@@ -236,6 +244,57 @@ export default function DashboardPage() {
           )}
         </div>
       </div>
+
+      {/* ================= ACTIVE DEVELOPMENT NOTICE ================= */}
+      {!program.hasContent && (
+        <div className="mb-6 rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/[0.08] via-card to-card p-5 sm:p-6 shadow-sm">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600">
+                <Clock className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="font-bold text-base sm:text-lg">
+                    {program.name} is in Active Development
+                  </h3>
+                  <Badge variant="outline" className="border-amber-500/40 bg-amber-500/10 text-xs text-amber-700 dark:text-amber-400">
+                    Phase 2: Question Authoring
+                  </Badge>
+                </div>
+                <p className="mt-1 text-xs sm:text-sm text-muted-foreground max-w-xl">
+                  You are registered in <strong>{program.name}</strong>. While full question banks are being authored, you can explore the syllabus specification or practice on live D.Pharm Year 3 or Year 2 question banks.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
+              <Link href={`/programs/${program.slug}`}>
+                <Button size="sm" className="gap-1.5 font-medium bg-primary">
+                  <BookOpen className="h-4 w-4" />
+                  View Syllabus Roadmap
+                </Button>
+              </Link>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setProgramSlug("d-pharm-y3")}
+                className="gap-1.5 font-medium"
+              >
+                Switch to D.Pharm Y3 (Live)
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setProgramSlug("d-pharm-y2")}
+                className="gap-1.5 font-medium"
+              >
+                Switch to D.Pharm Y2 (Live)
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ================= 2-COLUMN RESPONSIVE WEB-APP WORKSPACE ================= */}
       <div className="grid gap-8 lg:grid-cols-[1fr_340px] items-start">
@@ -310,8 +369,33 @@ export default function DashboardPage() {
             </Link>
           </div>
 
-          <div className="space-y-4">
-            {subjects.map((subject) => {
+          {subjects.length === 0 ? (
+            <Card className="border-dashed p-8 text-center bg-card/60">
+              <BookOpen className="mx-auto h-10 w-10 text-muted-foreground/60 mb-3" />
+              <h3 className="font-bold text-lg">{program.name} Syllabus Preview</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto mt-1 mb-5">
+                The full chapter curriculum, credit hour allocation, and course roadmap for {program.name} are available on its curriculum specification page.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <Link href={`/programs/${program.slug}`}>
+                  <Button className="gap-2 bg-primary font-semibold">
+                    <BookOpen className="h-4 w-4" />
+                    Open Curriculum Roadmap
+                  </Button>
+                </Link>
+                <Button
+                  variant="outline"
+                  onClick={() => setProgramSlug("d-pharm-y3")}
+                  className="gap-2"
+                >
+                  Practise D.Pharm Year 3 (Live)
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </Card>
+          ) : (
+            <div className="space-y-4">
+              {subjects.map((subject) => {
               const isExpanded = expandedSubject === subject.slug;
               return (
                 <Card key={subject.id} className="overflow-hidden transition-all">
@@ -434,6 +518,7 @@ export default function DashboardPage() {
               );
             })}
           </div>
+        )}
         </div>
       )}
 

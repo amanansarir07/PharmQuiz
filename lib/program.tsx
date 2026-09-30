@@ -60,7 +60,7 @@ function subscribe(onChange: () => void) {
 
 function getStoredChoice(): string {
   const stored = safeGetItem(STORAGE_KEY);
-  return stored && isProgramAvailable(stored) ? stored : "";
+  return stored && getProgram(stored) ? stored : "";
 }
 
 /**
@@ -89,9 +89,7 @@ function getNoChoiceSnapshot(): string {
  *
  * Resolution order: the programme saved on their profile (so the choice
  * follows them across devices), then the last one they picked on this device,
- * then the default. Only programmes with published content are ever active —
- * the rest show as "coming soon" on `/programs` and switch is a no-op, so a
- * student can never land on an empty subject list.
+ * then the default.
  */
 export function ProgramProvider({ children }: { children: React.ReactNode }) {
   const { user, updateProfile } = useAuth();
@@ -103,7 +101,7 @@ export function ProgramProvider({ children }: { children: React.ReactNode }) {
   );
 
   // The same store read without the default applied, so the UI can tell "this
-  // student picked D.Pharm Y2" apart from "we fell back to it". Empty string
+  // student picked a programme" apart from "we fell back to it". Empty string
   // on the server, so first-run prompts only ever appear after hydration.
   const storedChoice = useSyncExternalStore(
     subscribe,
@@ -112,7 +110,7 @@ export function ProgramProvider({ children }: { children: React.ReactNode }) {
   );
 
   const profileSlug =
-    user?.programSlug && isProgramAvailable(user.programSlug)
+    user?.programSlug && getProgram(user.programSlug)
       ? user.programSlug
       : null;
 
@@ -131,7 +129,7 @@ export function ProgramProvider({ children }: { children: React.ReactNode }) {
 
   const setProgramSlug = useCallback(
     (slug: string) => {
-      if (!isProgramAvailable(slug)) return;
+      if (!getProgram(slug)) return;
 
       // Apply locally first so the UI responds immediately.
       safeSetItem(STORAGE_KEY, slug);

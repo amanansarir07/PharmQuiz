@@ -15,10 +15,12 @@ export function ProgramPicker({
   value,
   onChange,
   disabled = false,
+  allowAll = true,
 }: {
   value: string;
   onChange: (slug: string) => void;
   disabled?: boolean;
+  allowAll?: boolean;
 }) {
   const catalogue = getFacultyCatalogue();
 
@@ -38,7 +40,7 @@ export function ProgramPicker({
                 <div className="flex flex-wrap gap-2">
                   {award.programs.map((program) => {
                     const selected = program.slug === value;
-                    const selectable = program.hasContent && !disabled;
+                    const selectable = (program.hasContent || allowAll) && !disabled;
                     return (
                       <button
                         key={program.slug}
@@ -48,25 +50,30 @@ export function ProgramPicker({
                         title={
                           program.hasContent
                             ? program.description
-                            : `${program.name}${program.level ? " " + program.level : ""} — coming soon`
+                            : `${program.name}${program.level ? " " + program.level : ""} — in active development`
                         }
                         className={cn(
                           "inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm transition-all",
                           selected
-                            ? "border-primary bg-primary/5 font-medium ring-1 ring-primary"
-                            : "hover:bg-muted",
-                          !program.hasContent &&
+                            ? "border-primary bg-primary/10 font-semibold text-primary ring-2 ring-primary/30"
+                            : "hover:bg-muted/70 hover:border-primary/30",
+                          !program.hasContent && !allowAll &&
                             "cursor-not-allowed border-dashed text-muted-foreground hover:bg-transparent"
                         )}
                       >
                         <span>{program.icon}</span>
-                        {program.shortLabel}
+                        <span>{program.shortLabel}</span>
                         {program.hasContent ? (
-                          selected && (
-                            <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
-                          )
+                          <span className="ml-1 rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-medium text-emerald-600 dark:text-emerald-400">
+                            Live
+                          </span>
                         ) : (
-                          <Clock className="h-3.5 w-3.5 opacity-50" />
+                          <span className="ml-1 rounded-full bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-600 dark:text-amber-400">
+                            In Dev
+                          </span>
+                        )}
+                        {selected && (
+                          <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0" />
                         )}
                       </button>
                     );
