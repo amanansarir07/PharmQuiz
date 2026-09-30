@@ -151,6 +151,31 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       async (event, session) => {
         try {
           if (event === "SIGNED_IN" && session?.user) {
+            // If user selected a program prior to Google OAuth redirect, persist it to profile
+            if (typeof window !== "undefined") {
+              const pendingProgram =
+                localStorage.getItem("bujh-pending-program") ||
+                localStorage.getItem("bujh-active-program");
+              if (pendingProgram) {
+                try {
+                  await getSupabase().rpc("update_profile", {
+                    p_user_id: session.user.id,
+                    p_name:
+                      session.user.user_metadata?.name ||
+                      session.user.email?.split("@")[0] ||
+                      "Student",
+                    p_program_slug: pendingProgram,
+                  });
+                  await getSupabase()
+                    .from("profiles")
+                    .update({ program_slug: pendingProgram })
+                    .eq("id", session.user.id);
+                  localStorage.removeItem("bujh-pending-program");
+                } catch (e) {
+                  console.warn("Failed to sync pending program on sign in:", e);
+                }
+              }
+            }
             await loadProfile(session.user.id);
           } else if (event === "SIGNED_OUT") {
             setUser(null);
@@ -194,8 +219,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return { error: "Registration failed. Please try again." };
     }
 
-    // Wait briefly for the trigger to create the profile, then load it
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Wait briefly for the signup trigger to create the initial profile row
+    await new Promise((resolve) => setTimeout(resolve, 1200));
+
+    // Explicitly guarantee the chosen programme is saved to profiles table (overriding any trigger default)
+    if (programSlug) {
+      try {
+        await getSupabase().rpc("update_profile", {
+          p_user_id: data.user.id,
+          p_name: name,
+          p_program_slug: programSlug,
+        });
+      } catch {}
+      try {
+        await getSupabase()
+          .from("profiles")
+          .update({ program_slug: programSlug, name })
+          .eq("id", data.user.id);
+      } catch {}
+    }
 
     const loadedUser = await loadProfile(data.user.id);
     if (!loadedUser) {

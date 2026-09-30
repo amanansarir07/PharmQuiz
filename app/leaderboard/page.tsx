@@ -270,7 +270,7 @@ export default function LeaderboardPage() {
 
           {/* Sticky Floating User Position Banner */}
           {user && userPosition && (
-            <div className="sticky bottom-20 sm:bottom-6 z-20 mt-6 rounded-2xl border-2 border-primary/40 bg-card/95 backdrop-blur-md p-3.5 shadow-xl transition-all">
+            <div className="sticky bottom-20 sm:bottom-6 z-20 mt-6 rounded-2xl border-2 border-primary/40 bg-card p-3.5 shadow-xl transition-all">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-xs font-black text-primary-foreground shadow-xs">

@@ -70,7 +70,7 @@ export function BottomNav() {
   return (
     <nav
       aria-label="Mobile Bottom Navigation"
-      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/80 bg-background/92 backdrop-blur-xl md:hidden"
+      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/80 bg-background/98 shadow-xs md:hidden"
       style={{ paddingBottom: "max(0.35rem, env(safe-area-inset-bottom, 0px))" }}
     >
       <div className="grid h-14 grid-cols-5 items-center px-1">

@@ -109,7 +109,7 @@ export function Navbar() {
   if (isTakingQuiz) return null;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/98 shadow-2xs">
       <div className="mx-auto flex h-14 md:h-16 max-w-7xl items-center justify-between px-3.5 sm:px-6">
         
         {/* Mobile Left / Desktop Left */}
@@ -428,7 +428,7 @@ export function Navbar() {
       {/* NATIVE MOBILE SLIDE-DOWN: STUDY TOOLS & EXTRA OPTIONS               */}
       {/* =================================================================== */}
       {mobileOpen && (
-        <div className="md:hidden border-t bg-background/95 backdrop-blur-xl px-4 py-4 max-h-[75vh] overflow-y-auto shadow-xl">
+        <div className="md:hidden border-t bg-background px-4 py-4 max-h-[75vh] overflow-y-auto shadow-xl">
           <div className="mb-3 flex items-center justify-between">
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Study Tools

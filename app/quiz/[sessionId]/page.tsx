@@ -629,7 +629,7 @@ export default function ActiveQuizPage({
           </Card>
 
           {/* Navigation Controls: Sticky bottom bar on mobile, static on desktop */}
-          <div className="sticky bottom-0 z-30 mt-6 -mx-4 -mb-6 border-t bg-background/95 p-3.5 backdrop-blur-md sm:static sm:mx-0 sm:mb-0 sm:border-0 sm:bg-transparent sm:p-0 flex items-center justify-between gap-2 shadow-sm sm:shadow-none">
+          <div className="sticky bottom-0 z-30 mt-6 -mx-4 -mb-6 border-t bg-background p-3.5 sm:static sm:mx-0 sm:mb-0 sm:border-0 sm:bg-transparent sm:p-0 flex items-center justify-between gap-2 shadow-sm sm:shadow-none">
             <Button
               variant="outline"
               size="sm"

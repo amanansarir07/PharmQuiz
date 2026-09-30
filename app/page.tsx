@@ -1,106 +1,60 @@
-import Link from "next/link";
-import { HeroSection } from "@/components/hero-section";
-import { FrontPageDepartmentSelector } from "@/components/front-page-department-selector";
-import { StudyFunnel } from "@/components/study-funnel";
-import { ProgramHome } from "@/components/program-home";
-import {
-  Brain,
-  Timer,
-  Trophy,
-  ArrowRight,
-  Sparkles,
-  CheckCircle2,
-} from "lucide-react";
+import { MainScreenSelector } from "@/components/main-screen-selector";
+import { Brain, Timer, Trophy } from "lucide-react";
 import { getProgrammeQuestionCounts } from "@/lib/quiz-loader";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 export default async function HomePage() {
   const questionCounts = await getProgrammeQuestionCounts();
 
   return (
     <div className="flex flex-col">
-      {/* 1. App Hero */}
-      <HeroSection />
+      {/* 1. Main Screen Course Selector (Top of page, zero swipe required) */}
+      <MainScreenSelector questionCounts={questionCounts} />
 
-      {/* 2. Direct Department & Syllabus Selector */}
-      <FrontPageDepartmentSelector />
-
-      {/* 3. Interactive 'What do you study?' Stepper Funnel */}
-      <StudyFunnel id="study-funnel" />
-
-      {/* 3. Active Programme Syllabus & Stats */}
-      <ProgramHome questionCounts={questionCounts} />
-
-      {/* 4. App Value Pillars (Compact, Zero Fluff) */}
-      <section className="border-t bg-muted/20 py-12 sm:py-16">
+      {/* 2. Compact Value Pillars (Zero Fluff, Fast 60fps Rendering) */}
+      <section className="bg-muted/10 py-10 sm:py-14 border-t">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+          <div className="text-center mb-8">
+            <h2 className="text-xl font-bold tracking-tight sm:text-2xl">
               Engineered for Exam Day Confidence
             </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Built specifically around official CTEVT & NEB syllabi.
+            <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
+              Built specifically around official CTEVT &amp; NEB Board syllabi in Nepal.
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-3">
             {/* Feature 1 */}
-            <div className="rounded-2xl border bg-card p-6 shadow-xs transition-all hover:border-primary/40 hover:shadow-sm">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 mb-4">
+            <div className="rounded-2xl border bg-card p-5 shadow-xs transition-all hover:border-primary/40">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 mb-3">
                 <Brain className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-base">Chapter & Unit MCQs</h3>
-              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Filter by specific units, select difficulty, and get instant explanations for every answer option.
+              <h3 className="font-bold text-sm sm:text-base">Chapter &amp; Unit MCQs</h3>
+              <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
+                Filter by specific units, select difficulty, and get instant explanations for every question.
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="rounded-2xl border bg-card p-6 shadow-xs transition-all hover:border-primary/40 hover:shadow-sm">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-4">
+            <div className="rounded-2xl border bg-card p-5 shadow-xs transition-all hover:border-primary/40">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-3">
                 <Timer className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-base">Full Board Mock Exams</h3>
-              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Real exam conditions: 80 questions across all 8 subjects in 80 minutes to build real test stamina.
+              <h3 className="font-bold text-sm sm:text-base">Full Board Mock Exams</h3>
+              <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
+                Real exam conditions: timed mock tests across all subjects to build genuine exam stamina.
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="rounded-2xl border bg-card p-6 shadow-xs transition-all hover:border-primary/40 hover:shadow-sm">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-4">
+            <div className="rounded-2xl border bg-card p-5 shadow-xs transition-all hover:border-primary/40">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-3">
                 <Trophy className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-base">Peer Leaderboards</h3>
-              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Compete with fellow students in your curriculum with daily, weekly, and all-time ranking boards.
+              <h3 className="font-bold text-sm sm:text-base">Live Peer Leaderboards</h3>
+              <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
+                Compete with fellow students across Nepal with daily, weekly, and curriculum rankings.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Minimal Quick-Start Banner */}
-      <section className="border-t bg-card py-10">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary mb-2">
-            <Sparkles className="h-3.5 w-3.5" /> Start Free Practice Today
-          </div>
-          <h2 className="text-xl font-bold tracking-tight sm:text-2xl">
-            Choose Your Syllabus & Begin
-          </h2>
-          <div className="mt-5 flex justify-center">
-            <a
-              href="#study-funnel"
-              className={cn(
-                buttonVariants({ variant: "default", size: "lg" }),
-                "gap-2 px-6 font-semibold shadow-sm"
-              )}
-            >
-              Select Your Curriculum
-              <ArrowRight className="h-4 w-4" />
-            </a>
           </div>
         </div>
       </section>
