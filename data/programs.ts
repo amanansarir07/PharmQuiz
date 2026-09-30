@@ -62,7 +62,7 @@ export const programs: ProgramMeta[] = [
       "Third-year diploma pharmacy curriculum with clinical pharmacy practice and hospital training.",
     icon: "💊",
     order: 3,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-c-pharm",

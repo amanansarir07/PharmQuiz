@@ -1,0 +1,772 @@
+[
+  {
+    "unit_id": "pharm-ii-unit-1",
+    "question_text": "Which of the following excipients is primarily used to increase the bulk volume of a tablet when the active pharmaceutical ingredient (API) dose is very low?",
+    "options": [
+      "Binder",
+      "Diluent",
+      "Disintegrant",
+      "Glidant"
+    ],
+    "correct_index": 1,
+    "explanation": "Diluents (bulking agents or fillers) such as lactose, microcrystalline cellulose (MCC), and dicalcium phosphate are added to increase the bulk volume of a tablet when the active ingredient dose is inadequate to produce a standard-sized tablet.",
+    "difficulty": "easy",
+    "tags": ["tablets", "excipients", "diluent"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-1",
+    "question_text": "During tablet compression, the partial or complete separation of the top or bottom crowns of a tablet from the main body is termed as:",
+    "options": [
+      "Lamination",
+      "Capping",
+      "Picking",
+      "Mottling"
+    ],
+    "correct_index": 1,
+    "explanation": "Capping is the partial or complete separation of the top or bottom crowns of a tablet from the main body, usually caused by air entrapment during compression or excessive fine powder. Lamination is separation into two or more distinct layers.",
+    "difficulty": "medium",
+    "tags": ["tablets", "compression defects", "capping"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-1",
+    "question_text": "Which polymer is commonly used for enteric coating of tablets to prevent drug release in the acidic environment of the stomach?",
+    "options": [
+      "Hydroxypropyl methylcellulose (HPMC)",
+      "Cellulose acetate phthalate (CAP)",
+      "Ethyl cellulose",
+      "Polyethylene glycol (PEG)"
+    ],
+    "correct_index": 1,
+    "explanation": "Cellulose acetate phthalate (CAP), Eudragit L/S, and hydroxypropyl methylcellulose phthalate (HPMCP) are enteric coating polymers that remain insoluble in the acidic pH of gastric juice but dissolve at the neutral to alkaline pH of the small intestine.",
+    "difficulty": "medium",
+    "tags": ["tablets", "coating", "enteric polymers"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-1",
+    "question_text": "According to official pharmacopoeial standards, what is the maximum percentage friability weight loss acceptable for conventional uncoated compressed tablets?",
+    "options": [
+      "0.1%",
+      "0.5%",
+      "1.0%",
+      "2.0%"
+    ],
+    "correct_index": 2,
+    "explanation": "According to the USP and IP, for most conventional compressed tablets, a maximum weight loss of not more than 1.0% (typically 0.8% - 1.0%) during friability testing using a Roche Friabilator is considered acceptable.",
+    "difficulty": "easy",
+    "tags": ["tablets", "quality control", "friability"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-1",
+    "question_text": "In the standard numbering system for hard gelatin capsule shells, which capsule size has the smallest volumetric capacity?",
+    "options": [
+      "Size 000",
+      "Size 0",
+      "Size 1",
+      "Size 5"
+    ],
+    "correct_index": 3,
+    "explanation": "Capsule shell sizes for human oral administration range from 000 (the largest, ~1.36 mL) down to 5 (the smallest, ~0.13 mL). Therefore, Size 5 has the smallest volumetric capacity.",
+    "difficulty": "easy",
+    "tags": ["capsules", "shell sizes", "hard gelatin"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-2",
+    "question_text": "Which of the following characteristics distinguishes a flocculated suspension from a deflocculated suspension?",
+    "options": [
+      "Slow sedimentation rate and formation of a hard, unredispersible cake",
+      "Rapid sedimentation rate with high sedimentation volume and easily redispersible particles",
+      "Turbid supernatant liquid upon standing",
+      "Individual separate particles settling independently"
+    ],
+    "correct_index": 1,
+    "explanation": "In a flocculated suspension, particles form loose aggregates (flocs) that settle rapidly with a large sedimentation volume (F), leaving a clear supernatant. Crucially, they do not form a hard cake and are easily redispersed upon gentle shaking.",
+    "difficulty": "medium",
+    "tags": ["suspensions", "flocculation", "physical stability"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-2",
+    "question_text": "The irreversible coalescence and separation of dispersed globules into two distinct continuous layers in an emulsion is known as:",
+    "options": [
+      "Creaming",
+      "Cracking (Breaking)",
+      "Phase inversion",
+      "Flocculation"
+    ],
+    "correct_index": 1,
+    "explanation": "Cracking (or breaking) is the irreversible destruction of the protective emulsifier film leading to complete coalescence and separation into distinct oil and water layers. Creaming is reversible upon shaking, whereas cracking cannot be reversed.",
+    "difficulty": "easy",
+    "tags": ["emulsions", "cracking", "stability"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-2",
+    "question_text": "According to Griffin's HLB (Hydrophilic-Lipophilic Balance) scale, surfactants with an HLB value between 8 and 16 are most suitable as:",
+    "options": [
+      "Antifoaming agents",
+      "Water-in-Oil (W/O) emulsifiers",
+      "Oil-in-Water (O/W) emulsifiers",
+      "Wetting and spreading agents"
+    ],
+    "correct_index": 2,
+    "explanation": "Surfactants with an HLB value of 8-16 are predominantly hydrophilic and are used as Oil-in-Water (O/W) emulsifying agents. HLB 3-6 agents are lipophilic and used for W/O emulsions, while HLB 1-3 agents act as antifoaming agents.",
+    "difficulty": "medium",
+    "tags": ["emulsions", "HLB scale", "surfactants"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-2",
+    "question_text": "Which of the following ointment bases belongs to the hydrocarbon (oleaginous) base category?",
+    "options": [
+      "Wool fat (Anhydrous lanolin)",
+      "White soft paraffin (Petrolatum)",
+      "Hydrophilic ointment",
+      "Macrogol (Polyethylene glycol) ointment"
+    ],
+    "correct_index": 1,
+    "explanation": "White soft paraffin (petrolatum), yellow soft paraffin, liquid paraffin, and hard paraffin are hydrocarbon (oleaginous) bases. They are emollient, occlusive, greasy, and immiscible with water.",
+    "difficulty": "easy",
+    "tags": ["ointments", "bases", "semisolids"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-2",
+    "question_text": "How do pharmaceutical pastes differ fundamentally from pharmaceutical ointments?",
+    "options": [
+      "Pastes contain a much higher percentage of finely dispersed insoluble solids",
+      "Pastes are formulated with transparent gelling polymers only",
+      "Pastes are less viscous and spread more readily than ointments",
+      "Pastes are exclusively oil-in-water emulsions"
+    ],
+    "correct_index": 0,
+    "explanation": "Pastes are semisolid preparations containing a high proportion (frequently 20% to 50% or more) of finely divided insoluble solids (e.g., zinc oxide paste). As a result, pastes are stiffer, less greasy, and more absorptive than ointments.",
+    "difficulty": "medium",
+    "tags": ["pastes", "ointments", "semisolids"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-3",
+    "question_text": "Which type of pharmaceutical glass is chemically resistant borosilicate glass suitable for packaging all types of parenteral preparations?",
+    "options": [
+      "Type I glass",
+      "Type II glass",
+      "Type III glass",
+      "Type NP glass"
+    ],
+    "correct_index": 0,
+    "explanation": "Type I glass is highly resistant borosilicate glass with low thermal expansion and high chemical durability, making it suitable for parenterals, including acidic, neutral, and alkaline solutions.",
+    "difficulty": "easy",
+    "tags": ["packaging", "glass containers", "parenterals"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-3",
+    "question_text": "The hydrolytic resistance of Type II glass containers is evaluated using which official test?",
+    "options": [
+      "Powdered glass test",
+      "Water attack test on whole container surface",
+      "Thermal shock test",
+      "Spark test"
+    ],
+    "correct_index": 1,
+    "explanation": "Type II glass is treated soda-lime glass where surface de-alkalization has taken place. Its hydrolytic resistance is tested using the water attack test on the whole intact container surface, whereas Type I and III are evaluated via the powdered glass test.",
+    "difficulty": "hard",
+    "tags": ["packaging", "glass evaluation", "water attack test"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-3",
+    "question_text": "What is the primary material used for the forming film in conventional thermoformed blister packaging?",
+    "options": [
+      "Polyvinyl chloride (PVC)",
+      "High-density polyethylene (HDPE)",
+      "Polystyrene",
+      "Cellophane"
+    ],
+    "correct_index": 0,
+    "explanation": "Polyvinyl chloride (PVC) is the most widely utilized thermoformable polymer film for standard blister pockets due to its clarity, rigidity, and cost-effectiveness. It is often coated with PVDC or laminated with aluminum foil (alu-alu) for superior moisture barriers.",
+    "difficulty": "medium",
+    "tags": ["packaging", "blister packs", "polymers"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-3",
+    "question_text": "In parenteral vial packaging, what defect occurs when small fragments of the rubber stopper are sheared off during needle insertion?",
+    "options": [
+      "Leaching",
+      "Coring",
+      "Sorption",
+      "Blooming"
+    ],
+    "correct_index": 1,
+    "explanation": "Coring refers to the cutting or gouging out of small particles or plugs of rubber closure as a hypodermic needle is pushed through the septum, which could introduce particulate contamination into the parenteral vial.",
+    "difficulty": "medium",
+    "tags": ["packaging", "rubber closures", "coring"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-3",
+    "question_text": "Which level of packaging refers to the exterior corrugated fiberboard shipping carton containing multiple retail units?",
+    "options": [
+      "Primary packaging",
+      "Secondary packaging",
+      "Tertiary packaging",
+      "Unit-dose packaging"
+    ],
+    "correct_index": 2,
+    "explanation": "Tertiary packaging (bulk or transit packaging) consists of corrugated boxes and master shippers designed to protect goods during transport and warehouse handling. Primary packaging touches the product directly; secondary holds the primary pack (e.g. carton box).",
+    "difficulty": "easy",
+    "tags": ["packaging", "classification", "tertiary"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-4",
+    "question_text": "Which of the following chlorofluorocarbon (CFC) alternatives is currently the standard propellant used in pharmaceutical metered dose inhalers (MDIs)?",
+    "options": [
+      "Hydrofluoroalkanes (e.g., HFA-134a)",
+      "Nitrous oxide",
+      "Methylene chloride",
+      "Carbon tetrachloride"
+    ],
+    "correct_index": 0,
+    "explanation": "Hydrofluoroalkanes (HFAs), specifically HFA-134a (1,1,1,2-tetrafluoroethane) and HFA-227, replaced ozone-depleting chlorofluorocarbons (CFC-11, CFC-12) as safe, environmentally compliant propellants in pressurized MDIs.",
+    "difficulty": "easy",
+    "tags": ["aerosols", "propellants", "HFA"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-4",
+    "question_text": "For therapeutic aerosol particles to reach and deposit effectively within the lower respiratory tract (alveoli and terminal bronchioles), what is the optimal aerodynamic particle size?",
+    "options": [
+      "> 20 µm",
+      "10 to 15 µm",
+      "1 to 5 µm",
+      "< 0.1 µm"
+    ],
+    "correct_index": 2,
+    "explanation": "Particles between 1 and 5 µm in aerodynamic diameter deposit in the bronchioles and alveolar spaces via sedimentation. Particles > 10 µm impact the oropharynx, while particles < 0.5 µm are mostly exhaled without deposition.",
+    "difficulty": "medium",
+    "tags": ["aerosols", "pulmonary delivery", "particle size"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-4",
+    "question_text": "The valve component that delivers a reproducible, precise volume of aerosol medication with each actuation is called a:",
+    "options": [
+      "Continuous spray valve",
+      "Metered dose valve",
+      "Dip tube",
+      "Stem orifice"
+    ],
+    "correct_index": 1,
+    "explanation": "A metered dose valve contains a precision metering chamber (typically 25 to 100 µL) that fills with a defined volume of formulation, discharging an exact uniform dose each time the actuator button is depressed.",
+    "difficulty": "easy",
+    "tags": ["aerosols", "valves", "MDI"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-4",
+    "question_text": "How does a Dry Powder Inhaler (DPI) differ fundamentally from a pressurized Metered Dose Inhaler (pMDI)?",
+    "options": [
+      "DPIs utilize high-pressure liquefied gases to aerosolize the powder",
+      "DPIs are breath-actuated and do not require chemical propellants",
+      "DPIs are only used for delivering water-soluble vitamins",
+      "DPIs cannot deliver micronized drug powders"
+    ],
+    "correct_index": 1,
+    "explanation": "Dry Powder Inhalers (DPIs) are breath-actuated devices where the patient's own inspiratory airflow de-aggregates and disperses the micronized powder medication from a carrier (usually lactose), eliminating the need for chemical propellants.",
+    "difficulty": "medium",
+    "tags": ["aerosols", "DPI", "inhalers"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-4",
+    "question_text": "Which test is routinely performed on finished pressurized aerosol containers to detect micro-leaks through the crimped valve seal?",
+    "options": [
+      "Water bath leak testing at 50°C to 55°C",
+      "Friability drum rotation test",
+      "Paddle dissolution test",
+      "Pyrogen rabbit test"
+    ],
+    "correct_index": 0,
+    "explanation": "Finished aerosol cans are passed through a hot water bath (typically maintained at 50°C to 55°C) to increase internal pressure and observe for escaping bubbles, confirming container closure integrity and absence of crimping leaks.",
+    "difficulty": "medium",
+    "tags": ["aerosols", "quality control", "leak testing"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-5",
+    "question_text": "What is the official bacterial limit for endotoxins in Water for Injection (WFI) according to pharmacopoeial standards?",
+    "options": [
+      "Not more than 0.25 EU/mL",
+      "Not more than 2.5 EU/mL",
+      "Not more than 10.0 EU/mL",
+      "Must be completely zero endotoxins"
+    ],
+    "correct_index": 0,
+    "explanation": "According to the USP, BP, and IP, Water for Injection (WFI) must contain not more than 0.25 Endotoxin Units (EU) per milliliter, tested using the Limulus Amebocyte Lysate (LAL) test.",
+    "difficulty": "hard",
+    "tags": ["parenterals", "WFI", "endotoxins"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-5",
+    "question_text": "The Limulus Amebocyte Lysate (LAL) test for bacterial endotoxins utilizes an aqueous extract derived from the circulating amebocytes of which organism?",
+    "options": [
+      "New Zealand White Rabbit",
+      "Horseshoe crab (Limulus polyphemus)",
+      "Pseudomonas aeruginosa",
+      "Bacillus stearothermophilus"
+    ],
+    "correct_index": 1,
+    "explanation": "The LAL test uses an extract prepared from the amebocytes of the Atlantic horseshoe crab (Limulus polyphemus). In the presence of Gram-negative bacterial endotoxins (lipopolysaccharides), gel clotting or color development occurs.",
+    "difficulty": "easy",
+    "tags": ["parenterals", "LAL test", "pyrogens"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-5",
+    "question_text": "Which cleanroom air grade (according to WHO-GMP guidelines) is required for high-risk aseptic filling operations of sterile parenteral products?",
+    "options": [
+      "Grade A (Class 100)",
+      "Grade B",
+      "Grade C",
+      "Grade D"
+    ],
+    "correct_index": 0,
+    "explanation": "Grade A represents the localized zone for high-risk operations, such as aseptic filling and compounding, providing laminar airflow with HEPA filters ensuring no more than 3,520 particles ≥0.5 µm/m³ (equivalent to Class 100 / ISO 5).",
+    "difficulty": "medium",
+    "tags": ["parenterals", "cleanroom", "GMP"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-5",
+    "question_text": "Why must antimicrobial preservatives NEVER be included in Large Volume Parenterals (LVPs, IV fluids > 100 mL)?",
+    "options": [
+      "Because preservatives cause rapid degradation of dextrose",
+      "Because the large volume administered would deliver a toxic cumulative dose of the preservative",
+      "Because preservatives turn IV solutions turbid",
+      "Because LVPs are stored exclusively at freezing temperatures"
+    ],
+    "correct_index": 1,
+    "explanation": "LVPs (such as Normal Saline or Dextrose 5% 500 mL/1000 mL) are infused in large volumes. If a preservative were added, the total amount of preservative entering the patient's bloodstream would exceed safe systemic toxicity limits.",
+    "difficulty": "medium",
+    "tags": ["parenterals", "LVPs", "preservatives"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-5",
+    "question_text": "Which official sterility testing method is preferred for parenterals containing preservatives or antibiotics that could inhibit microbial growth in culture media?",
+    "options": [
+      "Direct inoculation method",
+      "Membrane filtration method",
+      "Gram staining method",
+      "LAL gel-clot method"
+    ],
+    "correct_index": 1,
+    "explanation": "The membrane filtration method is preferred because the product is filtered through a 0.45 µm membrane filter and washed with sterile fluid to remove residual antimicrobial or antibiotic activity before incubating the filter with growth media.",
+    "difficulty": "medium",
+    "tags": ["parenterals", "sterility testing", "membrane filtration"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-6",
+    "question_text": "What is the recommended storage temperature range for the vast majority of routine national immunization program vaccines under cold chain guidelines in Nepal?",
+    "options": [
+      "-20°C to -10°C",
+      "+2°C to +8°C",
+      "+15°C to +25°C",
+      "Room temperature (< 30°C)"
+    ],
+    "correct_index": 1,
+    "explanation": "Under standard EPI (Expanded Programme on Immunization) cold chain protocols in Nepal and WHO standards, most routine vaccines (such as DPT-HepB-Hib, BCG, TT, Measles-Rubella, Hepatitis B) must be maintained strictly between +2°C and +8°C.",
+    "difficulty": "easy",
+    "tags": ["cold chain", "vaccines", "storage temperature"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-6",
+    "question_text": "Which of the following vaccines is EXTREMELY sensitive to freezing and must be discarded if exposed to temperatures below 0°C?",
+    "options": [
+      "Oral Polio Vaccine (OPV)",
+      "Tetanus Toxoid (TT / Td) and DPT vaccine",
+      "Measles vaccine powder",
+      "Yellow fever vaccine"
+    ],
+    "correct_index": 1,
+    "explanation": "Aluminum-adsorbed vaccines such as Tetanus Toxoid (TT/Td), DPT, and Hepatitis B are freeze-sensitive. Freezing causes the aluminum adjuvant to precipitate and aggregate, leading to irreversible loss of potency and increased reactogenicity.",
+    "difficulty": "medium",
+    "tags": ["cold chain", "vaccines", "freeze sensitive"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-6",
+    "question_text": "On a Vaccine Vial Monitor (VVM), what does it signify when the inner square has turned the same color or darker than the outer circle?",
+    "options": [
+      "The vaccine is at Stage 1 and safe to use",
+      "The vaccine is at Stage 2 and should be used first",
+      "The vaccine has reached or passed the discard point (Stage 3 or 4) and must NOT be used",
+      "The vaccine has been stored below freezing temperatures"
+    ],
+    "correct_index": 2,
+    "explanation": "On a VVM, when the inner square matches or is darker than the surrounding circle (Stage 3 or 4), the vaccine has exceeded acceptable cumulative heat exposure, reached its discard point, and must be safely discarded.",
+    "difficulty": "easy",
+    "tags": ["cold chain", "VVM", "vaccine safety"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-6",
+    "question_text": "Which type of vaccine contains viable microorganisms that have been cultivated under conditions that disable their virulent properties?",
+    "options": [
+      "Inactivated (killed) vaccine",
+      "Live attenuated vaccine",
+      "Toxoid",
+      "Subunit recombinant vaccine"
+    ],
+    "correct_index": 1,
+    "explanation": "Live attenuated vaccines (e.g., BCG, OPV, MMR) contain living viruses or bacteria that are weakened (attenuated) so they provoke a strong, durable immune response without causing active clinical disease in immunocompetent hosts.",
+    "difficulty": "easy",
+    "tags": ["biologicals", "vaccines", "attenuated"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-6",
+    "question_text": "What is the key functional difference between a vaccine and an antiserum?",
+    "options": [
+      "Vaccines provide active artificial immunity, whereas antisera provide immediate passive artificial immunity",
+      "Vaccines contain antibodies, whereas antisera contain antigens",
+      "Antisera produce lifelong immunological memory, whereas vaccines last only 24 hours",
+      "Vaccines are only administered orally"
+    ],
+    "correct_index": 0,
+    "explanation": "Vaccines stimulate the recipient's immune system to produce its own antibodies (active immunity, taking weeks to develop but long-lasting). Antisera (e.g., anti-snake venom, tetanus immunoglobulin) contain preformed antibodies, providing immediate but temporary passive immunity.",
+    "difficulty": "medium",
+    "tags": ["biologicals", "immunity", "antisera"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-7",
+    "question_text": "In a medical prescription, what does the heading 'Rx' represent?",
+    "options": [
+      "Inscription",
+      "Subscription",
+      "Superscription",
+      "Signatura"
+    ],
+    "correct_index": 2,
+    "explanation": "The superscription consists of the Rx symbol (an abbreviation for 'Recipe', Latin for 'take thou'). The inscription lists drug names and doses; the subscription gives instructions to the pharmacist; the signatura gives instructions for the patient.",
+    "difficulty": "easy",
+    "tags": ["dispensing", "prescriptions", "superscription"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-7",
+    "question_text": "What does the Latin abbreviation 'stat.' or 'statim' denote on a hospital medication order?",
+    "options": [
+      "Immediately / At once",
+      "Before meals",
+      "As needed",
+      "At bedtime"
+    ],
+    "correct_index": 0,
+    "explanation": "The Latin term 'statim' (abbreviated 'stat.') means immediately or at once. 'a.c.' means ante cibos (before meals), 'p.r.n.' means pro re nata (as needed), and 'h.s.' means hora somni (at bedtime).",
+    "difficulty": "easy",
+    "tags": ["dispensing", "Latin terms", "abbreviations"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-7",
+    "question_text": "According to Young's rule for pediatric dose calculation based on age, what is the formula to determine the child's dose?",
+    "options": [
+      "Child dose = [Age in years / (Age + 12)] × Adult dose",
+      "Child dose = (Age in years / 20) × Adult dose",
+      "Child dose = (Weight in lbs / 150) × Adult dose",
+      "Child dose = (Age in months / 150) × Adult dose"
+    ],
+    "correct_index": 0,
+    "explanation": "Young's rule calculates child dose using: Child dose = [Age / (Age + 12)] × Adult dose. Dilling's rule uses (Age / 20) × Adult dose; Clark's rule uses (Weight in lbs / 150) × Adult dose; Fried's rule uses (Age in months / 150) × Adult dose.",
+    "difficulty": "medium",
+    "tags": ["calculations", "pediatric posology", "Young's rule"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-7",
+    "question_text": "When camphor and menthol are rubbed together in a mortar, a liquid mixture forms due to a lowering of their melting points. This physical incompatibility is known as:",
+    "options": [
+      "Precipitation",
+      "Eutectic mixture formation (Liquefaction)",
+      "Effervescence",
+      "Syneresis"
+    ],
+    "correct_index": 1,
+    "explanation": "Eutectic mixture formation (liquefaction) occurs when two or more solid substances (like camphor, menthol, thymol, or phenol) are mixed together, resulting in a combination that has a lower melting point than room temperature and liquefies.",
+    "difficulty": "medium",
+    "tags": ["incompatibilities", "physical incompatibility", "eutectic"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-7",
+    "question_text": "How can the physical incompatibility of eutectic liquefaction between camphor and menthol be prevented during the dispensing of compounding powders?",
+    "options": [
+      "By adding concentrated sulfuric acid",
+      "By triturating each compound separately with an inert adsorbent powder like light kaolin or magnesium oxide before mixing",
+      "By heating the powders to 100°C",
+      "By dissolving both powders in mineral oil"
+    ],
+    "correct_index": 1,
+    "explanation": "To prevent eutectic liquefaction when preparing powders, each eutectic component should be mixed separately with an inert, finely divided adsorbent diluent (such as light kaolin, starch, or magnesium carbonate) before gently tumbling the powders together.",
+    "difficulty": "medium",
+    "tags": ["dispensing", "incompatibilities", "adsorbents"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-8",
+    "question_text": "What is the primary fatty base historically and commercially used in the preparation of rectal suppositories?",
+    "options": [
+      "Theobroma oil (Cocoa butter)",
+      "Polyethylene glycol 4000",
+      "Glycerogelatin base",
+      "Microcrystalline wax"
+    ],
+    "correct_index": 0,
+    "explanation": "Theobroma oil (cocoa butter) is an ideal fatty suppository base because it is firm and brittle at room temperature (15°C - 25°C) but melts cleanly at body temperature (34°C - 35°C), releasing the active drug into the rectal vault.",
+    "difficulty": "easy",
+    "tags": ["suppositories", "theobroma oil", "bases"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-8",
+    "question_text": "Overheating of theobroma oil (cocoa butter) above 36°C during fusion moulding results in the formation of which unstable polymorphic form that fails to solidify at room temperature?",
+    "options": [
+      "Stable beta (β) form",
+      "Metastable alpha (α) and gamma (γ) forms",
+      "Delta form",
+      "Hydrate crystal"
+    ],
+    "correct_index": 1,
+    "explanation": "Overheating cocoa butter destroys the stable beta-crystal nuclei, producing metastable alpha (melting point ~22°C) and gamma (melting point ~18°C) polymorphs that remain liquid or take days to solidify at room temperature.",
+    "difficulty": "hard",
+    "tags": ["suppositories", "polymorphism", "cocoa butter"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-8",
+    "question_text": "What is defined as 'the number of parts by weight of medicament that displaces one part by weight of suppository base'?",
+    "options": [
+      "Saponification value",
+      "Displacement value",
+      "Acid value",
+      "Partition coefficient"
+    ],
+    "correct_index": 1,
+    "explanation": "Displacement value is the number of parts by weight of a medicinal drug that displaces one part by weight of the suppository base (typically theobroma oil) in a standardized mold cavity.",
+    "difficulty": "easy",
+    "tags": ["suppositories", "displacement value", "calculations"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-8",
+    "question_text": "Which lubricant is appropriate for suppository moulds when preparing suppositories using a hydrophilic glycerogelatin base?",
+    "options": [
+      "Glycerin",
+      "Liquid paraffin (mineral oil)",
+      "Alcohol 70%",
+      "Distilled water"
+    ],
+    "correct_index": 1,
+    "explanation": "The rule for mould lubrication is that the lubricant must be immiscible with the base. For water-soluble/hydrophilic bases like glycerogelatin, an oily lubricant like liquid paraffin is used. For fatty bases, an alcoholic solution of soft soap is used.",
+    "difficulty": "medium",
+    "tags": ["suppositories", "moulds", "lubricants"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-8",
+    "question_text": "Vaginal suppositories (pessaries) are most commonly formulated in which anatomical shape and weight range?",
+    "options": [
+      "Torpedo shape, 1 gram",
+      "Globular or ovoid shape, 3 to 5 grams",
+      "Pencil shape, 0.5 gram",
+      "Flat disk shape, 10 grams"
+    ],
+    "correct_index": 1,
+    "explanation": "Vaginal suppositories (pessaries) are typically globular, oviform, or cone-shaped, weighing between 3 and 5 grams (compared to adult rectal suppositories, which are torpedo-shaped and weigh approximately 1 to 2 grams).",
+    "difficulty": "medium",
+    "tags": ["suppositories", "pessaries", "dosage forms"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-9",
+    "question_text": "A standard ophthalmic solution must have a freezing point depression (ΔTf) of what value to be considered strictly isotonic with human tears and blood serum?",
+    "options": [
+      "-0.20°C",
+      "-0.52°C",
+      "-0.90°C",
+      "-1.00°C"
+    ],
+    "correct_index": 1,
+    "explanation": "Both human blood plasma and lachrymal secretions (tears) have a freezing point depression of -0.52°C, which corresponds to an isotonic 0.9% w/v Sodium Chloride solution.",
+    "difficulty": "medium",
+    "tags": ["ophthalmic", "tonicity", "freezing point"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-9",
+    "question_text": "Which antimicrobial preservative is most widely used in multi-dose commercial eye drops at a typical concentration of 0.01% w/v?",
+    "options": [
+      "Benzalkonium chloride (BKC)",
+      "Phenol",
+      "Formaldehyde",
+      "Glutaraldehyde"
+    ],
+    "correct_index": 0,
+    "explanation": "Benzalkonium chloride (BKC), a quaternary ammonium surfactant, is the most commonly employed preservative in multi-dose ophthalmic solutions (0.004% to 0.02%, usually 0.01% w/v) due to its broad-spectrum bactericidal activity.",
+    "difficulty": "easy",
+    "tags": ["ophthalmic", "preservatives", "benzalkonium chloride"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-9",
+    "question_text": "Why are viscosity enhancers like Hydroxypropyl methylcellulose (HPMC) or Polyvinyl alcohol (PVA) incorporated into ophthalmic drop formulations?",
+    "options": [
+      "To alter the refractive index of the cornea",
+      "To prolong contact time with the precorneal tear film and increase ocular bioavailability",
+      "To acidify the tear fluid to pH 3.0",
+      "To replace the active ingredient"
+    ],
+    "correct_index": 1,
+    "explanation": "Viscosity-increasing agents retard the rapid lachrymal drainage of instillation drops from the conjunctival sac, prolonging drug residence time on the cornea and enhancing ocular absorption.",
+    "difficulty": "medium",
+    "tags": ["ophthalmic", "viscosity", "bioavailability"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-9",
+    "question_text": "According to universal pharmaceutical guidelines, what is the maximum recommended in-use shelf life for a multi-dose bottle of eye drops once opened by a patient?",
+    "options": [
+      "24 hours",
+      "7 days",
+      "28 days (4 weeks)",
+      "6 months"
+    ],
+    "correct_index": 2,
+    "explanation": "Multi-dose ophthalmic containers should be discarded 28 days (4 weeks) after breaking the tamper-evident seal and opening, due to the high risk of microbial contamination and preservative exhaustion.",
+    "difficulty": "easy",
+    "tags": ["ophthalmic", "shelf life", "patient counseling"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-9",
+    "question_text": "Which quality standard is NOT an essential requirement for pharmaceutical eye lotions (collyria)?",
+    "options": [
+      "Sterility",
+      "Isotonicity with tears",
+      "Absence of foreign particulate matter",
+      "Hypertonic concentration of 5% NaCl"
+    ],
+    "correct_index": 3,
+    "explanation": "Eye lotions are used in large volumes to bathe or rinse the eye. They must be sterile, strictly isotonic with lachrymal fluid, neutral in pH, and completely free from foreign particles. Hypertonic 5% NaCl would cause intense ocular irritation.",
+    "difficulty": "easy",
+    "tags": ["ophthalmic", "eye lotions", "collyria"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-10",
+    "question_text": "What is the primary difference in operational focus between Quality Assurance (QA) and Quality Control (QC)?",
+    "options": [
+      "QA is process-oriented and prevents defects, whereas QC is product-oriented and detects defects through testing",
+      "QA tests raw materials, whereas QC writes regulatory laws",
+      "QA is only done in retail pharmacies, whereas QC is done in hospitals",
+      "QA and QC are identical terms with no operational difference"
+    ],
+    "correct_index": 0,
+    "explanation": "Quality Assurance (QA) encompasses proactive, systematic processes aimed at preventing defects (e.g. SOPs, training, audits), whereas Quality Control (QC) consists of reactive laboratory testing and inspection of materials and finished products to detect defects.",
+    "difficulty": "easy",
+    "tags": ["quality assurance", "QA vs QC", "GMP"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-10",
+    "question_text": "Under WHO-GMP guidelines, what is the document that provides complete manufacturing history and step-by-step records for a specific production batch of a drug product?",
+    "options": [
+      "Site Master File (SMF)",
+      "Batch Manufacturing Record (BMR)",
+      "Material Safety Data Sheet (MSDS)",
+      "Standard Operating Procedure (SOP)"
+    ],
+    "correct_index": 1,
+    "explanation": "The Batch Manufacturing Record (BMR) is an audited, official legal document created during the production of each specific batch that records all ingredients, weights, operational steps, in-process testing results, and operator sign-offs.",
+    "difficulty": "easy",
+    "tags": ["GMP", "documentation", "BMR"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-10",
+    "question_text": "In pharmaceutical equipment qualification, verifying that equipment operates according to its functional specifications throughout all operating ranges is known as:",
+    "options": [
+      "Design Qualification (DQ)",
+      "Installation Qualification (IQ)",
+      "Operational Qualification (OQ)",
+      "Performance Qualification (PQ)"
+    ],
+    "correct_index": 2,
+    "explanation": "Operational Qualification (OQ) verifies and documents that the equipment performs according to manufacturer and process specifications across all anticipated operational ranges and stress limits. IQ verifies proper installation; PQ verifies consistent product production.",
+    "difficulty": "medium",
+    "tags": ["validation", "qualification", "OQ"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-10",
+    "question_text": "According to ICH guidelines for stability testing of drug products, what are the standard accelerated stability testing storage conditions?",
+    "options": [
+      "25°C ± 2°C / 60% RH ± 5% RH",
+      "30°C ± 2°C / 65% RH ± 5% RH",
+      "40°C ± 2°C / 75% RH ± 5% RH",
+      "50°C ± 2°C / 90% RH ± 5% RH"
+    ],
+    "correct_index": 2,
+    "explanation": "According to ICH Q1A(R2) guidelines, the universally accepted conditions for accelerated stability testing of drug substances and drug products are 40°C ± 2°C and 75% RH ± 5% RH for a duration of 6 months.",
+    "difficulty": "hard",
+    "tags": ["stability testing", "ICH guidelines", "accelerated"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-10",
+    "question_text": "Which climatic zone designation does Nepal fall under according to ICH / WHO climatic guidelines for long-term real-time pharmaceutical stability testing?",
+    "options": [
+      "Zone I (Temperate)",
+      "Zone II (Subtropical and Mediterranean)",
+      "Zone IVb (Hot and very humid)",
+      "Zone III (Hot and dry)"
+    ],
+    "correct_index": 2,
+    "explanation": "Under revised WHO stability guidelines, countries in tropical South Asia including Nepal and India fall under Climatic Zone IVb (hot and very humid, testing conditions 30°C / 75% RH) or Zone IVa (30°C / 65% RH).",
+    "difficulty": "medium",
+    "tags": ["stability testing", "climatic zones", "Nepal"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-11",
+    "question_text": "Which of the following surgical suture materials is classified as an absorbable suture derived from natural sources?",
+    "options": [
+      "Surgical catgut",
+      "Braided silk",
+      "Monofilament nylon",
+      "Polypropylene (Prolene)"
+    ],
+    "correct_index": 0,
+    "explanation": "Surgical catgut is an absorbable suture made from the submucosal layer of sheep or bovine intestines (collagen). Silk, nylon, and polypropylene are non-absorbable sutures.",
+    "difficulty": "easy",
+    "tags": ["surgical devices", "sutures", "absorbable"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-11",
+    "question_text": "Treatment of surgical plain catgut with chromium salt solutions (chromic catgut) accomplishes which clinical objective?",
+    "options": [
+      "Prevents discoloration",
+      "Delays enzymatic absorption and increases tensile strength retention in tissues",
+      "Makes the suture non-absorbable forever",
+      "Changes the suture color to bright blue"
+    ],
+    "correct_index": 1,
+    "explanation": "Chromic catgut is treated with chromium salt solutions to tan the collagen fibers. This tanning retards proteolytic breakdown and enzymatic absorption in vivo, extending absorption time from ~10 days (plain) to ~20-40 days (chromic).",
+    "difficulty": "medium",
+    "tags": ["surgical devices", "chromic catgut", "sutures"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-11",
+    "question_text": "What is the primary chemical compound comprising Plaster of Paris (POP) used for orthopaedic fracture casting?",
+    "options": [
+      "Calcium carbonate",
+      "Calcium sulphate hemihydrate (CaSO4·½H2O)",
+      "Zinc oxide",
+      "Barium sulphate"
+    ],
+    "correct_index": 1,
+    "explanation": "Plaster of Paris is calcium sulphate hemihydrate [CaSO4·½H2O]. When mixed with water, it rehydrates via an exothermic reaction into calcium sulphate dihydrate (gypsum) and hardens into a rigid support.",
+    "difficulty": "easy",
+    "tags": ["surgical dressings", "plaster of paris", "orthopaedic"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-11",
+    "question_text": "Which official test distinguishes Absorbent Cotton Wool (surgical grade) from Non-Absorbent Cotton Wool?",
+    "options": [
+      "Sinking time / Water absorbency test",
+      "Acid-base titration test",
+      "Melting point test",
+      "Viscosity index test"
+    ],
+    "correct_index": 0,
+    "explanation": "Absorbent cotton has had its natural fatty and waxy coatings extracted by boiling in alkali. In the pharmacopoeial water absorbency (sinking) test, 1 gram of absorbent cotton dropped onto the surface of water must sink within 10 seconds.",
+    "difficulty": "medium",
+    "tags": ["surgical dressings", "absorbent cotton", "quality control"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-11",
+    "question_text": "Which sterilization method is the standard industrial process for pre-packaged, heat-sensitive single-use medical devices such as plastic syringes and IV sets?",
+    "options": [
+      "Autoclaving at 121°C",
+      "Ethylene oxide (EtO) gas sterilization or Gamma irradiation",
+      "Boiling in distilled water",
+      "Immersion in 70% alcohol"
+    ],
+    "correct_index": 1,
+    "explanation": "Thermoplastic single-use medical items like syringes, IV infusion sets, and cannulas would melt or warp in an autoclave. They are sterilized industrially in their final packaging using Ethylene Oxide (EtO) gas or Gamma radiation (Cobalt-60).",
+    "difficulty": "easy",
+    "tags": ["surgical appliances", "sterilization", "EtO"]
+  }
+]

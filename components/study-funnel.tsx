@@ -105,7 +105,7 @@ const CTEVT_HEALTH_PROGRAMS = [
 const CTEVT_YEARS = [
   { id: "y1", label: "Year 1", slugSuffix: "y1", available: false },
   { id: "y2", label: "Year 2", slugSuffix: "y2", available: true },
-  { id: "y3", label: "Year 3", slugSuffix: "y3", available: false },
+  { id: "y3", label: "Year 3", slugSuffix: "y3", available: true },
 ];
 
 const PLUS_TWO_STREAMS = [
@@ -198,11 +198,15 @@ export function StudyFunnel({ id }: { id?: string }) {
     }
   };
 
-  // Launch the active curriculum (d-pharm-y2)
+  // Launch the active curriculum (d-pharm-y2 or d-pharm-y3)
   const handleLaunchActive = (destination: "dashboard" | "register") => {
-    setProgramSlug("d-pharm-y2");
+    const activeSlug =
+      state.ctevtProgram === "d-pharm" && state.ctevtYear === "y3"
+        ? "d-pharm-y3"
+        : "d-pharm-y2";
+    setProgramSlug(activeSlug);
     if (destination === "register") {
-      router.push("/auth/register?program=d-pharm-y2");
+      router.push(`/auth/register?program=${activeSlug}`);
     } else {
       router.push("/dashboard");
     }
@@ -419,7 +423,9 @@ export function StudyFunnel({ id }: { id?: string }) {
 
                   <div className="grid gap-4 sm:grid-cols-3">
                     {CTEVT_YEARS.map((yr) => {
-                      const isActive = state.ctevtProgram === "d-pharm" && yr.id === "y2";
+                      const isY2 = state.ctevtProgram === "d-pharm" && yr.id === "y2";
+                      const isY3 = state.ctevtProgram === "d-pharm" && yr.id === "y3";
+                      const isActive = isY2 || isY3;
                       return (
                         <button
                           key={yr.id}
@@ -442,7 +448,9 @@ export function StudyFunnel({ id }: { id?: string }) {
                             </Badge>
                           )}
                           <p className="mt-2 text-xs text-muted-foreground">
-                            {isActive
+                            {isY3
+                              ? "6 Core Subjects • Board & License MCQs"
+                              : isY2
                               ? "8 Subjects • 800+ Questions • Timed Mocks"
                               : "Syllabus in preparation"}
                           </p>
@@ -456,7 +464,7 @@ export function StudyFunnel({ id }: { id?: string }) {
               {/* Completion Screen for CTEVT */}
               {state.ctevtCategory && state.ctevtProgram && state.ctevtYear && (
                 <div className="rounded-2xl border bg-card p-6 shadow-sm sm:p-8">
-                  {state.ctevtProgram === "d-pharm" && state.ctevtYear === "y2" ? (
+                  {state.ctevtProgram === "d-pharm" && (state.ctevtYear === "y2" || state.ctevtYear === "y3") ? (
                     <div>
                       <div className="flex items-center gap-3">
                         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-600">
@@ -464,32 +472,59 @@ export function StudyFunnel({ id }: { id?: string }) {
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <h3 className="text-xl font-bold">Diploma in Pharmacy · Year 2</h3>
+                            <h3 className="text-xl font-bold">
+                              Diploma in Pharmacy · {state.ctevtYear === "y3" ? "Year 3" : "Year 2"}
+                            </h3>
                             <Badge className="bg-emerald-500 text-white text-xs">Ready to Study</Badge>
                           </div>
                           <p className="text-sm text-muted-foreground">
-                            CTEVT Health Sciences • 8 Subjects • Full Unit Practice & Mock Tests
+                            {state.ctevtYear === "y3"
+                              ? "CTEVT Health Sciences • 6 Core Subjects • Clinical & Licensure MCQs"
+                              : "CTEVT Health Sciences • 8 Subjects • Full Unit Practice & Mock Tests"}
                           </p>
                         </div>
                       </div>
 
                       <div className="mt-6 grid gap-2.5 rounded-xl border bg-muted/30 p-4 text-xs sm:grid-cols-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                          <span>Pharmaceutics I, Pharmacology I, Chemistry I</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                          <span>Pharmacognosy, Microbiology, Therapeutics</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                          <span>Pharmaceutical Management &amp; Public Health</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                          <span>Live Leaderboard &amp; Explanations</span>
-                        </div>
+                        {state.ctevtYear === "y3" ? (
+                          <>
+                            <div className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                              <span>Pharmaceutics II (55+ MCQs Live)</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                              <span>Pharmacology II &amp; Therapeutics II</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                              <span>Hospital &amp; Clinical Pharmacy</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                              <span>Pharmaceutical Jurisprudence &amp; Ethics</span>
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                              <span>Pharmaceutics I, Pharmacology I, Chemistry I</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                              <span>Pharmacognosy, Microbiology, Therapeutics</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                              <span>Pharmaceutical Management &amp; Public Health</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+                              <span>Live Leaderboard &amp; Explanations</span>
+                            </div>
+                          </>
+                        )}
                       </div>
 
                       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -523,18 +558,18 @@ export function StudyFunnel({ id }: { id?: string }) {
                         <div>
                           <h3 className="text-xl font-bold">Curriculum Coming Soon!</h3>
                           <p className="text-sm text-muted-foreground">
-                            This programme track is actively being drafted. You can explore the live D.Pharm Year 2 curriculum today to experience the platform.
+                            This programme track is actively being drafted. You can explore the live D.Pharm Year 2 or Year 3 curriculum today to experience the platform.
                           </p>
                         </div>
                       </div>
                       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                         <Button
                           onClick={() => {
-                            setState((s) => ({ ...s, ctevtProgram: "d-pharm", ctevtYear: "y2" }));
+                            setState((s) => ({ ...s, ctevtProgram: "d-pharm", ctevtYear: "y3" }));
                           }}
                           className="gap-2"
                         >
-                          Switch to D.Pharm Year 2 (Live Demo)
+                          Switch to D.Pharm Year 3
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                         <Button variant="outline" onClick={handleReset}>

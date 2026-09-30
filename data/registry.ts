@@ -1,6 +1,7 @@
 import { faculties } from "@/data/faculties";
 import { DEFAULT_PROGRAM_SLUG, programs } from "@/data/programs";
 import { subjects as dPharmYear2Subjects } from "@/data/programs/d-pharm-y2/subjects";
+import { subjects as dPharmYear3Subjects } from "@/data/programs/d-pharm-y3/subjects";
 import type { ProgramMeta, SubjectData, UnitData } from "@/data/types";
 
 export { faculties } from "@/data/faculties";
@@ -12,14 +13,10 @@ export type { FacultyData, ProgramMeta, SubjectData, UnitData } from "@/data/typ
  *
  * Only programmes with `hasContent: true` appear here. Everything else in the
  * catalogue renders as "coming soon" and contributes no subjects.
- *
- * NOTE: these are static imports, so every listed bank is bundled wherever the
- * registry is imported. Before a second programme gains content, switch this
- * map to per-programme dynamic `import()` so a visitor only downloads the
- * curriculum they actually open.
  */
 const CONTENT_BY_PROGRAM: Record<string, SubjectData[]> = {
   "d-pharm-y2": dPharmYear2Subjects,
+  "d-pharm-y3": dPharmYear3Subjects,
 };
 
 /** Every subject across every programme that has content, in catalogue order. */

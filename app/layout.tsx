@@ -81,7 +81,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans">
         <Providers>
           <Navbar />
-          <main className="flex-1 pb-16 md:pb-0">
+          <main className="flex-1 pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />

@@ -68,6 +68,12 @@ const BANK_LOADERS: Record<string, Record<string, BankLoader>> = {
         "@/data/programs/d-pharm-y2/questions/public-health-pharmacy.json"
       ).then((m) => m.default as RawBankQuestion[]),
   },
+  "d-pharm-y3": {
+    "d-pharm-y3-pharmaceutics-ii": () =>
+      import(
+        "@/data/programs/d-pharm-y3/questions/d-pharm-y3-pharmaceutics-ii.json"
+      ).then((m) => m.default as RawBankQuestion[]),
+  },
 };
 
 /**

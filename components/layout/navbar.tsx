@@ -16,25 +16,29 @@ import {
   Moon,
   User,
   ChevronDown,
+  ChevronLeft,
+  CheckCircle2,
   BarChart3,
   Bookmark,
   StickyNote,
   BookOpen,
   GraduationCap,
-History,
+  History,
+  Sparkles,
 } from "lucide-react";
 
 const MORE_LINKS = [
-  { href: "/review", label: "Review", icon: BookOpen },
-  { href: "/history", label: "History", icon: History },
-  { href: "/bookmarks", label: "Bookmarks", icon: Bookmark },
-  { href: "/notes", label: "Notes", icon: StickyNote },
-  { href: "/analytics", label: "Analytics", icon: BarChart3 },
+  { href: "/review", label: "Review Missed", icon: BookOpen },
+  { href: "/history", label: "Quiz History", icon: History },
+  { href: "/bookmarks", label: "Saved Questions", icon: Bookmark },
+  { href: "/notes", label: "Revision Notes", icon: StickyNote },
+  { href: "/analytics", label: "Performance", icon: BarChart3 },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileProgramSheetOpen, setMobileProgramSheetOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
 
@@ -58,7 +62,7 @@ export function Navbar() {
   const [programOpen, setProgramOpen] = useState(false);
   const programRef = useRef<HTMLDivElement>(null);
 
-  // Close the program dropdown when clicking outside
+  // Close desktop program dropdown when clicking outside
   useEffect(() => {
     if (!programOpen) return;
     const handleClick = (e: MouseEvent) => {
@@ -70,9 +74,31 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, [programOpen]);
 
+  // Lock body scroll when mobile sheet is open
+  useEffect(() => {
+    if (mobileProgramSheetOpen || mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileProgramSheetOpen, mobileOpen]);
+
   const programLabel = program.level
     ? `${program.name} · ${program.level}`
     : program.name;
+
+  // Subpage check for native back arrow on mobile
+  const isSubpage =
+    pathname.startsWith("/subjects/") ||
+    (pathname.startsWith("/programs/") && pathname !== "/programs") ||
+    pathname === "/bookmarks" ||
+    pathname === "/notes" ||
+    pathname === "/history" ||
+    pathname === "/review" ||
+    pathname === "/analytics";
 
   // Hide the global website navbar during active test-taking
   const isTakingQuiz =
@@ -83,15 +109,53 @@ export function Navbar() {
   if (isTakingQuiz) return null;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <Image src="/icons/icon-192.png" alt="" width={192} height={192} className="h-7 w-7" />
-          <span className="text-xl font-bold tracking-tight">{APP_NAME}</span>
-        </Link>
+    <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/85 backdrop-blur-xl">
+      <div className="mx-auto flex h-14 md:h-16 max-w-7xl items-center justify-between px-3.5 sm:px-6">
+        
+        {/* Mobile Left / Desktop Left */}
+        <div className="flex items-center gap-2">
+          {/* Mobile Back Button (on subpages) */}
+          {isSubpage ? (
+            <button
+              type="button"
+              onClick={() => router.back()}
+              className="flex md:hidden items-center gap-1 -ml-1 rounded-xl px-2 py-1 text-xs font-semibold text-foreground hover:bg-muted active:scale-95 transition-all app-interactive"
+              aria-label="Go back"
+            >
+              <ChevronLeft className="h-5 w-5" />
+              <span>Back</span>
+            </button>
+          ) : (
+            <Link href="/" className="flex items-center gap-2 shrink-0 app-interactive">
+              <Image src="/icons/icon-192.png" alt="" width={192} height={192} className="h-7 w-7" />
+              <span className="text-lg md:text-xl font-bold tracking-tight">{APP_NAME}</span>
+            </Link>
+          )}
 
-        {/* Desktop Nav */}
+          {/* Desktop Logo when subpage is active */}
+          {isSubpage && (
+            <Link href="/" className="hidden md:flex items-center gap-2 shrink-0 ml-1">
+              <Image src="/icons/icon-192.png" alt="" width={192} height={192} className="h-7 w-7" />
+              <span className="text-xl font-bold tracking-tight">{APP_NAME}</span>
+            </Link>
+          )}
+        </div>
+
+        {/* Mobile Center: Prominent Active Programme Pill */}
+        <div className="flex md:hidden items-center justify-center">
+          <button
+            type="button"
+            onClick={() => setMobileProgramSheetOpen(true)}
+            className="flex items-center gap-1.5 rounded-full border border-border/80 bg-muted/60 px-2.5 py-1 text-xs font-semibold text-foreground shadow-2xs hover:bg-muted active:scale-95 transition-all max-w-[180px] app-interactive"
+            title={`Active: ${programLabel} — Tap to switch`}
+          >
+            <span className="text-sm shrink-0">{program.icon}</span>
+            <span className="truncate">{program.shortLabel}</span>
+            <ChevronDown className="h-3 w-3 shrink-0 text-muted-foreground" />
+          </button>
+        </div>
+
+        {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map((link) => (
             <Link
@@ -124,7 +188,7 @@ export function Navbar() {
               {moreOpen && (
                 <div
                   onMouseDown={(e) => e.preventDefault()}
-                  className="absolute right-0 top-full mt-1 w-44 rounded-xl border bg-popover p-1.5 shadow-lg"
+                  className="absolute right-0 top-full mt-1 w-48 rounded-xl border bg-popover p-1.5 shadow-lg"
                 >
                   {MORE_LINKS.map((link) => (
                     <Link
@@ -148,10 +212,9 @@ export function Navbar() {
           )}
         </nav>
 
-        {/* Right Side */}
-        <div className="flex items-center gap-2">
-          {/* Active program — links out, or switches directly when more than
-              one programme has published content. */}
+        {/* Right Side: Desktop program switcher & Auth / Mobile buttons */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Desktop Active Program Switcher */}
           <div className="relative hidden md:block" ref={programRef}>
             {availablePrograms.length > 1 ? (
               <button
@@ -200,19 +263,26 @@ export function Navbar() {
                       setProgramOpen(false);
                     }}
                     className={cn(
-                      "flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors",
+                      "flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors",
                       p.slug === program.slug
                         ? "bg-primary text-primary-foreground"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
                     )}
                   >
-                    <span>{p.icon}</span>
-                    {p.shortLabel}
+                    <div className="flex items-center gap-2 truncate">
+                      <span>{p.icon}</span>
+                      <span className="truncate">{p.shortLabel}</span>
+                    </div>
+                    {p.slug === program.slug && (
+                      <CheckCircle2 className="h-4 w-4 shrink-0" />
+                    )}
                   </button>
                 ))}
               </div>
             )}
           </div>
+
+          {/* Desktop User Account buttons */}
           {isLoggedIn ? (
             <div className="hidden md:flex items-center gap-2">
               <Link
@@ -225,67 +295,214 @@ export function Navbar() {
                 </div>
                 <span className="max-w-[100px] truncate">{user?.name?.split(" ")[0] || "User"}</span>
               </Link>
-              <button onClick={() => { logout(); router.push("/"); }} className="rounded-lg bg-muted px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">Sign Out</button>
+              <button
+                onClick={() => { logout(); router.push("/"); }}
+                className="rounded-lg bg-muted px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
+                Sign Out
+              </button>
             </div>
           ) : (
             <div className="hidden md:flex items-center gap-2">
-              <Link href="/auth/login" className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">Sign In</Link>
-              <Link href="/auth/register" className="rounded-lg bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90">Get Started</Link>
+              <Link href="/auth/login" className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
+                Sign In
+              </Link>
+              <Link href="/auth/register" className="rounded-lg bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+                Get Started
+              </Link>
             </div>
           )}
+
+          {/* Dark / Light Toggle */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="relative h-9 w-9 flex items-center justify-center rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground overflow-hidden"
+            className="relative h-8 w-8 sm:h-9 sm:w-9 flex items-center justify-center rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground overflow-hidden app-interactive"
             aria-label="Toggle dark mode"
           >
-            <Sun className="absolute h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <Sun className="absolute h-4 w-4 sm:h-5 sm:w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-4 w-4 sm:h-5 sm:w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </button>
-          <button className="md:hidden p-2 rounded-lg hover:bg-muted" onClick={() => setMobileOpen(!mobileOpen)}>
+
+          {/* Mobile Study Tools Drawer Trigger */}
+          <button
+            className="md:hidden p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground app-interactive"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Open study menu"
+          >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="md:hidden border-t bg-background px-4 py-3 max-h-[70vh] overflow-y-auto">
-          <nav className="flex flex-col gap-1">
-            <Link
-              href="/programs"
-              onClick={() => setMobileOpen(false)}
-              className="mb-1 flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium text-muted-foreground"
-            >
-              <GraduationCap className="h-4 w-4" />
-              {programLabel}
-            </Link>
-            {NAV_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === link.href ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted")}>
-                {link.label}
+      {/* =================================================================== */}
+      {/* NATIVE MOBILE BOTTOM SHEET: PROGRAMME SWITCHER                      */}
+      {/* =================================================================== */}
+      {mobileProgramSheetOpen && (
+        <div className="fixed inset-0 z-50 md:hidden flex flex-col justify-end">
+          {/* Dimmed Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200"
+            onClick={() => setMobileProgramSheetOpen(false)}
+          />
+          {/* Sliding Bottom Card */}
+          <div className="relative z-10 max-h-[85vh] overflow-y-auto rounded-t-[28px] border-t border-border/80 bg-card p-5 shadow-2xl animate-in slide-in-from-bottom duration-200 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))]">
+            <div className="mx-auto mb-3 h-1.5 w-12 rounded-full bg-muted-foreground/30" />
+            
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+                  <GraduationCap className="h-5 w-5 text-primary" />
+                  Choose Programme
+                </h3>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  Your syllabus, mock tests, and question banks update automatically.
+                </p>
+              </div>
+              <button
+                onClick={() => setMobileProgramSheetOpen(false)}
+                className="rounded-full p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground app-interactive"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="space-y-2 mt-4">
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                Live Programmes
+              </p>
+              {availablePrograms.map((p) => {
+                const isSelected = p.slug === program.slug;
+                return (
+                  <button
+                    key={p.slug}
+                    type="button"
+                    onClick={() => {
+                      setProgramSlug(p.slug);
+                      setMobileProgramSheetOpen(false);
+                    }}
+                    className={cn(
+                      "flex w-full items-center justify-between gap-3 rounded-2xl border p-4 text-left transition-all app-interactive active:scale-[0.98]",
+                      isSelected
+                        ? "border-primary bg-primary/8 text-primary shadow-xs ring-1 ring-primary/40"
+                        : "border-border/60 hover:bg-muted/50 text-foreground"
+                    )}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{p.icon}</span>
+                      <div>
+                        <div className="font-semibold text-sm">
+                          {p.name} {p.level ? `· ${p.level}` : ""}
+                        </div>
+                        <div className="text-xs text-muted-foreground line-clamp-1 mt-0.5">
+                          {p.description}
+                        </div>
+                      </div>
+                    </div>
+                    {isSelected ? (
+                      <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                        <CheckCircle2 className="h-3.5 w-3.5" />
+                      </div>
+                    ) : (
+                      <div className="h-5 w-5 shrink-0 rounded-full border-2 border-muted-foreground/30" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="mt-6 border-t border-border/60 pt-4 flex items-center justify-between text-xs">
+              <span className="text-muted-foreground">Looking for other courses?</span>
+              <Link
+                href="/programs"
+                onClick={() => setMobileProgramSheetOpen(false)}
+                className="font-semibold text-primary hover:underline"
+              >
+                Browse All Streams →
               </Link>
-            ))}
-            {isLoggedIn && (
-              <>
-                {MORE_LINKS.map((link) => (
-                  <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", pathname === link.href ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted")}>
-                    <link.icon className="inline h-4 w-4 mr-2" />{link.label}
-                  </Link>
-                ))}
-                <hr className="my-2 border-border" />
-                <Link href="/profile" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted">
-                  <User className="h-4 w-4" />Profile
-                </Link>
-                <Link href="/dashboard" onClick={() => setMobileOpen(false)} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted">Dashboard</Link>
-                <button
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted text-left w-full"
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =================================================================== */}
+      {/* NATIVE MOBILE SLIDE-DOWN: STUDY TOOLS & EXTRA OPTIONS               */}
+      {/* =================================================================== */}
+      {mobileOpen && (
+        <div className="md:hidden border-t bg-background/95 backdrop-blur-xl px-4 py-4 max-h-[75vh] overflow-y-auto shadow-xl">
+          <div className="mb-3 flex items-center justify-between">
+            <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              Study Tools
+            </span>
+            <span className="text-xs text-muted-foreground">
+              {program.shortLabel}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            {MORE_LINKS.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-card p-3 text-xs font-semibold text-foreground hover:bg-muted active:scale-95 transition-all app-interactive"
                 >
-                  {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
-                </button>
-                <button onClick={() => { logout(); setMobileOpen(false); router.push("/"); }} className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted text-left w-full">Sign Out</button>
-              </>
-            )}
-          </nav>
+                  <Icon className="h-4 w-4 text-primary" />
+                  <span>{link.label}</span>
+                </Link>
+              );
+            })}
+          </div>
+
+          <hr className="my-3 border-border/60" />
+
+          {isLoggedIn ? (
+            <div className="space-y-2">
+              <div className="flex items-center justify-between py-1">
+                <div className="flex items-center gap-2">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <User className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-semibold">{user.name}</span>
+                </div>
+                <Link
+                  href="/profile"
+                  onClick={() => setMobileOpen(false)}
+                  className="text-xs text-primary font-medium hover:underline"
+                >
+                  View Profile
+                </Link>
+              </div>
+              <button
+                onClick={() => {
+                  logout();
+                  setMobileOpen(false);
+                  router.push("/");
+                }}
+                className="w-full rounded-xl bg-destructive/10 py-2.5 text-center text-xs font-semibold text-destructive hover:bg-destructive/20 active:scale-95 transition-all app-interactive"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-2">
+              <Link
+                href="/auth/login"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-xl border border-border/80 py-2.5 text-center text-xs font-semibold text-foreground hover:bg-muted active:scale-95 transition-all app-interactive"
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/auth/register"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-xl bg-primary py-2.5 text-center text-xs font-semibold text-primary-foreground hover:bg-primary/90 active:scale-95 transition-all app-interactive"
+              >
+                Get Started
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </header>
