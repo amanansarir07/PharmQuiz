@@ -103,6 +103,7 @@ function RegisterForm() {
       setError(result.error);
       setLoading(false);
     } else {
+      safeSetItem("bujh-active-program", programSlug);
       router.push("/dashboard");
     }
   };

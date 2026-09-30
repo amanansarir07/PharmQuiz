@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeroSection } from "@/components/hero-section";
+import { FrontPageDepartmentSelector } from "@/components/front-page-department-selector";
 import { StudyFunnel } from "@/components/study-funnel";
 import { ProgramHome } from "@/components/program-home";
 import {
@@ -22,7 +23,10 @@ export default async function HomePage() {
       {/* 1. App Hero */}
       <HeroSection />
 
-      {/* 2. Interactive 'What do you study?' Stepper Funnel */}
+      {/* 2. Direct Department & Syllabus Selector */}
+      <FrontPageDepartmentSelector />
+
+      {/* 3. Interactive 'What do you study?' Stepper Funnel */}
       <StudyFunnel id="study-funnel" />
 
       {/* 3. Active Programme Syllabus & Stats */}

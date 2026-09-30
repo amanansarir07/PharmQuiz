@@ -27,11 +27,15 @@ export function OnboardingDepartmentModal() {
 
   useEffect(() => {
     setMounted(true);
-    // Show prompt if:
-    // 1. User has not chosen a program (!isChosen)
-    // 2. OR user is logged in but their profile has no program_slug
+    // If user is logged in but their profile has no department, always prompt them
+    if (user && !user.programSlug) {
+      setOpen(true);
+      return;
+    }
+
+    // For visitors who haven't chosen a curriculum yet
     const sessionDismissed = safeGetItem(ONBOARDING_DISMISSED_KEY) === "1";
-    if (!sessionDismissed && (!isChosen || (user && !user.programSlug))) {
+    if (!sessionDismissed && !isChosen) {
       setOpen(true);
     }
   }, [isChosen, user]);
