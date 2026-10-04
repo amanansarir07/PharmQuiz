@@ -1,0 +1,1431 @@
+[
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Which class of antihypertensive drugs inhibits conversion of angiotensin I to angiotensin II?",
+        "options":  [
+                        "ACE inhibitors",
+                        "ARBs",
+                        "Beta blockers",
+                        "Thiazide diuretics"
+                    ],
+        "correct_index":  0,
+        "explanation":  "ACE inhibitors block angiotensin-converting enzyme, reducing formation of angiotensin II and lowering vasoconstriction and aldosterone release.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "antihypertensives"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Which adverse effect is particularly associated with ACE inhibitors?",
+        "options":  [
+                        "Dry cough",
+                        "Severe constipation",
+                        "Ototoxicity",
+                        "Gingival hyperplasia"
+                    ],
+        "correct_index":  0,
+        "explanation":  "ACE inhibitors can cause a persistent dry cough because inhibition of bradykinin breakdown increases bradykinin in the respiratory tract.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "ACE-inhibitors",
+                     "adverse-effects"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Nitroglycerin relieves an acute angina attack mainly by:",
+        "options":  [
+                        "Increasing venous and arterial tone",
+                        "Reducing cardiac preload through venodilation",
+                        "Increasing platelet aggregation",
+                        "Blocking insulin release"
+                    ],
+        "correct_index":  1,
+        "explanation":  "Nitroglycerin releases nitric oxide and predominantly dilates veins, reducing venous return and cardiac preload, which lowers myocardial oxygen demand.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "angina",
+                     "nitrates"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Digoxin is useful in heart failure partly because it:",
+        "options":  [
+                        "Increases myocardial contractility",
+                        "Blocks all calcium channels",
+                        "Directly dissolves coronary thrombi",
+                        "Inhibits thyroid hormone synthesis"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Digoxin has a positive inotropic effect and increases myocardial contractility by inhibiting Na+/K+-ATPase, with secondary changes in intracellular calcium.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "heart-failure",
+                     "digoxin"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Atorvastatin lowers plasma cholesterol primarily by inhibiting:",
+        "options":  [
+                        "HMG-CoA reductase",
+                        "Cyclooxygenase-2",
+                        "Acetylcholinesterase",
+                        "Dihydrofolate reductase"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Statins competitively inhibit HMG-CoA reductase, the rate-limiting enzyme in hepatic cholesterol synthesis.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "statins",
+                     "lipids"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Which drug is a benzodiazepine used as an anxiolytic and sedative?",
+        "options":  [
+                        "Diazepam",
+                        "Phenytoin",
+                        "Haloperidol",
+                        "Fluoxetine"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Diazepam is a benzodiazepine that enhances GABA-A receptor-mediated inhibition and has anxiolytic, sedative, muscle-relaxant, and anticonvulsant effects.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "benzodiazepines"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Phenytoin is mainly used in the management of:",
+        "options":  [
+                        "Epilepsy",
+                        "Hyperthyroidism",
+                        "Peptic ulcer disease",
+                        "Hyperlipidemia"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Phenytoin is an antiepileptic drug that limits repetitive neuronal firing mainly by blocking voltage-gated sodium channels.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "antiepileptics",
+                     "phenytoin"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Which adverse effect is classically associated with long-term phenytoin therapy?",
+        "options":  [
+                        "Gingival hyperplasia",
+                        "Red man syndrome",
+                        "Severe hypoglycemia",
+                        "Pulmonary fibrosis"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Gingival hyperplasia is a recognized adverse effect of long-term phenytoin use. Good oral hygiene can reduce its severity.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "antiepileptics",
+                     "adverse-effects"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Naloxone is used to reverse toxicity caused by:",
+        "options":  [
+                        "Opioids",
+                        "Benzodiazepines",
+                        "Organophosphates",
+                        "Iron salts"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Naloxone is a competitive opioid receptor antagonist used for rapid reversal of opioid-induced respiratory depression.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "opioids",
+                     "antidotes"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Fluoxetine belongs to which class of antidepressants?",
+        "options":  [
+                        "SSRI",
+                        "TCA",
+                        "MAO inhibitor",
+                        "Typical antipsychotic"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Fluoxetine is a selective serotonin reuptake inhibitor (SSRI), increasing serotonin activity in the synaptic cleft.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "antidepressants",
+                     "SSRIs"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Which anticoagulant acts rapidly and is commonly administered parenterally?",
+        "options":  [
+                        "Heparin",
+                        "Warfarin",
+                        "Clopidogrel",
+                        "Aspirin"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Heparin acts rapidly and is given by injection. It enhances antithrombin activity against clotting factors, especially thrombin and factor Xa.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "hemopoietic",
+                     "anticoagulants",
+                     "heparin"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Warfarin reduces coagulation by interfering with the recycling of:",
+        "options":  [
+                        "Vitamin K",
+                        "Vitamin C",
+                        "Folic acid",
+                        "Vitamin B12"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Warfarin inhibits vitamin K epoxide reductase, reducing activation of vitamin K-dependent clotting factors.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "hemopoietic",
+                     "warfarin",
+                     "vitamin-K"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Clopidogrel is best classified as a:",
+        "options":  [
+                        "Antiplatelet drug",
+                        "Fibrinolytic drug",
+                        "Hematinic",
+                        "Direct thrombin activator"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Clopidogrel inhibits platelet P2Y12 ADP receptors and reduces platelet aggregation.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "hemopoietic",
+                     "antiplatelets"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Iron and folic acid are primarily used as:",
+        "options":  [
+                        "Hematinics",
+                        "Anticoagulants",
+                        "Antiplatelets",
+                        "Fibrinolytics"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Iron and folic acid support red blood cell formation and are classified as hematinics.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "hemopoietic",
+                     "hematinics"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Which oral antidiabetic drug commonly reduces hepatic glucose production and improves insulin sensitivity?",
+        "options":  [
+                        "Metformin",
+                        "Glibenclamide",
+                        "Acarbose",
+                        "Pioglitazone"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Metformin mainly reduces hepatic gluconeogenesis and improves peripheral insulin sensitivity. It is commonly used as a first-line medicine for type 2 diabetes.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "endocrine",
+                     "diabetes",
+                     "metformin"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Insulin is essential for the treatment of:",
+        "options":  [
+                        "Type 1 diabetes mellitus",
+                        "All cases of hypothyroidism",
+                        "Hyperlipidemia only",
+                        "Iron-deficiency anemia"
+                    ],
+        "correct_index":  0,
+        "explanation":  "People with type 1 diabetes lack sufficient endogenous insulin and require insulin replacement.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "endocrine",
+                     "insulin",
+                     "diabetes"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Carbimazole is used in the treatment of:",
+        "options":  [
+                        "Hyperthyroidism",
+                        "Diabetes insipidus",
+                        "Adrenal insufficiency",
+                        "Osteoporosis"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Carbimazole is converted to methimazole and inhibits thyroid peroxidase, reducing thyroid hormone synthesis.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "endocrine",
+                     "thyroid"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Long-term systemic corticosteroid therapy should generally be withdrawn gradually because abrupt withdrawal may cause:",
+        "options":  [
+                        "Adrenal insufficiency",
+                        "Immediate hyperthyroidism",
+                        "Permanent hearing loss",
+                        "Acute iron overload"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Long-term corticosteroids suppress the hypothalamic-pituitary-adrenal axis. Gradual tapering allows adrenal function to recover and reduces withdrawal risk.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "endocrine",
+                     "corticosteroids",
+                     "safety"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Which receptor is primarily blocked by conventional H1 antihistamines?",
+        "options":  [
+                        "Histamine H1 receptor",
+                        "Histamine H2 receptor",
+                        "Muscarinic M2 receptor",
+                        "Dopamine D2 receptor"
+                    ],
+        "correct_index":  0,
+        "explanation":  "H1 antihistamines block H1 receptors and reduce histamine-mediated symptoms such as itching, sneezing, and rhinorrhea.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "autacoids",
+                     "histamine",
+                     "antihistamines"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Ondansetron is commonly used to prevent:",
+        "options":  [
+                        "Nausea and vomiting",
+                        "Hypertension",
+                        "Hyperglycemia",
+                        "Bronchospasm"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Ondansetron is a 5-HT3 receptor antagonist used to prevent nausea and vomiting, including chemotherapy-induced vomiting.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "autacoids",
+                     "serotonin",
+                     "ondansetron"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Montelukast produces its main effect by antagonizing:",
+        "options":  [
+                        "Leukotriene receptors",
+                        "H1 receptors",
+                        "Beta-2 receptors",
+                        "Opioid receptors"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Montelukast blocks cysteinyl leukotriene receptors and helps reduce leukotriene-mediated bronchoconstriction and inflammation.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "autacoids",
+                     "leukotrienes",
+                     "asthma"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-6",
+        "question_text":  "Methotrexate produces anticancer effects partly by inhibiting:",
+        "options":  [
+                        "Dihydrofolate reductase",
+                        "HMG-CoA reductase",
+                        "Carbonic anhydrase",
+                        "Acetylcholinesterase"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Methotrexate inhibits dihydrofolate reductase and reduces tetrahydrofolate availability, impairing DNA synthesis in rapidly dividing cells.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cancer-chemotherapy",
+                     "antimetabolites"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-6",
+        "question_text":  "A common dose-limiting toxicity of many cytotoxic anticancer drugs is:",
+        "options":  [
+                        "Bone marrow suppression",
+                        "Permanent tooth whitening",
+                        "Increased hair growth",
+                        "Improved immunity"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Many cytotoxic drugs suppress rapidly dividing bone marrow cells, causing neutropenia, anemia, and thrombocytopenia.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cancer-chemotherapy",
+                     "toxicity"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-6",
+        "question_text":  "Cyclophosphamide belongs to which class of antineoplastic agents?",
+        "options":  [
+                        "Alkylating agents",
+                        "Antacids",
+                        "Beta blockers",
+                        "Antihistamines"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Cyclophosphamide is an alkylating agent that forms DNA cross-links and interferes with replication.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cancer-chemotherapy",
+                     "alkylating-agents"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "The first priority in a severely poisoned unconscious patient is to assess and support:",
+        "options":  [
+                        "Airway, breathing, and circulation",
+                        "Hair and nail growth",
+                        "Dietary calcium only",
+                        "Long-term exercise capacity"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Initial poisoning management follows the ABC approach: secure the airway, support breathing, and maintain circulation before addressing the specific toxin.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "toxicology",
+                     "emergency-management",
+                     "ABC"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "The preferred antidotal treatment for muscarinic symptoms of organophosphate poisoning is:",
+        "options":  [
+                        "Atropine",
+                        "Naloxone",
+                        "Deferoxamine",
+                        "Vitamin K"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Atropine blocks muscarinic effects such as bronchial secretions, bronchoconstriction, bradycardia, and gastrointestinal activity in organophosphate poisoning.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "toxicology",
+                     "organophosphates",
+                     "atropine"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "N-acetylcysteine is the specific antidote used in significant poisoning with:",
+        "options":  [
+                        "Paracetamol",
+                        "Iron",
+                        "Lead",
+                        "Opioids"
+                    ],
+        "correct_index":  0,
+        "explanation":  "N-acetylcysteine replenishes glutathione and reduces toxic NAPQI formation in paracetamol overdose.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "toxicology",
+                     "paracetamol",
+                     "antidotes"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "Dimercaprol is a chelating agent used for poisoning by certain:",
+        "options":  [
+                        "Heavy metals",
+                        "Opioids",
+                        "Beta blockers",
+                        "Antihistamines"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Dimercaprol binds certain heavy metals and helps form complexes that can be eliminated from the body.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "toxicology",
+                     "heavy-metals",
+                     "chelators"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Amlodipine lowers blood pressure mainly by blocking:",
+        "options":  [
+                        "L-type calcium channels",
+                        "H1 receptors",
+                        "Opioid receptors",
+                        "GABA receptors"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Amlodipine is a dihydropyridine calcium channel blocker that reduces vascular smooth muscle contraction.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "calcium-channel-blockers"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "A common adverse effect of nitrate therapy is:",
+        "options":  [
+                        "Headache",
+                        "Gingival overgrowth",
+                        "Severe constipation in every patient",
+                        "Orange urine"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vasodilation caused by nitrates commonly produces headache, flushing, and dizziness.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "nitrates",
+                     "adverse-effects"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Haloperidol is classified as a:",
+        "options":  [
+                        "Typical antipsychotic",
+                        "SSRI",
+                        "Opioid antagonist",
+                        "Local anesthetic"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Haloperidol is a typical antipsychotic that primarily blocks dopamine D2 receptors.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "antipsychotics"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Local anesthetics prevent nerve conduction mainly by blocking:",
+        "options":  [
+                        "Voltage-gated sodium channels",
+                        "Insulin receptors",
+                        "H2 receptors",
+                        "Vitamin K recycling"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Local anesthetics block voltage-gated sodium channels and prevent generation and propagation of action potentials.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "local-anesthetics",
+                     "mechanism"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Aspirin reduces platelet aggregation by irreversibly inhibiting:",
+        "options":  [
+                        "Cyclooxygenase in platelets",
+                        "Dihydrofolate reductase",
+                        "HMG-CoA reductase",
+                        "Thyroid peroxidase"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Low-dose aspirin irreversibly inhibits platelet cyclooxygenase and reduces thromboxane A2 formation.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "hemopoietic",
+                     "aspirin",
+                     "antiplatelets"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Protamine sulfate can be used to neutralize the effect of:",
+        "options":  [
+                        "Heparin",
+                        "Warfarin",
+                        "Clopidogrel",
+                        "Iron"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Protamine forms a stable complex with heparin and is used when reversal of heparin anticoagulation is required.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "hemopoietic",
+                     "heparin",
+                     "antidotes"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Sulfonylureas lower blood glucose mainly by:",
+        "options":  [
+                        "Stimulating pancreatic insulin release",
+                        "Blocking thyroid hormone synthesis",
+                        "Binding opioid receptors",
+                        "Increasing urinary calcium loss"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Sulfonylureas stimulate insulin secretion from functioning pancreatic beta cells.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "endocrine",
+                     "sulfonylureas",
+                     "diabetes"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "A major risk of insulin and sulfonylurea therapy is:",
+        "options":  [
+                        "Hypoglycemia",
+                        "Hypercalcemia in every patient",
+                        "Hearing loss",
+                        "Skin depigmentation"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Insulin and insulin-secretagogue medicines can lower blood glucose excessively and cause hypoglycemia.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "endocrine",
+                     "diabetes",
+                     "hypoglycemia"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Famotidine reduces gastric acid secretion by blocking:",
+        "options":  [
+                        "H2 histamine receptors",
+                        "H1 histamine receptors",
+                        "D2 dopamine receptors",
+                        "Beta-1 receptors"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Famotidine is an H2-receptor antagonist that reduces histamine-stimulated gastric acid secretion.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "autacoids",
+                     "histamine",
+                     "H2-blockers"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Prostaglandins are derived from membrane fatty acids and act as:",
+        "options":  [
+                        "Local mediators in many tissues",
+                        "Structural proteins only",
+                        "Antibodies only",
+                        "Digestive enzymes only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Prostaglandins are locally acting lipid mediators involved in inflammation, vascular tone, gastric protection, and other processes.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "autacoids",
+                     "prostaglandins"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-6",
+        "question_text":  "Vinca alkaloids inhibit cancer-cell division by interfering with:",
+        "options":  [
+                        "Microtubule function",
+                        "Gastric acid secretion",
+                        "Vitamin K recycling",
+                        "Histamine breakdown"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vinca alkaloids bind tubulin and disrupt microtubule formation required for mitosis.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "chemotherapy",
+                     "vinca-alkaloids",
+                     "mitosis"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "Naloxone is preferred in opioid overdose because it:",
+        "options":  [
+                        "Rapidly reverses opioid respiratory depression",
+                        "Chelates lead",
+                        "Replaces insulin",
+                        "Blocks vitamin K"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Naloxone rapidly antagonizes opioid receptors and can restore breathing in opioid toxicity.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "toxicology",
+                     "opioids",
+                     "naloxone"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Which beta blocker is relatively cardioselective at usual doses?",
+        "options":  [
+                        "Atenolol",
+                        "Propranolol",
+                        "Carvedilol",
+                        "Labetalol"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Atenolol preferentially blocks beta-1 receptors in the heart at usual doses, although selectivity may decrease at higher doses.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "beta-blockers",
+                     "selectivity"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Furosemide produces diuresis mainly by inhibiting the Na+-K+-2Cl− cotransporter in the:",
+        "options":  [
+                        "Thick ascending limb of loop of Henle",
+                        "Proximal convoluted tubule",
+                        "Collecting duct",
+                        "Distal convoluted tubule"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Furosemide blocks the Na+-K+-2Cl− cotransporter in the thick ascending limb, producing potent natriuresis and diuresis.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "diuretics",
+                     "furosemide"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Which electrolyte abnormality is commonly associated with prolonged furosemide therapy?",
+        "options":  [
+                        "Hypokalemia",
+                        "Hyperkalemia",
+                        "Hypermagnesemia",
+                        "Hypernatremia in every patient"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Loop diuretics increase urinary potassium loss, so prolonged treatment can cause hypokalemia and requires monitoring of electrolytes.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "diuretics",
+                     "adverse-effects"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Sublingual nitroglycerin should not be combined with sildenafil because the combination may cause:",
+        "options":  [
+                        "Severe hypotension",
+                        "Severe hyperglycemia",
+                        "Irreversible deafness in every patient",
+                        "Thickening of bile"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Both medicines increase cyclic GMP-mediated vasodilation, and their combination can produce a dangerous fall in blood pressure.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "nitrates",
+                     "drug-interactions"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "Spironolactone is classified as a potassium-sparing:",
+        "options":  [
+                        "Aldosterone receptor antagonist",
+                        "Calcium channel blocker",
+                        "Thromboxane inhibitor",
+                        "Beta-2 agonist"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Spironolactone antagonizes aldosterone in the collecting duct, promoting sodium excretion while reducing potassium loss.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "diuretics",
+                     "spironolactone"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-1",
+        "question_text":  "A patient taking digoxin should be monitored especially for nausea, visual disturbances, and:",
+        "options":  [
+                        "Cardiac arrhythmias",
+                        "Gingival bleeding only",
+                        "Severe cough only",
+                        "Increased thyroid size"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Digoxin toxicity may cause gastrointestinal symptoms, yellow or blurred vision, and potentially serious cardiac arrhythmias.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "digoxin",
+                     "toxicity"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Levodopa is combined with carbidopa mainly to:",
+        "options":  [
+                        "Reduce peripheral conversion of levodopa",
+                        "Block dopamine receptors in the brain",
+                        "Increase renal excretion of dopamine",
+                        "Prevent acetylcholine release"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Carbidopa inhibits peripheral dopa decarboxylase, allowing more levodopa to reach the brain and reducing peripheral adverse effects.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "Parkinsonism",
+                     "levodopa"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "At therapeutic doses, morphine commonly causes:",
+        "options":  [
+                        "Respiratory depression and constipation",
+                        "Severe polyuria and thirst",
+                        "Bronchodilation and diarrhea",
+                        "Marked hyperactivity without sedation"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Opioids such as morphine depress the respiratory centre and reduce gastrointestinal motility, commonly causing constipation.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "opioids",
+                     "adverse-effects"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "The antidote for significant benzodiazepine-induced central nervous system depression is:",
+        "options":  [
+                        "Flumazenil",
+                        "Atropine",
+                        "Protamine sulfate",
+                        "Pralidoxime"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Flumazenil competitively antagonizes the benzodiazepine binding site on GABA-A receptors and can reverse benzodiazepine sedation.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "benzodiazepines",
+                     "antidotes"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "A common extrapyramidal adverse effect of long-term typical antipsychotic therapy is:",
+        "options":  [
+                        "Tardive dyskinesia",
+                        "Severe hypokalemia",
+                        "Peptic ulcer healing",
+                        "Increased visual acuity"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Long-term dopamine D2 blockade can cause tardive dyskinesia, characterized by involuntary repetitive movements.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "antipsychotics",
+                     "adverse-effects"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Amitriptyline belongs to which class of antidepressants?",
+        "options":  [
+                        "Tricyclic antidepressants",
+                        "Selective serotonin reuptake inhibitors",
+                        "Monoamine oxidase reactivators",
+                        "Dopamine agonists"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Amitriptyline is a tricyclic antidepressant that inhibits reuptake of norepinephrine and serotonin and also has antimuscarinic effects.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "antidepressants",
+                     "tricyclics"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-2",
+        "question_text":  "Salbutamol relieves bronchospasm primarily by stimulating:",
+        "options":  [
+                        "Beta-2 adrenergic receptors",
+                        "Muscarinic M3 receptors",
+                        "Dopamine D2 receptors",
+                        "Alpha-1 adrenergic receptors"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Salbutamol is a selective beta-2 agonist that relaxes bronchial smooth muscle and provides rapid relief of bronchospasm.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "adrenergic-drugs",
+                     "asthma"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Heparin therapy is commonly monitored using the:",
+        "options":  [
+                        "Activated partial thromboplastin time",
+                        "Bleeding time only",
+                        "Serum amylase level",
+                        "Fasting blood glucose"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Unfractionated heparin is commonly monitored with the activated partial thromboplastin time, which reflects its effect on intrinsic-pathway clotting factors.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "hemopoietic",
+                     "heparin",
+                     "monitoring"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "The main laboratory test used to monitor warfarin therapy is the:",
+        "options":  [
+                        "Prothrombin time expressed as INR",
+                        "Activated clotting time only",
+                        "Reticulocyte count",
+                        "Bleeding time only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Warfarin dosage is adjusted using prothrombin time reported as the international normalized ratio (INR).",
+        "difficulty":  "easy",
+        "tags":  [
+                     "hemopoietic",
+                     "warfarin",
+                     "monitoring"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "A major dose-related adverse effect of anticoagulant drugs is:",
+        "options":  [
+                        "Bleeding",
+                        "Cataract formation in every patient",
+                        "Increased bone density",
+                        "Dry cough only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Excessive anticoagulation impairs clot formation and may cause bleeding, so patients require appropriate monitoring and counselling.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "hemopoietic",
+                     "anticoagulants",
+                     "safety"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Which drug is a fibrinolytic used to dissolve an established thrombus?",
+        "options":  [
+                        "Streptokinase",
+                        "Ferrous sulfate",
+                        "Aspirin",
+                        "Protamine"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Streptokinase promotes conversion of plasminogen to plasmin, which degrades fibrin in an established clot.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "hemopoietic",
+                     "fibrinolytics",
+                     "thrombolysis"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Vitamin B12 deficiency can be treated pharmacologically with:",
+        "options":  [
+                        "Cyanocobalamin",
+                        "Warfarin",
+                        "Tranexamic acid",
+                        "Heparin"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Cyanocobalamin is a form of vitamin B12 used to replace deficiency and support normal red-cell formation and neurological function.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "hemopoietic",
+                     "hematinics",
+                     "vitamin-B12"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-3",
+        "question_text":  "Tranexamic acid helps reduce bleeding by inhibiting:",
+        "options":  [
+                        "Conversion of plasminogen to plasmin",
+                        "Vitamin K recycling",
+                        "Platelet calcium entry",
+                        "Thrombin synthesis in the liver"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Tranexamic acid is an antifibrinolytic that blocks plasminogen activation and stabilizes fibrin clots.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "hemopoietic",
+                     "antifibrinolytics",
+                     "tranexamic-acid"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Metformin is generally withheld or used cautiously in severe renal impairment because of the risk of:",
+        "options":  [
+                        "Lactic acidosis",
+                        "Ototoxicity",
+                        "Gingival hyperplasia",
+                        "Thyroid storm"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Reduced renal clearance can increase metformin exposure and the risk of rare but serious lactic acidosis.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "endocrine",
+                     "metformin",
+                     "safety"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Which insulin preparation has the fastest onset of action?",
+        "options":  [
+                        "Insulin lispro",
+                        "NPH insulin",
+                        "Insulin glargine",
+                        "Ultralente insulin"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Insulin lispro is a rapid-acting analogue used around meals, with an onset faster than intermediate- or long-acting preparations.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "endocrine",
+                     "insulin",
+                     "pharmacokinetics"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Levothyroxine is used as replacement therapy in:",
+        "options":  [
+                        "Hypothyroidism",
+                        "Hyperthyroidism",
+                        "Pheochromocytoma",
+                        "Diabetes insipidus"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Levothyroxine is synthetic thyroxine used to replace deficient thyroid hormone in hypothyroidism.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "endocrine",
+                     "thyroid",
+                     "levothyroxine"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Desmopressin is useful in central diabetes insipidus because it mimics:",
+        "options":  [
+                        "Antidiuretic hormone",
+                        "Insulin",
+                        "Thyroid-stimulating hormone",
+                        "Aldosterone"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Desmopressin is a selective vasopressin V2 receptor agonist that reduces excessive urine output in central diabetes insipidus.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "endocrine",
+                     "diabetes-insipidus",
+                     "desmopressin"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Long-term corticosteroid treatment may increase the risk of:",
+        "options":  [
+                        "Osteoporosis and infection",
+                        "Severe iron deficiency in every patient",
+                        "Permanent bradycardia",
+                        "Improved wound healing"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Systemic corticosteroids reduce bone formation and suppress immunity, increasing risks of osteoporosis and infection with prolonged use.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "endocrine",
+                     "corticosteroids",
+                     "adverse-effects"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-4",
+        "question_text":  "Pioglitazone improves glycemic control mainly by increasing:",
+        "options":  [
+                        "Peripheral insulin sensitivity",
+                        "Pancreatic glucagon release",
+                        "Renal glucose excretion through filtration",
+                        "Gastric acid secretion"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Pioglitazone activates PPAR-gamma and improves insulin sensitivity in adipose tissue, muscle, and liver.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "endocrine",
+                     "pioglitazone",
+                     "diabetes"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Proton-pump inhibitors reduce gastric acid secretion by inhibiting the:",
+        "options":  [
+                        "H+/K+-ATPase of gastric parietal cells",
+                        "H1 receptor of mast cells",
+                        "Na+/K+-ATPase of neurons",
+                        "Beta-2 receptor of bronchi"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Proton-pump inhibitors irreversibly inhibit the parietal-cell H+/K+-ATPase, the final common pathway for gastric acid secretion.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "autacoids",
+                     "proton-pump-inhibitors",
+                     "gastric-acid"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Antacids relieve heartburn primarily by:",
+        "options":  [
+                        "Neutralizing gastric acid",
+                        "Inhibiting platelet aggregation",
+                        "Stimulating insulin release",
+                        "Blocking leukotriene receptors"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Antacids are weak bases that chemically neutralize acid already present in the stomach and provide symptomatic relief.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "autacoids",
+                     "antacids",
+                     "gastric-acid"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "A common adverse effect of diphenhydramine is:",
+        "options":  [
+                        "Drowsiness",
+                        "Severe hypoglycemia",
+                        "Bleeding due to anticoagulation",
+                        "Renal stone dissolution"
+                    ],
+        "correct_index":  0,
+        "explanation":  "First-generation H1 antihistamines cross the blood-brain barrier and commonly cause sedation and drowsiness.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "autacoids",
+                     "antihistamines",
+                     "adverse-effects"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Misoprostol helps prevent NSAID-related gastric ulcers because it is an analogue of:",
+        "options":  [
+                        "Prostaglandin E1",
+                        "Histamine",
+                        "Serotonin",
+                        "Leukotriene C4"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Misoprostol, a prostaglandin E1 analogue, reduces acid secretion and strengthens gastric mucosal protection.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "autacoids",
+                     "prostaglandins",
+                     "NSAIDs"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Ipratropium relieves bronchoconstriction by blocking:",
+        "options":  [
+                        "Muscarinic receptors",
+                        "Beta-1 receptors",
+                        "H2 receptors",
+                        "Dopamine receptors"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Ipratropium is an inhaled muscarinic antagonist that reduces vagally mediated bronchial smooth-muscle contraction.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "autacoids",
+                     "muscarinic-antagonists",
+                     "bronchodilators"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-5",
+        "question_text":  "Aspirin-induced gastric irritation is mainly related to reduced synthesis of protective:",
+        "options":  [
+                        "Gastric prostaglandins",
+                        "Thyroid hormones",
+                        "Insulin",
+                        "Bile salts"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Aspirin inhibits cyclooxygenase and lowers protective gastric prostaglandins, weakening mucosal defenses and increasing irritation or ulcer risk.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "autacoids",
+                     "prostaglandins",
+                     "aspirin"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-6",
+        "question_text":  "Cisplatin is particularly associated with dose-limiting:",
+        "options":  [
+                        "Nephrotoxicity",
+                        "Gingival hyperplasia",
+                        "Hypoglycemia",
+                        "Constipation only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Cisplatin can cause significant renal tubular injury, so hydration and renal-function monitoring are important during therapy.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cancer-chemotherapy",
+                     "cisplatin",
+                     "toxicity"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-6",
+        "question_text":  "Tamoxifen is commonly used in hormone-responsive breast cancer because it blocks:",
+        "options":  [
+                        "Estrogen receptors in breast tissue",
+                        "Insulin receptors in muscle",
+                        "H2 receptors in the stomach",
+                        "Dopamine receptors in the brain"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Tamoxifen is a selective estrogen receptor modulator that antagonizes estrogen action in breast tissue.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cancer-chemotherapy",
+                     "tamoxifen",
+                     "hormonal-therapy"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-6",
+        "question_text":  "The rescue agent commonly used with high-dose methotrexate is:",
+        "options":  [
+                        "Leucovorin",
+                        "Naloxone",
+                        "Protamine",
+                        "Atropine"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Leucovorin (folinic acid) bypasses dihydrofolate reductase blockade and rescues normal cells after high-dose methotrexate.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cancer-chemotherapy",
+                     "methotrexate",
+                     "leucovorin"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-6",
+        "question_text":  "Doxorubicin therapy is limited partly by the risk of:",
+        "options":  [
+                        "Cardiotoxicity",
+                        "Severe hyperthyroidism",
+                        "Gastric acid deficiency",
+                        "Permanent hypoglycemia"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Doxorubicin can cause cumulative myocardial injury and cardiomyopathy, making dose limitation and cardiac monitoring important.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cancer-chemotherapy",
+                     "doxorubicin",
+                     "cardiotoxicity"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-6",
+        "question_text":  "Which antineoplastic drug is an antimetabolite that resembles pyrimidine?",
+        "options":  [
+                        "5-Fluorouracil",
+                        "Vincristine",
+                        "Cisplatin",
+                        "Tamoxifen"
+                    ],
+        "correct_index":  0,
+        "explanation":  "5-Fluorouracil is a pyrimidine analogue that interferes with thymidylate synthase and DNA synthesis.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cancer-chemotherapy",
+                     "antimetabolites",
+                     "5-fluorouracil"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "Activated charcoal is most useful in poisoning when administered:",
+        "options":  [
+                        "Soon after ingestion of an adsorbable toxin",
+                        "After complete renal failure only",
+                        "Only after inducing vomiting",
+                        "For every corrosive exposure"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Early activated charcoal can adsorb many ingested drugs and reduce absorption, but it is not appropriate for every toxin or when airway protection is absent.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "toxicology",
+                     "activated-charcoal",
+                     "decontamination"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "Pralidoxime is used in organophosphate poisoning to reactivate:",
+        "options":  [
+                        "Acetylcholinesterase",
+                        "H+/K+-ATPase",
+                        "Vitamin K epoxide reductase",
+                        "Dihydrofolate reductase"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Pralidoxime can reactivate phosphorylated acetylcholinesterase, especially when given early, and is used with atropine in organophosphate poisoning.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "toxicology",
+                     "organophosphates",
+                     "pralidoxime"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "The specific antidote for significant paracetamol overdose is:",
+        "options":  [
+                        "N-acetylcysteine",
+                        "Flumazenil",
+                        "Deferoxamine",
+                        "Methylene blue"
+                    ],
+        "correct_index":  0,
+        "explanation":  "N-acetylcysteine replenishes hepatic glutathione and limits injury from the toxic metabolite NAPQI, especially when given promptly.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "toxicology",
+                     "paracetamol",
+                     "antidotes"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "Deferoxamine is used to treat acute poisoning with:",
+        "options":  [
+                        "Iron",
+                        "Lead only",
+                        "Opioids",
+                        "Organophosphates"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Deferoxamine chelates excess iron and forms a water-soluble complex that can be eliminated from the body.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "toxicology",
+                     "iron",
+                     "chelators"
+                 ]
+    },
+    {
+        "unit_id":  "pharmaco-ii-unit-7",
+        "question_text":  "In a corrosive ingestion, inducing vomiting is avoided mainly because it may:",
+        "options":  [
+                        "Expose the oesophagus again to the corrosive substance",
+                        "Prevent all drug absorption",
+                        "Cause immediate hypoglycemia",
+                        "Neutralize the poison too quickly"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vomiting can re-expose the mouth and oesophagus to the corrosive agent and worsen tissue injury; urgent specialist assessment is required.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "toxicology",
+                     "corrosives",
+                     "first-aid"
+                 ]
+    }
+]

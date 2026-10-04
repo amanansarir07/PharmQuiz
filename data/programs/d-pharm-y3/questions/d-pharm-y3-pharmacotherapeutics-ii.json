@@ -1,0 +1,722 @@
+[
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "A common first-line medicine class for uncomplicated hypertension is:",
+    "options": ["Thiazide-like diuretics", "Antifungals", "Antacids", "Anthelmintics"],
+    "correct_index": 0,
+    "explanation": "Thiazide-like diuretics are one of the evidence-based first-line options for hypertension, alongside other guideline-supported classes.",
+    "difficulty": "easy",
+    "tags": ["cardiovascular", "hypertension"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Sublingual glyceryl trinitrate is used for rapid relief of:",
+    "options": ["Acute angina", "Iron-deficiency anemia", "Bacterial conjunctivitis", "Hypothyroidism"],
+    "correct_index": 0,
+    "explanation": "Sublingual glyceryl trinitrate rapidly reduces myocardial oxygen demand and relieves an acute attack of angina.",
+    "difficulty": "easy",
+    "tags": ["cardiovascular", "angina", "nitrates"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "A key symptom suggesting acute myocardial infarction is:",
+    "options": ["Persistent central chest pressure with possible radiation", "Mild seasonal itching only", "Isolated tooth sensitivity", "Brief hunger after exercise"],
+    "correct_index": 0,
+    "explanation": "Persistent central chest pressure, especially with radiation, sweating, breathlessness, or nausea, requires urgent assessment for acute coronary syndrome.",
+    "difficulty": "easy",
+    "tags": ["cardiovascular", "myocardial-infarction", "referral"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "A medicine that improves survival in many patients with systolic heart failure is an:",
+    "options": ["ACE inhibitor", "Antacid", "Antihistamine", "Topical antifungal"],
+    "correct_index": 0,
+    "explanation": "ACE inhibitors reduce maladaptive neurohormonal activity and improve outcomes in many patients with systolic heart failure.",
+    "difficulty": "medium",
+    "tags": ["cardiovascular", "heart-failure"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Statins are prescribed primarily to reduce:",
+    "options": ["LDL cholesterol and cardiovascular risk", "Serum sodium in every patient", "Blood oxygen saturation", "Platelet count"],
+    "correct_index": 0,
+    "explanation": "Statins lower LDL cholesterol and reduce the risk of atherosclerotic cardiovascular events in appropriate patients.",
+    "difficulty": "easy",
+    "tags": ["cardiovascular", "dyslipidemia", "statins"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Atrial fibrillation may increase the risk of:",
+    "options": ["Thromboembolic stroke", "Iron toxicity", "Cataract formation in every patient", "Acute appendicitis"],
+    "correct_index": 0,
+    "explanation": "Atrial fibrillation can allow atrial thrombus formation, increasing the risk of embolic stroke and requiring risk-based management.",
+    "difficulty": "medium",
+    "tags": ["cardiovascular", "arrhythmia", "stroke"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Lifestyle advice for hypertension commonly includes:",
+    "options": ["Reducing excess dietary salt and increasing appropriate activity", "Increasing tobacco use", "Avoiding all follow-up", "Taking antibiotics daily"],
+    "correct_index": 0,
+    "explanation": "Salt reduction, healthy weight, physical activity, tobacco cessation, and appropriate diet support blood-pressure control.",
+    "difficulty": "easy",
+    "tags": ["cardiovascular", "lifestyle", "hypertension"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "A patient with sudden severe chest pain and breathlessness should be:",
+    "options": ["Referred urgently for emergency assessment", "Given routine vitamins only", "Asked to wait several days", "Told to stop all prescribed medicines"],
+    "correct_index": 0,
+    "explanation": "Sudden severe chest pain and breathlessness are emergency symptoms requiring immediate medical evaluation.",
+    "difficulty": "easy",
+    "tags": ["cardiovascular", "triage", "emergency"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "Metformin is commonly used as initial pharmacotherapy for many patients with:",
+    "options": ["Type 2 diabetes", "Type 1 diabetes without insulin", "Acute appendicitis", "Bacterial meningitis"],
+    "correct_index": 0,
+    "explanation": "Metformin is commonly used for type 2 diabetes alongside lifestyle measures, unless contraindicated or unsuitable.",
+    "difficulty": "easy",
+    "tags": ["diabetes", "metformin"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "The immediate treatment for a conscious patient with mild hypoglycemia is usually:",
+    "options": ["A fast-acting source of glucose", "A long-acting antibiotic", "A diuretic tablet", "A topical steroid"],
+    "correct_index": 0,
+    "explanation": "A conscious patient with mild hypoglycemia should receive a rapidly absorbed carbohydrate and be reassessed.",
+    "difficulty": "easy",
+    "tags": ["diabetes", "hypoglycemia", "emergency"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "Diabetic ketoacidosis is characterized by hyperglycemia, ketones, and:",
+    "options": ["Metabolic acidosis", "Severe alkalosis in every case", "Low body temperature only", "Increased bone density"],
+    "correct_index": 0,
+    "explanation": "DKA involves insulin deficiency, ketone production, hyperglycemia, dehydration, and metabolic acidosis and requires urgent treatment.",
+    "difficulty": "medium",
+    "tags": ["diabetes", "DKA", "emergency"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "Levothyroxine is used for:",
+    "options": ["Hypothyroidism", "Hyperthyroidism in every patient", "Acute gout", "Iron poisoning"],
+    "correct_index": 0,
+    "explanation": "Levothyroxine replaces thyroid hormone in hypothyroidism and is adjusted according to clinical and laboratory monitoring.",
+    "difficulty": "easy",
+    "tags": ["thyroid", "hypothyroidism"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "A medicine used to reduce bone resorption in osteoporosis is:",
+    "options": ["A bisphosphonate", "A short-acting bronchodilator", "An antacid only", "An opioid antagonist"],
+    "correct_index": 0,
+    "explanation": "Bisphosphonates inhibit osteoclast-mediated bone resorption and are used in appropriate patients with osteoporosis.",
+    "difficulty": "easy",
+    "tags": ["osteoporosis", "bisphosphonates"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "A patient taking insulin should be taught to recognize symptoms of:",
+    "options": ["Hypoglycemia", "Only skin infection", "High calcium in every case", "Appendicitis"],
+    "correct_index": 0,
+    "explanation": "Insulin can cause hypoglycemia, so patients should recognize sweating, tremor, hunger, confusion, and other warning symptoms.",
+    "difficulty": "easy",
+    "tags": ["diabetes", "insulin", "counseling"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "Excess thyroid hormone commonly produces:",
+    "options": ["Palpitations, heat intolerance, and weight loss", "Cold intolerance and slow pulse only", "Severe iron deficiency", "Reduced respiratory rate in every patient"],
+    "correct_index": 0,
+    "explanation": "Hyperthyroidism may cause increased metabolism, heat intolerance, palpitations, tremor, anxiety, and weight loss.",
+    "difficulty": "easy",
+    "tags": ["thyroid", "hyperthyroidism"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "A key laboratory marker used to assess kidney filtration is:",
+    "options": ["Serum creatinine with estimated filtration measures", "Serum amylase only", "Hemoglobin only", "Skin temperature only"],
+    "correct_index": 0,
+    "explanation": "Serum creatinine and estimated glomerular filtration measures help assess renal function and guide medicine dosing.",
+    "difficulty": "easy",
+    "tags": ["renal", "kidney-function"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "In chronic kidney disease, some medicines require:",
+    "options": ["Dose adjustment or avoidance", "Automatic dose doubling", "No monitoring ever", "Use only with antacids"],
+    "correct_index": 0,
+    "explanation": "Reduced renal clearance can increase medicine exposure, so dose adjustment, interval changes, or avoidance may be necessary.",
+    "difficulty": "easy",
+    "tags": ["renal", "dose-adjustment"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "NSAIDs may worsen kidney function by reducing:",
+    "options": ["Renal prostaglandin-mediated blood flow", "Insulin receptor activity only", "Bone mineralization", "Skin pigmentation"],
+    "correct_index": 0,
+    "explanation": "NSAID inhibition of renal prostaglandins can reduce protective renal blood flow, particularly in vulnerable patients.",
+    "difficulty": "medium",
+    "tags": ["renal", "NSAIDs", "nephrotoxicity"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "Aminoglycosides require caution in renal impairment because they can be:",
+    "options": ["Nephrotoxic and renally eliminated", "Always hepatoprotective", "Absorbed only through the skin", "Used without dose monitoring"],
+    "correct_index": 0,
+    "explanation": "Aminoglycosides are mainly renally eliminated and may cause nephrotoxicity, requiring careful dosing and monitoring.",
+    "difficulty": "medium",
+    "tags": ["renal", "aminoglycosides", "safety"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "A common complication of advanced CKD is:",
+    "options": ["Anemia", "Permanent hyperactivity in every patient", "Increased filtration", "Excess vitamin C production"],
+    "correct_index": 0,
+    "explanation": "Reduced erythropoietin production and other factors contribute to anemia in advanced chronic kidney disease.",
+    "difficulty": "easy",
+    "tags": ["renal", "CKD", "anemia"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "Acute kidney injury may be suspected when there is a rapid rise in:",
+    "options": ["Serum creatinine", "Height", "Hair growth", "Visual acuity"],
+    "correct_index": 0,
+    "explanation": "A rapid increase in serum creatinine and/or a fall in urine output can indicate acute kidney injury.",
+    "difficulty": "easy",
+    "tags": ["renal", "AKI", "diagnosis"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "A patient with reduced renal function should avoid self-medicating with:",
+    "options": ["Unsupervised NSAIDs", "Prescribed renal medicines", "Labeled oral rehydration solution", "Routine prescribed vitamins"],
+    "correct_index": 0,
+    "explanation": "Unsupervised NSAID use may worsen renal function and should be discussed with a qualified clinician or pharmacist.",
+    "difficulty": "easy",
+    "tags": ["renal", "NSAIDs", "counseling"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "Contrast-associated kidney injury risk is greater in patients with:",
+    "options": ["Pre-existing renal impairment", "Normal kidney function only", "A healed skin wound", "Seasonal rhinitis only"],
+    "correct_index": 0,
+    "explanation": "Pre-existing renal impairment and other risk factors require assessment and preventive measures before contrast exposure.",
+    "difficulty": "medium",
+    "tags": ["renal", "contrast", "risk-assessment"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "Iron-deficiency anemia is commonly treated with:",
+    "options": ["Oral iron preparations when suitable", "Naloxone", "A bronchodilator", "A topical antiseptic only"],
+    "correct_index": 0,
+    "explanation": "Oral iron is commonly used to replace iron stores when iron deficiency is confirmed and oral therapy is appropriate.",
+    "difficulty": "easy",
+    "tags": ["hematology", "iron-deficiency"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "Folic acid deficiency may cause:",
+    "options": ["Megaloblastic anemia", "Acute glaucoma", "Hyperthyroidism", "Bacterial pneumonia in every patient"],
+    "correct_index": 0,
+    "explanation": "Folate deficiency impairs DNA synthesis and can produce megaloblastic anemia.",
+    "difficulty": "easy",
+    "tags": ["hematology", "folate", "anemia"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "The main goal of anticoagulation in deep-vein thrombosis is to:",
+    "options": ["Prevent clot extension and embolization", "Increase platelet aggregation", "Cause dehydration", "Treat fungal skin infection"],
+    "correct_index": 0,
+    "explanation": "Anticoagulation limits thrombus growth and reduces the risk of pulmonary embolism and recurrent venous thromboembolism.",
+    "difficulty": "easy",
+    "tags": ["hematology", "DVT", "anticoagulation"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "Chemotherapy-induced nausea and vomiting may be prevented with:",
+    "options": ["An appropriate antiemetic regimen", "An anticoagulant only", "Iron tablets only", "A topical emollient"],
+    "correct_index": 0,
+    "explanation": "Antiemetic regimens are selected according to the emetogenic risk of chemotherapy and patient factors.",
+    "difficulty": "easy",
+    "tags": ["oncology", "CINV", "supportive-care"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "Febrile neutropenia in a patient receiving chemotherapy requires:",
+    "options": ["Urgent medical assessment and antimicrobial management", "Routine waiting at home", "Only a vitamin supplement", "Stopping all fluids"],
+    "correct_index": 0,
+    "explanation": "Fever during significant neutropenia can indicate life-threatening infection and requires urgent assessment and treatment.",
+    "difficulty": "easy",
+    "tags": ["oncology", "neutropenia", "emergency"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "The WHO analgesic ladder is used to guide:",
+    "options": ["Stepwise treatment of cancer and other pain", "Antibiotic selection only", "Insulin storage", "Blood-pressure measurement"],
+    "correct_index": 0,
+    "explanation": "The analgesic ladder provides a stepwise approach to pain management using non-opioid, weak opioid, and strong opioid options as appropriate.",
+    "difficulty": "easy",
+    "tags": ["oncology", "pain", "WHO-ladder"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "A patient taking warfarin should be monitored with:",
+    "options": ["INR testing", "Peak flow only", "Visual acuity only", "Urine color only"],
+    "correct_index": 0,
+    "explanation": "INR monitoring helps assess the anticoagulant effect of warfarin and supports dose adjustment.",
+    "difficulty": "easy",
+    "tags": ["hematology", "warfarin", "monitoring"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "Palliative care aims primarily to improve:",
+    "options": ["Quality of life and symptom control", "Tumor size in every patient", "Blood pressure only", "Laboratory values without patient goals"],
+    "correct_index": 0,
+    "explanation": "Palliative care focuses on comfort, symptom control, psychosocial support, and quality of life alongside appropriate disease care.",
+    "difficulty": "easy",
+    "tags": ["oncology", "palliative-care"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A common topical treatment for mild acne is:",
+    "options": ["Benzoyl peroxide", "Warfarin", "Insulin", "Naloxone"],
+    "correct_index": 0,
+    "explanation": "Topical benzoyl peroxide can reduce bacterial load and inflammation and is used in appropriate acne regimens.",
+    "difficulty": "easy",
+    "tags": ["dermatology", "acne"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "Topical corticosteroids should be selected according to:",
+    "options": ["Potency, body site, condition, and duration", "Color of the package only", "Price alone", "Patient height only"],
+    "correct_index": 0,
+    "explanation": "Corticosteroid potency and treatment duration must match the condition, body site, patient factors, and risk of adverse effects.",
+    "difficulty": "easy",
+    "tags": ["dermatology", "corticosteroids", "safety"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A topical antifungal is appropriate for:",
+    "options": ["A suitable localized superficial fungal infection", "Every unexplained rash", "Acute myocardial infarction", "Hypothyroidism"],
+    "correct_index": 0,
+    "explanation": "Topical antifungals can treat appropriate localized superficial fungal infections after assessment of the presentation.",
+    "difficulty": "easy",
+    "tags": ["dermatology", "fungal-infection"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A common first-line medicine class for open-angle glaucoma is:",
+    "options": ["Prostaglandin analogues", "Oral iron salts", "Antacids", "Anthelmintics"],
+    "correct_index": 0,
+    "explanation": "Prostaglandin analogues increase aqueous humor outflow and are commonly used in open-angle glaucoma management.",
+    "difficulty": "easy",
+    "tags": ["ophthalmology", "glaucoma"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "Sudden painful red eye with visual disturbance should be:",
+    "options": ["Referred urgently", "Treated with any available eye drop", "Ignored for a week", "Covered with a non-sterile dressing only"],
+    "correct_index": 0,
+    "explanation": "A painful red eye with visual disturbance may represent a serious ocular emergency and requires urgent assessment.",
+    "difficulty": "easy",
+    "tags": ["ophthalmology", "red-eye", "referral"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "Artificial tears are commonly used to relieve symptoms of:",
+    "options": ["Dry eye", "Deep-vein thrombosis", "Hyperthyroidism", "Iron poisoning"],
+    "correct_index": 0,
+    "explanation": "Artificial tears lubricate the ocular surface and can relieve symptoms of uncomplicated dry eye.",
+    "difficulty": "easy",
+    "tags": ["ophthalmology", "dry-eye"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A patient with widespread blistering after medicine use requires:",
+    "options": ["Urgent medical referral", "Routine moisturizer only", "A new medicine from the same class without advice", "No follow-up"],
+    "correct_index": 0,
+    "explanation": "Widespread blistering may indicate a severe cutaneous adverse reaction and requires urgent medical evaluation.",
+    "difficulty": "medium",
+    "tags": ["dermatology", "adverse-reaction", "emergency"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "Calcium and vitamin D are commonly used in osteoporosis care to support:",
+    "options": ["Bone mineral health", "Bacterial eradication", "Acute opioid reversal", "Blood clot dissolution"],
+    "correct_index": 0,
+    "explanation": "Adequate calcium and vitamin D support bone mineral health and are used alongside other osteoporosis measures when appropriate.",
+    "difficulty": "easy",
+    "tags": ["osteoporosis", "calcium", "vitamin-D"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A patient with a suspected corneal injury should be:",
+    "options": ["Referred promptly for eye examination", "Given steroid eye drops without examination", "Told to rub the eye", "Managed with expired drops"],
+    "correct_index": 0,
+    "explanation": "A suspected corneal injury requires prompt examination; inappropriate drops or rubbing may worsen injury or delay treatment.",
+    "difficulty": "medium",
+    "tags": ["ophthalmology", "corneal-injury", "referral"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Which medicine class is particularly useful for rate control in atrial fibrillation?",
+    "options": ["Beta blockers", "Antacids", "Topical retinoids", "Bisphosphonates"],
+    "correct_index": 0,
+    "explanation": "Beta blockers slow atrioventricular-node conduction and can be used for ventricular rate control in suitable patients with atrial fibrillation.",
+    "difficulty": "medium",
+    "tags": ["cardiovascular", "atrial-fibrillation", "beta-blockers"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Which adverse effect should be monitored in a patient taking an ACE inhibitor?",
+    "options": ["Persistent dry cough", "Blue-green vision", "Severe constipation in every patient", "Tooth discoloration"],
+    "correct_index": 0,
+    "explanation": "ACE inhibitors can cause a persistent dry cough due to bradykinin accumulation; angioedema and hyperkalemia are other important concerns.",
+    "difficulty": "medium",
+    "tags": ["cardiovascular", "ACE-inhibitors", "adverse-effects"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Why should potassium and renal function be monitored with spironolactone?",
+    "options": ["It may cause hyperkalemia and worsen renal impairment", "It always causes severe hypoglycemia", "It permanently lowers platelet count", "It prevents thyroid hormone synthesis"],
+    "correct_index": 0,
+    "explanation": "Spironolactone is a potassium-sparing diuretic, so hyperkalemia and changes in renal function are important monitoring concerns.",
+    "difficulty": "medium",
+    "tags": ["cardiovascular", "diuretics", "monitoring"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "The main therapeutic effect of a loop diuretic in acute pulmonary edema is to:",
+    "options": ["Reduce fluid overload and venous congestion", "Increase airway mucus production", "Raise blood glucose rapidly", "Suppress red-cell production"],
+    "correct_index": 0,
+    "explanation": "Loop diuretics promote rapid sodium and water excretion, helping reduce congestion in appropriately managed acute pulmonary edema.",
+    "difficulty": "medium",
+    "tags": ["cardiovascular", "heart-failure", "loop-diuretics"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Which symptom in a patient taking a statin should prompt assessment for muscle toxicity?",
+    "options": ["Unexplained muscle pain or weakness", "Mild thirst after exercise", "Occasional sneezing", "Temporary hunger before lunch"],
+    "correct_index": 0,
+    "explanation": "Unexplained muscle pain, tenderness, or weakness may indicate statin-associated muscle injury and should be assessed promptly.",
+    "difficulty": "easy",
+    "tags": ["cardiovascular", "statins", "safety"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Aspirin helps prevent arterial thrombosis primarily by inhibiting:",
+    "options": ["Platelet aggregation", "Thyroid hormone release", "Gastric acid secretion only", "Renal glucose reabsorption"],
+    "correct_index": 0,
+    "explanation": "Low-dose aspirin irreversibly inhibits platelet cyclooxygenase and reduces thromboxane-mediated platelet aggregation.",
+    "difficulty": "medium",
+    "tags": ["cardiovascular", "antiplatelets", "aspirin"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "A patient prescribed sublingual glyceryl trinitrate should be advised to:",
+    "options": ["Sit down before using it and seek help if pain persists", "Swallow it whole with a large meal", "Use it with a phosphodiesterase-5 inhibitor", "Store it with the cap permanently open"],
+    "correct_index": 0,
+    "explanation": "Sitting reduces the risk of dizziness or fainting; persistent or worsening chest pain requires emergency help, and PDE-5 inhibitors are contraindicated with nitrates.",
+    "difficulty": "medium",
+    "tags": ["cardiovascular", "angina", "patient-counseling"]
+  },
+  {
+    "unit_id": "thera-ii-unit-1",
+    "question_text": "Which finding is most consistent with digoxin toxicity?",
+    "options": ["Nausea with visual disturbances and arrhythmia", "Increased appetite with improved vision", "Local skin dryness only", "Rapid hair growth"],
+    "correct_index": 0,
+    "explanation": "Nausea, vomiting, visual disturbances, and cardiac arrhythmias are warning features of digoxin toxicity and require assessment.",
+    "difficulty": "medium",
+    "tags": ["cardiovascular", "digoxin", "toxicity"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "The long-term aim of diabetes pharmacotherapy is to reduce hyperglycemia and prevent:",
+    "options": ["Microvascular and macrovascular complications", "Normal wound healing", "All immune responses", "Bone growth in children"],
+    "correct_index": 0,
+    "explanation": "Sustained glycemic control helps reduce microvascular complications and contributes to lowering cardiovascular and other macrovascular risks.",
+    "difficulty": "medium",
+    "tags": ["diabetes", "complications", "management"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "Which counseling point is important for a patient taking metformin?",
+    "options": ["Take it with meals to reduce gastrointestinal upset", "Stop it whenever blood glucose improves for one day", "Double the dose after every missed tablet", "Use it to treat type 1 diabetes without insulin"],
+    "correct_index": 0,
+    "explanation": "Taking metformin with or after meals can reduce gastrointestinal adverse effects; doses should not be doubled after a missed dose.",
+    "difficulty": "easy",
+    "tags": ["diabetes", "metformin", "counseling"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "A conscious patient with hypoglycemia should generally be rechecked after taking fast-acting carbohydrate in:",
+    "options": ["About 10 to 15 minutes", "Several days", "One month", "Only after strenuous exercise"],
+    "correct_index": 0,
+    "explanation": "Blood glucose and symptoms should be reassessed after about 10 to 15 minutes, with further carbohydrate given if hypoglycemia persists.",
+    "difficulty": "easy",
+    "tags": ["diabetes", "hypoglycemia", "first-aid"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "A person with type 1 diabetes requires insulin because the pancreas produces:",
+    "options": ["Little or no endogenous insulin", "Excess thyroid hormone", "Only digestive enzymes", "Excess erythropoietin"],
+    "correct_index": 0,
+    "explanation": "Type 1 diabetes results from substantial beta-cell loss, causing little or no endogenous insulin production and requiring insulin replacement.",
+    "difficulty": "easy",
+    "tags": ["diabetes", "type-1-diabetes", "insulin"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "Which instruction helps maintain insulin potency during storage?",
+    "options": ["Keep it refrigerated as directed and avoid freezing", "Store it in direct sunlight", "Freeze every opened vial", "Leave it beside a heat source"],
+    "correct_index": 0,
+    "explanation": "Insulin should be stored according to product instructions, generally refrigerated but never frozen or exposed to excessive heat or sunlight.",
+    "difficulty": "easy",
+    "tags": ["diabetes", "insulin", "storage"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "Carbimazole is used primarily to manage:",
+    "options": ["Hyperthyroidism", "Iron-deficiency anemia", "Type 1 diabetes", "Osteoporosis"],
+    "correct_index": 0,
+    "explanation": "Carbimazole reduces thyroid hormone synthesis and is used in appropriate patients with hyperthyroidism.",
+    "difficulty": "easy",
+    "tags": ["thyroid", "hyperthyroidism", "carbimazole"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "A patient taking carbimazole should report fever or sore throat because of possible:",
+    "options": ["Agranulocytosis or serious neutropenia", "Improved thyroid function", "Increased bone density", "Dry eye only"],
+    "correct_index": 0,
+    "explanation": "Fever or sore throat may indicate agranulocytosis, a rare but serious adverse effect requiring urgent blood-count assessment.",
+    "difficulty": "medium",
+    "tags": ["thyroid", "carbimazole", "adverse-effects"]
+  },
+  {
+    "unit_id": "thera-ii-unit-2",
+    "question_text": "An important administration instruction for an oral bisphosphonate is to:",
+    "options": ["Take it with plain water and remain upright afterward", "Take it immediately before lying down", "Crush it into a calcium drink routinely", "Take it with an antacid at the same time"],
+    "correct_index": 0,
+    "explanation": "Oral bisphosphonates should be taken as directed with plain water while upright to reduce esophageal irritation and improve absorption.",
+    "difficulty": "medium",
+    "tags": ["osteoporosis", "bisphosphonates", "counseling"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "Which change may indicate worsening acute kidney injury?",
+    "options": ["Reduced urine output with rising serum creatinine", "Increased urine output with stable creatinine only", "Improved appetite alone", "Lower body temperature after rest"],
+    "correct_index": 0,
+    "explanation": "Oliguria together with a rising serum creatinine is concerning for worsening kidney injury and requires clinical assessment.",
+    "difficulty": "easy",
+    "tags": ["renal", "AKI", "monitoring"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "In chronic kidney disease, erythropoietin deficiency contributes mainly to:",
+    "options": ["Normocytic anemia", "Acute hyperthyroidism", "Excess platelet production", "Increased bone length"],
+    "correct_index": 0,
+    "explanation": "Damaged kidneys produce less erythropoietin, reducing red-cell production and contributing to anemia of chronic kidney disease.",
+    "difficulty": "medium",
+    "tags": ["renal", "CKD", "anemia"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "Which electrolyte abnormality can occur in advanced renal failure because potassium excretion is reduced?",
+    "options": ["Hyperkalemia", "Hypokalemia in every patient", "Hypernatremia in every patient", "Low chloride from skin loss only"],
+    "correct_index": 0,
+    "explanation": "Reduced renal potassium excretion can cause hyperkalemia, which may produce dangerous cardiac conduction abnormalities.",
+    "difficulty": "easy",
+    "tags": ["renal", "electrolytes", "hyperkalemia"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "Why may a renally cleared medicine have a prolonged effect in severe CKD?",
+    "options": ["Reduced clearance increases drug exposure", "The medicine is always absorbed faster", "The liver stops making bile", "The tablet becomes larger in the stomach"],
+    "correct_index": 0,
+    "explanation": "Reduced renal clearance can increase plasma concentrations and prolong effects, so dosing or monitoring may need adjustment.",
+    "difficulty": "medium",
+    "tags": ["renal", "pharmacokinetics", "dose-adjustment"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "A patient on hemodialysis may need special consideration of medicine timing because dialysis can:",
+    "options": ["Remove some medicines from the circulation", "Convert every medicine into a vitamin", "Prevent all adverse effects", "Increase tablet absorption through the skin"],
+    "correct_index": 0,
+    "explanation": "Dialysis can remove medicines depending on molecular size, protein binding, and volume of distribution, so timing and supplemental doses may matter.",
+    "difficulty": "medium",
+    "tags": ["renal", "dialysis", "pharmacokinetics"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "Which combination increases the risk of kidney injury and requires careful review?",
+    "options": ["An NSAID with a diuretic and an ACE inhibitor", "A moisturizer with artificial tears", "Calcium with plain water only", "A topical antifungal used as directed"],
+    "correct_index": 0,
+    "explanation": "The NSAID, diuretic, and ACE inhibitor combination can reduce renal perfusion and increase acute kidney injury risk, especially during dehydration.",
+    "difficulty": "hard",
+    "tags": ["renal", "drug-interactions", "NSAIDs"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "In a patient with CKD, blood pressure control is important because it can:",
+    "options": ["Slow further renal damage and reduce cardiovascular risk", "Restore all lost nephrons immediately", "Eliminate the need for monitoring", "Cause urine production to stop"],
+    "correct_index": 0,
+    "explanation": "Appropriate blood pressure control helps reduce progression of chronic kidney disease and lowers cardiovascular complications.",
+    "difficulty": "medium",
+    "tags": ["renal", "CKD", "hypertension"]
+  },
+  {
+    "unit_id": "thera-ii-unit-3",
+    "question_text": "Foamy urine in a patient with kidney disease may suggest increased urinary:",
+    "options": ["Protein excretion", "Insulin production", "Bile pigment only", "Thyroid hormone"],
+    "correct_index": 0,
+    "explanation": "Persistent foamy urine can reflect proteinuria, an important marker of glomerular disease that warrants assessment.",
+    "difficulty": "easy",
+    "tags": ["renal", "proteinuria", "assessment"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "Which laboratory test is commonly used to assess iron stores in suspected iron-deficiency anemia?",
+    "options": ["Serum ferritin", "Troponin only", "Peak expiratory flow", "Thyroid ultrasound"],
+    "correct_index": 0,
+    "explanation": "Serum ferritin generally reflects iron stores, although inflammation can elevate it and must be considered during interpretation.",
+    "difficulty": "medium",
+    "tags": ["hematology", "iron-deficiency", "laboratory"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "A common adverse effect of oral iron therapy is:",
+    "options": ["Constipation and dark stools", "Severe hypoglycemia in every patient", "Blue vision", "Immediate hearing restoration"],
+    "correct_index": 0,
+    "explanation": "Oral iron commonly causes gastrointestinal effects such as constipation, nausea, and dark stools; patients should be counseled appropriately.",
+    "difficulty": "easy",
+    "tags": ["hematology", "iron", "adverse-effects"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "A patient taking warfarin should seek advice before starting a new medicine because of possible:",
+    "options": ["Drug interactions that alter anticoagulant effect", "Guaranteed improvement in INR", "Prevention of all bleeding", "Permanent immunity to thrombosis"],
+    "correct_index": 0,
+    "explanation": "Many medicines and herbal products can alter warfarin effect, so new treatments should be checked and INR monitoring may be needed.",
+    "difficulty": "medium",
+    "tags": ["hematology", "warfarin", "drug-interactions"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "Which symptom may indicate clinically important bleeding during anticoagulant therapy?",
+    "options": ["Black tarry stools or vomiting blood", "Improved exercise tolerance", "Mild hunger before breakfast", "Clearer skin"],
+    "correct_index": 0,
+    "explanation": "Melena or hematemesis can indicate gastrointestinal bleeding and requires urgent medical assessment in an anticoagulated patient.",
+    "difficulty": "easy",
+    "tags": ["hematology", "anticoagulation", "bleeding"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "A major treatment aim in sickle-cell disease is to:",
+    "options": ["Prevent painful crises and organ complications", "Increase red-cell sickling", "Suppress all immunity permanently", "Cause dehydration to reduce symptoms"],
+    "correct_index": 0,
+    "explanation": "Management aims to prevent vaso-occlusive crises and complications through measures such as hydration, vaccination, analgesia, and disease-modifying therapy when appropriate.",
+    "difficulty": "medium",
+    "tags": ["hematology", "sickle-cell", "pain"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "Before administering cytotoxic chemotherapy, a key safety step is to check:",
+    "options": ["The treatment protocol, patient identity, and relevant laboratory results", "Only the color of the infusion bag", "The patient's shoe size", "Whether the patient has used moisturizer"],
+    "correct_index": 0,
+    "explanation": "Chemotherapy safety requires verification of the protocol, patient, dose, route, timing, and laboratory results such as blood counts and organ function.",
+    "difficulty": "medium",
+    "tags": ["oncology", "chemotherapy", "medication-safety"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "A patient receiving chemotherapy should report oral ulcers because they may indicate:",
+    "options": ["Mucositis requiring supportive care and infection assessment", "Improved immunity", "Permanent cure of the cancer", "A need to stop drinking water"],
+    "correct_index": 0,
+    "explanation": "Chemotherapy-associated mucositis can impair nutrition and increase infection risk, so oral care and clinical assessment are important.",
+    "difficulty": "medium",
+    "tags": ["oncology", "chemotherapy", "mucositis"]
+  },
+  {
+    "unit_id": "thera-ii-unit-4",
+    "question_text": "When using an opioid for severe cancer pain, an appropriate safety measure is to monitor for:",
+    "options": ["Sedation and respiratory depression", "Increased visual acuity", "Hyperactivity in every patient", "Improved bowel movement without laxatives"],
+    "correct_index": 0,
+    "explanation": "Opioids can cause sedation and respiratory depression; bowel function, dependence risk, and other adverse effects also require monitoring.",
+    "difficulty": "medium",
+    "tags": ["oncology", "opioids", "pain", "safety"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A key counseling point for topical benzoyl peroxide is that it may:",
+    "options": ["Irritate skin and bleach fabrics", "Treat bacterial meningitis", "Increase INR reliably", "Replace sunscreen in sunlight"],
+    "correct_index": 0,
+    "explanation": "Benzoyl peroxide can cause dryness or irritation and may bleach hair and fabrics, so careful application and counseling are useful.",
+    "difficulty": "easy",
+    "tags": ["dermatology", "acne", "benzoyl-peroxide"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A topical corticosteroid should generally not be used on an undiagnosed infection because it may:",
+    "options": ["Mask or worsen the infection", "Always sterilize the lesion", "Prevent all allergic reactions", "Increase bone density locally"],
+    "correct_index": 0,
+    "explanation": "Corticosteroids suppress inflammation and can mask or aggravate some infections, so the diagnosis and appropriate product should be confirmed.",
+    "difficulty": "medium",
+    "tags": ["dermatology", "corticosteroids", "safety"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A typical feature of tinea corporis is a:",
+    "options": ["Pruritic annular scaly lesion with a raised border", "Sudden painless loss of vision", "Deep chest pressure", "Symmetric ankle fracture"],
+    "correct_index": 0,
+    "explanation": "Tinea corporis often presents as an expanding, itchy, annular, scaly lesion with a more active raised edge.",
+    "difficulty": "easy",
+    "tags": ["dermatology", "tinea", "fungal-infection"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "Eye drops should be administered without touching the dropper tip to the eye to prevent:",
+    "options": ["Contamination of the bottle and eye", "All changes in pupil size", "Improved absorption into bone", "Immediate loss of vision"],
+    "correct_index": 0,
+    "explanation": "Keeping the dropper tip sterile helps prevent contamination and reduces the risk of introducing infection into the eye or bottle.",
+    "difficulty": "easy",
+    "tags": ["ophthalmology", "eye-drops", "infection-control"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A patient using multiple eye drops should usually separate different products by:",
+    "options": ["At least several minutes", "Applying them all at exactly the same time", "One full week", "Stopping the prescribed treatment"],
+    "correct_index": 0,
+    "explanation": "Separating eye drops by several minutes reduces washout and allows each product adequate contact with the ocular surface.",
+    "difficulty": "easy",
+    "tags": ["ophthalmology", "eye-drops", "counseling"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "Which symptom is a recognized adverse effect of prostaglandin analogue eye drops?",
+    "options": ["Gradual darkening of the iris or increased eyelash growth", "Severe hypoglycemia in every patient", "Permanent hearing loss", "Immediate renal failure"],
+    "correct_index": 0,
+    "explanation": "Prostaglandin analogues may cause conjunctival hyperemia, increased eyelash growth, and gradual iris pigmentation changes.",
+    "difficulty": "medium",
+    "tags": ["ophthalmology", "glaucoma", "prostaglandin-analogues"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A patient with a chemical splash in the eye should first receive:",
+    "options": ["Immediate copious irrigation with clean water or saline", "A corticosteroid drop without irrigation", "An eye patch for several hours", "Rubbing to remove the chemical"],
+    "correct_index": 0,
+    "explanation": "Immediate and prolonged irrigation dilutes and removes the chemical; urgent ophthalmic assessment is also required.",
+    "difficulty": "medium",
+    "tags": ["ophthalmology", "chemical-injury", "emergency"]
+  },
+  {
+    "unit_id": "thera-ii-unit-5",
+    "question_text": "A patient with suspected bacterial conjunctivitis should be advised to reduce spread by:",
+    "options": ["Washing hands and avoiding shared towels", "Sharing eye drops with family members", "Rubbing both eyes frequently", "Using leftover antibiotics indefinitely"],
+    "correct_index": 0,
+    "explanation": "Hand hygiene and avoiding shared towels reduce transmission; treatment and referral depend on the clinical assessment.",
+    "difficulty": "easy",
+    "tags": ["ophthalmology", "conjunctivitis", "infection-control"]
+  }
+]

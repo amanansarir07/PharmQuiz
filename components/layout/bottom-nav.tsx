@@ -47,7 +47,7 @@ export function BottomNav() {
       match: (p: string) => p === "/quiz" || p === "/mock-test",
     },
     {
-      label: "Rank",
+      label: "Progress",
       href: "/leaderboard",
       icon: Trophy,
       match: (p: string) => p.startsWith("/leaderboard"),

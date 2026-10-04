@@ -40,6 +40,7 @@ import {
   XCircle,
   Lightbulb,
 } from "lucide-react";
+import { AppError, AppLoading } from "@/components/app-state";
 
 /**
  * First subject of a programme — used when a session has no usable config
@@ -52,6 +53,16 @@ function firstSubjectSlug(slug?: string | null): string {
     getSubjectsForProgram(slug || DEFAULT_PROGRAM_SLUG)[0]?.slug ?? ""
   );
 }
+
+type QuizConfig = {
+  mode?: "mock" | "mistakes" | string;
+  subject?: string;
+  program?: string;
+  timeLimit?: number | null;
+  negativeMarking?: boolean;
+  revisionMode?: boolean;
+  [key: string]: unknown;
+};
 
 export default function ActiveQuizPage({
   params,
@@ -66,8 +77,9 @@ export default function ActiveQuizPage({
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
   const [showPalette, setShowPalette] = useState(false);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
-  const [quizConfig, setQuizConfig] = useState<any>(null);
+  const [quizConfig, setQuizConfig] = useState<QuizConfig | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [showResumedBanner, setShowResumedBanner] = useState(false);
   const [loadError, setLoadError] = useState(false);
@@ -237,6 +249,7 @@ export default function ActiveQuizPage({
     async (currentAnswers: (number | null)[]) => {
       if (submittingRef.current) return;
       submittingRef.current = true;
+      setIsSubmitting(true);
 
       try {
         const results = questions.map((q, i) => ({
@@ -341,6 +354,7 @@ export default function ActiveQuizPage({
       } catch (err) {
         console.error("Quiz submit failed:", err);
         submittingRef.current = false;
+        setIsSubmitting(false);
         setShowSubmitConfirm(false);
       }
     },
@@ -375,7 +389,7 @@ export default function ActiveQuizPage({
     return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
   };
 
-  const handleAnswer = (index: number) => {
+  const handleAnswer = useCallback((index: number) => {
     setAnswers((prev) => {
       const next = [...prev];
       next[currentIndex] = index;
@@ -384,7 +398,7 @@ export default function ActiveQuizPage({
     if (quizConfig?.revisionMode) {
       setShowExplanation(true);
     }
-  };
+  }, [currentIndex, quizConfig?.revisionMode]);
 
   const handleClear = () => {
     setAnswers((prev) => {
@@ -395,11 +409,6 @@ export default function ActiveQuizPage({
     setShowExplanation(false);
   };
 
-  // Reset explanation when navigating
-  useEffect(() => {
-    setShowExplanation(false);
-  }, [currentIndex]);
-
   // Check for restored progress on mount
   useEffect(() => {
     const saved = safeGetItem(`quiz-progress-${sessionId}`);
@@ -407,22 +416,25 @@ export default function ActiveQuizPage({
       try {
         const p = JSON.parse(saved);
         if (p.savedAt && Date.now() - p.savedAt < 4 * 60 * 60 * 1000) {
-          setShowResumedBanner(true);
-          const timer = setTimeout(() => setShowResumedBanner(false), 4000);
-          return () => clearTimeout(timer);
+          const showTimer = setTimeout(() => setShowResumedBanner(true), 0);
+          const hideTimer = setTimeout(() => setShowResumedBanner(false), 4000);
+          return () => {
+            clearTimeout(showTimer);
+            clearTimeout(hideTimer);
+          };
         }
       } catch {}
     }
   }, [sessionId]);
 
-  const toggleMark = () => {
+  const toggleMark = useCallback(() => {
     setMarkedForReview((prev) => {
       const next = new Set(prev);
       if (next.has(currentIndex)) next.delete(currentIndex);
       else next.add(currentIndex);
       return next;
     });
-  };
+  }, [currentIndex]);
 
   // Keyboard navigation on laptop / desktop
   useEffect(() => {
@@ -435,11 +447,15 @@ export default function ActiveQuizPage({
       else if (key === "2" || key === "b") handleAnswer(1);
       else if (key === "3" || key === "c") handleAnswer(2);
       else if (key === "4" || key === "d") handleAnswer(3);
-      else if (key === "arrowleft") setCurrentIndex((i) => Math.max(0, i - 1));
+      else if (key === "arrowleft") {
+        setShowExplanation(false);
+        setCurrentIndex((i) => Math.max(0, i - 1));
+      }
       else if (key === "arrowright" || key === "enter") {
         if (currentIndex === questions.length - 1) {
           setShowSubmitConfirm(true);
         } else {
+          setShowExplanation(false);
           setCurrentIndex((i) => Math.min(questions.length - 1, i + 1));
         }
       } else if (key === "m") {
@@ -452,33 +468,19 @@ export default function ActiveQuizPage({
   }, [currentIndex, questions.length, showSubmitConfirm, handleAnswer, toggleMark]);
 
   if (questions.length === 0) {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="text-center">
-          {loadError ? (
-            <p className="text-muted-foreground">
-              Couldn&apos;t load the questions for this quiz.
-            </p>
-          ) : (
-            <p className="text-muted-foreground">Loading MCQs...</p>
-          )}
-          {loadError && (
-            <Button
-              className="mt-4"
-              onClick={() => {
-                setLoadError(false);
-                setReloadKey((k) => k + 1);
-              }}
-            >
-              Try Again
-            </Button>
-          )}
-          <Button variant="outline" className="mt-4" onClick={() => router.push("/quiz")}>
-            Go Back to Setup
-          </Button>
-        </div>
-      </div>
-    );
+    if (loadError) {
+      return (
+        <AppError
+          title="Couldn’t load this quiz"
+          description="Your quiz setup is still safe. Try loading the questions again or return to practice."
+          onRetry={() => {
+            setLoadError(false);
+            setReloadKey((k) => k + 1);
+          }}
+        />
+      );
+    }
+    return <AppLoading label="Loading your questions" />;
   }
 
   const currentQuestion = questions[currentIndex];
@@ -501,7 +503,7 @@ export default function ActiveQuizPage({
       )}
 
       {/* Top Bar */}
-      <div className="mb-4 flex items-center justify-between gap-3 border-b pb-4">
+      <div className="sticky top-0 z-30 -mx-4 mb-4 flex items-center justify-between gap-3 border-b bg-background/95 px-4 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/80 sm:static sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-0">
         <div className="flex items-center gap-2">
           <Button
             variant="ghost"
@@ -513,7 +515,7 @@ export default function ActiveQuizPage({
             Exit
           </Button>
           <div className="h-4 w-px bg-border hidden sm:block" />
-          <h1 className="text-base font-bold">
+          <h1 className="text-sm font-bold sm:text-base">
             {isMock ? "Mock Test" : "MCQ"} {currentIndex + 1} / {questions.length}
           </h1>
           {isMock && currentQuestion.subjectName ? (
@@ -555,38 +557,50 @@ export default function ActiveQuizPage({
         </div>
       </div>
 
-      <Progress value={progress} className="mb-6" />
+      <div className="mb-6 space-y-2">
+        <div className="flex items-center justify-between text-[11px] font-medium text-muted-foreground">
+          <span>{answeredCount} of {questions.length} answered</span>
+          <span>{Math.round(progress)}% complete</span>
+        </div>
+        <Progress
+          value={progress}
+          aria-label={`${answeredCount} of ${questions.length} questions answered`}
+        />
+      </div>
 
       <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
         {/* Question Area */}
         <div>
-          <Card>
-            <CardContent className="p-6">
-              <p className="text-base font-medium leading-relaxed">
+          <Card className="overflow-hidden">
+            <CardContent className="p-4 sm:p-6">
+              <p className="text-base font-medium leading-relaxed sm:text-lg">
                 {currentIndex + 1}. {currentQuestion.question}
               </p>
               <div className="mt-6 space-y-3">
                 {currentQuestion.options.map((option: string, i: number) => (
                   <button
                     key={i}
+                    type="button"
+                    aria-pressed={answers[currentIndex] === i}
+                    aria-label={`Option ${String.fromCharCode(65 + i)}: ${option}`}
                     onClick={() => handleAnswer(i)}
-                    className={`w-full rounded-lg border p-4 text-left transition-all ${
+                    className={`flex min-h-14 w-full items-center rounded-xl border p-3.5 text-left transition-all active:scale-[0.99] sm:p-4 ${
                       answers[currentIndex] === i
-                        ? "border-primary bg-primary/5 ring-1 ring-primary"
-                        : "hover:bg-muted"
+                        ? "border-primary bg-primary/5 ring-2 ring-primary/20"
+                        : "hover:bg-muted/70"
                     }`}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex w-full items-center gap-3">
                       <span
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-medium ${
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-sm font-semibold ${
                           answers[currentIndex] === i
                             ? "border-primary bg-primary text-primary-foreground"
-                            : ""
+                            : "bg-muted/40 text-muted-foreground"
                         }`}
                       >
                         {String.fromCharCode(65 + i)}
                       </span>
-                      <span className="text-sm">{option}</span>
+                      <span className="text-sm leading-relaxed">{option}</span>
                     </div>
                   </button>
                 ))}
@@ -629,36 +643,49 @@ export default function ActiveQuizPage({
           </Card>
 
           {/* Navigation Controls: Sticky bottom bar on mobile, static on desktop */}
-          <div className="sticky bottom-0 z-30 mt-6 -mx-4 -mb-6 border-t bg-background p-3.5 sm:static sm:mx-0 sm:mb-0 sm:border-0 sm:bg-transparent sm:p-0 flex items-center justify-between gap-2 shadow-sm sm:shadow-none">
+          <div className="sticky bottom-0 z-30 mt-6 -mx-4 -mb-6 border-t bg-background p-3.5 sm:static sm:mx-0 sm:mb-0 sm:border-0 sm:bg-transparent sm:p-0 shadow-sm sm:shadow-none">
+            <div className="mb-2 flex items-center justify-center gap-3 text-[11px] text-muted-foreground sm:hidden">
+              <span>{questions.length - answeredCount} unanswered</span>
+              {markedForReview.size > 0 && (
+                <span className="text-amber-600 dark:text-amber-400">
+                  {markedForReview.size} for review
+                </span>
+              )}
+            </div>
+            <div className="flex items-center justify-between gap-2">
             <Button
               variant="outline"
               size="sm"
-              onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
+              onClick={() => {
+                setShowExplanation(false);
+                setCurrentIndex((i) => Math.max(0, i - 1));
+              }}
               disabled={currentIndex === 0}
             >
               <ChevronLeft className="mr-1 h-4 w-4" />
-              Previous
+              <span className="hidden sm:inline">Previous</span>
             </Button>
             {answers[currentIndex] !== null && (
-              <Button variant="ghost" size="sm" onClick={handleClear} className="text-xs text-muted-foreground">
-                <Eraser className="mr-1 h-3.5 w-3.5" />
-                Clear
+              <Button variant="ghost" size="sm" onClick={handleClear} className="text-xs text-muted-foreground" aria-label="Clear selected answer">
+                <Eraser className="h-3.5 w-3.5 sm:mr-1" />
+                <span className="hidden sm:inline">Clear</span>
               </Button>
             )}
             <Button
               variant="outline"
               size="sm"
+              aria-label={markedForReview.has(currentIndex) ? "Remove review mark" : "Mark for review"}
               onClick={toggleMark}
               className={markedForReview.has(currentIndex) ? "border-amber-500 text-amber-600" : ""}
             >
-              <Flag className="mr-1 h-3.5 w-3.5" />
-              {markedForReview.has(currentIndex) ? "Marked" : "Review"}
+              <Flag className="h-3.5 w-3.5 sm:mr-1" />
+              <span className="hidden sm:inline">{markedForReview.has(currentIndex) ? "Marked" : "Review"}</span>
             </Button>
             {currentIndex === questions.length - 1 ? (
               <Button
                 size="sm"
                 onClick={() => setShowSubmitConfirm(true)}
-                className="bg-primary font-semibold"
+                className="flex-1 bg-primary font-semibold sm:flex-none"
               >
                 <Send className="mr-1.5 h-3.5 w-3.5" />
                 Submit
@@ -666,13 +693,17 @@ export default function ActiveQuizPage({
             ) : (
               <Button
                 size="sm"
-                onClick={() => setCurrentIndex((i) => Math.min(questions.length - 1, i + 1))}
-                className="font-semibold"
+                onClick={() => {
+                  setShowExplanation(false);
+                  setCurrentIndex((i) => Math.min(questions.length - 1, i + 1));
+                }}
+                className="flex-1 font-semibold sm:flex-none"
               >
                 Next
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
             )}
+            </div>
           </div>
 
           {/* Desktop keyboard hint */}
@@ -686,7 +717,7 @@ export default function ActiveQuizPage({
                 <CardContent className="p-4">
                   <p className="mb-3 text-sm font-medium">Question Palette</p>
                   <div className="grid grid-cols-5 gap-2 sm:grid-cols-10">
-                    {questions.map((_: any, i: number) => {
+                    {questions.map((_, i) => {
                       let colorClass = "bg-muted hover:bg-muted/80";
                       if (answers[i] !== null) colorClass = "bg-green-500 text-white";
                       if (markedForReview.has(i)) colorClass = "bg-yellow-500 text-white";
@@ -694,7 +725,10 @@ export default function ActiveQuizPage({
                       return (
                         <button
                           key={i}
-                          onClick={() => setCurrentIndex(i)}
+                          onClick={() => {
+                            setShowExplanation(false);
+                            setCurrentIndex(i);
+                          }}
                           className={`flex h-9 w-9 items-center justify-center rounded-lg text-xs font-medium transition-all ${
                             currentIndex === i
                               ? "ring-2 ring-primary ring-offset-2 " + colorClass
@@ -736,7 +770,7 @@ export default function ActiveQuizPage({
             <CardContent className="p-4">
               <p className="mb-3 text-sm font-medium">Question Palette</p>
               <div className="grid grid-cols-5 gap-2">
-                {questions.map((_: any, i: number) => {
+                {questions.map((_, i) => {
                   let colorClass = "bg-muted hover:bg-muted/80";
                   if (answers[i] !== null) colorClass = "bg-green-500 text-white";
                   if (markedForReview.has(i)) colorClass = "bg-yellow-500 text-white";
@@ -744,7 +778,10 @@ export default function ActiveQuizPage({
                   return (
                     <button
                       key={i}
-                      onClick={() => setCurrentIndex(i)}
+                      onClick={() => {
+                        setShowExplanation(false);
+                        setCurrentIndex(i);
+                      }}
                       className={`flex h-9 w-9 items-center justify-center rounded-lg text-xs font-medium transition-all ${
                         currentIndex === i
                           ? "ring-2 ring-primary ring-offset-2 " + colorClass
@@ -811,8 +848,8 @@ export default function ActiveQuizPage({
                 <Button variant="outline" onClick={() => setShowSubmitConfirm(false)}>
                   {isMock ? "Continue Test" : "Continue MCQs"}
                 </Button>
-                <Button onClick={handleSubmit} disabled={submittingRef.current}>
-                  {submittingRef.current ? "Submitting..." : "Confirm Submit"}
+                <Button onClick={handleSubmit} disabled={isSubmitting}>
+                  {isSubmitting ? "Submitting..." : "Confirm Submit"}
                 </Button>
               </div>
             </CardContent>

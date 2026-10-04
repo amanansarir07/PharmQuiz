@@ -768,5 +768,355 @@
     "explanation": "Thermoplastic single-use medical items like syringes, IV infusion sets, and cannulas would melt or warp in an autoclave. They are sterilized industrially in their final packaging using Ethylene Oxide (EtO) gas or Gamma radiation (Cobalt-60).",
     "difficulty": "easy",
     "tags": ["surgical appliances", "sterilization", "EtO"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-1",
+    "question_text": "Which granulation method uses a liquid binder to form granules before drying?",
+    "options": [
+      "Wet granulation",
+      "Dry granulation",
+      "Direct compression",
+      "Melt granulation without a binder"
+    ],
+    "correct_index": 0,
+    "explanation": "Wet granulation incorporates a granulating liquid, commonly containing a binder, to agglomerate powders into granules. The wet mass is then screened and dried before compression.",
+    "difficulty": "easy",
+    "tags": ["tablets", "granulation", "wet granulation"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-1",
+    "question_text": "Which tablet excipient promotes rapid breakup of a tablet after it contacts gastrointestinal fluid?",
+    "options": [
+      "Disintegrant",
+      "Glidant",
+      "Antiadherent",
+      "Colorant"
+    ],
+    "correct_index": 0,
+    "explanation": "Disintegrants promote tablet breakup by swelling, wicking liquid into the compact, or both. This increases the surface area available for drug dissolution.",
+    "difficulty": "easy",
+    "tags": ["tablets", "excipients", "disintegrants"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-1",
+    "question_text": "What is the main purpose of a glidant in a tablet powder blend?",
+    "options": [
+      "Improve powder flow",
+      "Increase tablet sweetness",
+      "Prevent microbial growth",
+      "Provide enteric protection"
+    ],
+    "correct_index": 0,
+    "explanation": "Glidants such as colloidal silicon dioxide reduce interparticle friction and improve powder flow into the die, helping maintain uniform tablet weight.",
+    "difficulty": "easy",
+    "tags": ["tablets", "excipients", "glidants"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-1",
+    "question_text": "Which test measures the time required for a conventional tablet to break into particles under specified conditions?",
+    "options": [
+      "Disintegration test",
+      "Friability test",
+      "Hardness test",
+      "Weight variation test"
+    ],
+    "correct_index": 0,
+    "explanation": "The disintegration test measures the time for a tablet to break down into particles in a specified medium and apparatus. It does not directly measure the rate at which the drug dissolves.",
+    "difficulty": "easy",
+    "tags": ["tablets", "quality control", "disintegration"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-2",
+    "question_text": "Which factor generally increases the sedimentation rate of particles in a pharmaceutical suspension?",
+    "options": [
+      "Increasing particle diameter",
+      "Increasing vehicle viscosity",
+      "Reducing the density difference between particle and vehicle",
+      "Reducing particle diameter"
+    ],
+    "correct_index": 0,
+    "explanation": "By Stokes' law, sedimentation velocity is proportional to the square of particle diameter. Smaller particles, greater vehicle viscosity, and a smaller density difference reduce settling.",
+    "difficulty": "medium",
+    "tags": ["suspensions", "sedimentation", "Stokes law"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-2",
+    "question_text": "An emulsion in which oil is dispersed as droplets throughout water is classified as:",
+    "options": [
+      "Oil-in-water emulsion",
+      "Water-in-oil emulsion",
+      "Multiple water-in-oil-in-water emulsion",
+      "A dry suspension"
+    ],
+    "correct_index": 0,
+    "explanation": "In an oil-in-water (o/w) emulsion, oil is the dispersed internal phase and water is the continuous external phase. Such emulsions are generally washable with water.",
+    "difficulty": "easy",
+    "tags": ["emulsions", "o/w", "dispersed systems"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-2",
+    "question_text": "Which test is commonly used to identify the continuous phase of an emulsion?",
+    "options": [
+      "Dye solubility test",
+      "Friability test",
+      "Leak test",
+      "Pyrogen test"
+    ],
+    "correct_index": 0,
+    "explanation": "A water-soluble dye uniformly colors an oil-in-water emulsion, whereas an oil-soluble dye distributes through a water-in-oil emulsion. Dye solubility therefore helps identify the external phase.",
+    "difficulty": "medium",
+    "tags": ["emulsions", "identification tests", "continuous phase"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-3",
+    "question_text": "Which property makes amber glass useful for packaging light-sensitive pharmaceutical products?",
+    "options": [
+      "It absorbs a substantial portion of ultraviolet and visible light",
+      "It increases the drug dissolution rate",
+      "It sterilizes the product during storage",
+      "It prevents all oxygen transmission through the closure"
+    ],
+    "correct_index": 0,
+    "explanation": "Amber glass reduces transmission of ultraviolet and some visible wavelengths, helping protect photosensitive drugs from light-induced degradation.",
+    "difficulty": "easy",
+    "tags": ["packaging", "glass", "light protection"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-3",
+    "question_text": "In a strip package, the pharmaceutical dose is sealed between:",
+    "options": [
+      "Two layers of flexible packaging material",
+      "A glass vial and a rubber stopper",
+      "A metal tube and a screw cap",
+      "A rigid bottle and an induction liner only"
+    ],
+    "correct_index": 0,
+    "explanation": "Strip packaging encloses each unit dose between two webs of flexible material, commonly heat-sealable paper, plastic, or aluminum laminate.",
+    "difficulty": "easy",
+    "tags": ["packaging", "strip packaging", "unit dose"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-3",
+    "question_text": "Which closure component provides the primary seal between a multidose vial and its crimped metal overseal?",
+    "options": [
+      "Rubber stopper",
+      "Glass label",
+      "Desiccant sachet",
+      "Plastic spoon"
+    ],
+    "correct_index": 0,
+    "explanation": "The elastomeric rubber stopper fits the vial neck and forms the primary container closure. The aluminum crimp seal holds it in position and provides tamper evidence.",
+    "difficulty": "easy",
+    "tags": ["packaging", "vials", "rubber closures"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-4",
+    "question_text": "What is the principal function of a surfactant in a pharmaceutical aerosol formulation?",
+    "options": [
+      "Reduce interfacial tension and help prevent aggregation of suspended particles",
+      "Increase the boiling point of the propellant to room temperature",
+      "Convert every aerosol into a dry powder",
+      "Provide the microbial kill step after filling"
+    ],
+    "correct_index": 0,
+    "explanation": "Surfactants reduce interfacial tension between formulation components and can help wet and stabilize suspended drug particles, improving dose uniformity.",
+    "difficulty": "medium",
+    "tags": ["aerosols", "surfactants", "formulation"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-4",
+    "question_text": "Which device is used to measure the aerodynamic particle-size distribution of an inhaled aerosol?",
+    "options": [
+      "Andersen cascade impactor",
+      "Roche friabilator",
+      "Disintegration tester",
+      "Brookfield viscometer"
+    ],
+    "correct_index": 0,
+    "explanation": "An Andersen cascade impactor separates aerosol particles according to aerodynamic size and is used to determine parameters such as fine-particle dose and mass median aerodynamic diameter.",
+    "difficulty": "medium",
+    "tags": ["aerosols", "cascade impactor", "quality control"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-4",
+    "question_text": "Why should a patient shake a suspension-type pressurized metered-dose inhaler before actuation?",
+    "options": [
+      "To redisperse settled drug particles and obtain a uniform dose",
+      "To increase the temperature of the propellant",
+      "To sterilize the mouthpiece",
+      "To remove the metering valve"
+    ],
+    "correct_index": 0,
+    "explanation": "Drug particles may settle during storage in a suspension pMDI. Shaking redistributes them throughout the formulation so each metered actuation contains the intended dose.",
+    "difficulty": "easy",
+    "tags": ["aerosols", "pMDI", "dose uniformity"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-5",
+    "question_text": "Which process is used to remove pyrogenic endotoxins from glassware intended for sterile parenteral products?",
+    "options": [
+      "Dry-heat depyrogenation",
+      "Simple filtration through paper",
+      "Boiling for five minutes",
+      "Exposure to visible light"
+    ],
+    "correct_index": 0,
+    "explanation": "Dry heat at validated high temperatures is used to destroy or remove bacterial endotoxins from heat-stable glassware. Ordinary sterilization alone may not eliminate endotoxin.",
+    "difficulty": "medium",
+    "tags": ["parenterals", "depyrogenation", "dry heat"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-5",
+    "question_text": "What is the usual terminal sterilization method for a heat-stable aqueous parenteral solution?",
+    "options": [
+      "Moist heat sterilization in an autoclave",
+      "Ultraviolet irradiation only",
+      "Ethylene oxide treatment of the solution",
+      "Membrane filtration followed by open storage"
+    ],
+    "correct_index": 0,
+    "explanation": "Validated moist heat sterilization, commonly saturated steam in an autoclave, is preferred for heat-stable aqueous parenterals because it provides reliable microbial inactivation in the final container.",
+    "difficulty": "easy",
+    "tags": ["parenterals", "autoclave", "sterilization"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-5",
+    "question_text": "Which water quality is specifically required as the vehicle for most large-volume parenteral preparations?",
+    "options": [
+      "Water for Injection",
+      "Potable tap water",
+      "Carbonated water",
+      "Aromatic water"
+    ],
+    "correct_index": 0,
+    "explanation": "Water for Injection (WFI) meets stringent requirements for chemical purity and bacterial endotoxins and is used as the aqueous vehicle for parenteral manufacture.",
+    "difficulty": "easy",
+    "tags": ["parenterals", "WFI", "water quality"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-6",
+    "question_text": "What is the purpose of lyophilization in the manufacture of some vaccines?",
+    "options": [
+      "Improve stability by removing water under low temperature and vacuum",
+      "Increase the vaccine's endotoxin content",
+      "Convert antibodies into antibiotics",
+      "Ensure the product remains permanently liquid"
+    ],
+    "correct_index": 0,
+    "explanation": "Lyophilization (freeze-drying) removes water by sublimation under vacuum, improving the storage stability of sensitive biological products when the dried cake is reconstituted before use.",
+    "difficulty": "medium",
+    "tags": ["vaccines", "lyophilization", "stability"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-6",
+    "question_text": "Which component is added to many vaccines to enhance and prolong the immune response to the antigen?",
+    "options": [
+      "Adjuvant",
+      "Antacid",
+      "Chelating agent",
+      "Disintegrant"
+    ],
+    "correct_index": 0,
+    "explanation": "An adjuvant, such as an aluminum salt in appropriate vaccines, enhances antigen presentation and can strengthen or prolong the immune response.",
+    "difficulty": "easy",
+    "tags": ["vaccines", "adjuvants", "immunology"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-6",
+    "question_text": "Why are diluents supplied with certain freeze-dried vaccines kept separate until administration?",
+    "options": [
+      "The reconstituted vaccine has limited stability and should be used promptly",
+      "The diluent is needed to freeze the vaccine again",
+      "Mixing permanently increases the shelf life",
+      "The diluent is an antimicrobial preservative for all vaccines"
+    ],
+    "correct_index": 0,
+    "explanation": "After reconstitution, the vaccine may lose stability and may no longer be protected by its dried state. It must therefore be used within the recommended time and discarded afterward.",
+    "difficulty": "medium",
+    "tags": ["vaccines", "reconstitution", "cold chain"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-7",
+    "question_text": "Which part of a prescription states the directions that the patient should follow when taking the medicine?",
+    "options": [
+      "Signatura",
+      "Superscription",
+      "Inscription",
+      "Subscription"
+    ],
+    "correct_index": 0,
+    "explanation": "The signatura, commonly introduced by 'Sig.', gives the patient's directions, including dose, route, frequency, and sometimes duration of treatment.",
+    "difficulty": "easy",
+    "tags": ["dispensing", "prescriptions", "signatura"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-7",
+    "question_text": "Which calculation is most appropriate when converting a percentage strength w/v into grams for 100 mL of solution?",
+    "options": [
+      "The percentage number equals grams of solute in 100 mL",
+      "Multiply the percentage by 1000 to obtain milligrams in 1 mL only",
+      "Divide the percentage by the patient's age",
+      "The percentage number always equals millilitres of solvent"
+    ],
+    "correct_index": 0,
+    "explanation": "A percentage strength expressed as % w/v means that many grams of solute are present in each 100 mL of final solution. For example, 2% w/v contains 2 g in 100 mL.",
+    "difficulty": "medium",
+    "tags": ["dispensing", "calculations", "percentage strength"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-7",
+    "question_text": "What should a dispenser do when a prescription contains an unclear or potentially unsafe dose?",
+    "options": [
+      "Contact the prescriber for clarification before dispensing",
+      "Guess the intended dose from the patient's age",
+      "Dispense the largest available strength",
+      "Delete the dose and supply the medicine without instructions"
+    ],
+    "correct_index": 0,
+    "explanation": "An unclear or unsafe dose must be clarified with the prescriber before dispensing. Guessing can cause medication errors and compromise patient safety.",
+    "difficulty": "easy",
+    "tags": ["dispensing", "prescription screening", "patient safety"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-8",
+    "question_text": "Which suppository base is water-soluble and commonly prepared from glycerin, gelatin, and water?",
+    "options": [
+      "Glycerogelatin",
+      "Theobroma oil",
+      "Hard fat only",
+      "White petrolatum"
+    ],
+    "correct_index": 0,
+    "explanation": "Glycerogelatin is a water-soluble suppository base composed of glycerin, gelatin, and water. It dissolves gradually in body fluids rather than melting like cocoa butter.",
+    "difficulty": "easy",
+    "tags": ["suppositories", "glycerogelatin", "bases"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-8",
+    "question_text": "What is the principal reason for calibrating a suppository mould before preparation?",
+    "options": [
+      "Determine the mould capacity and calculate the displacement value accurately",
+      "Sterilize the mould without heat",
+      "Increase the melting point of the base",
+      "Convert an emulsion into a suspension"
+    ],
+    "correct_index": 0,
+    "explanation": "Mould calibration determines how much base a cavity holds. This capacity, together with the medicament's displacement value, is needed to calculate the quantities for uniform suppositories.",
+    "difficulty": "medium",
+    "tags": ["suppositories", "mould calibration", "displacement value"]
+  },
+  {
+    "unit_id": "pharm-ii-unit-8",
+    "question_text": "Which property is desirable in a suppository base intended for rectal administration?",
+    "options": [
+      "It should soften or melt at body temperature and release the medicament",
+      "It should remain permanently hard at body temperature",
+      "It should react chemically with the rectal mucosa",
+      "It should prevent all contact between drug and body fluids"
+    ],
+    "correct_index": 0,
+    "explanation": "A suitable rectal suppository base should melt, soften, or dissolve at body temperature and release the medicament without irritating the mucosa.",
+    "difficulty": "easy",
+    "tags": ["suppositories", "rectal dosage forms", "base properties"]
   }
 ]

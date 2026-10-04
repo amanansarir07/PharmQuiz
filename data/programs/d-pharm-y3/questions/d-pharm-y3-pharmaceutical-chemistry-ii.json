@@ -1,0 +1,1442 @@
+[
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "The characteristic structural feature of ACE inhibitors such as captopril is their ability to bind to:",
+        "options":  [
+                        "The active site of angiotensin-converting enzyme",
+                        "The insulin receptor",
+                        "The H1 histamine receptor",
+                        "The bacterial ribosome"
+                    ],
+        "correct_index":  0,
+        "explanation":  "ACE inhibitors are designed to interact with the active site of angiotensin-converting enzyme and reduce formation of angiotensin II.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "ACE-inhibitors",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "The 1,4-dihydropyridine ring is a characteristic scaffold of which cardiovascular drug class?",
+        "options":  [
+                        "Calcium channel blockers",
+                        "Thiazide diuretics",
+                        "Cardiac glycosides",
+                        "Bile acid sequestrants"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Many dihydropyridine calcium channel blockers, including nifedipine and amlodipine, contain a 1,4-dihydropyridine ring.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "calcium-channel-blockers",
+                     "dihydropyridines"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "Nitroglycerin is chemically classified as an:",
+        "options":  [
+                        "Organic nitrate",
+                        "Aromatic amine",
+                        "Sulfonylurea",
+                        "Barbiturate"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Nitroglycerin, also called glyceryl trinitrate, is an organic nitrate ester used as a vasodilator.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "nitrates",
+                     "classification"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "The pharmacophore of many beta-adrenergic blockers includes an:",
+        "options":  [
+                        "Aryl oxypropanolamine side chain",
+                        "Anthraquinone ring only",
+                        "Steroid nucleus only",
+                        "Purine sugar pair"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Many beta blockers share an aryloxypropanolamine structure, although substituents determine selectivity and pharmacological properties.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "beta-blockers",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "Statins are medicinally important because they mimic the substrate or intermediate involved in:",
+        "options":  [
+                        "Cholesterol biosynthesis",
+                        "DNA cross-linking",
+                        "Histamine release",
+                        "GABA degradation"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Statins inhibit HMG-CoA reductase, a key enzyme in the cholesterol biosynthetic pathway.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "statins",
+                     "medicinal-chemistry"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Barbiturates are derivatives of:",
+        "options":  [
+                        "Barbituric acid",
+                        "Benzoic acid",
+                        "Salicylic acid",
+                        "Uric acid"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Barbiturates are 5,5-disubstituted derivatives of barbituric acid and act primarily as central nervous system depressants.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "barbiturates",
+                     "classification"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "The basic ring system of benzodiazepines contains a benzene ring fused to a:",
+        "options":  [
+                        "Seven-membered diazepine ring",
+                        "Five-membered thiophene ring",
+                        "Six-membered pyridine ring",
+                        "Four-membered azetidine ring"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Benzodiazepines contain a benzene ring fused to a seven-membered diazepine ring.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "benzodiazepines",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Phenytoin is structurally classified as a:",
+        "options":  [
+                        "Hydantoin derivative",
+                        "Phenothiazine derivative",
+                        "Fluoroquinolone",
+                        "Sulfonamide"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Phenytoin is a 5,5-diphenylhydantoin and belongs to the hydantoin class of antiepileptic agents.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "antiepileptics",
+                     "hydantoins"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Chlorpromazine belongs to which chemical class of antipsychotic agents?",
+        "options":  [
+                        "Phenothiazines",
+                        "Benzodiazepines",
+                        "Barbiturates",
+                        "Hydantoins"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Chlorpromazine is a phenothiazine antipsychotic with a dimethylaminopropyl side chain.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "antipsychotics",
+                     "phenothiazines"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Morphine and many related opioid analgesics are structurally derived from the:",
+        "options":  [
+                        "Phenanthrene alkaloid skeleton",
+                        "Steroid nucleus",
+                        "Dihydropyridine ring",
+                        "Folate ring"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Morphine is a phenanthrene alkaloid obtained from opium; several semisynthetic opioids are modified derivatives of this structure.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "opioids",
+                     "morphine"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "Alkylating antineoplastic agents exert cytotoxicity mainly by:",
+        "options":  [
+                        "Forming covalent bonds with DNA",
+                        "Increasing insulin secretion",
+                        "Blocking H1 receptors",
+                        "Dissolving cholesterol"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Alkylating agents form covalent adducts and cross-links in DNA, interfering with replication and transcription.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "chemotherapy",
+                     "alkylating-agents",
+                     "DNA"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "Methotrexate is a structural analogue of:",
+        "options":  [
+                        "Folic acid",
+                        "Cholesterol",
+                        "Histamine",
+                        "Glucose"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Methotrexate is an antifolate that resembles folic acid and inhibits dihydrofolate reductase.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "chemotherapy",
+                     "antimetabolites",
+                     "methotrexate"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "The quinolone antibacterial scaffold is characterized by a fused bicyclic ring system with a:",
+        "options":  [
+                        "Carboxylic acid and keto group",
+                        "Steroid side chain",
+                        "Sulfonylurea bridge",
+                        "Glycoside-only structure"
+                    ],
+        "correct_index":  0,
+        "explanation":  "The quinolone nucleus commonly contains a carboxylic acid at C-3 and a keto group at C-4, which are important for antibacterial activity.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "antimicrobials",
+                     "fluoroquinolones",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "Isoniazid is chemically related to:",
+        "options":  [
+                        "Isonicotinic acid hydrazide",
+                        "A steroid ester",
+                        "A phenothiazine",
+                        "A barbituric acid salt"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Isoniazid is isonicotinic acid hydrazide and is an important first-line antitubercular agent.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "antitubercular",
+                     "isoniazid",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "Chloroquine contains which important heterocyclic ring system?",
+        "options":  [
+                        "Quinoline ring",
+                        "Imidazole ring only",
+                        "Pyrimidine ring only",
+                        "Steroid ring"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Chloroquine is a 4-aminoquinoline derivative used historically as an antimalarial drug.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "antimalarials",
+                     "chloroquine",
+                     "quinoline"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "The basic steroid nucleus contains four fused rings and is called:",
+        "options":  [
+                        "Cyclopentanoperhydrophenanthrene nucleus",
+                        "Pyridine nucleus",
+                        "Quinoline nucleus",
+                        "Purine nucleus"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Steroids have a cyclopentanoperhydrophenanthrene nucleus consisting of three six-membered rings and one five-membered ring.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "steroids",
+                     "nomenclature",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Corticosteroids are chemically characterized by the presence of a:",
+        "options":  [
+                        "Steroid nucleus",
+                        "Quinolone nucleus",
+                        "Barbiturate ring",
+                        "Hydantoin ring"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Corticosteroids are steroid hormones derived from the adrenal cortex and share the characteristic steroid nucleus.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "steroids",
+                     "corticosteroids",
+                     "classification"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "The estrogen estradiol has an aromatic ring in the:",
+        "options":  [
+                        "A ring of the steroid nucleus",
+                        "D ring only",
+                        "Side chain only",
+                        "Sugar moiety"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Estradiol has an aromatic A ring, a structural feature that distinguishes estrogens from many other steroid hormones.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "steroids",
+                     "estrogens",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Sulfonylurea antidiabetic drugs contain which functional group as part of their defining structure?",
+        "options":  [
+                        "Sulfonylurea group",
+                        "Carboxylate-only group",
+                        "Nitrate ester only",
+                        "Phosphate ester only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Sulfonylureas are named for and characterized by the sulfonylurea functional group, which is important to their antidiabetic activity.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "antidiabetics",
+                     "sulfonylureas",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Metformin belongs to the chemical class of:",
+        "options":  [
+                        "Biguanides",
+                        "Sulfonamides",
+                        "Phenothiazines",
+                        "Xanthines"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Metformin is a biguanide antidiabetic drug that improves insulin sensitivity and reduces hepatic glucose production.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "antidiabetics",
+                     "metformin",
+                     "biguanides"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Vitamin A is chemically associated with the class of:",
+        "options":  [
+                        "Retinoids",
+                        "Tocopherols",
+                        "Naphthoquinones",
+                        "Calciferols"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vitamin A and its active derivatives are retinoids. Retinol, retinal, and retinoic acid are important forms.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-A",
+                     "classification"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Vitamin D is commonly classified chemically as a:",
+        "options":  [
+                        "Secosteroid",
+                        "Purine",
+                        "Peptide",
+                        "Quinolone"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vitamin D is a secosteroid because one bond in the steroid B ring is broken.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-D",
+                     "steroids"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Vitamin C is also known as:",
+        "options":  [
+                        "Ascorbic acid",
+                        "Nicotinic acid",
+                        "Folic acid",
+                        "Retinoic acid"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vitamin C is ascorbic acid, a water-soluble vitamin with important antioxidant and collagen-synthesis roles.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-C",
+                     "nomenclature"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Iodinated contrast media are primarily used to improve visualization during:",
+        "options":  [
+                        "Radiographic imaging",
+                        "Blood grouping only",
+                        "Tablet dissolution testing",
+                        "Bacterial staining only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Iodinated contrast agents increase X-ray attenuation and help visualize vessels and organs during radiographic procedures.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "diagnostic-agents",
+                     "contrast-media",
+                     "iodine"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Many coenzymes function by:",
+        "options":  [
+                        "Assisting enzymes in biochemical reactions",
+                        "Replacing all plasma proteins",
+                        "Destroying every bacterial cell directly",
+                        "Preventing all drug absorption"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Coenzymes are non-protein organic cofactors that assist enzymes by carrying electrons, atoms, or functional groups during biochemical reactions.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "vitamins",
+                     "coenzymes",
+                     "biochemistry"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "Losartan is chemically classified as an:",
+        "options":  [
+                        "Angiotensin II receptor blocker",
+                        "Organic nitrate",
+                        "Barbiturate",
+                        "Antimetabolite"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Losartan is an angiotensin II receptor blocker with a distinct biphenyl-tetrazole medicinal chemistry scaffold.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "cardiovascular",
+                     "ARBs",
+                     "medicinal-chemistry"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "The tetrazole ring in some ARBs can act as a bioisostere of a:",
+        "options":  [
+                        "Carboxylic acid",
+                        "Steroid nucleus",
+                        "Sugar ring",
+                        "Quaternary ammonium"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Tetrazole groups can mimic carboxylic acid properties while improving pharmacokinetic characteristics in some medicinal compounds.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "ARBs",
+                     "bioisosterism"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "The lactone ring is an important structural feature of:",
+        "options":  [
+                        "Some statins such as lovastatin",
+                        "All beta blockers",
+                        "Metformin",
+                        "Isoniazid"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Certain statins, including lovastatin, contain a lactone form that is hydrolyzed to the active hydroxy acid.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "statins",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Carbamazepine is structurally related to:",
+        "options":  [
+                        "Iminostilbene derivatives",
+                        "Sulfonylureas",
+                        "Dihydropyridines",
+                        "Corticosteroids"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Carbamazepine is a dibenzazepine derivative and is classified among iminostilbene-related antiepileptic compounds.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "antiepileptics",
+                     "carbamazepine"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Fluoxetine contains a structural feature that contributes to its lipophilicity, namely a:",
+        "options":  [
+                        "Trifluoromethyl group",
+                        "Phosphate group",
+                        "Steroid nucleus",
+                        "Metal chelate"
+                    ],
+        "correct_index":  0,
+        "explanation":  "The trifluoromethyl-substituted aromatic ring contributes to fluoxetine\u0027s physicochemical and pharmacological properties.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "SSRIs",
+                     "fluoxetine"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "5-Fluorouracil is a pyrimidine analogue that interferes with:",
+        "options":  [
+                        "Thymidylate synthesis",
+                        "Cholesterol absorption only",
+                        "Histamine storage",
+                        "Calcium excretion"
+                    ],
+        "correct_index":  0,
+        "explanation":  "5-Fluorouracil forms an active metabolite that inhibits thymidylate synthase and disrupts DNA synthesis.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "chemotherapy",
+                     "pyrimidine-analogues",
+                     "5-FU"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "The fluorine substituent in many fluoroquinolones is located at:",
+        "options":  [
+                        "Position 6 of the quinolone nucleus",
+                        "The steroid D ring",
+                        "The sugar anomeric carbon",
+                        "The terminal amine only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "A fluorine at C-6 is a characteristic feature of fluoroquinolones and contributes to antibacterial activity and penetration.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "fluoroquinolones",
+                     "SAR",
+                     "antimicrobials"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "Rifampicin belongs to the class of:",
+        "options":  [
+                        "Rifamycin antibiotics",
+                        "Barbiturates",
+                        "Beta blockers",
+                        "Antifolates"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Rifampicin is a rifamycin derivative used as an important antitubercular agent.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "antitubercular",
+                     "rifampicin",
+                     "classification"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Prednisolone is a:",
+        "options":  [
+                        "Synthetic glucocorticoid",
+                        "Quinolone antibiotic",
+                        "Biguanide",
+                        "Phenothiazine"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Prednisolone is a synthetic glucocorticoid derived from the steroid nucleus and used for anti-inflammatory and immunosuppressive effects.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "steroids",
+                     "glucocorticoids",
+                     "prednisolone"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Progesterone belongs to the group of:",
+        "options":  [
+                        "Progestins",
+                        "Biguanides",
+                        "Retinoids",
+                        "Antifolates"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Progesterone is the principal natural progestational hormone and provides the structural basis for many progestins.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "steroids",
+                     "progestins",
+                     "hormones"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Vitamin E is also known as:",
+        "options":  [
+                        "Tocopherol",
+                        "Ascorbic acid",
+                        "Calcitriol",
+                        "Menadione"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vitamin E refers mainly to tocopherols and tocotrienols and has antioxidant activity.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-E",
+                     "nomenclature"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Vitamin K is chemically associated with a:",
+        "options":  [
+                        "Naphthoquinone nucleus",
+                        "Barbiturate ring",
+                        "Dihydropyridine ring",
+                        "Peptide backbone"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vitamin K compounds contain a naphthoquinone nucleus that participates in coagulation-related biochemical reactions.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-K",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "A contrast agent should be selected with attention to:",
+        "options":  [
+                        "Its imaging purpose, safety, and patient factors",
+                        "Color alone",
+                        "Brand popularity only",
+                        "Tablet hardness"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Contrast-agent selection considers the imaging procedure, diagnostic need, renal function, allergy history, and other patient risks.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "diagnostic-agents",
+                     "contrast-media",
+                     "safety"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Naloxone is structurally related to the morphinan class and is used as an:",
+        "options":  [
+                        "Opioid antagonist",
+                        "Antifolate",
+                        "ACE inhibitor",
+                        "Antihistamine"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Naloxone is a morphinan derivative designed to antagonize opioid receptors and reverse opioid effects.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "opioids",
+                     "naloxone"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Niacin is also known chemically as:",
+        "options":  [
+                        "Nicotinic acid",
+                        "Ascorbic acid",
+                        "Retinol",
+                        "Tocopherol"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Niacin refers to nicotinic acid and nicotinamide, water-soluble forms of vitamin B3.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-B3",
+                     "nomenclature"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "Which functional group is responsible for the acidic character of the active hydroxy acid form of atorvastatin?",
+        "options":  [
+                        "Carboxylic acid",
+                        "Primary amine",
+                        "Ether",
+                        "Amide nitrogen"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Atorvastatin contains a dihydroxyheptanoic acid side chain; its carboxylic acid is important for ionic interaction with HMG-CoA reductase.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "statins",
+                     "functional-groups"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "A key structural requirement for many ACE inhibitors is a group that mimics the tetrahedral transition state of peptide cleavage. Which group commonly provides this role?",
+        "options":  [
+                        "Phosphinate or carboxylate-containing moiety",
+                        "Alkyl halide only",
+                        "Azo group",
+                        "Phenolic ether only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "ACE inhibitors use metal-binding and transition-state-mimicking acidic groups, such as carboxylates or phosphinates, to interact with the enzyme active site.",
+        "difficulty":  "hard",
+        "tags":  [
+                     "cardiovascular",
+                     "ACE-inhibitors",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "Compared with propranolol, atenolol is more hydrophilic mainly because it contains a:",
+        "options":  [
+                        "Para-substituted benzamide group",
+                        "Longer steroid nucleus",
+                        "Tetrazole in place of every amine",
+                        "Nitrate ester"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Atenolol has a para-substituted benzamide group, which increases polarity and contributes to lower central nervous system penetration than propranolol.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "beta-blockers",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "The nitro group in nitroglycerin is present as part of an:",
+        "options":  [
+                        "Organic nitrate ester",
+                        "Aromatic nitro compound",
+                        "N-nitrosamine",
+                        "Nitroalkene"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Nitroglycerin is glyceryl trinitrate, in which nitric acid is esterified with the three hydroxyl groups of glycerol.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "nitrates",
+                     "functional-groups"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "Which substituent at the 4-position of a 1,4-dihydropyridine generally improves calcium-channel-blocker activity by providing an aryl interaction?",
+        "options":  [
+                        "An aryl group",
+                        "A sulfate group",
+                        "A glycosyl chain",
+                        "A quaternary ammonium group"
+                    ],
+        "correct_index":  0,
+        "explanation":  "An aryl substituent at C-4 is a characteristic feature of active 1,4-dihydropyridines and contributes to receptor binding.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "calcium-channel-blockers",
+                     "dihydropyridines"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "Which chemical change converts the lactone prodrug form of a statin into its active form?",
+        "options":  [
+                        "Hydrolysis to a beta-hydroxy carboxylate",
+                        "Reduction to an amine",
+                        "Nitration of the aromatic ring",
+                        "Cyclization to a tetrazole"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Lactone statins are hydrolyzed in vivo to the corresponding beta-hydroxy carboxylic acid, which inhibits HMG-CoA reductase.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "statins",
+                     "prodrugs"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "The biphenyl group in losartan primarily contributes to:",
+        "options":  [
+                        "Hydrophobic receptor-binding interactions",
+                        "Rapid sulfate conjugation",
+                        "Formation of a peptide bond",
+                        "Chelation of iron"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Losartan\u0027s biphenyl moiety provides hydrophobic interactions in the angiotensin II receptor binding site, while the tetrazole supplies an acidic bioisostere.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "cardiovascular",
+                     "ARBs",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-1",
+        "question_text":  "Which statement best describes the medicinal-chemistry purpose of replacing a carboxylic acid with a tetrazole in an ARB?",
+        "options":  [
+                        "To retain acidity while often improving metabolic and pharmacokinetic properties",
+                        "To remove all hydrogen-bonding ability",
+                        "To create a steroid nucleus",
+                        "To guarantee irreversible receptor binding"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Tetrazoles can mimic the acidic and hydrogen-bonding behavior of carboxylic acids, while their physicochemical properties may improve oral drug performance.",
+        "difficulty":  "hard",
+        "tags":  [
+                     "cardiovascular",
+                     "ARBs",
+                     "bioisosterism"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "The imide nitrogens of barbituric acid derivatives are important because they can:",
+        "options":  [
+                        "Contribute weak acidity and allow 5,5-disubstitution to tune activity",
+                        "Form a permanent quaternary cation",
+                        "Act as steroid hydroxyls",
+                        "Replace the carbonyl groups completely"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Barbituric acid has acidic imide hydrogens, while substitution at C-5 is the principal modification used to alter barbiturate potency and duration.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "barbiturates",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "In many benzodiazepines, an electron-withdrawing substituent at the 7-position generally:",
+        "options":  [
+                        "Enhances activity at the benzodiazepine receptor site",
+                        "Decreases all receptor binding by removing the diazepine ring",
+                        "Creates a carboxylic acid salt",
+                        "Converts the compound into an opioid"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Electron-withdrawing groups such as chlorine or nitro at C-7 commonly enhance benzodiazepine activity; the diazepine ring remains intact.",
+        "difficulty":  "hard",
+        "tags":  [
+                     "CNS",
+                     "benzodiazepines",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Phenytoin has two phenyl groups at which position of the hydantoin ring?",
+        "options":  [
+                        "5,5-position",
+                        "1,3-position",
+                        "2,4-position",
+                        "N-1 and N-3 only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Phenytoin is 5,5-diphenylhydantoin; the two phenyl substituents at C-5 are central to its anticonvulsant activity.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "antiepileptics",
+                     "hydantoins"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "The side chain of chlorpromazine is attached to the phenothiazine nucleus through which position?",
+        "options":  [
+                        "The ring nitrogen at position 10",
+                        "A carbonyl carbon at position 2",
+                        "A sulfur atom replaced by oxygen",
+                        "The terminal methyl group"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Chlorpromazine is a 10H-phenothiazine derivative with a 3-dimethylaminopropyl substituent on the ring nitrogen.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "antipsychotics",
+                     "phenothiazines"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Replacing the N-methyl group of morphine with an N-allyl group is associated with opioid:",
+        "options":  [
+                        "Antagonist activity, as in naloxone-type structures",
+                        "Conversion to a barbiturate",
+                        "Loss of the phenanthrene framework",
+                        "Formation of a beta-lactam"
+                    ],
+        "correct_index":  0,
+        "explanation":  "N-allyl substitution is a classic modification that can convert morphine-like agonists into antagonists, exemplified by naloxone and naltrexone.",
+        "difficulty":  "hard",
+        "tags":  [
+                     "CNS",
+                     "opioids",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Carbamazepine contains which fused tricyclic ring system?",
+        "options":  [
+                        "Dibenzazepine",
+                        "Phenothiazine",
+                        "Xanthine",
+                        "Quinoline"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Carbamazepine is a dibenzazepine derivative with a carboxamide substituent and anticonvulsant activity.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "CNS",
+                     "antiepileptics",
+                     "carbamazepine"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "The protonated dimethylaminopropyl side chain of chlorpromazine is important for:",
+        "options":  [
+                        "Ionic interaction with the dopamine receptor environment",
+                        "Covalent alkylation of DNA",
+                        "Formation of a steroid ester",
+                        "Binding calcium in bone"
+                    ],
+        "correct_index":  0,
+        "explanation":  "At physiological pH, the basic side-chain nitrogen is substantially protonated and supports ionic interactions involved in phenothiazine receptor binding.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "antipsychotics",
+                     "phenothiazines"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-2",
+        "question_text":  "Fluoxetine is best classified chemically as a selective serotonin reuptake inhibitor containing a:",
+        "options":  [
+                        "Secondary alcohol and trifluoromethylphenoxy group",
+                        "Barbiturate imide and phenyl groups",
+                        "Steroid nucleus and phosphate",
+                        "Quinoline carboxylic acid"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Fluoxetine contains a secondary alcohol, a phenoxyphenyl system, and a trifluoromethyl substituent characteristic of its structure.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "CNS",
+                     "SSRIs",
+                     "fluoxetine"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "Cyclophosphamide is designed as a prodrug whose activation requires:",
+        "options":  [
+                        "Hepatic microsomal oxidation",
+                        "Direct binding to folate receptors only",
+                        "Hydrolysis by gastric acid exclusively",
+                        "Photochemical cleavage in skin"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Cyclophosphamide undergoes hepatic cytochrome P450 oxidation to form active metabolites, including phosphoramide mustard.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "chemotherapy",
+                     "alkylating-agents",
+                     "prodrugs"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "The cytotoxic alkylating metabolite of cyclophosphamide damages cells mainly by:",
+        "options":  [
+                        "Cross-linking DNA strands",
+                        "Blocking H1 histamine receptors",
+                        "Inhibiting cholesterol absorption",
+                        "Chelating plasma calcium"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Phosphoramide mustard forms covalent DNA cross-links, preventing replication and contributing to antineoplastic activity.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "chemotherapy",
+                     "alkylating-agents",
+                     "DNA"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "Methotrexate inhibits dihydrofolate reductase by competing with:",
+        "options":  [
+                        "Dihydrofolate",
+                        "Acetylcholine",
+                        "Cholesterol",
+                        "Uric acid"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Methotrexate is a folate analogue that competitively inhibits dihydrofolate reductase, reducing tetrahydrofolate needed for nucleotide synthesis.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "chemotherapy",
+                     "antimetabolites",
+                     "methotrexate"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "A 4-quinolone carboxylic acid antibacterial requires the C-3 carboxyl and C-4 keto groups primarily for:",
+        "options":  [
+                        "Chelation and binding to the DNA gyrase-DNA complex",
+                        "Formation of a steroid ring",
+                        "Activation of opioid receptors",
+                        "Covalent attachment to folic acid"
+                    ],
+        "correct_index":  0,
+        "explanation":  "The 3-carboxyl and 4-keto groups form a crucial chelating pharmacophore for interaction with bacterial topoisomerase-DNA complexes.",
+        "difficulty":  "hard",
+        "tags":  [
+                     "antimicrobials",
+                     "fluoroquinolones",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "The piperazine substituent in some fluoroquinolones mainly provides a:",
+        "options":  [
+                        "Basic center that can improve bacterial penetration and solubility",
+                        "Permanent steroidal framework",
+                        "Source of folate replacement",
+                        "Nitrate ester for vasodilation"
+                    ],
+        "correct_index":  0,
+        "explanation":  "A piperazine ring supplies a basic, often protonatable center that influences solubility, distribution, and antibacterial activity.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "antimicrobials",
+                     "fluoroquinolones",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "Isoniazid contains which functional group that is essential to its classification?",
+        "options":  [
+                        "Carboxylic acid hydrazide",
+                        "Sulfonylurea",
+                        "Beta-lactam",
+                        "Quaternary ammonium"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Isoniazid is the hydrazide of isonicotinic acid, containing a pyridine ring and a carboxylic acid hydrazide group.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "antitubercular",
+                     "isoniazid",
+                     "functional-groups"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "The quinoline nitrogen of chloroquine is part of the aromatic ring system and is distinct from its:",
+        "options":  [
+                        "Protonatable side-chain diethylamino nitrogen",
+                        "Covalent DNA-alkylating group",
+                        "Steroid hydroxyl group",
+                        "Pyrimidine carbonyl"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Chloroquine has a quinoline ring nitrogen plus a basic side-chain diethylamino nitrogen; both influence its distribution and activity.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "antimalarials",
+                     "chloroquine",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-3",
+        "question_text":  "Rifampicin contains a characteristic ansa bridge connecting:",
+        "options":  [
+                        "Opposite positions of a naphthohydroquinone aromatic system",
+                        "Two beta-lactam carbonyls",
+                        "A pyridine and steroid ring",
+                        "Two barbiturate nitrogens"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Rifampicin belongs to the rifamycin family, characterized by an ansa aliphatic bridge spanning a naphthohydroquinone nucleus.",
+        "difficulty":  "hard",
+        "tags":  [
+                     "antitubercular",
+                     "rifampicin",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Corticosteroid activity is strongly influenced by the presence of a carbonyl group at C-3 and a double bond between:",
+        "options":  [
+                        "C-4 and C-5",
+                        "C-1 and C-2 only",
+                        "C-10 and C-19",
+                        "C-17 and C-20"
+                    ],
+        "correct_index":  0,
+        "explanation":  "The 3-keto-Delta-4 arrangement is a common structural feature of corticosteroids and is important for receptor binding and biological activity.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "steroids",
+                     "corticosteroids",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "The 17-hydroxyl group of many glucocorticoids is important because it:",
+        "options":  [
+                        "Contributes to glucocorticoid receptor binding and can be esterified",
+                        "Creates a quinoline nucleus",
+                        "Makes the molecule permanently cationic",
+                        "Replaces the steroid A ring"
+                    ],
+        "correct_index":  0,
+        "explanation":  "A 17-hydroxyl is a key glucocorticoid feature; esterification at hydroxyl groups can modify lipophilicity and duration.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "steroids",
+                     "glucocorticoids",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Dexamethasone differs from many corticosteroids by having a fluorine substituent at:",
+        "options":  [
+                        "The 9-position",
+                        "The 3-position only",
+                        "The 21-position only",
+                        "The steroid side-chain terminal carbon only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Dexamethasone contains a 9-fluoro substituent along with a 16-alpha-methyl group, structural changes that enhance glucocorticoid potency.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "steroids",
+                     "glucocorticoids",
+                     "dexamethasone"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Mineralocorticoid activity of aldosterone is associated especially with an aldehyde group at:",
+        "options":  [
+                        "C-18",
+                        "C-3",
+                        "C-6",
+                        "C-11 only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Aldosterone is distinguished by an 18-aldehyde group, which contributes to its mineralocorticoid activity and chemical reactivity.",
+        "difficulty":  "hard",
+        "tags":  [
+                     "steroids",
+                     "mineralocorticoids",
+                     "aldosterone"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Testosterone is chemically classified as an:",
+        "options":  [
+                        "Androgen",
+                        "Estrogen only",
+                        "Glucocorticoid",
+                        "Progestin analogue only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Testosterone is the principal natural androgen and contains the cyclopentanoperhydrophenanthrene steroid nucleus.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "steroids",
+                     "androgens",
+                     "hormones"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Ethinyl estradiol has an ethynyl group at C-17 that helps:",
+        "options":  [
+                        "Increase oral activity by reducing oxidative metabolism at that position",
+                        "Convert it into a peptide",
+                        "Remove its aromatic A ring",
+                        "Make it a beta-lactam antibiotic"
+                    ],
+        "correct_index":  0,
+        "explanation":  "The 17-alpha-ethynyl group helps prevent rapid oxidation of the 17-beta-hydroxyl and is a key feature of orally active estrogenic agents.",
+        "difficulty":  "hard",
+        "tags":  [
+                     "steroids",
+                     "estrogens",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Progesterone contains a side-chain ketone at C-20 and a methyl ketone arrangement that identifies it as a:",
+        "options":  [
+                        "Pregnane-derived progestational steroid",
+                        "Catecholamine",
+                        "Retinoid",
+                        "Purine analogue"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Progesterone is a C21 pregnane steroid with a 3-keto-Delta-4 system and a 20-keto side chain characteristic of progestins.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "steroids",
+                     "progestins",
+                     "progesterone"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-4",
+        "question_text":  "Esterification of a steroid hydroxyl group is commonly used to:",
+        "options":  [
+                        "Alter lipophilicity and prolong local or systemic action",
+                        "Destroy the steroid nucleus immediately",
+                        "Remove all receptor affinity",
+                        "Create a quinolone carboxylate"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Fatty-acid or other ester groups can increase lipophilicity, slow release, and modify the duration or route suitability of steroid preparations.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "steroids",
+                     "prodrugs",
+                     "SAR"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "The conjugated polyene chain of retinol is important for its:",
+        "options":  [
+                        "Light-absorbing and oxidation-sensitive properties",
+                        "Permanent ionic charge",
+                        "Beta-lactam activity",
+                        "Ability to chelate iron exclusively"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vitamin A has a conjugated polyene chain that absorbs light and is susceptible to oxidation, features important in vision and stability.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-A",
+                     "structure"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "The biologically active hormonal form of vitamin D is commonly called:",
+        "options":  [
+                        "Calcitriol",
+                        "Tocopherol",
+                        "Menadione",
+                        "Retinal"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Calcitriol, or 1,25-dihydroxyvitamin D3, is the active hormonal metabolite that regulates calcium and phosphate homeostasis.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-D",
+                     "metabolism"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "The antioxidant activity of vitamin E is associated primarily with its:",
+        "options":  [
+                        "Phenolic hydroxyl group",
+                        "Quaternary ammonium group",
+                        "Carboxylic acid hydrazide",
+                        "Beta-lactam carbonyl"
+                    ],
+        "correct_index":  0,
+        "explanation":  "The phenolic hydroxyl of tocopherol can donate hydrogen to lipid radicals, helping terminate lipid peroxidation chains.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-E",
+                     "antioxidants"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Vitamin K participates in coagulation by supporting gamma-carboxylation of:",
+        "options":  [
+                        "Specific glutamate residues in clotting proteins",
+                        "All steroid hydroxyl groups",
+                        "Pyrimidine bases in DNA",
+                        "Cholesterol side chains"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vitamin K is required for gamma-carboxylation of glutamate residues in several clotting factors, enabling calcium-dependent membrane binding.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-K",
+                     "coagulation"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Ascorbic acid is readily oxidized to dehydroascorbic acid because it contains an:",
+        "options":  [
+                        "Enediol system",
+                        "Aromatic steroid ring",
+                        "Amide-only chain",
+                        "Alkyl chloride"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Vitamin C contains an enediol moiety that is readily oxidized, accounting for its reducing and antioxidant properties.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "vitamins",
+                     "vitamin-C",
+                     "redox"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Iodinated contrast agents provide radiopacity mainly because iodine has a:",
+        "options":  [
+                        "High atomic number and strong X-ray attenuation",
+                        "Permanent positive charge only",
+                        "Polyene chain",
+                        "Steroid nucleus"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Iodine\u0027s high atomic number causes strong attenuation of X-rays, making iodinated compounds useful in radiographic contrast media.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "diagnostic-agents",
+                     "contrast-media",
+                     "iodine"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "A chelating diagnostic agent is designed to form a stable complex with a:",
+        "options":  [
+                        "Metal ion",
+                        "Peptide bond only",
+                        "Steroid receptor exclusively",
+                        "Carbohydrate hydroxyl only"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Chelators bind metal ions through multiple donor atoms and can be used to control distribution or safely complex diagnostic radionuclides.",
+        "difficulty":  "easy",
+        "tags":  [
+                     "diagnostic-agents",
+                     "chelating-agents",
+                     "coordination-chemistry"
+                 ]
+    },
+    {
+        "unit_id":  "chem-ii-unit-5",
+        "question_text":  "Which vitamin-derived cofactor carries one-carbon units in biosynthetic reactions?",
+        "options":  [
+                        "Tetrahydrofolate",
+                        "Retinol",
+                        "Tocopherol",
+                        "Calcitriol"
+                    ],
+        "correct_index":  0,
+        "explanation":  "Tetrahydrofolate, derived from folic acid, transfers one-carbon units required for synthesis of purines and thymidylate.",
+        "difficulty":  "medium",
+        "tags":  [
+                     "vitamins",
+                     "folate",
+                     "coenzymes"
+                 ]
+    }
+]

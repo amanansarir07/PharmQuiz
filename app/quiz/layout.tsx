@@ -1,11 +1,9 @@
-"use client";
-
-import { AuthGuard } from "@/components/auth-guard";
-
 export default function QuizLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <AuthGuard>{children}</AuthGuard>;
+  // Practice is intentionally available to guests. Quiz attempts are saved
+  // locally, while authenticated users additionally sync results to Supabase.
+  return children;
 }

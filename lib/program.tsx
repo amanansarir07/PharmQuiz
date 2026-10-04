@@ -114,14 +114,18 @@ export function ProgramProvider({ children }: { children: React.ReactNode }) {
       ? user.programSlug
       : null;
 
-  const programSlug = profileSlug ?? storedSlug;
-  const isChosen = Boolean(profileSlug || storedChoice);
+  // A deliberate choice made on this device should win immediately over a
+  // profile value that may still be stale while the profile update is saving.
+  // This prevents the header, dashboard, and quiz setup from disagreeing
+  // after switching programmes.
+  const programSlug = storedChoice || profileSlug || storedSlug;
+  const isChosen = Boolean(storedChoice || profileSlug);
 
   // Mirror the profile's choice into localStorage so it still applies after a
   // sign-out. Writing to an external system (not setState) is exactly what an
   // effect is for, so this stays clear of the set-state-in-effect lint rule.
   useEffect(() => {
-    if (profileSlug && profileSlug !== safeGetItem(STORAGE_KEY)) {
+    if (profileSlug && !safeGetItem(STORAGE_KEY)) {
       safeSetItem(STORAGE_KEY, profileSlug);
       window.dispatchEvent(new Event(CHANGE_EVENT));
     }

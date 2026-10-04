@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   getFaculty,
   getProgramTotals,
@@ -10,8 +11,10 @@ import { useActiveProgram } from "@/lib/program";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, BookOpen, GraduationCap } from "lucide-react";
+import { AppEmpty } from "@/components/app-state";
 
 export default function SubjectsPage() {
+  const router = useRouter();
   const { program } = useActiveProgram();
   const faculty = getFaculty(program.facultySlug);
   const totals = getProgramTotals(program.slug);
@@ -46,20 +49,12 @@ export default function SubjectsPage() {
       </div>
 
       {subjects.length === 0 ? (
-        <Card className="border-dashed">
-          <CardContent className="p-8 text-center">
-            <p className="font-medium">No subjects published yet</p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {heading} doesn&apos;t have any content yet.
-            </p>
-            <Link
-              href="/programs"
-              className="mt-4 inline-block text-sm text-primary hover:underline"
-            >
-              Browse available programs
-            </Link>
-          </CardContent>
-        </Card>
+        <AppEmpty
+          title="No subjects published yet"
+          description={`${heading} doesn't have any content yet. Browse another available programme to start studying.`}
+          action="Browse programmes"
+          onAction={() => router.push("/programs")}
+        />
       ) : (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {subjects.map((subject) => (

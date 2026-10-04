@@ -1033,6 +1033,34 @@ export const CURRICULUM_PREVIEWS: Record<string, ProgramCurriculumPreview> = {
   },
 };
 
+const CURRICULUM_PREVIEW_ALIASES: Record<string, string> = {
+  "c-pharm-y1": "c-pharm",
+  "c-pharm-y2": "c-pharm",
+  "c-pharm-y3": "c-pharm",
+  "pcl-nursing-y1": "pcl-nursing",
+  "pcl-nursing-y2": "pcl-nursing",
+  "pcl-nursing-y3": "pcl-nursing",
+  "health-assistant-y1": "health-assistant",
+  "health-assistant-y2": "health-assistant",
+  "health-assistant-y3": "health-assistant",
+  "d-physiotherapy-y1": "d-physiotherapy",
+  "d-physiotherapy-y2": "d-physiotherapy",
+  "d-physiotherapy-y3": "d-physiotherapy",
+  "cmlt-y1": "cmlt",
+  "cmlt-y2": "cmlt",
+  "cmlt-y3": "cmlt",
+};
+
+for (const [alias, source] of Object.entries(CURRICULUM_PREVIEW_ALIASES)) {
+  const preview = CURRICULUM_PREVIEWS[source];
+  if (preview) {
+    CURRICULUM_PREVIEWS[alias] = {
+      ...preview,
+      programSlug: alias,
+    };
+  }
+}
+
 export function getCurriculumPreview(programSlug: string): ProgramCurriculumPreview | undefined {
   return CURRICULUM_PREVIEWS[programSlug];
 }

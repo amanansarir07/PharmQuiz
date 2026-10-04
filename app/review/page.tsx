@@ -4,12 +4,13 @@ import { useEffect, useMemo, useState } from "react";
 import { getProgramQuestions, type QuizQuestion } from "@/lib/quiz-loader";
 import { getSubjectForUnit, getUnitName } from "@/lib/quiz-helpers";
 import { useBookmarks } from "@/lib/bookmarks";
-import { getSubjectName, getSubjectsForProgram } from "@/data/registry";
+import { getSubjectsForProgram } from "@/data/registry";
 import { useActiveProgram } from "@/lib/program";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { AppEmpty, AppError, AppLoading } from "@/components/app-state";
 import {
   Select,
   SelectContent,
@@ -25,6 +26,7 @@ export default function ReviewPage() {
   const [filterDifficulty, setFilterDifficulty] = useState("all");
   const [showAnswers, setShowAnswers] = useState<Set<string>>(new Set());
   const [visibleCount, setVisibleCount] = useState(30);
+  const [loadError, setLoadError] = useState(false);
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const { programSlug } = useActiveProgram();
   const subjects = useMemo(
@@ -46,13 +48,20 @@ export default function ReviewPage() {
 
   useEffect(() => {
     let cancelled = false;
+    const frame = window.requestAnimationFrame(() => {
+      if (!cancelled) setLoadError(false);
+    });
     getProgramQuestions(programSlug)
       .then((qs) => {
         if (!cancelled) setBank({ programSlug, questions: qs });
       })
-      .catch((err) => console.error("Failed to load question bank:", err));
+      .catch((err) => {
+        console.error("Failed to load question bank:", err);
+        if (!cancelled) setLoadError(true);
+      });
     return () => {
       cancelled = true;
+      window.cancelAnimationFrame(frame);
     };
   }, [programSlug]);
 
@@ -101,15 +110,14 @@ export default function ReviewPage() {
   };
 
   if (loadingQuestions) {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="text-center">
-          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-          <p className="text-sm text-muted-foreground">
-            Loading question bank...
-          </p>
-        </div>
-      </div>
+    return loadError ? (
+      <AppError
+        title="Question bank unavailable"
+        description="We could not load this programme's questions. Please try again."
+        onRetry={() => window.location.reload()}
+      />
+    ) : (
+      <AppLoading label="Loading question bank" />
     );
   }
 
@@ -247,13 +255,10 @@ export default function ReviewPage() {
           );
         })}
         {filtered.length === 0 && (
-          <Card>
-            <CardContent className="p-12 text-center">
-              <BookOpen className="mx-auto h-12 w-12 text-muted-foreground/50" />
-              <p className="mt-4 text-muted-foreground">No questions found</p>
-              <p className="text-sm text-muted-foreground">Try adjusting your filters</p>
-            </CardContent>
-          </Card>
+          <AppEmpty
+            title="No questions found"
+            description="Try adjusting your search or filters to find more questions."
+          />
         )}
       </div>
       {visibleCount < filtered.length && (

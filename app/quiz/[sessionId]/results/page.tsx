@@ -14,6 +14,7 @@ import { resolveResultProgram } from "@/lib/result-program";
 import { getMockSubjectCount } from "@/lib/mock-exams";
 import { safeSetItem } from "@/lib/storage";
 import { cn } from "@/lib/utils";
+import { AppEmpty } from "@/components/app-state";
 import {
   Trophy,
   CheckCircle,
@@ -26,7 +27,42 @@ import {
   ArrowRight,
   Target,
   Timer,
+  UserPlus,
 } from "lucide-react";
+
+type ResultQuestion = {
+  id?: string;
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanation?: string;
+  unitId?: string;
+  subjectSlug?: string;
+  subjectName?: string;
+  subjectIcon?: string;
+};
+
+type ResultAnswer = {
+  selected: number | null;
+  correct: number;
+  isCorrect: boolean;
+};
+
+type QuizResult = {
+  answers: ResultAnswer[];
+  questions: ResultQuestion[];
+  score?: number;
+  timeTaken?: number | null;
+  config?: {
+    mode?: string;
+    title?: string;
+    subject?: string;
+    program?: string;
+    difficulty?: string;
+    timeLimit?: number;
+    [key: string]: unknown;
+  };
+};
 
 export default function QuizResultsPage({
   params,
@@ -36,27 +72,30 @@ export default function QuizResultsPage({
   const { sessionId } = use(params);
   const router = useRouter();
   const { user } = useAuth();
-  const [results, setResults] = useState<any>(null);
+  const [results, setResults] = useState<QuizResult | null>(null);
   const [showAnswers, setShowAnswers] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(`quiz-results-${sessionId}`);
     if (stored) {
-      setResults(JSON.parse(stored));
+      const frame = requestAnimationFrame(() => {
+        setResults(JSON.parse(stored) as QuizResult);
+      });
+      return () => cancelAnimationFrame(frame);
     }
   }, [sessionId]);
 
   // All derivations stay above the early return so hook order never changes.
   const correct = results
-    ? results.answers.filter((a: any) => a.isCorrect).length
+    ? results.answers.filter((a) => a.isCorrect).length
     : 0;
   const incorrect = results
-    ? results.answers.filter((a: any) => !a.isCorrect && a.selected !== null)
+    ? results.answers.filter((a) => !a.isCorrect && a.selected !== null)
         .length
     : 0;
   const unattempted = results
-    ? results.answers.filter((a: any) => a.selected === null).length
+    ? results.answers.filter((a) => a.selected === null).length
     : 0;
   const total = results ? results.questions.length : 0;
   // Use score from saved results if available (accounts for negative marking)
@@ -64,13 +103,19 @@ export default function QuizResultsPage({
   const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
 
   const isMock = results?.config?.mode === "mock";
+  const resultMessage =
+    percentage >= 80
+      ? "You are building strong exam readiness. Keep your momentum with a tougher challenge."
+      : percentage >= 60
+        ? "Good progress. Review the questions you missed, then practise your weakest area."
+        : "This is a useful revision signal. Focus on the missed questions before starting a longer test.";
 
   // Contiguous subject blocks (mock papers are built subject-by-subject).
   const subjectGroups =
     results && isMock
       ? (() => {
           const groups: { slug: string; name: string; icon: string; start: number; count: number; correct: number }[] = [];
-          results.questions.forEach((q: any, i: number) => {
+          results.questions.forEach((q, i) => {
             const slug = q.subjectSlug || "other";
             const last = groups[groups.length - 1];
             if (!last || last.slug !== slug) {
@@ -133,17 +178,23 @@ export default function QuizResultsPage({
 
   // Extract questions where user made mistakes in this session
   const sessionMistakes = results
-    ? results.questions.filter((_: any, idx: number) => {
+    ? results.questions.filter((_, idx) => {
         const a = results.answers[idx];
         return a && !a.isCorrect && a.selected !== null;
       })
     : [];
+  const nextStepLabel =
+    sessionMistakes.length > 0
+      ? `Retry ${sessionMistakes.length} missed question${sessionMistakes.length === 1 ? "" : "s"}`
+      : percentage >= 70
+        ? "Try a full mock exam"
+        : "Start another practice";
 
   // Identify the weakest unit in this session
   const weakestUnit = results
     ? (() => {
         const map = new Map<string, { total: number; correct: number; subjectSlug: string }>();
-        results.questions.forEach((q: any, idx: number) => {
+        results.questions.forEach((q, idx) => {
           if (!q.unitId) return;
           const current = map.get(q.unitId) || {
             total: 0,
@@ -200,16 +251,7 @@ export default function QuizResultsPage({
   };
 
   if (!results) {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="text-center">
-          <p className="text-muted-foreground">No MCQ results found</p>
-          <Link href="/quiz">
-            <Button className="mt-4">Start MCQs</Button>
-          </Link>
-        </div>
-      </div>
-    );
+    return <AppEmpty title="No quiz results found" description="This result may have expired or been cleared from this device." action="Start practice" onAction={() => router.push("/quiz")} />;
   }
 
   const formatTime = (seconds: number) => {
@@ -248,6 +290,20 @@ export default function QuizResultsPage({
           <p className="text-xs sm:text-sm text-muted-foreground">
             Official examination assessment &middot; Verified scorecard
           </p>
+          <div className="mt-4 rounded-xl border border-primary/20 bg-primary/[0.04] p-3.5">
+            <p className="text-sm font-semibold text-foreground">Your next best step</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+              {resultMessage}
+            </p>
+            <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-primary">
+              <span>{nextStepLabel}</span>
+              {unattempted > 0 && (
+                <span className="font-medium text-amber-600 dark:text-amber-400">
+                  {unattempted} unanswered
+                </span>
+              )}
+            </div>
+          </div>
           {isMock && (
             <div className="mt-3 flex flex-wrap items-center gap-2">
               <Badge variant="secondary" className="gap-1.5">
@@ -302,6 +358,24 @@ export default function QuizResultsPage({
               Time taken: {formatTime(results.timeTaken)}
             </div>
           )}
+
+          {!user && (
+            <div className="mt-5 flex flex-col gap-3 rounded-xl border border-primary/20 bg-primary/[0.04] p-3.5 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold">Want to keep this progress?</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">
+                  Create a free account to sync results, streaks, and mistakes across devices.
+                </p>
+              </div>
+              <Link
+                href={`/auth/register?program=${encodeURIComponent(resolveResultProgram(results.config?.program, results.config?.subject || ""))}`}
+                className={cn(buttonVariants({ size: "sm" }), "shrink-0 gap-1.5")}
+              >
+                <UserPlus className="h-3.5 w-3.5" />
+                Save progress
+              </Link>
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -349,10 +423,10 @@ export default function QuizResultsPage({
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2 text-primary font-bold text-base sm:text-lg">
               <Sparkles className="h-5 w-5" />
-              <span>Personalized Next Practice</span>
+              <span>Keep the momentum</span>
             </div>
             <Badge variant="outline" className="text-xs bg-primary/10 text-primary border-primary/20">
-              <RotateCcw className="h-3 w-3 mr-1" /> Smart Practice Loop
+              <RotateCcw className="h-3 w-3 mr-1" /> Recommended
             </Badge>
           </div>
 
@@ -469,7 +543,8 @@ export default function QuizResultsPage({
           onClick={() => {
             // Retake: create new session with same config
             if (results?.config) {
-              const { completedAt, ...config } = results.config;
+              const config = { ...results.config };
+              delete config.completedAt;
               const newSessionId = crypto.randomUUID();
               localStorage.setItem(`quiz-config-${newSessionId}`, JSON.stringify(config));
               router.push(`/quiz/${newSessionId}`);
@@ -512,10 +587,10 @@ export default function QuizResultsPage({
               {incorrect} incorrect - tap Detailed Review for explanations
             </p>
             {results.questions
-              .map((q: any, i: number) => ({ q, answer: results.answers[i], i }))
-              .filter(({ answer }: any) => !answer.isCorrect && answer.selected !== null)
+              .map((q, i) => ({ q, answer: results.answers[i], i }))
+              .filter(({ answer }) => !answer.isCorrect && answer.selected !== null)
               .slice(0, 3)
-              .map(({ q, i }: any) => (
+              .map(({ q, i }) => (
                 <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground mb-1">
                   <XCircle className="h-3 w-3 mt-0.5 shrink-0 text-red-500" />
                   <span className="line-clamp-1">{q.question}</span>
@@ -530,7 +605,7 @@ export default function QuizResultsPage({
       {showAnswers && (
         <div className="space-y-4">
           <h2 className="text-xl font-semibold">Detailed Review</h2>
-          {results.questions.map((q: any, i: number) => {
+          {results.questions.map((q, i) => {
             const isSectionStart =
               isMock &&
               i > 0 &&

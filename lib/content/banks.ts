@@ -73,6 +73,26 @@ const BANK_LOADERS: Record<string, Record<string, BankLoader>> = {
       import(
         "@/data/programs/d-pharm-y3/questions/d-pharm-y3-pharmaceutics-ii.json"
       ).then((m) => m.default as RawBankQuestion[]),
+    "d-pharm-y3-pharmacology-ii": () =>
+      import(
+        "@/data/programs/d-pharm-y3/questions/d-pharm-y3-pharmacology-ii.json"
+      ).then((m) => m.default as RawBankQuestion[]),
+    "d-pharm-y3-pharmaceutical-chemistry-ii": () =>
+      import(
+        "@/data/programs/d-pharm-y3/questions/d-pharm-y3-pharmaceutical-chemistry-ii.json"
+      ).then((m) => m.default as RawBankQuestion[]),
+    "d-pharm-y3-hospital-clinical-pharmacy": () =>
+      import(
+        "@/data/programs/d-pharm-y3/questions/d-pharm-y3-hospital-clinical-pharmacy.json"
+      ).then((m) => m.default as RawBankQuestion[]),
+    "d-pharm-y3-jurisprudence-community-practice": () =>
+      import(
+        "@/data/programs/d-pharm-y3/questions/d-pharm-y3-jurisprudence-community-practice.json"
+      ).then((m) => m.default as RawBankQuestion[]),
+    "d-pharm-y3-pharmacotherapeutics-ii": () =>
+      import(
+        "@/data/programs/d-pharm-y3/questions/d-pharm-y3-pharmacotherapeutics-ii.json"
+      ).then((m) => m.default as RawBankQuestion[]),
   },
 };
 

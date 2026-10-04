@@ -14,6 +14,7 @@ import {
 } from "@/lib/constants";
 import { safeSetItem, pruneExpiredScratchKeys } from "@/lib/storage";
 import { useActiveProgram } from "@/lib/program";
+import { AppLoading } from "@/components/app-state";
 import {
   fetchUpcomingExams,
   formatCountdown,
@@ -34,7 +35,13 @@ import {
   CheckSquare,
   BookOpen,
   Timer,
+  Zap,
+  Layers3,
+  ClipboardCheck,
+  Sparkles,
 } from "lucide-react";
+
+type QuizPreset = "quick" | "chapter" | "subject" | "revision";
 
 function QuizSetupInner() {
   const router = useRouter();
@@ -46,6 +53,7 @@ function QuizSetupInner() {
   const [timeLimit, setTimeLimit] = useState<number | null>(null);
   const [negativeMarking, setNegativeMarking] = useState(false);
   const [revisionMode, setRevisionMode] = useState(false);
+  const [preset, setPreset] = useState<QuizPreset>("quick");
   const unitsRef = useRef<HTMLDivElement>(null);
   const difficultyRef = useRef<HTMLDivElement>(null);
   const questionsRef = useRef<HTMLDivElement>(null);
@@ -56,7 +64,7 @@ function QuizSetupInner() {
   const [examsLoaded, setExamsLoaded] = useState(false);
   const [now, setNow] = useState(() => new Date());
 
-  const { programSlug } = useActiveProgram();
+  const { programSlug, program } = useActiveProgram();
   const subjects = useMemo(
     () => getSubjectsForProgram(programSlug),
     [programSlug]
@@ -66,7 +74,8 @@ function QuizSetupInner() {
     pruneExpiredScratchKeys();
     const subjectParam = searchParams.get("subject");
     if (subjectParam && subjects.find((s) => s.slug === subjectParam)) {
-      setSelectedSubject(subjectParam);
+      const frame = requestAnimationFrame(() => setSelectedSubject(subjectParam));
+      return () => cancelAnimationFrame(frame);
     }
   }, [searchParams, subjects]);
 
@@ -103,8 +112,49 @@ function QuizSetupInner() {
 
   const handleSubjectChange = (slug: string) => {
     setSelectedSubject(slug);
-    setSelectedUnits([]);
+    const nextSubject = subjects.find((item) => item.slug === slug);
+    if (preset === "chapter") {
+      setSelectedUnits(nextSubject?.units[0]?.id ? [nextSubject.units[0].id] : []);
+    } else if (preset === "subject") {
+      setSelectedUnits(nextSubject?.units.map((unit) => unit.id) ?? []);
+    } else {
+      setSelectedUnits([]);
+    }
     scrollTo(unitsRef);
+  };
+
+  const applyPreset = (nextPreset: QuizPreset) => {
+    setPreset(nextPreset);
+    if (nextPreset === "quick") {
+      setSelectedUnits([]);
+      setDifficulty("mixed");
+      setNumQuestions(10);
+      setTimeLimit(10);
+      setNegativeMarking(false);
+      setRevisionMode(false);
+    } else if (nextPreset === "chapter") {
+      setSelectedUnits((current) =>
+        current.length > 0 ? current : subject ? [subject.units[0]?.id].filter(Boolean) : []
+      );
+      setDifficulty("mixed");
+      setNumQuestions(10);
+      setTimeLimit(15);
+      setNegativeMarking(false);
+      setRevisionMode(false);
+    } else if (nextPreset === "subject") {
+      setSelectedUnits(subject?.units.map((unit) => unit.id) ?? []);
+      setDifficulty("mixed");
+      setNumQuestions(20);
+      setTimeLimit(null);
+      setNegativeMarking(false);
+      setRevisionMode(false);
+    } else {
+      setDifficulty("mixed");
+      setNumQuestions(20);
+      setTimeLimit(null);
+      setNegativeMarking(false);
+      setRevisionMode(true);
+    }
   };
 
   const toggleUnit = (unitId: string) => {
@@ -140,10 +190,32 @@ function QuizSetupInner() {
       negativeMarking,
       revisionMode,
     };
+
     const sessionId = crypto.randomUUID();
     safeSetItem(
       `quiz-config-${sessionId}`,
       JSON.stringify(config)
+    );
+    router.push(`/quiz/${sessionId}`);
+  };
+
+  const startQuickPractice = () => {
+    const firstSubject = subjects[0];
+    if (!firstSubject) return;
+    const sessionId = crypto.randomUUID();
+    safeSetItem(
+      `quiz-config-${sessionId}`,
+      JSON.stringify({
+        subject: firstSubject.slug,
+        subjectId: firstSubject.id,
+        program: programSlug,
+        units: firstSubject.units.map((unit) => unit.id),
+        difficulty: "mixed",
+        numQuestions: 5,
+        timeLimit: 5,
+        negativeMarking: false,
+        revisionMode: false,
+      })
     );
     router.push(`/quiz/${sessionId}`);
   };
@@ -164,17 +236,85 @@ function QuizSetupInner() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
+      <div className="mb-6">
+        <div className="mb-4 flex items-center justify-between gap-3 rounded-xl border bg-card p-3">
+          <div className="flex min-w-0 items-center gap-2">
+            <span className="text-xl">{program.icon}</span>
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
+                Active syllabus
+              </p>
+              <p className="truncate text-sm font-bold">{program.shortLabel}</p>
+            </div>
+          </div>
+          <Button variant="ghost" size="sm" className="shrink-0 text-xs" onClick={() => router.push("/programs")}>
+            Change
+          </Button>
+        </div>
+        <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2 sm:text-3xl">
           <Settings className="h-8 w-8" />
-          MCQ Setup
+          Practice
         </h1>
-        <p className="mt-2 text-muted-foreground">
-          Configure your MCQ settings and start practicing
+        <p className="mt-2 text-sm text-muted-foreground">
+          Start in seconds. No account required.
         </p>
       </div>
 
       <div className="space-y-6">
+        <Card className="overflow-hidden border-primary/30 bg-gradient-to-br from-primary/10 via-primary/[0.04] to-background">
+          <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <Badge className="mb-2 gap-1 bg-primary text-primary-foreground">
+                <Zap className="h-3 w-3" /> Fastest start
+              </Badge>
+              <h2 className="text-lg font-bold">Try 5-minute practice</h2>
+              <p className="mt-1 text-xs text-muted-foreground">
+                5 mixed questions from {program.shortLabel}. Your attempt is saved on this device.
+              </p>
+            </div>
+            <Button onClick={startQuickPractice} size="lg" className="shrink-0 gap-2">
+              <Play className="h-4 w-4" />
+              Start now
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card className="border-primary/20 bg-primary/[0.03]">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-lg">Choose how you want to practise</CardTitle>
+            <p className="text-sm text-muted-foreground">
+              Pick a mode and only change the details when you need to.
+            </p>
+          </CardHeader>
+          <CardContent className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {[
+              { value: "quick" as const, label: "Quick practice", detail: "10 mixed MCQs", icon: Zap },
+              { value: "chapter" as const, label: "Chapter practice", detail: "Focus on one unit", icon: Layers3 },
+              { value: "subject" as const, label: "Full subject", detail: "Cover every unit", icon: ClipboardCheck },
+              { value: "revision" as const, label: "Revision mode", detail: "See explanations", icon: Sparkles },
+            ].map((option) => {
+              const Icon = option.icon;
+              return (
+                <button
+                  key={option.value}
+                  type="button"
+                  onClick={() => applyPreset(option.value)}
+                  aria-pressed={preset === option.value}
+                  className={`min-h-24 rounded-xl border p-3 text-left transition-all ${
+                    preset === option.value
+                      ? "border-primary bg-primary/10 ring-1 ring-primary"
+                      : "bg-background hover:bg-muted"
+                  }`}
+                >
+                  <Icon className="mb-2 h-4 w-4 text-primary" />
+                  <p className="text-sm font-semibold">{option.label}</p>
+                  <p className="mt-0.5 text-[11px] text-muted-foreground">{option.detail}</p>
+                </button>
+              );
+            })}
+          </CardContent>
+        </Card>
+
         {/* Mock Test Banner — schedule-aware */}
         <Card
           className={
@@ -321,6 +461,15 @@ function QuizSetupInner() {
           </Card>
         )}
 
+        <details className="group rounded-xl border bg-card">
+          <summary className="flex cursor-pointer list-none items-center justify-between p-4 font-semibold [&::-webkit-details-marker]:hidden">
+            <span className="flex items-center gap-2">
+              <Settings className="h-4 w-4 text-primary" />
+              Advanced options
+            </span>
+            <span className="text-xs text-muted-foreground group-open:hidden">Optional</span>
+          </summary>
+          <div className="space-y-6 border-t p-4">
         {/* Difficulty */}
         <Card ref={difficultyRef}>
           <CardHeader>
@@ -437,6 +586,8 @@ function QuizSetupInner() {
             </label>
           </CardContent>
         </Card>
+          </div>
+        </details>
 
         {/* Start Quiz Button */}
         <div ref={startRef} />
@@ -447,7 +598,13 @@ function QuizSetupInner() {
           disabled={!selectedSubject}
         >
           <Play className="mr-2 h-5 w-5" />
-          Start MCQs
+          {preset === "quick"
+            ? "Start quick practice"
+            : preset === "chapter"
+              ? "Start chapter practice"
+              : preset === "subject"
+                ? "Start subject test"
+                : "Start revision"}
         </Button>
       </div>
     </div>
@@ -458,12 +615,7 @@ export default function QuizSetupPage() {
   return (
     <Suspense
       fallback={
-        <div className="flex min-h-[60vh] items-center justify-center">
-          <div className="text-center">
-            <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-            <p className="text-sm text-muted-foreground">Loading...</p>
-          </div>
-        </div>
+        <AppLoading label="Loading practice options" />
       }
     >
       <QuizSetupInner />

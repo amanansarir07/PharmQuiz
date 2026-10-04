@@ -1,25 +1,40 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button, buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { History, ArrowRight, BookOpen } from "lucide-react";
 import { getSubjectName } from "@/data/registry";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { useAuth } from "@/lib/auth";
+import { AppEmpty, AppError, AppLoading } from "@/components/app-state";
 
 export default function HistoryPage() {
   const { user } = useAuth();
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [mounted, setMounted] = useState(false);
+  const [loadError, setLoadError] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    setMounted(true);
-    getQuizHistory(user?.id).then(setHistory);
+    let cancelled = false;
+    const frame = window.requestAnimationFrame(() => {
+      if (!cancelled) {
+        setMounted(true);
+        setLoadError(false);
+      }
+    });
+    getQuizHistory(user?.id)
+      .then(setHistory)
+      .catch((error) => {
+        console.error("Failed to load quiz history:", error);
+        if (!cancelled) setLoadError(true);
+      });
+    return () => {
+      cancelled = true;
+      window.cancelAnimationFrame(frame);
+    };
   }, [user]);
 
   const formatDate = (iso: string) => {
@@ -52,18 +67,20 @@ export default function HistoryPage() {
       </div>
 
       {!mounted ? (
-        <div className="text-center py-20 text-muted-foreground">Loading history...</div>
+        <AppLoading label="Loading your quiz history" />
+      ) : loadError ? (
+        <AppError
+          title="History unavailable"
+          description="We could not load your quiz history. Please try again."
+          onRetry={() => window.location.reload()}
+        />
       ) : history.length === 0 ? (
-        <Card>
-          <CardContent className="p-12 text-center">
-            <History className="mx-auto h-12 w-12 text-muted-foreground/50" />
-            <p className="mt-4 text-muted-foreground">No quiz history yet</p>
-            <p className="text-sm text-muted-foreground mb-4">Complete your first quiz to see it here</p>
-            <Link href="/quiz" className={buttonVariants()}>
-              Start MCQs
-            </Link>
-          </CardContent>
-        </Card>
+        <AppEmpty
+          title="No quiz history yet"
+          description="Complete your first quiz to see your scores and review attempts here."
+          action="Start MCQs"
+          onAction={() => router.push("/quiz")}
+        />
       ) : (
         <>
           <div className="space-y-3">

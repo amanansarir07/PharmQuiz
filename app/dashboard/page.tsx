@@ -10,8 +10,6 @@ import {
   fetchUpcomingExams,
   formatCountdown,
   formatInKathmandu,
-  getMockQuestionCount,
-  getMockSubjectCount,
   isExamLive,
   scheduledMockConfig,
   type MockExam,
@@ -34,15 +32,11 @@ import {
   ChevronDown,
   Megaphone,
   TrendingUp,
-  AlertCircle,
   RotateCcw,
-  Sparkles,
-  Layers,
   FileText,
   CheckCircle2,
   Bookmark,
   Keyboard,
-  Compass,
   Clock,
 } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -55,7 +49,7 @@ import { OnboardingDepartmentModal } from "@/components/onboarding-department-mo
 type DashboardPillar = "study" | "practice" | "progress";
 
 export default function DashboardPage() {
-  const { user, isAdmin } = useAuth();
+  const { user } = useAuth();
   const router = useRouter();
   const firstName = user?.name?.split(" ")[0] || "Student";
   const { programSlug, program, setProgramSlug } = useActiveProgram();
@@ -113,17 +107,24 @@ export default function DashboardPage() {
   }, [user, programSlug]);
 
   useEffect(() => {
-    setMounted(true);
-    refreshData();
+    const frame = requestAnimationFrame(() => {
+      setMounted(true);
+      void refreshData();
+    });
+    return () => cancelAnimationFrame(frame);
   }, [refreshData]);
 
   useEffect(() => {
     const handler = () => refreshData();
     window.addEventListener("focus", handler);
-    document.addEventListener("visibilitychange", () => {
+    const handleVisibilityChange = () => {
       if (document.visibilityState === "visible") handler();
-    });
-    return () => window.removeEventListener("focus", handler);
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      window.removeEventListener("focus", handler);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, [refreshData]);
 
   // Start instant unit practice
@@ -186,7 +187,7 @@ export default function DashboardPage() {
   };
 
   const fmtTime = (dateStr: string) => {
-    const diff = Date.now() - new Date(dateStr).getTime();
+    const diff = now.getTime() - new Date(dateStr).getTime();
     const mins = Math.floor(diff / 60000);
     if (mins < 1) return "Just now";
     if (mins < 60) return mins + "m ago";
@@ -196,48 +197,48 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 sm:py-10 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 sm:py-10">
       {/* Auto-Prompt for Department Selection if Unset */}
       <OnboardingDepartmentModal />
 
       {/* ================= HEADER & QUICK STATUS ================= */}
-      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mb-5 flex flex-col gap-3 sm:mb-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+          <h1 className="text-[1.65rem] font-extrabold tracking-tight sm:text-3xl">
             Hi, {firstName} 👋
           </h1>
-          <div className="mt-1 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <div className="mt-1 flex min-w-0 items-center gap-2 text-xs text-muted-foreground sm:text-sm">
             <span className="flex items-center gap-1.5 font-medium text-foreground">
               <span>{program.icon}</span>
-              {program.shortLabel}
+              <span className="truncate">{program.shortLabel}</span>
             </span>
-            <span>•</span>
-            <span>
+            <span className="shrink-0">•</span>
+            <span className="truncate">
               {program.facultySlug === "ctevt"
                 ? "CTEVT Health Sciences"
                 : "+2 Higher Secondary (NEB)"}
             </span>
             <Link
               href="/programs"
-              className="text-xs text-primary hover:underline ml-1"
+              className="ml-auto shrink-0 text-xs font-medium text-primary hover:underline"
             >
-              (Switch Department)
+              Switch
             </Link>
           </div>
         </div>
 
         {/* Quick Streak & Performance Ribbon */}
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="flex items-center gap-1.5 rounded-xl border bg-card px-3 py-1.5 text-xs font-semibold shadow-sm">
+        <div className="flex max-w-full items-center gap-2 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex shrink-0 items-center gap-1.5 rounded-xl border bg-card px-3 py-1.5 text-xs font-semibold shadow-sm">
             <Flame className="h-4 w-4 text-orange-500" />
             <span>{s.currentStreak} Day Streak</span>
           </div>
-          <div className="flex items-center gap-1.5 rounded-xl border bg-card px-3 py-1.5 text-xs font-semibold shadow-sm">
+          <div className="flex shrink-0 items-center gap-1.5 rounded-xl border bg-card px-3 py-1.5 text-xs font-semibold shadow-sm">
             <Target className="h-4 w-4 text-emerald-500" />
             <span>{s.totalAttempted > 0 ? `${s.accuracy}% Accuracy` : "New Learner"}</span>
           </div>
           {mistakesCount > 0 && (
-            <div className="flex items-center gap-1.5 rounded-xl border border-red-500/30 bg-red-500/10 px-3 py-1.5 text-xs font-semibold text-red-600 dark:text-red-400">
+            <div className="flex shrink-0 items-center gap-1.5 rounded-xl border border-red-500/30 bg-red-500/10 px-3 py-1.5 text-xs font-semibold text-red-600 dark:text-red-400">
               <RotateCcw className="h-3.5 w-3.5" />
               <span>{mistakesCount} Mistakes</span>
             </div>
@@ -247,7 +248,7 @@ export default function DashboardPage() {
 
       {/* ================= ACTIVE DEVELOPMENT NOTICE ================= */}
       {!program.hasContent && (
-        <div className="mb-6 rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/[0.08] via-card to-card p-5 sm:p-6 shadow-sm">
+        <div className="mb-6 rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/[0.08] via-card to-card p-4 shadow-sm sm:p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3.5">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600">
@@ -256,14 +257,11 @@ export default function DashboardPage() {
               <div>
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="font-bold text-base sm:text-lg">
-                    {program.name} is in Active Development
+                    {program.name} content is coming soon
                   </h3>
-                  <Badge variant="outline" className="border-amber-500/40 bg-amber-500/10 text-xs text-amber-700 dark:text-amber-400">
-                    Phase 2: Question Authoring
-                  </Badge>
                 </div>
                 <p className="mt-1 text-xs sm:text-sm text-muted-foreground max-w-xl">
-                  You are registered in <strong>{program.name}</strong>. While full question banks are being authored, you can explore the syllabus specification or practice on live D.Pharm Year 3 or Year 2 question banks.
+                  Explore the verified syllabus roadmap now, or switch to an available programme to start practising.
                 </p>
               </div>
             </div>
@@ -281,7 +279,7 @@ export default function DashboardPage() {
                 onClick={() => setProgramSlug("d-pharm-y3")}
                 className="gap-1.5 font-medium"
               >
-                Switch to D.Pharm Y3 (Live)
+                Try D.Pharm Year 3
               </Button>
               <Button
                 variant="outline"
@@ -289,7 +287,7 @@ export default function DashboardPage() {
                 onClick={() => setProgramSlug("d-pharm-y2")}
                 className="gap-1.5 font-medium"
               >
-                Switch to D.Pharm Y2 (Live)
+                Try D.Pharm Year 2
               </Button>
             </div>
           </div>
@@ -301,12 +299,12 @@ export default function DashboardPage() {
         {/* Left Column: Active Pillar Workspace */}
         <div className="min-w-0 space-y-6">
           {/* ================= 3-PILLAR NAVIGATION TABS ================= */}
-          <div className="rounded-2xl border bg-muted/40 p-1.5 shadow-xs">
-            <nav className="grid grid-cols-3 gap-1.5" aria-label="Dashboard Pillars">
+          <div className="sticky top-14 z-20 -mx-1 rounded-2xl border bg-background/95 p-1.5 shadow-xs backdrop-blur supports-[backdrop-filter]:bg-background/80 sm:static sm:mx-0 sm:bg-muted/40 sm:backdrop-blur-0">
+            <nav className="grid grid-cols-3 gap-1.5" aria-label="Dashboard sections">
           <button
             type="button"
             onClick={() => setActivePillar("study")}
-            className={`flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold transition-all ${
+            className={`flex min-h-11 items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-semibold transition-all ${
               activePillar === "study"
                 ? "bg-card text-foreground shadow-sm ring-1 ring-border"
                 : "text-muted-foreground hover:bg-card/50 hover:text-foreground"
@@ -322,7 +320,7 @@ export default function DashboardPage() {
           <button
             type="button"
             onClick={() => setActivePillar("practice")}
-            className={`flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold transition-all ${
+            className={`flex min-h-11 items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-semibold transition-all ${
               activePillar === "practice"
                 ? "bg-card text-foreground shadow-sm ring-1 ring-border"
                 : "text-muted-foreground hover:bg-card/50 hover:text-foreground"
@@ -338,7 +336,7 @@ export default function DashboardPage() {
           <button
             type="button"
             onClick={() => setActivePillar("progress")}
-            className={`flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold transition-all ${
+            className={`flex min-h-11 items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-semibold transition-all ${
               activePillar === "progress"
                 ? "bg-card text-foreground shadow-sm ring-1 ring-border"
                 : "text-muted-foreground hover:bg-card/50 hover:text-foreground"
@@ -399,11 +397,14 @@ export default function DashboardPage() {
               const isExpanded = expandedSubject === subject.slug;
               return (
                 <Card key={subject.id} className="overflow-hidden transition-all">
-                  <div
+                  <button
+                    type="button"
+                    aria-expanded={isExpanded}
+                    aria-controls={`dashboard-subject-${subject.slug}`}
                     onClick={() =>
                       setExpandedSubject(isExpanded ? null : subject.slug)
                     }
-                    className="flex cursor-pointer items-center justify-between p-4 sm:p-5 hover:bg-muted/30 transition-colors"
+                    className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-muted/30 sm:p-5"
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">{subject.icon}</span>
@@ -427,23 +428,22 @@ export default function DashboardPage() {
                         <span>{subject.examMarks} Marks</span>
                         <span>{subject.totalHours} Hours</span>
                       </div>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-8 w-8 text-muted-foreground"
-                      >
+                      <span className="flex h-8 w-8 items-center justify-center text-muted-foreground">
                         {isExpanded ? (
                           <ChevronDown className="h-4 w-4" />
                         ) : (
                           <ChevronRight className="h-4 w-4" />
                         )}
-                      </Button>
+                      </span>
                     </div>
-                  </div>
+                  </button>
 
                   {/* Expanded Chapters (Units) and Topics */}
                   {isExpanded && (
-                    <div className="border-t bg-muted/15 p-4 sm:p-6 space-y-4">
+                    <div
+                      id={`dashboard-subject-${subject.slug}`}
+                      className="space-y-4 border-t bg-muted/15 p-4 sm:p-6"
+                    >
                       <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         <span>Chapters & Syllabus Units</span>
                         <Link
@@ -526,6 +526,113 @@ export default function DashboardPage() {
       {/* 3 Core Modes: Quiz | Mock Test | Mistakes */}
       {activePillar === "practice" && (
         <div className="space-y-6">
+          {/* Primary next action */}
+          <Card className="overflow-hidden border-primary/20 bg-gradient-to-br from-primary/[0.08] via-card to-card shadow-sm">
+            <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+              <div className="flex items-start gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  {mistakesCount > 0 ? (
+                    <RotateCcw className="h-5 w-5" />
+                  ) : (
+                    <Play className="h-5 w-5" />
+                  )}
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                    Recommended next
+                  </p>
+                  <h2 className="mt-1 text-lg font-bold">
+                    {mistakesCount > 0
+                      ? `Review ${mistakesCount} missed questions`
+                      : stats?.quizzesTaken
+                        ? "Keep your preparation moving"
+                        : "Start your first practice session"}
+                  </h2>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {mistakesCount > 0
+                      ? "Turn recent mistakes into stronger exam performance."
+                      : "Take a focused 10-question quiz and build your study streak."}
+                  </p>
+                </div>
+              </div>
+              <Button
+                onClick={
+                  mistakesCount > 0
+                    ? handleStartMistakesQuiz
+                    : () => router.push("/quiz")
+                }
+                className="w-full gap-2 sm:w-auto"
+              >
+                {mistakesCount > 0 ? "Drill mistakes" : "Start practice"}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Resume the learner's latest subject without making them search again. */}
+          {recent[0] && (
+            <Card className="border-border/80 bg-card shadow-xs">
+              <CardContent className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+                <div className="flex min-w-0 items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                    <BookOpen className="h-5 w-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
+                      Continue studying
+                    </p>
+                    <p className="truncate text-sm font-bold text-foreground">
+                      {getSubjectName(recent[0].subject)}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      Last result: {recent[0].correct}/{recent[0].total} correct
+                    </p>
+                  </div>
+                </div>
+                <Link
+                  href={`/quiz?subject=${encodeURIComponent(recent[0].subject)}`}
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }),
+                    "w-full gap-1.5 font-semibold sm:w-auto"
+                  )}
+                >
+                  Continue
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* High-frequency actions stay visible without competing with the main CTA. */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            <Link
+              href="/quiz"
+              className="flex min-h-[74px] flex-col items-center justify-center gap-1 rounded-xl border bg-card px-2 text-center transition-colors hover:border-primary/50 hover:bg-muted/30"
+            >
+              <Brain className="h-5 w-5 text-blue-500" />
+              <span className="text-[11px] font-semibold sm:text-xs">Quick quiz</span>
+              <span className="text-[10px] text-muted-foreground">10 MCQs</span>
+            </Link>
+            <button
+              type="button"
+              onClick={mistakesCount > 0 ? handleStartMistakesQuiz : () => router.push("/quiz")}
+              className="flex min-h-[74px] flex-col items-center justify-center gap-1 rounded-xl border bg-card px-2 text-center transition-colors hover:border-primary/50 hover:bg-muted/30"
+            >
+              <RotateCcw className="h-5 w-5 text-amber-500" />
+              <span className="text-[11px] font-semibold sm:text-xs">Mistakes</span>
+              <span className="text-[10px] text-muted-foreground">
+                {mistakesCount > 0 ? `${mistakesCount} to review` : "None yet"}
+              </span>
+            </button>
+            <Link
+              href="/mock-test"
+              className="flex min-h-[74px] flex-col items-center justify-center gap-1 rounded-xl border bg-card px-2 text-center transition-colors hover:border-primary/50 hover:bg-muted/30"
+            >
+              <Timer className="h-5 w-5 text-emerald-500" />
+              <span className="text-[11px] font-semibold sm:text-xs">Mock test</span>
+              <span className="text-[10px] text-muted-foreground">Exam mode</span>
+            </Link>
+          </div>
 
           {/* Scheduled Mock Notice (Live / Upcoming) */}
           {exams.length > 0 && (
@@ -585,25 +692,29 @@ export default function DashboardPage() {
           )}
 
           {/* 3 Main Practice Mode Cards */}
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-3 md:gap-5">
 
             {/* Mode 1: Custom Practice Drill */}
-            <Card className="flex flex-col justify-between overflow-hidden border-2 hover:border-primary/60 transition-all hover:shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 mb-4">
+            <Card className="flex flex-col justify-between overflow-hidden border hover:border-primary/60 transition-all hover:shadow-lg md:border-2">
+              <CardContent className="p-4 md:p-6">
+                <div className="mb-3 flex items-center gap-3 md:mb-4 md:block">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 md:mb-4 md:h-12 md:w-12 md:rounded-2xl">
                   <Brain className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold md:text-xl">Custom Practice Drill</h3>
+                    <p className="mt-1 text-xs text-muted-foreground md:mt-2 md:text-sm">
+                      Choose a subject, units, question count, and timer.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold">1. Custom Practice Drill</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Select your subject, isolate syllabus units, and customize question counts and timers.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-1.5 text-xs text-muted-foreground">
+                <div className="mt-3 hidden flex-wrap gap-1.5 text-xs text-muted-foreground md:flex">
                   <span className="rounded-md bg-muted px-2 py-0.5">10–50 Questions</span>
                   <span className="rounded-md bg-muted px-2 py-0.5">Unit Selection</span>
                   <span className="rounded-md bg-muted px-2 py-0.5">Instant Review</span>
                 </div>
               </CardContent>
-              <div className="border-t p-4 bg-muted/15">
+              <div className="border-t bg-muted/15 p-3 md:p-4">
                 <Link
                   href="/quiz"
                   className={cn(buttonVariants({ variant: "default" }), "w-full gap-2 font-semibold")}
@@ -615,22 +726,26 @@ export default function DashboardPage() {
             </Card>
 
             {/* Mode 2: Full Board Mock */}
-            <Card className="flex flex-col justify-between overflow-hidden border-2 hover:border-primary/60 transition-all hover:shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-4">
+            <Card className="flex flex-col justify-between overflow-hidden border hover:border-primary/60 transition-all hover:shadow-lg md:border-2">
+              <CardContent className="p-4 md:p-6">
+                <div className="mb-3 flex items-center gap-3 md:mb-4 md:block">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 md:mb-4 md:h-12 md:w-12 md:rounded-2xl">
                   <Timer className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold md:text-xl">Full Board Mock Test</h3>
+                    <p className="mt-1 text-xs text-muted-foreground md:mt-2 md:text-sm">
+                      Simulate an 80-question, 80-minute board exam.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold">2. Full Board Mock Test</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Complete 80-question / 80-minute paper simulating official CTEVT board exam rules.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-1.5 text-xs text-muted-foreground">
+                <div className="mt-3 hidden flex-wrap gap-1.5 text-xs text-muted-foreground md:flex">
                   <span className="rounded-md bg-muted px-2 py-0.5">80 Questions</span>
                   <span className="rounded-md bg-muted px-2 py-0.5">8 Subjects</span>
                   <span className="rounded-md bg-muted px-2 py-0.5">Official Timing</span>
                 </div>
               </CardContent>
-              <div className="border-t p-4 bg-muted/15">
+              <div className="border-t bg-muted/15 p-3 md:p-4">
                 <Link
                   href="/mock-test"
                   className={cn(buttonVariants({ variant: "outline" }), "w-full gap-2 font-semibold")}
@@ -642,32 +757,34 @@ export default function DashboardPage() {
             </Card>
 
             {/* Mode 3: Mistakes Revision */}
-            <Card className={`flex flex-col justify-between overflow-hidden border-2 transition-all hover:shadow-lg ${
+            <Card className={`flex flex-col justify-between overflow-hidden border transition-all hover:shadow-lg md:border-2 ${
               mistakesCount > 0 ? "border-amber-500/50 bg-amber-500/[0.02]" : "hover:border-primary/60"
             }`}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
+              <CardContent className="p-4 md:p-6">
+                <div className="mb-3 flex items-center gap-3 md:mb-4 md:block">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 md:mb-4 md:h-12 md:w-12 md:rounded-2xl">
                     <RotateCcw className="h-6 w-6" />
                   </div>
                   {mistakesCount > 0 ? (
-                    <Badge className="bg-amber-500 text-white font-bold">
+                    <Badge className="ml-auto bg-amber-500 text-white font-bold">
                       {mistakesCount} Unresolved
                     </Badge>
                   ) : (
-                    <Badge variant="outline" className="text-xs text-muted-foreground">
+                    <Badge variant="outline" className="ml-auto text-xs text-muted-foreground">
                       All Clear
                     </Badge>
                   )}
                 </div>
-                <h3 className="text-xl font-bold">3. Mistakes Revision Bank</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
+                  <div>
+                    <h3 className="text-base font-bold md:text-xl">Mistakes Revision Bank</h3>
+                    <p className="mt-1 text-xs text-muted-foreground md:mt-2 md:text-sm">
                   {mistakesCount > 0
                     ? `You have ${mistakesCount} questions missed in previous tests. Re-drill them to convert weak spots into strengths.`
                     : "Zero unresolved mistakes! Future questions you miss in practice will automatically collect here."}
-                </p>
+                    </p>
+                  </div>
               </CardContent>
-              <div className="border-t p-4 bg-muted/15">
+              <div className="border-t bg-muted/15 p-3 md:p-4">
                 <Button
                   onClick={handleStartMistakesQuiz}
                   disabled={mistakesCount === 0}
@@ -689,7 +806,7 @@ export default function DashboardPage() {
                 All Subjects →
               </Link>
             </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="flex gap-3 overflow-x-auto pb-1 sm:grid sm:grid-cols-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {subjects.slice(0, 4).map((sub) => (
                 <button
                   key={sub.id}
@@ -709,7 +826,7 @@ export default function DashboardPage() {
                     );
                     router.push(`/quiz/${sessionId}`);
                   }}
-                  className="flex items-center gap-2.5 rounded-xl border bg-card p-3 text-left transition-all hover:border-primary hover:shadow-sm"
+                  className="flex min-w-[155px] shrink-0 items-center gap-2.5 rounded-xl border bg-card p-3 text-left transition-all hover:border-primary hover:shadow-sm sm:min-w-0"
                 >
                   <span className="text-xl">{sub.icon}</span>
                   <div className="min-w-0 flex-1">
@@ -898,25 +1015,25 @@ export default function DashboardPage() {
       )}
 
           {/* Mobile-only Quick Utilities (hidden on desktop since companion sidebar contains them) */}
-          <div className="mt-8 grid grid-cols-3 gap-3 border-t pt-6 lg:hidden">
-            <Link href="/bookmarks">
-              <Card className="transition-all hover:shadow-md cursor-pointer">
+          <div className="mt-8 flex gap-3 overflow-x-auto border-t pt-6 pb-1 lg:hidden [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <Link href="/bookmarks" className="min-w-[112px] shrink-0">
+              <Card className="h-full transition-all hover:shadow-md">
                 <CardContent className="p-3 text-center">
                   <p className="text-lg mb-1">🔖</p>
                   <p className="text-xs font-semibold">Bookmarks</p>
                 </CardContent>
               </Card>
             </Link>
-            <Link href="/notes">
-              <Card className="transition-all hover:shadow-md cursor-pointer">
+            <Link href="/notes" className="min-w-[112px] shrink-0">
+              <Card className="h-full transition-all hover:shadow-md">
                 <CardContent className="p-3 text-center">
                   <p className="text-lg mb-1">📝</p>
                   <p className="text-xs font-semibold">Notes</p>
                 </CardContent>
               </Card>
             </Link>
-            <Link href="/analytics">
-              <Card className="transition-all hover:shadow-md cursor-pointer">
+            <Link href="/analytics" className="min-w-[112px] shrink-0">
+              <Card className="h-full transition-all hover:shadow-md">
                 <CardContent className="p-3 text-center">
                   <p className="text-lg mb-1">📊</p>
                   <p className="text-xs font-semibold">Analytics</p>

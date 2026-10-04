@@ -1,0 +1,1424 @@
+[
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "The Pharmacy and Therapeutics Committee primarily promotes:",
+    "options": [
+      "Safe and rational medicine use",
+      "Hospital building construction",
+      "Laundry management",
+      "Staff transportation"
+    ],
+    "correct_index": 0,
+    "explanation": "The Pharmacy and Therapeutics Committee develops policies that support safe, effective, and economical medicine use in the hospital.",
+    "difficulty": "easy",
+    "tags": [
+      "hospital-pharmacy",
+      "PTC",
+      "rational-use"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "A hospital formulary is best described as:",
+    "options": [
+      "A list of approved medicines and prescribing information",
+      "A register of hospital visitors",
+      "A list of laboratory instruments only",
+      "A record of staff attendance"
+    ],
+    "correct_index": 0,
+    "explanation": "A hospital formulary contains approved medicines and relevant prescribing, preparation, and use information for that institution.",
+    "difficulty": "easy",
+    "tags": [
+      "hospital-pharmacy",
+      "formulary"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "Which inventory method prioritizes close control of high-value items?",
+    "options": [
+      "ABC analysis",
+      "First-in-first-out only",
+      "Random counting",
+      "Alphabetical filing"
+    ],
+    "correct_index": 0,
+    "explanation": "ABC analysis classifies inventory by annual consumption value and gives the strictest control to high-value category A items.",
+    "difficulty": "medium",
+    "tags": [
+      "hospital-management",
+      "inventory",
+      "ABC-analysis"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "Controlled medicines should be stored with:",
+    "options": [
+      "Restricted access and documented records",
+      "Open access for all visitors",
+      "No stock records",
+      "Food items in the cafeteria"
+    ],
+    "correct_index": 0,
+    "explanation": "Controlled medicines require secure storage, authorized access, accurate records, and reconciliation according to applicable law and policy.",
+    "difficulty": "easy",
+    "tags": [
+      "hospital-pharmacy",
+      "controlled-medicines",
+      "storage"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "The main purpose of pharmacy layout planning is to support:",
+    "options": [
+      "Safe and efficient workflow",
+      "Decorative display only",
+      "Unrestricted public access to all medicines",
+      "Storage without temperature control"
+    ],
+    "correct_index": 0,
+    "explanation": "A suitable layout separates receiving, storage, preparation, dispensing, and counseling areas to reduce errors and improve workflow.",
+    "difficulty": "easy",
+    "tags": [
+      "hospital-management",
+      "layout",
+      "safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "In a unit-dose dispensing system, medicines are supplied as:",
+    "options": [
+      "Ready-to-administer doses for individual patients",
+      "Bulk containers for the whole hospital",
+      "Unlabeled loose tablets",
+      "Samples without patient directions"
+    ],
+    "correct_index": 0,
+    "explanation": "Unit-dose systems provide individually packaged and labeled doses for a specific patient and administration time.",
+    "difficulty": "easy",
+    "tags": [
+      "drug-distribution",
+      "unit-dose"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "A complete floor-stock system mainly keeps medicines:",
+    "options": [
+      "In a ward for use according to authorized procedures",
+      "Only in the outpatient waiting room",
+      "At the patient's home",
+      "In the hospital library"
+    ],
+    "correct_index": 0,
+    "explanation": "In a floor-stock system, selected medicines are stored in the ward for authorized patient care, with stock control and replenishment procedures.",
+    "difficulty": "easy",
+    "tags": [
+      "drug-distribution",
+      "floor-stock"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "Which system generally reduces medication storage and selection errors compared with bulk ward stock?",
+    "options": [
+      "Unit-dose dispensing",
+      "Unlabeled bulk storage",
+      "Patient self-selection",
+      "Unrecorded borrowing"
+    ],
+    "correct_index": 0,
+    "explanation": "Unit-dose dispensing supplies patient-specific labeled doses and can reduce selection, administration, and accounting errors.",
+    "difficulty": "medium",
+    "tags": [
+      "drug-distribution",
+      "medication-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "An emergency drug kit should be:",
+    "options": [
+      "Sealed or checked regularly with documented contents",
+      "Left unlocked and uncounted",
+      "Filled only after an emergency",
+      "Stored without expiry checks"
+    ],
+    "correct_index": 0,
+    "explanation": "Emergency kits need defined contents, secure storage, routine expiry checks, and documentation after each use or inspection.",
+    "difficulty": "easy",
+    "tags": [
+      "drug-distribution",
+      "emergency-kit",
+      "safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "Outpatient dispensing should include:",
+    "options": [
+      "Patient instructions and appropriate labeling",
+      "Only the medicine name on a blank packet",
+      "No verification of the prescription",
+      "Unrecorded substitutions"
+    ],
+    "correct_index": 0,
+    "explanation": "Safe outpatient dispensing includes prescription verification, accurate labeling, directions, precautions, and counseling appropriate to the patient.",
+    "difficulty": "easy",
+    "tags": [
+      "outpatient",
+      "dispensing",
+      "counseling"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "The main objective of a Central Sterile Services Department is to provide:",
+    "options": [
+      "Clean and sterile supplies for patient care",
+      "Only administrative stationery",
+      "Bulk food supplies",
+      "Unprocessed waste"
+    ],
+    "correct_index": 0,
+    "explanation": "CSSD processes, sterilizes, stores, and distributes reusable instruments and sterile supplies for safe patient care.",
+    "difficulty": "easy",
+    "tags": [
+      "CSSD",
+      "sterilization"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "Aseptic technique during IV admixture preparation is intended to prevent:",
+    "options": [
+      "Microbial contamination",
+      "All drug metabolism",
+      "Tablet hardness variation",
+      "Patient identification"
+    ],
+    "correct_index": 0,
+    "explanation": "Aseptic technique minimizes microbial contamination during preparation of sterile intravenous products.",
+    "difficulty": "easy",
+    "tags": [
+      "IV-admixture",
+      "aseptic-technique",
+      "sterility"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "Total parenteral nutrition provides nutrients through:",
+    "options": [
+      "Intravenous administration",
+      "A topical cream",
+      "A tablet coating",
+      "An ear drop"
+    ],
+    "correct_index": 0,
+    "explanation": "TPN is a sterile intravenous nutrition preparation containing components such as dextrose, amino acids, lipids, electrolytes, vitamins, and trace elements.",
+    "difficulty": "easy",
+    "tags": [
+      "TPN",
+      "parenteral-nutrition"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "Cytotoxic medicines should be prepared using:",
+    "options": [
+      "Appropriate containment and personal protective equipment",
+      "An open workbench without protection",
+      "Food preparation equipment",
+      "Unlabeled syringes"
+    ],
+    "correct_index": 0,
+    "explanation": "Cytotoxic preparation requires suitable engineering controls, PPE, trained staff, spill procedures, and hazardous-drug waste management.",
+    "difficulty": "easy",
+    "tags": [
+      "cytotoxic",
+      "hazardous-drugs",
+      "PPE"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "A biological indicator is used to assess:",
+    "options": [
+      "The effectiveness of a sterilization process",
+      "The color of a tablet",
+      "Patient appetite",
+      "Medicine price"
+    ],
+    "correct_index": 0,
+    "explanation": "Biological indicators contain resistant microorganisms or spores and provide direct evidence about the effectiveness of sterilization.",
+    "difficulty": "medium",
+    "tags": [
+      "CSSD",
+      "sterilization-monitoring"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "A central role of a clinical pharmacist is to:",
+    "options": [
+      "Optimize medicine therapy for individual patients",
+      "Perform all surgical procedures",
+      "Replace the nursing team",
+      "Manage hospital construction"
+    ],
+    "correct_index": 0,
+    "explanation": "Clinical pharmacists assess medicine therapy, identify drug-related problems, provide recommendations, and support safe patient care.",
+    "difficulty": "easy",
+    "tags": [
+      "clinical-pharmacy",
+      "patient-care"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "Medication history interviewing helps identify:",
+    "options": [
+      "Medicines currently used, including non-prescription products",
+      "Only the patient's room number",
+      "The hospital's electricity use",
+      "The color of the patient's clothing"
+    ],
+    "correct_index": 0,
+    "explanation": "A complete medication history includes prescribed, over-the-counter, herbal, and other products, as well as allergies and adherence information.",
+    "difficulty": "easy",
+    "tags": [
+      "medication-history",
+      "clinical-pharmacy"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "In a SOAP clinical note, the letter S represents:",
+    "options": [
+      "Subjective information",
+      "Sterility",
+      "Storage",
+      "Surgery"
+    ],
+    "correct_index": 0,
+    "explanation": "SOAP stands for Subjective, Objective, Assessment, and Plan. Subjective information comes from the patient's report.",
+    "difficulty": "easy",
+    "tags": [
+      "SOAP",
+      "documentation",
+      "clinical-pharmacy"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "Patient counseling should be adapted to the patient's:",
+    "options": [
+      "Understanding, needs, and ability to use the medicine",
+      "Favorite color only",
+      "Hospital billing category only",
+      "Room location only"
+    ],
+    "correct_index": 0,
+    "explanation": "Effective counseling uses understandable language and considers the patient's condition, literacy, concerns, lifestyle, and ability to follow the regimen.",
+    "difficulty": "easy",
+    "tags": [
+      "patient-counseling",
+      "communication"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "A drug-related problem may include:",
+    "options": [
+      "An untreated indication or an unnecessary medicine",
+      "A patient's preferred meal",
+      "A clean dispensing counter",
+      "A correctly documented allergy"
+    ],
+    "correct_index": 0,
+    "explanation": "Drug-related problems include untreated indications, unnecessary therapy, ineffective or unsafe therapy, and problems with adherence.",
+    "difficulty": "medium",
+    "tags": [
+      "clinical-pharmacy",
+      "DRP",
+      "medication-review"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "Therapeutic drug monitoring is most useful for medicines with:",
+    "options": [
+      "A narrow therapeutic index",
+      "No pharmacological effects",
+      "Only topical action",
+      "No measurable concentration"
+    ],
+    "correct_index": 0,
+    "explanation": "TDM is especially useful when the difference between effective and toxic concentrations is small, as with some anticonvulsants, aminoglycosides, and cardiac drugs.",
+    "difficulty": "easy",
+    "tags": [
+      "TDM",
+      "therapeutic-index"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "Pharmacovigilance primarily concerns the detection and prevention of:",
+    "options": [
+      "Adverse effects and other medicine-related problems",
+      "Hospital construction delays",
+      "Food storage errors only",
+      "Patient appointment scheduling"
+    ],
+    "correct_index": 0,
+    "explanation": "Pharmacovigilance monitors medicine safety and helps detect, assess, understand, and prevent adverse effects and other medicine-related problems.",
+    "difficulty": "easy",
+    "tags": [
+      "pharmacovigilance",
+      "medicine-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "An adverse drug reaction is best described as a harmful and unintended response to a medicine used at:",
+    "options": [
+      "Normal doses for prevention, diagnosis, or treatment",
+      "Any dose used only in laboratory animals",
+      "A completely empty container",
+      "A non-medicinal food only"
+    ],
+    "correct_index": 0,
+    "explanation": "An ADR is a harmful and unintended response occurring at doses normally used for medical purposes.",
+    "difficulty": "medium",
+    "tags": [
+      "ADR",
+      "pharmacovigilance",
+      "definitions"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A medication error is generally:",
+    "options": [
+      "A preventable event that may cause inappropriate medicine use or harm",
+      "An unavoidable allergic response in every patient",
+      "A correct prescription entry",
+      "A routine temperature record"
+    ],
+    "correct_index": 0,
+    "explanation": "Medication errors are preventable events that can lead to inappropriate medicine use or patient harm while the medicine is under the control of a healthcare professional or patient.",
+    "difficulty": "easy",
+    "tags": [
+      "medication-errors",
+      "patient-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A drug-drug interaction occurs when:",
+    "options": [
+      "One medicine changes the effect or exposure of another",
+      "Two medicines are stored on different shelves",
+      "A patient reads a label",
+      "A medicine has an expiry date"
+    ],
+    "correct_index": 0,
+    "explanation": "A drug-drug interaction occurs when one medicine alters the pharmacological effect, absorption, metabolism, distribution, or elimination of another medicine.",
+    "difficulty": "easy",
+    "tags": [
+      "drug-interactions",
+      "clinical-pharmacy"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "The reorder level is used to indicate when:",
+    "options": [
+      "New stock should be ordered",
+      "All stock must be discarded",
+      "A patient should be discharged",
+      "A prescription must be rewritten"
+    ],
+    "correct_index": 0,
+    "explanation": "The reorder level helps trigger timely procurement before stock reaches an unsafe or insufficient level.",
+    "difficulty": "easy",
+    "tags": [
+      "inventory",
+      "procurement",
+      "stock-control"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "A hospital formulary should be reviewed periodically to reflect:",
+    "options": [
+      "New evidence, safety information, and medicine needs",
+      "Only package colors",
+      "Staff birthdays",
+      "Patient room numbers"
+    ],
+    "correct_index": 0,
+    "explanation": "Periodic formulary review keeps medicine selection aligned with evidence, safety, local resistance patterns, costs, and hospital needs.",
+    "difficulty": "medium",
+    "tags": [
+      "formulary",
+      "PTC",
+      "quality"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "Medication reconciliation is performed to:",
+    "options": [
+      "Compare and clarify medicines across transitions of care",
+      "Count hospital beds",
+      "Replace all prescriptions",
+      "Measure room temperature only"
+    ],
+    "correct_index": 0,
+    "explanation": "Medication reconciliation identifies discrepancies when a patient is admitted, transferred, or discharged.",
+    "difficulty": "easy",
+    "tags": [
+      "drug-distribution",
+      "medication-reconciliation"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "Look-alike, sound-alike medicines require:",
+    "options": [
+      "Clear separation, labeling, and verification safeguards",
+      "Storage together without labels",
+      "Removal of expiry dates",
+      "Unrestricted self-selection"
+    ],
+    "correct_index": 0,
+    "explanation": "LASA medicines should be separated and clearly identified, with independent checks where appropriate to reduce selection errors.",
+    "difficulty": "medium",
+    "tags": [
+      "medication-safety",
+      "LASA",
+      "dispensing"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "A medication administration record documents:",
+    "options": [
+      "Medicines given or withheld for a patient",
+      "Only the pharmacy opening time",
+      "The hospital electricity supply",
+      "A supplier's advertising plan"
+    ],
+    "correct_index": 0,
+    "explanation": "The medication administration record provides a legal and clinical record of medicines administered, omitted, and related observations.",
+    "difficulty": "easy",
+    "tags": [
+      "drug-distribution",
+      "documentation",
+      "MAR"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "A laminar airflow cabinet is designed to provide:",
+    "options": [
+      "A controlled stream of filtered air for aseptic work",
+      "A storage area for food",
+      "A method to sterilize all sealed products",
+      "A replacement for hand hygiene"
+    ],
+    "correct_index": 0,
+    "explanation": "Laminar airflow equipment supplies filtered air over the work area to reduce particulate and microbial contamination during aseptic preparation.",
+    "difficulty": "easy",
+    "tags": [
+      "aseptic-technique",
+      "laminar-airflow"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "A sterile product should be rejected if its container shows:",
+    "options": [
+      "Leakage, visible particles, or compromised closure",
+      "A readable label",
+      "An intact seal",
+      "Correct storage documentation"
+    ],
+    "correct_index": 0,
+    "explanation": "Container defects or visible contamination can compromise sterility and product safety.",
+    "difficulty": "easy",
+    "tags": [
+      "sterile-products",
+      "quality-control"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "TPN compatibility must be assessed because:",
+    "options": [
+      "Components can precipitate or destabilize the mixture",
+      "All nutrients are always compatible",
+      "It prevents patient identification",
+      "It replaces aseptic technique"
+    ],
+    "correct_index": 0,
+    "explanation": "TPN components can interact, precipitate, or destabilize the preparation, so formulation and administration compatibility must be checked.",
+    "difficulty": "medium",
+    "tags": [
+      "TPN",
+      "compatibility",
+      "sterile-products"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "A drug-related problem caused by an unnecessarily high dose is a problem of:",
+    "options": [
+      "Safety",
+      "Medicine identity only",
+      "Hospital architecture",
+      "Patient registration"
+    ],
+    "correct_index": 0,
+    "explanation": "An unnecessarily high dose can cause toxicity and is classified as a medicine safety problem.",
+    "difficulty": "easy",
+    "tags": [
+      "DRP",
+      "clinical-pharmacy",
+      "safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "A teach-back method asks the patient to:",
+    "options": [
+      "Explain or demonstrate how they will use the medicine",
+      "Repeat the medicine brand only",
+      "Sign without reading",
+      "Memorize the pharmacist's name"
+    ],
+    "correct_index": 0,
+    "explanation": "Teach-back checks understanding by asking the patient to explain or demonstrate the instructions in their own words.",
+    "difficulty": "easy",
+    "tags": [
+      "patient-counseling",
+      "health-literacy"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "Renal impairment should be considered when reviewing medicines because it can alter:",
+    "options": [
+      "Medicine clearance and exposure",
+      "The patient's blood group only",
+      "Tablet color only",
+      "The medicine's brand logo"
+    ],
+    "correct_index": 0,
+    "explanation": "Reduced renal function can decrease clearance, increase exposure, and require dose or interval adjustment for some medicines.",
+    "difficulty": "medium",
+    "tags": [
+      "clinical-pharmacy",
+      "renal",
+      "dose-adjustment"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A trough concentration is commonly collected:",
+    "options": [
+      "Just before the next dose",
+      "Immediately after the first tablet is swallowed",
+      "Only after treatment ends",
+      "At any random time without documentation"
+    ],
+    "correct_index": 0,
+    "explanation": "A trough sample is collected immediately before the next dose and can help interpret concentrations for selected medicines.",
+    "difficulty": "medium",
+    "tags": [
+      "TDM",
+      "sampling",
+      "monitoring"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A serious suspected adverse reaction should be:",
+    "options": [
+      "Documented and reported through the appropriate pharmacovigilance process",
+      "Ignored if the medicine is popular",
+      "Deleted from the patient record",
+      "Shared publicly with patient identifiers"
+    ],
+    "correct_index": 0,
+    "explanation": "Serious suspected reactions should receive clinical attention, be documented, and be reported through the appropriate safety-reporting system.",
+    "difficulty": "easy",
+    "tags": [
+      "ADR",
+      "pharmacovigilance",
+      "reporting"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A near miss is a medication error that:",
+    "options": [
+      "Could have caused harm but was intercepted before reaching the patient",
+      "Always causes severe harm",
+      "Is a correct administration",
+      "Cannot be investigated"
+    ],
+    "correct_index": 0,
+    "explanation": "Near misses provide important safety-learning opportunities because an error was detected before causing patient harm.",
+    "difficulty": "easy",
+    "tags": [
+      "medication-errors",
+      "patient-safety",
+      "near-miss"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "A perpetual inventory record is updated:",
+    "options": [
+      "After each receipt and issue of stock",
+      "Only once every ten years",
+      "Only when a patient complains",
+      "Never after dispensing"
+    ],
+    "correct_index": 0,
+    "explanation": "Perpetual inventory records are updated continuously as stock is received or issued, helping maintain accurate balances.",
+    "difficulty": "easy",
+    "tags": [
+      "inventory",
+      "stock-control",
+      "documentation"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "The teach-back method is especially useful for identifying:",
+    "options": [
+      "Misunderstanding of medicine instructions",
+      "The medicine's wholesale price",
+      "The hospital's staff ratio",
+      "The supplier's delivery route"
+    ],
+    "correct_index": 0,
+    "explanation": "Teach-back reveals whether the patient can correctly explain the instructions, allowing the pharmacist to clarify misunderstandings.",
+    "difficulty": "easy",
+    "tags": [
+      "patient-counseling",
+      "health-literacy",
+      "teach-back"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "Which committee usually approves additions to a hospital formulary?",
+    "options": [
+      "Pharmacy and Therapeutics Committee",
+      "Hospital laundry committee",
+      "Dietary services committee",
+      "Transport committee"
+    ],
+    "correct_index": 0,
+    "explanation": "The Pharmacy and Therapeutics Committee evaluates medicine efficacy, safety, quality, and cost before recommending formulary additions.",
+    "difficulty": "easy",
+    "tags": [
+      "PTC",
+      "formulary",
+      "hospital-management"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "VEN analysis classifies medicines according to their:",
+    "options": [
+      "Clinical or public-health importance",
+      "Package size",
+      "Supplier location",
+      "Route of administration only"
+    ],
+    "correct_index": 0,
+    "explanation": "VEN analysis groups medicines as vital, essential, or non-essential to support priority setting and procurement.",
+    "difficulty": "medium",
+    "tags": [
+      "inventory",
+      "VEN-analysis",
+      "procurement"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "The primary purpose of FEFO stock rotation is to:",
+    "options": [
+      "Issue medicines with the earliest expiry first",
+      "Issue the newest stock first",
+      "Keep all medicines in alphabetical order",
+      "Avoid recording batch numbers"
+    ],
+    "correct_index": 0,
+    "explanation": "First-expiry-first-out reduces expiry-related wastage by issuing stock that will expire soonest before later-expiring stock.",
+    "difficulty": "easy",
+    "tags": [
+      "inventory",
+      "FEFO",
+      "stock-control"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "Which inventory practice compares the recorded balance with the quantity physically counted?",
+    "options": [
+      "Stock reconciliation",
+      "Patient counseling",
+      "Prescription screening",
+      "Aseptic garbing"
+    ],
+    "correct_index": 0,
+    "explanation": "Stock reconciliation compares the recorded inventory balance with the physical count and investigates discrepancies.",
+    "difficulty": "medium",
+    "tags": [
+      "inventory",
+      "stock-reconciliation",
+      "stock-control"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "A pharmacy procurement specification should clearly state the required:",
+    "options": [
+      "Medicine name, strength, dosage form, and quality requirements",
+      "Color of the pharmacy walls",
+      "Names of all hospital visitors",
+      "Patient meal preferences"
+    ],
+    "correct_index": 0,
+    "explanation": "Clear specifications identify the exact product and quality standards needed, reducing unsuitable or ambiguous purchasing.",
+    "difficulty": "medium",
+    "tags": [
+      "procurement",
+      "quality-assurance",
+      "hospital-management"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "A quarantine area in a hospital pharmacy is used for stock that is:",
+    "options": [
+      "Awaiting release, investigation, or disposal decision",
+      "Ready for immediate dispensing",
+      "Reserved for staff refreshments",
+      "Already administered to patients"
+    ],
+    "correct_index": 0,
+    "explanation": "Quarantine separates returned, damaged, suspected-falsified, or otherwise unapproved stock from usable inventory.",
+    "difficulty": "easy",
+    "tags": [
+      "storage",
+      "quarantine",
+      "quality-assurance"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "The cold-chain temperature for most refrigerated medicines is generally maintained at:",
+    "options": [
+      "2–8°C",
+      "20–25°C",
+      "−20 to −10°C",
+      "35–40°C"
+    ],
+    "correct_index": 0,
+    "explanation": "Many refrigerated medicines require storage at 2–8°C, with monitoring and documented excursions according to product labeling.",
+    "difficulty": "easy",
+    "tags": [
+      "storage",
+      "cold-chain",
+      "temperature-control"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-1",
+    "question_text": "A stock-out in a hospital pharmacy means that:",
+    "options": [
+      "The required medicine is unavailable when needed",
+      "The medicine has been over-labeled",
+      "The pharmacy has more stock than capacity",
+      "A prescription has been signed twice"
+    ],
+    "correct_index": 0,
+    "explanation": "A stock-out occurs when demand cannot be met because usable stock of a required medicine is unavailable.",
+    "difficulty": "easy",
+    "tags": [
+      "inventory",
+      "stock-out",
+      "hospital-management"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "The first professional check before dispensing a prescription is to confirm its:",
+    "options": [
+      "Completeness, legality, and clinical appropriateness",
+      "Patient preferred tablet color",
+      "Supplier advertising code",
+      "Ward furniture number"
+    ],
+    "correct_index": 0,
+    "explanation": "Prescription screening identifies missing information, legal problems, allergies, interactions, and other issues before supply.",
+    "difficulty": "medium",
+    "tags": [
+      "dispensing",
+      "prescription-screening",
+      "patient-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "A medication order containing a dangerous abbreviation should be:",
+    "options": [
+      "Clarified with the prescriber before dispensing",
+      "Interpreted according to habit without checking",
+      "Copied onto a blank label",
+      "Ignored after administration"
+    ],
+    "correct_index": 0,
+    "explanation": "Unsafe abbreviations can be misread; clarification prevents a dispensing or administration error.",
+    "difficulty": "easy",
+    "tags": [
+      "medication-safety",
+      "prescriptions",
+      "dispensing"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "The main advantage of patient-specific labeling is that it:",
+    "options": [
+      "Links the medicine and directions to the intended patient",
+      "Removes the need to check the prescription",
+      "Allows medicines to be shared freely",
+      "Replaces expiry-date checks"
+    ],
+    "correct_index": 0,
+    "explanation": "Patient-specific labels communicate identity, medicine, dose, route, frequency, and other directions for safe use.",
+    "difficulty": "easy",
+    "tags": [
+      "dispensing",
+      "labeling",
+      "patient-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "Before a medicine is dispensed, the final check should compare the prepared product with the:",
+    "options": [
+      "Original authorized prescription and patient details",
+      "Hospital cafeteria menu",
+      "Supplier invoice only",
+      "Previous day waste bin"
+    ],
+    "correct_index": 0,
+    "explanation": "A final independent comparison detects selection, strength, quantity, labeling, and patient-identification errors.",
+    "difficulty": "medium",
+    "tags": [
+      "dispensing",
+      "verification",
+      "medication-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "A ward replenishment list should be matched against:",
+    "options": [
+      "Actual physical stock and authorized stock levels",
+      "The weather forecast",
+      "The hospital visitor register",
+      "A medicine advertisement"
+    ],
+    "correct_index": 0,
+    "explanation": "Comparing the list with physical and authorized stock levels prevents over-supply, shortages, and unapproved items.",
+    "difficulty": "easy",
+    "tags": [
+      "ward-stock",
+      "inventory",
+      "drug-distribution"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "When a medicine is returned from a ward, it should be reused only after confirming its:",
+    "options": [
+      "Identity, integrity, storage history, and expiry",
+      "Original purchase price alone",
+      "Color of the ward cupboard",
+      "Patient meal schedule"
+    ],
+    "correct_index": 0,
+    "explanation": "Returned stock must be identifiable, unopened or intact, correctly stored, and within expiry before it can be considered for reuse.",
+    "difficulty": "medium",
+    "tags": [
+      "returns",
+      "drug-distribution",
+      "quality-assurance"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "The safest response to a dose discrepancy found during medication reconciliation is to:",
+    "options": [
+      "Verify the intended regimen with the patient and prescriber",
+      "Automatically double the dose",
+      "Delete both medicine lists",
+      "Dispense the older list without review"
+    ],
+    "correct_index": 0,
+    "explanation": "Discrepancies should be investigated and intentionally resolved with reliable sources before the regimen is continued.",
+    "difficulty": "medium",
+    "tags": [
+      "medication-reconciliation",
+      "transitions-of-care",
+      "patient-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-2",
+    "question_text": "Counseling at outpatient dispensing should prioritize information about:",
+    "options": [
+      "How and when to use the medicine, precautions, and adherence",
+      "The pharmacy monthly sales target",
+      "The supplier transport route",
+      "Hospital staff salaries"
+    ],
+    "correct_index": 0,
+    "explanation": "Practical instructions, precautions, expected effects, and adherence advice help patients use medicines safely and effectively.",
+    "difficulty": "easy",
+    "tags": [
+      "outpatient",
+      "counseling",
+      "adherence"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "Steam sterilization in an autoclave depends mainly on:",
+    "options": [
+      "Moist heat under pressure for a validated time",
+      "Dry room air at low temperature",
+      "Ultraviolet light through opaque packs",
+      "Chemical fragrance exposure"
+    ],
+    "correct_index": 0,
+    "explanation": "An autoclave uses saturated steam under pressure; effective sterilization requires validated temperature, exposure time, and steam contact.",
+    "difficulty": "easy",
+    "tags": [
+      "CSSD",
+      "autoclave",
+      "sterilization"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "Sterilization packaging should allow sterilant penetration and then maintain:",
+    "options": [
+      "Sterility until the pack is opened or compromised",
+      "Permanent access by untrained persons",
+      "Absorption of moisture from the floor",
+      "Removal of the batch label"
+    ],
+    "correct_index": 0,
+    "explanation": "Packaging must permit the sterilization process while protecting the contents from contamination during storage and handling.",
+    "difficulty": "medium",
+    "tags": [
+      "CSSD",
+      "packaging",
+      "sterility"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "A chemical indicator on a sterilization pack primarily shows that the pack has:",
+    "options": [
+      "Been exposed to specified process conditions",
+      "Been proven sterile under every circumstance",
+      "Been stored in a refrigerator",
+      "Contained no microorganisms before processing"
+    ],
+    "correct_index": 0,
+    "explanation": "Chemical indicators demonstrate exposure to one or more sterilization parameters but do not alone prove sterility.",
+    "difficulty": "medium",
+    "tags": [
+      "CSSD",
+      "chemical-indicator",
+      "sterilization-monitoring"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "Before entering an aseptic preparation area, personnel should first:",
+    "options": [
+      "Perform appropriate hand hygiene and garbing",
+      "Bring food and personal items inside",
+      "Touch sterile components with bare hands",
+      "Open all containers for inspection"
+    ],
+    "correct_index": 0,
+    "explanation": "Hand hygiene and correct garbing reduce the introduction of microorganisms and particles into the controlled area.",
+    "difficulty": "easy",
+    "tags": [
+      "aseptic-technique",
+      "hand-hygiene",
+      "sterility"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "A filter needle is used when withdrawing medication from a:",
+    "options": [
+      "Glass ampoule to help prevent glass particles entering the syringe",
+      "Plastic infusion bag to add air",
+      "Closed vial to sterilize the solution",
+      "Tablet container to measure powder"
+    ],
+    "correct_index": 0,
+    "explanation": "A filter needle can reduce the risk of drawing glass fragments from an opened glass ampoule into the syringe.",
+    "difficulty": "medium",
+    "tags": [
+      "IV-admixture",
+      "ampoules",
+      "patient-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "Parenteral nutrition should be inspected before administration for:",
+    "options": [
+      "Precipitate, separation, discoloration, and container damage",
+      "The patient handwriting style",
+      "Tablet disintegration time",
+      "The hospital electrical bill"
+    ],
+    "correct_index": 0,
+    "explanation": "Visible physical changes or container defects may indicate incompatibility, instability, contamination, or loss of integrity.",
+    "difficulty": "easy",
+    "tags": [
+      "TPN",
+      "quality-control",
+      "parenteral-nutrition"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "Cytotoxic spill management should begin by:",
+    "options": [
+      "Restricting the area and following the hazardous-drug spill procedure",
+      "Wiping the spill with bare hands",
+      "Pouring it into a sink without protection",
+      "Allowing patients to clean it"
+    ],
+    "correct_index": 0,
+    "explanation": "The area must be controlled and trained staff should use the approved spill kit, PPE, cleanup, and disposal procedure.",
+    "difficulty": "easy",
+    "tags": [
+      "cytotoxic",
+      "spill-management",
+      "hazardous-drugs"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-3",
+    "question_text": "A beyond-use date for a compounded sterile preparation is assigned based on:",
+    "options": [
+      "Stability, storage conditions, ingredients, and validated preparation information",
+      "The patient favorite brand",
+      "The color of the syringe cap",
+      "The pharmacy opening time only"
+    ],
+    "correct_index": 0,
+    "explanation": "Beyond-use dating must reflect available stability evidence, formulation, container, storage, and preparation controls.",
+    "difficulty": "medium",
+    "tags": [
+      "sterile-compounding",
+      "beyond-use-date",
+      "quality-assurance"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "During ward rounds, a clinical pharmacist should prioritize identifying:",
+    "options": [
+      "Medicine-related problems requiring intervention",
+      "The hospital architectural defects",
+      "Patients preferred television channels",
+      "The supplier marketing slogans"
+    ],
+    "correct_index": 0,
+    "explanation": "Ward-round review focuses on problems such as untreated indications, ineffective therapy, unsafe doses, interactions, and adherence barriers.",
+    "difficulty": "easy",
+    "tags": [
+      "clinical-pharmacy",
+      "ward-rounds",
+      "DRP"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "A SOAP note records clinical information as:",
+    "options": [
+      "Subjective, Objective, Assessment, and Plan",
+      "Stock, Order, Administration, and Price",
+      "Sterility, Options, Allergy, and Packaging",
+      "Summary, Output, Audit, and Procurement"
+    ],
+    "correct_index": 0,
+    "explanation": "SOAP documentation organizes patient-reported information, measured findings, clinical assessment, and the management plan.",
+    "difficulty": "easy",
+    "tags": [
+      "clinical-pharmacy",
+      "documentation",
+      "SOAP"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "An untreated indication is a drug-related problem in which the patient:",
+    "options": [
+      "Needs medicine for a condition but is not receiving appropriate therapy",
+      "Receives an unnecessarily high dose",
+      "Has a correctly treated condition",
+      "Has a medicine stored at the correct temperature"
+    ],
+    "correct_index": 0,
+    "explanation": "Untreated indication means a medical condition or risk requires pharmacotherapy that has not been initiated or supplied appropriately.",
+    "difficulty": "medium",
+    "tags": [
+      "DRP",
+      "clinical-pharmacy",
+      "indication"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "A pharmacist reviewing renal impairment should consider whether a medicine needs:",
+    "options": [
+      "Dose adjustment or an alternative based on renal clearance",
+      "A brighter label color only",
+      "Storage with food",
+      "Removal of all monitoring"
+    ],
+    "correct_index": 0,
+    "explanation": "Reduced renal clearance can increase exposure to renally eliminated medicines, requiring dose adjustment, interval changes, or an alternative.",
+    "difficulty": "medium",
+    "tags": [
+      "clinical-pharmacy",
+      "renal-impairment",
+      "dose-adjustment"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "When counseling a patient with limited health literacy, the pharmacist should use:",
+    "options": [
+      "Plain language, visual aids, and confirmation of understanding",
+      "Complex terminology without explanation",
+      "Only written information in very small print",
+      "A discussion directed only to the medicine package"
+    ],
+    "correct_index": 0,
+    "explanation": "Plain language and teach-back make instructions more accessible and reveal misunderstandings before the patient leaves.",
+    "difficulty": "easy",
+    "tags": [
+      "patient-counseling",
+      "health-literacy",
+      "communication"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "An antimicrobial stewardship intervention may include:",
+    "options": [
+      "Reviewing indication, culture results, dose, route, and duration",
+      "Giving every patient the broadest antibiotic indefinitely",
+      "Avoiding documentation of antibiotic use",
+      "Replacing microbiology results with brand preference"
+    ],
+    "correct_index": 0,
+    "explanation": "Stewardship promotes effective therapy while reducing unnecessary exposure through review and optimization of indication, selection, dose, route, and duration.",
+    "difficulty": "medium",
+    "tags": [
+      "antimicrobial-stewardship",
+      "clinical-pharmacy",
+      "rational-use"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-4",
+    "question_text": "A pharmacist should document a clinical intervention so that it is:",
+    "options": [
+      "Communicated, evaluated, and traceable in the patient record",
+      "Kept secret from the care team",
+      "Used to replace the prescription without authorization",
+      "Recorded only on an unlabelled scrap of paper"
+    ],
+    "correct_index": 0,
+    "explanation": "Clear documentation supports communication, continuity of care, outcome evaluation, and accountability for the intervention.",
+    "difficulty": "easy",
+    "tags": [
+      "clinical-pharmacy",
+      "documentation",
+      "interventions"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A serious adverse drug reaction may involve:",
+    "options": [
+      "Death, life-threatening illness, hospitalization, disability, or a congenital anomaly",
+      "Only a mild unpleasant taste",
+      "A correctly filed purchase invoice",
+      "A medicine with a readable label"
+    ],
+    "correct_index": 0,
+    "explanation": "Seriousness is based on patient outcomes such as death, life-threatening events, hospitalization, disability, or congenital anomaly, not merely symptom intensity.",
+    "difficulty": "medium",
+    "tags": [
+      "ADR",
+      "pharmacovigilance",
+      "medicine-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A suspected adverse drug reaction report should include the patient:",
+    "options": [
+      "Identifiable details, suspected medicine, reaction, and relevant clinical information",
+      "Favorite food only",
+      "Hospital building plan",
+      "Supplier advertising"
+    ],
+    "correct_index": 0,
+    "explanation": "A useful safety report links an identifiable patient and reporter with the suspected product, reaction, timing, and relevant clinical details.",
+    "difficulty": "medium",
+    "tags": [
+      "ADR-reporting",
+      "pharmacovigilance",
+      "documentation"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "The Naranjo algorithm is used to help assess:",
+    "options": [
+      "The probability that a medicine caused an adverse event",
+      "The sterility of an autoclave",
+      "The value of pharmacy inventory",
+      "The size of a hospital ward"
+    ],
+    "correct_index": 0,
+    "explanation": "The Naranjo scale uses structured questions to categorize the likelihood that an adverse event is related to a suspected medicine.",
+    "difficulty": "medium",
+    "tags": [
+      "ADR",
+      "Naranjo",
+      "pharmacovigilance"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A Type A adverse drug reaction is generally:",
+    "options": [
+      "Dose-dependent and predictable from the medicine pharmacology",
+      "Idiosyncratic and unrelated to dose in every case",
+      "Caused only by counterfeit packaging",
+      "Always delayed for many years"
+    ],
+    "correct_index": 0,
+    "explanation": "Type A reactions are augmented pharmacological effects, are usually dose-related, and are often predictable and more common.",
+    "difficulty": "medium",
+    "tags": [
+      "ADR",
+      "classification",
+      "pharmacology"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A high-alert medicine requires additional safeguards because an error may:",
+    "options": [
+      "Cause severe patient harm even when errors are infrequent",
+      "Improve adherence automatically",
+      "Be harmless in every dose",
+      "Eliminate the need for patient identification"
+    ],
+    "correct_index": 0,
+    "explanation": "High-alert medicines have a higher risk of causing serious harm when used incorrectly, so systems use extra checks and controls.",
+    "difficulty": "easy",
+    "tags": [
+      "high-alert-medicines",
+      "medication-safety",
+      "risk-management"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A near miss is a medication-safety event that:",
+    "options": [
+      "Could have caused harm but was detected before reaching the patient",
+      "Always causes permanent disability",
+      "Is a routine stock receipt",
+      "Occurs only after a medicine expires"
+    ],
+    "correct_index": 0,
+    "explanation": "Near misses reveal hazards in the medication-use system even though the error is intercepted before patient harm occurs.",
+    "difficulty": "easy",
+    "tags": [
+      "near-miss",
+      "medication-errors",
+      "patient-safety"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "The best immediate action after discovering a medication error that reached a patient is to:",
+    "options": [
+      "Assess the patient, notify the responsible clinical team, and document the event",
+      "Hide the error from the patient and team",
+      "Discard all pharmacy records",
+      "Repeat the same dose without assessment"
+    ],
+    "correct_index": 0,
+    "explanation": "Patient assessment and prompt clinical communication support treatment of harm; transparent documentation enables follow-up and prevention.",
+    "difficulty": "medium",
+    "tags": [
+      "medication-errors",
+      "patient-safety",
+      "incident-reporting"
+    ]
+  },
+  {
+    "unit_id": "hosp-unit-5",
+    "question_text": "A medication-use system should analyze an error primarily to:",
+    "options": [
+      "Identify system improvements and prevent recurrence",
+      "Assign blame without reviewing the process",
+      "Remove all medicines from the hospital",
+      "Avoid reporting similar events"
+    ],
+    "correct_index": 0,
+    "explanation": "Root-cause analysis examines system factors and supports corrective actions that reduce the chance of a similar medication error.",
+    "difficulty": "medium",
+    "tags": [
+      "medication-errors",
+      "root-cause-analysis",
+      "patient-safety"
+    ]
+  }
+]

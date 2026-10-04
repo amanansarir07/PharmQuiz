@@ -73,9 +73,12 @@ export default function AdminMockExamsPage() {
   }, [programSlug]);
 
   useEffect(() => {
-    if (isAdmin) load();
+    const loadTimer = isAdmin ? window.setTimeout(load, 0) : undefined;
     const t = setInterval(() => setNow(new Date()), 1_000);
-    return () => clearInterval(t);
+    return () => {
+      if (loadTimer !== undefined) window.clearTimeout(loadTimer);
+      clearInterval(t);
+    };
   }, [isAdmin, load]);
 
   const submit = async (e: React.FormEvent) => {

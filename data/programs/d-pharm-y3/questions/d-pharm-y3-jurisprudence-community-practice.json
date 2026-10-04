@@ -1,0 +1,722 @@
+[
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "The main purpose of pharmaceutical legislation is to protect:",
+    "options": ["Public health and medicine quality", "Medicine advertisements only", "Pharmacy decoration", "Private transport services"],
+    "correct_index": 0,
+    "explanation": "Pharmaceutical legislation protects public health by regulating the manufacture, import, distribution, sale, and use of medicines.",
+    "difficulty": "easy",
+    "tags": ["legislation", "public-health"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "The Department of Drug Administration is primarily responsible for:",
+    "options": ["Regulating medicines in Nepal", "Issuing driving licenses", "Managing school examinations", "Constructing hospitals"],
+    "correct_index": 0,
+    "explanation": "The Department of Drug Administration is Nepal's principal government body for medicine regulation, registration, inspection, and quality oversight.",
+    "difficulty": "easy",
+    "tags": ["DDA", "regulatory-bodies"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A medicine registration system helps authorities verify its:",
+    "options": ["Quality, safety, and efficacy", "Retail shelf color", "Advertising popularity only", "Packaging weight only"],
+    "correct_index": 0,
+    "explanation": "Registration evaluates evidence related to medicine quality, safety, efficacy, and suitability before marketing.",
+    "difficulty": "easy",
+    "tags": ["drug-registration", "quality"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A drug inspector may inspect premises to check:",
+    "options": ["Compliance with medicine laws and standards", "The owner's personal hobbies", "The weather forecast", "School attendance"],
+    "correct_index": 0,
+    "explanation": "Inspection verifies that manufacturers, wholesalers, and pharmacies comply with storage, documentation, licensing, and quality requirements.",
+    "difficulty": "easy",
+    "tags": ["DDA", "inspection", "compliance"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A substandard medicine is one that:",
+    "options": ["Fails to meet established quality specifications", "Is always counterfeit", "Has a colorful label", "Is sold only in a hospital"],
+    "correct_index": 0,
+    "explanation": "Substandard medicines are authorized products that fail to meet required quality specifications, such as identity, strength, purity, or stability.",
+    "difficulty": "medium",
+    "tags": ["medicine-quality", "substandard"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A counterfeit medicine is best described as a product that:",
+    "options": ["Misrepresents its identity, source, or contents", "Has an approved package insert", "Is stored in a refrigerator", "Is dispensed with counseling"],
+    "correct_index": 0,
+    "explanation": "Counterfeit medicines deliberately misrepresent their identity, source, or composition and may contain incorrect or harmful ingredients.",
+    "difficulty": "medium",
+    "tags": ["counterfeit", "medicine-safety"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A medicine recall is initiated when a product:",
+    "options": ["May pose a quality or safety risk", "Has a popular brand name", "Is displayed on a high shelf", "Has a short counseling leaflet"],
+    "correct_index": 0,
+    "explanation": "Recalls remove medicines from the supply chain when a defect, contamination, labeling error, or other risk may harm patients.",
+    "difficulty": "easy",
+    "tags": ["recall", "quality-assurance"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "Good documentation in a pharmacy supports:",
+    "options": ["Traceability and accountability", "Unrecorded dispensing", "Medicine wastage", "Patient confusion"],
+    "correct_index": 0,
+    "explanation": "Accurate records allow medicines and transactions to be traced, support accountability, and help investigate errors or quality problems.",
+    "difficulty": "easy",
+    "tags": ["documentation", "pharmacy-practice"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "The Nepal Pharmacy Council primarily regulates:",
+    "options": ["Pharmacy professionals and their practice", "Hospital building design", "Road traffic", "Food restaurant licenses"],
+    "correct_index": 0,
+    "explanation": "The Nepal Pharmacy Council supports registration, professional standards, ethics, and regulation of pharmacy professionals.",
+    "difficulty": "easy",
+    "tags": ["NPC", "professional-regulation"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "Professional registration confirms that a pharmacy worker:",
+    "options": ["Meets prescribed educational and regulatory requirements", "Can prescribe every medicine", "Owns a pharmacy building", "Has no continuing responsibilities"],
+    "correct_index": 0,
+    "explanation": "Registration recognizes that a professional has met the required qualifications and remains subject to professional standards and regulations.",
+    "difficulty": "easy",
+    "tags": ["registration", "professionalism"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "Patient confidentiality requires a pharmacy professional to:",
+    "options": ["Protect private patient information", "Publish every prescription online", "Share records with any visitor", "Ignore privacy during counseling"],
+    "correct_index": 0,
+    "explanation": "Patient information should be disclosed only for legitimate professional or legal reasons and handled with appropriate privacy safeguards.",
+    "difficulty": "easy",
+    "tags": ["ethics", "confidentiality"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "Informed consent means that a patient:",
+    "options": ["Receives understandable information before agreeing", "Must accept every recommendation", "Cannot ask questions", "Signs a blank form"],
+    "correct_index": 0,
+    "explanation": "Valid consent requires understandable information about the proposed care, relevant benefits and risks, and voluntary agreement.",
+    "difficulty": "easy",
+    "tags": ["ethics", "consent", "patient-rights"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "A conflict of interest should be:",
+    "options": ["Disclosed and managed transparently", "Hidden from patients and colleagues", "Used to select unsafe medicines", "Ignored in procurement"],
+    "correct_index": 0,
+    "explanation": "Professional decisions should prioritize patient welfare; potential conflicts must be disclosed and managed transparently.",
+    "difficulty": "medium",
+    "tags": ["ethics", "conflict-of-interest"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "Continuing professional education helps pharmacy workers:",
+    "options": ["Maintain and update professional competence", "Avoid all legal duties", "Replace registration", "Dispense without standards"],
+    "correct_index": 0,
+    "explanation": "Continuing education helps professionals keep their knowledge and skills current as medicines, evidence, and regulations change.",
+    "difficulty": "easy",
+    "tags": ["CPE", "professional-development"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "A professional disciplinary process should be:",
+    "options": ["Fair, documented, and based on established rules", "Secret and arbitrary", "Based only on rumors", "Applied without an opportunity to respond"],
+    "correct_index": 0,
+    "explanation": "Fair disciplinary procedures use documented evidence, established rules, and an appropriate opportunity for the professional to respond.",
+    "difficulty": "medium",
+    "tags": ["discipline", "professional-regulation"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "A pharmacy professional's primary responsibility is to:",
+    "options": ["Promote the patient's safe and appropriate medicine use", "Maximize sales regardless of need", "Hide medicine risks", "Avoid communication"],
+    "correct_index": 0,
+    "explanation": "The patient's health and safe medicine use take priority over commercial interests in professional pharmacy practice.",
+    "difficulty": "easy",
+    "tags": ["ethics", "patient-safety"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "The essential medicines concept prioritizes medicines that are:",
+    "options": ["Needed for common priority health conditions", "Always the most expensive", "Used only for cosmetic purposes", "Selected by brand popularity"],
+    "correct_index": 0,
+    "explanation": "Essential medicines meet the priority healthcare needs of the population and should be available with appropriate quality, dosage, and affordability.",
+    "difficulty": "easy",
+    "tags": ["essential-medicines", "health-policy"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "Rational medicine use means that patients receive medicines that are:",
+    "options": ["Appropriate to their needs, in correct doses, for adequate duration", "Selected only by advertisements", "Always injectable", "Used without diagnosis"],
+    "correct_index": 0,
+    "explanation": "Rational use involves the right medicine for the patient's condition, at the right dose and duration, with appropriate cost and patient information.",
+    "difficulty": "easy",
+    "tags": ["rational-use", "health-policy"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "Narcotic medicines require special control mainly because of their:",
+    "options": ["Potential for dependence, misuse, and diversion", "Bright packaging", "Low therapeutic value in every case", "Ability to cure all diseases"],
+    "correct_index": 0,
+    "explanation": "Narcotic medicines can have important therapeutic uses but require control because of dependence, abuse, diversion, and overdose risks.",
+    "difficulty": "easy",
+    "tags": ["narcotics", "controlled-medicines"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "Good Storage Practice requires medicines to be stored according to:",
+    "options": ["Their labeled temperature, light, and humidity requirements", "The owner's preferred shelf", "The color of the package", "The order in which customers ask"],
+    "correct_index": 0,
+    "explanation": "Storage conditions should follow product labeling and protect medicines from unsuitable temperature, light, moisture, contamination, and mix-ups.",
+    "difficulty": "easy",
+    "tags": ["GSP", "storage", "quality"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "Good Distribution Practice helps maintain medicine quality during:",
+    "options": ["Procurement, transport, storage, and delivery", "Advertising only", "Patient diagnosis only", "Pharmacy painting"],
+    "correct_index": 0,
+    "explanation": "GDP controls the supply chain so medicine quality and traceability are maintained from the supplier to the point of use.",
+    "difficulty": "easy",
+    "tags": ["GDP", "supply-chain"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "A medicine should not be supplied if its label is:",
+    "options": ["Illegible or missing essential information", "Printed clearly", "Attached securely", "Matched to the prescription"],
+    "correct_index": 0,
+    "explanation": "Illegible or incomplete labeling can cause medicine errors and should be corrected before supply.",
+    "difficulty": "easy",
+    "tags": ["labeling", "patient-safety"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "A policy for rational antibiotic use helps reduce:",
+    "options": ["Antimicrobial resistance", "Patient counseling", "Medicine identification", "Treatment adherence"],
+    "correct_index": 0,
+    "explanation": "Appropriate antibiotic selection, dose, and duration reduce unnecessary exposure and help limit antimicrobial resistance.",
+    "difficulty": "medium",
+    "tags": ["antibiotics", "AMR", "rational-use"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "A damaged medicine package should generally be:",
+    "options": ["Quarantined and assessed before any supply", "Mixed with good stock", "Sold at a discount immediately", "Relabeled without investigation"],
+    "correct_index": 0,
+    "explanation": "Damaged stock should be separated and assessed so potentially contaminated or compromised medicines are not supplied to patients.",
+    "difficulty": "easy",
+    "tags": ["quality", "inventory", "quarantine"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "Before dispensing a prescription, the pharmacist should first verify:",
+    "options": ["Patient, medicine, dose, directions, and prescriber details", "Only the package color", "Only the patient's payment method", "The pharmacy's music"],
+    "correct_index": 0,
+    "explanation": "Prescription screening checks clinical and legal details, including patient identity, medicine, strength, dose, route, directions, and prescriber information.",
+    "difficulty": "easy",
+    "tags": ["dispensing", "prescription-screening"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "The label on a dispensed medicine should include:",
+    "options": ["Medicine name, directions, and patient-use instructions", "Only the price", "Only a logo", "No expiry or caution information"],
+    "correct_index": 0,
+    "explanation": "Clear labels should identify the medicine and provide directions and relevant precautions so the patient can use it safely.",
+    "difficulty": "easy",
+    "tags": ["dispensing", "labeling"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "FEFO inventory rotation means issuing stock with the:",
+    "options": ["First expiry first", "First purchase last", "Largest package first", "Highest price first"],
+    "correct_index": 0,
+    "explanation": "FEFO reduces expiry-related wastage by issuing products with the earliest expiry date first.",
+    "difficulty": "easy",
+    "tags": ["inventory", "FEFO", "expiry"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "A refrigerator used for temperature-sensitive medicines should have:",
+    "options": ["Routine temperature monitoring and records", "Food stored with medicines", "No temperature indicator", "A door left open"],
+    "correct_index": 0,
+    "explanation": "Routine temperature monitoring confirms that medicines remain within their recommended storage range and supports action when excursions occur.",
+    "difficulty": "easy",
+    "tags": ["cold-chain", "storage", "monitoring"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "Patient counseling at dispensing should confirm that the patient understands:",
+    "options": ["How and when to use the medicine", "Only the brand logo", "The pharmacy rent", "The wholesaler's address only"],
+    "correct_index": 0,
+    "explanation": "Counseling should cover directions, duration, precautions, expected effects, important adverse effects, and storage when relevant.",
+    "difficulty": "easy",
+    "tags": ["counseling", "dispensing"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "Expired medicines should be:",
+    "options": ["Separated from usable stock and disposed of safely", "Dispensed first at a discount", "Returned to the normal shelf", "Mixed into new batches"],
+    "correct_index": 0,
+    "explanation": "Expired medicines must be quarantined and disposed of through an authorized process to prevent accidental supply and environmental harm.",
+    "difficulty": "easy",
+    "tags": ["expiry", "waste-management"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "A pharmacy's dispensing area should provide:",
+    "options": ["Privacy, cleanliness, and adequate organization", "Unrestricted access to all stock", "No hand hygiene facilities", "Medicine storage on the floor"],
+    "correct_index": 0,
+    "explanation": "A suitable dispensing area supports privacy, hygiene, accurate preparation, organized storage, and safe patient communication.",
+    "difficulty": "easy",
+    "tags": ["community-pharmacy", "layout", "hygiene"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "Returned medicines should be accepted back into usable stock only when:",
+    "options": ["Their identity, integrity, storage history, and expiry are verified", "The package looks attractive", "The customer insists", "The medicine is placed beside new stock without checking"],
+    "correct_index": 0,
+    "explanation": "Returned medicines require documented assessment of identity, packaging integrity, storage conditions, and expiry before any decision to return them to saleable stock.",
+    "difficulty": "medium",
+    "tags": ["community-pharmacy", "returns", "quality-assurance"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "An OTC medicine may generally be supplied:",
+    "options": ["Without a prescription when used appropriately under labeling and counseling", "Only after a surgical procedure", "Without any safety precautions", "Only to hospital staff"],
+    "correct_index": 0,
+    "explanation": "OTC medicines can be supplied without a prescription, but appropriate assessment, directions, precautions, and referral remain important.",
+    "difficulty": "easy",
+    "tags": ["OTC", "community-pharmacy"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A patient with severe breathing difficulty should be:",
+    "options": ["Referred urgently for medical assessment", "Given any cough syrup without assessment", "Told to wait several weeks", "Sold an antibiotic without evaluation"],
+    "correct_index": 0,
+    "explanation": "Severe breathing difficulty is a danger sign requiring urgent medical assessment rather than routine self-care advice.",
+    "difficulty": "easy",
+    "tags": ["OTC", "referral", "triage"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "Oral rehydration solution is used mainly to prevent or treat:",
+    "options": ["Dehydration from diarrhea and fluid loss", "Bacterial resistance", "Hypertension in every patient", "Skin pigmentation"],
+    "correct_index": 0,
+    "explanation": "ORS replaces water and electrolytes lost through diarrhea and vomiting and helps prevent dehydration.",
+    "difficulty": "easy",
+    "tags": ["community-health", "ORS", "diarrhea"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A blood pressure screening service should include:",
+    "options": ["Correct technique, recording, and appropriate referral", "A result without patient identification", "Diagnosis from one reading in every case", "No equipment calibration"],
+    "correct_index": 0,
+    "explanation": "Screening requires a suitable device, correct positioning and technique, documentation, and referral when readings or symptoms warrant assessment.",
+    "difficulty": "medium",
+    "tags": ["screening", "blood-pressure", "referral"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A pharmacy smoking-cessation service should primarily provide:",
+    "options": ["Brief advice, support, and referral when needed", "Judgment and blame", "Unlabeled medicines", "Advice to increase tobacco use"],
+    "correct_index": 0,
+    "explanation": "Brief behavioral support, motivation, practical advice, and referral to appropriate services can help people quit tobacco.",
+    "difficulty": "easy",
+    "tags": ["health-promotion", "smoking-cessation"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "Family planning counseling should be:",
+    "options": ["Respectful, confidential, and based on informed choice", "Coercive and judgmental", "Limited to one method for everyone", "Given without checking understanding"],
+    "correct_index": 0,
+    "explanation": "Family planning counseling should respect autonomy, confidentiality, preferences, eligibility, benefits, risks, and informed choice.",
+    "difficulty": "easy",
+    "tags": ["family-planning", "counseling", "ethics"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A community pharmacist should refer a patient when:",
+    "options": ["Symptoms suggest a serious or persistent condition", "The patient asks a clear question", "The medicine label is readable", "The patient needs routine directions"],
+    "correct_index": 0,
+    "explanation": "Referral is appropriate for danger signs, severe symptoms, unusual presentations, treatment failure, or conditions beyond the pharmacy's scope.",
+    "difficulty": "easy",
+    "tags": ["community-pharmacy", "referral", "patient-safety"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "Health promotion in a community pharmacy may include:",
+    "options": ["Education on prevention, healthy behavior, and medicine safety", "Promoting unnecessary antibiotic use", "Selling medicines without labels", "Discouraging vaccination information"],
+    "correct_index": 0,
+    "explanation": "Community pharmacies can support prevention, healthy lifestyles, vaccination awareness, safe medicine use, and timely referral.",
+    "difficulty": "easy",
+    "tags": ["health-promotion", "community-pharmacy"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A marketing authorization is required before a medicine is:",
+    "options": ["Placed on the market for legal supply", "Displayed only in a private home", "Used as a laboratory reference", "Listed in a student's notebook"],
+    "correct_index": 0,
+    "explanation": "Marketing authorization confirms that the responsible regulatory authority has assessed the product and permits its legal supply under specified conditions.",
+    "difficulty": "medium",
+    "tags": ["marketing-authorization", "drug-regulation"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "Which record best supports tracing a medicine batch after a quality alert?",
+    "options": ["Purchase and distribution records linked to the batch number", "A list of unrelated customer birthdays", "The pharmacy cleaning roster only", "A record of staff meal preferences"],
+    "correct_index": 0,
+    "explanation": "Batch-linked purchase, stock, and distribution records allow affected products to be located and removed quickly during a quality alert.",
+    "difficulty": "medium",
+    "tags": ["traceability", "batch-records", "recall"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A medicine advertisement is misleading when it:",
+    "options": ["Claims guaranteed cure without reliable evidence", "Uses an approved generic name", "Includes required safety information", "States the authorized indication accurately"],
+    "correct_index": 0,
+    "explanation": "Unsupported claims, especially guarantees of cure, can mislead patients and promote unsafe medicine use.",
+    "difficulty": "medium",
+    "tags": ["advertising", "medicine-safety", "ethics"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A suspected adverse drug reaction should be reported because reporting:",
+    "options": ["Helps identify previously unrecognized medicine risks", "Proves that the prescriber was negligent", "Replaces all patient treatment", "Is needed only for harmless effects"],
+    "correct_index": 0,
+    "explanation": "Pharmacovigilance reports contribute to the detection and assessment of medicine-related risks and support safer use.",
+    "difficulty": "medium",
+    "tags": ["pharmacovigilance", "ADR", "patient-safety"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "When a recalled batch is found in a pharmacy, the first action is to:",
+    "options": ["Quarantine it and prevent further supply", "Sell it quickly before patients hear about it", "Remove only the outer label", "Mix it with an unaffected batch"],
+    "correct_index": 0,
+    "explanation": "Recalled stock must be segregated and blocked from supply while the recall instructions and documentation are completed.",
+    "difficulty": "easy",
+    "tags": ["recall", "quarantine", "quality-assurance"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A pharmacy license primarily demonstrates that the premises:",
+    "options": ["Meet prescribed legal and professional requirements", "Can sell any product without restrictions", "Are exempt from inspection", "May operate without qualified staff"],
+    "correct_index": 0,
+    "explanation": "Licensing verifies compliance with requirements for premises, staffing, storage, records, and lawful pharmacy operation; it does not remove ongoing duties.",
+    "difficulty": "easy",
+    "tags": ["licensing", "community-pharmacy", "compliance"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "The expiry date on a medicine indicates the time until which the product is expected to:",
+    "options": ["Meet its approved quality specifications when stored correctly", "Remain effective under any storage condition", "Be safe for unlimited use after opening", "Remain suitable even if visibly contaminated"],
+    "correct_index": 0,
+    "explanation": "The expiry date applies to the product when stored under labeled conditions; it does not override special in-use or opening limits.",
+    "difficulty": "easy",
+    "tags": ["expiry", "stability", "storage"]
+  },
+  {
+    "unit_id": "juris-unit-1",
+    "question_text": "A written standard operating procedure is useful because it:",
+    "options": ["Promotes consistent, documented performance of routine tasks", "Allows staff to ignore legal requirements", "Replaces all professional judgment", "Prevents any need for training"],
+    "correct_index": 0,
+    "explanation": "SOPs describe approved procedures, improve consistency, support training, and provide evidence of controlled pharmacy practice.",
+    "difficulty": "easy",
+    "tags": ["SOP", "quality-management", "documentation"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "Delegating a pharmacy task is appropriate only when the supervisor:",
+    "options": ["Confirms the person's competence and retains appropriate oversight", "Transfers all accountability permanently", "Provides no instructions", "Assigns a task outside the person's training"],
+    "correct_index": 0,
+    "explanation": "Delegation requires suitable competence, clear instructions, supervision, and accountability for the quality and safety of the work.",
+    "difficulty": "medium",
+    "tags": ["delegation", "professionalism", "supervision"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "If a dispensing error reaches a patient, the professional should first:",
+    "options": ["Protect the patient, inform the responsible team, and document the incident", "Delete the dispensing record", "Blame the patient", "Continue dispensing without assessment"],
+    "correct_index": 0,
+    "explanation": "Immediate patient safety, prompt communication, and accurate incident documentation support appropriate clinical action and learning.",
+    "difficulty": "medium",
+    "tags": ["medication-error", "patient-safety", "incident-reporting"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "A pharmacy professional should refuse an instruction when it:",
+    "options": ["Would clearly breach law or place a patient at unreasonable risk", "Is part of a lawful standard procedure", "Requires checking a prescription", "Involves respectful patient counseling"],
+    "correct_index": 0,
+    "explanation": "Professional duties include protecting patients and not participating in unlawful or unsafe practice, while raising concerns through proper channels.",
+    "difficulty": "medium",
+    "tags": ["professional-ethics", "patient-safety", "legal-duty"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "A patient who lacks capacity for a particular decision should be supported by:",
+    "options": ["A lawful substitute decision process that protects the patient's best interests", "A staff member's personal preference alone", "A public vote in the pharmacy", "Automatic refusal of all care"],
+    "correct_index": 0,
+    "explanation": "Capacity is decision-specific; when it is absent, applicable law and ethical safeguards guide supported or substitute decisions in the patient's best interests.",
+    "difficulty": "hard",
+    "tags": ["capacity", "patient-rights", "ethics"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "A professional boundary is maintained when the pharmacist:",
+    "options": ["Keeps the relationship focused on the patient's care and avoids exploitation", "Accepts pressure for personal financial gain", "Uses patient information for social media", "Encourages emotional dependence"],
+    "correct_index": 0,
+    "explanation": "Professional boundaries protect patients from exploitation and preserve trust by keeping interactions appropriate and care-focused.",
+    "difficulty": "medium",
+    "tags": ["professional-boundaries", "ethics", "patient-protection"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "When communicating with a patient who has limited health literacy, the best approach is to:",
+    "options": ["Use plain language and ask the patient to explain the instructions back", "Use technical terms without checking understanding", "Give only a written brand name", "Speak to a companion instead of the patient automatically"],
+    "correct_index": 0,
+    "explanation": "Plain language and teach-back help confirm understanding while maintaining the patient's dignity and participation in care.",
+    "difficulty": "easy",
+    "tags": ["communication", "health-literacy", "counseling"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "A professional record should be corrected by:",
+    "options": ["Making a traceable correction that preserves the original entry and reason", "Erasing the original entry without explanation", "Changing the date to hide the error", "Asking an unrelated person to rewrite it"],
+    "correct_index": 0,
+    "explanation": "Traceable corrections preserve record integrity and show what was changed, by whom, when, and why.",
+    "difficulty": "medium",
+    "tags": ["documentation", "professional-regulation", "record-integrity"]
+  },
+  {
+    "unit_id": "juris-unit-2",
+    "question_text": "An ethical decision involving competing patient interests should begin by:",
+    "options": ["Identifying the relevant facts, duties, risks, and affected people", "Choosing the most profitable option immediately", "Ignoring the patient's preferences", "Sharing confidential details publicly"],
+    "correct_index": 0,
+    "explanation": "Structured ethical reasoning starts with the facts, applicable duties and rules, potential harms, patient preferences, and stakeholders.",
+    "difficulty": "hard",
+    "tags": ["ethical-decision-making", "professional-ethics", "patient-rights"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "A generic medicine is generally identified by its:",
+    "options": ["Recognized nonproprietary or generic name", "Retailer's favorite color", "Advertising slogan only", "Patient's nickname for the product"],
+    "correct_index": 0,
+    "explanation": "Generic or nonproprietary names identify the active medicine consistently, independent of a particular manufacturer's brand name.",
+    "difficulty": "easy",
+    "tags": ["generic-medicines", "essential-medicines", "rational-use"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "A formulary is primarily used to:",
+    "options": ["List medicines approved or preferred for a defined health system or facility", "Record daily cash sales only", "Replace every prescription", "Advertise medicines to children"],
+    "correct_index": 0,
+    "explanation": "A formulary supports consistent selection and use of medicines according to evidence, local needs, safety, and available resources.",
+    "difficulty": "medium",
+    "tags": ["formulary", "medicine-selection", "health-policy"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "The cold chain is important because it:",
+    "options": ["Maintains required temperatures for temperature-sensitive products", "Makes every medicine sterile", "Removes the need for expiry checks", "Allows vaccines to be stored with frozen food"],
+    "correct_index": 0,
+    "explanation": "Cold-chain procedures preserve product quality by maintaining the specified temperature from storage through transport and use.",
+    "difficulty": "easy",
+    "tags": ["cold-chain", "vaccine-safety", "GSP"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "When stock is received, the quantity should be checked against:",
+    "options": ["The purchase order and supplier delivery document", "A customer's verbal request", "The color of the delivery vehicle", "The previous day's weather"],
+    "correct_index": 0,
+    "explanation": "Comparing received stock with procurement documents detects shortages, excess quantities, wrong products, and discrepancies at receipt.",
+    "difficulty": "easy",
+    "tags": ["procurement", "inventory", "documentation"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "A controlled-medicine register should be kept:",
+    "options": ["Accurately and contemporaneously according to legal requirements", "Only when an inspection is announced", "With estimated quantities", "Without dates or patient details where required"],
+    "correct_index": 0,
+    "explanation": "Accurate, timely records support accountability, detect discrepancies, and demonstrate lawful handling of controlled medicines.",
+    "difficulty": "medium",
+    "tags": ["controlled-medicines", "record-keeping", "narcotics"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "Antimicrobial stewardship promotes:",
+    "options": ["The narrowest effective treatment for the appropriate indication and duration", "Antibiotics for every fever", "Sharing leftover antibiotics", "Stopping treatment whenever symptoms improve"],
+    "correct_index": 0,
+    "explanation": "Stewardship seeks effective treatment while minimizing unnecessary exposure, adverse effects, resistance, and avoidable costs.",
+    "difficulty": "medium",
+    "tags": ["antimicrobial-stewardship", "AMR", "rational-use"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "A stock-out of an essential medicine should be managed by:",
+    "options": ["Documenting it, informing the responsible team, and arranging an appropriate alternative or resupply", "Substituting an unrelated medicine without assessment", "Hiding the shortage from patients", "Selling an expired product"],
+    "correct_index": 0,
+    "explanation": "Stock-outs require transparent documentation, timely resupply planning, and clinically appropriate alternatives approved by the responsible professional.",
+    "difficulty": "medium",
+    "tags": ["essential-medicines", "inventory", "patient-safety"]
+  },
+  {
+    "unit_id": "juris-unit-3",
+    "question_text": "Pharmaceutical waste should be segregated mainly to:",
+    "options": ["Prevent exposure, environmental contamination, and accidental reuse", "Make all waste suitable for household disposal", "Increase the resale value of medicines", "Avoid recording quantities"],
+    "correct_index": 0,
+    "explanation": "Segregation supports safe handling and disposal of expired, damaged, hazardous, and contaminated pharmaceutical materials.",
+    "difficulty": "easy",
+    "tags": ["pharmaceutical-waste", "environmental-safety", "disposal"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "If a prescription dose appears unusually high, the pharmacist should:",
+    "options": ["Pause dispensing and clarify the prescription with the prescriber", "Change the dose silently", "Dispense it without checking", "Ask the patient to choose a dose"],
+    "correct_index": 0,
+    "explanation": "A potentially unsafe dose requires professional clarification before supply; unrecorded changes can create further risk.",
+    "difficulty": "medium",
+    "tags": ["prescription-screening", "dispensing", "patient-safety"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "The auxiliary label 'shake well' is important for a suspension because:",
+    "options": ["The medicine particles may settle and need redispersion for a uniform dose", "It sterilizes the product", "It extends the expiry date", "It replaces the prescribed dose"],
+    "correct_index": 0,
+    "explanation": "Shaking redistributes suspended particles so each measured dose contains the intended concentration.",
+    "difficulty": "easy",
+    "tags": ["dispensing", "labeling", "suspension"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "A dispensing error is less likely when the dispenser:",
+    "options": ["Uses an independent final check before handing over the medicine", "Relies on package color alone", "Works from memory without the prescription", "Omits patient identification"],
+    "correct_index": 0,
+    "explanation": "A systematic final check against the prescription and patient details can detect selection, labeling, quantity, and direction errors.",
+    "difficulty": "easy",
+    "tags": ["dispensing", "error-prevention", "patient-safety"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "A medicine-use review should include asking about:",
+    "options": ["All medicines, allergies, adherence, and problems experienced", "Only the most expensive medicine", "The patient's favorite tablet color", "Nonmedical gossip"],
+    "correct_index": 0,
+    "explanation": "A complete review identifies all medicines and relevant patient factors so interactions, adverse effects, nonadherence, and duplication can be addressed.",
+    "difficulty": "medium",
+    "tags": ["medication-review", "adherence", "patient-safety"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "A near miss in dispensing should be:",
+    "options": ["Recorded and reviewed to prevent recurrence", "Ignored because no harm occurred", "Hidden from the pharmacy team", "Used to punish the patient"],
+    "correct_index": 0,
+    "explanation": "Near-miss reporting reveals system weaknesses before harm occurs and supports corrective actions and safer procedures.",
+    "difficulty": "medium",
+    "tags": ["near-miss", "quality-improvement", "dispensing"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "When transferring a medicine to a suitable container, the dispenser must ensure that:",
+    "options": ["The container protects the product and the complete label remains clear", "The original identity is removed", "The medicine is mixed with another product", "The expiry information is discarded"],
+    "correct_index": 0,
+    "explanation": "A suitable container and complete, legible labeling preserve product quality and allow safe identification and use.",
+    "difficulty": "easy",
+    "tags": ["dispensing", "packaging", "labeling"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "A pharmacy should investigate a refrigerator temperature excursion to determine:",
+    "options": ["Which products were affected and whether they remain suitable for use", "Which staff member arrived latest", "Whether the shelves need repainting", "How to remove the thermometer record"],
+    "correct_index": 0,
+    "explanation": "Excursion assessment considers time, temperature, product stability, and advice from the manufacturer or authority before release or disposal.",
+    "difficulty": "hard",
+    "tags": ["cold-chain", "temperature-excursion", "quality-assurance"]
+  },
+  {
+    "unit_id": "juris-unit-4",
+    "question_text": "The best way to reduce look-alike, sound-alike medicine errors is to:",
+    "options": ["Use alerts, separation, careful checking, and clear labeling", "Store similar packages together without warning", "Rely only on memory", "Remove medicine names from shelves"],
+    "correct_index": 0,
+    "explanation": "System controls such as shelf separation, alerts, and independent checks reduce selection errors from similar names or packaging.",
+    "difficulty": "medium",
+    "tags": ["LASA", "error-prevention", "inventory"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "For uncomplicated minor ailments, a community pharmacist should first:",
+    "options": ["Assess symptoms, duration, existing conditions, and medicines", "Recommend the strongest medicine immediately", "Ignore pregnancy status", "Supply antibiotics without questions"],
+    "correct_index": 0,
+    "explanation": "A brief assessment establishes whether self-care is suitable and helps select safe advice or identify the need for referral.",
+    "difficulty": "medium",
+    "tags": ["OTC", "assessment", "community-pharmacy"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A child with signs of severe dehydration should be:",
+    "options": ["Referred urgently for medical care while appropriate immediate support is provided", "Managed only with candy", "Given an adult dose without assessment", "Told to return next month"],
+    "correct_index": 0,
+    "explanation": "Severe dehydration is a danger sign requiring urgent assessment; oral rehydration advice alone may be insufficient.",
+    "difficulty": "medium",
+    "tags": ["triage", "dehydration", "pediatric-care"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A patient asking for an antibiotic for a likely viral cold should receive:",
+    "options": ["Explanation, symptomatic advice, and referral if danger signs or persistence occur", "An antibiotic automatically", "Leftover antibiotics from another patient", "Advice to double a previous dose"],
+    "correct_index": 0,
+    "explanation": "Antibiotics do not treat viral colds; responsible care includes explanation, safe symptom management, and safety-net referral advice.",
+    "difficulty": "medium",
+    "tags": ["OTC", "antibiotics", "AMR", "health-education"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A cough lasting several weeks with weight loss should prompt:",
+    "options": ["Timely referral for medical evaluation", "Repeated OTC cough syrup without assessment", "An antibiotic chosen from advertising", "Reassurance that no evaluation is needed"],
+    "correct_index": 0,
+    "explanation": "Persistent cough with weight loss may indicate a serious condition and requires medical evaluation rather than repeated self-treatment.",
+    "difficulty": "medium",
+    "tags": ["referral", "triage", "respiratory-health"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "During blood pressure screening, the patient should ideally be:",
+    "options": ["Seated and rested with the arm supported at heart level", "Walking during the measurement", "Holding the cuff over clothing", "Talking continuously during every reading"],
+    "correct_index": 0,
+    "explanation": "Rest, proper posture, supported arm position, and correct cuff placement improve the reliability of a screening measurement.",
+    "difficulty": "easy",
+    "tags": ["screening", "blood-pressure", "community-pharmacy"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A useful counseling point for oral contraceptive adherence is to:",
+    "options": ["Explain the regular schedule and what to do after a missed dose using reliable guidance", "Tell every patient to stop after one tablet", "Guarantee protection despite missed doses", "Avoid discussing side effects"],
+    "correct_index": 0,
+    "explanation": "Clear schedule and missed-dose counseling supports effective use, while method-specific guidance and safety information should be provided.",
+    "difficulty": "medium",
+    "tags": ["family-planning", "counseling", "adherence"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A community pharmacy vaccination activity should include:",
+    "options": ["Eligibility screening, informed consent, safe administration, and documentation", "Vaccination without checking contraindications", "Reuse of needles between patients", "No record of the administered vaccine"],
+    "correct_index": 0,
+    "explanation": "Safe vaccination services require screening, consent, infection prevention, correct administration, observation as appropriate, and accurate records.",
+    "difficulty": "medium",
+    "tags": ["vaccination", "public-health", "patient-safety"]
+  },
+  {
+    "unit_id": "juris-unit-5",
+    "question_text": "A patient using a metered-dose inhaler should be taught to:",
+    "options": ["Coordinate actuation with slow inhalation and use a spacer when advised", "Swallow the inhaler contents", "Spray it into the room first every time", "Use it only when the canister is empty"],
+    "correct_index": 0,
+    "explanation": "Correct inhaler technique improves drug delivery; a spacer can reduce coordination difficulty and improve deposition when appropriate.",
+    "difficulty": "medium",
+    "tags": ["patient-counseling", "inhaler-technique", "respiratory-health"]
+  }
+]

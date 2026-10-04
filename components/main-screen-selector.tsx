@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { Fragment, useState, useTransition } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useActiveProgram } from "@/lib/program";
 import { useAuth } from "@/lib/auth";
 import {
@@ -10,32 +9,25 @@ import {
   getSubjectsForProgram,
   isProgramAvailable,
 } from "@/data/registry";
-import { CURRICULUM_PREVIEWS } from "@/data/curriculum-previews";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
-  GraduationCap,
   CheckCircle2,
-  Clock,
   Sparkles,
   ArrowRight,
   BookOpen,
-  Brain,
-  Award,
   Zap,
-  ChevronRight,
-  ShieldCheck,
+  ChevronDown,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { ProgramMeta } from "@/data/types";
 
 export function MainScreenSelector({
   questionCounts,
 }: {
   questionCounts: Record<string, number>;
 }) {
-  const router = useRouter();
   const { user } = useAuth();
-  const { programSlug, program, setProgramSlug } = useActiveProgram();
+  const { programSlug, setProgramSlug } = useActiveProgram();
   const catalogue = getFacultyCatalogue();
 
   // Find which faculty the currently selected program belongs to
@@ -45,7 +37,8 @@ export function MainScreenSelector({
     )?.faculty.slug || "ctevt";
 
   const [activeFacultySlug, setActiveFacultySlug] = useState<string>(initialFaculty);
-  const [isPending, startTransition] = useTransition();
+  const [expandedAward, setExpandedAward] = useState<string | null>(null);
+  const [, startTransition] = useTransition();
 
   const handleSelectProgram = (slug: string) => {
     setProgramSlug(slug);
@@ -60,10 +53,61 @@ export function MainScreenSelector({
     (f) => f.faculty.slug === activeFacultySlug
   ) || catalogue[0];
 
-  const hasLivePractice = isProgramAvailable(programSlug);
-  const liveSubjects = getSubjectsForProgram(programSlug);
-  const previewData = CURRICULUM_PREVIEWS[programSlug];
-  const questionCount = questionCounts[programSlug] ?? (hasLivePractice ? 800 : 0);
+  const renderProgramAction = (selected: ProgramMeta) => {
+    const selectedAvailable = isProgramAvailable(selected.slug);
+    const selectedSubjects = getSubjectsForProgram(selected.slug);
+    const selectedQuestionCount =
+      questionCounts[selected.slug] ?? (selectedAvailable ? 800 : 0);
+
+    return (
+      <div className="mt-3 border-t border-border/70 pt-3">
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0">
+            <span className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
+              Selected year
+            </span>
+            <p className="mt-0.5 truncate text-sm font-bold text-foreground">
+              {selected.name} · {selected.level}
+            </p>
+            <p className="mt-0.5 text-[11px] text-muted-foreground">
+              {selectedAvailable
+                ? `${selectedQuestionCount}+ questions · ${selectedSubjects.length} subjects`
+                : "Syllabus preview available"}
+            </p>
+          </div>
+          <Badge
+            variant="secondary"
+            className={cn(
+              "shrink-0 text-[10px] font-semibold",
+              selectedAvailable
+                ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                : "bg-muted text-muted-foreground"
+            )}
+          >
+            {selectedAvailable ? "Available" : "Coming soon"}
+          </Badge>
+        </div>
+        <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <Link
+            href={selectedAvailable ? "/quiz" : `/programs/${selected.slug}`}
+            className="inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 sm:w-auto"
+          >
+            {selectedAvailable ? <Zap className="h-4 w-4" /> : <BookOpen className="h-4 w-4" />}
+            {selectedAvailable ? "Start practising" : "View syllabus"}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          {!user && (
+            <Link
+              href={`/auth/register?program=${selected.slug}`}
+              className="text-center text-xs font-medium text-muted-foreground hover:text-foreground sm:px-2"
+            >
+              Save your progress
+            </Link>
+          )}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <section className="bg-gradient-to-b from-primary/[0.04] to-background pt-4 pb-12 sm:pt-6 sm:pb-16 border-b">
@@ -77,11 +121,11 @@ export function MainScreenSelector({
           </div>
 
           <h1 className="mt-2.5 text-2xl font-extrabold tracking-tight sm:text-4xl text-foreground">
-            Choose Your Course
+            What are you studying?
           </h1>
 
           <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground max-w-xl">
-            Select your syllabus below. Bujh tailors your subjects, question banks, and mock exams specifically for your department.
+            Choose a programme to personalise your subjects, practice quizzes, and mock exams.
           </p>
 
           {/* Department / Stream Switcher Tabs */}
@@ -118,248 +162,175 @@ export function MainScreenSelector({
         </div>
 
         {/* Course Cards Grid (Immediately visible, zero swipe required) */}
-        <div className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-          {currentFaculty?.awards.flatMap((award) =>
-            award.programs.map((p) => {
-              const isSelected = p.slug === programSlug;
-              const isLive = p.hasContent;
+        <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {currentFaculty?.awards.map((award) => {
+            const yearPrograms = award.programs.filter((p) => p.level.startsWith("Year"));
+            const standalonePrograms = award.programs.filter((p) => !p.level.startsWith("Year"));
+            const isGrouped = yearPrograms.length > 1;
+            const isExpanded = expandedAward === award.award;
+            const selectedProgram = yearPrograms.find((p) => p.slug === programSlug);
 
+            if (isGrouped) {
               return (
-                <button
-                  key={p.slug}
-                  type="button"
-                  onClick={() => handleSelectProgram(p.slug)}
-                  className={cn(
-                    "group relative flex flex-col justify-between rounded-2xl border p-3.5 text-left transition-all",
-                    isSelected
-                      ? "border-primary bg-primary/[0.08] shadow-md ring-2 ring-primary/40"
-                      : "border-border/80 bg-card hover:border-primary/50 hover:bg-muted/30 hover:shadow-xs"
-                  )}
-                >
-                  <div className="flex w-full items-start justify-between gap-2">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl transition-transform group-hover:scale-110">
-                        {p.icon}
-                      </span>
-                      <div>
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <h3 className="font-bold text-sm text-foreground">
-                            {p.name}
-                            {p.level ? ` · ${p.level}` : ""}
-                          </h3>
-                        </div>
-                        <p className="text-[11px] text-muted-foreground line-clamp-1">
-                          {p.award}
-                        </p>
-                      </div>
-                    </div>
-
-                    {isSelected ? (
-                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-xs">
-                        <CheckCircle2 className="h-3.5 w-3.5" />
-                      </div>
-                    ) : (
-                      <div className="h-5 w-5 shrink-0 rounded-full border border-muted-foreground/30" />
+                <Fragment key={award.award}>
+                  <div
+                    className={cn(
+                      "relative overflow-hidden rounded-[1.35rem] border bg-card p-3.5 transition-all sm:p-4",
+                      isExpanded
+                        ? "border-primary/50 bg-primary/[0.025] shadow-sm"
+                        : "border-border/80 hover:border-primary/35"
                     )}
-                  </div>
-
-                  <p className="mt-2 text-[11px] text-muted-foreground line-clamp-2 leading-relaxed">
-                    {p.description}
-                  </p>
-
-                  <div className="mt-3 flex w-full items-center justify-between border-t pt-2 text-[11px]">
-                    {isLive ? (
-                      <span className="inline-flex items-center gap-1 font-semibold text-emerald-600 dark:text-emerald-400">
-                        <Zap className="h-3 w-3 fill-emerald-500/20" />
-                        Live Practice
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 font-medium">
-                        <Clock className="h-3 w-3" />
-                        Verified Roadmap
-                      </span>
-                    )}
-
-                    <span
-                      className={cn(
-                        "font-semibold text-xs transition-colors",
-                        isSelected
-                          ? "text-primary"
-                          : "text-muted-foreground group-hover:text-foreground"
-                      )}
+                  >
+                    <button
+                      type="button"
+                      aria-expanded={isExpanded}
+                      aria-controls={`award-${award.award.replace(/\W+/g, "-").toLowerCase()}`}
+                      onClick={() => setExpandedAward(isExpanded ? null : award.award)}
+                      className="group flex min-h-[64px] w-full items-center justify-between gap-3 rounded-xl px-1 text-left outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                     >
-                      {isSelected ? "Selected ✓" : "Tap to choose"}
-                    </span>
-                  </div>
-                </button>
-              );
-            })
-          )}
-        </div>
+                      <span className="flex items-center gap-3">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-2xl transition-transform group-hover:scale-105">
+                          {award.icon}
+                        </span>
+                        <span>
+                          <span className="block text-sm font-bold text-foreground">{award.award}</span>
+                          <span className="mt-1 inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                            {selectedProgram?.level ?? "Choose your year"}
+                          </span>
+                        </span>
+                      </span>
+                      <span className={cn(
+                        "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border bg-background/70 text-muted-foreground transition-colors",
+                        isExpanded && "border-primary/30 text-primary"
+                      )}>
+                        <ChevronDown
+                          className={cn(
+                            "h-4 w-4 transition-transform",
+                            isExpanded && "rotate-180"
+                          )}
+                        />
+                      </span>
+                    </button>
 
-        {/* Step 2: Next Step / Action Deck (Revealed directly below course grid) */}
-        <div className="mt-6 rounded-2xl border-2 border-primary/30 bg-card p-4 sm:p-6 shadow-md transition-all">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-4">
-            <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-2xl shadow-xs">
-                {program.icon}
-              </span>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-primary">
-                    Step 2: Proceed
-                  </span>
-                  {hasLivePractice ? (
-                    <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-semibold">
-                      Live Practice Ready
-                    </Badge>
+                    {isExpanded && (
+                      <div
+                        id={`award-${award.award.replace(/\W+/g, "-").toLowerCase()}`}
+                        className="mt-3 grid grid-cols-3 gap-2 border-t border-border/70 pt-3"
+                      >
+                        {yearPrograms.map((p) => {
+                          const isSelected = p.slug === programSlug;
+                          const isAvailable = p.hasContent;
+                          return (
+                            <button
+                              key={p.slug}
+                              type="button"
+                              aria-pressed={isSelected}
+                              onClick={() => handleSelectProgram(p.slug)}
+                              className={cn(
+                                "flex min-h-12 flex-col items-center justify-center rounded-xl border px-1.5 py-2 text-center text-xs font-semibold transition-all active:scale-[0.97]",
+                                isSelected && isAvailable
+                                  ? "border-primary bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/15"
+                                  : isSelected
+                                    ? "border-amber-500/50 bg-amber-500/10 text-amber-700 dark:text-amber-300"
+                                    : "border-border bg-muted/40 text-muted-foreground hover:border-primary/50 hover:bg-background hover:text-foreground"
+                              )}
+                            >
+                              <span>{p.level || p.shortLabel}</span>
+                              <span className={cn(
+                                "mt-0.5 text-[9px] font-medium",
+                                isAvailable ? "opacity-70" : "text-amber-600 dark:text-amber-300"
+                              )}>
+                                {isSelected ? "Selected" : isAvailable ? "Available" : "Coming soon"}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
+                    {isExpanded && selectedProgram && renderProgramAction(selectedProgram)}
+                  </div>
+                  {standalonePrograms.map((p) => {
+                    const isSelected = p.slug === programSlug;
+                    return (
+                      <button
+                        key={p.slug}
+                        type="button"
+                        aria-pressed={isSelected}
+                        onClick={() => handleSelectProgram(p.slug)}
+                        className={cn(
+                          "group relative flex min-h-[116px] flex-col justify-between rounded-2xl border p-4 text-left transition-all active:scale-[0.99]",
+                          isSelected
+                            ? "border-primary bg-primary/[0.08] shadow-sm ring-2 ring-primary/25"
+                            : "border-border/80 bg-card hover:border-primary/50 hover:bg-muted/30"
+                        )}
+                      >
+                        <div className="flex w-full items-start justify-between gap-2">
+                          <div className="flex items-center gap-3">
+                            <span className="text-2xl transition-transform group-hover:scale-110">{p.icon}</span>
+                            <div>
+                              <h3 className="font-bold text-sm text-foreground">{p.name}</h3>
+                              <p className="text-[11px] text-muted-foreground line-clamp-1">{p.award}</p>
+                            </div>
+                          </div>
+                          {isSelected ? (
+                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-xs">
+                              <CheckCircle2 className="h-3.5 w-3.5" />
+                            </div>
+                          ) : (
+                            <div className="h-5 w-5 shrink-0 rounded-full border border-muted-foreground/30" />
+                          )}
+                        </div>
+                        <div className="mt-3 flex w-full items-center justify-end border-t pt-2.5 text-[11px]">
+                          <span className={cn("font-semibold text-xs transition-colors", isSelected ? "text-primary" : "text-muted-foreground group-hover:text-foreground")}>
+                            {isSelected ? "Selected" : "Choose"}
+                          </span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </Fragment>
+              );
+            }
+
+            const p = award.programs[0];
+            const isSelected = p.slug === programSlug;
+            return (
+              <button
+                key={p.slug}
+                type="button"
+                aria-pressed={isSelected}
+                onClick={() => handleSelectProgram(p.slug)}
+                className={cn(
+                  "group relative flex min-h-[116px] flex-col justify-between rounded-2xl border p-4 text-left transition-all active:scale-[0.99]",
+                  isSelected
+                    ? "border-primary bg-primary/[0.08] shadow-sm ring-2 ring-primary/25"
+                    : "border-border/80 bg-card hover:border-primary/50 hover:bg-muted/30"
+                )}
+              >
+                <div className="flex w-full items-start justify-between gap-2">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl transition-transform group-hover:scale-110">{p.icon}</span>
+                    <div>
+                      <h3 className="font-bold text-sm text-foreground">{p.name}</h3>
+                      <p className="text-[11px] text-muted-foreground line-clamp-1">{p.award}</p>
+                    </div>
+                  </div>
+                  {isSelected ? (
+                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-xs">
+                      <CheckCircle2 className="h-3.5 w-3.5" />
+                    </div>
                   ) : (
-                    <Badge variant="outline" className="border-amber-500/40 text-amber-600 dark:text-amber-400 text-[10px] font-semibold">
-                      Curriculum Blueprint Live
-                    </Badge>
+                    <div className="h-5 w-5 shrink-0 rounded-full border border-muted-foreground/30" />
                   )}
                 </div>
-                <h2 className="mt-1 text-base sm:text-lg font-bold text-foreground">
-                  {program.name} {program.level ? `(${program.level})` : ""}
-                </h2>
-                <p className="text-xs text-muted-foreground">
-                  {hasLivePractice
-                    ? `${questionCount}+ board questions available with explanations across 8 official subjects.`
-                    : `${previewData?.overviewSummary || "Official syllabus outline, curriculum verification pipeline, and unit breakdown."}`}
-                </p>
-              </div>
-            </div>
-
-            {/* Further Step Action Buttons */}
-            <div className="flex flex-wrap items-center gap-2 sm:justify-end shrink-0">
-              {user ? (
-                <>
-                  <Link href="/dashboard" className="w-full sm:w-auto">
-                    <Button size="default" className="w-full gap-2 font-bold shadow-sm">
-                      <Sparkles className="h-4 w-4" />
-                      Open My Dashboard
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </Link>
-
-                  {hasLivePractice && (
-                    <Link href="/quiz" className="w-full sm:w-auto">
-                      <Button size="default" variant="outline" className="w-full gap-1.5 font-semibold">
-                        <Brain className="h-4 w-4 text-primary" />
-                        Practice MCQs
-                      </Button>
-                    </Link>
-                  )}
-
-                  <Link href={`/programs/${programSlug}`} className="w-full sm:w-auto">
-                    <Button size="default" variant="ghost" className="w-full gap-1.5 text-xs text-muted-foreground">
-                      <BookOpen className="h-3.5 w-3.5" />
-                      View Syllabus
-                    </Button>
-                  </Link>
-                </>
-              ) : (
-                <>
-                  {hasLivePractice ? (
-                    <>
-                      <Link href="/quiz" className="w-full sm:w-auto">
-                        <Button size="default" className="w-full gap-2 font-bold shadow-sm">
-                          <Zap className="h-4 w-4" />
-                          Start Free Practice Now
-                          <ArrowRight className="h-4 w-4" />
-                        </Button>
-                      </Link>
-
-                      <Link href={`/auth/register?program=${programSlug}`} className="w-full sm:w-auto">
-                        <Button size="default" variant="outline" className="w-full gap-1.5 font-semibold">
-                          <GraduationCap className="h-4 w-4 text-primary" />
-                          Enroll / Create Account
-                        </Button>
-                      </Link>
-
-                      <Link href={`/auth/login?program=${programSlug}`} className="w-full sm:w-auto">
-                        <Button size="default" variant="ghost" className="w-full text-xs text-muted-foreground">
-                          Sign In
-                        </Button>
-                      </Link>
-                    </>
-                  ) : (
-                    <>
-                      <Link href={`/programs/${programSlug}`} className="w-full sm:w-auto">
-                        <Button size="default" className="w-full gap-2 font-bold shadow-sm">
-                          <BookOpen className="h-4 w-4" />
-                          View Verified Curriculum Roadmap
-                          <ArrowRight className="h-4 w-4" />
-                        </Button>
-                      </Link>
-
-                      <Link href={`/auth/register?program=${programSlug}`} className="w-full sm:w-auto">
-                        <Button size="default" variant="outline" className="w-full gap-1.5 font-semibold">
-                          <GraduationCap className="h-4 w-4 text-primary" />
-                          Register for {program.shortLabel}
-                        </Button>
-                      </Link>
-                    </>
-                  )}
-                </>
-              )}
-            </div>
-          </div>
-
-          {/* Quick Subjects Row / Blueprint Preview */}
-          <div className="pt-3">
-            <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
-              <span className="font-semibold uppercase tracking-wider text-[10px] text-muted-foreground">
-                {hasLivePractice ? "Subjects in this curriculum (tap to practice):" : "Official Curriculum Units:"}
-              </span>
-              <Link href={`/programs/${programSlug}`} className="text-primary hover:underline text-xs font-medium inline-flex items-center gap-1">
-                Explore Full Syllabus
-                <ChevronRight className="h-3 w-3" />
-              </Link>
-            </div>
-
-            {hasLivePractice ? (
-              <div className="flex flex-wrap gap-1.5">
-                {liveSubjects.map((sub) => (
-                  <Link
-                    key={sub.slug}
-                    href={`/quiz?subject=${sub.slug}`}
-                    className="inline-flex items-center gap-1.5 rounded-lg border bg-muted/30 px-2.5 py-1 text-xs font-medium hover:border-primary/40 hover:bg-card transition-all"
-                  >
-                    <span>{sub.icon}</span>
-                    <span>{sub.name}</span>
-                    <span className="text-[10px] text-muted-foreground font-normal">
-                      ({sub.units.length} units)
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            ) : (
-              <div className="flex flex-wrap gap-1.5">
-                {previewData?.subjects.slice(0, 5).map((sub) => (
-                  <Link
-                    key={sub.name}
-                    href={`/programs/${programSlug}`}
-                    className="inline-flex items-center gap-1.5 rounded-lg border bg-muted/20 px-2.5 py-1 text-xs text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all"
-                  >
-                    <span>{sub.icon}</span>
-                    <span>{sub.name}</span>
-                    <span className="text-[10px] text-primary font-semibold">
-                      ({sub.units.length} units)
-                    </span>
-                  </Link>
-                ))}
-                {(previewData?.subjects.length || 0) > 5 && (
-                  <Link
-                    href={`/programs/${programSlug}`}
-                    className="inline-flex items-center rounded-lg border border-dashed px-2.5 py-1 text-xs text-muted-foreground hover:text-primary transition-all"
-                  >
-                    +{(previewData?.subjects.length || 0) - 5} more subjects
-                  </Link>
-                )}
-              </div>
-            )}
-          </div>
+                <div className="mt-3 flex w-full items-center justify-end border-t pt-2.5 text-[11px]">
+                  <span className={cn("font-semibold text-xs transition-colors", isSelected ? "text-primary" : "text-muted-foreground group-hover:text-foreground")}>
+                    {isSelected ? "Selected" : "Choose"}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
         </div>
 
       </div>

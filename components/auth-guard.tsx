@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
+import { AppLoading } from "@/components/app-state";
 
 export function AuthGuard({ children }: { children: React.ReactNode }) {
   const { user, isLoading } = useAuth();
   const router = useRouter();
-  const [authorized, setAuthorized] = useState(false);
   const [redirecting, setRedirecting] = useState(false);
 
   useEffect(() => {
@@ -23,30 +23,15 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
       return () => clearTimeout(timer);
     }
 
-    setAuthorized(true);
   }, [user, isLoading, router]);
 
   // Show loading while auth is resolving
-  if (isLoading || (!authorized && !redirecting)) {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="text-center">
-          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-          <p className="text-sm text-muted-foreground">Loading...</p>
-        </div>
-      </div>
-    );
+  if (isLoading || (!user && !redirecting)) {
+    return <AppLoading label="Checking your account" />;
   }
 
   if (redirecting && !user) {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="text-center">
-          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-          <p className="text-sm text-muted-foreground">Redirecting to login...</p>
-        </div>
-      </div>
-    );
+    return <AppLoading label="Taking you to sign in" />;
   }
 
   return <>{children}</>;

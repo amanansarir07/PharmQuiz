@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { useActiveProgram } from "@/lib/program";
 import { useAuth } from "@/lib/auth";
 import {
@@ -19,11 +18,9 @@ import {
   Atom,
   Laptop,
   Briefcase,
-  Layers,
   ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 type BoardType = "ctevt" | "plus-two";
@@ -193,16 +190,22 @@ export function StudyFunnel({ id }: { id?: string }) {
     }
   };
 
-  // Launch active curriculum (d-pharm-y2 or d-pharm-y3 or specified slug)
+  // Launch the selected curriculum or fall back to the chosen year slug.
   const handleLaunchActive = (
     destination: "dashboard" | "register",
     explicitSlug?: string
   ) => {
     const activeSlug =
       explicitSlug ||
-      (state.ctevtProgram === "d-pharm" && state.ctevtYear === "y3"
-        ? "d-pharm-y3"
-        : "d-pharm-y2");
+      (state.ctevtYear === "y1"
+        ? ({
+            "c-pharm": "c-pharm",
+            "pcl-nursing": "pcl-nursing",
+            "health-assistant": "health-assistant",
+            "d-physiotherapy": "d-physiotherapy",
+            cmlt: "cmlt",
+          }[state.ctevtProgram ?? ""] ?? "d-pharm-y1")
+        : `${state.ctevtProgram ?? "d-pharm"}-${state.ctevtYear ?? "y2"}`);
     setProgramSlug(activeSlug);
     if (destination === "register") {
       router.push(`/auth/register?program=${activeSlug}`);

@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { BarChart3, TrendingUp, Target, Flame, BookOpen, AlertTriangle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 import { calculateStats } from "@/lib/stats";
@@ -13,6 +14,7 @@ import { getSubjectName } from "@/data/registry";
 import type { UserStats } from "@/lib/stats";
 import { useActiveProgram } from "@/lib/program";
 import { resolveResultProgram } from "@/lib/result-program";
+import { AppEmpty, AppError, AppLoading } from "@/components/app-state";
 import { supabase } from "@/lib/supabase/client";
 import {
   BarChart,
@@ -32,12 +34,12 @@ const COLORS = ["#2563eb", "#dc2626", "#16a34a", "#9333ea", "#ea580c", "#0891b2"
 
 export default function AnalyticsPage() {
   const [stats, setStats] = useState<UserStats | null>(null);
-  const [mounted, setMounted] = useState(false);
   const [quizHistory, setQuizHistory] = useState<{ quiz: number; score: number }[]>([]);
+  const [loadError, setLoadError] = useState(false);
   const { programSlug, program } = useActiveProgram();
+  const router = useRouter();
 
   useEffect(() => {
-    setMounted(true);
     refreshStats();
   }, [programSlug]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -55,6 +57,7 @@ export default function AnalyticsPage() {
   }, [programSlug]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function refreshStats() {
+    setLoadError(false);
     try {
       const { data: { user } } = await supabase.auth.getUser();
       const userId = user?.id;
@@ -114,6 +117,7 @@ export default function AnalyticsPage() {
       setQuizHistory(history);
     } catch (err) {
       console.error("Error refreshing analytics:", err);
+      setLoadError(true);
       // Still try localStorage
       if (typeof window !== "undefined") {
         setQuizHistory(getHistoryFromLocalStorage());
@@ -122,22 +126,39 @@ export default function AnalyticsPage() {
   }
 
   function getHistoryFromLocalStorage(): { quiz: number; score: number }[] {
-    const allResults: any[] = [];
+    type LocalResult = {
+      config?: {
+        program?: string;
+        subject?: string;
+        completedAt?: string;
+      };
+      answers: { isCorrect?: boolean }[];
+      questions: unknown[];
+    };
+    const allResults: LocalResult[] = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (key && key.startsWith("quiz-results-")) {
         try {
-          const raw = JSON.parse(localStorage.getItem(key) || "{}");
+          const raw: unknown = JSON.parse(localStorage.getItem(key) || "{}");
+          if (
+            !raw ||
+            typeof raw !== "object" ||
+            !("answers" in raw) ||
+            !Array.isArray(raw.answers) ||
+            !("questions" in raw) ||
+            !Array.isArray(raw.questions)
+          ) {
+            continue;
+          }
+          const result = raw as LocalResult;
           // Older results predate the programme field — resolve it from the
           // subject so previously-saved practice still charts.
           if (
-            raw &&
-            raw.answers &&
-            raw.questions &&
-            resolveResultProgram(raw.config?.program, raw.config?.subject || "") ===
+            resolveResultProgram(result.config?.program, result.config?.subject || "") ===
               programSlug
           ) {
-            allResults.push(raw);
+            allResults.push(result);
           }
         } catch {
           // skip
@@ -155,7 +176,7 @@ export default function AnalyticsPage() {
     });
 
     return allResults.map((result, i) => {
-      const correct = result.answers.filter((a: any) => a.isCorrect).length;
+      const correct = result.answers.filter((a) => a.isCorrect).length;
       const total = result.questions.length;
       return {
         quiz: i + 1,
@@ -198,17 +219,21 @@ export default function AnalyticsPage() {
         </p>
       </div>
 
-      {!mounted ? (
-        <div className="text-center py-20 text-muted-foreground">Loading analytics...</div>
+      {stats === null ? (
+        <AppLoading label="Loading your analytics" />
+      ) : loadError ? (
+        <AppError
+          title="Analytics unavailable"
+          description="We could not load your progress data. Please try again."
+          onRetry={refreshStats}
+        />
       ) : s.quizzesTaken === 0 ? (
-        <div className="text-center py-20">
-          <BarChart3 className="h-16 w-16 mx-auto text-muted-foreground/40 mb-4" />
-          <h2 className="text-xl font-semibold mb-2">No Data Yet</h2>
-          <p className="text-muted-foreground mb-6">Complete your first MCQ session to see analytics!</p>
-          <Link href="/quiz" className={buttonVariants()}>
-            Start MCQs
-          </Link>
-        </div>
+        <AppEmpty
+          title="No analytics yet"
+          description="Complete your first MCQ session to see accuracy, streaks, and weak areas."
+          action="Start MCQs"
+          onAction={() => router.push("/quiz")}
+        />
       ) : (
         <>
           {/* Stats Cards */}
@@ -304,7 +329,7 @@ export default function AnalyticsPage() {
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="quiz" label={{ value: "MCQ #", position: "bottom", offset: -5 }} />
                         <YAxis domain={[0, 100]} />
-                        <Tooltip formatter={(value: any) => [`${value}%`, "Score"]} />
+                        <Tooltip formatter={(value: unknown) => [`${String(value)}%`, "Score"]} />
                         <Line type="monotone" dataKey="score" stroke="#2563eb" strokeWidth={2} dot={{ r: 4 }} />
                       </LineChart>
                     </ResponsiveContainer>
