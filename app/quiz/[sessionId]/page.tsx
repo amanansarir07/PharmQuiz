@@ -56,6 +56,7 @@ function firstSubjectSlug(slug?: string | null): string {
 
 type QuizConfig = {
   mode?: "mock" | "mistakes" | string;
+  title?: string;
   subject?: string;
   program?: string;
   timeLimit?: number | null;
@@ -493,7 +494,7 @@ export default function ActiveQuizPage({
   const markedOnlyCount = markedForReview.size - answeredMarkedCount;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-5xl px-4 pb-28 pt-4 sm:px-6 sm:pb-8 sm:pt-6">
       {/* Resumed from crash banner */}
       {showResumedBanner && (
         <div className="mb-4 rounded-lg border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950 p-3 text-sm text-green-700 dark:text-green-300 flex items-center gap-2">
@@ -503,8 +504,8 @@ export default function ActiveQuizPage({
       )}
 
       {/* Top Bar */}
-      <div className="sticky top-0 z-30 -mx-4 mb-4 flex items-center justify-between gap-3 border-b bg-background/95 px-4 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/80 sm:static sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-0">
-        <div className="flex items-center gap-2">
+      <div className="sticky top-0 z-30 -mx-4 mb-4 flex items-center justify-between gap-2 border-b bg-background/95 px-4 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/80 sm:static sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-0">
+        <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
           <Button
             variant="ghost"
             size="sm"
@@ -515,8 +516,8 @@ export default function ActiveQuizPage({
             Exit
           </Button>
           <div className="h-4 w-px bg-border hidden sm:block" />
-          <h1 className="text-sm font-bold sm:text-base">
-            {isMock ? "Mock Test" : "MCQ"} {currentIndex + 1} / {questions.length}
+          <h1 className="max-w-[8rem] truncate text-sm font-bold sm:max-w-none sm:text-base">
+            {isMock ? quizConfig?.title || "Mock exam" : "Practice"} <span className="text-primary">{currentIndex + 1}/{questions.length}</span>
           </h1>
           {isMock && currentQuestion.subjectName ? (
             <Badge variant="secondary" className="gap-1 hidden sm:inline-flex">
@@ -529,7 +530,7 @@ export default function ActiveQuizPage({
             </Badge>
           )}
         </div>
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-3">
           {timeLeft !== null && (
             <div className={`flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs sm:text-sm font-bold border ${timeLeft < 300 ? "border-red-500/40 bg-red-500/10 text-red-600 dark:text-red-400" : "bg-card text-foreground"}`}>
               <Clock className="h-3.5 w-3.5" />
@@ -543,7 +544,7 @@ export default function ActiveQuizPage({
             onClick={() => setShowPalette((s) => !s)}
           >
             <LayoutGrid className="mr-1 h-3.5 w-3.5" />
-            {showPalette ? "Hide Grid" : "Palette"}
+            <span className="hidden sm:inline">{showPalette ? "Hide Grid" : "Palette"}</span>
           </Button>
           <Button
             size="sm"
@@ -551,8 +552,8 @@ export default function ActiveQuizPage({
             className="text-xs font-semibold"
             onClick={() => setShowSubmitConfirm(true)}
           >
-            <Send className="mr-1.5 h-3.5 w-3.5" />
-            Finish
+            <Send className="h-3.5 w-3.5 sm:mr-1.5" />
+            <span className="hidden sm:inline">Finish</span>
           </Button>
         </div>
       </div>
@@ -573,7 +574,7 @@ export default function ActiveQuizPage({
         <div>
           <Card className="overflow-hidden">
             <CardContent className="p-4 sm:p-6">
-              <p className="text-base font-medium leading-relaxed sm:text-lg">
+              <p className="text-base font-semibold leading-7 sm:text-lg sm:leading-8">
                 {currentIndex + 1}. {currentQuestion.question}
               </p>
               <div className="mt-6 space-y-3">
@@ -584,7 +585,7 @@ export default function ActiveQuizPage({
                     aria-pressed={answers[currentIndex] === i}
                     aria-label={`Option ${String.fromCharCode(65 + i)}: ${option}`}
                     onClick={() => handleAnswer(i)}
-                    className={`flex min-h-14 w-full items-center rounded-xl border p-3.5 text-left transition-all active:scale-[0.99] sm:p-4 ${
+                    className={`flex min-h-16 w-full items-center rounded-xl border p-3.5 text-left transition-all active:scale-[0.99] sm:p-4 ${
                       answers[currentIndex] === i
                         ? "border-primary bg-primary/5 ring-2 ring-primary/20"
                         : "hover:bg-muted/70"
@@ -643,7 +644,7 @@ export default function ActiveQuizPage({
           </Card>
 
           {/* Navigation Controls: Sticky bottom bar on mobile, static on desktop */}
-          <div className="sticky bottom-0 z-30 mt-6 -mx-4 -mb-6 border-t bg-background p-3.5 sm:static sm:mx-0 sm:mb-0 sm:border-0 sm:bg-transparent sm:p-0 shadow-sm sm:shadow-none">
+          <div className="fixed inset-x-0 bottom-0 z-30 border-t bg-background/98 p-3.5 pb-[calc(.875rem+env(safe-area-inset-bottom,0px))] shadow-sm sm:static sm:mt-6 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none">
             <div className="mb-2 flex items-center justify-center gap-3 text-[11px] text-muted-foreground sm:hidden">
               <span>{questions.length - answeredCount} unanswered</span>
               {markedForReview.size > 0 && (
@@ -663,7 +664,7 @@ export default function ActiveQuizPage({
               disabled={currentIndex === 0}
             >
               <ChevronLeft className="mr-1 h-4 w-4" />
-              <span className="hidden sm:inline">Previous</span>
+              <span>Previous</span>
             </Button>
             {answers[currentIndex] !== null && (
               <Button variant="ghost" size="sm" onClick={handleClear} className="text-xs text-muted-foreground" aria-label="Clear selected answer">

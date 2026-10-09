@@ -2,13 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Bookmark, Eye, EyeOff, Trash2, BookOpen } from "lucide-react";
+import { Bookmark, Eye, EyeOff, Trash2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useBookmarks } from "@/lib/bookmarks";
 import { findBankQuestion } from "@/lib/quiz-loader";
 import { getSubjectBySlug, getSubjectName } from "@/data/registry";
+import { LearningPage, PageHeading } from "@/components/learning-ui";
+import { AppLoading } from "@/components/app-state";
 
 export default function BookmarksPage() {
   const { bookmarks, mounted, removeBookmark } = useBookmarks();
@@ -63,26 +65,18 @@ export default function BookmarksPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
-          <Bookmark className="h-8 w-8" />
-          Bookmarks
-        </h1>
-        <p className="mt-2 text-muted-foreground">
-          Your saved questions for quick revision
-        </p>
-      </div>
+    <LearningPage className="max-w-5xl">
+      <PageHeading eyebrow="Study library" title="Saved questions" description="Questions you kept for quick revision." action={bookmarks.length > 0 && <Link href="/review" className="text-xs font-semibold text-primary hover:underline">Browse question bank</Link>} />
 
       {!mounted ? (
-        <div className="text-center py-20 text-muted-foreground">Loading bookmarks...</div>
+        <AppLoading label="Loading saved questions" />
       ) : bookmarks.length === 0 ? (
-        <Card>
-          <CardContent className="p-12 text-center">
+        <Card className="rounded-2xl">
+          <CardContent className="p-8 text-center sm:p-12">
             <Bookmark className="mx-auto h-12 w-12 text-muted-foreground/50" />
-            <p className="mt-4 text-muted-foreground">No bookmarked questions yet</p>
+            <p className="mt-4 font-semibold">No saved questions yet</p>
             <p className="text-sm text-muted-foreground mb-4">
-              Click the bookmark icon on any question in the Review section to save it here
+              Save useful questions from the Question Bank and find them here.
             </p>
             <Link href="/review" className={buttonVariants()}>
               Browse Questions
@@ -94,15 +88,15 @@ export default function BookmarksPage() {
           <p className="mb-4 text-sm text-muted-foreground">
             {bookmarks.length} bookmarked question{bookmarks.length !== 1 ? "s" : ""}
           </p>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {enrichedBookmarks.map((q) => {
               const subjectName = getSubjectName(q.subjectSlug);
               const subject = q.subjectSlug ? getSubjectBySlug(q.subjectSlug) : undefined;
               const unitName = subject?.units.find((u) => u.id === q.unitId)?.name || "";
 
               return (
-                <Card key={q.id}>
-                  <CardContent className="p-5">
+                <Card key={q.id} className="rounded-2xl">
+                  <CardContent className="p-4 sm:p-5">
                     <div className="flex items-start justify-between gap-3 mb-3">
                       <div className="flex items-center gap-2 flex-wrap">
                         <Badge variant="secondary">{subjectName}</Badge>
@@ -124,6 +118,7 @@ export default function BookmarksPage() {
                           variant="ghost"
                           size="sm"
                           onClick={() => toggleAnswer(q.id)}
+                          aria-label={showAnswers.has(q.id) ? "Hide answer" : "Reveal answer"}
                         >
                           {showAnswers.has(q.id) ? (
                             <EyeOff className="h-4 w-4" />
@@ -135,12 +130,13 @@ export default function BookmarksPage() {
                           variant="ghost"
                           size="sm"
                           onClick={() => removeBookmark(q.id)}
+                          aria-label="Remove saved question"
                         >
                           <Trash2 className="h-4 w-4 text-red-500" />
                         </Button>
                       </div>
                     </div>
-                    <p className="font-medium">{q.questionText}</p>
+                    <p className="text-sm font-semibold leading-6 sm:text-base">{q.questionText}</p>
                     <div className="mt-3 grid gap-2 sm:grid-cols-2">
                       {q.options.map((opt, i) => (
                         <div
@@ -170,6 +166,6 @@ export default function BookmarksPage() {
           </div>
         </>
       )}
-    </div>
+    </LearningPage>
   );
 }

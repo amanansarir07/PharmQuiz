@@ -5,7 +5,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { BottomNav } from "@/components/layout/bottom-nav";
-import { PageTransition } from "@/components/page-transition";
+import { AppMain } from "@/components/layout/app-main";
 import { Providers } from "@/components/providers";
 import { SITE_URL } from "@/lib/site";
 
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#121212",
+  themeColor: "#1555f0",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -81,9 +81,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans">
         <Providers>
           <Navbar />
-          <main className="flex-1 pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
-            <PageTransition>{children}</PageTransition>
-          </main>
+          <AppMain>{children}</AppMain>
           <Footer />
           <BottomNav />
           <Analytics />

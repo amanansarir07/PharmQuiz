@@ -14,6 +14,7 @@ import {
 } from "@/lib/constants";
 import { safeSetItem, pruneExpiredScratchKeys } from "@/lib/storage";
 import { useActiveProgram } from "@/lib/program";
+import { useAuth } from "@/lib/auth";
 import { AppLoading } from "@/components/app-state";
 import {
   fetchUpcomingExams,
@@ -49,7 +50,7 @@ function QuizSetupInner() {
   const [selectedSubject, setSelectedSubject] = useState<string>("");
   const [selectedUnits, setSelectedUnits] = useState<string[]>([]);
   const [difficulty, setDifficulty] = useState<string>("mixed");
-  const [numQuestions, setNumQuestions] = useState<number>(20);
+  const [numQuestions, setNumQuestions] = useState<number>(10);
   const [timeLimit, setTimeLimit] = useState<number | null>(null);
   const [negativeMarking, setNegativeMarking] = useState(false);
   const [revisionMode, setRevisionMode] = useState(false);
@@ -65,6 +66,7 @@ function QuizSetupInner() {
   const [now, setNow] = useState(() => new Date());
 
   const { programSlug, program } = useActiveProgram();
+  const { user } = useAuth();
   const subjects = useMemo(
     () => getSubjectsForProgram(programSlug),
     [programSlug]
@@ -74,7 +76,11 @@ function QuizSetupInner() {
     pruneExpiredScratchKeys();
     const subjectParam = searchParams.get("subject");
     if (subjectParam && subjects.find((s) => s.slug === subjectParam)) {
-      const frame = requestAnimationFrame(() => setSelectedSubject(subjectParam));
+      const unitParam = searchParams.get("unit");
+      const frame = requestAnimationFrame(() => {
+        setSelectedSubject(subjectParam);
+        if (unitParam && subjects.find((s) => s.slug === subjectParam)?.units.some((unit) => unit.id === unitParam)) setSelectedUnits([unitParam]);
+      });
       return () => cancelAnimationFrame(frame);
     }
   }, [searchParams, subjects]);
@@ -144,13 +150,13 @@ function QuizSetupInner() {
     } else if (nextPreset === "subject") {
       setSelectedUnits(subject?.units.map((unit) => unit.id) ?? []);
       setDifficulty("mixed");
-      setNumQuestions(20);
+      setNumQuestions(user ? 20 : 10);
       setTimeLimit(null);
       setNegativeMarking(false);
       setRevisionMode(false);
     } else {
       setDifficulty("mixed");
-      setNumQuestions(20);
+      setNumQuestions(user ? 20 : 10);
       setTimeLimit(null);
       setNegativeMarking(false);
       setRevisionMode(true);
@@ -185,7 +191,7 @@ function QuizSetupInner() {
       program: programSlug,
       units: selectedUnits.length > 0 ? selectedUnits : subject.units.map((u) => u.id),
       difficulty,
-      numQuestions,
+      numQuestions: user ? numQuestions : Math.min(numQuestions, 10),
       timeLimit,
       negativeMarking,
       revisionMode,
@@ -221,6 +227,7 @@ function QuizSetupInner() {
   };
 
   const startScheduledMock = (exam: MockExam) => {
+    if (!user) return;
     const sessionId = crypto.randomUUID();
     safeSetItem(
       `quiz-config-${sessionId}`,
@@ -235,7 +242,7 @@ function QuizSetupInner() {
   const upcomingExam = liveExam ? null : exams[0] || null;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+    <div className="mx-auto max-w-3xl px-4 pb-10 pt-6 sm:px-6 sm:pt-9">
       <div className="mb-6">
         <div className="mb-4 flex items-center justify-between gap-3 rounded-xl border bg-card p-3">
           <div className="flex min-w-0 items-center gap-2">
@@ -251,17 +258,15 @@ function QuizSetupInner() {
             Change
           </Button>
         </div>
-        <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2 sm:text-3xl">
-          <Settings className="h-8 w-8" />
-          Practice
-        </h1>
+        <p className="text-xs font-bold uppercase tracking-wider text-primary">Custom practice</p>
+        <h1 className="mt-1 text-[1.65rem] font-bold tracking-tight sm:text-3xl">Set up your practice</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Start in seconds. No account required.
         </p>
       </div>
 
-      <div className="space-y-6">
-        <Card className="overflow-hidden border-primary/30 bg-gradient-to-br from-primary/10 via-primary/[0.04] to-background">
+      <div className="space-y-4">
+        <Card className="overflow-hidden border-primary/25 bg-primary/5">
           <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <Badge className="mb-2 gap-1 bg-primary text-primary-foreground">
@@ -279,7 +284,7 @@ function QuizSetupInner() {
           </CardContent>
         </Card>
 
-        <Card className="border-primary/20 bg-primary/[0.03]">
+        <Card className="border-border bg-card">
           <CardHeader className="pb-3">
             <CardTitle className="text-lg">Choose how you want to practise</CardTitle>
             <p className="text-sm text-muted-foreground">
@@ -362,13 +367,13 @@ function QuizSetupInner() {
               <Button disabled className="shrink-0">
                 Checking schedule...
               </Button>
-            ) : liveExam ? (
+            ) : liveExam && user ? (
               <Button onClick={() => startScheduledMock(liveExam)} className="shrink-0">
                 Start Live Mock
               </Button>
-            ) : upcomingExam ? (
+            ) : liveExam || upcomingExam ? (
               <Button disabled className="shrink-0">
-                Starts {formatInKathmandu(upcomingExam.starts_at, "short")}
+                {upcomingExam ? `Starts ${formatInKathmandu(upcomingExam.starts_at, "short")}` : "Sign in for scheduled mocks"}
               </Button>
             ) : (
               <Button onClick={() => router.push("/mock-test")} className="shrink-0">
@@ -510,8 +515,11 @@ function QuizSetupInner() {
               {QUIZ_QUESTION_OPTIONS.map((num) => (
                 <button
                   key={num}
+                  type="button"
+                  disabled={!user && num > 10}
+                  title={!user && num > 10 ? "Create a free account for longer sessions" : undefined}
                   onClick={() => setNumQuestions(num)}
-                  className={`flex-1 rounded-lg border p-3 text-center transition-all ${
+                  className={`flex-1 rounded-lg border p-3 text-center transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
                     numQuestions === num
                       ? "border-primary bg-primary/5 ring-1 ring-primary"
                       : "hover:bg-muted"
@@ -521,6 +529,7 @@ function QuizSetupInner() {
                 </button>
               ))}
             </div>
+            {!user && <p className="mt-3 text-xs text-muted-foreground">Guest sessions include up to 10 questions. <a href="/auth/register" className="font-semibold text-primary underline underline-offset-2">Create a free account</a> for longer practice.</p>}
           </CardContent>
         </Card>
 
@@ -593,18 +602,12 @@ function QuizSetupInner() {
         <div ref={startRef} />
         <Button
           size="lg"
-          className="w-full"
+          className="min-h-12 w-full rounded-xl font-semibold shadow-sm"
           onClick={startQuiz}
           disabled={!selectedSubject}
         >
           <Play className="mr-2 h-5 w-5" />
-          {preset === "quick"
-            ? "Start quick practice"
-            : preset === "chapter"
-              ? "Start chapter practice"
-              : preset === "subject"
-                ? "Start subject test"
-                : "Start revision"}
+          Start practice
         </Button>
       </div>
     </div>

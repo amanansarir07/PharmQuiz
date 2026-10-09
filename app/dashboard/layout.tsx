@@ -1,11 +1,13 @@
 "use client";
 
-import { AuthGuard } from "@/components/auth-guard";
+import { useAuth } from "@/lib/auth";
+import { GuestHome } from "@/components/guest-home";
 
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <AuthGuard>{children}</AuthGuard>;
+  const { user } = useAuth();
+  return user ? <>{children}</> : <GuestHome />;
 }

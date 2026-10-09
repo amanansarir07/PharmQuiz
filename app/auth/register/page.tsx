@@ -52,12 +52,15 @@ function RegisterForm() {
       const stored =
         localStorage.getItem("bujh-pending-program") ||
         localStorage.getItem("bujh-active-program");
-      if (stored && getProgram(stored)) {
-        setProgramSlug(stored);
-        setIsChangingProgram(false);
-      } else {
-        setIsChangingProgram(true);
-      }
+      const frame = requestAnimationFrame(() => {
+        if (stored && getProgram(stored)) {
+          setProgramSlug(stored);
+          setIsChangingProgram(false);
+        } else {
+          setIsChangingProgram(true);
+        }
+      });
+      return () => cancelAnimationFrame(frame);
     }
   }, [programSlug]);
 
@@ -134,7 +137,7 @@ function RegisterForm() {
 
   return (
     <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-8 sm:py-12">
-      <Card className="w-full max-w-lg shadow-md">
+      <Card className="w-full max-w-lg rounded-2xl border-primary/10 shadow-sm">
         <CardHeader className="text-center pb-4">
           <Image src="/icons/icon-192.png" alt="Bujh logo" width={192} height={192} className="mx-auto mb-3 h-14 w-14" />
           <CardTitle className="text-2xl font-bold tracking-tight">Create your account</CardTitle>
@@ -143,7 +146,7 @@ function RegisterForm() {
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 pb-5">
             {error && (
               <div className="rounded-xl border border-red-200 bg-red-50 dark:border-red-900/50 dark:bg-red-950/40 p-3 text-sm text-red-600 dark:text-red-400">
                 {error}
@@ -377,6 +380,7 @@ function RegisterForm() {
                 Sign in instead
               </Link>
             </p>
+            <Link href="/dashboard" className="text-center text-sm font-medium text-primary hover:underline">Continue as guest</Link>
           </CardFooter>
         </form>
       </Card>

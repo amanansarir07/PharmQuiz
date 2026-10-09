@@ -38,11 +38,11 @@ export default function ForgotPasswordPage() {
 
   return (
     <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-12">
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-md rounded-2xl border-primary/10 shadow-sm">
         <CardHeader className="text-center">
           <Image src="/icons/icon-192.png" alt="Bujh logo" width={192} height={192} className="mx-auto mb-4 h-16 w-16" />
           <CardTitle className="text-2xl font-bold">Reset Password</CardTitle>
-          <CardDescription>We'll send you a link to reset your password</CardDescription>
+          <CardDescription>We&apos;ll send you a link to reset your password.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           {sent ? (
@@ -68,7 +68,7 @@ export default function ForgotPasswordPage() {
                   <Input id="email" type="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className="pl-10" required />
                 </div>
               </div>
-              <Button type="submit" className="w-full" disabled={loading}>{loading ? "Sending..." : "Send reset link"}</Button>
+              <Button type="submit" className="min-h-11 w-full rounded-xl" disabled={loading}>{loading ? "Sending..." : "Send reset link"}</Button>
               <div className="text-center"><Link href="/auth/login" className="text-sm text-muted-foreground hover:text-foreground hover:underline"><ArrowLeft className="inline h-3 w-3 mr-1" /> Back to login</Link></div>
             </form>
           )}

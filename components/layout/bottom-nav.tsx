@@ -2,19 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useAuth } from "@/lib/auth";
 import {
-  Compass,
+  House,
   BookOpen,
   Target,
-  Trophy,
-  User,
+  ChartNoAxesCombined,
+  Menu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function BottomNav() {
   const pathname = usePathname();
-  const { user } = useAuth();
 
   // Hide the bottom navigation bar during active quiz sessions to maintain 100% test immersion
   const isTakingQuiz =
@@ -22,17 +20,17 @@ export function BottomNav() {
     pathname.split("/").length === 3 &&
     !pathname.endsWith("/results");
 
-  if (isTakingQuiz) return null;
+  if (isTakingQuiz || pathname === "/" || pathname.startsWith("/auth/")) return null;
 
   const NAV_ITEMS = [
     {
       label: "Home",
-      href: user ? "/dashboard" : "/",
-      icon: Compass,
+      href: "/dashboard",
+      icon: House,
       match: (p: string) => p === "/" || p === "/dashboard",
     },
     {
-      label: "Syllabus",
+      label: "Study",
       href: "/subjects",
       icon: BookOpen,
       match: (p: string) =>
@@ -48,22 +46,23 @@ export function BottomNav() {
     },
     {
       label: "Progress",
-      href: "/leaderboard",
-      icon: Trophy,
-      match: (p: string) => p.startsWith("/leaderboard"),
+      href: "/analytics",
+      icon: ChartNoAxesCombined,
+      match: (p: string) => p.startsWith("/analytics") || p === "/history",
     },
     {
-      label: user ? "You" : "Account",
-      href: user ? "/profile" : "/auth/login",
-      icon: User,
+      label: "More",
+      href: "/more",
+      icon: Menu,
       match: (p: string) =>
+        p.startsWith("/more") ||
         p.startsWith("/profile") ||
-        p.startsWith("/auth") ||
+        p.startsWith("/settings") ||
+        p.startsWith("/mistakes") ||
         p === "/bookmarks" ||
         p === "/notes" ||
-        p === "/history" ||
         p === "/review" ||
-        p === "/analytics",
+        p === "/leaderboard",
     },
   ];
 

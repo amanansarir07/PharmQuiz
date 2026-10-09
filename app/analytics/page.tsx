@@ -3,22 +3,22 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BarChart3, TrendingUp, Target, Flame, BookOpen, AlertTriangle } from "lucide-react";
+import { TrendingUp, Target, Flame, BookOpen, AlertTriangle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 import { calculateStats } from "@/lib/stats";
+import { useAuth } from "@/lib/auth";
 import { getSubjectName } from "@/data/registry";
 import type { UserStats } from "@/lib/stats";
 import { useActiveProgram } from "@/lib/program";
 import { resolveResultProgram } from "@/lib/result-program";
 import { AppEmpty, AppError, AppLoading } from "@/components/app-state";
 import { supabase } from "@/lib/supabase/client";
+import { LearningPage, PageHeading, StatTile } from "@/components/learning-ui";
 import {
-  BarChart,
-  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -26,17 +26,15 @@ import {
   ResponsiveContainer,
   LineChart,
   Line,
-  Cell,
 
 } from "recharts";
-
-const COLORS = ["#2563eb", "#dc2626", "#16a34a", "#9333ea", "#ea580c", "#0891b2", "#ca8a04", "#be185d"];
 
 export default function AnalyticsPage() {
   const [stats, setStats] = useState<UserStats | null>(null);
   const [quizHistory, setQuizHistory] = useState<{ quiz: number; score: number }[]>([]);
   const [loadError, setLoadError] = useState(false);
   const { programSlug, program } = useActiveProgram();
+  const { user } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -58,8 +56,10 @@ export default function AnalyticsPage() {
 
   async function refreshStats() {
     setLoadError(false);
+    // Show device progress while the cloud report is refreshing.
+    void calculateStats(undefined, programSlug).then(setStats);
+    if (typeof window !== "undefined") setQuizHistory(getHistoryFromLocalStorage());
     try {
-      const { data: { user } } = await supabase.auth.getUser();
       const userId = user?.id;
 
       // Get stats for the active programme (with localStorage fallback built in)
@@ -188,10 +188,10 @@ export default function AnalyticsPage() {
   const s = stats || { quizzesTaken: 0, totalCorrect: 0, totalAttempted: 0, accuracy: 0, currentStreak: 0, totalScore: 0, subjectBreakdown: {} };
 
   // Build subject accuracy chart data
-  const subjectChartData = Object.entries(s.subjectBreakdown).map(([slug, data], i) => ({
+  const subjectChartData = Object.entries(s.subjectBreakdown).map(([slug, data]) => ({
     name: getSubjectName(slug),
     accuracy: data.accuracy,
-    color: COLORS[i % COLORS.length],
+    attempted: data.total,
   }));
 
   // Difficulty data - show empty state since we don't track per-difficulty stats yet
@@ -208,16 +208,8 @@ export default function AnalyticsPage() {
     }));
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
-          <BarChart3 className="h-8 w-8" />
-          Analytics
-        </h1>
-        <p className="mt-2 text-muted-foreground">
-          Track your progress in {program.name} and identify areas to improve
-        </p>
-      </div>
+    <LearningPage>
+      <PageHeading eyebrow={program.shortLabel} title="Your progress" description="See what you have learned and where to focus next." />
 
       {stats === null ? (
         <AppLoading label="Loading your analytics" />
@@ -237,7 +229,7 @@ export default function AnalyticsPage() {
       ) : (
         <>
           {/* Stats Cards */}
-          <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mb-7 grid grid-cols-2 gap-2 sm:grid-cols-3">
             {[
               {
                 icon: BookOpen,
@@ -268,24 +260,13 @@ export default function AnalyticsPage() {
                 color: "text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950",
               },
             ].map((stat) => (
-              <Card key={stat.label}>
-                <CardContent className="p-5">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-muted-foreground">{stat.label}</p>
-                      <p className="mt-1 text-3xl font-bold">{stat.value}</p>
-                      <p className="mt-1 text-xs text-muted-foreground">{stat.change}</p>
-                    </div>
-                    <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${stat.color}`}>
-                      <stat.icon className="h-6 w-6" />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <StatTile key={stat.label} label={stat.label} value={stat.value} detail={stat.change} tone={stat.label === "Accuracy" ? "green" : stat.label === "Current Streak" ? "amber" : "blue"} />
             ))}
+            <StatTile label="Incorrect answers" value={s.totalAttempted - s.totalCorrect} tone="red" />
+            <StatTile label="Subjects practised" value={Object.keys(s.subjectBreakdown).length} />
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-5 lg:grid-cols-2">
             {/* Subject Accuracy Bar Chart */}
             <Card>
               <CardHeader>
@@ -293,21 +274,7 @@ export default function AnalyticsPage() {
               </CardHeader>
               <CardContent>
                 {subjectChartData.length > 0 ? (
-                  <div className="h-[300px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={subjectChartData}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" tick={{ fontSize: 11 }} angle={-45} textAnchor="end" height={80} />
-                        <YAxis domain={[0, 100]} />
-                        <Tooltip />
-                        <Bar dataKey="accuracy" radius={[4, 4, 0, 0]}>
-                          {subjectChartData.map((entry, index) => (
-                            <Cell key={index} fill={entry.color} />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
+                  <div className="space-y-4">{subjectChartData.map((item) => <div key={item.name}><div className="mb-1 flex items-center justify-between gap-3 text-sm"><span className="min-w-0 truncate font-medium">{item.name}</span><span className="shrink-0 font-bold tabular-nums text-primary">{item.accuracy}%</span></div><Progress value={item.accuracy} className="h-2" /><p className="mt-1 text-[11px] text-muted-foreground">{item.attempted} questions attempted</p></div>)}</div>
                 ) : (
                   <div className="h-[300px] flex items-center justify-center text-muted-foreground text-sm">
                     Complete MCQs on different subjects to see accuracy
@@ -323,14 +290,14 @@ export default function AnalyticsPage() {
               </CardHeader>
               <CardContent>
                 {quizHistory.length > 1 ? (
-                  <div className="h-[300px]">
+                  <div className="h-[230px] sm:h-[280px]">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={quizHistory}>
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="quiz" label={{ value: "MCQ #", position: "bottom", offset: -5 }} />
-                        <YAxis domain={[0, 100]} />
+                        <XAxis dataKey="quiz" tick={{ fontSize: 10 }} tickLine={false} axisLine={false} minTickGap={20} />
+                        <YAxis domain={[0, 100]} width={28} tick={{ fontSize: 10 }} tickLine={false} axisLine={false} />
                         <Tooltip formatter={(value: unknown) => [`${String(value)}%`, "Score"]} />
-                        <Line type="monotone" dataKey="score" stroke="#2563eb" strokeWidth={2} dot={{ r: 4 }} />
+                        <Line type="monotone" dataKey="score" stroke="#1555f0" strokeWidth={2.5} dot={false} activeDot={{ r: 4 }} />
                       </LineChart>
                     </ResponsiveContainer>
                   </div>
@@ -385,6 +352,6 @@ export default function AnalyticsPage() {
           </div>
         </>
       )}
-    </div>
+    </LearningPage>
   );
 }

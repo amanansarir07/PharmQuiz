@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { History, ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import { getSubjectName } from "@/data/registry";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { useAuth } from "@/lib/auth";
 import { AppEmpty, AppError, AppLoading } from "@/components/app-state";
+import { LearningPage, PageHeading } from "@/components/learning-ui";
 
 export default function HistoryPage() {
   const { user } = useAuth();
@@ -25,8 +26,10 @@ export default function HistoryPage() {
         setLoadError(false);
       }
     });
+    // Device history is immediately available even when cloud sync is slow.
+    void getQuizHistory().then((entries) => { if (!cancelled) setHistory(entries); });
     getQuizHistory(user?.id)
-      .then(setHistory)
+      .then((entries) => { if (!cancelled) setHistory(entries); })
       .catch((error) => {
         console.error("Failed to load quiz history:", error);
         if (!cancelled) setLoadError(true);
@@ -40,7 +43,7 @@ export default function HistoryPage() {
   const formatDate = (iso: string) => {
     try {
       const d = new Date(iso);
-      return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+      return d.toLocaleDateString("en-NP", { timeZone: "Asia/Kathmandu", month: "short", day: "numeric", year: "numeric" });
     } catch { return iso; }
   };
 
@@ -57,14 +60,8 @@ export default function HistoryPage() {
   };
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
-          <History className="h-8 w-8" />
-          Quiz History
-        </h1>
-        <p className="mt-2 text-muted-foreground">All your past quiz sessions</p>
-      </div>
+    <LearningPage className="max-w-4xl">
+      <PageHeading eyebrow="Your learning record" title="Quiz history" description="Review past practice and mock attempts." />
 
       {!mounted ? (
         <AppLoading label="Loading your quiz history" />
@@ -83,7 +80,7 @@ export default function HistoryPage() {
         />
       ) : (
         <>
-          <div className="space-y-3">
+          <div className="space-y-2.5">
             {history.map((entry) => {
               const percentage = entry.total > 0 ? Math.round((entry.correct / entry.total) * 100) : 0;
               const clickable = entry.hasLocalDetail && entry.localSessionId;
@@ -91,18 +88,18 @@ export default function HistoryPage() {
                 <Card
                   key={entry.key}
                   onClick={() => clickable && router.push(`/quiz/${entry.localSessionId}/results`)}
-                  className={`transition-all hover:shadow-md ${clickable ? "cursor-pointer" : ""}`}
+                  className={`rounded-2xl transition-colors hover:border-primary/30 ${clickable ? "cursor-pointer" : ""}`}
                 >
-                  <CardContent className="p-4 flex items-center gap-4">
+                  <CardContent className="flex items-center gap-3 p-4">
                     <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10`}>
-                      <span className={`text-xl font-bold ${getScoreColor(percentage)}`}>{percentage}%</span>
+                      <span className={`text-base font-bold ${getScoreColor(percentage)}`}>{percentage}%</span>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <p className="font-medium text-sm truncate">{getSubjectName(entry.subject)}</p>
                         <Badge variant="outline" className="text-xs shrink-0">{entry.correct}/{entry.total}</Badge>
                       </div>
-                      <p className="text-xs text-muted-foreground mt-0.5">
+                      <p className="mt-0.5 text-xs text-muted-foreground">
                         {formatDate(entry.completedAt)}
                         {entry.timeTaken && <> · {formatTime(entry.timeTaken)}</>}
                         {!entry.hasLocalDetail && <span className="ml-2 text-muted-foreground/70">(summary — full review available on the device you took it on)</span>}
@@ -122,6 +119,6 @@ export default function HistoryPage() {
           </p>
         </>
       )}
-    </div>
+    </LearningPage>
   );
 }

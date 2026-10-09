@@ -9,7 +9,7 @@ import { useActiveProgram } from "@/lib/program";
 
 export function Footer() {
   const pathname = usePathname();
-  const { program, programSlug, isChosen } = useActiveProgram();
+  const { program, isChosen } = useActiveProgram();
 
   // Hide footer during active test sessions
   const isTakingQuiz =
@@ -23,7 +23,7 @@ export function Footer() {
     : program.name;
 
   return (
-    <footer className="border-t bg-muted/20">
+    <footer className="hidden border-t bg-muted/20 md:block">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <div className="flex flex-col items-center gap-6 text-center">
           {/* Logo & Brand */}

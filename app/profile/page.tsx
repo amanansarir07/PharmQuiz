@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { ProgramPicker } from "@/components/program-picker";
@@ -10,7 +9,9 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { User, Mail, Calendar, ArrowLeft, CheckCircle, GraduationCap, Lock, Eye, EyeOff, Trash2, LogOut, AlertTriangle, Loader2, ChevronDown, ChevronUp } from "lucide-react";
+import { Mail, Calendar, CheckCircle, GraduationCap, Lock, Eye, EyeOff, Trash2, LogOut, AlertTriangle, Loader2, ChevronDown, ChevronUp } from "lucide-react";
+import { LearningPage } from "@/components/learning-ui";
+import { ProfileOverview } from "@/components/profile-overview";
 
 export default function ProfilePage() {
   const { user, updateProfile, changePassword, deleteAccount, logout } = useAuth();
@@ -109,26 +110,15 @@ export default function ProfilePage() {
 
   const formatDate = (iso: string) => {
     try {
-      return new Date(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+      return new Date(iso).toLocaleDateString("en-NP", { timeZone: "Asia/Kathmandu", month: "long", day: "numeric", year: "numeric" });
     } catch { return iso; }
   };
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6">
-      <Link href="/dashboard" className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
-        <ArrowLeft className="h-4 w-4" />
-        Back to Dashboard
-      </Link>
-
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
-          <User className="h-8 w-8" />
-          Profile
-        </h1>
-        <p className="mt-2 text-muted-foreground">Manage your account settings</p>
-      </div>
-
-      <div className="space-y-6">
+    <LearningPage className="max-w-3xl">
+      <ProfileOverview />
+      <div id="account-settings" className="mt-8 space-y-4 scroll-mt-20">
+        <h2 className="text-lg font-bold">Account settings</h2>
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Edit Name</CardTitle>
@@ -252,7 +242,7 @@ export default function ProfilePage() {
               <div className="space-y-4">
                 <div className="rounded-lg bg-red-50 dark:bg-red-950 p-4 text-sm text-red-600 dark:text-red-400"><div className="flex items-start gap-2"><AlertTriangle className="h-5 w-5 mt-0.5 shrink-0" /><div><p className="font-semibold mb-1">Are you absolutely sure?</p><p>This will permanently delete your account, profile, quiz results, bookmarks, and notes. This cannot be undone.</p></div></div></div>
                 {deleteError && <div className="rounded-lg bg-red-50 dark:bg-red-950 p-3 text-sm text-red-600 dark:text-red-400">{deleteError}</div>}
-                <div className="space-y-2"><Label>Enter your password to confirm</Label><Input type={showDeletePassword ? "text" : "password"} value={deletePassword} onChange={(e) => setDeletePassword(e.target.value)} placeholder="Your password" /></div>
+                <div className="space-y-2"><Label>Enter your password to confirm</Label><div className="flex gap-2"><Input type={showDeletePassword ? "text" : "password"} value={deletePassword} onChange={(e) => setDeletePassword(e.target.value)} placeholder="Your password" /><Button type="button" variant="outline" onClick={() => setShowDeletePassword((value) => !value)}>{showDeletePassword ? "Hide" : "Show"}</Button></div></div>
                 <div className="flex items-center gap-3">
                   <Button variant="destructive" onClick={handleDeleteAccount} disabled={deleteLoading || !deletePassword}>{deleteLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Deleting...</> : <><Trash2 className="mr-2 h-4 w-4" /> Yes, Delete My Account</>}</Button>
                   <Button variant="outline" onClick={() => { setShowDeleteConfirm(false); setDeletePassword(""); setDeleteError(""); }}>Cancel</Button>
@@ -262,6 +252,6 @@ export default function ProfilePage() {
           </CardContent>}
         </Card>
       </div>
-    </div>
+    </LearningPage>
   );
 }

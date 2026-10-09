@@ -24,11 +24,12 @@ import {
   BookOpen,
   GraduationCap,
   History,
-  Sparkles,
+  Target,
 } from "lucide-react";
 
 const MORE_LINKS = [
-  { href: "/review", label: "Review Missed", icon: BookOpen },
+  { href: "/review", label: "Question Bank", icon: BookOpen },
+  { href: "/mistakes", label: "Mistakes Bank", icon: Target },
   { href: "/history", label: "Quiz History", icon: History },
   { href: "/bookmarks", label: "Saved Questions", icon: Bookmark },
   { href: "/notes", label: "Revision Notes", icon: StickyNote },
@@ -109,7 +110,7 @@ export function Navbar() {
   if (isTakingQuiz) return null;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/98 shadow-2xs">
+    <header className={cn("sticky top-0 z-50 w-full border-b border-border/70 bg-background/98 shadow-2xs", (pathname === "/" || pathname.startsWith("/auth/")) && "hidden md:block")}>
       <div className="mx-auto flex h-14 md:h-16 max-w-7xl items-center justify-between px-3.5 sm:px-6">
         
         {/* Mobile Left / Desktop Left */}
@@ -146,7 +147,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileProgramSheetOpen(true)}
-            className="flex items-center gap-1.5 rounded-full border border-border/80 bg-muted/60 px-2.5 py-1 text-xs font-semibold text-foreground shadow-2xs hover:bg-muted active:scale-95 transition-all max-w-[180px] app-interactive"
+            className="flex max-w-[120px] items-center gap-1.5 rounded-full border border-border/80 bg-muted/60 px-2.5 py-1 text-xs font-semibold text-foreground shadow-2xs transition-all hover:bg-muted active:scale-95 sm:max-w-[180px] app-interactive"
             title={`Active: ${programLabel} — Tap to switch`}
           >
             <span className="text-sm shrink-0">{program.icon}</span>

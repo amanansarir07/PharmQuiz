@@ -14,7 +14,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Sparkles, CheckCircle2, Clock, ArrowRight } from "lucide-react";
+import { GraduationCap, CheckCircle2, Clock, ArrowRight } from "lucide-react";
 
 const ONBOARDING_DISMISSED_KEY = "bujh-onboarding-dept-dismissed";
 
@@ -26,24 +26,24 @@ export function OnboardingDepartmentModal() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    // If user is logged in but their profile has no department, always prompt them
-    if (user && !user.programSlug) {
-      setOpen(true);
-      return;
-    }
-
-    // For visitors who haven't chosen a curriculum yet
-    const sessionDismissed = safeGetItem(ONBOARDING_DISMISSED_KEY) === "1";
-    if (!sessionDismissed && !isChosen) {
-      setOpen(true);
-    }
+    const frame = requestAnimationFrame(() => {
+      setMounted(true);
+      // A choice made on this device is valid while the profile refreshes.
+      if (isChosen) {
+        setOpen(false);
+      } else if (user && !user.programSlug) {
+        setOpen(true);
+      } else if (safeGetItem(ONBOARDING_DISMISSED_KEY) !== "1") {
+        setOpen(true);
+      }
+    });
+    return () => cancelAnimationFrame(frame);
   }, [isChosen, user]);
 
   if (!mounted) return null;
 
   const handleConfirm = () => {
-    if (!selected) return;
+    if (!selected || !isAvailable) return;
     setProgramSlug(selected);
     safeSetItem(ONBOARDING_DISMISSED_KEY, "1");
     setOpen(false);
@@ -116,7 +116,7 @@ export function OnboardingDepartmentModal() {
                       {selectedMeta.name} is in active development (Phase 2).
                     </span>
                     <p className="mt-0.5 font-normal text-muted-foreground text-[11px]">
-                      Selecting this sets your profile preference and lets you preview its curriculum roadmap. You can also explore live D.Pharm questions anytime.
+                      This programme is coming soon. Choose a live programme to start practising now.
                     </p>
                   </div>
                 </div>
@@ -132,12 +132,13 @@ export function OnboardingDepartmentModal() {
               onClick={handleDismiss}
               className="text-xs text-muted-foreground hover:text-foreground"
             >
-              Explore as Guest
+              Choose later
             </Button>
             <Button
               type="button"
               size="default"
               onClick={handleConfirm}
+              disabled={!isAvailable}
               className="gap-2 bg-primary font-semibold"
             >
               <span>Confirm &amp; Continue</span>

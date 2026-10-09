@@ -60,7 +60,7 @@ function subscribe(onChange: () => void) {
 
 function getStoredChoice(): string {
   const stored = safeGetItem(STORAGE_KEY);
-  return stored && getProgram(stored) ? stored : "";
+  return stored && isProgramAvailable(stored) ? stored : "";
 }
 
 /**
@@ -110,7 +110,7 @@ export function ProgramProvider({ children }: { children: React.ReactNode }) {
   );
 
   const profileSlug =
-    user?.programSlug && getProgram(user.programSlug)
+    user?.programSlug && isProgramAvailable(user.programSlug)
       ? user.programSlug
       : null;
 
@@ -133,10 +133,11 @@ export function ProgramProvider({ children }: { children: React.ReactNode }) {
 
   const setProgramSlug = useCallback(
     (slug: string) => {
-      if (!getProgram(slug)) return;
+      if (!isProgramAvailable(slug)) return;
 
       // Apply locally first so the UI responds immediately.
       safeSetItem(STORAGE_KEY, slug);
+      if (!user) safeSetItem("bujh-pending-program", slug);
       window.dispatchEvent(new Event(CHANGE_EVENT));
 
       if (user) {

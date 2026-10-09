@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from "react";
 import {
-  Trophy,
   Users,
   RefreshCw,
   Calendar,
@@ -10,7 +9,6 @@ import {
   Award,
   Star,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
@@ -28,6 +26,7 @@ import { supabase } from "@/lib/supabase/client";
 import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { LearningPage, PageHeading } from "@/components/learning-ui";
 
 const periods: { key: LeaderboardPeriod; icon: React.ElementType }[] = [
   { key: "daily", icon: Calendar },
@@ -75,9 +74,8 @@ export default function LeaderboardPage() {
   }, [activePeriod, programSlug, user]);
 
   useEffect(() => {
-    setMounted(true);
-    fetchLeaderboard();
-    fetchUserPosition();
+    const frame = requestAnimationFrame(() => { setMounted(true); void fetchLeaderboard(); void fetchUserPosition(); });
+    return () => cancelAnimationFrame(frame);
   }, [fetchLeaderboard, fetchUserPosition]);
 
   useEffect(() => {
@@ -95,9 +93,10 @@ export default function LeaderboardPage() {
 
   useEffect(() => {
     const h = () => { fetchLeaderboard(); fetchUserPosition(); };
+    const onVisibility = () => { if (document.visibilityState === "visible") h(); };
     window.addEventListener("focus", h);
-    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") h(); });
-    return () => window.removeEventListener("focus", h);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => { window.removeEventListener("focus", h); document.removeEventListener("visibilitychange", onVisibility); };
   }, [fetchLeaderboard, fetchUserPosition]);
 
   const top3 = entries.filter((e) => e.rank <= 3);
@@ -113,19 +112,10 @@ export default function LeaderboardPage() {
   const listEntries = showPodium ? rest : entries;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <LearningPage className="max-w-4xl">
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Trophy className="h-6 w-6 text-yellow-500" />
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">Leaderboard</h1>
-            <p className="mt-0.5 flex items-center gap-1.5 text-xs text-muted-foreground">
-              <span>{program.icon}</span>
-              {program.name} rankings
-            </p>
-          </div>
-        </div>
+      <div className="flex items-start justify-between gap-2">
+        <PageHeading eyebrow={program.shortLabel} title="Leaderboard" description="See how students in your programme are doing." />
         <Button
           variant="ghost"
           size="sm"
@@ -134,24 +124,24 @@ export default function LeaderboardPage() {
           className="gap-1.5 text-muted-foreground"
         >
           <RefreshCw className={cn("h-3.5 w-3.5", isRefreshing && "animate-spin")} />
-          Refresh
+          <span className="hidden sm:inline">Refresh</span>
         </Button>
       </div>
 
       {/* Period Tabs */}
-      <div className="mb-8 grid grid-cols-4 gap-1.5 p-1 bg-muted/50 rounded-xl">
+      <div className="mb-7 grid grid-cols-4 gap-1 rounded-xl bg-muted/70 p-1">
         {periods.map(({ key, icon: PIcon }) => (
           <button
             key={key}
             onClick={() => setActivePeriod(key)}
             className={cn(
-              "flex flex-col items-center gap-1 px-2 py-2.5 rounded-lg text-xs font-medium transition-all",
+              "flex min-h-11 items-center justify-center gap-1 rounded-lg px-1 py-2 text-[11px] font-semibold transition-all sm:text-xs",
               activePeriod === key
                 ? "bg-background shadow-sm text-foreground"
                 : "text-muted-foreground hover:text-foreground"
             )}
           >
-            <PIcon className="h-4 w-4" />
+            <PIcon className="hidden size-3.5 sm:block" />
             <span>{PERIOD_LABELS[key]}</span>
           </button>
         ))}
@@ -197,9 +187,9 @@ export default function LeaderboardPage() {
                   <div key={entry.user_id} className={cn("flex flex-col items-center", isCenter ? "order-2" : visualIdx === 0 ? "order-1" : "order-3")}>
                     {/* Avatar */}
                     <div className={cn("relative mb-2", isCenter && "-mt-4")}>
-                      <div className={cn("rounded-full ring-2", cfg.ring, cfg.avatarSize, "flex items-center justify-center bg-gradient-to-br", cfg.bg)}>
+                      <div className={cn("rounded-full ring-2", cfg.ring, cfg.avatarSize, "flex items-center justify-center bg-primary/10")}>
                         <Avatar className={cn(cfg.avatarSize, "border-0")}>
-                          <AvatarFallback className={cn("bg-transparent text-white font-bold", cfg.textSize)}>
+                          <AvatarFallback className={cn("bg-transparent text-foreground font-bold", cfg.textSize)}>
                             {entry.name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)}
                           </AvatarFallback>
                         </Avatar>
@@ -218,7 +208,7 @@ export default function LeaderboardPage() {
                     </p>
 
                     {/* Bar */}
-                    <div className={cn("w-16 sm:w-24 rounded-t-lg mt-2 bg-gradient-to-t", cfg.bg, cfg.height, "opacity-80")} />
+                    <div className={cn("mt-2 w-20 rounded-t-xl border border-b-0 bg-primary/10 sm:w-24", cfg.height)} />
                   </div>
                 );
               })}
@@ -227,7 +217,7 @@ export default function LeaderboardPage() {
 
           {/* Rest of entries */}
           {listEntries.length > 0 && (
-            <div className="rounded-xl border divide-y overflow-hidden">
+            <div className="overflow-hidden rounded-2xl border bg-card divide-y">
               {listEntries.map((entry) => {
                 const isMe = user?.id === entry.user_id;
                 return (
@@ -269,6 +259,7 @@ export default function LeaderboardPage() {
           )}
 
           {/* Sticky Floating User Position Banner */}
+          {!user && <div className="mt-6 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-sm"><p className="font-semibold">Join your programme rankings</p><p className="mt-1 text-muted-foreground">Create an account to save scores and qualify for the leaderboard.</p><Link href="/auth/register" className="mt-2 inline-flex font-semibold text-primary">Create free account</Link></div>}
           {user && userPosition && (
             <div className="sticky bottom-20 sm:bottom-6 z-20 mt-6 rounded-2xl border-2 border-primary/40 bg-card p-3.5 shadow-xl transition-all">
               <div className="flex items-center justify-between gap-3">
@@ -313,6 +304,6 @@ export default function LeaderboardPage() {
           )}
         </>
       )}
-    </div>
+    </LearningPage>
   );
 }

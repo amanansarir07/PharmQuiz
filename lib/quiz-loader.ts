@@ -145,15 +145,14 @@ function toQuizQuestions(
 ): QuizQuestion[] {
   const all: QuizQuestion[] = [];
   for (const bank of banks) {
-    for (const q of bank.questions) {
+    for (const [index, q] of bank.questions.entries()) {
       const shuffled = shuffleWithAnswer(
         normalizeOptions(q),
         getCorrectIndex(q)
       );
       all.push({
-        id: q.unit_id
-          ? q.unit_id + "-" + q.question_text.substring(0, 20)
-          : bank.subjectSlug + "-" + q.question_text.substring(0, 20),
+        // Bank order is stable; truncated question text can collide.
+        id: `${bank.subjectSlug}-${index}`,
         question: q.question_text,
         options: shuffled.options,
         correctIndex: shuffled.correctIndex,
@@ -177,6 +176,14 @@ export async function getProgramQuestions(
   programSlug: string = DEFAULT_PROGRAM_SLUG
 ): Promise<QuizQuestion[]> {
   return toQuizQuestions(await loadProgramBanks(programSlug));
+}
+
+/** A lightweight question-bank preview for one subject. */
+export async function getSubjectQuestions(
+  subjectSlug: string,
+  programSlug: string = DEFAULT_PROGRAM_SLUG
+): Promise<QuizQuestion[]> {
+  return toQuizQuestions([{ subjectSlug, questions: await loadBank(subjectSlug, programSlug) }]);
 }
 
 /** Every question across every published bank, with options shuffled. */

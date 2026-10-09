@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { getProgramQuestions, type QuizQuestion } from "@/lib/quiz-loader";
+import { getProgramQuestions, getSubjectQuestions, type QuizQuestion } from "@/lib/quiz-loader";
 import { getSubjectForUnit, getUnitName } from "@/lib/quiz-helpers";
 import { useBookmarks } from "@/lib/bookmarks";
 import { getSubjectsForProgram } from "@/data/registry";
 import { useActiveProgram } from "@/lib/program";
+import { useAuth } from "@/lib/auth";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,7 +20,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { BookOpen, Search, Bookmark, BookmarkCheck, Eye, EyeOff } from "lucide-react";
+import { Search, Bookmark, BookmarkCheck, Eye, EyeOff } from "lucide-react";
+import { LearningPage, PageHeading } from "@/components/learning-ui";
 
 export default function ReviewPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,11 +31,16 @@ export default function ReviewPage() {
   const [visibleCount, setVisibleCount] = useState(30);
   const [loadError, setLoadError] = useState(false);
   const { isBookmarked, toggleBookmark } = useBookmarks();
+  const { user } = useAuth();
   const { programSlug } = useActiveProgram();
   const subjects = useMemo(
     () => getSubjectsForProgram(programSlug),
     [programSlug]
   );
+  const guestSubject = subjects.some((subject) => subject.slug === filterSubject)
+    ? filterSubject
+    : subjects[0]?.slug;
+  const bankKey = user ? programSlug : `${programSlug}/${guestSubject || ""}`;
 
   // Load the bank once: option order is shuffled at load time, so holding it in
   // state (rather than re-deriving it per render) stops options jumping around
@@ -42,7 +50,7 @@ export default function ReviewPage() {
   // switch never shows the previous syllabus's bank: questions for the wrong
   // programme read as "still loading" instead.
   const [bank, setBank] = useState<{
-    programSlug: string;
+    key: string;
     questions: QuizQuestion[];
   } | null>(null);
 
@@ -51,9 +59,9 @@ export default function ReviewPage() {
     const frame = window.requestAnimationFrame(() => {
       if (!cancelled) setLoadError(false);
     });
-    getProgramQuestions(programSlug)
+    (user ? getProgramQuestions(programSlug) : guestSubject ? getSubjectQuestions(guestSubject, programSlug) : Promise.resolve([]))
       .then((qs) => {
-        if (!cancelled) setBank({ programSlug, questions: qs });
+        if (!cancelled) setBank({ key: bankKey, questions: qs });
       })
       .catch((err) => {
         console.error("Failed to load question bank:", err);
@@ -63,9 +71,9 @@ export default function ReviewPage() {
       cancelled = true;
       window.cancelAnimationFrame(frame);
     };
-  }, [programSlug]);
+  }, [programSlug, user, guestSubject, bankKey]);
 
-  const loadingQuestions = bank?.programSlug !== programSlug;
+  const loadingQuestions = bank?.key !== bankKey;
   const allQuestions = loadingQuestions ? [] : bank.questions;
 
   // A subject filter left over from another programme would match nothing, so
@@ -74,8 +82,15 @@ export default function ReviewPage() {
     filterSubject === "all" || subjects.some((s) => s.slug === filterSubject)
       ? filterSubject
       : "all";
+  const selectedSubjectLabel = user && activeSubjectFilter === "all"
+    ? "All subjects"
+    : subjects.find((subject) => subject.slug === (user ? activeSubjectFilter : guestSubject))?.name || "Select subject";
+  const selectedDifficultyLabel = filterDifficulty === "all"
+    ? "All levels"
+    : filterDifficulty.charAt(0).toUpperCase() + filterDifficulty.slice(1);
 
-  const filtered = allQuestions.filter((q) => {
+  const accessibleQuestions = user ? allQuestions : allQuestions.slice(0, 20);
+  const filtered = accessibleQuestions.filter((q) => {
     const matchesSearch =
       !searchQuery ||
       q.question.toLowerCase().includes(searchQuery.toLowerCase());
@@ -122,34 +137,29 @@ export default function ReviewPage() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
-          <BookOpen className="h-8 w-8" />
-          Review Questions
-        </h1>
-        <p className="mt-2 text-muted-foreground">
-          Browse and study all {allQuestions.length} MCQs by subject and unit
-        </p>
+    <LearningPage className="max-w-5xl">
+      <div>
+        <PageHeading eyebrow="Study library" title="Question bank" description={user ? `Browse and study ${allQuestions.length} MCQs by subject and unit.` : "Preview up to 20 real questions per subject."} />
+        {!user && <p className="mt-3 rounded-xl border border-primary/20 bg-primary/5 p-3 text-sm text-muted-foreground">Create a free account to keep saved questions. <Link href="/auth/register" className="font-semibold text-primary underline underline-offset-2">Create account</Link></p>}
       </div>
 
       {/* Filters */}
-      <div className="mb-6 flex flex-col gap-3 sm:flex-row">
-        <div className="relative flex-1">
+      <div className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-[minmax(0,1fr)_200px_150px]">
+        <div className="relative col-span-2 sm:col-span-1">
           <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder="Search questions..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10"
+            className="h-11 pl-10"
           />
         </div>
-        <Select value={activeSubjectFilter} onValueChange={(v) => setFilterSubject(v ?? "all")}>
-          <SelectTrigger className="w-full sm:w-[200px]">
-            <SelectValue placeholder="All Subjects" />
+        <Select value={user ? activeSubjectFilter : guestSubject || "all"} onValueChange={(v) => setFilterSubject(v ?? "all")}>
+          <SelectTrigger className="h-11 w-full">
+            <SelectValue>{selectedSubjectLabel}</SelectValue>
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Subjects</SelectItem>
+            {user && <SelectItem value="all">All subjects</SelectItem>}
             {subjects.map((s) => (
               <SelectItem key={s.id} value={s.slug}>
                 {s.icon} {s.name}
@@ -158,8 +168,8 @@ export default function ReviewPage() {
           </SelectContent>
         </Select>
         <Select value={filterDifficulty} onValueChange={(v) => setFilterDifficulty(v ?? "all")}>
-          <SelectTrigger className="w-full sm:w-[150px]">
-            <SelectValue placeholder="All Levels" />
+          <SelectTrigger className="h-11 w-full">
+            <SelectValue>{selectedDifficultyLabel}</SelectValue>
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Levels</SelectItem>
@@ -170,12 +180,12 @@ export default function ReviewPage() {
         </Select>
       </div>
 
-      <p className="mb-4 text-sm text-muted-foreground">
+      <p className="mb-3 text-xs text-muted-foreground">
         {filtered.length} question(s) found{filtered.length > 30 ? ` (showing ${Math.min(visibleCount, filtered.length)})` : ""}
       </p>
 
       {/* Questions */}
-      <div className="space-y-4">
+      <div className="space-y-3">
         {filtered.slice(0, visibleCount).map((q) => {
           const subjectForQ = getSubjectForUnit(q.unitId);
           const subjectName = subjects.find((s) => s.slug === subjectForQ)?.name || "";
@@ -183,12 +193,11 @@ export default function ReviewPage() {
           const bookmarked = isBookmarked(q.question);
 
           return (
-            <Card key={q.id}>
-              <CardContent className="p-5">
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <div className="flex items-center gap-2 flex-wrap">
+            <Card key={q.id} className="rounded-2xl">
+              <CardContent className="p-4 sm:p-5">
+                <div className="mb-3 flex items-start justify-between gap-2">
+                  <div className="flex min-w-0 flex-wrap items-center gap-1.5">
                     {subjectName && <Badge variant="secondary">{subjectName}</Badge>}
-                    {unitName && <Badge variant="outline" className="max-w-[200px] truncate">{unitName}</Badge>}
                     <Badge
                       variant={
                         q.difficulty === "hard"
@@ -201,22 +210,12 @@ export default function ReviewPage() {
                       {q.difficulty}
                     </Badge>
                   </div>
-                  <div className="flex gap-1">
-                    <Button
+                  {user && <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => toggleAnswer(q.id)}
-                    >
-                      {showAnswers.has(q.id) ? (
-                        <EyeOff className="h-4 w-4" />
-                      ) : (
-                        <Eye className="h-4 w-4" />
-                      )}
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
+                      className="shrink-0"
                       onClick={() => handleBookmark(q)}
+                      aria-label={bookmarked ? "Remove bookmark" : "Save question"}
                       title={bookmarked ? "Remove bookmark" : "Bookmark this question"}
                     >
                       {bookmarked ? (
@@ -224,10 +223,10 @@ export default function ReviewPage() {
                       ) : (
                         <Bookmark className="h-4 w-4" />
                       )}
-                    </Button>
-                  </div>
+                    </Button>}
                 </div>
-                <p className="font-medium">{q.question}</p>
+                {unitName && <p className="mb-2 text-xs leading-5 text-muted-foreground">Unit: {unitName}</p>}
+                <p className="text-sm font-semibold leading-6 sm:text-base">{q.question}</p>
                 <div className="mt-3 grid gap-2 sm:grid-cols-2">
                   {q.options.map((opt: string, i: number) => (
                     <div
@@ -245,6 +244,16 @@ export default function ReviewPage() {
                     </div>
                   ))}
                 </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="mt-3 min-h-9 gap-2 px-1 text-primary"
+                  onClick={() => toggleAnswer(q.id)}
+                  aria-label={showAnswers.has(q.id) ? "Hide answer" : "Reveal answer"}
+                >
+                  {showAnswers.has(q.id) ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
+                  {showAnswers.has(q.id) ? "Hide answer" : "Reveal answer"}
+                </Button>
                 {showAnswers.has(q.id) && (
                   <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-950 p-3 text-sm text-blue-800 dark:text-blue-300">
                     <strong>Explanation:</strong> {q.explanation}
@@ -271,6 +280,6 @@ export default function ReviewPage() {
           </Button>
         </div>
       )}
-    </div>
+    </LearningPage>
   );
 }

@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
-  DEFAULT_PROGRAM_SLUG,
   getFaculty,
   getProgram,
   getProgramLabel,
@@ -13,19 +12,17 @@ import {
 } from "@/data/registry";
 import { getQuestionCount } from "@/lib/quiz-loader";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/site";
-import { Card, CardContent } from "@/components/ui/card";
 import { getCurriculumPreview } from "@/data/curriculum-previews";
 import { CurriculumDevPreview } from "@/components/curriculum-dev-preview";
+import { ProgramSelectAction } from "@/components/program-select-action";
+import { LearningPage, LinkRow } from "@/components/learning-ui";
 import {
-  ArrowRight,
   Award,
   BookOpen,
   ChevronLeft,
   Clock,
   GraduationCap,
-  Play,
 } from "lucide-react";
 
 export function generateStaticParams() {
@@ -98,7 +95,7 @@ export default async function ProgramPage({
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
+    <LearningPage className="max-w-5xl">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -132,7 +129,7 @@ export default async function ProgramPage({
         <div className="flex items-start gap-4">
           <span className="text-4xl">{program.icon}</span>
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">{heading}</h1>
+            <h1 className="text-[1.65rem] font-bold tracking-tight sm:text-3xl">{heading}</h1>
             <p className="mt-1 max-w-2xl text-muted-foreground">
               {program.description}
             </p>
@@ -156,19 +153,10 @@ export default async function ProgramPage({
               </Badge>
               <Badge variant="outline">{questionCount} Questions</Badge>
             </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/quiz">
-                <Button size="lg">
-                  <Play className="mr-2 h-4 w-4" />
-                  Practice MCQs
-                </Button>
-              </Link>
-              <Link href="/mock-test">
-                <Button size="lg" variant="outline">
-                  Take a Mock Test
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <ProgramSelectAction slug={program.slug} />
+              <ProgramSelectAction slug={program.slug} destination={`/quiz?subject=${encodeURIComponent(subjects[0]?.slug || "")}`} label="Practice MCQs" secondary />
+              <ProgramSelectAction slug={program.slug} destination="/mock-test" label="Take a mock test" secondary />
             </div>
           </>
         ) : (
@@ -187,36 +175,13 @@ export default async function ProgramPage({
             <GraduationCap className="h-5 w-5" />
             Subjects
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-2 sm:grid-cols-2">
             {subjects.map((subject) => (
-              <Link key={subject.id} href={`/subjects/${subject.slug}`}>
-                <Card className="h-full transition-all hover:border-primary/20 hover:shadow-md">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-3">
-                      <span className="text-2xl">{subject.icon}</span>
-                      <div className="min-w-0 flex-1">
-                        <h3 className="font-semibold">{subject.name}</h3>
-                        <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                          {subject.description}
-                        </p>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          <Badge variant="secondary" className="text-xs">
-                            <BookOpen className="mr-1 h-3 w-3" />
-                            {subject.units.length} units
-                          </Badge>
-                          <Badge variant="outline" className="text-xs">
-                            {subject.examMarks} marks
-                          </Badge>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+              <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<span className="text-xl">{subject.icon}</span>} title={subject.name} detail={`${subject.units.length} units · ${subject.examMarks} marks`} /></div>
             ))}
           </div>
         </div>
       )}
-    </div>
+    </LearningPage>
   );
 }

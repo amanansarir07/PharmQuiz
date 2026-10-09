@@ -11,12 +11,11 @@ import { ShareResultDialog } from "@/components/share-result-dialog";
 import { useAuth } from "@/lib/auth";
 import { getProgramCardLabel, getSubjectBySlug, getUnitById, DEFAULT_PROGRAM_SLUG } from "@/data/registry";
 import { resolveResultProgram } from "@/lib/result-program";
-import { getMockSubjectCount } from "@/lib/mock-exams";
+import { getMockSubjectCount, getMockQuestionCount, getMockDurationMinutes } from "@/lib/mock-exams";
 import { safeSetItem } from "@/lib/storage";
 import { cn } from "@/lib/utils";
 import { AppEmpty } from "@/components/app-state";
 import {
-  Trophy,
   CheckCircle,
   XCircle,
   Clock,
@@ -131,7 +130,7 @@ export default function QuizResultsPage({
 
   // A mock paper covers every subject in the programme; prefer the subjects
   // actually present in this attempt, falling back to the programme total.
-  const mockSubjectCount = subjectGroups.length || getMockSubjectCount();
+  const mockSubjectCount = subjectGroups.length || getMockSubjectCount(resolveResultProgram(results?.config?.program, results?.config?.subject || ""));
 
   const shareData = results
     ? (() => {
@@ -151,7 +150,7 @@ export default function QuizResultsPage({
         const timing =
           cfg.timeLimit != null ? `${cfg.timeLimit} min limit` : "No time limit";
         const metaLine = cfgMock
-          ? `${total} questions • ${mockSubjectCount} subjects • ${cfg.timeLimit ?? 80} min`
+          ? `${total} questions • ${mockSubjectCount} subjects • ${cfg.timeLimit ?? getMockDurationMinutes(resolveResultProgram(cfg.program, cfg.subject || ""))} min`
           : `${total} questions • ${difficultyLabel} • ${timing}`;
         // The result's own programme, not whatever is active now — a student
         // who switched programmes still shares the card for the paper they sat.
@@ -187,7 +186,7 @@ export default function QuizResultsPage({
     sessionMistakes.length > 0
       ? `Retry ${sessionMistakes.length} missed question${sessionMistakes.length === 1 ? "" : "s"}`
       : percentage >= 70
-        ? "Try a full mock exam"
+        ? user ? "Try a full mock exam" : "Create an account for full mock exams"
         : "Start another practice";
 
   // Identify the weakest unit in this session
@@ -261,35 +260,16 @@ export default function QuizResultsPage({
   };
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
+    <div className="mx-auto max-w-4xl px-4 pb-10 pt-6 sm:px-6 sm:pt-9">
       {/* Score Card */}
-      <Card className="mb-6">
+      <Card className="mb-6 overflow-hidden border-primary/20">
         <CardContent className="p-5 sm:p-8">
-          <div className="flex items-center gap-4 mb-4">
-            {percentage >= 70 ? (
-              <Trophy className="h-10 w-10 sm:h-16 sm:w-16 shrink-0 text-yellow-500" />
-            ) : (
-              <CheckCircle className="h-10 w-10 sm:h-16 sm:w-16 shrink-0 text-primary" />
-            )}
+          <div className="mb-5 flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+            <div className="flex size-28 shrink-0 items-center justify-center rounded-full p-2 sm:size-32" style={{ background: `conic-gradient(var(--primary) ${percentage}%, var(--muted) ${percentage}%)` }} role="img" aria-label={`${percentage}% accuracy`}>
+              <div className="flex size-full flex-col items-center justify-center rounded-full bg-card"><span className="text-2xl font-bold tabular-nums">{displayScore}/{total}</span><span className="text-xs font-semibold text-primary">{percentage}%</span></div>
+            </div>
+            <div><p className="text-xs font-bold uppercase tracking-wider text-primary">{isMock ? "Mock result" : "Practice result"}</p><h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{percentage >= 80 ? "Great work!" : percentage >= 60 ? "Well done" : "Keep practising"}</h1><p className="mt-1 text-sm text-muted-foreground">You completed {total} questions. Review what you missed and choose your next step.</p></div>
           </div>
-          <div className="flex flex-wrap items-center gap-3 mb-2">
-            <h1 className="text-xl sm:text-3xl font-extrabold tracking-tight">
-              {percentage >= 80
-                ? "Excellent Performance"
-                : percentage >= 60
-                ? "Solid Practice Session"
-                : "Revision Recommended"}
-            </h1>
-            <Badge
-              variant={percentage >= 60 ? "default" : "secondary"}
-              className="text-xs"
-            >
-              {percentage >= 80 ? "High Distinction" : percentage >= 60 ? "Proficient" : "Needs Review"}
-            </Badge>
-          </div>
-          <p className="text-xs sm:text-sm text-muted-foreground">
-            Official examination assessment &middot; Verified scorecard
-          </p>
           <div className="mt-4 rounded-xl border border-primary/20 bg-primary/[0.04] p-3.5">
             <p className="text-sm font-semibold text-foreground">Your next best step</p>
             <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
@@ -312,7 +292,7 @@ export default function QuizResultsPage({
               </Badge>
               <Badge variant="outline" className="gap-1.5">
                 <BookOpen className="h-3 w-3 text-muted-foreground" />
-                <span>{mockSubjectCount} subjects &middot; 80 questions</span>
+                <span>{mockSubjectCount} subjects &middot; {total} questions</span>
               </Badge>
               {results.timeTaken != null && (
                 <Badge variant="outline" className="gap-1.5">
@@ -323,25 +303,18 @@ export default function QuizResultsPage({
             </div>
           )}
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4 mb-4">
-            <div className="rounded-xl bg-primary/5 p-3 sm:p-4 text-center">
-              <p className="text-3xl font-bold text-primary">{percentage}%</p>
-              <p className="text-sm text-muted-foreground">Accuracy</p>
-              {results.score !== undefined && results.score !== correct && (
-                <p className="mt-1 text-xs text-muted-foreground">Score: {displayScore}/{total} (with negative marking)</p>
-              )}
-            </div>
+          <div className="mb-4 grid grid-cols-3 gap-2 sm:gap-4">
             <div className="rounded-xl bg-green-50 dark:bg-green-950 p-3 sm:p-4 text-center">
-              <p className="text-3xl font-bold text-green-600 dark:text-green-400">{correct}</p>
-              <p className="text-sm text-muted-foreground">Correct</p>
+              <p className="text-2xl font-bold text-green-600 dark:text-green-400">{correct}</p>
+              <p className="text-xs text-muted-foreground">Correct</p>
             </div>
             <div className="rounded-xl bg-red-50 dark:bg-red-950 p-3 sm:p-4 text-center">
-              <p className="text-3xl font-bold text-red-600 dark:text-red-400">{incorrect}</p>
-              <p className="text-sm text-muted-foreground">Incorrect</p>
+              <p className="text-2xl font-bold text-red-600 dark:text-red-400">{incorrect}</p>
+              <p className="text-xs text-muted-foreground">Incorrect</p>
             </div>
             <div className="rounded-xl bg-muted p-3 sm:p-4 text-center">
-              <p className="text-3xl font-bold">{unattempted}</p>
-              <p className="text-sm text-muted-foreground">Unattempted</p>
+              <p className="text-2xl font-bold">{unattempted}</p>
+              <p className="text-xs text-muted-foreground">Skipped</p>
             </div>
           </div>
 
@@ -367,13 +340,16 @@ export default function QuizResultsPage({
                   Create a free account to sync results, streaks, and mistakes across devices.
                 </p>
               </div>
-              <Link
-                href={`/auth/register?program=${encodeURIComponent(resolveResultProgram(results.config?.program, results.config?.subject || ""))}`}
-                className={cn(buttonVariants({ size: "sm" }), "shrink-0 gap-1.5")}
-              >
-                <UserPlus className="h-3.5 w-3.5" />
-                Save progress
-              </Link>
+              <div className="flex flex-col gap-2">
+                <Link
+                  href={`/auth/register?program=${encodeURIComponent(resolveResultProgram(results.config?.program, results.config?.subject || ""))}`}
+                  className={cn(buttonVariants({ size: "sm" }), "shrink-0 gap-1.5")}
+                >
+                  <UserPlus className="h-3.5 w-3.5" />
+                  Create free account
+                </Link>
+                <Link href="/dashboard" className="text-center text-xs font-medium text-muted-foreground hover:text-primary">Continue as guest</Link>
+              </div>
             </div>
           )}
         </CardContent>
@@ -399,9 +375,9 @@ export default function QuizResultsPage({
                     </p>
                     <span
                       className={`shrink-0 text-sm font-bold ${
-                        g.correct >= 7
+                        g.correct / g.count >= 0.7
                           ? "text-green-600 dark:text-green-400"
-                          : g.correct >= 5
+                          : g.correct / g.count >= 0.5
                           ? "text-yellow-600 dark:text-yellow-400"
                           : "text-red-600 dark:text-red-400"
                       }`}
@@ -495,15 +471,15 @@ export default function QuizResultsPage({
                     <span className="font-semibold text-sm">Full Board Mock Exam</span>
                   </div>
                   <p className="mt-1.5 text-xs text-muted-foreground">
-                    Great performance! Challenge yourself with the full 80-question / 80-minute paper.
+                    Great performance! {user ? "Challenge yourself" : "Create an account to challenge yourself"} with the full {getMockQuestionCount(resolveResultProgram(results.config?.program, results.config?.subject || ""))}-question board paper.
                   </p>
                 </div>
                 <Link
-                  href="/mock-test"
+                  href={user ? "/mock-test" : `/auth/register?program=${encodeURIComponent(resolveResultProgram(results.config?.program, results.config?.subject || ""))}`}
                   className={cn(buttonVariants({ variant: "outline", size: "sm" }), "mt-4 gap-1.5 w-full font-semibold")}
                 >
                   <Timer className="h-3.5 w-3.5 text-emerald-500" />
-                  Enter Full Mock Exam
+                  {user ? "Enter Full Mock Exam" : "Create account for mock exams"}
                 </Link>
               </div>
             )}
@@ -511,16 +487,16 @@ export default function QuizResultsPage({
             {/* Return to Personal Dashboard */}
             <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
               <div>
-                <span className="font-semibold text-sm">Personal Dashboard</span>
+                <span className="font-semibold text-sm">{user ? "Your dashboard" : "Keep practising"}</span>
                 <p className="mt-1.5 text-xs text-muted-foreground">
-                  Check your updated leaderboard rank, accuracy streak, and explore other curriculum subjects.
+                  {user ? "Check your progress and explore other subjects." : "Explore subjects and start another short practice session."}
                 </p>
               </div>
               <Link
                 href="/dashboard"
                 className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "mt-4 gap-1.5 w-full text-xs font-semibold hover:bg-muted")}
               >
-                Go to Personal Dashboard
+                {user ? "Go to dashboard" : "Back to guest home"}
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>

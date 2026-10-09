@@ -65,17 +65,17 @@ function LoginForm() {
   };
 
   return (
-    <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-12">
-      <Card className="w-full max-w-md">
+    <div className="flex min-h-[calc(100dvh-8rem)] items-center justify-center px-4 py-8 sm:py-12">
+      <Card className="w-full max-w-md rounded-2xl border-primary/10 shadow-sm">
         <CardHeader className="text-center">
           <Image src="/icons/icon-192.png" alt="Bujh logo" width={192} height={192} className="mx-auto mb-4 h-16 w-16" />
-          <CardTitle className="text-2xl font-bold">Welcome back</CardTitle>
+          <CardTitle className="text-2xl font-bold tracking-tight">Welcome back</CardTitle>
           <CardDescription>
-            Sign in to continue your exam prep
+            Learn. Practice. Understand. Sign in to keep your progress.
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 pb-5">
             {error && (
               <div className="rounded-lg bg-red-50 dark:bg-red-950 p-3 text-sm text-red-600 dark:text-red-400">
                 {error}
@@ -129,7 +129,7 @@ function LoginForm() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col gap-4">
-            <Button type="submit" className="w-full" disabled={loading}>
+            <Button type="submit" className="min-h-11 w-full rounded-xl" disabled={loading}>
               {loading ? "Signing in..." : "Sign in to Bujh"}
             </Button>
             <div className="relative">
@@ -165,6 +165,7 @@ function LoginForm() {
                 Create an account
               </Link>
             </p>
+            <Link href="/dashboard" className="text-center text-sm font-medium text-primary hover:underline">Continue as guest</Link>
           </CardFooter>
         </form>
       </Card>

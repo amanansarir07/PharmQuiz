@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { StickyNote, Plus, Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -18,10 +17,12 @@ import {
 import { useNotes } from "@/lib/notes";
 import { useActiveProgram } from "@/lib/program";
 import { getSubjectsForProgram } from "@/data/registry";
+import { LearningPage, PageHeading } from "@/components/learning-ui";
+import { AppLoading } from "@/components/app-state";
 
 export default function NotesPage() {
   const { notes, mounted, addNote, updateNote, deleteNote } = useNotes();
-  const { programSlug, program } = useActiveProgram();
+  const { programSlug } = useActiveProgram();
   const subjects = getSubjectsForProgram(programSlug);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -67,28 +68,14 @@ export default function NotesPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
-      <div className="mb-8 flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
-            <StickyNote className="h-8 w-8" />
-            My Notes
-          </h1>
-          <p className="mt-2 text-muted-foreground">
-            Personal study notes and reminders
-          </p>
-        </div>
-        <Button onClick={openNewNote}>
-          <Plus className="mr-2 h-4 w-4" />
-          New Note
-        </Button>
-      </div>
+    <LearningPage className="max-w-5xl">
+      <PageHeading eyebrow="Study library" title="Notes" description="Keep ideas, mnemonics and reminders close to your practice." action={<Button onClick={openNewNote} className="min-h-10 rounded-xl"><Plus className="mr-1.5 size-4" /> New note</Button>} />
 
       {!mounted ? (
-        <div className="text-center py-20 text-muted-foreground">Loading notes...</div>
+        <AppLoading label="Loading notes" />
       ) : notes.length === 0 ? (
-        <Card>
-          <CardContent className="p-12 text-center">
+        <Card className="rounded-2xl">
+          <CardContent className="p-8 text-center sm:p-12">
             <StickyNote className="mx-auto h-12 w-12 text-muted-foreground/50" />
             <p className="mt-4 text-muted-foreground">No notes yet</p>
             <p className="text-sm text-muted-foreground mb-4">
@@ -98,9 +85,9 @@ export default function NotesPage() {
           </CardContent>
         </Card>
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 md:grid-cols-2">
           {notes.map((note) => (
-            <Card key={note.id}>
+            <Card key={note.id} className="rounded-2xl">
               <CardHeader className="pb-2">
                 <div className="flex items-start justify-between">
                   <CardTitle className="text-base">{note.title}</CardTitle>
@@ -109,6 +96,7 @@ export default function NotesPage() {
                       variant="ghost"
                       size="sm"
                       onClick={() => openEditNote(note)}
+                      aria-label={`Edit ${note.title}`}
                     >
                       <Pencil className="h-4 w-4" />
                     </Button>
@@ -116,6 +104,7 @@ export default function NotesPage() {
                       variant="ghost"
                       size="sm"
                       onClick={() => deleteNote(note.id)}
+                      aria-label={`Delete ${note.title}`}
                     >
                       <Trash2 className="h-4 w-4 text-red-500" />
                     </Button>
@@ -140,7 +129,7 @@ export default function NotesPage() {
 
       {/* Add/Edit Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="sm:max-w-lg">
+        <DialogContent className="max-h-[85dvh] w-[calc(100vw-2rem)] overflow-y-auto sm:max-w-lg">
           <DialogHeader>
             <DialogTitle>
               {editingId ? "Edit Note" : "New Note"}
@@ -188,6 +177,6 @@ export default function NotesPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </div>
+    </LearningPage>
   );
 }

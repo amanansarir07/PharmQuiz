@@ -96,7 +96,7 @@ export default function ResetPasswordPage() {
   if (validating) {
     return (
       <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-12">
-        <Card className="w-full max-w-md">
+        <Card className="w-full max-w-md rounded-2xl border-primary/10 shadow-sm">
           <CardContent className="p-8 text-center">
             <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
             <p className="text-sm text-muted-foreground">Verifying your reset link...</p>
@@ -109,7 +109,7 @@ export default function ResetPasswordPage() {
   if (success) {
     return (
       <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-12">
-        <Card className="w-full max-w-md">
+        <Card className="w-full max-w-md rounded-2xl border-primary/10 shadow-sm">
           <CardHeader className="text-center">
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
               <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400" />
@@ -130,7 +130,7 @@ export default function ResetPasswordPage() {
   if (!tokenValid) {
     return (
       <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-12">
-        <Card className="w-full max-w-md">
+        <Card className="w-full max-w-md rounded-2xl border-primary/10 shadow-sm">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold">Invalid link</CardTitle>
             <CardDescription>{error || "This reset link is invalid or has expired."}</CardDescription>
@@ -147,7 +147,7 @@ export default function ResetPasswordPage() {
 
   return (
     <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-12">
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-md rounded-2xl border-primary/10 shadow-sm">
         <CardHeader className="text-center">
           <Image src="/icons/icon-192.png" alt="Bujh logo" width={192} height={192} className="mx-auto mb-4 h-16 w-16" />
           <CardTitle className="text-2xl font-bold">Set new password</CardTitle>

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from "react";
+import type { Session } from "@supabase/supabase-js";
 import { getSupabase } from "@/lib/supabase/client";
 
 interface User {
@@ -55,9 +56,10 @@ function clearOldAuthStorage() {
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const activeUserId = useRef<string | null>(null);
 
   // Build a User from session data (no DB query needed)
-  const userFromSession = useCallback((session: any): User => {
+  const userFromSession = useCallback((session: Session): User => {
     const u = session.user;
     const meta = u.user_metadata || {};
     return {
@@ -93,7 +95,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           // Absent until migration 007 has been applied.
           programSlug: data.program_slug ?? null,
         };
-        setUser(loadedUser);
+        if (activeUserId.current === userId) setUser(loadedUser);
         return loadedUser;
       }
 
@@ -103,7 +105,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const { data: { session } } = await getSupabase().auth.getSession();
       if (session?.user) {
         const fallbackUser = userFromSession(session);
-        setUser(fallbackUser);
+        if (activeUserId.current === userId) setUser(fallbackUser);
         return fallbackUser;
       }
 
@@ -116,7 +118,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const { data: { session } } = await getSupabase().auth.getSession();
         if (session?.user) {
           const fallbackUser = userFromSession(session);
-          setUser(fallbackUser);
+          if (activeUserId.current === userId) setUser(fallbackUser);
           return fallbackUser;
         }
       } catch {}
@@ -126,39 +128,49 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   // Check for existing session on mount
   useEffect(() => {
-    const init = async () => {
-      try {
-        // Clear any old localStorage-based auth sessions
-        const oldUser = typeof window !== "undefined" ? localStorage.getItem(OLD_CURRENT_USER_KEY) : null;
-        if (oldUser) {
-          console.log("Detected old localStorage auth session — clearing it");
-          clearOldAuthStorage();
-        }
-
-        const { data: { session } } = await getSupabase().auth.getSession();
-        if (session?.user) {
-          await loadProfile(session.user.id);
-        }
-      } catch (err) {
-        console.error("Auth init error:", err);
-      }
+    let disposed = false;
+    const pendingTasks = new Set<ReturnType<typeof setTimeout>>();
+    const showSession = (session: Session | null) => {
+      if (disposed) return;
+      activeUserId.current = session?.user.id ?? null;
+      setUser(session?.user ? userFromSession(session) : null);
       setIsLoading(false);
     };
-    init();
+    const defer = (work: () => Promise<void>) => {
+      const task = setTimeout(() => {
+        pendingTasks.delete(task);
+        if (!disposed) void work().catch((error) => console.error("Auth follow-up failed:", error));
+      }, 0);
+      pendingTasks.add(task);
+    };
+    // INITIAL_SESSION is the single source for restoring a saved session.
+    // A second getSession() can race with a new sign-in and restore stale state.
+    if (typeof window !== "undefined" && localStorage.getItem(OLD_CURRENT_USER_KEY)) {
+      clearOldAuthStorage();
+    }
+
+    // A stalled initial auth event must never hold every route on a full-page spinner.
+    const loadingLimit = setTimeout(() => { if (!disposed) setIsLoading(false); }, 5000);
 
     // Listen for auth state changes
     const { data: { subscription } } = getSupabase().auth.onAuthStateChange(
-      async (event, session) => {
-        try {
-          if (event === "SIGNED_IN" && session?.user) {
+      (event, session) => {
+        if (disposed) return;
+        if (event === "INITIAL_SESSION") {
+          showSession(session);
+          if (session?.user) defer(async () => { await loadProfile(session.user.id); });
+        } else if (event === "SIGNED_IN" && session?.user) {
+          showSession(session);
+          // Supabase holds its auth lock while calling this listener. Database
+          // reads and writes must start after the callback has returned.
+          defer(async () => { await loadProfile(session.user.id); });
+          defer(async () => {
             // If user selected a program prior to Google OAuth redirect, persist it to profile
             if (typeof window !== "undefined") {
-              const pendingProgram =
-                localStorage.getItem("bujh-pending-program") ||
-                localStorage.getItem("bujh-active-program");
+              const pendingProgram = localStorage.getItem("bujh-pending-program");
               if (pendingProgram) {
                 try {
-                  await getSupabase().rpc("update_profile", {
+                  const { error: rpcError } = await getSupabase().rpc("update_profile", {
                     p_user_id: session.user.id,
                     p_name:
                       session.user.user_metadata?.name ||
@@ -166,29 +178,31 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                       "Student",
                     p_program_slug: pendingProgram,
                   });
-                  await getSupabase()
+                  const { error: updateError } = await getSupabase()
                     .from("profiles")
                     .update({ program_slug: pendingProgram })
                     .eq("id", session.user.id);
-                  localStorage.removeItem("bujh-pending-program");
+                  if (!rpcError || !updateError) localStorage.removeItem("bujh-pending-program");
+                  await loadProfile(session.user.id);
                 } catch (e) {
                   console.warn("Failed to sync pending program on sign in:", e);
                 }
               }
             }
-            await loadProfile(session.user.id);
-          } else if (event === "SIGNED_OUT") {
-            setUser(null);
-          }
-        } catch (err) {
-          console.error("Auth state change error:", err);
+          });
+        } else if (event === "SIGNED_OUT") {
+          showSession(null);
         }
-        setIsLoading(false);
       }
     );
 
-    return () => subscription.unsubscribe();
-  }, [loadProfile]);
+    return () => {
+      disposed = true;
+      clearTimeout(loadingLimit);
+      pendingTasks.forEach(clearTimeout);
+      subscription.unsubscribe();
+    };
+  }, [loadProfile, userFromSession]);
 
   const register = useCallback(async (
     name: string,
@@ -260,15 +274,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return { error: error.message };
     }
 
-    if (data.user) {
-      const loadedUser = await loadProfile(data.user.id);
-      if (!loadedUser) {
-        return { error: "Login failed. Please try again." };
-      }
+    if (data.session?.user) {
+      activeUserId.current = data.session.user.id;
+      setUser(userFromSession(data.session));
+      // A valid session is enough to enter the app. Profile fields can refresh
+      // after navigation instead of holding the login button on a DB request.
+      void loadProfile(data.session.user.id);
     }
 
     return {};
-  }, [loadProfile]);
+  }, [loadProfile, userFromSession]);
 
   const updateProfile = useCallback(
     async (name: string, programSlug?: string) => {
