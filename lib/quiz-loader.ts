@@ -125,9 +125,18 @@ export async function getQuestionsForQuiz({
 
   // Filter by units (legacy entries without a unit_id are never unit-matched)
   if (unitIds && unitIds.length > 0) {
-    filtered = filtered.filter(
+    const matchedUnits = filtered.filter(
       (q) => q.unit_id !== undefined && unitIds.includes(q.unit_id)
     );
+    if (matchedUnits.length > 0) {
+      filtered = matchedUnits;
+    } else {
+      // Imports created before unit metadata was introduced used `all` as the
+      // batch unit. Keep those published questions usable for a whole-subject
+      // practice session until the source JSON is re-imported with real units.
+      const legacyWholeSubject = filtered.filter((q) => q.unit_id === "all");
+      filtered = legacyWholeSubject.length > 0 ? legacyWholeSubject : matchedUnits;
+    }
   }
 
   // Filter by difficulty
