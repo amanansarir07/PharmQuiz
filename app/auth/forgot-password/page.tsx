@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { getSupabase } from "@/lib/supabase/client";
-import Image from "next/image";
+import { BujhMark } from "@/components/brand";
 import { Mail, ArrowLeft, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -37,10 +37,10 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-12">
+    <div className="auth-form-stage">
       <Card className="w-full max-w-md rounded-2xl border-primary/10 shadow-sm">
         <CardHeader className="text-center">
-          <Image src="/icons/icon-192.png" alt="Bujh logo" width={192} height={192} className="mx-auto mb-4 h-16 w-16" />
+          <BujhMark className="mx-auto mb-5 size-14" />
           <CardTitle className="text-2xl font-bold">Reset Password</CardTitle>
           <CardDescription>We&apos;ll send you a link to reset your password.</CardDescription>
         </CardHeader>
@@ -60,12 +60,12 @@ export default function ForgotPasswordPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              {error && <div className="rounded-lg bg-red-50 dark:bg-red-950 p-3 text-sm text-red-600 dark:text-red-400">{error}</div>}
+              {error && <div role="alert" className="rounded-lg bg-red-50 dark:bg-red-950 p-3 text-sm text-red-600 dark:text-red-400">{error}</div>}
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <Input id="email" type="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className="pl-10" required />
+                  <Input id="email" type="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className="h-12 rounded-xl pl-10" required />
                 </div>
               </div>
               <Button type="submit" className="min-h-11 w-full rounded-xl" disabled={loading}>{loading ? "Sending..." : "Send reset link"}</Button>

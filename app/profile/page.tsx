@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Calendar, CheckCircle, GraduationCap, Lock, Eye, EyeOff, Trash2, LogOut, AlertTriangle, Loader2, ChevronDown, ChevronUp } from "lucide-react";
 import { LearningPage } from "@/components/learning-ui";
 import { ProfileOverview } from "@/components/profile-overview";
+import { getSupabase } from "@/lib/supabase/client";
 
 export default function ProfilePage() {
   const { user, updateProfile, changePassword, deleteAccount, logout } = useAuth();
@@ -32,6 +33,8 @@ export default function ProfilePage() {
 
   // Delete state
   const [deletePassword, setDeletePassword] = useState("");
+  const [deleteConfirmation, setDeleteConfirmation] = useState("");
+  const [needsDeletePassword, setNeedsDeletePassword] = useState<boolean | null>(null);
   const [showDeletePassword, setShowDeletePassword] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [deleteError, setDeleteError] = useState("");
@@ -40,6 +43,23 @@ export default function ProfilePage() {
 
   const { program, setProgramSlug } = useActiveProgram();
   const [programSaved, setProgramSaved] = useState(false);
+  const [programError, setProgramError] = useState("");
+
+  useEffect(() => {
+    let cancelled = false;
+    if (!user) return;
+    void getSupabase().auth.getUser().then(({ data: { user: authUser } }) => {
+      if (!cancelled) setNeedsDeletePassword(authUser
+        ? Boolean(authUser.identities?.some((identity) => identity.provider === "email")
+          || authUser.app_metadata?.provider === "email"
+          || authUser.app_metadata?.providers?.includes("email")
+          || (!authUser.identities?.length && !authUser.app_metadata?.provider))
+        : null);
+    }).catch(() => {
+      if (!cancelled) setNeedsDeletePassword(null);
+    });
+    return () => { cancelled = true; };
+  }, [user]);
 
   if (!user) {
     return (
@@ -92,18 +112,21 @@ export default function ProfilePage() {
     setPwLoading(false);
   };
 
-  const handleProgramChange = (slug: string) => {
-    // Switching applies immediately and, when signed in, is written to the
-    // profile so it follows the student to other devices.
+  const handleProgramChange = async (slug: string) => {
+    setProgramError("");
+    const result = await updateProfile(user.name, slug);
+    if (result.error) { setProgramError(result.error); return; }
     setProgramSlug(slug);
     setProgramSaved(true);
     setTimeout(() => setProgramSaved(false), 2500);
   };
 
   const handleDeleteAccount = async () => {
-    if (!deletePassword) { setDeleteError("Enter your password to confirm"); return; }
+    if (needsDeletePassword === null) { setDeleteError("Please wait while we verify your account."); return; }
+    if (needsDeletePassword && !deletePassword) { setDeleteError("Enter your password to confirm"); return; }
+    if (deleteConfirmation !== "DELETE") { setDeleteError("Type DELETE to confirm"); return; }
     setDeleteLoading(true); setDeleteError("");
-    const result = await deleteAccount(deletePassword);
+    const result = await deleteAccount(deletePassword, deleteConfirmation);
     if (result.error) { setDeleteError(result.error); setDeleteLoading(false); }
     else { router.push("/"); }
   };
@@ -115,10 +138,10 @@ export default function ProfilePage() {
   };
 
   return (
-    <LearningPage className="max-w-3xl">
+    <LearningPage className="max-w-5xl">
       <ProfileOverview />
-      <div id="account-settings" className="mt-8 space-y-4 scroll-mt-20">
-        <h2 className="text-lg font-bold">Account settings</h2>
+      <div id="account-settings" className="mt-8 grid gap-4 scroll-mt-24 md:grid-cols-2">
+        <h2 className="text-lg font-bold md:col-span-2">Account settings</h2>
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Edit Name</CardTitle>
@@ -162,7 +185,7 @@ export default function ProfilePage() {
               <Mail className="h-5 w-5 text-muted-foreground" />
               <div>
                 <p className="text-sm text-muted-foreground">Email</p>
-                <p className="font-medium">{user.email}</p>
+                <p className="break-all font-medium">{user.email}</p>
               </div>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
@@ -189,13 +212,14 @@ export default function ProfilePage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
+            {programError && <p role="alert" className="text-sm text-destructive">{programError}</p>}
             {programSaved && (
               <div className="rounded-lg bg-green-50 dark:bg-green-950 p-3 text-sm text-green-600 dark:text-green-400 flex items-center gap-2">
                 <CheckCircle className="h-4 w-4" />
                 Program updated
               </div>
             )}
-            <ProgramPicker value={program.slug} onChange={handleProgramChange} />
+            <ProgramPicker value={program.slug} onChange={(slug) => { void handleProgramChange(slug); }} />
           </CardContent>
         </Card>
 
@@ -242,10 +266,12 @@ export default function ProfilePage() {
               <div className="space-y-4">
                 <div className="rounded-lg bg-red-50 dark:bg-red-950 p-4 text-sm text-red-600 dark:text-red-400"><div className="flex items-start gap-2"><AlertTriangle className="h-5 w-5 mt-0.5 shrink-0" /><div><p className="font-semibold mb-1">Are you absolutely sure?</p><p>This will permanently delete your account, profile, quiz results, bookmarks, and notes. This cannot be undone.</p></div></div></div>
                 {deleteError && <div className="rounded-lg bg-red-50 dark:bg-red-950 p-3 text-sm text-red-600 dark:text-red-400">{deleteError}</div>}
-                <div className="space-y-2"><Label>Enter your password to confirm</Label><div className="flex gap-2"><Input type={showDeletePassword ? "text" : "password"} value={deletePassword} onChange={(e) => setDeletePassword(e.target.value)} placeholder="Your password" /><Button type="button" variant="outline" onClick={() => setShowDeletePassword((value) => !value)}>{showDeletePassword ? "Hide" : "Show"}</Button></div></div>
+                {needsDeletePassword && <div className="space-y-2"><Label htmlFor="delete-password">Enter your password to confirm</Label><div className="flex gap-2"><Input id="delete-password" type={showDeletePassword ? "text" : "password"} value={deletePassword} onChange={(e) => setDeletePassword(e.target.value)} placeholder="Your password" /><Button type="button" variant="outline" onClick={() => setShowDeletePassword((value) => !value)}>{showDeletePassword ? "Hide" : "Show"}</Button></div></div>}
+                {needsDeletePassword === false && <p className="text-sm text-muted-foreground">Your connected sign-in does not use a password. Confirm this action below.</p>}
+                <div className="space-y-2"><Label htmlFor="delete-confirmation">Type DELETE to confirm</Label><Input id="delete-confirmation" value={deleteConfirmation} onChange={(e) => setDeleteConfirmation(e.target.value)} autoComplete="off" /></div>
                 <div className="flex items-center gap-3">
-                  <Button variant="destructive" onClick={handleDeleteAccount} disabled={deleteLoading || !deletePassword}>{deleteLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Deleting...</> : <><Trash2 className="mr-2 h-4 w-4" /> Yes, Delete My Account</>}</Button>
-                  <Button variant="outline" onClick={() => { setShowDeleteConfirm(false); setDeletePassword(""); setDeleteError(""); }}>Cancel</Button>
+                  <Button variant="destructive" onClick={handleDeleteAccount} disabled={deleteLoading || needsDeletePassword === null || (needsDeletePassword && !deletePassword) || deleteConfirmation !== "DELETE"}>{deleteLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Deleting...</> : <><Trash2 className="mr-2 h-4 w-4" /> Yes, Delete My Account</>}</Button>
+                  <Button variant="outline" onClick={() => { setShowDeleteConfirm(false); setDeletePassword(""); setDeleteConfirmation(""); setDeleteError(""); }}>Cancel</Button>
                 </div>
               </div>
             )}

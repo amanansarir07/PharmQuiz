@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Search, Bookmark, BookmarkCheck, Eye, EyeOff } from "lucide-react";
+import { LibraryNav } from "@/components/library-nav";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
 
 export default function ReviewPage() {
@@ -30,8 +31,8 @@ export default function ReviewPage() {
   const [showAnswers, setShowAnswers] = useState<Set<string>>(new Set());
   const [visibleCount, setVisibleCount] = useState(30);
   const [loadError, setLoadError] = useState(false);
-  const { isBookmarked, toggleBookmark } = useBookmarks();
-  const { user } = useAuth();
+  const { isBookmarked, toggleBookmark, error: bookmarkError } = useBookmarks();
+  const { user, isLoading: authLoading, authRestorationTimedOut } = useAuth();
   const { programSlug } = useActiveProgram();
   const subjects = useMemo(
     () => getSubjectsForProgram(programSlug),
@@ -55,6 +56,7 @@ export default function ReviewPage() {
   } | null>(null);
 
   useEffect(() => {
+    if (authLoading || authRestorationTimedOut) return;
     let cancelled = false;
     const frame = window.requestAnimationFrame(() => {
       if (!cancelled) setLoadError(false);
@@ -71,9 +73,9 @@ export default function ReviewPage() {
       cancelled = true;
       window.cancelAnimationFrame(frame);
     };
-  }, [programSlug, user, guestSubject, bankKey]);
+  }, [programSlug, user, guestSubject, bankKey, authLoading, authRestorationTimedOut]);
 
-  const loadingQuestions = bank?.key !== bankKey;
+  const loadingQuestions = authLoading || bank?.key !== bankKey;
   const allQuestions = loadingQuestions ? [] : bank.questions;
 
   // A subject filter left over from another programme would match nothing, so
@@ -113,7 +115,7 @@ export default function ReviewPage() {
 
   const handleBookmark = (q: QuizQuestion) => {
     const subjectSlug = getSubjectForUnit(q.unitId) || "";
-    toggleBookmark({
+    void toggleBookmark({
       questionText: q.question,
       options: q.options,
       correctIndex: q.correctIndex,
@@ -123,6 +125,8 @@ export default function ReviewPage() {
       subjectSlug,
     });
   };
+
+  if (authRestorationTimedOut) return <AppError title="Could not check your session" description="We could not confirm your account right now. Please try again." onRetry={() => window.location.reload()} />;
 
   if (loadingQuestions) {
     return loadError ? (
@@ -137,10 +141,12 @@ export default function ReviewPage() {
   }
 
   return (
-    <LearningPage className="max-w-5xl">
+    <LearningPage className="max-w-[1200px]">
       <div>
         <PageHeading eyebrow="Study library" title="Question bank" description={user ? `Browse and study ${allQuestions.length} MCQs by subject and unit.` : "Preview up to 20 real questions per subject."} />
+      <LibraryNav />
         {!user && <p className="mt-3 rounded-xl border border-primary/20 bg-primary/5 p-3 text-sm text-muted-foreground">Create a free account to keep saved questions. <Link href="/auth/register" className="font-semibold text-primary underline underline-offset-2">Create account</Link></p>}
+        {bookmarkError && <p role="alert" className="mt-3 rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">{bookmarkError}</p>}
       </div>
 
       {/* Filters */}
@@ -148,6 +154,7 @@ export default function ReviewPage() {
         <div className="relative col-span-2 sm:col-span-1">
           <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
           <Input
+            aria-label="Search question bank"
             placeholder="Search questions..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -155,7 +162,7 @@ export default function ReviewPage() {
           />
         </div>
         <Select value={user ? activeSubjectFilter : guestSubject || "all"} onValueChange={(v) => setFilterSubject(v ?? "all")}>
-          <SelectTrigger className="h-11 w-full">
+          <SelectTrigger aria-label="Filter by subject" className="h-11 w-full">
             <SelectValue>{selectedSubjectLabel}</SelectValue>
           </SelectTrigger>
           <SelectContent>
@@ -168,7 +175,7 @@ export default function ReviewPage() {
           </SelectContent>
         </Select>
         <Select value={filterDifficulty} onValueChange={(v) => setFilterDifficulty(v ?? "all")}>
-          <SelectTrigger className="h-11 w-full">
+          <SelectTrigger aria-label="Filter by difficulty" className="h-11 w-full">
             <SelectValue>{selectedDifficultyLabel}</SelectValue>
           </SelectTrigger>
           <SelectContent>
@@ -247,7 +254,7 @@ export default function ReviewPage() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="mt-3 min-h-9 gap-2 px-1 text-primary"
+                  className="mt-3 min-h-11 gap-2 px-1 text-primary"
                   onClick={() => toggleAnswer(q.id)}
                   aria-label={showAnswers.has(q.id) ? "Hide answer" : "Reveal answer"}
                 >

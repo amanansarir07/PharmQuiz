@@ -21,6 +21,20 @@ interface ResultRow {
   program?: string | null;
 }
 
+interface LocalResultAnswer {
+  isCorrect: boolean;
+}
+
+interface LocalQuizResult {
+  answers: LocalResultAnswer[];
+  questions: unknown[];
+  config?: {
+    completedAt?: string;
+    program?: string;
+    subject?: string;
+  };
+}
+
 /**
  * Load the caller's results, optionally limited to one programme.
  *
@@ -153,14 +167,19 @@ function getLocalStats(programSlug?: string): UserStats {
   }
 
   try {
-    const allResults: any[] = [];
+    const allResults: LocalQuizResult[] = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (key && key.startsWith("quiz-results-")) {
         try {
-          const raw = JSON.parse(localStorage.getItem(key) || "{}");
-          if (raw && raw.answers && raw.questions) {
-            allResults.push(raw);
+          const raw: unknown = JSON.parse(localStorage.getItem(key) || "{}");
+          if (
+            raw &&
+            typeof raw === "object" &&
+            Array.isArray((raw as LocalQuizResult).answers) &&
+            Array.isArray((raw as LocalQuizResult).questions)
+          ) {
+            allResults.push(raw as LocalQuizResult);
           }
         } catch {
           // skip corrupt entries
@@ -195,7 +214,7 @@ function getLocalStats(programSlug?: string): UserStats {
     const subjectBreakdown: Record<string, { correct: number; total: number; accuracy: number }> = {};
 
     for (const result of allResults) {
-      const correct = result.answers.filter((a: any) => a.isCorrect).length;
+      const correct = result.answers.filter((answer) => answer.isCorrect).length;
       const total = result.questions.length;
       const subject = result.config?.subject || "unknown";
 
@@ -218,7 +237,7 @@ function getLocalStats(programSlug?: string): UserStats {
     // Calculate streak from dates
     const dates = allResults
       .map((r) => r.config?.completedAt?.split("T")[0])
-      .filter(Boolean);
+      .filter((date): date is string => Boolean(date));
     const uniqueDates = [...new Set(dates)].sort().reverse();
     const today = new Date().toISOString().split("T")[0];
     const yesterday = new Date(Date.now() - 86400000).toISOString().split("T")[0];
@@ -257,10 +276,10 @@ function emptyStats(): UserStats {
   return { quizzesTaken: 0, totalCorrect: 0, totalAttempted: 0, accuracy: 0, currentStreak: 0, totalScore: 0, subjectBreakdown: {} };
 }
 
-function calculateStreakFromResults(results: any[]): number {
+function calculateStreakFromResults(results: ResultRow[]): number {
   const dates = results
     .map((r) => r.completed_at?.split("T")[0])
-    .filter(Boolean);
+    .filter((date): date is string => Boolean(date));
 
   if (dates.length === 0) return 0;
 

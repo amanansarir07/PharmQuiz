@@ -69,10 +69,10 @@ export function BottomNav() {
   return (
     <nav
       aria-label="Mobile Bottom Navigation"
-      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/80 bg-background/98 shadow-xs md:hidden"
+      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/80 bg-card/95 shadow-[0_-4px_24px_#16234806] backdrop-blur-xl lg:hidden"
       style={{ paddingBottom: "max(0.35rem, env(safe-area-inset-bottom, 0px))" }}
     >
-      <div className="grid h-14 grid-cols-5 items-center px-1">
+      <div className="mx-auto grid h-16 max-w-2xl grid-cols-5 items-center px-2">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isActive = item.match(pathname);
@@ -80,6 +80,7 @@ export function BottomNav() {
             <Link
               key={item.label}
               href={item.href}
+              aria-current={isActive ? "page" : undefined}
               className={cn(
                 "group flex flex-col items-center justify-center gap-1 py-1 text-[10px] font-medium transition-all select-none app-interactive",
                 isActive
@@ -97,7 +98,7 @@ export function BottomNav() {
               >
                 <Icon
                   className={cn(
-                    "h-4 w-4 transition-transform",
+                    "h-5 w-5 transition-transform",
                     isActive ? "stroke-[2.4]" : "stroke-[1.75]"
                   )}
                 />

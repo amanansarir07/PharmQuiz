@@ -1,3 +1,5 @@
+import { programs } from "@/data/programs";
+
 /**
  * Canonical site URL.
  *
@@ -10,5 +12,8 @@ export const SITE_URL = (
 ).replace(/\/$/, "");
 
 /** Wordmark and one-line promise, shared by metadata, OG tags and the manifest. */
-export const SITE_TAGLINE =
-  "MCQ practice for every CTEVT diploma and certificate programme and the +2 streams";
+const liveProgrammes = programs.filter((program) => program.hasContent);
+const liveNames = liveProgrammes.map((program) => program.shortLabel.replace(" · ", " ")).join(" and ");
+
+export const SITE_TAGLINE = "Learn. Practice. Understand.";
+export const SITE_DESCRIPTION = `Bujh is an MCQ practice, mock exam and revision platform for students in Nepal. ${liveNames} are available now, with more CTEVT and +2 programmes coming soon.`;

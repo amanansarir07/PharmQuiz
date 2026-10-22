@@ -2,7 +2,7 @@ import type { ProgramMeta } from "@/data/types";
 
 /**
  * The programme the app falls back to when nothing else is known: today's
- * only published curriculum. Existing quiz results, bookmarks and analytics
+ * default curriculum. Existing quiz results, bookmarks and analytics
  * rows all reference this programme's subject slugs, so it must stay stable.
  */
 export const DEFAULT_PROGRAM_SLUG = "d-pharm-y2";
@@ -67,43 +67,15 @@ export const programs: ProgramMeta[] = [
   {
     id: "program-c-pharm",
     slug: "c-pharm",
-    facultySlug: "ctevt",
-    award: "Certificate in Pharmacy",
-    name: "Certificate in Pharmacy",
-    level: "Year 1",
-    shortLabel: "C.Pharm · Year 1",
+    facultySlug: "npc",
+    award: "Pharmacy Assistant Registration Exam",
+    name: "Pharmacy Assistant Registration Exam",
+    level: "",
+    shortLabel: "NPC · Pharmacy Assistant",
     description:
-      "Certificate-level pharmacy assistant programme covering dispensing, drug store management and basic pharmacology.",
+      "Nepal Pharmacy Council name-registration exam preparation for graduates of the three-year Diploma in Pharmacy.",
     icon: "🧪",
     order: 4,
-    hasContent: false,
-  },
-  {
-    id: "program-c-pharm-y2",
-    slug: "c-pharm-y2",
-    facultySlug: "ctevt",
-    award: "Certificate in Pharmacy",
-    name: "Certificate in Pharmacy",
-    level: "Year 2",
-    shortLabel: "C.Pharm · Year 2",
-    description:
-      "Certificate-level pharmacy assistant programme covering dispensing, drug store management and basic pharmacology.",
-    icon: "🧪",
-    order: 5,
-    hasContent: false,
-  },
-  {
-    id: "program-c-pharm-y3",
-    slug: "c-pharm-y3",
-    facultySlug: "ctevt",
-    award: "Certificate in Pharmacy",
-    name: "Certificate in Pharmacy",
-    level: "Year 3",
-    shortLabel: "C.Pharm · Year 3",
-    description:
-      "Certificate-level pharmacy assistant programme covering dispensing, drug store management and basic pharmacology.",
-    icon: "🧪",
-    order: 6,
     hasContent: false,
   },
 

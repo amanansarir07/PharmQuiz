@@ -229,11 +229,11 @@ export default function AnalyticsPage() {
       ) : (
         <>
           {/* Stats Cards */}
-          <div className="mb-7 grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <div className="mb-7 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-6">
             {[
               {
                 icon: BookOpen,
-                label: "MCQs Taken",
+                label: "Practice sessions",
                 value: String(s.quizzesTaken),
                 change: `${s.totalAttempted} questions attempted`,
                 color: "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950",
@@ -270,11 +270,11 @@ export default function AnalyticsPage() {
             {/* Subject Accuracy Bar Chart */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Subject-wise Accuracy</CardTitle>
+                <CardTitle className="text-lg">Subject performance</CardTitle>
               </CardHeader>
               <CardContent>
                 {subjectChartData.length > 0 ? (
-                  <div className="space-y-4">{subjectChartData.map((item) => <div key={item.name}><div className="mb-1 flex items-center justify-between gap-3 text-sm"><span className="min-w-0 truncate font-medium">{item.name}</span><span className="shrink-0 font-bold tabular-nums text-primary">{item.accuracy}%</span></div><Progress value={item.accuracy} className="h-2" /><p className="mt-1 text-[11px] text-muted-foreground">{item.attempted} questions attempted</p></div>)}</div>
+                  <div className="space-y-4">{subjectChartData.map((item) => <div key={item.name}><div className="mb-1 flex items-center justify-between gap-3 text-sm"><span className="min-w-0 font-medium">{item.name}</span><span className="shrink-0 font-bold tabular-nums text-primary">{item.accuracy}%</span></div><Progress value={item.accuracy} className="h-2" /><p className="mt-1 text-[11px] text-muted-foreground">{item.attempted} questions attempted</p></div>)}</div>
                 ) : (
                   <div className="h-[300px] flex items-center justify-center text-muted-foreground text-sm">
                     Complete MCQs on different subjects to see accuracy
@@ -283,21 +283,21 @@ export default function AnalyticsPage() {
               </CardContent>
             </Card>
 
-            {/* Progress Over Time */}
+            {/* Accuracy over time */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Progress Over Time</CardTitle>
+                <CardTitle className="text-lg">Accuracy over time</CardTitle><p className="text-xs text-muted-foreground">Your completed sessions, in order. Scores shown as percentages.</p>
               </CardHeader>
               <CardContent>
                 {quizHistory.length > 1 ? (
                   <div className="h-[230px] sm:h-[280px]">
                     <ResponsiveContainer width="100%" height="100%">
-                      <LineChart data={quizHistory}>
-                        <CartesianGrid strokeDasharray="3 3" />
+                      <LineChart data={quizHistory} accessibilityLayer margin={{ top: 12, right: 12, bottom: 4, left: 0 }}>
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border)" />
                         <XAxis dataKey="quiz" tick={{ fontSize: 10 }} tickLine={false} axisLine={false} minTickGap={20} />
                         <YAxis domain={[0, 100]} width={28} tick={{ fontSize: 10 }} tickLine={false} axisLine={false} />
                         <Tooltip formatter={(value: unknown) => [`${String(value)}%`, "Score"]} />
-                        <Line type="monotone" dataKey="score" stroke="#1555f0" strokeWidth={2.5} dot={false} activeDot={{ r: 4 }} />
+                        <Line type="monotone" dataKey="score" stroke="var(--primary)" strokeWidth={2.5} dot={false} activeDot={{ r: 4 }} />
                       </LineChart>
                     </ResponsiveContainer>
                   </div>
@@ -315,7 +315,7 @@ export default function AnalyticsPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  Weak Areas
+                  Your next focus
                   {weakTopics.length > 0 && (
                     <Badge variant="destructive" className="text-xs">
                       Needs Practice

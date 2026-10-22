@@ -1,46 +1,27 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { BottomNav } from "@/components/layout/bottom-nav";
 import { AppMain } from "@/components/layout/app-main";
 import { Providers } from "@/components/providers";
-import { SITE_URL } from "@/lib/site";
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-});
-
-const SITE_DESCRIPTION =
-  "Practice MCQs for every CTEVT diploma and certificate programme — Pharmacy, PCL Nursing, Health Assistant (HA), Physiotherapy and CMLT — plus the +2 Science, Computer Science and Management streams.";
+import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Bujh — MCQ Practice for CTEVT & +2 Programmes",
+    default: "Bujh — MCQ Practice & Revision in Nepal",
     template: "%s — Bujh",
   },
   description: SITE_DESCRIPTION,
   keywords: [
     "CTEVT MCQs",
-    "CTEVT entrance preparation",
     "diploma pharmacy MCQs",
-    "D.Pharm questions",
-    "PCL Nursing MCQs",
-    "nursing entrance preparation Nepal",
-    "HA MCQs",
-    "health assistant MCQ",
-    "CMLT MCQs",
-    "lab technician MCQ Nepal",
-    "physiotherapy entrance MCQs",
-    "NEB grade 11 MCQs",
-    "NEB grade 12 MCQs",
-    "class 11 science MCQ Nepal",
-    "class 12 management MCQ",
-    "computer science grade 11 MCQ",
+    "D.Pharm Year 2 MCQs",
+    "D.Pharm Year 3 MCQs",
+    "CTEVT mock exams",
+    "+2 programmes coming soon",
     "MCQ practice Nepal",
     "Bujh",
   ],
@@ -48,13 +29,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Bujh",
-    title: "Bujh — MCQ Practice for CTEVT & +2 Programmes",
+    title: "Bujh — MCQ Practice & Revision in Nepal",
     description: SITE_DESCRIPTION,
     locale: "en_NP",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bujh — MCQ Practice for CTEVT & +2 Programmes",
+    title: "Bujh — MCQ Practice & Revision in Nepal",
     description: SITE_DESCRIPTION,
   },
   appleWebApp: {
@@ -65,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1555f0",
+  themeColor: "#315cf5",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -77,9 +58,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`} suppressHydrationWarning>
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">
         <Providers>
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-primary focus:p-3 focus:text-primary-foreground">Skip to content</a>
           <Navbar />
           <AppMain>{children}</AppMain>
           <Footer />

@@ -5,8 +5,7 @@ import { SITE_URL } from "@/lib/site";
 /**
  * Sitemap.
  *
- * Only public pages are listed — every practice, stats and account page sits
- * behind auth, so it is excluded here and in robots.txt. Programmes without
+ * Only public discovery pages are listed. Programmes without
  * content are still listed (they are the ones people search for), just with a
  * lower priority.
  */
@@ -17,12 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/programs`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/subjects`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    {
-      url: `${SITE_URL}/leaderboard`,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.6,
-    },
   ];
 
   const programPages: MetadataRoute.Sitemap = getPrograms().map((program) => ({

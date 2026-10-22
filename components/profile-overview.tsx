@@ -17,9 +17,9 @@ export function ProfileOverview() {
 
   return <>
     <PageHeading eyebrow="Your account" title="Profile" description="Your learning journey in Bujh." />
-    <div className="rounded-2xl border bg-card p-5 text-center"><span className="mx-auto flex size-16 items-center justify-center rounded-full bg-primary/10 text-xl font-bold text-primary">{initials || <UserRound className="size-7" />}</span><h2 className="mt-3 text-lg font-bold">{user.name}</h2><p className="mt-1 text-xs text-muted-foreground">{program.name}{program.level ? ` · ${program.level}` : ""}</p></div>
+    <div className="relative overflow-hidden rounded-3xl border bg-card p-7 text-center before:absolute before:inset-x-0 before:top-0 before:h-20 before:bg-primary/10"><span className="relative mx-auto flex size-20 ring-4 ring-card items-center justify-center rounded-2xl bg-primary text-2xl font-bold text-primary-foreground">{initials || <UserRound className="size-7" />}</span><h2 className="mt-3 text-lg font-bold">{user.name}</h2><p className="mt-1 text-xs text-muted-foreground">{program.name}{program.level ? ` · ${program.level}` : ""}</p></div>
     {stats && stats.quizzesTaken > 0 && <div className="mt-3 grid grid-cols-3 gap-2"><StatTile label="Streak" value={stats.currentStreak} tone="amber" /><StatTile label="Quizzes" value={stats.quizzesTaken} /><StatTile label="Accuracy" value={`${stats.accuracy}%`} tone="green" /></div>}
-    <div className="mt-6 overflow-hidden rounded-2xl border bg-card">
+    <div className="mt-6 grid overflow-hidden rounded-2xl border bg-card sm:grid-cols-2">
       <LinkRow href="/analytics" icon={<BarChart3 className="size-5" />} title="My progress" />
       <LinkRow href="/bookmarks" icon={<Bookmark className="size-5" />} title="Saved questions" />
       <LinkRow href="/notes" icon={<NotebookPen className="size-5" />} title="Notes" />

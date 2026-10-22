@@ -10,6 +10,21 @@ const RESULTS_PREFIX = "quiz-results-";
 const CONFIG_PREFIX = "quiz-config-";
 const PROGRESS_PREFIX = "quiz-progress-";
 
+/** Remove private study records when a device changes accounts. */
+export function clearLocalStudyData(): void {
+  if (typeof window === "undefined") return;
+  try {
+    for (let i = window.localStorage.length - 1; i >= 0; i--) {
+      const key = window.localStorage.key(i);
+      if (key && (key.startsWith("quiz-") || key.startsWith("bookmark") || key.startsWith("notes"))) {
+        window.localStorage.removeItem(key);
+      }
+    }
+  } catch {
+    // Browser storage may be disabled; sign-out must still finish.
+  }
+}
+
 export function safeGetItem(key: string): string | null {
   if (typeof window === "undefined") return null;
   try {
@@ -75,8 +90,8 @@ export function getLocalQuizResults(): LocalQuizResult[] {
       if (!raw) continue;
       try {
         const data = JSON.parse(raw);
-        if (!data || !data.answers || !data.questions) continue;
-        const correct = data.answers.filter((a: any) => a.isCorrect).length;
+        if (!data || !Array.isArray(data.answers) || !Array.isArray(data.questions)) continue;
+        const correct = data.answers.filter((a: { isCorrect?: boolean } | null) => a?.isCorrect).length;
         const total = data.questions.length;
         results.push({
           sessionId: key.slice(RESULTS_PREFIX.length),

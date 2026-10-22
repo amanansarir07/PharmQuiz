@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Practice MCQs for CTEVT diploma and certificate programs — Pharmacy, Nursing, Health Assistant, Physiotherapy and CMLT — plus the +2 Science, Computer and Management streams.",
     start_url: "/",
     display: "standalone",
-    background_color: "#121212",
-    theme_color: "#121212",
+    background_color: "#f6f8fc",
+    theme_color: "#315cf5",
     lang: "en",
     icons: [
       { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },

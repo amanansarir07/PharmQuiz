@@ -66,9 +66,9 @@ function getClient(): SupabaseClient {
 
 // Both exports point to the SAME client instance — no more split sessions
 export const supabase = new Proxy({} as SupabaseClient, {
-  get(_target, prop, _receiver) {
+  get(_target, prop) {
     const client = getClient();
-    const val = (client as any)[prop];
+    const val = Reflect.get(client, prop);
     return typeof val === "function" ? val.bind(client) : val;
   },
 });

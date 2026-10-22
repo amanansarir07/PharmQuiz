@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef, use } from "react";
 import { useRouter } from "next/navigation";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -60,6 +61,8 @@ type QuizConfig = {
   subject?: string;
   program?: string;
   timeLimit?: number | null;
+  examStartsAt?: string;
+  examEndsAt?: string;
   negativeMarking?: boolean;
   revisionMode?: boolean;
   [key: string]: unknown;
@@ -77,6 +80,7 @@ export default function ActiveQuizPage({
   const [markedForReview, setMarkedForReview] = useState<Set<number>>(new Set());
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
   const [showPalette, setShowPalette] = useState(false);
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
@@ -89,11 +93,14 @@ export default function ActiveQuizPage({
   const answersRef = useRef<(number | null)[]>([]);
   const submittingRef = useRef(false);
   const timeLeftRef = useRef<number | null>(null);
+  const deadlineRef = useRef<number | null>(null);
   const submitRef = useRef<() => void>(() => {});
-  const { user } = useAuth();
+  const { user, isLoading: authLoading, authRestorationTimedOut } = useAuth();
+  const isGuest = !user;
   const isMock = quizConfig?.mode === "mock";
 
   useEffect(() => {
+    if (authLoading || authRestorationTimedOut) return;
     let cancelled = false;
 
     (async () => {
@@ -121,7 +128,7 @@ export default function ActiveQuizPage({
             subjectSlug,
             unitIds: [],
             difficulty: "mixed",
-            numQuestions: 12,
+            numQuestions: isGuest ? 10 : 12,
           });
           if (cancelled) return;
           setQuestions(qs);
@@ -131,6 +138,16 @@ export default function ActiveQuizPage({
 
         const config = JSON.parse(stored);
         if (cancelled) return;
+        if (isGuest && config.scheduled) {
+          router.replace("/mock-test");
+          return;
+        }
+        if (config.scheduled && config.examStartsAt && config.examEndsAt &&
+            (Date.now() < Date.parse(config.examStartsAt) || Date.now() > Date.parse(config.examEndsAt))) {
+          router.replace("/mock-test");
+          return;
+        }
+        if (isGuest) config.numQuestions = Math.min(Math.max(1, Number(config.numQuestions) || 10), 10);
         setQuizConfig(config);
 
         let finalQs: QuizQuestion[] = [];
@@ -172,11 +189,14 @@ export default function ActiveQuizPage({
               subjectSlug,
               unitIds: [],
               difficulty: "mixed",
-              numQuestions: 12,
+              numQuestions: isGuest ? 10 : 12,
             });
           }
           if (cancelled) return;
         }
+        // Local session config and snapshots are editable. Enforce the guest
+        // practice limit where the paper is loaded, including retry sessions.
+        if (isGuest) finalQs = finalQs.slice(0, 10);
         setQuestions(finalQs);
 
         // Try to restore saved progress (crash recovery)
@@ -192,10 +212,12 @@ export default function ActiveQuizPage({
               setAnswers(progress.answers);
               setCurrentIndex(progress.currentIndex || 0);
               setMarkedForReview(new Set(progress.markedForReview || []));
-              if (config.timeLimit && progress.timeLeft != null && progress.timeLeft > 0) {
-                setTimeLeft(progress.timeLeft);
-              } else if (config.timeLimit) {
-                setTimeLeft(config.timeLimit * 60);
+              if (config.timeLimit) {
+                const restoredDeadline = Number(progress.deadlineAt) ||
+                  Number(progress.savedAt) + Math.max(0, Number(progress.timeLeft) || 0) * 1000;
+                const examEnd = config.examEndsAt ? Date.parse(config.examEndsAt) : Infinity;
+                deadlineRef.current = Math.min(restoredDeadline, examEnd);
+                setTimeLeft(Math.max(0, Math.ceil((deadlineRef.current - Date.now()) / 1000)));
               }
               return;
             }
@@ -205,7 +227,9 @@ export default function ActiveQuizPage({
         // Fresh start
         setAnswers(new Array(Math.max(finalQs.length, 1)).fill(null));
         if (config.timeLimit) {
-          setTimeLeft(config.timeLimit * 60);
+          const examEnd = config.examEndsAt ? Date.parse(config.examEndsAt) : Infinity;
+          deadlineRef.current = Math.min(Date.now() + config.timeLimit * 60_000, examEnd);
+          setTimeLeft(Math.max(0, Math.ceil((deadlineRef.current - Date.now()) / 1000)));
         }
       } catch (err) {
         // Banks load over the network now, so a failed chunk fetch would
@@ -221,7 +245,7 @@ export default function ActiveQuizPage({
     // Loads the session exactly once: the programme is read at run time (never
     // as a dependency), so switching programme mid-quiz can't regenerate the
     // paper a student is already sitting.
-  }, [sessionId, router, reloadKey]);
+  }, [sessionId, router, reloadKey, authLoading, authRestorationTimedOut, isGuest]);
 
   // Keep answersRef in sync with answers state
   useEffect(() => {
@@ -235,12 +259,13 @@ export default function ActiveQuizPage({
 
   // Save quiz progress to localStorage on every change (crash recovery)
   useEffect(() => {
-    if (questions.length === 0 || answers.every((a) => a === null)) return;
+    if (questions.length === 0) return;
     const progress = {
       answers,
       currentIndex,
       markedForReview: Array.from(markedForReview),
       timeLeft,
+      deadlineAt: deadlineRef.current,
       savedAt: Date.now(),
     };
     safeSetItem(`quiz-progress-${sessionId}`, JSON.stringify(progress));
@@ -371,7 +396,8 @@ export default function ActiveQuizPage({
     submitRef.current = handleSubmit;
   }, [handleSubmit]);
 
-  // Countdown timer — decrements every second; submits automatically at 0.
+  // Recompute from the absolute deadline so tab suspension or reload cannot
+  // give extra time. Scheduled papers are capped at their exam-window end.
   useEffect(() => {
     if (timeLeft === null) return;
     if (timeLeft <= 0) {
@@ -379,7 +405,8 @@ export default function ActiveQuizPage({
       return;
     }
     const interval = setInterval(() => {
-      setTimeLeft((prev) => (prev === null || prev <= 1 ? 0 : prev - 1));
+      setTimeLeft(deadlineRef.current === null ? null :
+        Math.max(0, Math.ceil((deadlineRef.current - Date.now()) / 1000)));
     }, 1000);
     return () => clearInterval(interval);
   }, [timeLeft]);
@@ -441,7 +468,7 @@ export default function ActiveQuizPage({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
-      if (showSubmitConfirm) return;
+      if (showSubmitConfirm || showPalette || showExitConfirm) return;
 
       const key = e.key.toLowerCase();
       if (key === "1" || key === "a") handleAnswer(0);
@@ -466,7 +493,9 @@ export default function ActiveQuizPage({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex, questions.length, showSubmitConfirm, handleAnswer, toggleMark]);
+  }, [currentIndex, questions.length, showSubmitConfirm, showPalette, showExitConfirm, handleAnswer, toggleMark]);
+
+  if (authRestorationTimedOut) return <AppError title="Could not check your session" description="We could not confirm your account right now. Please try again." onRetry={() => window.location.reload()} />;
 
   if (questions.length === 0) {
     if (loadError) {
@@ -494,7 +523,7 @@ export default function ActiveQuizPage({
   const markedOnlyCount = markedForReview.size - answeredMarkedCount;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 pb-28 pt-4 sm:px-6 sm:pb-8 sm:pt-6">
+    <div className="mx-auto max-w-6xl px-4 pb-32 pt-4 sm:px-7 sm:pt-6 lg:pb-10">
       {/* Resumed from crash banner */}
       {showResumedBanner && (
         <div className="mb-4 rounded-lg border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950 p-3 text-sm text-green-700 dark:text-green-300 flex items-center gap-2">
@@ -509,14 +538,14 @@ export default function ActiveQuizPage({
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => router.push("/quiz")}
+            onClick={() => setShowExitConfirm(true)}
             className="text-xs text-muted-foreground hover:text-foreground -ml-2 gap-1"
           >
             <ChevronLeft className="h-4 w-4" />
             Exit
           </Button>
           <div className="h-4 w-px bg-border hidden sm:block" />
-          <h1 className="max-w-[8rem] truncate text-sm font-bold sm:max-w-none sm:text-base">
+          <h1 className="max-w-[9rem] truncate text-sm font-bold sm:max-w-none sm:text-base">
             {isMock ? quizConfig?.title || "Mock exam" : "Practice"} <span className="text-primary">{currentIndex + 1}/{questions.length}</span>
           </h1>
           {isMock && currentQuestion.subjectName ? (
@@ -540,7 +569,7 @@ export default function ActiveQuizPage({
           <Button
             variant="outline"
             size="sm"
-            className="lg:hidden text-xs"
+            aria-label="Open question navigator" className="lg:hidden text-xs"
             onClick={() => setShowPalette((s) => !s)}
           >
             <LayoutGrid className="mr-1 h-3.5 w-3.5" />
@@ -549,7 +578,7 @@ export default function ActiveQuizPage({
           <Button
             size="sm"
             variant="default"
-            className="text-xs font-semibold"
+            aria-label="Finish and submit session" className="text-xs font-semibold"
             onClick={() => setShowSubmitConfirm(true)}
           >
             <Send className="h-3.5 w-3.5 sm:mr-1.5" />
@@ -572,9 +601,10 @@ export default function ActiveQuizPage({
       <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
         {/* Question Area */}
         <div>
-          <Card className="overflow-hidden">
+          <Card className={isMock ? "overflow-hidden border-t-4 border-t-slate-700 dark:border-t-slate-400" : "overflow-hidden border-t-4 border-t-primary"}>
             <CardContent className="p-4 sm:p-6">
-              <p className="text-base font-semibold leading-7 sm:text-lg sm:leading-8">
+              <p className="mb-4 text-[10px] font-bold uppercase tracking-[.15em] text-muted-foreground">{isMock ? "Exam question" : quizConfig?.revisionMode ? "Learn as you practise" : "Choose one answer"}</p>
+              <p className="text-lg font-semibold leading-8 tracking-tight sm:text-xl sm:leading-9">
                 {currentIndex + 1}. {currentQuestion.question}
               </p>
               <div className="mt-6 space-y-3">
@@ -601,7 +631,7 @@ export default function ActiveQuizPage({
                       >
                         {String.fromCharCode(65 + i)}
                       </span>
-                      <span className="text-sm leading-relaxed">{option}</span>
+                      <span className="text-sm leading-relaxed sm:text-base">{option}</span>
                     </div>
                   </button>
                 ))}
@@ -637,14 +667,14 @@ export default function ActiveQuizPage({
               ) : (
                 <div className="mt-6 rounded-xl bg-muted/40 p-3.5 text-xs text-muted-foreground flex items-center gap-2">
                   <Lightbulb className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
-                  <span>{quizConfig?.revisionMode ? "Select an option to reveal the verified explanation." : "Detailed explanations will unlock on the submission results screen."}</span>
+                  <span>{quizConfig?.revisionMode ? "Select an option to read the explanation." : "Detailed explanations will unlock on the submission results screen."}</span>
                 </div>
               )}
             </CardContent>
           </Card>
 
           {/* Navigation Controls: Sticky bottom bar on mobile, static on desktop */}
-          <div className="fixed inset-x-0 bottom-0 z-30 border-t bg-background/98 p-3.5 pb-[calc(.875rem+env(safe-area-inset-bottom,0px))] shadow-sm sm:static sm:mt-6 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none">
+          <div className="fixed inset-x-0 bottom-0 z-30 border-t bg-background/98 p-3.5 pb-[calc(.875rem+env(safe-area-inset-bottom,0px))] shadow-sm lg:static lg:mt-6 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
             <div className="mb-2 flex items-center justify-center gap-3 text-[11px] text-muted-foreground sm:hidden">
               <span>{questions.length - answeredCount} unanswered</span>
               {markedForReview.size > 0 && (
@@ -712,12 +742,9 @@ export default function ActiveQuizPage({
             Keyboard shortcuts: Press <kbd className="rounded border bg-muted px-1">1-4</kbd> or <kbd className="rounded border bg-muted px-1">A-D</kbd> to select &middot; <kbd className="rounded border bg-muted px-1">←</kbd> <kbd className="rounded border bg-muted px-1">→</kbd> to navigate &middot; <kbd className="rounded border bg-muted px-1">M</kbd> to flag
           </p>
           {/* Mobile question palette (toggled from the header) */}
-          {showPalette && (
-            <div className="mt-4 lg:hidden">
-              <Card>
-                <CardContent className="p-4">
-                  <p className="mb-3 text-sm font-medium">Question Palette</p>
-                  <div className="grid grid-cols-5 gap-2 sm:grid-cols-10">
+          <Dialog open={showPalette} onOpenChange={setShowPalette}>
+              <DialogContent className="sm:max-w-lg"><DialogHeader><DialogTitle>Question navigator</DialogTitle><DialogDescription>Jump to a question or return to one you marked for review.</DialogDescription></DialogHeader>
+                  <div className="grid grid-cols-5 gap-2 sm:grid-cols-8">
                     {questions.map((_, i) => {
                       let colorClass = "bg-muted hover:bg-muted/80";
                       if (answers[i] !== null) colorClass = "bg-green-500 text-white";
@@ -729,8 +756,9 @@ export default function ActiveQuizPage({
                           onClick={() => {
                             setShowExplanation(false);
                             setCurrentIndex(i);
+                            setShowPalette(false);
                           }}
-                          className={`flex h-9 w-9 items-center justify-center rounded-lg text-xs font-medium transition-all ${
+                          className={`flex h-11 w-full items-center justify-center rounded-lg text-xs font-medium transition-all ${
                             currentIndex === i
                               ? "ring-2 ring-primary ring-offset-2 " + colorClass
                               : colorClass
@@ -759,14 +787,12 @@ export default function ActiveQuizPage({
                       Unanswered ({questions.length - answeredCount})
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          )}
+              </DialogContent>
+          </Dialog>
         </div>
 
         {/* Question Palette */}
-        <div className="hidden lg:block">
+        <div className="hidden self-start lg:sticky lg:top-6 lg:block">
           <Card>
             <CardContent className="p-4">
               <p className="mb-3 text-sm font-medium">Question Palette</p>
@@ -822,15 +848,13 @@ export default function ActiveQuizPage({
       </div>
 
       {/* Submit Confirmation Dialog */}
-      {showSubmitConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <Card className="mx-4 w-full max-w-md">
-            <CardContent className="p-6">
+      <Dialog open={showSubmitConfirm} onOpenChange={setShowSubmitConfirm}>
+          <DialogContent>
               <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="h-6 w-6 text-yellow-500" />
-                <h2 className="text-lg font-semibold">
-                  {isMock ? "Finish Mock Test?" : "Submit MCQs?"}
-                </h2>
+                <DialogTitle className="text-lg font-bold">
+                  {isMock ? "Finish mock test?" : "Finish practice?"}
+                </DialogTitle>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
                 You have answered {answeredCount} out of {questions.length} questions.
@@ -853,10 +877,9 @@ export default function ActiveQuizPage({
                   {isSubmitting ? "Submitting..." : "Confirm Submit"}
                 </Button>
               </div>
-            </CardContent>
-          </Card>
-        </div>
-      )}
+          </DialogContent>
+      </Dialog>
+      <Dialog open={showExitConfirm} onOpenChange={setShowExitConfirm}><DialogContent><DialogHeader><DialogTitle>Leave this session?</DialogTitle><DialogDescription>{isMock ? "The exam clock keeps running after you leave. Return before the exam window closes to continue." : "Your current answers stay on this device. Keep this session URL to return to it."}</DialogDescription></DialogHeader><div className="flex flex-col gap-2 sm:flex-row sm:justify-end"><Button variant="outline" onClick={() => setShowExitConfirm(false)}>Keep practising</Button><Button onClick={() => router.push("/quiz")}>Leave session</Button></div></DialogContent></Dialog>
     </div>
   );
 }

@@ -112,7 +112,7 @@ export default function LeaderboardPage() {
   const listEntries = showPodium ? rest : entries;
 
   return (
-    <LearningPage className="max-w-4xl">
+    <LearningPage className="max-w-5xl">
       {/* Header */}
       <div className="flex items-start justify-between gap-2">
         <PageHeading eyebrow={program.shortLabel} title="Leaderboard" description="See how students in your programme are doing." />
@@ -121,7 +121,7 @@ export default function LeaderboardPage() {
           size="sm"
           onClick={() => { setIsRefreshing(true); fetchLeaderboard().finally(() => setIsRefreshing(false)); fetchUserPosition(); }}
           disabled={isRefreshing}
-          className="gap-1.5 text-muted-foreground"
+          aria-label="Refresh rankings" className="gap-1.5 text-muted-foreground"
         >
           <RefreshCw className={cn("h-3.5 w-3.5", isRefreshing && "animate-spin")} />
           <span className="hidden sm:inline">Refresh</span>
@@ -133,11 +133,12 @@ export default function LeaderboardPage() {
         {periods.map(({ key, icon: PIcon }) => (
           <button
             key={key}
+            aria-pressed={activePeriod === key}
             onClick={() => setActivePeriod(key)}
             className={cn(
               "flex min-h-11 items-center justify-center gap-1 rounded-lg px-1 py-2 text-[11px] font-semibold transition-all sm:text-xs",
               activePeriod === key
-                ? "bg-background shadow-sm text-foreground"
+                ? "bg-primary shadow-sm text-primary-foreground"
                 : "text-muted-foreground hover:text-foreground"
             )}
           >
@@ -261,7 +262,7 @@ export default function LeaderboardPage() {
           {/* Sticky Floating User Position Banner */}
           {!user && <div className="mt-6 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-sm"><p className="font-semibold">Join your programme rankings</p><p className="mt-1 text-muted-foreground">Create an account to save scores and qualify for the leaderboard.</p><Link href="/auth/register" className="mt-2 inline-flex font-semibold text-primary">Create free account</Link></div>}
           {user && userPosition && (
-            <div className="sticky bottom-20 sm:bottom-6 z-20 mt-6 rounded-2xl border-2 border-primary/40 bg-card p-3.5 shadow-xl transition-all">
+            <div className="sticky bottom-20 lg:bottom-6 z-20 mt-6 rounded-2xl border-2 border-primary/40 bg-card p-3.5 shadow-xl transition-all">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-xs font-black text-primary-foreground shadow-xs">
@@ -274,7 +275,7 @@ export default function LeaderboardPage() {
                         You
                       </Badge>
                     </div>
-                    <p className="text-xs text-muted-foreground truncate">
+                    <p className="text-xs text-muted-foreground">
                       {userPosition.qualified
                         ? `${userPosition.quizzesTaken} quizzes · ${userPosition.accuracy}% accuracy`
                         : `${userPosition.quizzesNeeded} more quiz${userPosition.quizzesNeeded > 1 ? "zes" : ""} needed to qualify`}
@@ -295,7 +296,7 @@ export default function LeaderboardPage() {
                       href="/quiz"
                       className={cn(buttonVariants({ size: "sm" }), "text-xs font-semibold h-8 px-3")}
                     >
-                      Play Now
+                      Start practice
                     </Link>
                   )}
                 </div>

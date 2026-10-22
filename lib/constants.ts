@@ -1,6 +1,4 @@
 export const APP_NAME = "Bujh";
-export const APP_DESCRIPTION =
-  "MCQ practice platform for CTEVT diploma and certificate programmes and +2 streams — Bujh (understanding) in Nepali";
 
 export const QUIZ_QUESTION_OPTIONS = [10, 20, 30, 50] as const;
 
@@ -23,17 +21,10 @@ export const DIFFICULTY_OPTIONS = [
 ] as const;
 
 export const NAV_LINKS = [
-  { href: "/dashboard", label: "Dashboard" },
+  { href: "/dashboard", label: "Home" },
+  { href: "/subjects", label: "Study" },
   { href: "/quiz", label: "Practice" },
-  { href: "/mock-test", label: "Mock Test" },
+  { href: "/analytics", label: "Progress" },
   { href: "/leaderboard", label: "Leaderboard" },
-  { href: "/programs", label: "Syllabus" },
+  { href: "/more", label: "More" },
 ] as const;
-
-export const PROTECTED_ROUTES = [
-  "/dashboard",
-  "/quiz",
-  "/bookmarks",
-  "/notes",
-  "/analytics",
-];

@@ -14,6 +14,7 @@ import { resolveResultProgram } from "@/lib/result-program";
 import { getMockSubjectCount, getMockQuestionCount, getMockDurationMinutes } from "@/lib/mock-exams";
 import { safeSetItem } from "@/lib/storage";
 import { cn } from "@/lib/utils";
+import { ScoreRing } from "@/components/learning-ui";
 import { AppEmpty } from "@/components/app-state";
 import {
   CheckCircle,
@@ -260,15 +261,13 @@ export default function QuizResultsPage({
   };
 
   return (
-    <div className="mx-auto max-w-4xl px-4 pb-10 pt-6 sm:px-6 sm:pt-9">
+    <div className="mx-auto max-w-5xl px-4 pb-12 pt-6 sm:px-7 sm:pt-9">
       {/* Score Card */}
       <Card className="mb-6 overflow-hidden border-primary/20">
         <CardContent className="p-5 sm:p-8">
           <div className="mb-5 flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-            <div className="flex size-28 shrink-0 items-center justify-center rounded-full p-2 sm:size-32" style={{ background: `conic-gradient(var(--primary) ${percentage}%, var(--muted) ${percentage}%)` }} role="img" aria-label={`${percentage}% accuracy`}>
-              <div className="flex size-full flex-col items-center justify-center rounded-full bg-card"><span className="text-2xl font-bold tabular-nums">{displayScore}/{total}</span><span className="text-xs font-semibold text-primary">{percentage}%</span></div>
-            </div>
-            <div><p className="text-xs font-bold uppercase tracking-wider text-primary">{isMock ? "Mock result" : "Practice result"}</p><h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{percentage >= 80 ? "Great work!" : percentage >= 60 ? "Well done" : "Keep practising"}</h1><p className="mt-1 text-sm text-muted-foreground">You completed {total} questions. Review what you missed and choose your next step.</p></div>
+            <ScoreRing value={percentage} label="Accuracy" />
+            <div><p className="text-xs font-bold uppercase tracking-wider text-primary">{isMock ? "Mock result" : "Practice result"}</p><h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{percentage >= 80 ? "Great work!" : percentage >= 60 ? "Well done" : "Keep practising"}</h1><p className="mt-1 text-sm text-muted-foreground">Score: {displayScore}/{total}. You completed {total} questions. Review what you missed and choose your next step.</p></div>
           </div>
           <div className="mt-4 rounded-xl border border-primary/20 bg-primary/[0.04] p-3.5">
             <p className="text-sm font-semibold text-foreground">Your next best step</p>
@@ -303,7 +302,7 @@ export default function QuizResultsPage({
             </div>
           )}
 
-          <div className="mb-4 grid grid-cols-3 gap-2 sm:gap-4">
+          <div className="mb-4 mt-5 grid grid-cols-3 gap-2 sm:gap-4">
             <div className="rounded-xl bg-green-50 dark:bg-green-950 p-3 sm:p-4 text-center">
               <p className="text-2xl font-bold text-green-600 dark:text-green-400">{correct}</p>
               <p className="text-xs text-muted-foreground">Correct</p>
@@ -371,7 +370,7 @@ export default function QuizResultsPage({
                   <div className="mb-2 flex items-center justify-between gap-2">
                     <p className="flex min-w-0 items-center gap-2 text-sm font-medium">
                       <span className="text-base">{g.icon}</span>
-                      <span className="truncate">{g.name}</span>
+                      <span className="leading-5">{g.name}</span>
                     </p>
                     <span
                       className={`shrink-0 text-sm font-bold ${
@@ -394,9 +393,9 @@ export default function QuizResultsPage({
       )}
 
       {/* Personalized Next Practice Card (Feedback Loop) */}
-      <Card className="mb-6 border-2 border-primary/40 bg-primary/[0.03] shadow-md">
+      <Card className="mb-6 border-primary/20 bg-primary/[0.03]">
         <CardContent className="p-5 sm:p-6">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
             <div className="flex items-center gap-2 text-primary font-bold text-base sm:text-lg">
               <Sparkles className="h-5 w-5" />
               <span>Keep the momentum</span>

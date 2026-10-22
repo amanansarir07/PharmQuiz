@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { Brand } from "@/components/brand";
 import { usePathname } from "next/navigation";
 import { APP_NAME } from "@/lib/constants";
 import { useActiveProgram } from "@/lib/program";
@@ -11,29 +11,23 @@ export function Footer() {
   const pathname = usePathname();
   const { program, isChosen } = useActiveProgram();
 
-  // Hide footer during active test sessions
-  const isTakingQuiz =
-    pathname.startsWith("/quiz/") &&
-    pathname.split("/").length === 3 &&
-    !pathname.endsWith("/results");
-
-  if (isTakingQuiz) return null;
+  // The marketing footer belongs to public discovery pages, not the student workspace.
+  if (pathname !== "/") return null;
   const programLabel = program.level
     ? `${program.name} · ${program.level}`
     : program.name;
 
   return (
-    <footer className="hidden border-t bg-muted/20 md:block">
+    <footer className="border-t bg-card">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <div className="flex flex-col items-center gap-6 text-center">
           {/* Logo & Brand */}
           <div className="flex items-center gap-2 text-foreground font-bold">
-            <Image src="/icons/icon-192.png" alt="Bujh Logo" width={192} height={192} className="h-6 w-6" />
-            <span className="text-base tracking-tight">{APP_NAME}</span>
+            <Brand />
           </div>
 
           <p className="max-w-lg text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            High-yield MCQ preparation, chapter-wise practice, and timed board mock exams aligned with official CTEVT and NEB curricula in Nepal.
+            MCQ practice, revision and mock exams for D.Pharm Year 2 and Year 3 students in Nepal. More CTEVT and +2 programmes are coming soon.
           </p>
 
           {/* Quick Navigation Links */}
@@ -47,7 +41,7 @@ export function Footer() {
           </nav>
 
           {/* Active Syllabus Pill */}
-          <div className="inline-flex items-center gap-2 rounded-full border bg-card/80 px-3.5 py-1.5 text-xs text-muted-foreground shadow-xs">
+          <div className="inline-flex flex-wrap justify-center items-center gap-2 rounded-2xl border bg-card/80 px-3.5 py-1.5 text-xs text-muted-foreground shadow-xs">
             {isChosen ? (
               <>
                 <span aria-hidden>{program.icon}</span>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect, Suspense } from "react";
 import { useAuth } from "@/lib/auth";
-import Image from "next/image";
+import { BujhMark } from "@/components/brand";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,7 +15,7 @@ export default function LoginPage() {
   return (
     <Suspense
       fallback={
-        <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center">
+        <div className="auth-form-stage">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
         </div>
       }
@@ -29,6 +29,7 @@ function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const programParam = searchParams.get("program");
+  const confirmationMessage = searchParams.get("confirmation") === "1";
   const { login, signInWithGoogle, user, isLoading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +44,7 @@ function LoginForm() {
 
   if (isLoading || user) {
     return (
-      <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center">
+      <div className="auth-form-stage">
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </div>
     );
@@ -65,10 +66,10 @@ function LoginForm() {
   };
 
   return (
-    <div className="flex min-h-[calc(100dvh-8rem)] items-center justify-center px-4 py-8 sm:py-12">
+    <div className="auth-form-stage">
       <Card className="w-full max-w-md rounded-2xl border-primary/10 shadow-sm">
         <CardHeader className="text-center">
-          <Image src="/icons/icon-192.png" alt="Bujh logo" width={192} height={192} className="mx-auto mb-4 h-16 w-16" />
+          <BujhMark className="mx-auto mb-5 size-14" />
           <CardTitle className="text-2xl font-bold tracking-tight">Welcome back</CardTitle>
           <CardDescription>
             Learn. Practice. Understand. Sign in to keep your progress.
@@ -76,8 +77,13 @@ function LoginForm() {
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4 pb-5">
+            {confirmationMessage && (
+              <div role="status" className="rounded-xl border border-emerald-500/25 bg-emerald-500/10 p-3 text-sm text-emerald-800 dark:text-emerald-300">
+                Your account was created. Confirm your email, then sign in here.
+              </div>
+            )}
             {error && (
-              <div className="rounded-lg bg-red-50 dark:bg-red-950 p-3 text-sm text-red-600 dark:text-red-400">
+              <div role="alert" className="rounded-lg bg-red-50 dark:bg-red-950 p-3 text-sm text-red-600 dark:text-red-400">
                 {error}
               </div>
             )}
@@ -91,7 +97,7 @@ function LoginForm() {
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10"
+                  className="h-12 rounded-xl pl-10"
                   required
                 />
               </div>
@@ -111,13 +117,13 @@ function LoginForm() {
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10 pr-10"
+                  className="h-12 rounded-xl pl-10 pr-12"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 text-muted-foreground hover:text-foreground"
+                  aria-label={showPassword ? "Hide password" : "Show password"} className="absolute right-1 top-1 flex size-10 items-center justify-center text-muted-foreground hover:text-foreground"
                 >
                   {showPassword ? (
                     <EyeOff className="h-4 w-4" />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,6 +10,7 @@ import { getSubjectName } from "@/data/registry";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { useAuth } from "@/lib/auth";
 import { AppEmpty, AppError, AppLoading } from "@/components/app-state";
+import { LibraryNav } from "@/components/library-nav";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
 
 export default function HistoryPage() {
@@ -60,8 +62,9 @@ export default function HistoryPage() {
   };
 
   return (
-    <LearningPage className="max-w-4xl">
+    <LearningPage className="max-w-[1200px]">
       <PageHeading eyebrow="Your learning record" title="Quiz history" description="Review past practice and mock attempts." />
+      <LibraryNav />
 
       {!mounted ? (
         <AppLoading label="Loading your quiz history" />
@@ -87,16 +90,15 @@ export default function HistoryPage() {
               return (
                 <Card
                   key={entry.key}
-                  onClick={() => clickable && router.push(`/quiz/${entry.localSessionId}/results`)}
                   className={`rounded-2xl transition-colors hover:border-primary/30 ${clickable ? "cursor-pointer" : ""}`}
                 >
                   <CardContent className="flex items-center gap-3 p-4">
-                    <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10`}>
+                    <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10`}>
                       <span className={`text-base font-bold ${getScoreColor(percentage)}`}>{percentage}%</span>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <p className="font-medium text-sm truncate">{getSubjectName(entry.subject)}</p>
+                        <p className="font-semibold text-sm">{getSubjectName(entry.subject)}</p>
                         <Badge variant="outline" className="text-xs shrink-0">{entry.correct}/{entry.total}</Badge>
                       </div>
                       <p className="mt-0.5 text-xs text-muted-foreground">
@@ -106,7 +108,7 @@ export default function HistoryPage() {
                       </p>
                     </div>
                     {clickable && (
-                      <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />
+                      <Link href={`/quiz/${entry.localSessionId}/results`} className="icon-button shrink-0 text-primary" aria-label={`Review ${getSubjectName(entry.subject)} attempt from ${formatDate(entry.completedAt)}`}><ArrowRight className="size-4" /></Link>
                     )}
                   </CardContent>
                 </Card>

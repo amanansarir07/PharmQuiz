@@ -10,7 +10,8 @@
 - **Purpose**: High-performance MCQ preparation, revision, and mock examination platform for Nepal's technical education boards:
   - **CTEVT** diploma/certificate streams (Diploma in Pharmacy, PCL Nursing, Health Assistant [HA], Physiotherapy, CMLT).
   - **+2** Higher Secondary streams (Science [Bio], Computer Science, Management).
-- **Current Active Curriculum**: `d-pharm-y2` (Diploma in Pharmacy · Year 2). Other programmes are scaffolded with `hasContent: false` ("Coming Soon").
+- **Live curricula**: `d-pharm-y2` and `d-pharm-y3` (Diploma in Pharmacy · Years 2 and 3). Availability comes from `data/programs.ts` (`hasContent`) and `data/registry.ts`; other programmes are marked "Coming Soon".
+- **Post-diploma exam**: The Nepal Pharmacy Council Pharmacy Assistant Name Registration Exam is one exam after the three-year D.Pharm course. Catalogue slug `c-pharm` is retained for link continuity. The supplied Council past-question collection is browsable at `/programs/c-pharm/questions`; it combines pharmacist and assistant questions and has no answer key, so it is deliberately excluded from scored quiz banks until answers are individually verified.
 - **Timezone Standard**: **Asia/Kathmandu (UTC+05:45, no DST)** is the single source of truth for mock exam schedules, daily/weekly leaderboard resets, and timestamp calculations.
 
 ---
@@ -20,7 +21,7 @@
 - **Framework**: Next.js 16 (App Router, Server & Client Components) with React 19.
 - **Language**: TypeScript 5 (Strict mode, `@/*` alias pointing to root).
 - **Styling**: Tailwind CSS v4 (`@tailwindcss/postcss`, `tw-animate-css`) + Shadcn UI (`base-nova` style, Base UI `@base-ui/react`, Lucide icons).
-- **Backend & Database**: Supabase PostgreSQL (`@supabase/supabase-js`, `@supabase/ssr`) with Row-Level Security (RLS) and PL/pgSQL RPCs.
+- **Backend & Database**: Supabase PostgreSQL (`@supabase/supabase-js`) with Row-Level Security (RLS) and PL/pgSQL RPCs.
 - **Analytics & Charts**: Recharts, `@vercel/analytics`.
 - **State & Storage**: Dual-tier storage (Supabase cloud sync + quota-safe resilient `localStorage`).
 
@@ -80,6 +81,13 @@
   - High scores ($\ge 70\%$) prompt the full **Board Mock Exam**.
 - Closes the learning loop directly back into Practice ($\circlearrowleft$).
 
+### J. Guest Mode and Navigation
+- Mobile navigation: **Home** (`/dashboard`), **Study** (`/subjects`), **Practice** (`/quiz`), **Progress** (`/analytics`), **More** (`/more`). Desktop also exposes Leaderboard.
+- `/dashboard` renders `GuestHome` after auth restoration confirms there is no session. Guests can choose either live programme, browse subjects, take short practice sessions (at most 10 questions), review their current result, and preview 20 questions per subject in `/review`.
+- Analytics, leaderboard, scheduled mocks, saved questions, notes, mistakes, history and profile use `AccountRequiredState`. The state links to registration and login; guest-to-account conversion keeps the chosen programme.
+- `components/learning-ui.tsx` defines `LearningPage`, `PageHeading`, `SectionHeading`, `StatTile` and `LinkRow`; `components/account-required-state.tsx` defines the shared guest gate.
+- Account deletion uses `DELETE /api/account`: the route verifies the bearer token and password for email accounts, then uses a server-only secret key to delete the requesting Auth user. Foreign-key cascades remove profile-linked data. Deployment requires `SUPABASE_SECRET_KEY` (or the legacy `SUPABASE_SERVICE_ROLE_KEY`) in the server environment only. Migration 009 secures profile, scoring and leaderboard RPC grants; migration 010 restricts profile column updates and aligns the study library schema with JSON question banks.
+
 ---
 
 ## 4. Directory Structure Map
@@ -99,19 +107,23 @@
 │   ├── mock-test/                 # Timed & scheduled mock exams
 │   ├── leaderboard/               # Nepal-time reset leaderboards
 │   ├── analytics/                 # Streaks, accuracy trends & weakness breakdown
+│   ├── more/                      # Secondary study tools and account links
+│   ├── settings/                  # Appearance, programme and account actions
+│   ├── mistakes/                  # Previously missed questions
 │   ├── dashboard/                 # Student home dashboard
 │   ├── history/                   # Quiz attempt history
 │   ├── bookmarks/                 # Saved revision questions
 │   ├── notes/                     # User study notes
 │   ├── profile/                   # Account & programme switcher
+│   ├── api/account/               # Verified server-side Auth account deletion
 │   ├── admin/mock-exams/          # Admin portal for scheduled exams
 │   └── auth/                      # Login, register, reset-password
 ├── components/
 │   ├── layout/                    # Navbar, Footer
 │   ├── ui/                        # Shadcn UI primitives (button, dialog, card, etc.)
-│   ├── study-funnel.tsx           # Multi-step 'What do you study?' onboarding funnel
-│   ├── choose-program.tsx         # First-run modal to pick curriculum
-│   ├── program-home.tsx           # Home screen syllabus & stats component
+│   ├── learning-ui.tsx            # Shared learning screen components
+│   ├── student-dashboard.tsx      # Authenticated student home
+│   ├── guest-home.tsx             # Guest home
 │   └── share-result-dialog.tsx    # Canvas social share card generator
 ├── data/
 │   ├── faculties.ts               # Streams (CTEVT, +2)
@@ -119,7 +131,8 @@
 │   ├── registry.ts                # Lookup helpers (getProgram, getSubject, totals)
 │   ├── types.ts                   # Types: UnitData, SubjectData, ProgramMeta
 │   └── programs/
-│       └── d-pharm-y2/            # Active D.Pharm Year 2 syllabus & JSON banks
+│       ├── d-pharm-y2/            # Live D.Pharm Year 2 syllabus & JSON banks
+│       └── d-pharm-y3/            # Live D.Pharm Year 3 syllabus & JSON banks
 ├── lib/
 │   ├── auth.tsx                   # Supabase authentication context
 │   ├── program.tsx                # ProgramProvider & sync store
@@ -131,8 +144,8 @@
 │   ├── mock-exams.ts              # Scheduled mock exam utilities
 │   ├── share-card.ts              # Result card rendering on HTML Canvas
 │   ├── content/banks.ts           # Dynamic code-split bank loaders
-│   └── supabase/                  # Supabase client, server & middleware helpers
-└── supabase/migrations/           # SQL schemas, RLS policies, RPCs (001 to 008)
+│   └── supabase/client.ts         # Supabase browser client
+└── supabase/migrations/           # SQL schemas, RLS policies, RPCs (001 to 010)
 ```
 
 ---

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Bujh — MCQ practice for CTEVT and +2 programmes";
+export const alt = "Bujh — MCQ practice and revision for students in Nepal";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -58,8 +58,7 @@ export default function Image() {
             textAlign: "center",
           }}
         >
-          CTEVT diplomas and certificate courses · +2 Science, Computer and
-          Management
+          D.Pharm Year 2 and Year 3 available now · More programmes coming soon
         </div>
       </div>
     ),

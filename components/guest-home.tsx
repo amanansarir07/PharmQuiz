@@ -3,33 +3,27 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, ClipboardList, GraduationCap, Target, TrendingUp } from "lucide-react";
 import { useActiveProgram } from "@/lib/program";
+import { LearningPage, PageHeading } from "@/components/learning-ui";
 
 export function GuestHome() {
   const { program } = useActiveProgram();
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-7 sm:px-6 sm:py-12">
-      <div className="mb-7 flex items-center justify-between gap-3">
-        <div>
-          <p className="text-sm font-semibold text-primary">Learn. Practice. Understand.</p>
-          <h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">Start learning with Bujh</h1>
-          <p className="mt-2 text-sm text-muted-foreground">Explore the syllabus and try a real practice session.</p>
-        </div>
-        <span className="hidden rounded-full border bg-card px-3 py-1 text-xs text-muted-foreground sm:inline">Guest mode</span>
-      </div>
+    <LearningPage>
+      <PageHeading eyebrow="Your learning starts here" title="A good day to learn something." description="Explore your syllabus, try a few questions, and find your rhythm." action={<span className="rounded-full border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">Guest mode</span>} />
 
-      <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-7">
+      <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-[#294bc9] p-5 text-white sm:p-8">
         <div className="flex items-start gap-4">
-          <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><GraduationCap className="size-6" /></div>
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white/10 text-white"><GraduationCap className="size-6" /></div>
           <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-wide text-primary">Your programme</p>
+            <p className="text-[10px] font-bold uppercase tracking-[.15em] text-blue-200">Your programme</p>
             <h2 className="mt-1 text-xl font-bold">{program.name}{program.level ? ` · ${program.level}` : ""}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Choose a subject, focus on a unit, and practise at your pace.</p>
+            <p className="mt-2 text-sm leading-6 text-blue-100">Choose a subject, focus on a unit, and practise at your pace.</p>
           </div>
         </div>
         <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-          <Link href="/subjects" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground">Explore subjects <ArrowRight className="size-4" /></Link>
-          <Link href="/programs" className="inline-flex min-h-11 items-center justify-center rounded-xl border bg-card px-5 text-sm font-semibold">Change programme</Link>
+          <Link href="/quiz" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-bold text-blue-800">Try your first practice <ArrowRight className="size-4" /></Link>
+          <Link href="/programs" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10">Change programme</Link>
         </div>
       </div>
 
@@ -51,6 +45,6 @@ export function GuestHome() {
         <div className="flex gap-3"><TrendingUp className="mt-0.5 size-5 shrink-0 text-primary" /><div><h2 className="font-semibold">Keep your progress</h2><p className="mt-1 text-sm text-muted-foreground">Create a free account for synced results, study notes, mistakes and leaderboards.</p></div></div>
         <Link href={`/auth/register?program=${encodeURIComponent(program.slug)}`} className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-xl border border-primary px-4 text-sm font-semibold text-primary">Create free account</Link>
       </div>
-    </div>
+    </LearningPage>
   );
 }

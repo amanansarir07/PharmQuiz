@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
@@ -16,7 +16,7 @@ import { SITE_URL } from "@/lib/site";
 import { getCurriculumPreview } from "@/data/curriculum-previews";
 import { CurriculumDevPreview } from "@/components/curriculum-dev-preview";
 import { ProgramSelectAction } from "@/components/program-select-action";
-import { LearningPage, LinkRow } from "@/components/learning-ui";
+import { LearningPage, LinkRow, SubjectIcon } from "@/components/learning-ui";
 import {
   Award,
   BookOpen,
@@ -55,8 +55,29 @@ export default async function ProgramPage({
   params: Promise<{ programSlug: string }>;
 }) {
   const { programSlug } = await params;
+  if (programSlug === "c-pharm-y1" || programSlug === "c-pharm-y2" || programSlug === "c-pharm-y3") {
+    redirect("/programs/c-pharm");
+  }
   const program = getProgram(programSlug);
   if (!program) notFound();
+
+  if (program.slug === "c-pharm") {
+    return <LearningPage className="max-w-3xl">
+      <Link href="/programs" className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"><ChevronLeft className="size-4" /> All programmes</Link>
+      <div className="rounded-2xl border bg-card p-5 sm:p-7">
+        <p className="text-xs font-bold uppercase tracking-wider text-primary">Nepal Pharmacy Council · Past questions</p>
+        <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Pharmacy Assistant Registration Exam</h1>
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">This is the Nepal Pharmacy Council name-registration exam for pharmacy assistants after the three-year Diploma in Pharmacy. It is one post-diploma exam, not a Year 1, 2, or 3 course.</p>
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">Browse the supplied past-question collection, numbered through 866. The publication combines pharmacist and pharmacy assistant questions and does not provide an answer key, so scored practice is pending verified answers.</p>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Link href="/programs/c-pharm/questions" className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">Browse past questions</Link>
+          <Link href="/programs/d-pharm-y2" className="inline-flex min-h-11 items-center rounded-xl border px-4 text-sm font-semibold">Study D.Pharm Year 2</Link>
+          <Link href="/programs/d-pharm-y3" className="inline-flex min-h-11 items-center rounded-xl border px-4 text-sm font-semibold">Study D.Pharm Year 3</Link>
+        </div>
+        <a href="https://nepalpharmacycouncil.org.np/Syllabus.html" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex text-sm font-semibold text-primary underline underline-offset-2">View the official Council exam syllabus</a>
+      </div>
+    </LearningPage>;
+  }
 
   const faculty = getFaculty(program.facultySlug);
   const available = isProgramAvailable(program.slug);
@@ -125,12 +146,12 @@ export default async function ProgramPage({
         <span className="font-medium text-foreground">{heading}</span>
       </nav>
 
-      <div className="mb-8">
+      <div className="mb-8 rounded-3xl border bg-card p-5 sm:p-8">
         <div className="flex items-start gap-4">
-          <span className="text-4xl">{program.icon}</span>
+          <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-3xl">{program.icon}</span>
           <div>
             <h1 className="text-[1.65rem] font-bold tracking-tight sm:text-3xl">{heading}</h1>
-            <p className="mt-1 max-w-2xl text-muted-foreground">
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
               {program.description}
             </p>
           </div>
@@ -177,7 +198,7 @@ export default async function ProgramPage({
           </h2>
           <div className="grid gap-2 sm:grid-cols-2">
             {subjects.map((subject) => (
-              <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<span className="text-xl">{subject.icon}</span>} title={subject.name} detail={`${subject.units.length} units · ${subject.examMarks} marks`} /></div>
+              <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units · ${subject.examMarks} marks`} /></div>
             ))}
           </div>
         </div>

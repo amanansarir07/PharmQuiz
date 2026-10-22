@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   Dialog,
   DialogContent,
@@ -44,13 +45,10 @@ export function ShareResultDialog({
   const [card, setCard] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
-  const [busy, setBusy] = useState(false);
 
   useEffect(() => {
     if (!open) return;
     let cancelled = false;
-    setError(null);
-    setCopied(false);
     generateShareCard(data)
       .then((url) => {
         if (!cancelled) setCard(url);
@@ -134,9 +132,12 @@ export function ShareResultDialog({
 
         <div className="flex justify-center">
           {card ? (
-            <img
+            <Image
               src={card}
               alt="Your Bujh score card"
+              width={1080}
+              height={1080}
+              unoptimized
               className="mx-auto w-auto h-auto max-w-full max-h-[62vh] rounded-lg ring-1 ring-foreground/10"
             />
           ) : error ? (
@@ -149,7 +150,7 @@ export function ShareResultDialog({
         </div>
 
         <DialogFooter className="flex-col gap-2 sm:flex-row sm:justify-between">
-          <Button onClick={handleShare} disabled={!card || busy} className="flex-1">
+          <Button onClick={handleShare} disabled={!card} className="flex-1">
             <MessageCircle className="mr-2 h-4 w-4" />
             Share on WhatsApp
           </Button>

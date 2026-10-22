@@ -72,6 +72,8 @@ export function scheduledMockConfig(
     revisionMode: false,
     title: exam.title,
     scheduled: true,
+    examStartsAt: exam.starts_at,
+    examEndsAt: exam.ends_at,
   };
 }
 

@@ -2,21 +2,23 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Bookmark, Eye, EyeOff, Trash2 } from "lucide-react";
+import { Bookmark, Eye, EyeOff, Trash2, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useBookmarks } from "@/lib/bookmarks";
 import { findBankQuestion } from "@/lib/quiz-loader";
 import { getSubjectBySlug, getSubjectName } from "@/data/registry";
+import { LibraryNav } from "@/components/library-nav";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
 import { AppLoading } from "@/components/app-state";
 
 export default function BookmarksPage() {
-  const { bookmarks, mounted, removeBookmark } = useBookmarks();
+  const { bookmarks, mounted, error, removeBookmark } = useBookmarks();
 
   // For show/hide answers per question — use a simple Set
   const [showAnswers, setShowAnswers] = useState<Set<string>>(new Set());
+  const [search, setSearch] = useState("");
 
   // Supabase bookmarks only store slim records (text + subject). Rehydrate
   // full options/answer/explanation from the local question bank so the page
@@ -65,8 +67,12 @@ export default function BookmarksPage() {
   };
 
   return (
-    <LearningPage className="max-w-5xl">
+    <LearningPage className="max-w-[1200px]">
       <PageHeading eyebrow="Study library" title="Saved questions" description="Questions you kept for quick revision." action={bookmarks.length > 0 && <Link href="/review" className="text-xs font-semibold text-primary hover:underline">Browse question bank</Link>} />
+      <LibraryNav />
+      {bookmarks.length > 0 && <label className="mb-5 flex items-center gap-3 rounded-xl border bg-card px-4"><Search className="size-4 text-muted-foreground" /><input value={search} onChange={(event) => setSearch(event.target.value)} className="h-12 min-w-0 flex-1 bg-transparent text-sm outline-none" aria-label="Search saved questions" placeholder="Find a saved question…" /></label>}
+
+      {error && <p role="alert" className="mb-4 rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">{error}</p>}
 
       {!mounted ? (
         <AppLoading label="Loading saved questions" />
@@ -89,7 +95,7 @@ export default function BookmarksPage() {
             {bookmarks.length} bookmarked question{bookmarks.length !== 1 ? "s" : ""}
           </p>
           <div className="space-y-3">
-            {enrichedBookmarks.map((q) => {
+            {enrichedBookmarks.filter((q) => `${q.questionText} ${getSubjectName(q.subjectSlug)}`.toLowerCase().includes(search.toLowerCase())).map((q) => {
               const subjectName = getSubjectName(q.subjectSlug);
               const subject = q.subjectSlug ? getSubjectBySlug(q.subjectSlug) : undefined;
               const unitName = subject?.units.find((u) => u.id === q.unitId)?.name || "";
@@ -129,7 +135,7 @@ export default function BookmarksPage() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={() => removeBookmark(q.id)}
+                          onClick={() => { void removeBookmark(q.id); }}
                           aria-label="Remove saved question"
                         >
                           <Trash2 className="h-4 w-4 text-red-500" />
@@ -154,6 +160,7 @@ export default function BookmarksPage() {
                         </div>
                       ))}
                     </div>
+                    <button type="button" onClick={() => toggleAnswer(q.id)} className="mt-3 inline-flex min-h-11 items-center gap-2 text-xs font-semibold text-primary">{showAnswers.has(q.id) ? <EyeOff className="size-4" /> : <Eye className="size-4" />}{showAnswers.has(q.id) ? "Hide explanation" : "Reveal answer & explanation"}</button>
                     {showAnswers.has(q.id) && (
                       <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-950 p-3 text-sm text-blue-800 dark:text-blue-300">
                         <strong>Explanation:</strong> {q.explanation}
@@ -164,6 +171,7 @@ export default function BookmarksPage() {
               );
             })}
           </div>
+          {enrichedBookmarks.length > 0 && !enrichedBookmarks.some((q) => `${q.questionText} ${getSubjectName(q.subjectSlug)}`.toLowerCase().includes(search.toLowerCase())) && <p className="rounded-2xl border border-dashed p-8 text-center text-sm text-muted-foreground">No saved questions match “{search}”.</p>}
         </>
       )}
     </LearningPage>

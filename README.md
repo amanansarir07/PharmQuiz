@@ -100,7 +100,7 @@ Bujh is designed around a multi-faculty architecture.
 | D. Pharmacy — Year 1     | 🚧 Coming Soon |
 | D. Pharmacy — Year 2     | ✅ Available    |
 | D. Pharmacy — Year 3     | ✅ Available    |
-| Certificate in Pharmacy  | 🚧 Coming Soon |
+| Pharmacy Assistant Registration Exam (Nepal Pharmacy Council, after D.Pharm) | 📖 Past-question collection; scored practice pending answer verification |
 | PCL Nursing              | 🚧 Coming Soon |
 | Health Assistant (HA)    | 🚧 Coming Soon |
 | Diploma in Physiotherapy | 🚧 Coming Soon |
@@ -247,9 +247,11 @@ Create a `.env.local` file in the project root:
 ```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SECRET_KEY=your_server_only_supabase_secret_key
 ```
 
 These values come from your Supabase project settings.
+`SUPABASE_SECRET_KEY` enables verified account deletion through the server route. The older `SUPABASE_SERVICE_ROLE_KEY` also works as a fallback. Set either only in the server environment; never prefix it with `NEXT_PUBLIC_` or expose it in browser code. Without one, account deletion returns an unavailable message and does not remove any user data.
 
 ### 4. Set up the database
 
@@ -260,6 +262,8 @@ supabase/migrations/
 ```
 
 The migrations define the application's database tables, Row Level Security policies, functions, and other database-side logic.
+Apply migration 009 on existing deployments to restrict profile, score and leaderboard RPC access to authenticated users.
+Apply migration 010 after 009 to prevent students from changing their profile role and to add the columns used by Notes and Saved Questions.
 
 ### 5. Start the development server
 

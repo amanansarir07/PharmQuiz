@@ -42,6 +42,10 @@ import {
   Trash2,
 } from "lucide-react";
 
+function errorMessage(error: unknown, fallback: string): string {
+  return error instanceof Error && error.message ? error.message : fallback;
+}
+
 export default function AdminMockExamsPage() {
   const router = useRouter();
   const { isAdmin, isLoading } = useAuth();
@@ -109,13 +113,13 @@ export default function AdminMockExamsPage() {
       setStartsAt("");
       setEditingId(null);
       load();
-    } catch (err: any) {
-      setError(
-        err?.message ||
-          (editingId
-            ? "Could not save the exam."
-            : "Could not create the exam. Are you an admin?")
-      );
+    } catch (error: unknown) {
+      setError(errorMessage(
+        error,
+        editingId
+          ? "Could not save the exam."
+          : "Could not create the exam. Are you an admin?"
+      ));
     } finally {
       setSaving(false);
     }
@@ -146,8 +150,8 @@ export default function AdminMockExamsPage() {
     try {
       await deleteMockExam(exam.id);
       setExams((prev) => prev.filter((x) => x.id !== exam.id));
-    } catch (err: any) {
-      setError(err?.message || "Could not delete the exam.");
+    } catch (error: unknown) {
+      setError(errorMessage(error, "Could not delete the exam."));
     }
   };
 

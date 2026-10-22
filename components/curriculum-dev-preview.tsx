@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ProgramCurriculumPreview } from "@/data/curriculum-previews";
 import type { ProgramMeta } from "@/data/types";
 import { useActiveProgram } from "@/lib/program";
-import { useAuth } from "@/lib/auth";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -22,11 +20,9 @@ import {
   ChevronDown,
   ChevronUp,
   Bell,
-  Code2,
   ShieldCheck,
   GraduationCap,
   Layers,
-  Award,
   Cpu,
 } from "lucide-react";
 
@@ -40,7 +36,6 @@ export function CurriculumDevPreview({
   preview,
 }: CurriculumDevPreviewProps) {
   const router = useRouter();
-  const { user } = useAuth();
   const { setProgramSlug } = useActiveProgram();
   const [expandedSubject, setExpandedSubject] = useState<string | null>(
     preview?.subjects[0]?.name || null

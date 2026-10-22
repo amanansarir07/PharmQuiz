@@ -3,14 +3,14 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowRight, BookOpen, Bookmark, ClipboardCheck, RotateCcw, Target, TrendingUp, Trophy } from "lucide-react";
+import { ArrowRight, BookOpen, Bookmark, ClipboardCheck, RotateCcw, Target, TrendingUp, Trophy, Flame, CheckCircle2 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { getSubjectsForProgram, getSubjectName } from "@/data/registry";
 import { calculateStats, type UserStats } from "@/lib/stats";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { createMistakesSession, getMistakesCount } from "@/lib/mistakes";
-import { LearningPage, LinkRow, PageHeading, SectionHeading, StatTile } from "@/components/learning-ui";
+import { LearningPage, LinkRow, PageHeading, SectionHeading, StatTile, SubjectIcon } from "@/components/learning-ui";
 import { OnboardingDepartmentModal } from "@/components/onboarding-department-modal";
 
 export function StudentDashboard() {
@@ -46,19 +46,21 @@ export function StudentDashboard() {
 
   return <LearningPage>
     <OnboardingDepartmentModal />
-    <PageHeading eyebrow={program.shortLabel} title={`Welcome back, ${firstName}`} description="Keep learning. Small steps make progress." action={<Link href="/programs" className="text-xs font-semibold text-primary hover:underline">Switch programme</Link>} />
+    <PageHeading eyebrow="Make a little progress today" title={`Welcome back, ${firstName}.`} description={`${program.shortLabel} · Your next learning step is right here.`} action={<Link href="/quiz" className="action-primary"><Target className="size-4" />Start practice</Link>} />
+    <div className="mb-7 grid grid-cols-2 gap-3 xl:grid-cols-4"><StatTile label="Overall accuracy" value={stats && stats.quizzesTaken > 0 ? `${stats.accuracy}%` : "—"} detail="Across your completed practice" /><StatTile label="Practice sessions" value={stats?.quizzesTaken ?? "—"} tone="green" detail="Every session is a step forward" /><StatTile label="Current day streak" value={stats?.currentStreak ?? "—"} tone="amber" detail="Build a habit, one day at a time" /><StatTile label="Mistakes to revisit" value={mistakes} tone="red" detail="Turn these into your strengths" /></div>
 
-    <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
+    <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_300px]">
       <div className="min-w-0 space-y-7">
         <section>
           <SectionHeading title="Continue learning" />
-          <div className="overflow-hidden rounded-2xl border border-primary/20 bg-card shadow-sm">
-            <div className="flex items-start gap-4 p-5">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><BookOpen className="size-6" /></span>
-              <div className="min-w-0 flex-1"><p className="text-xs font-semibold uppercase tracking-wide text-primary">{recent ? "Recent practice" : "Your first step"}</p><h2 className="mt-1 truncate text-lg font-bold">{recent ? getSubjectName(recent.subject) : `Start ${program.shortLabel} practice`}</h2><p className="mt-1 text-sm text-muted-foreground">{recent ? `${recent.correct} of ${recent.total} correct in your latest attempt` : "Choose a subject and take a short MCQ session."}</p></div>
+          <div className="relative overflow-hidden rounded-[24px] bg-[#294bc9] text-white shadow-[0_12px_32px_-16px_#294bc980]">
+            <div className="pointer-events-none absolute -right-12 -top-16 size-56 rounded-full border-[35px] border-white/5" />
+            <div className="relative flex items-start gap-4 p-5 sm:p-6">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-white"><BookOpen className="size-6" /></span>
+              <div className="min-w-0 flex-1"><p className="text-[10px] font-bold uppercase tracking-[.14em] text-blue-100">{recent ? "Keep the momentum" : "Your first step"}</p><h2 className="mt-2 text-xl font-bold tracking-tight">{recent ? getSubjectName(recent.subject) : `Start ${program.shortLabel} practice`}</h2><p className="mt-2 text-sm leading-6 text-blue-100">{recent ? `${recent.correct} of ${recent.total} correct in your latest attempt. Ready to build on that?` : "Choose a subject and take a short MCQ session. Every answer is a chance to understand more."}</p></div>
             </div>
-            {recent && <div className="mx-5 mb-4 h-1.5 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: `${recent.total ? Math.round(recent.correct / recent.total * 100) : 0}%` }} /></div>}
-            <Link href={practiceHref} className="flex min-h-11 items-center justify-center gap-2 bg-primary px-4 text-sm font-semibold text-primary-foreground">{recent ? "Practice this subject again" : "Start practice"}<ArrowRight className="size-4" /></Link>
+            {recent && <div className="mx-6 mb-5 h-1.5 overflow-hidden rounded-full bg-white/15"><div className="h-full rounded-full bg-[#b6f4df]" style={{ width: `${recent.total ? Math.round(recent.correct / recent.total * 100) : 0}%` }} /></div>}
+            <div className="px-5 pb-5 sm:px-6 sm:pb-6"><Link href={practiceHref} className="inline-flex min-h-11 items-center justify-center gap-3 rounded-xl bg-white px-5 text-sm font-bold text-[#2445c5]">{recent ? "Practise this subject" : "Start practice"}<ArrowRight className="size-4" /></Link></div>
           </div>
         </section>
 
@@ -77,7 +79,7 @@ export function StudentDashboard() {
           <div className="overflow-hidden rounded-2xl border bg-card">
             {subjects.map((subject) => {
               const performance = stats?.subjectBreakdown[subject.slug];
-              return <LinkRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={<span className="text-xl">{subject.icon}</span>} title={subject.name} detail={`${subject.units.length} units${performance ? ` · ${performance.total} questions attempted` : ""}`} end={performance ? <span className="text-sm font-bold tabular-nums text-primary">{performance.accuracy}%</span> : undefined} />;
+              return <LinkRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units${performance ? ` · ${performance.total} questions attempted` : " · Ready to explore"}`} end={performance ? <span className="text-right"><span className="block text-sm font-bold tabular-nums text-primary">{performance.accuracy}%</span><span className="text-[10px] text-muted-foreground">accuracy</span></span> : undefined} />;
             })}
           </div>
         </section>
@@ -85,8 +87,8 @@ export function StudentDashboard() {
 
       <div className="min-w-0 space-y-7">
         <section>
-          <SectionHeading title="Your progress" href="/analytics" />
-          {stats && stats.quizzesTaken > 0 ? <div className="grid grid-cols-2 gap-2"><StatTile label="Accuracy" value={`${stats.accuracy}%`} /><StatTile label="Quizzes" value={stats.quizzesTaken} tone="green" /><StatTile label="Day streak" value={stats.currentStreak} tone="amber" /><StatTile label="Mistakes to revisit" value={mistakes} tone="red" /></div> : <div className="rounded-2xl border bg-card p-4 text-sm text-muted-foreground">Your progress will appear after your first quiz.</div>}
+          <SectionHeading title="Learning milestones" />
+          <div className="surface p-5"><span className="flex size-11 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-600"><Flame className="size-6" /></span><h3 className="mt-4 text-base font-bold">Small wins add up.</h3><p className="mt-1 text-xs leading-5 text-muted-foreground">Build your practice habit at your pace.</p><div className="mt-4 space-y-3">{[{ label: "Complete your first session", target: 1 }, { label: "Build up to 5 sessions", target: 5 }, { label: "Reach 20 practice sessions", target: 20 }].map((milestone) => <div key={milestone.target} className="flex items-center gap-2 text-xs"><CheckCircle2 className={`size-4 shrink-0 ${(stats?.quizzesTaken || 0) >= milestone.target ? "text-emerald-600" : "text-muted-foreground/40"}`} /><span className={(stats?.quizzesTaken || 0) >= milestone.target ? "font-medium" : "text-muted-foreground"}>{milestone.label}</span></div>)}</div></div>
         </section>
         <section>
           <SectionHeading title="Recent activity" href="/history" />

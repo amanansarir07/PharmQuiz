@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabase } from "@/lib/supabase/client";
+import { clearLocalStudyData } from "@/lib/storage";
 
 interface User {
   id: string;
@@ -21,6 +22,7 @@ interface User {
 interface AuthContextType {
   user: User | null;
   isLoading: boolean;
+  authRestorationTimedOut: boolean;
   isAdmin: boolean;
   login: (email: string, password: string) => Promise<{ error?: string }>;
   register: (
@@ -28,7 +30,7 @@ interface AuthContextType {
     email: string,
     password: string,
     programSlug?: string
-  ) => Promise<{ error?: string }>;
+  ) => Promise<{ error?: string; emailConfirmationRequired?: boolean }>;
   logout: () => void;
   /** `programSlug` is optional — omit it to leave the stored programme alone. */
   updateProfile: (
@@ -36,7 +38,7 @@ interface AuthContextType {
     programSlug?: string
   ) => Promise<{ error?: string }>;
   changePassword: (currentPassword: string, newPassword: string) => Promise<{ error?: string }>;
-  deleteAccount: (password: string) => Promise<{ error?: string }>;
+  deleteAccount: (password: string, confirmation: string) => Promise<{ error?: string }>;
   signInWithGoogle: () => Promise<{ error?: string }>;
 }
 
@@ -45,6 +47,16 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 // Old localStorage keys from the previous auth system
 const OLD_CURRENT_USER_KEY = "pharmquiz_current_user";
 const OLD_USERS_KEY = "pharmquiz_users";
+const LAST_ACCOUNT_KEY = "bujh-last-auth-user";
+
+function rememberAccount(userId: string) {
+  if (typeof window === "undefined") return;
+  try {
+    const previous = localStorage.getItem(LAST_ACCOUNT_KEY);
+    if (previous && previous !== userId) clearLocalStudyData();
+    localStorage.setItem(LAST_ACCOUNT_KEY, userId);
+  } catch {}
+}
 
 function clearOldAuthStorage() {
   if (typeof window !== "undefined") {
@@ -56,6 +68,7 @@ function clearOldAuthStorage() {
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [authRestorationTimedOut, setAuthRestorationTimedOut] = useState(false);
   const activeUserId = useRef<string | null>(null);
 
   // Build a User from session data (no DB query needed)
@@ -129,11 +142,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Check for existing session on mount
   useEffect(() => {
     let disposed = false;
+    let initialResolved = false;
     const pendingTasks = new Set<ReturnType<typeof setTimeout>>();
     const showSession = (session: Session | null) => {
       if (disposed) return;
+      initialResolved = true;
+      if (session?.user) rememberAccount(session.user.id);
       activeUserId.current = session?.user.id ?? null;
       setUser(session?.user ? userFromSession(session) : null);
+      setAuthRestorationTimedOut(false);
       setIsLoading(false);
     };
     const defer = (work: () => Promise<void>) => {
@@ -149,8 +166,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       clearOldAuthStorage();
     }
 
-    // A stalled initial auth event must never hold every route on a full-page spinner.
-    const loadingLimit = setTimeout(() => { if (!disposed) setIsLoading(false); }, 5000);
+    // A stalled auth event must not leave a spinner forever or incorrectly
+    // classify a possibly signed-in student as a guest.
+    const loadingLimit = setTimeout(() => {
+      if (!disposed && !initialResolved) {
+        setAuthRestorationTimedOut(true);
+        setIsLoading(false);
+      }
+    }, 5000);
 
     // Listen for auth state changes
     const { data: { subscription } } = getSupabase().auth.onAuthStateChange(
@@ -231,6 +254,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     if (!data.user) {
       return { error: "Registration failed. Please try again." };
+    }
+
+    // With Confirm email enabled, Supabase creates the account but deliberately
+    // returns no browser session. The profile trigger still receives the
+    // metadata above, so do not report a false profile error or enter guest
+    // mode. Let the student confirm the email, then sign in normally.
+    if (!data.session) {
+      return { emailConfirmationRequired: true };
     }
 
     // Wait briefly for the signup trigger to create the initial profile row
@@ -317,7 +348,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             .from("profiles")
             .update(profilePatch)
             .eq("id", user.id);
-          if (dbError) console.warn("Direct profile update failed:", dbError.message);
+          if (dbError) {
+            console.warn("Direct profile update failed:", dbError.message);
+            return { error: "Could not save your profile. Please try again." };
+          }
 
           const { error: authError } = await getSupabase().auth.updateUser({
             data: {
@@ -330,8 +364,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           if (authError) console.warn("Auth metadata update failed:", authError.message);
         }
 
-        // Update local state. This is what makes the programme switcher react
-        // immediately, even when every write above failed.
+        // Reflect the saved values after at least one database write succeeds.
         setUser((prev) =>
           prev
             ? {
@@ -374,44 +407,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return {};
   }, [user]);
 
-  const deleteAccount = useCallback(async (password: string) => {
+  const deleteAccount = useCallback(async (password: string, confirmation: string) => {
     if (!user) return { error: "Not logged in" };
 
-    // Verify password first
-    const { error: signInError } = await getSupabase().auth.signInWithPassword({
-      email: user.email,
-      password: password,
-    });
-
-    if (signInError) {
-      return { error: "Incorrect password" };
-    }
-
     try {
-      // Delete user data from profiles (RPC bypasses RLS)
-      // Note: Supabase doesn't allow client-side user deletion directly.
-      // We delete the profile and sign out. The auth user remains but is unusable.
-      const { error: dbError } = await getSupabase()
-        .from("profiles")
-        .delete()
-        .eq("id", user.id);
-
-      if (dbError) {
-        console.warn("Profile delete failed:", dbError.message);
+      const { data: { session } } = await getSupabase().auth.getSession();
+      if (!session || session.user.id !== user.id) return { error: "Your session has expired. Sign in again." };
+      const response = await fetch("/api/account", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}` },
+        body: JSON.stringify({ password, confirmation }),
+      });
+      if (!response.ok) {
+        const result: { error?: string } = await response.json();
+        return { error: result.error || "Failed to delete account" };
       }
 
-      // Clear local data
-      if (typeof window !== "undefined") {
-        for (let i = localStorage.length - 1; i >= 0; i--) {
-          const key = localStorage.key(i);
-          if (key && (key.startsWith("quiz-") || key.startsWith("bookmark") || key.startsWith("notes"))) {
-            localStorage.removeItem(key);
-          }
-        }
-      }
+      // The server deleted auth.users; its foreign-key cascades remove profile
+      // data. Clear this device only after that operation succeeds.
+      clearLocalStudyData();
+      if (typeof window !== "undefined") localStorage.removeItem("bujh-pending-program");
 
-      // Sign out
-      await getSupabase().auth.signOut();
+      await getSupabase().auth.signOut({ scope: "local" });
       clearOldAuthStorage();
       setUser(null);
 
@@ -435,6 +452,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const logout = useCallback(async () => {
     await getSupabase().auth.signOut();
+    clearLocalStudyData();
     clearOldAuthStorage();
     setUser(null);
   }, []);
@@ -442,7 +460,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const isAdmin = user?.role === "admin";
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, isAdmin, login, register, logout, updateProfile, changePassword, deleteAccount, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, isLoading, authRestorationTimedOut, isAdmin, login, register, logout, updateProfile, changePassword, deleteAccount, signInWithGoogle }}>
       {children}
     </AuthContext.Provider>
   );

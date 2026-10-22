@@ -5,23 +5,22 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
-import { BarChart3, BookOpen, Bookmark, ChevronRight, ClipboardList, GraduationCap, History, LockKeyhole, LogIn, Moon, NotebookPen, RotateCcw, Settings, Sun, Target, Trophy, UserRound } from "lucide-react";
+import { BookOpen, Bookmark, ChevronRight, ClipboardList, GraduationCap, History, LockKeyhole, LogIn, Moon, NotebookPen, RotateCcw, Settings, Sun, Trophy, UserRound } from "lucide-react";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
+import { AppError, AppLoading } from "@/components/app-state";
 
 const links = [
-  { href: "/leaderboard", label: "Leaderboard", icon: Trophy },
+  { href: "/leaderboard", label: "Leaderboard", icon: Trophy, accountRequired: true },
   { href: "/review", label: "Question bank", icon: BookOpen },
   { href: "/bookmarks", label: "Saved questions", icon: Bookmark, accountRequired: true },
   { href: "/notes", label: "Study notes", icon: NotebookPen, accountRequired: true },
   { href: "/mistakes", label: "Mistakes Bank", icon: RotateCcw, accountRequired: true },
   { href: "/history", label: "Quiz history", icon: History, accountRequired: true },
-  { href: "/analytics", label: "Performance", icon: BarChart3, accountRequired: true },
   { href: "/mock-test", label: "Mock tests", icon: ClipboardList, accountRequired: true },
-  { href: "/quiz", label: "Practice", icon: Target },
 ];
 
 export default function MorePage() {
-  const { user } = useAuth();
+  const { user, isLoading, authRestorationTimedOut } = useAuth();
   const { program } = useActiveProgram();
   const { resolvedTheme, setTheme } = useTheme();
   const [themeReady, setThemeReady] = useState(false);
@@ -31,8 +30,11 @@ export default function MorePage() {
   }, []);
   const darkTheme = themeReady && resolvedTheme === "dark";
 
-  return <LearningPage className="max-w-3xl">
-    <PageHeading title="More" description="Your study tools and account." />
+  if (isLoading) return <AppLoading label="Loading your study tools" />;
+  if (authRestorationTimedOut) return <AppError title="Could not check your session" description="We could not confirm your account right now. Please try again." onRetry={() => window.location.reload()} />;
+
+  return <LearningPage className="max-w-5xl">
+    <PageHeading eyebrow="Everything in one place" title="Your study space" description="Pick up a saved question, revisit a note, or make Bujh your own." />
 
     <div className="mt-6 rounded-2xl border bg-card p-4">
       <div className="flex items-center gap-3"><span className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary"><UserRound className="size-5" /></span><div><p className="font-semibold">{user?.name || "Guest Student"}</p><p className="text-xs text-muted-foreground">{program.name}{program.level ? ` · ${program.level}` : ""}</p></div></div>
@@ -41,9 +43,9 @@ export default function MorePage() {
       </div>
     </div>
 
-    <div className="mt-6 overflow-hidden rounded-2xl border bg-card">
-      <Link href="/programs" className="flex min-h-14 items-center gap-3 border-b px-4 hover:bg-muted/60"><GraduationCap className="size-5 text-primary" /><span className="flex-1 text-sm font-medium">Switch programme</span><ChevronRight className="size-4 text-muted-foreground" /></Link>
-      {links.map(({ href, label, icon: Icon, accountRequired }) => <Link key={href} href={href} className="flex min-h-14 items-center gap-3 border-b px-4 last:border-0 hover:bg-muted/60"><Icon className="size-5 shrink-0 text-primary" /><span className="min-w-0 flex-1 text-sm font-medium">{label}</span>{!user && accountRequired && <span className="inline-flex shrink-0 items-center gap-1 text-[11px] text-muted-foreground"><LockKeyhole className="size-3.5" /> Account</span>}<ChevronRight className="size-4 shrink-0 text-muted-foreground" /></Link>)}
+    <div className="mt-6 grid overflow-hidden rounded-2xl border bg-card sm:grid-cols-2">
+      <Link href="/programs" className="flex min-h-18 items-center gap-3 border-b px-5 hover:bg-muted/60"><GraduationCap className="size-5 text-primary" /><span className="flex-1 text-sm font-medium">Switch programme</span><ChevronRight className="size-4 text-muted-foreground" /></Link>
+      {links.map(({ href, label, icon: Icon, accountRequired }) => <Link key={href} href={href} className="flex min-h-18 items-center gap-3 border-b px-5 last:border-0 hover:bg-muted/60"><Icon className="size-5 shrink-0 text-primary" /><span className="min-w-0 flex-1 text-sm font-medium">{label}</span>{!user && accountRequired && <span className="inline-flex shrink-0 items-center gap-1 text-[11px] text-muted-foreground"><LockKeyhole className="size-3.5" /> Account</span>}<ChevronRight className="size-4 shrink-0 text-muted-foreground" /></Link>)}
       <Link href="/settings" className="flex min-h-14 items-center gap-3 border-t px-4 hover:bg-muted/60"><Settings className="size-5 text-primary" /><span className="flex-1 text-sm font-medium">Settings</span><ChevronRight className="size-4 text-muted-foreground" /></Link>
     </div>
     <div className="mt-6 overflow-hidden rounded-2xl border bg-card">

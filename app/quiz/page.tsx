@@ -15,7 +15,8 @@ import {
 import { safeSetItem, pruneExpiredScratchKeys } from "@/lib/storage";
 import { useActiveProgram } from "@/lib/program";
 import { useAuth } from "@/lib/auth";
-import { AppLoading } from "@/components/app-state";
+import { SubjectIcon } from "@/components/learning-ui";
+import { AppError, AppLoading } from "@/components/app-state";
 import {
   fetchUpcomingExams,
   formatCountdown,
@@ -66,7 +67,7 @@ function QuizSetupInner() {
   const [now, setNow] = useState(() => new Date());
 
   const { programSlug, program } = useActiveProgram();
-  const { user } = useAuth();
+  const { user, isLoading: authLoading, authRestorationTimedOut } = useAuth();
   const subjects = useMemo(
     () => getSubjectsForProgram(programSlug),
     [programSlug]
@@ -241,8 +242,11 @@ function QuizSetupInner() {
   const liveExam = exams.find((e) => isExamLive(e, now)) || null;
   const upcomingExam = liveExam ? null : exams[0] || null;
 
+  if (authLoading) return <AppLoading label="Preparing your practice" />;
+  if (authRestorationTimedOut) return <AppError title="Could not check your session" description="We could not confirm your account right now. Please try again." onRetry={() => window.location.reload()} />;
+
   return (
-    <div className="mx-auto max-w-3xl px-4 pb-10 pt-6 sm:px-6 sm:pt-9">
+    <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:px-6 sm:pt-9">
       <div className="mb-6">
         <div className="mb-4 flex items-center justify-between gap-3 rounded-xl border bg-card p-3">
           <div className="flex min-w-0 items-center gap-2">
@@ -261,7 +265,7 @@ function QuizSetupInner() {
         <p className="text-xs font-bold uppercase tracking-wider text-primary">Custom practice</p>
         <h1 className="mt-1 text-[1.65rem] font-bold tracking-tight sm:text-3xl">Set up your practice</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Start in seconds. No account required.
+          Choose a subject, set your pace, and make every question count.
         </p>
       </div>
 
@@ -396,6 +400,7 @@ function QuizSetupInner() {
               {subjects.map((s) => (
                 <button
                   key={s.id}
+                  aria-pressed={selectedSubject === s.slug}
                   onClick={() => handleSubjectChange(s.slug)}
                   className={`flex items-center gap-3 rounded-lg border p-3 text-left transition-all ${
                     selectedSubject === s.slug
@@ -403,7 +408,7 @@ function QuizSetupInner() {
                       : "hover:bg-muted"
                   }`}
                 >
-                  <span className="text-xl">{s.icon}</span>
+                  <SubjectIcon slug={s.slug} />
                   <div>
                     <p className="text-sm font-medium">{s.name}</p>
                     <p className="text-xs text-muted-foreground">
@@ -466,15 +471,15 @@ function QuizSetupInner() {
           </Card>
         )}
 
-        <details className="group rounded-xl border bg-card">
+        <details open className="group rounded-2xl border bg-card">
           <summary className="flex cursor-pointer list-none items-center justify-between p-4 font-semibold [&::-webkit-details-marker]:hidden">
             <span className="flex items-center gap-2">
               <Settings className="h-4 w-4 text-primary" />
-              Advanced options
+              Session preferences
             </span>
             <span className="text-xs text-muted-foreground group-open:hidden">Optional</span>
           </summary>
-          <div className="space-y-6 border-t p-4">
+          <div className="grid gap-4 border-t p-4 sm:grid-cols-2 [&>[data-slot=card]]:shadow-none">
         {/* Difficulty */}
         <Card ref={difficultyRef}>
           <CardHeader>
@@ -484,10 +489,11 @@ function QuizSetupInner() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2">
               {DIFFICULTY_OPTIONS.map((opt) => (
                 <button
                   key={opt.value}
+                  aria-pressed={difficulty === opt.value}
                   onClick={() => setDifficulty(opt.value)}
                   className={`rounded-lg border p-3 text-center transition-all ${
                     difficulty === opt.value
@@ -511,13 +517,14 @@ function QuizSetupInner() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {QUIZ_QUESTION_OPTIONS.map((num) => (
                 <button
                   key={num}
                   type="button"
                   disabled={!user && num > 10}
                   title={!user && num > 10 ? "Create a free account for longer sessions" : undefined}
+                  aria-pressed={numQuestions === num}
                   onClick={() => setNumQuestions(num)}
                   className={`flex-1 rounded-lg border p-3 text-center transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
                     numQuestions === num
@@ -542,10 +549,11 @@ function QuizSetupInner() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2">
               {QUIZ_TIME_OPTIONS.map((opt) => (
                 <button
                   key={String(opt.value)}
+                  aria-pressed={timeLimit === opt.value}
                   onClick={() => setTimeLimit(opt.value)}
                   className={`rounded-lg border p-3 text-center transition-all ${
                     timeLimit === opt.value
@@ -600,6 +608,7 @@ function QuizSetupInner() {
 
         {/* Start Quiz Button */}
         <div ref={startRef} />
+        <div className="sticky bottom-[calc(5rem+env(safe-area-inset-bottom))] z-20 rounded-2xl border bg-card/95 p-3 shadow-xl backdrop-blur-lg lg:bottom-4"><div className="mb-2 flex items-center justify-between gap-3 px-1 text-xs"><span className="min-w-0 truncate font-semibold">{subject?.name || "Choose a subject"}</span><span className="shrink-0 text-muted-foreground">{numQuestions} questions ? {timeLimit ? `${timeLimit} min` : "Untimed"}</span></div>
         <Button
           size="lg"
           className="min-h-12 w-full rounded-xl font-semibold shadow-sm"
@@ -609,6 +618,7 @@ function QuizSetupInner() {
           <Play className="mr-2 h-5 w-5" />
           Start practice
         </Button>
+        </div>
       </div>
     </div>
   );

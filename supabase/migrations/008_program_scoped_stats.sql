@@ -22,6 +22,8 @@
 -- moment this runs.
 -- ============================================================
 
+begin;
+
 -- ---------- 1) quiz_results: which programme a result belongs to ----------
 alter table public.quiz_results
   add column if not exists program text not null default 'd-pharm-y2';
@@ -350,3 +352,5 @@ update public.quiz_results
 update public.mock_exams
    set program_slug = 'd-pharm-y2'
  where program_slug is null or program_slug = '';
+
+commit;

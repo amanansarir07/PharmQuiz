@@ -627,82 +627,6 @@ export const CURRICULUM_PREVIEWS: Record<string, ProgramCurriculumPreview> = {
     ],
   },
 
-  "c-pharm": {
-    programSlug: "c-pharm",
-    regulatoryBody: "Nepal Pharmacy Council (NPC) & CTEVT",
-    regulatoryCode: "CTEVT-CPHARM-2080",
-    stage: "Phase 2: Question Bank Authoring",
-    progressPercent: 62,
-    totalPlannedQuestions: 400,
-    plannedMockExams: 5,
-    gitBranch: "curriculum/c-pharm-v1",
-    lastUpdated: "Kathmandu 2026",
-    overviewSummary:
-      "Certificate-level pharmacy assistant track emphasizing dispensing accuracy, inventory control, cold-chain preservation, and community pharmacy practice.",
-    subjects: [
-      {
-        name: "Dispensing & Pharmacy Practice",
-        code: "CP-101",
-        icon: "💊",
-        description:
-          "Prescription reading, compounding basics, labelling standards, and patient counselling guidelines.",
-        examMarks: 100,
-        totalHours: 120,
-        units: [
-          "Prescription Anatomy & Legality",
-          "Dispensing Procedures & Calculations",
-          "Compounding of Mixtures, Powders & Ointments",
-          "Labelling Requirements & Auxiliary Warnings",
-          "Patient Counselling & Good Pharmacy Practice (GPP)",
-        ],
-      },
-      {
-        name: "Elementary Pharmacology & Therapeutics",
-        code: "CP-102",
-        icon: "🧪",
-        description:
-          "Common drug classes, dosages, indications, contraindications, and emergency antidote availability.",
-        examMarks: 100,
-        totalHours: 110,
-        units: [
-          "Routes of Drug Administration",
-          "Common Analgesics & Anti-inflammatory Agents",
-          "Broad-Spectrum Antibiotics & Proper Dosing",
-          "Antacids & Anti-ulcer Medications",
-          "Vitamins, Minerals & Rehydration Salts",
-        ],
-      },
-      {
-        name: "Drug Store Management & Inventory",
-        code: "CP-103",
-        icon: "📊",
-        description:
-          "Inventory control, FIFO/FEFO storage methods, cold chain maintenance, and drug laws of Nepal.",
-        examMarks: 100,
-        totalHours: 90,
-        units: [
-          "Drug Store Organization & Layout",
-          "Procurement, Invoicing & Stock Register",
-          "Storage Conditions & Vaccine Cold Chain",
-          "Expiry Management (FEFO) & Recall Procedures",
-          "Drugs Act 2035 & Nepal Pharmacy Council Code",
-        ],
-      },
-    ],
-    developmentMilestones: [
-      {
-        title: "Dispensing Competency Audit",
-        description: "Aligned with community retail pharmacy standards.",
-        status: "completed",
-      },
-      {
-        title: "Question Drafting for Dispensing",
-        description: "Authoring prescription verification and storage MCQs.",
-        status: "in_progress",
-      },
-    ],
-  },
-
   "plus-two-science-bio": {
     programSlug: "plus-two-science-bio",
     regulatoryBody: "National Examinations Board (NEB Nepal)",
@@ -1034,9 +958,6 @@ export const CURRICULUM_PREVIEWS: Record<string, ProgramCurriculumPreview> = {
 };
 
 const CURRICULUM_PREVIEW_ALIASES: Record<string, string> = {
-  "c-pharm-y1": "c-pharm",
-  "c-pharm-y2": "c-pharm",
-  "c-pharm-y3": "c-pharm",
   "pcl-nursing-y1": "pcl-nursing",
   "pcl-nursing-y2": "pcl-nursing",
   "pcl-nursing-y3": "pcl-nursing",

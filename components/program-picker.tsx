@@ -2,7 +2,7 @@
 
 import { getFacultyCatalogue } from "@/data/registry";
 import { cn } from "@/lib/utils";
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 /**
  * Lets a student choose their programme.
