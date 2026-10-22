@@ -1,4 +1,5 @@
 import { getSupabase } from "@/lib/supabase/client";
+import { getContentSourceProgramSlug } from "@/data/registry";
 
 export const DIFFICULTIES = ["easy", "medium", "hard"] as const;
 export const MAX_IMPORT_QUESTIONS = 500;
@@ -188,7 +189,8 @@ export async function createQuestionImport(destination: ImportDestination, quest
   const client = getSupabase();
   const { data: auth } = await client.auth.getUser();
   if (!auth.user) throw new Error("Sign in as an admin to save an import.");
-  const { data: batch, error } = await client.from("question_imports").insert({ created_by: auth.user.id, program_slug: destination.programSlug, subject_slug: destination.subjectSlug, unit_id: destination.unitId, topic: destination.topic || null, imported_count: questions.length }).select().single();
+  const contentProgramSlug = getContentSourceProgramSlug(destination.programSlug);
+  const { data: batch, error } = await client.from("question_imports").insert({ created_by: auth.user.id, program_slug: contentProgramSlug, subject_slug: destination.subjectSlug, unit_id: destination.unitId, topic: destination.topic || null, imported_count: questions.length }).select().single();
   if (error || !batch) throw new Error(error?.message || "Could not create import batch.");
   const rows = questions.map((q) => ({ import_id: batch.id, position: q.position, source_id: q.sourceId || null, source_unit_number: q.unitNumber, source_unit_name: q.unitName || null, source_topic: q.topic || null, unit_id: q.unitId || destination.unitId, question_text: q.question, options: q.options, correct_index: q.correctAnswer, explanation: q.explanation, difficulty: q.difficulty, tags: q.tags, normalized_question: q.normalized, validation: q.validation, status: q.status }));
   const { error: itemError } = await client.from("question_import_items").insert(rows);
@@ -225,7 +227,7 @@ export async function publishQuestionImport(importId: string): Promise<{ inserte
 
 export async function getPublishedQuestions(programSlug: string, subjectSlug: string): Promise<PublishedQuestion[]> {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return [];
-  const { data, error } = await getSupabase().from("published_questions").select("id,unit_id,question_text,options,correct_index,explanation,difficulty,tags").eq("program_slug", programSlug).eq("subject_slug", subjectSlug);
+  const { data, error } = await getSupabase().from("published_questions").select("id,unit_id,question_text,options,correct_index,explanation,difficulty,tags").eq("program_slug", getContentSourceProgramSlug(programSlug)).eq("subject_slug", subjectSlug);
   if (error) return [];
   return (data ?? []).map((row) => ({ ...row, options: asOptions(row.options), tags: row.tags ?? [] })) as PublishedQuestion[];
 }
@@ -236,7 +238,7 @@ export async function getPublishedSubjectSlugs(programSlug: string): Promise<str
   const { data, error } = await getSupabase()
     .from("published_questions")
     .select("subject_slug")
-    .eq("program_slug", programSlug);
+    .eq("program_slug", getContentSourceProgramSlug(programSlug));
   if (error) return [];
   return [...new Set((data ?? []).map((row) => row.subject_slug).filter(Boolean))];
 }
@@ -247,6 +249,6 @@ export async function getPublishedQuestionCount(programSlug: string): Promise<nu
   const { count, error } = await getSupabase()
     .from("published_questions")
     .select("id", { count: "exact", head: true })
-    .eq("program_slug", programSlug);
+    .eq("program_slug", getContentSourceProgramSlug(programSlug));
   return error ? 0 : count ?? 0;
 }

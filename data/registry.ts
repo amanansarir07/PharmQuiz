@@ -22,9 +22,9 @@ const CONTENT_BY_PROGRAM: Record<string, SubjectData[]> = {
 };
 
 /** Every subject across every programme that has content, in catalogue order. */
-const ALL_SUBJECTS: SubjectData[] = programs.flatMap(
-  (program) => CONTENT_BY_PROGRAM[program.slug] ?? []
-);
+const ALL_SUBJECTS: SubjectData[] = [...new Set(
+  programs.map((program) => program.contentSourceSlug ?? program.slug)
+)].flatMap((programSlug) => CONTENT_BY_PROGRAM[programSlug] ?? []);
 
 // ----------------------------------------------------------------- faculties
 
@@ -34,6 +34,19 @@ export function getPrograms(): ProgramMeta[] {
 
 export function getProgram(slug: string): ProgramMeta | undefined {
   return programs.find((p) => p.slug === slug);
+}
+
+/** The canonical curriculum and question bank used by a programme. */
+export function getContentSourceProgramSlug(programSlug: string): string {
+  return getProgram(programSlug)?.contentSourceSlug ?? programSlug;
+}
+
+/** Programmes that receive content from the same shared source. */
+export function getContentRecipients(programSlug: string): ProgramMeta[] {
+  const source = getContentSourceProgramSlug(programSlug);
+  return programs.filter(
+    (program) => program.hasContent && getContentSourceProgramSlug(program.slug) === source
+  );
 }
 
 export function getFaculty(slug: string) {
@@ -52,7 +65,7 @@ export function getProgramsForFaculty(facultySlug: string): ProgramMeta[] {
 
 /** True when a programme's curriculum has actually been published. */
 export function isProgramAvailable(programSlug: string): boolean {
-  return CONTENT_BY_PROGRAM[programSlug] !== undefined;
+  return CONTENT_BY_PROGRAM[getContentSourceProgramSlug(programSlug)] !== undefined;
 }
 
 /**
@@ -101,7 +114,7 @@ export function getFacultyCatalogue() {
 export function getSubjectsForProgram(
   programSlug: string = DEFAULT_PROGRAM_SLUG
 ): SubjectData[] {
-  return CONTENT_BY_PROGRAM[programSlug] ?? [];
+  return CONTENT_BY_PROGRAM[getContentSourceProgramSlug(programSlug)] ?? [];
 }
 
 /** Every subject across all published programmes. */
@@ -124,7 +137,7 @@ export function getSubjectBySlug(slug: string): SubjectData | undefined {
 /** The programme a subject belongs to, when it has been published. */
 export function getProgramForSubject(slug: string): ProgramMeta | undefined {
   const program = programs.find((p) =>
-    (CONTENT_BY_PROGRAM[p.slug] ?? []).some((s) => s.slug === slug)
+    getSubjectsForProgram(p.slug).some((s) => s.slug === slug)
   );
   return program;
 }

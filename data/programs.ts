@@ -134,7 +134,8 @@ export const programs: ProgramMeta[] = [
       "Health assistant programme covering primary health care, health promotion, epidemiology, and basic clinical and diagnostic services.",
     icon: "🌍",
     order: 10,
-    hasContent: false,
+    hasContent: true,
+    contentSourceSlug: "d-pharm-y1",
   },
   {
     id: "program-health-assistant-y2",
@@ -176,7 +177,8 @@ export const programs: ProgramMeta[] = [
       "Physiotherapy diploma covering anatomy, kinesiology, electrotherapy, exercise therapy and musculoskeletal rehabilitation.",
     icon: "🦴",
     order: 13,
-    hasContent: false,
+    hasContent: true,
+    contentSourceSlug: "d-pharm-y1",
   },
   {
     id: "program-d-physiotherapy-y2",
@@ -218,7 +220,8 @@ export const programs: ProgramMeta[] = [
       "Medical laboratory technology programme covering specimen collection, haematology, microbiology, clinical biochemistry and laboratory quality control.",
     icon: "🔬",
     order: 16,
-    hasContent: false,
+    hasContent: true,
+    contentSourceSlug: "d-pharm-y1",
   },
   {
     id: "program-cmlt-y2",

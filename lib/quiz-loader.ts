@@ -1,4 +1,4 @@
-import { DEFAULT_PROGRAM_SLUG, getPrograms, getSubjectsForProgram } from "@/data/registry";
+import { DEFAULT_PROGRAM_SLUG, getContentSourceProgramSlug, getPrograms, getSubjectsForProgram } from "@/data/registry";
 import {
   getBankSubjectSlugs,
   loadAllBanks,
@@ -40,9 +40,10 @@ export interface QuizLoadOptions {
 }
 
 async function loadQuestionPool(subjectSlug: string, programSlug: string): Promise<RawBankQuestion[]> {
+  const contentProgramSlug = getContentSourceProgramSlug(programSlug);
   const [staticBank, imported] = await Promise.all([
-    loadBank(subjectSlug, programSlug),
-    getPublishedQuestions(programSlug, subjectSlug),
+    loadBank(subjectSlug, contentProgramSlug),
+    getPublishedQuestions(contentProgramSlug, subjectSlug),
   ]);
   return [
     ...staticBank,
@@ -229,10 +230,11 @@ export async function getAllQuestions(): Promise<QuizQuestion[]> {
 export async function getQuestionCount(
   programSlug: string = DEFAULT_PROGRAM_SLUG
 ): Promise<number> {
-  const banks = await loadProgramBanks(programSlug);
+  const contentProgramSlug = getContentSourceProgramSlug(programSlug);
+  const banks = await loadProgramBanks(contentProgramSlug);
   const [staticCount, importedCount] = await Promise.all([
     Promise.resolve(banks.reduce((acc, b) => acc + b.questions.length, 0)),
-    getPublishedQuestionCount(programSlug),
+    getPublishedQuestionCount(contentProgramSlug),
   ]);
   return staticCount + importedCount;
 }

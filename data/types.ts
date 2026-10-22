@@ -63,4 +63,9 @@ export interface ProgramMeta {
   order: number;
   /** False while a programme is registered but its content hasn't landed yet. */
   hasContent: boolean;
+  /**
+   * Optional canonical programme whose curriculum and question bank this
+   * programme shares. Used for the common CTEVT first-year science syllabus.
+   */
+  contentSourceSlug?: string;
 }
