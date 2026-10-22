@@ -47,10 +47,12 @@ export function AppError({
   title = "Something went wrong",
   description = "We could not load this page. Please try again.",
   onRetry,
+  actionLabel = "Try again",
 }: {
   title?: string;
   description?: string;
   onRetry?: () => void;
+  actionLabel?: string;
 }) {
   return (
     <div className="flex min-h-[42vh] items-center justify-center px-4">
@@ -62,7 +64,7 @@ export function AppError({
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
         {onRetry && (
           <Button className="mt-5" onClick={onRetry}>
-            Try again
+            {actionLabel}
           </Button>
         )}
       </div>

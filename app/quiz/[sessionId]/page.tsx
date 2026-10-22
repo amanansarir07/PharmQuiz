@@ -16,6 +16,7 @@ import { supabase } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/auth";
 import {
   DEFAULT_PROGRAM_SLUG,
+  getProgramLabel,
   getSubjectsForProgram,
 } from "@/data/registry";
 import { getStoredProgramSlug } from "@/lib/program";
@@ -88,6 +89,7 @@ export default function ActiveQuizPage({
   const [showExplanation, setShowExplanation] = useState(false);
   const [showResumedBanner, setShowResumedBanner] = useState(false);
   const [loadError, setLoadError] = useState(false);
+  const [emptyQuiz, setEmptyQuiz] = useState<{ programSlug: string; subjectSlug: string } | null>(null);
   // Bumped by "Try Again" to re-run the loading effect after a failed fetch.
   const [reloadKey, setReloadKey] = useState(0);
   const answersRef = useRef<(number | null)[]>([]);
@@ -133,6 +135,11 @@ export default function ActiveQuizPage({
             programSlug,
           });
           if (cancelled) return;
+          if (qs.length === 0) {
+            setEmptyQuiz({ programSlug, subjectSlug });
+            setLoadError(true);
+            return;
+          }
           setQuestions(qs);
           setAnswers(new Array(qs.length).fill(null));
           return;
@@ -202,6 +209,10 @@ export default function ActiveQuizPage({
         // practice limit where the paper is loaded, including retry sessions.
         if (isGuest) finalQs = finalQs.slice(0, 10);
         if (finalQs.length === 0) {
+          setEmptyQuiz({
+            programSlug: resolveResultProgram(config.program, config.subject || ""),
+            subjectSlug: config.subject || "this subject",
+          });
           if (!cancelled) setLoadError(true);
           return;
         }
@@ -243,7 +254,10 @@ export default function ActiveQuizPage({
         // Banks load over the network now, so a failed chunk fetch would
         // otherwise leave the user on "Loading MCQs..." forever.
         console.error("Failed to load quiz questions:", err);
-        if (!cancelled) setLoadError(true);
+        if (!cancelled) {
+          setEmptyQuiz(null);
+          setLoadError(true);
+        }
       }
     })();
 
@@ -509,12 +523,19 @@ export default function ActiveQuizPage({
     if (loadError) {
       return (
         <AppError
-          title="Could not load this quiz"
-          description="Your quiz setup is still safe. Try loading the questions again or return to practice."
+          title={emptyQuiz ? "No questions available for this practice" : "Could not load this quiz"}
+          description={emptyQuiz
+            ? `No published questions match ${emptyQuiz.subjectSlug.replace(/-/g, " ")} in ${getProgramLabel(emptyQuiz.programSlug)}. Choose a programme and subject with available questions, then start a new practice session.`
+            : "Your quiz setup is still safe. Try loading the questions again or return to practice."}
           onRetry={() => {
-            setLoadError(false);
-            setReloadKey((k) => k + 1);
+            if (emptyQuiz) {
+              router.replace("/quiz");
+            } else {
+              setLoadError(false);
+              setReloadKey((k) => k + 1);
+            }
           }}
+          actionLabel={emptyQuiz ? "Back to practice" : "Try again"}
         />
       );
     }
