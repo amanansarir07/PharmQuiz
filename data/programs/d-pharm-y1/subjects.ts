@@ -29,19 +29,6 @@ const subject = (
 ): SubjectData => ({ id: slug, name, slug, description, icon: "•", examMarks, totalHours, units: units(slug, entries) });
 
 export const subjects: SubjectData[] = [
-  subject("Nepali", "nepali", "Communication, grammar, comprehension and health-science expression.", 100, 105, [
-    ["वर्ण र वर्णविन्यास", 10], ["शब्दभण्डार", 20], ["वाक्यतत्व र वाक्यान्तरण", 20],
-    ["बोध र शब्दभण्डार", 10], ["संक्षेपीकरण", 4], ["निबन्ध लेखन", 8], ["कृति समीक्षा", 33],
-  ]),
-  subject("English", "english", "Academic and communicative English for health-science study.", 100, 105, [
-    ["What Are You Like?", 4], ["Health Matters", 6], ["Looking Ahead", 4], ["It’s a Crime", 8],
-    ["Buying and Selling", 6], ["Family", 4], ["Sports", 7], ["Education", 8], ["Humor", 8], ["Hobbies", 4],
-    ["Globalization, Diaspora and Diversity", 4], ["Short Stories", 12], ["Poems", 12], ["Essays", 12], ["Play", 6],
-  ]),
-  subject("Social Studies", "social-studies", "Nepali society, culture, economy, government and foreign policy.", 50, 70, [
-    ["History of Nepal", 20], ["Society and Culture", 15], ["Nepalese Economy", 10],
-    ["Politics and Government", 20], ["Foreign Policy", 5],
-  ]),
   subject("Anatomy and Physiology", "anatomy-physiology", "Normal structure and function of the human body.", 100, 140, [
     ["System Approach to the Human Body", 10], ["Introduction to Cells and Tissues", 8], ["Body Fluid and Electrolyte", 20],
     ["Introduction to Circulatory System", 10], ["Introduction to Lymphatic System", 8], ["Introduction to Muscular System", 8],
