@@ -576,8 +576,8 @@ export default function ActiveQuizPage({
             Exit
           </Button>
           <div className="h-4 w-px bg-border hidden sm:block" />
-          <h1 className="max-w-[9rem] truncate text-sm font-bold sm:max-w-none sm:text-base">
-            {isMock ? quizConfig?.title || "Mock exam" : "Practice"} <span className="text-primary">{currentIndex + 1}/{questions.length}</span>
+          <h1 className="min-w-0 truncate text-sm font-bold sm:text-base">
+            <span className="hidden sm:inline">{isMock ? quizConfig?.title || "Mock exam" : "Practice"} · </span>Question <span className="text-primary">{currentIndex + 1} of {questions.length}</span>
           </h1>
           {isMock && currentQuestion.subjectName ? (
             <Badge variant="secondary" className="gap-1 hidden sm:inline-flex">
@@ -592,7 +592,7 @@ export default function ActiveQuizPage({
         </div>
         <div className="flex shrink-0 items-center gap-1 sm:gap-3">
           {timeLeft !== null && (
-            <div className={`flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs sm:text-sm font-bold border ${timeLeft < 300 ? "border-red-500/40 bg-red-500/10 text-red-600 dark:text-red-400" : "bg-card text-foreground"}`}>
+            <div className={`hidden items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-xs font-bold sm:flex sm:text-sm ${timeLeft < 300 ? "border-red-500/40 bg-red-500/10 text-red-600 dark:text-red-400" : "bg-card text-foreground"}`}>
               <Clock className="h-3.5 w-3.5" />
               {formatTime(timeLeft)}
             </div>
@@ -612,8 +612,8 @@ export default function ActiveQuizPage({
             aria-label="Finish and submit session" className="text-xs font-semibold"
             onClick={() => setShowSubmitConfirm(true)}
           >
-            <Send className="h-3.5 w-3.5 sm:mr-1.5" />
-            <span className="hidden sm:inline">Finish</span>
+            <Send className="hidden h-3.5 w-3.5 sm:mr-1.5 sm:block" />
+            <span>Finish</span>
           </Button>
         </div>
       </div>
@@ -621,7 +621,7 @@ export default function ActiveQuizPage({
       <div className="mb-6 space-y-2">
         <div className="flex items-center justify-between text-[11px] font-medium text-muted-foreground">
           <span>{answeredCount} of {questions.length} answered</span>
-          <span>{Math.round(progress)}% complete</span>
+          <span className="flex items-center gap-2"><span>{Math.round(progress)}% complete</span>{timeLeft !== null && <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-1 font-mono font-bold sm:hidden ${timeLeft < 300 ? "border-red-500/40 bg-red-500/10 text-red-600 dark:text-red-400" : "bg-card text-foreground"}`}><Clock className="size-3" />{formatTime(timeLeft)}</span>}</span>
         </div>
         <Progress
           value={progress}
@@ -632,7 +632,7 @@ export default function ActiveQuizPage({
       <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
         {/* Question Area */}
         <div>
-          <Card className={isMock ? "overflow-hidden border-t-4 border-t-slate-700 dark:border-t-slate-400" : "overflow-hidden border-t-4 border-t-primary"}>
+          <Card className={isMock ? "overflow-hidden border-border/60 sm:border-t-4 sm:border-t-slate-700 dark:sm:border-t-slate-400" : "overflow-hidden border-border/60 sm:border-t-4 sm:border-t-primary"}>
             <CardContent className="p-4 sm:p-6">
               <p className="mb-4 text-[10px] font-bold uppercase tracking-[.15em] text-muted-foreground">{isMock ? "Exam question" : quizConfig?.revisionMode ? "Learn as you practise" : "Choose one answer"}</p>
               <p className="text-lg font-semibold leading-8 tracking-tight sm:text-xl sm:leading-9">

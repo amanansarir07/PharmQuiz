@@ -252,7 +252,7 @@ function QuizSetupInner() {
   if (authRestorationTimedOut) return <AppError title="Could not check your session" description="We could not confirm your account right now. Please try again." onRetry={() => window.location.reload()} />;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:px-6 sm:pt-9">
+    <div className={`mx-auto max-w-5xl px-4 pt-6 sm:px-6 sm:pb-10 sm:pt-9 ${mobileStep === 2 ? "pb-32" : "pb-10"}`}>
       <div className="mb-6">
         <p className="text-xs font-medium text-muted-foreground">{program.shortLabel} · Practice</p>
         <h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-[1.7rem]">{mobileStep === 1 ? "Choose a subject" : mobileStep === 2 ? "Choose units" : "Session settings"}</h1>
@@ -261,8 +261,6 @@ function QuizSetupInner() {
       </div>
 
       {mobileStep > 1 && <button type="button" onClick={() => setMobileStep(mobileStep === 3 ? 2 : 1)} className="mb-4 min-h-11 text-sm font-semibold text-primary sm:hidden">Back to {mobileStep === 3 ? "units" : "subjects"}</button>}
-      {subject && mobileStep === 2 && <div className="mb-4 rounded-lg border bg-card p-3 sm:hidden"><p className="mb-2 text-xs text-muted-foreground">Choose specific units below, or include the whole subject.</p><Button type="button" className="min-h-11 w-full" onClick={() => setMobileStep(3)}>Continue to settings</Button></div>}
-
       <div className="space-y-4">
         <div className="hidden items-center justify-between gap-3 border-b pb-4 sm:flex"><p className="text-sm text-muted-foreground">Short on time? Start with five mixed questions.</p><Button variant="outline" disabled={starting} onClick={startQuickPractice}>{starting ? "Preparing practice…" : "Start 5-question practice"}</Button></div>
 
@@ -400,10 +398,10 @@ function QuizSetupInner() {
 
         {/* Unit Selection */}
         {subject && (
-          <Card ref={unitsRef} className={mobileStep === 2 ? "" : "hidden sm:block"}>
-            <CardHeader>
+          <Card ref={unitsRef} className={`${mobileStep === 2 ? "" : "hidden sm:block"} border-0 bg-transparent py-0 shadow-none sm:border sm:bg-card sm:py-4`}>
+            <CardHeader className="px-0 sm:px-4">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-lg flex items-center gap-2">
+                <CardTitle className="hidden items-center gap-2 text-lg sm:flex">
                   <CheckSquare className="h-5 w-5" />
                   Select Units
                 </CardTitle>
@@ -412,14 +410,14 @@ function QuizSetupInner() {
                 </Button>
               </div>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
+            <CardContent className="px-0 sm:px-4">
+              <div className="divide-y border-y sm:space-y-2 sm:divide-y-0 sm:border-y-0">
                 {subject.units.map((unit) => (
                   <label
                     key={unit.id}
-                    className={`flex items-center gap-3 rounded-lg border p-3 cursor-pointer transition-all ${
+                    className={`flex min-h-16 cursor-pointer items-center gap-3 px-2 py-3 transition-colors sm:rounded-lg sm:border sm:p-3 ${
                       selectedUnits.includes(unit.id)
-                        ? "border-primary bg-primary/5"
+                        ? "bg-primary/5 sm:border-primary"
                         : "hover:bg-muted"
                     }`}
                   >
@@ -427,19 +425,17 @@ function QuizSetupInner() {
                       checked={selectedUnits.includes(unit.id)}
                       onCheckedChange={() => toggleUnit(unit.id)}
                     />
-                    <div className="flex-1">
+                    <div className="min-w-0 flex-1">
                       <p className="text-sm font-medium">{unit.name}</p>
                       <p className="text-xs text-muted-foreground">
-                        {unit.subtopics.length} subtopics / {unit.examHours}h
+                        {unit.subtopics.length} subtopics · {unit.examHours} hours
                       </p>
                     </div>
-                    <Badge variant="outline" className="text-xs">
-                      {unit.examMarks}m
-                    </Badge>
+                    <span className="shrink-0 text-xs text-muted-foreground sm:rounded-full sm:border sm:px-2 sm:py-0.5">{unit.examMarks} marks</span>
                   </label>
                 ))}
               </div>
-              <p className="mt-3 text-xs text-muted-foreground">
+              <p className="mt-3 hidden text-xs text-muted-foreground sm:block">
                 {selectedUnits.length === 0
                   ? "No units selected - all units will be included"
                   : `${selectedUnits.length} unit(s) selected`}
@@ -447,7 +443,6 @@ function QuizSetupInner() {
             </CardContent>
           </Card>
         )}
-
         <details className={`group rounded-xl border bg-card ${mobileStep === 3 ? "" : "hidden sm:block"}`}>
           <summary className="flex cursor-pointer list-none items-center justify-between p-4 font-semibold [&::-webkit-details-marker]:hidden">
             <span className="flex items-center gap-2">
@@ -597,6 +592,7 @@ function QuizSetupInner() {
         </Button>
         </div> : <div className="hidden min-h-14 items-center gap-3 border-t pt-5 text-sm text-muted-foreground sm:flex"><span>Select a subject to unlock your practice settings.</span></div>}
       </div>
+      {subject && mobileStep === 2 && <div className="fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] z-30 border-t bg-background/95 px-4 py-3 backdrop-blur-lg sm:hidden"><div className="mx-auto max-w-5xl"><p className="mb-2 text-xs text-muted-foreground">{selectedUnits.length === 0 ? `All ${subject.units.length} units included` : `${selectedUnits.length} of ${subject.units.length} units selected`}</p><Button type="button" className="min-h-11 w-full" onClick={() => setMobileStep(3)}>Continue to settings</Button></div></div>}
     </div>
   );
 }
