@@ -34,7 +34,7 @@ export const programs: ProgramMeta[] = [
       "First-year diploma pharmacy curriculum covering basic sciences and the foundations of pharmaceutical practice.",
     icon: "💊",
     order: 1,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-d-pharm-y2",

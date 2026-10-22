@@ -1,6 +1,5 @@
-import { DEFAULT_PROGRAM_SLUG, getSubjectsForProgram } from "@/data/registry";
+import { DEFAULT_PROGRAM_SLUG, getPrograms, getSubjectsForProgram } from "@/data/registry";
 import {
-  getBankProgramSlugs,
   getBankSubjectSlugs,
   loadAllBanks,
   loadBank,
@@ -8,7 +7,7 @@ import {
   resolveBankProgram,
   type RawBankQuestion,
 } from "@/lib/content/banks";
-import { getPublishedQuestions } from "@/lib/bulk-question-import";
+import { getPublishedQuestionCount, getPublishedQuestions, getPublishedSubjectSlugs } from "@/lib/bulk-question-import";
 
 /**
  * Question loading for quizzes, mock papers and the review browser.
@@ -193,10 +192,14 @@ function toQuizQuestions(
 export async function getProgramQuestions(
   programSlug: string = DEFAULT_PROGRAM_SLUG
 ): Promise<QuizQuestion[]> {
-  const staticBanks = await loadProgramBanks(programSlug);
-  return toQuizQuestions(await Promise.all(staticBanks.map(async (bank) => ({
-    subjectSlug: bank.subjectSlug,
-    questions: await loadQuestionPool(bank.subjectSlug, programSlug),
+  const importedSubjects = await getPublishedSubjectSlugs(programSlug);
+  const subjectSlugs = [...new Set([
+    ...getSubjectsForProgram(programSlug).map((subject) => subject.slug),
+    ...importedSubjects,
+  ])];
+  return toQuizQuestions(await Promise.all(subjectSlugs.map(async (subjectSlug) => ({
+    subjectSlug,
+    questions: await loadQuestionPool(subjectSlug, programSlug),
   }))));
 }
 
@@ -218,7 +221,11 @@ export async function getQuestionCount(
   programSlug: string = DEFAULT_PROGRAM_SLUG
 ): Promise<number> {
   const banks = await loadProgramBanks(programSlug);
-  return banks.reduce((acc, b) => acc + b.questions.length, 0);
+  const [staticCount, importedCount] = await Promise.all([
+    Promise.resolve(banks.reduce((acc, b) => acc + b.questions.length, 0)),
+    getPublishedQuestionCount(programSlug),
+  ]);
+  return staticCount + importedCount;
 }
 
 /** Question totals for every programme that has a bank, keyed by programme slug. */
@@ -226,8 +233,8 @@ export async function getProgrammeQuestionCounts(): Promise<
   Record<string, number>
 > {
   const entries = await Promise.all(
-    getBankProgramSlugs().map(
-      async (slug) => [slug, await getQuestionCount(slug)] as const
+    getPrograms().filter((program) => program.hasContent).map(
+      async (program) => [program.slug, await getQuestionCount(program.slug)] as const
     )
   );
   return Object.fromEntries(entries);

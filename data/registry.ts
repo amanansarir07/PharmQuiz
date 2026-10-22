@@ -1,5 +1,6 @@
 import { faculties } from "@/data/faculties";
 import { DEFAULT_PROGRAM_SLUG, programs } from "@/data/programs";
+import { subjects as dPharmYear1Subjects } from "@/data/programs/d-pharm-y1/subjects";
 import { subjects as dPharmYear2Subjects } from "@/data/programs/d-pharm-y2/subjects";
 import { subjects as dPharmYear3Subjects } from "@/data/programs/d-pharm-y3/subjects";
 import type { ProgramMeta, SubjectData, UnitData } from "@/data/types";
@@ -15,6 +16,7 @@ export type { FacultyData, ProgramMeta, SubjectData, UnitData } from "@/data/typ
  * catalogue renders as "coming soon" and contributes no subjects.
  */
 const CONTENT_BY_PROGRAM: Record<string, SubjectData[]> = {
+  "d-pharm-y1": dPharmYear1Subjects,
   "d-pharm-y2": dPharmYear2Subjects,
   "d-pharm-y3": dPharmYear3Subjects,
 };

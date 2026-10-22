@@ -229,3 +229,24 @@ export async function getPublishedQuestions(programSlug: string, subjectSlug: st
   if (error) return [];
   return (data ?? []).map((row) => ({ ...row, options: asOptions(row.options), tags: row.tags ?? [] })) as PublishedQuestion[];
 }
+
+/** Subject slugs that have at least one reviewed and published import. */
+export async function getPublishedSubjectSlugs(programSlug: string): Promise<string[]> {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return [];
+  const { data, error } = await getSupabase()
+    .from("published_questions")
+    .select("subject_slug")
+    .eq("program_slug", programSlug);
+  if (error) return [];
+  return [...new Set((data ?? []).map((row) => row.subject_slug).filter(Boolean))];
+}
+
+/** Count database-published questions without loading their full text. */
+export async function getPublishedQuestionCount(programSlug: string): Promise<number> {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return 0;
+  const { count, error } = await getSupabase()
+    .from("published_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("program_slug", programSlug);
+  return error ? 0 : count ?? 0;
+}
