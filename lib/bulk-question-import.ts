@@ -16,6 +16,11 @@ export type Validation = { critical: string[]; warnings: string[] };
 export type DraftQuestion = {
   id: string;
   position: number;
+  sourceId: string;
+  unitNumber: number | null;
+  unitName: string;
+  topic: string;
+  unitId: string;
   question: string;
   options: string[];
   correctAnswer: number | null;
@@ -54,6 +59,11 @@ export type SavedImportItem = {
   validation: Validation;
   status: ImportStatus;
   normalized_question: string;
+  source_id: string | null;
+  source_unit_number: number | null;
+  source_unit_name: string | null;
+  source_topic: string | null;
+  unit_id: string | null;
 };
 
 export type PublishedQuestion = {
@@ -90,8 +100,25 @@ function asCorrectIndex(value: unknown): number | null {
   return null;
 }
 
-export function validateQuestion(value: unknown, position: number, batchNormalised = new Set<string>(), existingNormalised = new Set<string>()): DraftQuestion {
+function asUnitNumber(value: unknown): number | null {
+  if (typeof value === "number" && Number.isInteger(value) && value > 0) return value;
+  if (typeof value === "string" && /^\d+$/.test(value.trim())) return Number(value);
+  return null;
+}
+
+function createUnitId(subjectSlug: string, unitNumber: number | null, explicitUnitId: unknown): string {
+  const supplied = tidy(explicitUnitId).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  if (supplied) return supplied;
+  return unitNumber && subjectSlug ? `${subjectSlug}-unit-${unitNumber}` : "";
+}
+
+export function validateQuestion(value: unknown, position: number, batchNormalised = new Set<string>(), existingNormalised = new Set<string>(), subjectSlug = ""): DraftQuestion {
   const record = value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {};
+  const sourceId = tidy(record.id ?? record.source_id ?? record.sourceId);
+  const unitNumber = asUnitNumber(record.unit_number ?? record.unitNumber ?? record.source_unit_number);
+  const unitName = tidy(record.unit ?? record.unitName ?? record.source_unit_name);
+  const topic = tidy(record.topic ?? record.source_topic);
+  const unitId = createUnitId(subjectSlug, unitNumber, record.unit_id ?? record.unitId);
   const question = tidy(record.question ?? record.question_text);
   const options = asOptions(record.options);
   const answer = record.correctAnswer ?? record.correct_index ?? record.correct_option ?? record.answer;
@@ -116,16 +143,16 @@ export function validateQuestion(value: unknown, position: number, batchNormalis
   if (normalized && existingNormalised.has(normalized)) warnings.push("Possible duplicate of an existing Bujh question.");
   if (normalized) batchNormalised.add(normalized);
 
-  return { id: crypto.randomUUID(), position, question, options, correctAnswer, explanation, difficulty, tags, validation: { critical, warnings }, status: "pending", normalized };
+  return { id: crypto.randomUUID(), position, sourceId, unitNumber, unitName, topic, unitId, question, options, correctAnswer, explanation, difficulty, tags, validation: { critical, warnings }, status: "pending", normalized };
 }
 
-export function validateBatch(raw: unknown, existingQuestions: string[] = []): DraftQuestion[] {
+export function validateBatch(raw: unknown, existingQuestions: string[] = [], subjectSlug = ""): DraftQuestion[] {
   if (!Array.isArray(raw)) throw new Error("The JSON must be an array of question objects.");
   if (raw.length === 0) throw new Error("The import contains no questions.");
   if (raw.length > MAX_IMPORT_QUESTIONS) throw new Error(`Import up to ${MAX_IMPORT_QUESTIONS} questions at a time.`);
   const seen = new Set<string>();
   const existing = new Set(existingQuestions.map(normalizeQuestion).filter(Boolean));
-  const questions = raw.map((item, position) => validateQuestion(item, position, seen, existing));
+  const questions = raw.map((item, position) => validateQuestion(item, position, seen, existing, subjectSlug));
   const existingNormalised = existingQuestions.map(normalizeQuestion).filter(Boolean);
   for (const question of questions) {
     if (!question.normalized) continue;
@@ -154,7 +181,7 @@ export function reviewState(question: DraftQuestion): "ready" | "review" | "inva
 }
 
 export function toDraft(saved: SavedImportItem): DraftQuestion {
-  return { id: saved.id, position: saved.position, question: saved.question_text, options: asOptions(saved.options), correctAnswer: saved.correct_index, explanation: saved.explanation, difficulty: saved.difficulty, tags: saved.tags ?? [], validation: saved.validation ?? { critical: [], warnings: [] }, status: saved.status, normalized: saved.normalized_question };
+  return { id: saved.id, position: saved.position, sourceId: saved.source_id ?? "", unitNumber: saved.source_unit_number, unitName: saved.source_unit_name ?? "", topic: saved.source_topic ?? "", unitId: saved.unit_id ?? "", question: saved.question_text, options: asOptions(saved.options), correctAnswer: saved.correct_index, explanation: saved.explanation, difficulty: saved.difficulty, tags: saved.tags ?? [], validation: saved.validation ?? { critical: [], warnings: [] }, status: saved.status, normalized: saved.normalized_question };
 }
 
 export async function createQuestionImport(destination: ImportDestination, questions: DraftQuestion[]): Promise<SavedImport> {
@@ -163,7 +190,7 @@ export async function createQuestionImport(destination: ImportDestination, quest
   if (!auth.user) throw new Error("Sign in as an admin to save an import.");
   const { data: batch, error } = await client.from("question_imports").insert({ created_by: auth.user.id, program_slug: destination.programSlug, subject_slug: destination.subjectSlug, unit_id: destination.unitId, topic: destination.topic || null, imported_count: questions.length }).select().single();
   if (error || !batch) throw new Error(error?.message || "Could not create import batch.");
-  const rows = questions.map((q) => ({ import_id: batch.id, position: q.position, question_text: q.question, options: q.options, correct_index: q.correctAnswer, explanation: q.explanation, difficulty: q.difficulty, tags: q.tags, normalized_question: q.normalized, validation: q.validation, status: q.status }));
+  const rows = questions.map((q) => ({ import_id: batch.id, position: q.position, source_id: q.sourceId || null, source_unit_number: q.unitNumber, source_unit_name: q.unitName || null, source_topic: q.topic || null, unit_id: q.unitId || destination.unitId, question_text: q.question, options: q.options, correct_index: q.correctAnswer, explanation: q.explanation, difficulty: q.difficulty, tags: q.tags, normalized_question: q.normalized, validation: q.validation, status: q.status }));
   const { error: itemError } = await client.from("question_import_items").insert(rows);
   if (itemError) {
     await client.from("question_imports").delete().eq("id", batch.id);
@@ -185,7 +212,7 @@ export async function getQuestionImportItems(importId: string): Promise<DraftQue
 }
 
 export async function updateQuestionImportItem(question: DraftQuestion): Promise<void> {
-  const { error } = await getSupabase().from("question_import_items").update({ question_text: question.question, options: question.options, correct_index: question.correctAnswer, explanation: question.explanation, difficulty: question.difficulty, tags: question.tags, normalized_question: question.normalized, validation: question.validation, status: question.status, updated_at: new Date().toISOString() }).eq("id", question.id);
+  const { error } = await getSupabase().from("question_import_items").update({ source_id: question.sourceId || null, source_unit_number: question.unitNumber, source_unit_name: question.unitName || null, source_topic: question.topic || null, unit_id: question.unitId || null, question_text: question.question, options: question.options, correct_index: question.correctAnswer, explanation: question.explanation, difficulty: question.difficulty, tags: question.tags, normalized_question: question.normalized, validation: question.validation, status: question.status, updated_at: new Date().toISOString() }).eq("id", question.id);
   if (error) throw new Error(error.message);
 }
 
