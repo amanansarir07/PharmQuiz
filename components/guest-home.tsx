@@ -1,37 +1,50 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, BookOpen, ClipboardCheck, ClipboardList } from "lucide-react";
+import { ArrowRight, BookOpen, ClipboardList, GraduationCap, Target, TrendingUp } from "lucide-react";
 import { useActiveProgram } from "@/lib/program";
-import { LearningPage, LinkRow, PageHeading, SectionHeading } from "@/components/learning-ui";
+import { LearningPage, PageHeading } from "@/components/learning-ui";
 
 export function GuestHome() {
   const { program } = useActiveProgram();
 
-  return <LearningPage className="max-w-5xl">
-    <PageHeading title="Start studying" description={`${program.shortLabel} · Choose where to begin.`} />
+  return (
+    <LearningPage>
+      <PageHeading eyebrow="Your learning starts here" title="A good day to learn something." description="Explore your syllabus, try a few questions, and find your rhythm." action={<span className="rounded-full border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">Guest mode</span>} />
 
-    <section className="mb-6">
-      <div className="rounded-xl border bg-card p-4 sm:p-5">
-        <h2 className="text-base font-semibold">Ready for a short practice session?</h2>
-        <p className="mt-1 text-sm text-muted-foreground">Choose a subject and answer a few questions.</p>
-        <Link href="/quiz" className="action-primary mt-4 w-full sm:w-auto">Start practice <ArrowRight className="size-4" /></Link>
+      <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-[#294bc9] p-5 text-white sm:p-8">
+        <div className="flex items-start gap-4">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white/10 text-white"><GraduationCap className="size-6" /></div>
+          <div className="min-w-0">
+            <p className="text-[10px] font-bold uppercase tracking-[.15em] text-blue-200">Your programme</p>
+            <h2 className="mt-1 text-xl font-bold">{program.name}{program.level ? ` · ${program.level}` : ""}</h2>
+            <p className="mt-2 text-sm leading-6 text-blue-100">Choose a subject, focus on a unit, and practise at your pace.</p>
+          </div>
+        </div>
+        <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+          <Link href="/quiz" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-bold text-blue-800">Try your first practice <ArrowRight className="size-4" /></Link>
+          <Link href="/programs" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 px-5 text-sm font-semibold text-white hover:bg-white/10">Change programme</Link>
+        </div>
       </div>
-    </section>
 
-    <section className="mb-6">
-      <SectionHeading title="More ways to study" />
-      <div className="overflow-hidden rounded-xl border bg-card">
-        <LinkRow href="/mock-test" icon={<ClipboardCheck className="size-5" />} title="Mock tests" detail="Practise in exam format" />
-        <LinkRow href="/subjects" icon={<BookOpen className="size-5" />} title="Study the syllabus" detail="Browse subjects, units and topics" />
-        <LinkRow href="/review" icon={<ClipboardList className="size-5" />} title="Question bank" detail="Search questions and reveal answers" />
+      <h2 className="mb-3 mt-8 text-lg font-bold">What would you like to do?</h2>
+      <div className="grid gap-3 sm:grid-cols-3">
+        {[
+          { href: "/subjects", title: "Study the syllabus", text: "Browse subjects, units and topics.", icon: BookOpen },
+          { href: "/quiz", title: "Try practice MCQs", text: "Complete a short quiz with real questions.", icon: Target },
+          { href: "/review", title: "Question bank", text: "Search questions and reveal answers.", icon: ClipboardList },
+        ].map(({ href, title, text, icon: Icon }) => (
+          <Link key={href} href={href} className="group flex gap-3 rounded-2xl border bg-card p-4 transition-colors hover:border-primary/40">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><Icon className="size-5" /></span>
+            <span><strong className="block text-sm">{title}</strong><span className="mt-1 block text-xs text-muted-foreground">{text}</span></span>
+          </Link>
+        ))}
       </div>
-    </section>
 
-    <section className="border-t pt-5 sm:flex sm:items-center sm:justify-between sm:gap-6">
-      <div><h2 className="text-sm font-semibold">Keep your progress</h2><p className="mt-1 text-sm text-muted-foreground">Create an account to save results, notes and mistakes.</p></div>
-      <Link href={`/auth/register?program=${encodeURIComponent(program.slug)}`} className="action-secondary mt-4 w-full sm:mt-0 sm:w-auto">Create free account</Link>
-    </section>
-    <Link href="/programs" className="mt-5 inline-flex min-h-11 items-center text-sm font-medium text-primary hover:underline">Change programme</Link>
-  </LearningPage>;
+      <div className="mt-8 flex flex-col gap-4 rounded-2xl border bg-card p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex gap-3"><TrendingUp className="mt-0.5 size-5 shrink-0 text-primary" /><div><h2 className="font-semibold">Keep your progress</h2><p className="mt-1 text-sm text-muted-foreground">Create a free account for synced results, study notes, mistakes and leaderboards.</p></div></div>
+        <Link href={`/auth/register?program=${encodeURIComponent(program.slug)}`} className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-xl border border-primary px-4 text-sm font-semibold text-primary">Create free account</Link>
+      </div>
+    </LearningPage>
+  );
 }
