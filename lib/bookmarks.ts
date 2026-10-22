@@ -71,7 +71,7 @@ export function useBookmarks() {
       .select()
       .single();
 
-    if (saveError || !data) { setError(saveError?.message || "Could not save question."); return { error: saveError?.message || "Could not save question." }; }
+    if (saveError || !data) { setError("Could not save question. Please try again."); return { error: "Could not save question." }; }
     setError(null);
     if (data) {
       const newBookmark: StoredBookmark = {
@@ -100,7 +100,7 @@ export function useBookmarks() {
       .select("id")
       .single();
 
-    if (deleteError || !data) { setError(deleteError?.message || "Could not remove question."); return { error: deleteError?.message || "Could not remove question." }; }
+    if (deleteError || !data) { setError("Could not remove question. Please try again."); return { error: "Could not remove question." }; }
     setError(null);
 
     setBookmarks((prev) => prev.filter((b) => b.id !== id));

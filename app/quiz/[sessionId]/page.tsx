@@ -43,6 +43,7 @@ import {
   Lightbulb,
 } from "lucide-react";
 import { AppError, AppLoading } from "@/components/app-state";
+import { toast } from "@/components/ui/toast";
 
 /**
  * First subject of a programme — used when a session has no usable config
@@ -403,7 +404,8 @@ export default function ActiveQuizPage({
         console.error("Quiz submit failed:", err);
         submittingRef.current = false;
         setIsSubmitting(false);
-        setShowSubmitConfirm(false);
+        setShowSubmitConfirm(true);
+        toast("Could not submit your session", "error", "Your answers are still here. Try submitting again.");
       }
     },
     [questions, quizConfig, router, sessionId, user]
@@ -903,7 +905,7 @@ export default function ActiveQuizPage({
                   {isMock ? "Continue Test" : "Continue MCQs"}
                 </Button>
                 <Button onClick={handleSubmit} disabled={isSubmitting}>
-                  {isSubmitting ? "Submitting..." : "Confirm Submit"}
+                  {isSubmitting ? "Submitting…" : "Confirm submit"}
                 </Button>
               </div>
           </DialogContent>

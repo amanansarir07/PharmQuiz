@@ -16,6 +16,7 @@ import {
 } from "@/data/registry";
 import type { ProgramMeta } from "@/data/types";
 import { useAuth } from "@/lib/auth";
+import { toast } from "@/components/ui/toast";
 import { safeGetItem, safeSetItem } from "@/lib/storage";
 
 const STORAGE_KEY = "bujh-active-program";
@@ -144,7 +145,12 @@ export function ProgramProvider({ children }: { children: React.ReactNode }) {
         // Fire-and-forget. The local switch already happened, and on a
         // deployment without migration 007 this write is expected to fail —
         // that must never block the student from practising.
-        void updateProfile(user.name, slug);
+        void updateProfile(user.name, slug).then((result) => {
+          if (result.error) toast("Programme switched on this device", "info", "We could not sync the change to your account.");
+          else toast("Programme updated", "success");
+        }).catch(() => toast("Programme switched on this device", "info", "We could not sync the change to your account."));
+      } else {
+        toast("Programme switched", "success");
       }
     },
     [user, updateProfile]

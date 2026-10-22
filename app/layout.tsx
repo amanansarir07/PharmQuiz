@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -7,6 +8,9 @@ import { BottomNav } from "@/components/layout/bottom-nav";
 import { AppMain } from "@/components/layout/app-main";
 import { Providers } from "@/components/providers";
 import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
+
+const manrope = localFont({ src: "../public/fonts/manrope.ttf", variable: "--font-manrope", display: "swap", weight: "200 800" });
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -65,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html lang="en" className={`h-full ${manrope.variable}`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">
         <Providers>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-primary focus:p-3 focus:text-primary-foreground">Skip to content</a>

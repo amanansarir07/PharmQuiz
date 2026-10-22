@@ -87,6 +87,7 @@ export default function HistoryPage() {
             {history.map((entry) => {
               const percentage = entry.total > 0 ? Math.round((entry.correct / entry.total) * 100) : 0;
               const clickable = entry.hasLocalDetail && entry.localSessionId;
+              const subjectLabel = entry.subject === "unknown" || entry.subject === "all" ? "Mock test" : getSubjectName(entry.subject);
               return (
                 <Card
                   key={entry.key}
@@ -98,7 +99,7 @@ export default function HistoryPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <p className="font-semibold text-sm">{getSubjectName(entry.subject)}</p>
+                        <p className="font-semibold text-sm">{subjectLabel}</p>
                         <Badge variant="outline" className="text-xs shrink-0">{entry.correct}/{entry.total}</Badge>
                       </div>
                       <p className="mt-0.5 text-xs text-muted-foreground">
@@ -108,7 +109,7 @@ export default function HistoryPage() {
                       </p>
                     </div>
                     {clickable && (
-                      <Link href={`/quiz/${entry.localSessionId}/results`} className="icon-button shrink-0 text-primary" aria-label={`Review ${getSubjectName(entry.subject)} attempt from ${formatDate(entry.completedAt)}`}><ArrowRight className="size-4" /></Link>
+                      <Link href={`/quiz/${entry.localSessionId}/results`} className="icon-button shrink-0 text-primary" aria-label={`Review ${subjectLabel} attempt from ${formatDate(entry.completedAt)}`}><ArrowRight className="size-4" /></Link>
                     )}
                   </CardContent>
                 </Card>

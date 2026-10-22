@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Bookmark, Eye, EyeOff, Trash2, Search } from "lucide-react";
+import { Eye, EyeOff, Trash2, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import { getSubjectBySlug, getSubjectName } from "@/data/registry";
 import { LibraryNav } from "@/components/library-nav";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
 import { AppLoading } from "@/components/app-state";
+import { toast } from "@/components/ui/toast";
 
 export default function BookmarksPage() {
   const { bookmarks, mounted, error, removeBookmark } = useBookmarks();
@@ -19,6 +20,7 @@ export default function BookmarksPage() {
   // For show/hide answers per question — use a simple Set
   const [showAnswers, setShowAnswers] = useState<Set<string>>(new Set());
   const [search, setSearch] = useState("");
+  const [removingId, setRemovingId] = useState<string | null>(null);
 
   // Supabase bookmarks only store slim records (text + subject). Rehydrate
   // full options/answer/explanation from the local question bank so the page
@@ -77,18 +79,11 @@ export default function BookmarksPage() {
       {!mounted ? (
         <AppLoading label="Loading saved questions" />
       ) : bookmarks.length === 0 ? (
-        <Card className="rounded-2xl">
-          <CardContent className="p-8 text-center sm:p-12">
-            <Bookmark className="mx-auto h-12 w-12 text-muted-foreground/50" />
-            <p className="mt-4 font-semibold">No saved questions yet</p>
-            <p className="text-sm text-muted-foreground mb-4">
-              Save useful questions from the Question Bank and find them here.
-            </p>
-            <Link href="/review" className={buttonVariants()}>
-              Browse Questions
-            </Link>
-          </CardContent>
-        </Card>
+        <div className="flex min-h-[42vh] flex-col items-center justify-center px-4 text-center">
+          <h2 className="font-semibold">No saved questions yet</h2>
+          <p className="mt-2 max-w-sm text-sm text-muted-foreground">Save useful questions from the question bank and find them here.</p>
+          <Link href="/review" className={buttonVariants({ className: "mt-5" })}>Browse questions</Link>
+        </div>
       ) : (
         <>
           <p className="mb-4 text-sm text-muted-foreground">
@@ -135,10 +130,11 @@ export default function BookmarksPage() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={() => { void removeBookmark(q.id); }}
+                          disabled={removingId === q.id}
+                          onClick={async () => { setRemovingId(q.id); const result = await removeBookmark(q.id); setRemovingId(null); if (result.error) toast("Could not remove question", "error", "Try again."); else toast("Saved question removed", "success"); }}
                           aria-label="Remove saved question"
                         >
-                          <Trash2 className="h-4 w-4 text-red-500" />
+                          {removingId === q.id ? <span className="size-4 animate-spin rounded-full border-2 border-current border-t-transparent" /> : <Trash2 className="h-4 w-4" />}
                         </Button>
                       </div>
                     </div>

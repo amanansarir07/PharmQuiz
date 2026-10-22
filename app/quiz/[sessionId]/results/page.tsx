@@ -15,7 +15,7 @@ import { getMockSubjectCount, getMockQuestionCount, getMockDurationMinutes } fro
 import { safeSetItem } from "@/lib/storage";
 import { cn } from "@/lib/utils";
 import { ScoreRing } from "@/components/learning-ui";
-import { AppEmpty } from "@/components/app-state";
+import { AppEmpty, AppLoading } from "@/components/app-state";
 import {
   CheckCircle,
   XCircle,
@@ -23,7 +23,6 @@ import {
   RotateCcw,
   BookOpen,
   Share2,
-  Sparkles,
   ArrowRight,
   Target,
   Timer,
@@ -73,17 +72,19 @@ export default function QuizResultsPage({
   const router = useRouter();
   const { user } = useAuth();
   const [results, setResults] = useState<QuizResult | null>(null);
+  const [loaded, setLoaded] = useState(false);
   const [showAnswers, setShowAnswers] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(`quiz-results-${sessionId}`);
-    if (stored) {
-      const frame = requestAnimationFrame(() => {
-        setResults(JSON.parse(stored) as QuizResult);
-      });
-      return () => cancelAnimationFrame(frame);
-    }
+    const frame = requestAnimationFrame(() => {
+      if (stored) {
+        try { setResults(JSON.parse(stored) as QuizResult); } catch { setResults(null); }
+      }
+      setLoaded(true);
+    });
+    return () => cancelAnimationFrame(frame);
   }, [sessionId]);
 
   // All derivations stay above the early return so hook order never changes.
@@ -98,6 +99,7 @@ export default function QuizResultsPage({
     ? results.answers.filter((a) => a.selected === null).length
     : 0;
   const total = results ? results.questions.length : 0;
+  const answered = correct + incorrect;
   // Use score from saved results if available (accounts for negative marking)
   const displayScore = results ? (results.score ?? correct) : 0;
   const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
@@ -108,7 +110,9 @@ export default function QuizResultsPage({
       ? "You are building strong exam readiness. Keep your momentum with a tougher challenge."
       : percentage >= 60
         ? "Good progress. Review the questions you missed, then practise your weakest area."
-        : "This is a useful revision signal. Focus on the missed questions before starting a longer test.";
+        : unattempted > 0
+          ? "You left some questions unanswered. Review them, then try another short session."
+          : "Review the questions you missed before starting a longer test.";
 
   // Contiguous subject blocks (mock papers are built subject-by-subject).
   const subjectGroups =
@@ -183,19 +187,12 @@ export default function QuizResultsPage({
         return a && !a.isCorrect && a.selected !== null;
       })
     : [];
-  const nextStepLabel =
-    sessionMistakes.length > 0
-      ? `Retry ${sessionMistakes.length} missed question${sessionMistakes.length === 1 ? "" : "s"}`
-      : percentage >= 70
-        ? user ? "Try a full mock exam" : "Create an account for full mock exams"
-        : "Start another practice";
-
   // Identify the weakest unit in this session
   const weakestUnit = results
     ? (() => {
         const map = new Map<string, { total: number; correct: number; subjectSlug: string }>();
         results.questions.forEach((q, idx) => {
-          if (!q.unitId) return;
+          if (!q.unitId || results.answers[idx]?.selected === null) return;
           const current = map.get(q.unitId) || {
             total: 0,
             correct: 0,
@@ -250,6 +247,7 @@ export default function QuizResultsPage({
     router.push(`/quiz/${newSessionId}`);
   };
 
+  if (!loaded) return <AppLoading label="Loading your result" variant="questions" />;
   if (!results) {
     return <AppEmpty title="No quiz results found" description="This result may have expired or been cleared from this device." action="Start practice" onAction={() => router.push("/quiz")} />;
   }
@@ -263,68 +261,39 @@ export default function QuizResultsPage({
   return (
     <div className="mx-auto max-w-5xl px-4 pb-12 pt-6 sm:px-7 sm:pt-9">
       {/* Score Card */}
-      <Card className="mb-6 overflow-hidden border-primary/20">
-        <CardContent className="p-5 sm:p-8">
+      <Card className={isMock ? "mb-6 border-0 bg-transparent shadow-none" : "mb-6 overflow-hidden border-primary/20"}>
+        <CardContent className={isMock ? "p-0" : "p-5 sm:p-8"}>
           <div className="mb-5 flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
             <ScoreRing value={percentage} label="Accuracy" />
-            <div><p className="text-xs font-bold uppercase tracking-wider text-primary">{isMock ? "Mock result" : "Practice result"}</p><h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{percentage >= 80 ? "Great work!" : percentage >= 60 ? "Well done" : "Keep practising"}</h1><p className="mt-1 text-sm text-muted-foreground">Score: {displayScore}/{total}. You completed {total} questions. Review what you missed and choose your next step.</p></div>
+            <div><p className="text-xs font-semibold text-primary">{isMock ? "Mock result" : "Practice result"}</p><h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{percentage >= 80 ? "Great work!" : percentage >= 60 ? "Well done" : "Keep practising"}</h1><p className="mt-1 text-sm text-muted-foreground">Score: {displayScore}/{total}. You answered {answered} of {total} questions.</p></div>
           </div>
-          <div className="mt-4 rounded-xl border border-primary/20 bg-primary/[0.04] p-3.5">
-            <p className="text-sm font-semibold text-foreground">Your next best step</p>
-            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-              {resultMessage}
-            </p>
-            <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-primary">
-              <span>{nextStepLabel}</span>
-              {unattempted > 0 && (
-                <span className="font-medium text-amber-600 dark:text-amber-400">
-                  {unattempted} unanswered
-                </span>
-              )}
-            </div>
-          </div>
-          {isMock && (
-            <div className="mt-3 flex flex-wrap items-center gap-2">
-              <Badge variant="secondary" className="gap-1.5">
-                <Target className="h-3 w-3 text-primary" />
-                <span>{results.config?.title ?? "Full Mock Test"}</span>
-              </Badge>
-              <Badge variant="outline" className="gap-1.5">
-                <BookOpen className="h-3 w-3 text-muted-foreground" />
-                <span>{mockSubjectCount} subjects &middot; {total} questions</span>
-              </Badge>
-              {results.timeTaken != null && (
-                <Badge variant="outline" className="gap-1.5">
-                  <Clock className="h-3 w-3 text-muted-foreground" />
-                  <span>{formatTime(results.timeTaken)}</span>
-                </Badge>
-              )}
-            </div>
-          )}
+          <p className="border-t pt-4 text-sm leading-6 text-muted-foreground">{resultMessage}</p>
+          {unattempted > 0 && <p className="mt-1 text-xs font-medium text-muted-foreground">{unattempted} unanswered</p>}
+          {isMock && <p className="mt-3 text-xs text-muted-foreground">{results.config?.title ?? "Full mock test"} · {mockSubjectCount} subjects · {results.timeTaken != null ? formatTime(results.timeTaken) : `${total} questions`}</p>}
 
-          <div className="mb-4 mt-5 grid grid-cols-3 gap-2 sm:gap-4">
-            <div className="rounded-xl bg-green-50 dark:bg-green-950 p-3 sm:p-4 text-center">
-              <p className="text-2xl font-bold text-green-600 dark:text-green-400">{correct}</p>
+          <div className="mb-4 mt-5 grid grid-cols-3 divide-x border-y py-3">
+            <div className="text-center">
+              <p className="text-xl font-bold">{correct}</p>
               <p className="text-xs text-muted-foreground">Correct</p>
             </div>
-            <div className="rounded-xl bg-red-50 dark:bg-red-950 p-3 sm:p-4 text-center">
-              <p className="text-2xl font-bold text-red-600 dark:text-red-400">{incorrect}</p>
+            <div className="text-center">
+              <p className="text-xl font-bold">{incorrect}</p>
               <p className="text-xs text-muted-foreground">Incorrect</p>
             </div>
-            <div className="rounded-xl bg-muted p-3 sm:p-4 text-center">
-              <p className="text-2xl font-bold">{unattempted}</p>
+            <div className="text-center">
+              <p className="text-xl font-bold">{unattempted}</p>
               <p className="text-xs text-muted-foreground">Skipped</p>
             </div>
           </div>
 
-          <div className="mt-2">
+          {!isMock && <div className="mt-2">
             <Progress value={percentage} className="h-2" />
             <p className="mt-2 text-sm text-muted-foreground">
               {correct} of {total} correct
             </p>
-          </div>
+          </div>}
 
-          {results.timeTaken !== null && results.timeTaken !== undefined && (
+          {!isMock && results.timeTaken !== null && results.timeTaken !== undefined && (
             <div className="mt-2 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground">
               <Clock className="h-4 w-4" />
               Time taken: {formatTime(results.timeTaken)}
@@ -332,7 +301,7 @@ export default function QuizResultsPage({
           )}
 
           {!user && (
-            <div className="mt-5 flex flex-col gap-3 rounded-xl border border-primary/20 bg-primary/[0.04] p-3.5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-5 flex flex-col gap-3 border-t pt-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-sm font-semibold">Want to keep this progress?</p>
                 <p className="mt-0.5 text-xs text-muted-foreground">
@@ -356,54 +325,28 @@ export default function QuizResultsPage({
 
       {/* Mock per-subject breakdown */}
       {isMock && subjectGroups.length > 0 && (
-        <Card className="mb-6">
-          <CardContent className="p-5 sm:p-6">
+        <section className="mb-6">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-base font-semibold">Subject-wise Result</h2>
-              <Link href="/mock-test" className="text-xs text-primary hover:underline">
-                Take another
-              </Link>
+              <h2 className="text-base font-semibold">Results by subject</h2>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="divide-y border-y sm:grid sm:grid-cols-2 sm:divide-y-0">
               {subjectGroups.map((g) => (
-                <div key={g.slug} className="rounded-xl border p-4">
+                <div key={g.slug} className="py-3 sm:border-b sm:px-3">
                   <div className="mb-2 flex items-center justify-between gap-2">
-                    <p className="flex min-w-0 items-center gap-2 text-sm font-medium">
-                      <span className="text-base">{g.icon}</span>
-                      <span className="leading-5">{g.name}</span>
-                    </p>
-                    <span
-                      className={`shrink-0 text-sm font-bold ${
-                        g.correct / g.count >= 0.7
-                          ? "text-green-600 dark:text-green-400"
-                          : g.correct / g.count >= 0.5
-                          ? "text-yellow-600 dark:text-yellow-400"
-                          : "text-red-600 dark:text-red-400"
-                      }`}
-                    >
-                      {g.correct}/{g.count}
-                    </span>
+                    <p className="min-w-0 text-sm font-medium leading-5">{g.name}</p>
+                    <span className="shrink-0 text-sm font-semibold tabular-nums">{g.correct}/{g.count}</span>
                   </div>
                   <Progress value={(g.correct / g.count) * 100} className="h-1.5" />
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+        </section>
       )}
 
       {/* Personalized Next Practice Card (Feedback Loop) */}
-      <Card className="mb-6 border-primary/20 bg-primary/[0.03]">
-        <CardContent className="p-5 sm:p-6">
-          <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <div className="flex items-center gap-2 text-primary font-bold text-base sm:text-lg">
-              <Sparkles className="h-5 w-5" />
-              <span>Keep the momentum</span>
-            </div>
-            <Badge variant="outline" className="text-xs bg-primary/10 text-primary border-primary/20">
-              <RotateCcw className="h-3 w-3 mr-1" /> Recommended
-            </Badge>
-          </div>
+      {(!isMock || sessionMistakes.length > 0 || weakestUnit) && <Card className="mb-6 border-0 bg-transparent">
+        <CardContent className="p-0">
+          <h2 className="mb-4 text-base font-bold">What to do next</h2>
 
           <div className="grid gap-3 sm:grid-cols-2">
             {/* Recommendation 1: If user made mistakes */}
@@ -411,7 +354,7 @@ export default function QuizResultsPage({
               <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <Badge className="bg-amber-500 text-white text-[11px]">
+                    <Badge variant="secondary" className="text-[11px]">
                       {sessionMistakes.length} Mistakes
                     </Badge>
                     <span className="font-semibold text-sm">Retry Missed Questions</span>
@@ -423,7 +366,7 @@ export default function QuizResultsPage({
                 <Button
                   onClick={handlePracticeSessionMistakes}
                   size="sm"
-                  className="mt-4 gap-1.5 w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold"
+                  className="mt-4 gap-1.5 w-full font-semibold"
                 >
                   <RotateCcw className="h-3.5 w-3.5" />
                   Practice {sessionMistakes.length} Missed Questions
@@ -436,7 +379,7 @@ export default function QuizResultsPage({
               <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <Badge className="bg-red-500 text-white text-[11px]">
+                    <Badge variant="secondary" className="text-[11px]">
                       {weakestUnit.accuracy}% Accuracy
                     </Badge>
                     <span className="font-semibold text-sm truncate">
@@ -460,11 +403,11 @@ export default function QuizResultsPage({
             )}
 
             {/* Recommendation 3: If high score or mock test suggestion */}
-            {percentage >= 70 && (
+            {!isMock && percentage >= 70 && (
               <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <Badge className="bg-emerald-500 text-white text-[11px]">
+                    <Badge variant="secondary" className="text-[11px]">
                       Exam Ready
                     </Badge>
                     <span className="font-semibold text-sm">Full Board Mock Exam</span>
@@ -484,7 +427,7 @@ export default function QuizResultsPage({
             )}
 
             {/* Return to Personal Dashboard */}
-            <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
+            {!isMock && <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
               <div>
                 <span className="font-semibold text-sm">{user ? "Your dashboard" : "Keep practising"}</span>
                 <p className="mt-1.5 text-xs text-muted-foreground">
@@ -498,14 +441,15 @@ export default function QuizResultsPage({
                 {user ? "Go to dashboard" : "Back to guest home"}
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
-            </div>
+            </div>}
           </div>
         </CardContent>
-      </Card>
+      </Card>}
 
       {/* Action Buttons */}
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Button
+          variant="outline"
           className="flex-1"
           onClick={() => setShareOpen(true)}
         >
@@ -513,7 +457,7 @@ export default function QuizResultsPage({
           Share Result
         </Button>
         <Button
-          variant="outline"
+          variant={isMock ? "default" : "outline"}
           className="flex-1"
           onClick={() => {
             // Retake: create new session with same config
@@ -531,12 +475,7 @@ export default function QuizResultsPage({
           <RotateCcw className="mr-2 h-4 w-4" />
           Retake
         </Button>
-        <Link href="/quiz" className="flex-1">
-          <Button variant="outline" className="w-full">
-            <BookOpen className="mr-2 h-4 w-4" />
-            New Quiz
-          </Button>
-        </Link>
+        <Link href="/quiz" className={cn(buttonVariants({ variant: "outline" }), "flex-1")}><BookOpen className="mr-2 h-4 w-4" />New Quiz</Link>
         <Button
           variant="outline"
           className="flex-1"

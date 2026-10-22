@@ -15,8 +15,6 @@ import {
 import { safeSetItem, pruneExpiredScratchKeys } from "@/lib/storage";
 import { useActiveProgram } from "@/lib/program";
 import { useAuth } from "@/lib/auth";
-import { SubjectIcon } from "@/components/learning-ui";
-import { ProgrammeIcon } from "@/components/programme-icon";
 import { AppError, AppLoading } from "@/components/app-state";
 import {
   fetchUpcomingExams,
@@ -57,6 +55,8 @@ function QuizSetupInner() {
   const [negativeMarking, setNegativeMarking] = useState(false);
   const [revisionMode, setRevisionMode] = useState(false);
   const [preset, setPreset] = useState<QuizPreset>("quick");
+  const [mobileStep, setMobileStep] = useState<1 | 2 | 3>(1);
+  const [starting, setStarting] = useState(false);
   const unitsRef = useRef<HTMLDivElement>(null);
   const difficultyRef = useRef<HTMLDivElement>(null);
   const questionsRef = useRef<HTMLDivElement>(null);
@@ -82,6 +82,7 @@ function QuizSetupInner() {
       const frame = requestAnimationFrame(() => {
         setSelectedSubject(subjectParam);
         if (unitParam && subjects.find((s) => s.slug === subjectParam)?.units.some((unit) => unit.id === unitParam)) setSelectedUnits([unitParam]);
+        setMobileStep(unitParam ? 3 : 2);
       });
       return () => cancelAnimationFrame(frame);
     }
@@ -128,7 +129,8 @@ function QuizSetupInner() {
     } else {
       setSelectedUnits([]);
     }
-    scrollTo(unitsRef);
+    setMobileStep(2);
+    if (window.innerWidth >= 640) scrollTo(unitsRef);
   };
 
   const applyPreset = (nextPreset: QuizPreset) => {
@@ -171,7 +173,7 @@ function QuizSetupInner() {
         ? prev.filter((id) => id !== unitId)
         : [...prev, unitId];
       // Auto-scroll to difficulty when first unit is selected
-      if (next.length === 1 && prev.length === 0) {
+      if (window.innerWidth >= 640 && next.length === 1 && prev.length === 0) {
         scrollTo(difficultyRef);
       }
       return next;
@@ -181,12 +183,13 @@ function QuizSetupInner() {
   const selectAllUnits = () => {
     if (subject) {
       setSelectedUnits(subject.units.map((u) => u.id));
-      scrollTo(difficultyRef);
+      if (window.innerWidth >= 640) scrollTo(difficultyRef);
     }
   };
 
   const startQuiz = () => {
-    if (!subject) return;
+    if (!subject || starting) return;
+    setStarting(true);
     const config = {
       subject: subject.slug,
       subjectId: subject.id,
@@ -209,7 +212,8 @@ function QuizSetupInner() {
 
   const startQuickPractice = () => {
     const firstSubject = subjects[0];
-    if (!firstSubject) return;
+    if (!firstSubject || starting) return;
+    setStarting(true);
     const sessionId = crypto.randomUUID();
     safeSetItem(
       `quiz-config-${sessionId}`,
@@ -229,7 +233,8 @@ function QuizSetupInner() {
   };
 
   const startScheduledMock = (exam: MockExam) => {
-    if (!user) return;
+    if (!user || starting) return;
+    setStarting(true);
     const sessionId = crypto.randomUUID();
     safeSetItem(
       `quiz-config-${sessionId}`,
@@ -249,47 +254,19 @@ function QuizSetupInner() {
   return (
     <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:px-6 sm:pt-9">
       <div className="mb-6">
-        <div className="mb-4 flex items-center justify-between gap-3 rounded-xl border bg-card p-3">
-          <div className="flex min-w-0 items-center gap-2">
-            <ProgrammeIcon program={program} className="size-9" iconClassName="size-4" />
-            <div className="min-w-0">
-              <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
-                Active syllabus
-              </p>
-              <p className="truncate text-sm font-bold">{program.shortLabel}</p>
-            </div>
-          </div>
-          <Button variant="ghost" size="sm" className="shrink-0 text-xs" onClick={() => router.push("/programs")}>
-            Change
-          </Button>
-        </div>
-        <p className="text-xs font-bold uppercase tracking-wider text-primary">Custom practice</p>
-        <h1 className="mt-1 text-[1.65rem] font-bold tracking-tight sm:text-3xl">Set up your practice</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Choose a subject, set your pace, and make every question count.
-        </p>
+        <p className="text-xs font-medium text-muted-foreground">{program.shortLabel} · Practice</p>
+        <h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-[1.7rem]">{mobileStep === 1 ? "Choose a subject" : mobileStep === 2 ? "Choose units" : "Session settings"}</h1>
+        <p className="mt-2 text-sm text-muted-foreground sm:hidden">Step {mobileStep} of 3</p>
+        <p className="mt-2 hidden text-sm text-muted-foreground sm:block">Choose a subject, units, and your practice settings.</p>
       </div>
 
-      <div className="space-y-4">
-        <Card className="overflow-hidden border-primary/25 bg-primary/5">
-          <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <Badge className="mb-2 gap-1 bg-primary text-primary-foreground">
-                <Zap className="h-3 w-3" /> Fastest start
-              </Badge>
-              <h2 className="text-lg font-bold">Try 5-minute practice</h2>
-              <p className="mt-1 text-xs text-muted-foreground">
-                5 mixed questions from {program.shortLabel}. Your attempt is saved on this device.
-              </p>
-            </div>
-            <Button onClick={startQuickPractice} size="lg" className="shrink-0 gap-2">
-              <Play className="h-4 w-4" />
-              Start now
-            </Button>
-          </CardContent>
-        </Card>
+      {mobileStep > 1 && <button type="button" onClick={() => setMobileStep(mobileStep === 3 ? 2 : 1)} className="mb-4 min-h-11 text-sm font-semibold text-primary sm:hidden">Back to {mobileStep === 3 ? "units" : "subjects"}</button>}
+      {subject && mobileStep === 2 && <div className="mb-4 rounded-lg border bg-card p-3 sm:hidden"><p className="mb-2 text-xs text-muted-foreground">Choose specific units below, or include the whole subject.</p><Button type="button" className="min-h-11 w-full" onClick={() => setMobileStep(3)}>Continue to settings</Button></div>}
 
-        <Card className="border-border bg-card">
+      <div className="space-y-4">
+        <div className="hidden items-center justify-between gap-3 border-b pb-4 sm:flex"><p className="text-sm text-muted-foreground">Short on time? Start with five mixed questions.</p><Button variant="outline" disabled={starting} onClick={startQuickPractice}>{starting ? "Preparing practice…" : "Start 5-question practice"}</Button></div>
+
+        <Card className={`border-border bg-card ${mobileStep === 3 ? "" : "hidden sm:block"}`}>
           <CardHeader className="pb-3">
             <CardTitle className="text-lg">Choose how you want to practise</CardTitle>
             <p className="text-sm text-muted-foreground">
@@ -326,11 +303,11 @@ function QuizSetupInner() {
         </Card>
 
         {/* Mock Test Banner: schedule-aware */}
-        <Card
+        {(liveExam || upcomingExam) && <Card
           className={
-            liveExam
+            `hidden sm:block ${liveExam
               ? "border-green-500/50 bg-green-50 dark:bg-green-950/40"
-              : "border-primary/30 bg-primary/5"
+              : "border-primary/30 bg-primary/5"}`
           }
         >
           <CardContent className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
@@ -373,8 +350,8 @@ function QuizSetupInner() {
                 Checking schedule...
               </Button>
             ) : liveExam && user ? (
-              <Button onClick={() => startScheduledMock(liveExam)} className="shrink-0">
-                Start Live Mock
+              <Button onClick={() => startScheduledMock(liveExam)} disabled={starting} className="shrink-0">
+                {starting ? "Preparing test…" : "Start Live Mock"}
               </Button>
             ) : liveExam || upcomingExam ? (
               <Button disabled className="shrink-0">
@@ -386,32 +363,31 @@ function QuizSetupInner() {
               </Button>
             )}
           </CardContent>
-        </Card>
+        </Card>}
 
         {/* Subject Selection */}
-        <Card>
-          <CardHeader>
+        <Card className={`border-0 bg-transparent shadow-none sm:border sm:bg-card ${mobileStep === 1 ? "" : "hidden sm:block"}`}>
+          <CardHeader className="hidden sm:block">
             <CardTitle className="text-lg flex items-center gap-2">
               <BookOpen className="h-5 w-5 text-primary" />
               Select Subject
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="grid gap-2 sm:grid-cols-2">
+          <CardContent className="px-0 sm:px-4">
+            <div className="grid divide-y border-y sm:grid-cols-2 sm:gap-2 sm:divide-y-0 sm:border-y-0">
               {subjects.map((s) => (
                 <button
                   key={s.id}
                   aria-pressed={selectedSubject === s.slug}
                   onClick={() => handleSubjectChange(s.slug)}
-                  className={`flex items-center gap-3 rounded-lg border p-3 text-left transition-all ${
+                  className={`flex min-h-16 items-center gap-3 border-b-0 px-1 py-3 text-left transition-colors sm:rounded-lg sm:border sm:p-3 ${
                     selectedSubject === s.slug
-                      ? "border-primary bg-primary/5 ring-1 ring-primary"
+                      ? "text-primary sm:border-primary sm:bg-primary/5"
                       : "hover:bg-muted"
                   }`}
                 >
-                  <SubjectIcon slug={s.slug} />
                   <div>
-                    <p className="text-sm font-medium">{s.name}</p>
+                    <p className="text-sm font-semibold">{s.name}</p>
                     <p className="text-xs text-muted-foreground">
                       {s.units.length} units / {s.examMarks} marks
                     </p>
@@ -424,7 +400,7 @@ function QuizSetupInner() {
 
         {/* Unit Selection */}
         {subject && (
-          <Card ref={unitsRef}>
+          <Card ref={unitsRef} className={mobileStep === 2 ? "" : "hidden sm:block"}>
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle className="text-lg flex items-center gap-2">
@@ -472,7 +448,7 @@ function QuizSetupInner() {
           </Card>
         )}
 
-        <details open className="group rounded-2xl border bg-card">
+        <details className={`group rounded-xl border bg-card ${mobileStep === 3 ? "" : "hidden sm:block"}`}>
           <summary className="flex cursor-pointer list-none items-center justify-between p-4 font-semibold [&::-webkit-details-marker]:hidden">
             <span className="flex items-center gap-2">
               <Settings className="h-4 w-4 text-primary" />
@@ -609,16 +585,17 @@ function QuizSetupInner() {
 
         {/* Start Quiz Button */}
         <div ref={startRef} />
-        {subject ? <div className="sticky bottom-[calc(5rem+env(safe-area-inset-bottom))] z-20 rounded-2xl border bg-card/95 p-3 shadow-xl backdrop-blur-lg lg:bottom-4"><div className="mb-2 flex items-center justify-between gap-3 px-1 text-xs"><span className="min-w-0 truncate font-semibold">{subject.name}</span><span className="shrink-0 text-muted-foreground">{numQuestions} questions ? {timeLimit ? `${timeLimit} min` : "Untimed"}</span></div>
+        {subject ? <div className={`sticky bottom-[calc(5rem+env(safe-area-inset-bottom))] z-20 rounded-xl border bg-card/95 p-3 backdrop-blur-lg lg:bottom-4 ${mobileStep === 3 ? "" : "hidden sm:block"}`}><div className="mb-2 flex items-center justify-between gap-3 px-1 text-xs"><span className="min-w-0 truncate font-semibold">{subject.name}</span><span className="shrink-0 text-muted-foreground">{numQuestions} questions · {timeLimit ? `${timeLimit} min` : "Untimed"}</span></div>
         <Button
           size="lg"
           className="min-h-12 w-full rounded-xl font-semibold shadow-sm"
+          disabled={starting}
           onClick={startQuiz}
         >
-          <Play className="mr-2 h-5 w-5" />
-          Start practice
+          {starting ? <span className="mr-2 size-4 animate-spin rounded-full border-2 border-current border-t-transparent" /> : <Play className="mr-2 h-5 w-5" />}
+          {starting ? "Preparing practice…" : "Start practice"}
         </Button>
-        </div> : <div className="flex min-h-14 items-center gap-3 border-t pt-5 text-sm text-muted-foreground"><span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary"><BookOpen className="size-4" /></span><span>Select a subject to unlock your practice settings.</span></div>}
+        </div> : <div className="hidden min-h-14 items-center gap-3 border-t pt-5 text-sm text-muted-foreground sm:flex"><span>Select a subject to unlock your practice settings.</span></div>}
       </div>
     </div>
   );

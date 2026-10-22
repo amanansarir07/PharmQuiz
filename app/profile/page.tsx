@@ -3,19 +3,17 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
-import { useActiveProgram } from "@/lib/program";
-import { ProgramPicker } from "@/components/program-picker";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mail, Calendar, CheckCircle, GraduationCap, Lock, Eye, EyeOff, Trash2, LogOut, AlertTriangle, Loader2, ChevronDown, ChevronUp } from "lucide-react";
+import { Mail, Calendar, CheckCircle, Lock, Eye, EyeOff, Trash2, AlertTriangle, Loader2, ChevronDown, ChevronUp } from "lucide-react";
 import { LearningPage } from "@/components/learning-ui";
 import { ProfileOverview } from "@/components/profile-overview";
 import { getSupabase } from "@/lib/supabase/client";
 
 export default function ProfilePage() {
-  const { user, updateProfile, changePassword, deleteAccount, logout } = useAuth();
+  const { user, updateProfile, changePassword, deleteAccount } = useAuth();
   const router = useRouter();
   const [name, setName] = useState(user?.name || "");
   const [loading, setLoading] = useState(false);
@@ -41,9 +39,6 @@ export default function ProfilePage() {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  const { program, setProgramSlug } = useActiveProgram();
-  const [programSaved, setProgramSaved] = useState(false);
-  const [programError, setProgramError] = useState("");
 
   useEffect(() => {
     let cancelled = false;
@@ -110,15 +105,6 @@ export default function ProfilePage() {
     if (result.error) { setPwError(result.error); }
     else { setPwSuccess(true); setCurrentPassword(""); setNewPassword(""); setConfirmNewPassword(""); setTimeout(() => setPwSuccess(false), 3000); }
     setPwLoading(false);
-  };
-
-  const handleProgramChange = async (slug: string) => {
-    setProgramError("");
-    const result = await updateProfile(user.name, slug);
-    if (result.error) { setProgramError(result.error); return; }
-    setProgramSlug(slug);
-    setProgramSaved(true);
-    setTimeout(() => setProgramSaved(false), 2500);
   };
 
   const handleDeleteAccount = async () => {
@@ -198,31 +184,6 @@ export default function ProfilePage() {
           </CardContent>
         </Card>
 
-        {/* Program */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <GraduationCap className="h-5 w-5" />
-              Program
-            </CardTitle>
-            <CardDescription>
-              Your program decides which subjects and MCQs you see across the
-              app. It&apos;s saved to your account, so it follows you to other
-              devices.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {programError && <p role="alert" className="text-sm text-destructive">{programError}</p>}
-            {programSaved && (
-              <div className="rounded-lg bg-green-50 dark:bg-green-950 p-3 text-sm text-green-600 dark:text-green-400 flex items-center gap-2">
-                <CheckCircle className="h-4 w-4" />
-                Program updated
-              </div>
-            )}
-            <ProgramPicker value={program.slug} onChange={(slug) => { void handleProgramChange(slug); }} />
-          </CardContent>
-        </Card>
-
         {/* Change Password */}
         <Card>
           <button onClick={() => setActiveSection(activeSection === "password" ? null : "password")} className="w-full text-left">
@@ -244,11 +205,6 @@ export default function ProfilePage() {
               </button>
             </div>
           </CardContent>}
-        </Card>
-
-        {/* Sign Out */}
-        <Card>
-          <CardContent className="p-5"><div className="flex items-center justify-between"><div className="flex items-center gap-3"><LogOut className="h-5 w-5 text-muted-foreground" /><div><p className="font-medium">Sign Out</p><p className="text-sm text-muted-foreground">Sign out of your account on this device</p></div></div><Button variant="outline" onClick={() => { logout(); router.push("/"); }}>Sign Out</Button></div></CardContent>
         </Card>
 
         {/* Danger Zone - Delete Account */}

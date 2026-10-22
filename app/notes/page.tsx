@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { StickyNote, Plus, Pencil, Trash2, Search } from "lucide-react";
+import { Plus, Pencil, Trash2, Search } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,8 @@ import { useActiveProgram } from "@/lib/program";
 import { getSubjectsForProgram } from "@/data/registry";
 import { LibraryNav } from "@/components/library-nav";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
-import { AppLoading } from "@/components/app-state";
+import { AppEmpty, AppLoading } from "@/components/app-state";
+import { toast } from "@/components/ui/toast";
 
 export default function NotesPage() {
   const { notes, mounted, error, addNote, updateNote, deleteNote } = useNotes();
@@ -63,8 +64,9 @@ export default function NotesPage() {
       ? await updateNote(editingId, title, content, subject)
       : await addNote(title, content, subject);
     setSaving(false);
-    if (result.error) { setFormError(result.error); return; }
+    if (result.error) { setFormError("Could not save the note. Check your connection and try again."); toast("Could not save note", "error", "Try again."); return; }
     setDialogOpen(false);
+    toast(editingId ? "Note updated" : "Note saved", "success");
   };
 
   const formatDate = (iso: string) => {
@@ -81,7 +83,7 @@ export default function NotesPage() {
 
   return (
     <LearningPage className="max-w-[1200px]">
-      <PageHeading eyebrow="Study library" title="Notes" description="Keep ideas, mnemonics and reminders close to your practice." action={<Button onClick={openNewNote} className="min-h-10 rounded-xl"><Plus className="mr-1.5 size-4" /> New note</Button>} />
+      <PageHeading eyebrow="Study library" title="Notes" description="Keep ideas, mnemonics and reminders close to your practice." action={notes.length > 0 && <Button onClick={openNewNote} className="min-h-10"><Plus className="mr-1.5 size-4" /> New note</Button>} />
       <LibraryNav />
       {notes.length > 0 && <label className="mb-5 flex items-center gap-3 rounded-xl border bg-card px-4"><Search className="size-4 text-muted-foreground" /><Input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Find a note or mnemonic…" aria-label="Search notes" className="h-12 border-0 bg-transparent shadow-none" /></label>}
 
@@ -90,23 +92,14 @@ export default function NotesPage() {
       {!mounted ? (
         <AppLoading label="Loading notes" />
       ) : notes.length === 0 ? (
-        <Card className="rounded-2xl">
-          <CardContent className="p-8 text-center sm:p-12">
-            <StickyNote className="mx-auto h-12 w-12 text-muted-foreground/50" />
-            <p className="mt-4 text-muted-foreground">No notes yet</p>
-            <p className="text-sm text-muted-foreground mb-4">
-              Jot down mnemonics, key points, or anything you want to remember
-            </p>
-            <Button onClick={openNewNote}>Create Your First Note</Button>
-          </CardContent>
-        </Card>
+        <AppEmpty title="No notes yet" description="Jot down mnemonics, key points, or anything you want to remember." action="Create a note" onAction={openNewNote} />
       ) : (
         <div className="grid gap-3 md:grid-cols-2">
           {filteredNotes.map((note) => (
-            <Card key={note.id} className="rounded-2xl border-t-2 border-t-amber-400/70">
+            <Card key={note.id}>
               <CardHeader className="pb-2">
                 <div className="flex items-start justify-between">
-                  <CardTitle className="min-w-0 break-words text-base"><button type="button" onClick={() => openEditNote(note)} className="text-left font-semibold hover:text-primary">{note.title}</button></CardTitle>
+                  <CardTitle className="min-w-0 break-words text-base">{note.title}</CardTitle>
                   <div className="flex gap-1">
                     <Button
                       variant="ghost"
@@ -144,7 +137,7 @@ export default function NotesPage() {
       )}
       {mounted && notes.length > 0 && filteredNotes.length === 0 && <p className="rounded-2xl border border-dashed p-8 text-center text-sm text-muted-foreground">No notes match “{search}”. Try another word.</p>}
 
-      <Dialog open={deleteId !== null} onOpenChange={(open) => { if (!open && !deleting) setDeleteId(null); }}><DialogContent><DialogHeader><DialogTitle>Delete this note?</DialogTitle><DialogDescription>This removes the note from your study library. It cannot be undone.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" disabled={deleting} onClick={() => setDeleteId(null)}>Keep note</Button><Button variant="destructive" disabled={deleting} onClick={async () => { if (!deleteId) return; setDeleting(true); const result = await deleteNote(deleteId); setDeleting(false); if (!result.error) setDeleteId(null); }}>{deleting ? "Deleting…" : "Delete note"}</Button></DialogFooter></DialogContent></Dialog>
+      <Dialog open={deleteId !== null} onOpenChange={(open) => { if (!open && !deleting) setDeleteId(null); }}><DialogContent><DialogHeader><DialogTitle>Delete this note?</DialogTitle><DialogDescription>This removes the note from your study library. It cannot be undone.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" disabled={deleting} onClick={() => setDeleteId(null)}>Keep note</Button><Button variant="destructive" disabled={deleting} onClick={async () => { if (!deleteId) return; setDeleting(true); const result = await deleteNote(deleteId); setDeleting(false); if (result.error) toast("Could not delete note", "error", "Try again."); else { setDeleteId(null); toast("Note deleted", "success"); } }}>{deleting ? "Deleting…" : "Delete note"}</Button></DialogFooter></DialogContent></Dialog>
 
       {/* Add/Edit Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
@@ -156,7 +149,9 @@ export default function NotesPage() {
           </DialogHeader>
           <div className="space-y-4">
             {formError && <p role="alert" className="text-sm text-destructive">{formError}</p>}
+            <label htmlFor="note-title" className="block text-sm font-medium">Title</label>
             <Input
+              id="note-title"
               aria-label="Note title"
               placeholder="Note title"
               value={title}
@@ -182,7 +177,9 @@ export default function NotesPage() {
                 ))}
               </div>
             </div>
+            <label htmlFor="note-content" className="block text-sm font-medium">Note</label>
             <Textarea
+              id="note-content"
               aria-label="Note content"
               placeholder="Write your note here..."
               value={content}

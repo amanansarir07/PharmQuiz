@@ -62,7 +62,7 @@ export function useNotes() {
       .select()
       .single();
 
-    if (saveError || !data) { setError(saveError?.message || "Could not save note."); return { error: saveError?.message || "Could not save note." }; }
+    if (saveError || !data) { setError("Could not save note. Please try again."); return { error: "Could not save note." }; }
     setError(null);
     if (data) {
       const newNote: StoredNote = {
@@ -88,7 +88,7 @@ export function useNotes() {
       .select("updated_at")
       .single();
 
-    if (saveError || !data) { setError(saveError?.message || "Could not update note."); return { error: saveError?.message || "Could not update note." }; }
+    if (saveError || !data) { setError("Could not update note. Please try again."); return { error: "Could not update note." }; }
     setError(null);
 
     setNotes((prev) =>
@@ -109,7 +109,7 @@ export function useNotes() {
       .select("id")
       .single();
 
-    if (deleteError || !data) { setError(deleteError?.message || "Could not delete note."); return { error: deleteError?.message || "Could not delete note." }; }
+    if (deleteError || !data) { setError("Could not delete note. Please try again."); return { error: "Could not delete note." }; }
     setError(null);
 
     setNotes((prev) => prev.filter((n) => n.id !== id));

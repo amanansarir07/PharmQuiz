@@ -27,6 +27,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { toast } from "@/components/ui/toast";
 import { ArrowLeft, Check, CheckCheck, ChevronRight, CircleAlert, ClipboardCheck, Download, FileJson, History, Loader2, Pencil, Search, Send, ShieldAlert, Trash2, Upload } from "lucide-react";
 
 type Step = "destination" | "import" | "review";
@@ -108,6 +109,7 @@ export default function AdminQuestionsPage() {
   const [history, setHistory] = useState<SavedImport[]>([]);
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
+  const [bulkUpdating, setBulkUpdating] = useState(false);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -199,22 +201,33 @@ export default function AdminQuestionsPage() {
   };
 
   const bulkStatus = async (status: "approved" | "rejected", onlyValid = false) => {
+    if (bulkUpdating) return;
     const targets = questions.filter((question) => !onlyValid || reviewState(question) !== "invalid");
+    if (!targets.length) { setError("There are no questions to update."); return; }
     const next = questions.map((question) => targets.some((item) => item.id === question.id) ? { ...question, status } : question);
-    setQuestions(next);
-    if (batch) {
-      try { await Promise.all(next.filter((question) => targets.some((item) => item.id === question.id)).map(updateQuestionImportItem)); }
-      catch (updateError) { setError(updateError instanceof Error ? updateError.message : "Could not update selected questions."); }
-    }
+    setBulkUpdating(true); setError(""); setNotice("");
+    try {
+      if (batch) await Promise.all(next.filter((question) => targets.some((item) => item.id === question.id)).map(updateQuestionImportItem));
+      setQuestions(next);
+      setNotice(`${targets.length} question${targets.length === 1 ? "" : "s"} ${status}.`);
+      toast(`${targets.length} question${targets.length === 1 ? "" : "s"} ${status}`, "success");
+    } catch (updateError) { setError(updateError instanceof Error ? updateError.message : "Could not update selected questions."); toast("Could not update questions", "error", "Try again."); }
+    finally { setBulkUpdating(false); }
   };
 
   const bulkSelectedStatus = async (status: "approved" | "rejected") => {
+    if (bulkUpdating) return;
     const targets = questions.filter((question) => selected.has(question.id) && (status !== "approved" || reviewState(question) !== "invalid"));
     if (!targets.length) { setError(status === "approved" ? "Select at least one valid question to approve." : "Select at least one question to reject."); return; }
     const next = questions.map((question) => targets.some((item) => item.id === question.id) ? { ...question, status } : question);
-    setQuestions(next); setSelected(new Set());
-    if (batch) try { await Promise.all(next.filter((question) => targets.some((item) => item.id === question.id)).map(updateQuestionImportItem)); }
-    catch (updateError) { setError(updateError instanceof Error ? updateError.message : "Could not update selected questions."); }
+    setBulkUpdating(true); setError(""); setNotice("");
+    try {
+      if (batch) await Promise.all(next.filter((question) => targets.some((item) => item.id === question.id)).map(updateQuestionImportItem));
+      setQuestions(next); setSelected(new Set());
+      setNotice(`${targets.length} question${targets.length === 1 ? "" : "s"} ${status}.`);
+      toast(`${targets.length} question${targets.length === 1 ? "" : "s"} ${status}`, "success");
+    } catch (updateError) { setError(updateError instanceof Error ? updateError.message : "Could not update selected questions."); toast("Could not update questions", "error", "Try again."); }
+    finally { setBulkUpdating(false); }
   };
 
   const publish = async () => {
@@ -251,6 +264,7 @@ export default function AdminQuestionsPage() {
     <ol className="mb-7 grid grid-cols-3 gap-2" aria-label="Import progress">{(["destination", "import", "review"] as Step[]).map((item, index) => <li key={item} className="min-w-0"><div className={`flex items-center gap-2 text-xs font-semibold ${step === item ? "text-primary" : "text-muted-foreground"}`}><span className={`flex size-6 items-center justify-center rounded-full text-[11px] ${step === item ? "bg-primary text-primary-foreground" : "bg-muted"}`}>{index + 1}</span><span className="truncate">{item === "destination" ? "Destination" : item === "import" ? "Import JSON" : "Review"}</span></div><div className={`mt-2 h-1 rounded-full ${step === item ? "bg-primary" : "bg-muted"}`} /></li>)}</ol>
     {error && <p role="alert" className="mb-5 rounded-xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">{error}</p>}
     {notice && <p role="status" className="mb-5 rounded-xl border border-emerald-500/30 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-700 dark:text-emerald-300">{notice}</p>}
+    {bulkUpdating && <p role="status" className="mb-5 text-sm text-muted-foreground">Updating selected questions…</p>}
     {step === "destination" && sharedRecipients.length > 1 && <p className="mb-5 rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-sm text-muted-foreground"><strong className="text-foreground">Shared CTEVT Year 1 bank.</strong> When published, this batch will be available to {sharedRecipients.map((program) => program.shortLabel).join(", ")}. Nursing is kept separate.</p>}
 
     {step === "destination" && <Card><CardContent className="p-5 sm:p-7"><div className="mb-6"><h2 className="text-lg font-bold">Choose where these questions belong</h2><p className="mt-1 text-sm text-muted-foreground">Choose the stream, programme, and year in order. Every registered Bujh programme can receive an import.</p></div><div className="grid gap-5 sm:grid-cols-2"><Field label="Stream"><select value={facultySlug} onChange={(event) => chooseFaculty(event.target.value)} className="h-11 w-full rounded-xl border bg-card px-3 text-sm"><option value="">Choose stream</option>{faculties.map((faculty) => <option key={faculty.slug} value={faculty.slug}>{faculty.name}</option>)}</select></Field><Field label="Programme"><select value={award} onChange={(event) => chooseAward(event.target.value)} className="h-11 w-full rounded-xl border bg-card px-3 text-sm" disabled={!facultySlug}><option value="">Choose programme</option>{awardsInFaculty.map((item) => <option key={item} value={item}>{item}</option>)}</select></Field><Field label="Year / level"><select value={destination.programSlug} onChange={(event) => chooseProgram(event.target.value)} className="h-11 w-full rounded-xl border bg-card px-3 text-sm" disabled={!award}><option value="">Choose year or level</option>{yearsInProgramme.map((program) => <option key={program.slug} value={program.slug}>{program.level || "Single programme"}{program.hasContent ? "" : " — curriculum setup pending"}</option>)}</select></Field>{!destination.programSlug ? <Field label="Subject"><select className="h-11 w-full rounded-xl border bg-card px-3 text-sm" disabled><option>Choose year or level first</option></select></Field> : hasRegisteredCurriculum ? <Field label="Subject"><select value={destination.subjectSlug} onChange={(event) => chooseSubject(event.target.value)} className="h-11 w-full rounded-xl border bg-card px-3 text-sm"><option value="">Choose subject</option>{subjects.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}</select></Field> : <Field label="Subject slug"><Input value={destination.subjectSlug} onChange={(event) => chooseSubject(event.target.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""))} placeholder="e.g. pharmacology" autoCapitalize="none" /><span className="block text-xs leading-5 text-muted-foreground">Use this same slug when you register the syllabus.</span></Field>}{destination.programSlug && subject ? <Field label="Chapter / unit"><select value={destination.unitId} onChange={(event) => chooseUnit(event.target.value)} className="h-11 w-full rounded-xl border bg-card px-3 text-sm"><option value="">Choose unit</option><option value="all">Whole subject (use units from JSON)</option>{subject.units.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}</select></Field> : <Field label="Unit ID"><Input value={destination.unitId} onChange={(event) => chooseUnit(event.target.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""))} placeholder="e.g. unit-1" autoCapitalize="none" disabled={!destination.programSlug} /><span className="block text-xs leading-5 text-muted-foreground">Match this ID to the future curriculum unit.</span></Field>}{destination.programSlug && unit ? <Field label="Topic (optional)"><select value={destination.topic} onChange={(event) => setDestination((current) => ({ ...current, topic: event.target.value }))} className="h-11 w-full rounded-xl border bg-card px-3 text-sm"><option value="">No specific topic</option>{unit.subtopics.map((topic) => <option key={topic} value={topic}>{topic}</option>)}</select></Field> : <Field label="Topic (optional)"><Input value={destination.topic} onChange={(event) => setDestination((current) => ({ ...current, topic: event.target.value }))} placeholder="e.g. autonomic nervous system" disabled={!destination.programSlug} /></Field>}</div>{destination.programSlug && !hasRegisteredCurriculum && <p className="mt-5 rounded-xl border border-amber-500/25 bg-amber-500/5 px-4 py-3 text-sm text-muted-foreground">This programme is not student-facing yet. Published questions are stored safely and become available when its matching curriculum is registered and activated.</p>}<div className="mt-7 flex justify-end"><Button onClick={() => { if (!destination.programSlug || !destination.subjectSlug || !destination.unitId) { setError("Choose a stream, programme, year, subject, and unit to continue."); return; } setError(""); setStep("import"); }}>Continue to import <ChevronRight className="size-4" /></Button></div></CardContent></Card>}

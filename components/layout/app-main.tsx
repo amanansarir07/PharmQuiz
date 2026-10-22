@@ -15,7 +15,7 @@ export function AppMain({ children }: { children: React.ReactNode }) {
   // Every in-app route waits for the initial session and profile lookup. This
   // prevents a signed-in student from briefly seeing the guest experience on
   // refresh. Landing and authentication pages remain immediately available.
-  if (!publicPage && isLoading) return <main id="main-content" className={className}><AppLoading label="Opening your learning space" /></main>;
+  if (!publicPage && isLoading) return <main id="main-content" className={className}><AppLoading label="Opening your learning space" variant={pathname === "/dashboard" ? "dashboard" : pathname === "/subjects" ? "subjects" : pathname === "/review" ? "questions" : pathname === "/leaderboard" ? "leaderboard" : pathname === "/notes" ? "notes" : "page"} /></main>;
   if (!publicPage && authRestorationTimedOut) return <main id="main-content" className={className}><AppError title="Could not check your session" description="Please check your connection and try again." onRetry={() => window.location.reload()} /></main>;
 
   return <main id="main-content" className={className}><PageTransition>{children}</PageTransition></main>;

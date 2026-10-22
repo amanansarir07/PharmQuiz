@@ -8,6 +8,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { toast } from "@/components/ui/toast";
 import {
   Select,
   SelectContent,
@@ -67,6 +69,8 @@ export default function AdminMockExamsPage() {
   const [duration, setDuration] = useState("80");
   const [now, setNow] = useState(() => new Date());
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<MockExam | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   const load = useCallback(() => {
     setLoading(true);
@@ -114,6 +118,7 @@ export default function AdminMockExamsPage() {
       setStartsAt("");
       setEditingId(null);
       load();
+      toast(editingId ? "Exam updated" : "Exam scheduled", "success");
     } catch (error: unknown) {
       setError(errorMessage(
         error,
@@ -144,15 +149,20 @@ export default function AdminMockExamsPage() {
     setError("");
   };
 
-  const remove = async (exam: MockExam) => {
-    if (!window.confirm('Delete "' + exam.title + '"? This cannot be undone.'))
-      return;
+  const remove = async () => {
+    if (!deleteTarget) return;
     setError("");
+    setDeleting(true);
     try {
-      await deleteMockExam(exam.id);
-      setExams((prev) => prev.filter((x) => x.id !== exam.id));
+      await deleteMockExam(deleteTarget.id);
+      setExams((prev) => prev.filter((x) => x.id !== deleteTarget.id));
+      setDeleteTarget(null);
+      toast("Exam deleted", "success");
     } catch (error: unknown) {
       setError(errorMessage(error, "Could not delete the exam."));
+      toast("Could not delete exam", "error", "Try again.");
+    } finally {
+      setDeleting(false);
     }
   };
 
@@ -311,7 +321,7 @@ export default function AdminMockExamsPage() {
                 ) : (
                   <Plus className="mr-2 h-4 w-4" />
                 )}
-                {editingId ? "Save Changes" : "Schedule Exam"}
+                {saving ? (editingId ? "Saving…" : "Scheduling…") : editingId ? "Save changes" : "Schedule exam"}
               </Button>
               {editingId && (
                 <Button type="button" variant="outline" onClick={cancelEdit}>
@@ -393,7 +403,7 @@ export default function AdminMockExamsPage() {
                       variant="outline"
                       size="sm"
                       className="text-red-600 hover:text-red-600"
-                      onClick={() => remove(exam)}
+                      onClick={() => setDeleteTarget(exam)}
                     >
                       <Trash2 className="mr-1 h-4 w-4" />
                       Delete
@@ -413,6 +423,18 @@ export default function AdminMockExamsPage() {
         </Link>
         , and join when the exam is live.
       </p>
+      <Dialog open={deleteTarget !== null} onOpenChange={(open) => { if (!open && !deleting) setDeleteTarget(null); }}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Delete this exam?</DialogTitle>
+            <DialogDescription>{deleteTarget?.title} will be removed. This cannot be undone.</DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" disabled={deleting} onClick={() => setDeleteTarget(null)}>Keep exam</Button>
+            <Button variant="destructive" disabled={deleting} onClick={() => void remove()}>{deleting ? "Deleting…" : "Delete exam"}</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

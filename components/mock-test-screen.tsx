@@ -3,13 +3,13 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { CalendarClock, ClipboardCheck, Clock, Play } from "lucide-react";
 import { getSubjectsForProgram } from "@/data/registry";
 import { useActiveProgram } from "@/lib/program";
 import { useAuth } from "@/lib/auth";
 import { safeSetItem } from "@/lib/storage";
 import { fetchUpcomingExams, formatCountdown, formatInKathmandu, getMockDurationMinutes, getMockQuestionCount, isExamLive, scheduledMockConfig, type MockExam } from "@/lib/mock-exams";
-import { LearningPage, PageHeading, SectionHeading, StatTile, SubjectIcon } from "@/components/learning-ui";
+import { AppLoading } from "@/components/app-state";
+import { LearningPage, PageHeading, SectionHeading } from "@/components/learning-ui";
 
 export function MockTestScreen() {
   const router = useRouter();
@@ -20,18 +20,25 @@ export function MockTestScreen() {
   const durationMinutes = getMockDurationMinutes(programSlug);
   const [exams, setExams] = useState<MockExam[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [loadError, setLoadError] = useState(false);
+  const [retryKey, setRetryKey] = useState(0);
+  const [preparing, setPreparing] = useState(false);
   const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
     let active = true;
-    const refresh = () => fetchUpcomingExams(programSlug).then((list) => { if (active) { setExams(list); setLoaded(true); } }).catch(() => { if (active) setLoaded(true); });
+    const refresh = () => fetchUpcomingExams(programSlug).then((list) => {
+      if (active) { setExams(list); setLoaded(true); setLoadError(false); }
+    }).catch(() => { if (active) { setExams([]); setLoaded(true); setLoadError(true); } });
     void refresh();
     const refreshId = setInterval(refresh, 60_000);
     const clockId = setInterval(() => setNow(new Date()), 1000);
     return () => { active = false; clearInterval(refreshId); clearInterval(clockId); };
-  }, [programSlug]);
+  }, [programSlug, retryKey]);
 
   const start = (exam?: MockExam) => {
+    if (preparing) return;
+    setPreparing(true);
     const sessionId = crypto.randomUUID();
     const config = exam ? scheduledMockConfig(exam, programSlug) : { mode: "mock", program: programSlug, difficulty: "mixed", numQuestions: questionCount, timeLimit: durationMinutes, negativeMarking: false, revisionMode: false };
     safeSetItem(`quiz-config-${sessionId}`, JSON.stringify(config));
@@ -39,19 +46,27 @@ export function MockTestScreen() {
   };
 
   return <LearningPage>
-    <PageHeading backHref="/dashboard" eyebrow={program.shortLabel} title="Mock tests" description="Practise under exam conditions with questions across your subjects." />
-
-    <div className="mb-6 flex gap-2"><span className="action-primary">Available tests</span><Link href="/history" className="action-secondary">Past attempts</Link></div>
-    <div className="mb-7 grid grid-cols-3 gap-2"><StatTile label="Questions" value={questionCount} /><StatTile label="Minutes" value={durationMinutes} tone="amber" /><StatTile label="Subjects" value={subjects.length} tone="green" /></div>
-
-    {exams.length > 0 ? <section className="mb-7"><SectionHeading title="Scheduled exams" description="Exam windows follow Kathmandu time." href={isAdmin ? "/admin/mock-exams" : undefined} linkLabel="Manage" />
-      <div className="space-y-3">{exams.map((exam) => {
-        const live = isExamLive(exam, now);
-        return <article key={exam.id} className="rounded-2xl border bg-card p-4 sm:p-5"><div className="flex flex-wrap items-start justify-between gap-3"><div className="min-w-0"><span className={`inline-flex rounded-full px-2 py-1 text-[11px] font-bold ${live ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400" : "bg-amber-500/10 text-amber-700 dark:text-amber-400"}`}>{live ? "Live now" : `Starts in ${formatCountdown(exam.starts_at, now)}`}</span><h2 className="mt-2 text-base font-bold">{exam.title}</h2><p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground"><CalendarClock className="size-3.5" /> {formatInKathmandu(exam.starts_at)} · {exam.duration_minutes} min · {questionCount} questions</p></div><button type="button" disabled={!live} onClick={() => start(exam)} className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground disabled:bg-muted disabled:text-muted-foreground"><Play className="size-4" /> {live ? "Start exam" : "Opens soon"}</button></div></article>;
-      })}</div></section> : <section className="mb-7"><SectionHeading title="Ready when you are" /><article className="rounded-3xl border border-primary/20 bg-card p-5 sm:p-8"><div className="flex items-start gap-3"><span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><ClipboardCheck className="size-6" /></span><div><p className="mb-1 text-[10px] font-bold uppercase tracking-[.15em] text-primary">Exam preparation</p><h2 className="text-xl font-bold tracking-tight sm:text-2xl">Full syllabus mock</h2><p className="mt-1 text-sm text-muted-foreground">{questionCount} questions · {durationMinutes} minutes · {subjects.length} subjects</p></div></div><p className="mt-4 text-sm leading-6 text-muted-foreground">A fresh paper is generated when you begin. Answers and explanations appear after submission.</p><button type="button" onClick={() => start()} disabled={!loaded || questionCount === 0} className="mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary text-sm font-semibold text-primary-foreground disabled:opacity-50"><Play className="size-4" /> {loaded ? "Start mock test" : "Checking schedule…"}</button></article></section>}
-
-    <section><SectionHeading title="Covered subjects" description="Each subject contributes 10 questions." /><div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{subjects.map((subject) => <div key={subject.slug} className="flex min-h-18 items-center gap-3 rounded-2xl border bg-card p-3 text-sm"><SubjectIcon slug={subject.slug} /><span className="min-w-0 flex-1 font-medium">{subject.name}</span><span className="shrink-0 rounded-lg bg-muted px-2 py-1 text-[11px] text-muted-foreground">10 Qs</span></div>)}</div></section>
-    <details className="mt-7 rounded-2xl border bg-card p-4"><summary className="cursor-pointer text-sm font-semibold">Exam instructions</summary><ul className="mt-3 space-y-2 text-sm leading-6 text-muted-foreground"><li className="flex gap-2"><Clock className="mt-1 size-4 shrink-0 text-primary" /> The timer submits the exam when it expires.</li><li>There is no negative marking.</li><li>Answers and explanations appear after submission.</li><li>Your progress is stored locally if the page refreshes.</li></ul></details>
-    <Link href="/history" className="mt-6 inline-flex text-sm font-semibold text-primary hover:underline">View past attempts</Link>
+    <PageHeading backHref="/dashboard" eyebrow={program.shortLabel} title="Mock tests" description="A timed paper covering your programme." />
+    {!loaded ? <AppLoading label="Checking available tests" variant="page" /> : <>
+      {loadError && <div role="alert" className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b pb-4 text-sm"><p>Could not check the exam schedule. You can still start a full syllabus mock.</p><button type="button" className="font-semibold text-primary" onClick={() => { setLoaded(false); setLoadError(false); setRetryKey((key) => key + 1); }}>Retry schedule</button></div>}
+      {exams.length > 0 ? <section>
+        <SectionHeading title="Scheduled exams" description="Times shown in Kathmandu time." href={isAdmin ? "/admin/mock-exams" : undefined} linkLabel="Manage" />
+        <div className="divide-y border-y">{exams.map((exam) => {
+          const live = isExamLive(exam, now);
+          return <article key={exam.id} className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0"><p className="text-sm font-semibold">{exam.title}</p><p className="mt-1 text-xs text-muted-foreground">{formatInKathmandu(exam.starts_at)} · {exam.duration_minutes} min · {questionCount} questions</p><p className={`mt-1 text-xs font-medium ${live ? "text-emerald-700 dark:text-emerald-400" : "text-muted-foreground"}`}>{live ? "Live now" : `Starts in ${formatCountdown(exam.starts_at, now)}`}</p></div>
+            <button type="button" disabled={!live || preparing} onClick={() => start(exam)} className="action-primary w-full shrink-0 disabled:opacity-50 sm:w-auto">{preparing ? "Preparing test…" : live ? "Start exam" : "Opens soon"}</button>
+          </article>;
+        })}</div>
+      </section> : <section className="rounded-xl border bg-card p-5 sm:p-7">
+        <h2 className="text-lg font-bold">Full syllabus mock</h2>
+        <p className="mt-2 text-sm text-muted-foreground">{questionCount} questions · {durationMinutes} minutes · {subjects.length} subjects</p>
+        <p className="mt-4 text-sm leading-6 text-muted-foreground">A fresh paper is generated when you begin. Answers and explanations appear after submission.</p>
+        <button type="button" onClick={() => start()} disabled={preparing || questionCount === 0} className="action-primary mt-5 w-full disabled:opacity-50 sm:w-auto">{preparing ? "Preparing test…" : "Start mock test"}</button>
+      </section>}
+      <details className="mt-7 border-b pb-4"><summary className="min-h-11 cursor-pointer py-2 text-sm font-semibold">Covered subjects</summary><p className="mb-3 text-xs text-muted-foreground">Each subject contributes 10 questions.</p><ul className="space-y-2 text-sm text-muted-foreground">{subjects.map((subject) => <li key={subject.slug}>{subject.name}</li>)}</ul></details>
+      <details className="border-b py-4"><summary className="min-h-11 cursor-pointer py-2 text-sm font-semibold">Exam instructions</summary><ul className="space-y-2 text-sm leading-6 text-muted-foreground"><li>The timer submits the exam when it expires.</li><li>There is no negative marking.</li><li>Answers and explanations appear after submission.</li><li>Your progress is stored locally if the page refreshes.</li></ul></details>
+      <Link href="/history" className="mt-5 inline-flex min-h-11 items-center text-sm font-semibold text-primary">View past attempts</Link>
+    </>}
   </LearningPage>;
 }

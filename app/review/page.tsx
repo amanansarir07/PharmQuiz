@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getProgramQuestions, getSubjectQuestions, type QuizQuestion } from "@/lib/quiz-loader";
 import { getSubjectForUnit, getUnitName } from "@/lib/quiz-helpers";
 import { useBookmarks } from "@/lib/bookmarks";
+import { toast } from "@/components/ui/toast";
 import { getSubjectsForProgram } from "@/data/registry";
 import { useActiveProgram } from "@/lib/program";
 import { useAuth } from "@/lib/auth";
@@ -30,6 +31,7 @@ export default function ReviewPage() {
   const [filterDifficulty, setFilterDifficulty] = useState("all");
   const [showAnswers, setShowAnswers] = useState<Set<string>>(new Set());
   const [visibleCount, setVisibleCount] = useState(30);
+  const [bookmarkPending, setBookmarkPending] = useState<string | null>(null);
   const [loadError, setLoadError] = useState(false);
   const { isBookmarked, toggleBookmark, error: bookmarkError } = useBookmarks();
   const { user, isLoading: authLoading, authRestorationTimedOut } = useAuth();
@@ -113,9 +115,12 @@ export default function ReviewPage() {
     });
   };
 
-  const handleBookmark = (q: QuizQuestion) => {
+  const handleBookmark = async (q: QuizQuestion) => {
+    if (bookmarkPending) return;
+    const wasBookmarked = isBookmarked(q.question);
+    setBookmarkPending(q.id);
     const subjectSlug = getSubjectForUnit(q.unitId) || "";
-    void toggleBookmark({
+    const result = await toggleBookmark({
       questionText: q.question,
       options: q.options,
       correctIndex: q.correctIndex,
@@ -124,6 +129,9 @@ export default function ReviewPage() {
       unitId: q.unitId,
       subjectSlug,
     });
+    setBookmarkPending(null);
+    if (result.error) toast("Could not update saved questions", "error", "Try again.");
+    else toast(wasBookmarked ? "Saved question removed" : "Question saved", "success");
   };
 
   if (authRestorationTimedOut) return <AppError title="Could not check your session" description="We could not confirm your account right now. Please try again." onRetry={() => window.location.reload()} />;
@@ -221,7 +229,8 @@ export default function ReviewPage() {
                       variant="ghost"
                       size="sm"
                       className="shrink-0"
-                      onClick={() => handleBookmark(q)}
+                      disabled={bookmarkPending === q.id}
+                      onClick={() => { void handleBookmark(q); }}
                       aria-label={bookmarked ? "Remove bookmark" : "Save question"}
                       title={bookmarked ? "Remove bookmark" : "Bookmark this question"}
                     >

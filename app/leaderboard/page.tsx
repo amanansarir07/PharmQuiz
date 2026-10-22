@@ -35,16 +35,11 @@ const periods: { key: LeaderboardPeriod; icon: React.ElementType }[] = [
   { key: "all_time", icon: Star },
 ];
 
-const podiumConfig = [
-  { bg: "from-yellow-500 to-amber-500", ring: "ring-yellow-500", medal: "🥇", label: "1st", height: "h-28", avatarSize: "h-16 w-16", textSize: "text-2xl" },
-  { bg: "from-slate-300 to-slate-400", ring: "ring-slate-400", medal: "🥈", label: "2nd", height: "h-20", avatarSize: "h-14 w-14", textSize: "text-xl" },
-  { bg: "from-amber-600 to-orange-500", ring: "ring-amber-500", medal: "🥉", label: "3rd", height: "h-16", avatarSize: "h-12 w-12", textSize: "text-lg" },
-];
-
 export default function LeaderboardPage() {
   const [activePeriod, setActivePeriod] = useState<LeaderboardPeriod>("all_time");
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
-  const [mounted, setMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [userPosition, setUserPosition] = useState<UserLeaderboardPosition | null>(null);
   const { user } = useAuth();
@@ -53,12 +48,16 @@ export default function LeaderboardPage() {
   // Rankings are per programme: a D.Pharm Y2 student competes with their own
   // cohort, not with the whole site. Switching programme re-fetches.
   const fetchLeaderboard = useCallback(async () => {
+    setLoading(true);
+    setLoadError(false);
     try {
       const data = await getLeaderboard(activePeriod, programSlug);
       setEntries(data);
     } catch (err) {
       console.error("Leaderboard fetch error:", err);
-      setEntries([]);
+      setLoadError(true);
+    } finally {
+      setLoading(false);
     }
   }, [activePeriod, programSlug]);
 
@@ -74,7 +73,7 @@ export default function LeaderboardPage() {
   }, [activePeriod, programSlug, user]);
 
   useEffect(() => {
-    const frame = requestAnimationFrame(() => { setMounted(true); void fetchLeaderboard(); void fetchUserPosition(); });
+    const frame = requestAnimationFrame(() => { void fetchLeaderboard(); void fetchUserPosition(); });
     return () => cancelAnimationFrame(frame);
   }, [fetchLeaderboard, fetchUserPosition]);
 
@@ -98,18 +97,6 @@ export default function LeaderboardPage() {
     document.addEventListener("visibilitychange", onVisibility);
     return () => { window.removeEventListener("focus", h); document.removeEventListener("visibilitychange", onVisibility); };
   }, [fetchLeaderboard, fetchUserPosition]);
-
-  const top3 = entries.filter((e) => e.rank <= 3);
-  const rest = entries.filter((e) => e.rank > 3);
-
-  // Reorder for podium display: 2nd, 1st, 3rd
-  const podiumOrder = [top3.find((e) => e.rank === 2), top3.find((e) => e.rank === 1), top3.find((e) => e.rank === 3)].filter(Boolean) as LeaderboardEntry[];
-  const podiumRanks = [2, 1, 3]; // visual order: left, center, right
-
-  // Podium needs all 3 spots filled; with fewer than 3 ranked users, fall back
-  // to showing everyone as plain list rows (otherwise a lone #1 would render nothing).
-  const showPodium = podiumOrder.length >= 3;
-  const listEntries = showPodium ? rest : entries;
 
   return (
     <LearningPage className="max-w-5xl">
@@ -148,7 +135,7 @@ export default function LeaderboardPage() {
         ))}
       </div>
 
-      {!mounted ? (
+      {loading ? (
         /* Skeleton */
         <div className="space-y-3">
           {[...Array(6)].map((_, i) => (
@@ -163,6 +150,8 @@ export default function LeaderboardPage() {
             </div>
           ))}
         </div>
+      ) : loadError ? (
+        <div role="alert" className="py-12 text-center"><p className="font-semibold">Could not load rankings</p><p className="mt-1 text-sm text-muted-foreground">Check your connection and try again.</p><Button variant="outline" className="mt-4" onClick={() => void fetchLeaderboard()}>Retry</Button></div>
       ) : entries.length === 0 ? (
         /* Empty state */
         <div className="py-16 text-center">
@@ -175,51 +164,9 @@ export default function LeaderboardPage() {
         </div>
       ) : (
         <>
-          {/* Top 3 Podium */}
-          {showPodium && (
-            <div className="mb-8 flex items-end justify-center gap-2 sm:gap-4">
-              {podiumOrder.map((entry, visualIdx) => {
-                const rank = podiumRanks[visualIdx];
-                const cfg = podiumConfig[rank - 1];
-                const isCenter = rank === 1;
-                const isMe = user?.id === entry.user_id;
-
-                return (
-                  <div key={entry.user_id} className={cn("flex flex-col items-center", isCenter ? "order-2" : visualIdx === 0 ? "order-1" : "order-3")}>
-                    {/* Avatar */}
-                    <div className={cn("relative mb-2", isCenter && "-mt-4")}>
-                      <div className={cn("rounded-full ring-2", cfg.ring, cfg.avatarSize, "flex items-center justify-center bg-primary/10")}>
-                        <Avatar className={cn(cfg.avatarSize, "border-0")}>
-                          <AvatarFallback className={cn("bg-transparent text-foreground font-bold", cfg.textSize)}>
-                            {entry.name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)}
-                          </AvatarFallback>
-                        </Avatar>
-                      </div>
-                      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-lg">
-                        {cfg.medal}
-                      </span>
-                    </div>
-
-                    {/* Name */}
-                    <p className={cn("font-semibold text-xs sm:text-sm text-center max-w-[90px] truncate", isMe && "text-primary")}>
-                      {entry.name}
-                    </p>
-                    <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">
-                      {entry.score} pts
-                    </p>
-
-                    {/* Bar */}
-                    <div className={cn("mt-2 w-20 rounded-t-xl border border-b-0 bg-primary/10 sm:w-24", cfg.height)} />
-                  </div>
-                );
-              })}
-            </div>
-          )}
-
-          {/* Rest of entries */}
-          {listEntries.length > 0 && (
+          {entries.length > 0 && (
             <div className="overflow-hidden rounded-2xl border bg-card divide-y">
-              {listEntries.map((entry) => {
+              {entries.map((entry) => {
                 const isMe = user?.id === entry.user_id;
                 return (
                   <div
@@ -262,7 +209,7 @@ export default function LeaderboardPage() {
           {/* Sticky Floating User Position Banner */}
           {!user && <div className="mt-6 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-sm"><p className="font-semibold">Join your programme rankings</p><p className="mt-1 text-muted-foreground">Create an account to save scores and qualify for the leaderboard.</p><Link href="/auth/register" className="mt-2 inline-flex font-semibold text-primary">Create free account</Link></div>}
           {user && userPosition && (
-            <div className="sticky bottom-20 lg:bottom-6 z-20 mt-6 rounded-2xl border-2 border-primary/40 bg-card p-3.5 shadow-xl transition-all">
+            <div className="mt-6 border-t pt-4">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-xs font-black text-primary-foreground shadow-xs">

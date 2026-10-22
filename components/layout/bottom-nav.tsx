@@ -6,7 +6,7 @@ import {
   House,
   BookOpen,
   Target,
-  ChartNoAxesCombined,
+  ClipboardCheck,
   Menu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -30,7 +30,7 @@ export function BottomNav() {
       match: (p: string) => p === "/" || p === "/dashboard",
     },
     {
-      label: "Study",
+      label: "Subjects",
       href: "/subjects",
       icon: BookOpen,
       match: (p: string) =>
@@ -42,13 +42,13 @@ export function BottomNav() {
       label: "Practice",
       href: "/quiz",
       icon: Target,
-      match: (p: string) => p === "/quiz" || p === "/mock-test",
+      match: (p: string) => p === "/quiz",
     },
     {
-      label: "Progress",
-      href: "/analytics",
-      icon: ChartNoAxesCombined,
-      match: (p: string) => p.startsWith("/analytics") || p === "/history",
+      label: "Tests",
+      href: "/mock-test",
+      icon: ClipboardCheck,
+      match: (p: string) => p === "/mock-test",
     },
     {
       label: "More",
@@ -62,14 +62,16 @@ export function BottomNav() {
         p === "/bookmarks" ||
         p === "/notes" ||
         p === "/review" ||
-        p === "/leaderboard",
+        p === "/leaderboard" ||
+        p === "/analytics" ||
+        p === "/history",
     },
   ];
 
   return (
     <nav
       aria-label="Mobile Bottom Navigation"
-      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/80 bg-card/95 shadow-[0_-4px_24px_#16234806] backdrop-blur-xl lg:hidden"
+      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/80 bg-card/95 backdrop-blur-xl lg:hidden"
       style={{ paddingBottom: "max(0.4rem, env(safe-area-inset-bottom, 0px))" }}
     >
       <div className="mx-auto grid h-16 max-w-2xl grid-cols-5 items-center px-2">
@@ -90,9 +92,9 @@ export function BottomNav() {
             >
               <div
                 className={cn(
-                  "relative flex h-7 w-12 items-center justify-center rounded-full transition-all duration-200",
+                  "relative flex h-7 w-12 items-center justify-center rounded-lg transition-colors duration-200",
                   isActive
-                    ? "bg-primary/14 text-primary scale-105"
+                    ? "bg-primary/10 text-primary"
                     : "text-muted-foreground group-hover:bg-muted/50"
                 )}
               >
