@@ -1,7 +1,7 @@
 import { getSupabase } from "@/lib/supabase/client";
 
 export const DIFFICULTIES = ["easy", "medium", "hard"] as const;
-export const MAX_IMPORT_QUESTIONS = 250;
+export const MAX_IMPORT_QUESTIONS = 500;
 export type Difficulty = (typeof DIFFICULTIES)[number];
 export type ImportStatus = "pending" | "approved" | "rejected";
 
