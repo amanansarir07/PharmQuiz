@@ -34,7 +34,7 @@ const groups = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const { user, isAdmin } = useAuth();
+  const { user, isAdmin, isLoading } = useAuth();
   const { resolvedTheme, setTheme } = useTheme();
   const { program, availablePrograms, setProgramSlug } = useActiveProgram();
   const [programOpen, setProgramOpen] = useState(false);
@@ -64,7 +64,7 @@ export function Navbar() {
         const active = pathname === href || pathname.startsWith(href + "/");
         return <Link key={href} href={href} aria-current={active ? "page" : undefined} className={cn("flex min-h-10 items-center gap-3 rounded-xl px-3 text-[13px] font-medium transition-colors", active ? "bg-primary/10 font-semibold text-primary" : "text-muted-foreground hover:bg-muted hover:text-foreground")}><Icon className="size-[18px]" strokeWidth={active ? 2.2 : 1.7} /><span>{label}</span>{active && <span className="ml-auto size-1.5 rounded-full bg-primary" />}</Link>;
       })}</div></div>)}</nav>
-      <div className="border-t p-3"><Link href="/settings" className="flex min-h-10 items-center gap-3 rounded-xl px-3 text-[13px] text-muted-foreground hover:bg-muted"><Settings className="size-[18px]" />Settings</Link><Link href={user ? "/profile" : "/auth/login"} className="mt-2 flex items-center gap-3 rounded-xl bg-muted/70 p-3"><span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">{user?.name?.slice(0, 2).toUpperCase() || <UserRound className="size-4" />}</span><span className="min-w-0 flex-1"><span className="block truncate text-xs font-semibold">{user?.name || "Guest learner"}</span><span className="text-[10px] text-muted-foreground">{user ? "View your profile" : "Sign in to save progress"}</span></span><ChevronLeft className="size-3.5 rotate-180" /></Link></div>
+      <div className="border-t p-3"><Link href="/settings" className="flex min-h-10 items-center gap-3 rounded-xl px-3 text-[13px] text-muted-foreground hover:bg-muted"><Settings className="size-[18px]" />Settings</Link>{isLoading ? <div className="mt-2 flex items-center gap-3 rounded-xl bg-muted/70 p-3" role="status" aria-label="Loading account"><span className="size-9 shrink-0 animate-pulse rounded-full bg-muted-foreground/15" /><span className="min-w-0 flex-1 space-y-1.5"><span className="block h-3 w-20 animate-pulse rounded bg-muted-foreground/15" /><span className="block h-2.5 w-28 animate-pulse rounded bg-muted-foreground/10" /></span></div> : <Link href={user ? "/profile" : "/auth/login"} className="mt-2 flex items-center gap-3 rounded-xl bg-muted/70 p-3"><span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">{user?.name?.slice(0, 2).toUpperCase() || <UserRound className="size-4" />}</span><span className="min-w-0 flex-1"><span className="block truncate text-xs font-semibold">{user?.name || "Guest learner"}</span><span className="text-[10px] text-muted-foreground">{user ? "View your profile" : "Sign in to save progress"}</span></span><ChevronLeft className="size-3.5 rotate-180" /></Link>}</div>
     </aside>
     <header className="sticky top-0 z-30 border-b border-border/70 bg-background/90 backdrop-blur-xl lg:ml-[244px]">
       <div className="flex h-16 items-center justify-between gap-3 px-4 sm:px-7 lg:h-[76px] lg:px-9">

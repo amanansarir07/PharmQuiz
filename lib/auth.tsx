@@ -146,10 +146,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const pendingTasks = new Set<ReturnType<typeof setTimeout>>();
     const showSession = (session: Session | null) => {
       if (disposed) return;
-      initialResolved = true;
       if (session?.user) rememberAccount(session.user.id);
       activeUserId.current = session?.user.id ?? null;
       setUser(session?.user ? userFromSession(session) : null);
+      setAuthRestorationTimedOut(false);
+    };
+    const finishInitialRestore = async (session: Session | null) => {
+      showSession(session);
+      // Do not expose the application as guest while its signed-in profile is
+      // still being restored. The shell stays in its loading state until this
+      // request completes, so the sidebar and account-only controls arrive
+      // together with the correct student identity and role.
+      if (session?.user) await loadProfile(session.user.id);
+      if (disposed) return;
+      initialResolved = true;
       setAuthRestorationTimedOut(false);
       setIsLoading(false);
     };
@@ -180,10 +190,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       (event, session) => {
         if (disposed) return;
         if (event === "INITIAL_SESSION") {
-          showSession(session);
-          if (session?.user) defer(async () => { await loadProfile(session.user.id); });
+          void finishInitialRestore(session).catch((error) => {
+            console.error("Initial auth restoration failed:", error);
+            if (!disposed) {
+              initialResolved = true;
+              setIsLoading(false);
+            }
+          });
         } else if (event === "SIGNED_IN" && session?.user) {
           showSession(session);
+          initialResolved = true;
+          setIsLoading(false);
           // Supabase holds its auth lock while calling this listener. Database
           // reads and writes must start after the callback has returned.
           defer(async () => { await loadProfile(session.user.id); });
@@ -215,6 +232,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           });
         } else if (event === "SIGNED_OUT") {
           showSession(null);
+          initialResolved = true;
+          setIsLoading(false);
         }
       }
     );
