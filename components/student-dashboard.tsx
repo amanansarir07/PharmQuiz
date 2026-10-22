@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
@@ -10,7 +10,8 @@ import { getSubjectsForProgram, getSubjectName } from "@/data/registry";
 import { calculateStats, type UserStats } from "@/lib/stats";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { createMistakesSession, getMistakesCount } from "@/lib/mistakes";
-import { LearningPage, LinkRow, PageHeading, SectionHeading, StatTile, SubjectIcon } from "@/components/learning-ui";
+import { cn } from "@/lib/utils";
+import { LearningPage, LinkRow, PageHeading, SectionHeading, SubjectIcon } from "@/components/learning-ui";
 import { OnboardingDepartmentModal } from "@/components/onboarding-department-modal";
 
 export function StudentDashboard() {
@@ -46,23 +47,26 @@ export function StudentDashboard() {
 
   return <LearningPage>
     <OnboardingDepartmentModal />
-    <PageHeading eyebrow="Make a little progress today" title={`Welcome back, ${firstName}.`} description={`${program.shortLabel} · Your next learning step is right here.`} action={<Link href="/quiz" className="action-primary"><Target className="size-4" />Start practice</Link>} />
-    <div className="mb-7 grid grid-cols-2 gap-3 xl:grid-cols-4"><StatTile label="Overall accuracy" value={stats && stats.quizzesTaken > 0 ? `${stats.accuracy}%` : "—"} detail="Across your completed practice" /><StatTile label="Practice sessions" value={stats?.quizzesTaken ?? "—"} tone="green" detail="Every session is a step forward" /><StatTile label="Current day streak" value={stats?.currentStreak ?? "—"} tone="amber" detail="Build a habit, one day at a time" /><StatTile label="Mistakes to revisit" value={mistakes} tone="red" detail="Turn these into your strengths" /></div>
-
+    <PageHeading eyebrow="Make a little progress today" title={`Welcome back, ${firstName}.`} description={`${program.shortLabel} · Your next learning step is right here.`} />
+    <section className="mb-6">
+      <SectionHeading title={recent ? "Continue learning" : "Start learning"} />
+      <div className="dashboard-next-action">
+        <span className="dashboard-next-icon"><BookOpen className="size-5" /></span>
+        <div className="min-w-0 flex-1"><p className="text-[10px] font-bold uppercase tracking-[.14em] text-primary">{recent ? "Latest practice" : "Your first step"}</p><h2 className="mt-1 text-lg font-bold tracking-tight sm:text-xl">{recent ? getSubjectName(recent.subject) : `Start ${program.shortLabel} practice`}</h2><p className="mt-1 text-sm leading-6 text-muted-foreground">{recent ? `${recent.correct} of ${recent.total} correct in your latest attempt.` : "Choose a subject and take a short MCQ session."}</p>{recent && <div className="mt-3 h-1.5 max-w-sm overflow-hidden rounded-full bg-primary/10"><div className="h-full rounded-full bg-primary" style={{ width: (recent.total ? Math.round(recent.correct / recent.total * 100) : 0) + "%" }} /></div>}</div>
+        <Link href={practiceHref} className="action-primary shrink-0 self-end sm:self-center">{recent ? "Continue" : "Start practice"}<ArrowRight className="size-4" /></Link>
+      </div>
+    </section>
+    <section className="mb-7">
+      <div className="mb-3 flex items-center justify-between"><h2 className="text-[15px] font-bold tracking-tight sm:text-base">Your progress</h2><Link href="/analytics" className="text-xs font-semibold text-primary hover:underline">View report</Link></div>
+      <div className="dashboard-progress-snapshot">
+        <DashboardMetric label="Accuracy" value={stats && stats.quizzesTaken > 0 ? `${stats.accuracy}%` : "—"} emphasis={Boolean(stats?.quizzesTaken)} />
+        <DashboardMetric label="Sessions" value={stats?.quizzesTaken ?? "—"} emphasis={Boolean(stats?.quizzesTaken)} />
+        <DashboardMetric label="Day streak" value={stats?.currentStreak ?? "—"} emphasis={Boolean(stats?.currentStreak)} />
+        <DashboardMetric label="Mistakes" value={mistakes} emphasis={mistakes > 0} alert={mistakes > 0} />
+      </div>
+    </section>
     <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_300px]">
       <div className="min-w-0 space-y-7">
-        <section>
-          <SectionHeading title="Continue learning" />
-          <div className="relative overflow-hidden rounded-[24px] bg-[#294bc9] text-white shadow-[0_12px_32px_-16px_#294bc980]">
-            <div className="pointer-events-none absolute -right-12 -top-16 size-56 rounded-full border-[35px] border-white/5" />
-            <div className="relative flex items-start gap-4 p-5 sm:p-6">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-white"><BookOpen className="size-6" /></span>
-              <div className="min-w-0 flex-1"><p className="text-[10px] font-bold uppercase tracking-[.14em] text-blue-100">{recent ? "Keep the momentum" : "Your first step"}</p><h2 className="mt-2 text-xl font-bold tracking-tight">{recent ? getSubjectName(recent.subject) : `Start ${program.shortLabel} practice`}</h2><p className="mt-2 text-sm leading-6 text-blue-100">{recent ? `${recent.correct} of ${recent.total} correct in your latest attempt. Ready to build on that?` : "Choose a subject and take a short MCQ session. Every answer is a chance to understand more."}</p></div>
-            </div>
-            {recent && <div className="mx-6 mb-5 h-1.5 overflow-hidden rounded-full bg-white/15"><div className="h-full rounded-full bg-[#b6f4df]" style={{ width: `${recent.total ? Math.round(recent.correct / recent.total * 100) : 0}%` }} /></div>}
-            <div className="px-5 pb-5 sm:px-6 sm:pb-6"><Link href={practiceHref} className="inline-flex min-h-11 items-center justify-center gap-3 rounded-xl bg-white px-5 text-sm font-bold text-[#2445c5]">{recent ? "Practise this subject" : "Start practice"}<ArrowRight className="size-4" /></Link></div>
-          </div>
-        </section>
 
         <section>
           <SectionHeading title="Quick actions" />
@@ -79,7 +83,7 @@ export function StudentDashboard() {
           <div className="overflow-hidden rounded-2xl border bg-card">
             {subjects.map((subject) => {
               const performance = stats?.subjectBreakdown[subject.slug];
-              return <LinkRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units${performance ? ` · ${performance.total} questions attempted` : " · Ready to explore"}`} end={performance ? <span className="text-right"><span className="block text-sm font-bold tabular-nums text-primary">{performance.accuracy}%</span><span className="text-[10px] text-muted-foreground">accuracy</span></span> : undefined} />;
+              return <LinkRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units${performance ? ` Â· ${performance.total} questions attempted` : " Â· Ready to explore"}`} end={performance ? <span className="text-right"><span className="block text-sm font-bold tabular-nums text-primary">{performance.accuracy}%</span><span className="text-[10px] text-muted-foreground">accuracy</span></span> : undefined} />;
             })}
           </div>
         </section>
@@ -92,7 +96,7 @@ export function StudentDashboard() {
         </section>
         <section>
           <SectionHeading title="Recent activity" href="/history" />
-          {history.length ? <div className="overflow-hidden rounded-2xl border bg-card">{history.slice(0, 3).map((entry) => <LinkRow key={entry.key} href={entry.localSessionId ? `/quiz/${entry.localSessionId}/results` : "/history"} icon={<TrendingUp className="size-5" />} title={getSubjectName(entry.subject)} detail={`${entry.correct}/${entry.total} correct · ${new Date(entry.completedAt).toLocaleDateString("en-NP", { timeZone: "Asia/Kathmandu", month: "short", day: "numeric" })}`} />)}</div> : <div className="rounded-2xl border bg-card p-4 text-sm text-muted-foreground">No recent activity yet.</div>}
+          {history.length ? <div className="overflow-hidden rounded-2xl border bg-card">{history.slice(0, 3).map((entry) => <LinkRow key={entry.key} href={entry.localSessionId ? `/quiz/${entry.localSessionId}/results` : "/history"} icon={<TrendingUp className="size-5" />} title={getSubjectName(entry.subject)} detail={`${entry.correct}/${entry.total} correct Â· ${new Date(entry.completedAt).toLocaleDateString("en-NP", { timeZone: "Asia/Kathmandu", month: "short", day: "numeric" })}`} />)}</div> : <div className="rounded-2xl border bg-card p-4 text-sm text-muted-foreground">No recent activity yet.</div>}
         </section>
         <Link href="/leaderboard" className="flex items-center gap-3 rounded-2xl border bg-card p-4 text-sm font-semibold hover:border-primary/40"><Trophy className="size-5 text-amber-600" /><span className="flex-1">Programme leaderboard</span><ArrowRight className="size-4 text-muted-foreground" /></Link>
         {stats && stats.quizzesTaken > 0 && <Link href="/analytics" className="flex items-center gap-2 text-sm font-semibold text-primary">See your full learning report <ArrowRight className="size-4" /></Link>}
@@ -100,3 +104,8 @@ export function StudentDashboard() {
     </div>
   </LearningPage>;
 }
+
+function DashboardMetric({ label, value, emphasis = false, alert = false }: { label: string; value: string | number; emphasis?: boolean; alert?: boolean }) {
+  return <div className="min-w-0 px-3 py-3 sm:px-4"><p className={cn("text-xl font-bold leading-none tracking-tight tabular-nums sm:text-2xl", emphasis ? alert ? "text-rose-600 dark:text-rose-400" : "text-foreground" : "text-muted-foreground")}>{value}</p><p className="mt-1.5 text-[11px] font-medium text-muted-foreground">{label}</p></div>;
+}
+
