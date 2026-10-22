@@ -87,7 +87,7 @@ function QuizSetupInner() {
     }
   }, [searchParams, subjects]);
 
-  // Scheduled mock announcements â€” same rule as the Mock Test page: a
+  // Scheduled mock announcements use the same rule as the Mock Test page: a
   // scheduled exam only starts at its admin-set time, never before.
   // Programme-scoped: a student only sees their own programme's papers.
   useEffect(() => {
@@ -325,7 +325,7 @@ function QuizSetupInner() {
           </CardContent>
         </Card>
 
-        {/* Mock Test Banner â€” schedule-aware */}
+        {/* Mock Test Banner: schedule-aware */}
         <Card
           className={
             liveExam
@@ -342,13 +342,13 @@ function QuizSetupInner() {
                 <p className="flex flex-wrap items-center gap-2 font-semibold">
                   Full Mock Test
                   {liveExam && (
-                    <Badge className="bg-green-600 text-white">â— LIVE</Badge>
+                    <Badge className="bg-green-600 text-white">LIVE</Badge>
                   )}
                 </p>
                 {liveExam ? (
                   <p className="text-xs text-muted-foreground">
-                    {liveExam.title} Â· {liveExam.duration_minutes} minutes â€¢{' '}
-                    {getMockSubjectCount(programSlug)} subjects Ã— 10 questions
+                    {liveExam.title} / {liveExam.duration_minutes} minutes /{' '}
+                    {getMockSubjectCount(programSlug)} subjects x 10 questions
                   </p>
                 ) : upcomingExam ? (
                   <>
@@ -362,8 +362,8 @@ function QuizSetupInner() {
                   </>
                 ) : (
                   <p className="text-xs text-muted-foreground">
-                    {getMockQuestionCount(programSlug)} questions â€¢ {getMockSubjectCount(programSlug)}{' '}
-                    subjects â€¢ {getMockDurationMinutes(programSlug)} minutes â€¢ no negative marking
+                    {getMockQuestionCount(programSlug)} questions / {getMockSubjectCount(programSlug)}{' '}
+                    subjects / {getMockDurationMinutes(programSlug)} minutes / no negative marking
                   </p>
                 )}
               </div>
@@ -413,7 +413,7 @@ function QuizSetupInner() {
                   <div>
                     <p className="text-sm font-medium">{s.name}</p>
                     <p className="text-xs text-muted-foreground">
-                      {s.units.length} units â€¢ {s.examMarks} marks
+                      {s.units.length} units / {s.examMarks} marks
                     </p>
                   </div>
                 </button>
@@ -454,7 +454,7 @@ function QuizSetupInner() {
                     <div className="flex-1">
                       <p className="text-sm font-medium">{unit.name}</p>
                       <p className="text-xs text-muted-foreground">
-                        {unit.subtopics.length} subtopics â€¢ {unit.examHours}h
+                        {unit.subtopics.length} subtopics / {unit.examHours}h
                       </p>
                     </div>
                     <Badge variant="outline" className="text-xs">
@@ -465,7 +465,7 @@ function QuizSetupInner() {
               </div>
               <p className="mt-3 text-xs text-muted-foreground">
                 {selectedUnits.length === 0
-                  ? "No units selected â€” all units will be included"
+                  ? "No units selected - all units will be included"
                   : `${selectedUnits.length} unit(s) selected`}
               </p>
             </CardContent>

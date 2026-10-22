@@ -124,7 +124,7 @@ function RegisterForm() {
       {step === 1 && <section aria-labelledby="programme-title">
         <div className="mb-5"><h2 id="programme-title" className="text-xl font-bold tracking-[-.025em]">Choose your programme</h2><p className="mt-1 text-sm text-muted-foreground">Only programmes with study content are available to start today.</p></div>
         <ProgrammeGroup group={programmeGroups[0]} selectedSlug={programSlug} onSelect={chooseProgramme} />
-        <button type="button" onClick={() => setShowComingSoon((shown) => !shown)} className="mt-5 flex w-full items-center justify-between rounded-xl border border-dashed px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:bg-muted/50"><span>More programmes <span className="font-normal">â€” coming soon</span></span><ChevronDown className={cn("size-4 transition-transform", showComingSoon && "rotate-180")} /></button>
+        <button type="button" onClick={() => setShowComingSoon((shown) => !shown)} className="mt-5 flex w-full items-center justify-between rounded-xl border border-dashed px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:bg-muted/50"><span>More programmes <span className="font-normal">- coming soon</span></span><ChevronDown className={cn("size-4 transition-transform", showComingSoon && "rotate-180")} /></button>
         {showComingSoon && <div className="mt-3 space-y-3">{programmeGroups.slice(1).map((group) => <ProgrammeGroup key={group.title} group={group} selectedSlug={programSlug} onSelect={chooseProgramme} compact />)}</div>}
         <ActionBar><Button type="button" onClick={goToDetails} disabled={!programSlug} className="h-12 w-full sm:w-auto sm:min-w-44">Continue <ArrowRight className="size-4" /></Button></ActionBar>
       </section>}

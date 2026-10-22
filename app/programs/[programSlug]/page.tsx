@@ -40,11 +40,11 @@ export async function generateMetadata({
   if (!program) return { title: "Programme not found" };
   const label = getProgramLabel(programSlug);
   return {
-    // The layout template appends "â€” Bujh".
+    // The layout template appends "- Bujh".
     title: label,
     description: program.description,
     openGraph: {
-      title: `${label} â€” Bujh`,
+      title: `${label} - Bujh`,
       description: program.description,
     },
   };

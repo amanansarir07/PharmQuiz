@@ -51,7 +51,7 @@ export function ProgramPicker({
                         title={
                           program.hasContent
                             ? program.description
-                            : `${program.name}${program.level ? " " + program.level : ""} â€” in active development`
+                            : `${program.name}${program.level ? " " + program.level : ""} - in active development`
                         }
                         className={cn(
                           "inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm transition-all",
