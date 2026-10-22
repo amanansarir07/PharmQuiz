@@ -1,6 +1,7 @@
 import { getSupabase } from "@/lib/supabase/client";
 
 export const DIFFICULTIES = ["easy", "medium", "hard"] as const;
+export const MAX_IMPORT_QUESTIONS = 250;
 export type Difficulty = (typeof DIFFICULTIES)[number];
 export type ImportStatus = "pending" | "approved" | "rejected";
 
@@ -70,15 +71,31 @@ const tidy = (value: unknown) => typeof value === "string" ? value.replace(/\s+/
 export const normalizeQuestion = (question: string) => tidy(question).toLowerCase().replace(/[\W_]+/g, " ").trim();
 
 function asOptions(value: unknown): string[] {
-  return Array.isArray(value) ? value.map(tidy) : [];
+  if (Array.isArray(value)) return value.map(tidy);
+  if (value && typeof value === "object") {
+    const record = value as Record<string, unknown>;
+    // Accept the common past-paper shape: { "A": "...", "B": "..." }.
+    // Lower-case option keys are supported as well.
+    return ["A", "B", "C", "D"].map((key) => tidy(record[key] ?? record[key.toLowerCase()]));
+  }
+  return [];
+}
+
+function asCorrectIndex(value: unknown): number | null {
+  if (typeof value === "number" && Number.isInteger(value)) return value;
+  if (typeof value !== "string") return null;
+  const answer = tidy(value).toUpperCase();
+  if (/^[A-D]$/.test(answer)) return answer.charCodeAt(0) - 65;
+  if (/^[0-3]$/.test(answer)) return Number(answer);
+  return null;
 }
 
 export function validateQuestion(value: unknown, position: number, batchNormalised = new Set<string>(), existingNormalised = new Set<string>()): DraftQuestion {
   const record = value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {};
   const question = tidy(record.question ?? record.question_text);
   const options = asOptions(record.options);
-  const answer = record.correctAnswer ?? record.correct_index;
-  const correctAnswer = typeof answer === "number" && Number.isInteger(answer) ? answer : null;
+  const answer = record.correctAnswer ?? record.correct_index ?? record.correct_option ?? record.answer;
+  const correctAnswer = asCorrectIndex(answer);
   const explanation = tidy(record.explanation);
   const difficulty = tidy(record.difficulty).toLowerCase() || "medium";
   const tags = Array.isArray(record.tags) ? record.tags.map(tidy).filter(Boolean).slice(0, 12) : [];
@@ -91,8 +108,8 @@ export function validateQuestion(value: unknown, position: number, batchNormalis
   if (options.length !== 4) critical.push("Exactly four options are required.");
   if (options.some((option) => !option)) critical.push("Every option needs text.");
   if (new Set(options.map((option) => option.toLowerCase())).size !== options.length) critical.push("Options must be distinct.");
-  if (correctAnswer === null) critical.push("A zero-based correctAnswer is required.");
-  else if (correctAnswer < 0 || correctAnswer > 3) critical.push("correctAnswer must be an index from 0 to 3.");
+  if (correctAnswer === null) critical.push("A correct answer is required: A–D or zero-based 0–3.");
+  else if (correctAnswer < 0 || correctAnswer > 3) critical.push("The correct answer must be A–D or an index from 0 to 3.");
   if (!explanation) warnings.push("Explanation is missing.");
   if (!DIFFICULTIES.includes(difficulty as Difficulty)) critical.push("Difficulty must be easy, medium, or hard.");
   if (normalized && batchNormalised.has(normalized)) warnings.push("Exact duplicate in this import.");
@@ -105,7 +122,7 @@ export function validateQuestion(value: unknown, position: number, batchNormalis
 export function validateBatch(raw: unknown, existingQuestions: string[] = []): DraftQuestion[] {
   if (!Array.isArray(raw)) throw new Error("The JSON must be an array of question objects.");
   if (raw.length === 0) throw new Error("The import contains no questions.");
-  if (raw.length > 100) throw new Error("Import up to 100 questions at a time.");
+  if (raw.length > MAX_IMPORT_QUESTIONS) throw new Error(`Import up to ${MAX_IMPORT_QUESTIONS} questions at a time.`);
   const seen = new Set<string>();
   const existing = new Set(existingQuestions.map(normalizeQuestion).filter(Boolean));
   const questions = raw.map((item, position) => validateQuestion(item, position, seen, existing));
