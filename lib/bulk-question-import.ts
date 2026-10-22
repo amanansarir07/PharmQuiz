@@ -2,7 +2,7 @@ import { getSupabase } from "@/lib/supabase/client";
 import { getContentSourceProgramSlug } from "@/data/registry";
 
 export const DIFFICULTIES = ["easy", "medium", "hard"] as const;
-export const MAX_IMPORT_QUESTIONS = 500;
+export const MAX_IMPORT_QUESTIONS = 1000;
 export type Difficulty = (typeof DIFFICULTIES)[number];
 export type ImportStatus = "pending" | "approved" | "rejected";
 
