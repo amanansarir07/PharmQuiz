@@ -5,6 +5,7 @@ import { Brand } from "@/components/brand";
 import { usePathname } from "next/navigation";
 import { APP_NAME } from "@/lib/constants";
 import { useActiveProgram } from "@/lib/program";
+import { ProgrammeIcon } from "@/components/programme-icon";
 
 
 export function Footer() {
@@ -44,7 +45,7 @@ export function Footer() {
           <div className="inline-flex flex-wrap justify-center items-center gap-2 rounded-2xl border bg-card/80 px-3.5 py-1.5 text-xs text-muted-foreground shadow-xs">
             {isChosen ? (
               <>
-                <span aria-hidden>{program.icon}</span>
+                <ProgrammeIcon program={program} className="size-5 rounded-md bg-transparent" iconClassName="size-3.5" />
                 <span>Active Syllabus:</span>
                 <span className="font-semibold text-foreground">
                   {programLabel}

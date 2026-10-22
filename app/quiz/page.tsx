@@ -16,6 +16,7 @@ import { safeSetItem, pruneExpiredScratchKeys } from "@/lib/storage";
 import { useActiveProgram } from "@/lib/program";
 import { useAuth } from "@/lib/auth";
 import { SubjectIcon } from "@/components/learning-ui";
+import { ProgrammeIcon } from "@/components/programme-icon";
 import { AppError, AppLoading } from "@/components/app-state";
 import {
   fetchUpcomingExams,
@@ -86,7 +87,7 @@ function QuizSetupInner() {
     }
   }, [searchParams, subjects]);
 
-  // Scheduled mock announcements — same rule as the Mock Test page: a
+  // Scheduled mock announcements â€” same rule as the Mock Test page: a
   // scheduled exam only starts at its admin-set time, never before.
   // Programme-scoped: a student only sees their own programme's papers.
   useEffect(() => {
@@ -250,7 +251,7 @@ function QuizSetupInner() {
       <div className="mb-6">
         <div className="mb-4 flex items-center justify-between gap-3 rounded-xl border bg-card p-3">
           <div className="flex min-w-0 items-center gap-2">
-            <span className="text-xl">{program.icon}</span>
+            <ProgrammeIcon program={program} className="size-9" iconClassName="size-4" />
             <div className="min-w-0">
               <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
                 Active syllabus
@@ -324,7 +325,7 @@ function QuizSetupInner() {
           </CardContent>
         </Card>
 
-        {/* Mock Test Banner — schedule-aware */}
+        {/* Mock Test Banner â€” schedule-aware */}
         <Card
           className={
             liveExam
@@ -341,18 +342,18 @@ function QuizSetupInner() {
                 <p className="flex flex-wrap items-center gap-2 font-semibold">
                   Full Mock Test
                   {liveExam && (
-                    <Badge className="bg-green-600 text-white">● LIVE</Badge>
+                    <Badge className="bg-green-600 text-white">â— LIVE</Badge>
                   )}
                 </p>
                 {liveExam ? (
                   <p className="text-xs text-muted-foreground">
-                    {liveExam.title} · {liveExam.duration_minutes} minutes •{' '}
-                    {getMockSubjectCount(programSlug)} subjects × 10 questions
+                    {liveExam.title} Â· {liveExam.duration_minutes} minutes â€¢{' '}
+                    {getMockSubjectCount(programSlug)} subjects Ã— 10 questions
                   </p>
                 ) : upcomingExam ? (
                   <>
                     <p className="text-xs text-muted-foreground">
-                      {upcomingExam.title} · starts{" "}
+                      {upcomingExam.title} Â· starts{" "}
                       {formatInKathmandu(upcomingExam.starts_at, "short")}
                     </p>
                     <p className="mt-0.5 text-xs font-semibold tabular-nums text-primary">
@@ -361,8 +362,8 @@ function QuizSetupInner() {
                   </>
                 ) : (
                   <p className="text-xs text-muted-foreground">
-                    {getMockQuestionCount(programSlug)} questions • {getMockSubjectCount(programSlug)}{' '}
-                    subjects • {getMockDurationMinutes(programSlug)} minutes • no negative marking
+                    {getMockQuestionCount(programSlug)} questions â€¢ {getMockSubjectCount(programSlug)}{' '}
+                    subjects â€¢ {getMockDurationMinutes(programSlug)} minutes â€¢ no negative marking
                   </p>
                 )}
               </div>
@@ -412,7 +413,7 @@ function QuizSetupInner() {
                   <div>
                     <p className="text-sm font-medium">{s.name}</p>
                     <p className="text-xs text-muted-foreground">
-                      {s.units.length} units • {s.examMarks} marks
+                      {s.units.length} units â€¢ {s.examMarks} marks
                     </p>
                   </div>
                 </button>
@@ -453,7 +454,7 @@ function QuizSetupInner() {
                     <div className="flex-1">
                       <p className="text-sm font-medium">{unit.name}</p>
                       <p className="text-xs text-muted-foreground">
-                        {unit.subtopics.length} subtopics • {unit.examHours}h
+                        {unit.subtopics.length} subtopics â€¢ {unit.examHours}h
                       </p>
                     </div>
                     <Badge variant="outline" className="text-xs">
@@ -464,7 +465,7 @@ function QuizSetupInner() {
               </div>
               <p className="mt-3 text-xs text-muted-foreground">
                 {selectedUnits.length === 0
-                  ? "No units selected — all units will be included"
+                  ? "No units selected â€” all units will be included"
                   : `${selectedUnits.length} unit(s) selected`}
               </p>
             </CardContent>
@@ -608,17 +609,16 @@ function QuizSetupInner() {
 
         {/* Start Quiz Button */}
         <div ref={startRef} />
-        <div className="sticky bottom-[calc(5rem+env(safe-area-inset-bottom))] z-20 rounded-2xl border bg-card/95 p-3 shadow-xl backdrop-blur-lg lg:bottom-4"><div className="mb-2 flex items-center justify-between gap-3 px-1 text-xs"><span className="min-w-0 truncate font-semibold">{subject?.name || "Choose a subject"}</span><span className="shrink-0 text-muted-foreground">{numQuestions} questions ? {timeLimit ? `${timeLimit} min` : "Untimed"}</span></div>
+        {subject ? <div className="sticky bottom-[calc(5rem+env(safe-area-inset-bottom))] z-20 rounded-2xl border bg-card/95 p-3 shadow-xl backdrop-blur-lg lg:bottom-4"><div className="mb-2 flex items-center justify-between gap-3 px-1 text-xs"><span className="min-w-0 truncate font-semibold">{subject.name}</span><span className="shrink-0 text-muted-foreground">{numQuestions} questions ? {timeLimit ? `${timeLimit} min` : "Untimed"}</span></div>
         <Button
           size="lg"
           className="min-h-12 w-full rounded-xl font-semibold shadow-sm"
           onClick={startQuiz}
-          disabled={!selectedSubject}
         >
           <Play className="mr-2 h-5 w-5" />
           Start practice
         </Button>
-        </div>
+        </div> : <div className="flex min-h-14 items-center gap-3 border-t pt-5 text-sm text-muted-foreground"><span className="flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary"><BookOpen className="size-4" /></span><span>Select a subject to unlock your practice settings.</span></div>}
       </div>
     </div>
   );

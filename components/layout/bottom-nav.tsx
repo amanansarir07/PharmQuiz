@@ -70,7 +70,7 @@ export function BottomNav() {
     <nav
       aria-label="Mobile Bottom Navigation"
       className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/80 bg-card/95 shadow-[0_-4px_24px_#16234806] backdrop-blur-xl lg:hidden"
-      style={{ paddingBottom: "max(0.35rem, env(safe-area-inset-bottom, 0px))" }}
+      style={{ paddingBottom: "max(0.4rem, env(safe-area-inset-bottom, 0px))" }}
     >
       <div className="mx-auto grid h-16 max-w-2xl grid-cols-5 items-center px-2">
         {NAV_ITEMS.map((item) => {
@@ -82,7 +82,7 @@ export function BottomNav() {
               href={item.href}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "group flex flex-col items-center justify-center gap-1 py-1 text-[10px] font-medium transition-all select-none app-interactive",
+                "group flex min-h-11 flex-col items-center justify-center gap-1 py-1 text-[10px] font-medium transition-all select-none app-interactive",
                 isActive
                   ? "text-primary font-semibold"
                   : "text-muted-foreground hover:text-foreground active:scale-95"
@@ -92,7 +92,7 @@ export function BottomNav() {
                 className={cn(
                   "relative flex h-7 w-12 items-center justify-center rounded-full transition-all duration-200",
                   isActive
-                    ? "bg-primary/12 text-primary scale-105"
+                    ? "bg-primary/14 text-primary scale-105"
                     : "text-muted-foreground group-hover:bg-muted/50"
                 )}
               >

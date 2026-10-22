@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
-import { BookOpen, Bookmark, ChevronRight, ClipboardList, GraduationCap, History, LockKeyhole, LogIn, Moon, NotebookPen, RotateCcw, Settings, Sun, Trophy, UserRound } from "lucide-react";
+import { BookOpen, Bookmark, ChevronRight, ClipboardList, GraduationCap, History, LockKeyhole, LogIn, Moon, NotebookPen, RotateCcw, Settings, ShieldCheck, Sun, Trophy, UserRound } from "lucide-react";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
 import { AppError, AppLoading } from "@/components/app-state";
 
@@ -20,7 +20,7 @@ const links = [
 ];
 
 export default function MorePage() {
-  const { user, isLoading, authRestorationTimedOut } = useAuth();
+  const { user, isAdmin, isLoading, authRestorationTimedOut } = useAuth();
   const { program } = useActiveProgram();
   const { resolvedTheme, setTheme } = useTheme();
   const [themeReady, setThemeReady] = useState(false);
@@ -47,6 +47,7 @@ export default function MorePage() {
       <Link href="/programs" className="flex min-h-18 items-center gap-3 border-b px-5 hover:bg-muted/60"><GraduationCap className="size-5 text-primary" /><span className="flex-1 text-sm font-medium">Switch programme</span><ChevronRight className="size-4 text-muted-foreground" /></Link>
       {links.map(({ href, label, icon: Icon, accountRequired }) => <Link key={href} href={href} className="flex min-h-18 items-center gap-3 border-b px-5 last:border-0 hover:bg-muted/60"><Icon className="size-5 shrink-0 text-primary" /><span className="min-w-0 flex-1 text-sm font-medium">{label}</span>{!user && accountRequired && <span className="inline-flex shrink-0 items-center gap-1 text-[11px] text-muted-foreground"><LockKeyhole className="size-3.5" /> Account</span>}<ChevronRight className="size-4 shrink-0 text-muted-foreground" /></Link>)}
       <Link href="/settings" className="flex min-h-14 items-center gap-3 border-t px-4 hover:bg-muted/60"><Settings className="size-5 text-primary" /><span className="flex-1 text-sm font-medium">Settings</span><ChevronRight className="size-4 text-muted-foreground" /></Link>
+      {isAdmin && <Link href="/admin/questions" className="flex min-h-14 items-center gap-3 border-t px-4 hover:bg-muted/60"><ShieldCheck className="size-5 text-primary" /><span className="flex-1 text-sm font-medium">Admin panel</span><ChevronRight className="size-4 text-muted-foreground" /></Link>}
     </div>
     <div className="mt-6 overflow-hidden rounded-2xl border bg-card">
       <button type="button" onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} className="flex min-h-14 w-full items-center gap-3 px-4 text-left hover:bg-muted/60">{darkTheme ? <Moon className="size-5 text-primary" /> : <Sun className="size-5 text-primary" />}<span className="flex-1 text-sm font-medium">Appearance</span><span className="text-xs text-muted-foreground">{themeReady ? darkTheme ? "Dark" : "Light" : "System"}</span></button>

@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Check, ChevronDown, Eye, EyeOff, FlaskConical, GraduationCap, Lock, Mail, Pill, User } from "lucide-react";
-import { BujhMark } from "@/components/brand";
+import { ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Check, ChevronDown, Eye, EyeOff, GraduationCap, Lock, Mail, Pill, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,6 +12,7 @@ import { programs } from "@/data/programs";
 import { useAuth } from "@/lib/auth";
 import { safeSetItem } from "@/lib/storage";
 import { cn } from "@/lib/utils";
+import { ProgrammeIcon } from "@/components/programme-icon";
 
 type Step = 1 | 2 | 3;
 
@@ -114,25 +114,23 @@ function RegisterForm() {
     <section className="auth-register-content">
       <div className="mb-8 flex items-start justify-between gap-4 sm:mb-10">
         <div>
-          <div className="mb-4 flex items-center gap-3 lg:hidden"><BujhMark className="size-10" /><span className="text-lg font-extrabold tracking-[-.04em]">bujh<span className="text-primary">.</span></span></div>
           <p className="eyebrow">Get started</p>
           <h1 className="mt-2 text-3xl font-bold tracking-[-.04em] sm:text-4xl">Create your account</h1>
           <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Choose your programme first. We&apos;ll tailor your practice and progress from there.</p>
         </div>
-        <Link href="/auth/login" className="shrink-0 text-sm font-semibold text-primary hover:underline">Sign in</Link>
       </div>
       <Steps step={step} />
       {error && <div role="alert" className="mb-6 rounded-xl border border-red-500/20 bg-red-500/8 px-4 py-3 text-sm text-red-700 dark:text-red-300">{error}</div>}
       {step === 1 && <section aria-labelledby="programme-title">
         <div className="mb-5"><h2 id="programme-title" className="text-xl font-bold tracking-[-.025em]">Choose your programme</h2><p className="mt-1 text-sm text-muted-foreground">Only programmes with study content are available to start today.</p></div>
         <ProgrammeGroup group={programmeGroups[0]} selectedSlug={programSlug} onSelect={chooseProgramme} />
-        <button type="button" onClick={() => setShowComingSoon((shown) => !shown)} className="mt-5 flex w-full items-center justify-between rounded-xl border border-dashed px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:bg-muted/50"><span>More programmes <span className="font-normal">— coming soon</span></span><ChevronDown className={cn("size-4 transition-transform", showComingSoon && "rotate-180")} /></button>
+        <button type="button" onClick={() => setShowComingSoon((shown) => !shown)} className="mt-5 flex w-full items-center justify-between rounded-xl border border-dashed px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:bg-muted/50"><span>More programmes <span className="font-normal">â€” coming soon</span></span><ChevronDown className={cn("size-4 transition-transform", showComingSoon && "rotate-180")} /></button>
         {showComingSoon && <div className="mt-3 space-y-3">{programmeGroups.slice(1).map((group) => <ProgrammeGroup key={group.title} group={group} selectedSlug={programSlug} onSelect={chooseProgramme} compact />)}</div>}
         <ActionBar><Button type="button" onClick={goToDetails} disabled={!programSlug} className="h-12 w-full sm:w-auto sm:min-w-44">Continue <ArrowRight className="size-4" /></Button></ActionBar>
       </section>}
       {step === 2 && <form onSubmit={goToFinish} noValidate>
         <div className="mb-6 flex items-center justify-between gap-3"><div><h2 className="text-xl font-bold tracking-[-.025em]">Your account details</h2><p className="mt-1 text-sm text-muted-foreground">Use an email you can access to keep your progress safe.</p></div><button type="button" onClick={() => setStep(1)} className="text-sm font-semibold text-primary hover:underline">Change programme</button></div>
-        {selectedProgram && <SelectedProgramme name={selectedProgram.name} level={selectedProgram.level} award={selectedProgram.award} />}
+        {selectedProgram && <SelectedProgramme program={selectedProgram} />}
         <div className="mt-6 grid gap-5 sm:grid-cols-2">
           <Field label="Full name" htmlFor="name" icon={User}><Input id="name" value={name} onChange={(event) => setName(event.target.value.replace(/[^\p{L} ]/gu, ""))} placeholder="Your full name" autoComplete="name" maxLength={50} required /></Field>
           <Field label="Email address" htmlFor="email" icon={Mail}><Input id="email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" autoComplete="email" required /></Field>
@@ -143,7 +141,7 @@ function RegisterForm() {
       </form>}
       {step === 3 && <section aria-labelledby="finish-title">
         <div className="mb-6"><h2 id="finish-title" className="text-xl font-bold tracking-[-.025em]">Ready to begin?</h2><p className="mt-1 text-sm text-muted-foreground">Check your details, then create your Bujh account.</p></div>
-        {selectedProgram && <SelectedProgramme name={selectedProgram.name} level={selectedProgram.level} award={selectedProgram.award} />}
+        {selectedProgram && <SelectedProgramme program={selectedProgram} />}
         <dl className="mt-4 divide-y rounded-2xl border bg-card px-4"><div className="flex items-center justify-between gap-4 py-4"><dt className="text-sm text-muted-foreground">Name</dt><dd className="text-sm font-semibold">{name}</dd></div><div className="flex items-center justify-between gap-4 py-4"><dt className="text-sm text-muted-foreground">Email</dt><dd className="truncate text-sm font-semibold">{email}</dd></div></dl>
         <ActionBar><div className="w-full space-y-3 sm:w-auto"><Button type="button" onClick={createAccount} disabled={loading} className="h-12 w-full sm:min-w-52">{loading ? "Creating account..." : "Create account"}<ArrowRight className="size-4" /></Button><div className="flex items-center gap-3 text-xs text-muted-foreground before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">or</div><Button type="button" variant="outline" onClick={google} disabled={loading} className="h-12 w-full sm:min-w-52"><GoogleIcon />Continue with Google</Button><Button type="button" variant="ghost" onClick={() => setStep(2)} className="h-10 w-full text-muted-foreground"><ArrowLeft className="size-4" />Edit details</Button></div></ActionBar>
       </section>}
@@ -154,7 +152,7 @@ function RegisterForm() {
 
 function Steps({ step }: { step: Step }) {
   const labels = ["Programme", "Details", "Account"];
-  return <div className="mb-7 sm:mb-9"><p className="mb-3 text-xs font-semibold text-primary">Step {step} of 3 <span className="font-normal text-muted-foreground">· {labels[step - 1]}</span></p><ol aria-label="Registration progress" className="grid grid-cols-3 gap-2 sm:max-w-xl">{([1, 2, 3] as Step[]).map((item) => <li key={item} className="min-w-0"><div className="flex items-center gap-2"><span className={cn("flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-bold", item < step ? "bg-primary text-primary-foreground" : item === step ? "bg-primary text-primary-foreground ring-4 ring-primary/20" : "bg-muted text-muted-foreground")}>{item < step ? <Check className="size-4" /> : item}</span><span className={cn("text-xs font-semibold", item === step ? "text-foreground" : "text-muted-foreground")}>{labels[item - 1]}</span></div><div className={cn("mt-2 h-1 rounded-full", item < step ? "bg-primary" : item === step ? "bg-primary/75" : "bg-muted")} /></li>)}</ol></div>;
+  return <div className="mb-7 sm:mb-9"><p className="mb-3 text-xs font-semibold text-primary">Step {step} of 3 <span className="font-normal text-muted-foreground">Â· {labels[step - 1]}</span></p><ol aria-label="Registration progress" className="grid grid-cols-3 gap-2 sm:max-w-xl">{([1, 2, 3] as Step[]).map((item) => <li key={item} className="min-w-0"><div className="flex items-center gap-2"><span className={cn("flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-bold", item < step ? "bg-primary text-primary-foreground" : item === step ? "bg-primary text-primary-foreground ring-4 ring-primary/20" : "bg-muted text-muted-foreground")}>{item < step ? <Check className="size-4" /> : item}</span><span className={cn("text-xs font-semibold", item === step ? "text-foreground" : "text-muted-foreground")}>{labels[item - 1]}</span></div><div className={cn("mt-2 h-1 rounded-full", item < step ? "bg-primary" : item === step ? "bg-primary/75" : "bg-muted")} /></li>)}</ol></div>;
 }
 
 function ProgrammeGroup({ group, selectedSlug, onSelect, compact = false }: { group: typeof programmeGroups[number]; selectedSlug: string; onSelect: (slug: string) => void; compact?: boolean }) {
@@ -169,7 +167,7 @@ function ProgrammeButton({ program, selected, onSelect }: { program: (typeof pro
   return <button type="button" disabled={!program.hasContent} onClick={() => onSelect(program.slug)} className={cn("relative flex min-h-16 items-center justify-between rounded-xl px-3.5 text-left transition-colors", selected ? "border border-primary bg-primary text-primary-foreground shadow-sm" : program.hasContent ? "border border-border bg-card text-foreground hover:border-primary/55 hover:bg-primary/5" : "cursor-not-allowed bg-muted/45 text-muted-foreground opacity-60")}><span><span className="block text-sm font-semibold">{program.level || program.name}</span><span className={cn("mt-0.5 block text-[11px]", selected ? "text-primary-foreground/80" : program.hasContent ? "text-primary" : "text-muted-foreground")}>{selected ? "Selected" : program.hasContent ? "Available" : "Coming soon"}</span></span>{selected ? <span className="flex size-6 items-center justify-center rounded-full bg-primary-foreground/15"><Check className="size-4" /></span> : program.hasContent ? <BookOpen className="size-4 text-primary" /> : null}</button>;
 }
 
-function SelectedProgramme({ name, level, award }: { name: string; level: string; award: string }) { return <div className="flex items-center gap-3 rounded-2xl border border-primary/25 bg-primary/5 px-4 py-3"><span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground"><FlaskConical className="size-5" /></span><div className="min-w-0"><p className="text-sm font-semibold">{name}{level ? " · " + level : ""}</p><p className="truncate text-xs text-muted-foreground">{award}</p></div><Check className="ml-auto size-5 text-primary" /></div>; }
+function SelectedProgramme({ program }: { program: (typeof programs)[number] }) { return <div className="flex items-center gap-3 rounded-2xl border border-primary/25 bg-primary/5 px-4 py-3"><ProgrammeIcon program={program} className="size-9 bg-primary text-primary-foreground" iconClassName="size-5" /><div className="min-w-0"><p className="text-sm font-semibold">{program.name}{program.level ? " Â· " + program.level : ""}</p><p className="truncate text-xs text-muted-foreground">{program.award}</p></div><Check className="ml-auto size-5 text-primary" /></div>; }
 
 function ActionBar({ children }: { children: React.ReactNode }) { return <div className="auth-register-action flex items-center gap-3">{children}</div>; }
 

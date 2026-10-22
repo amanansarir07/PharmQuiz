@@ -4,11 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useTheme } from "next-themes";
-import { ArrowRight, BookOpen, Bookmark, Check, ChevronDown, ChevronLeft, ClipboardCheck, History, House, LayoutGrid, Moon, NotebookPen, Search, Settings, Sun, Target, Trophy, UserRound, ChartNoAxesCombined, RotateCcw, GraduationCap } from "lucide-react";
+import { ArrowRight, BookOpen, Bookmark, Check, ChevronDown, ChevronLeft, ClipboardCheck, History, House, LayoutGrid, Moon, NotebookPen, Search, Settings, Sun, Target, Trophy, UserRound, ChartNoAxesCombined, RotateCcw, GraduationCap, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { cn } from "@/lib/utils";
 import { Brand } from "@/components/brand";
+import { ProgrammeIcon } from "@/components/programme-icon";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const groups = [
@@ -33,13 +34,18 @@ const groups = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const { user } = useAuth();
+  const { user, isAdmin } = useAuth();
   const { resolvedTheme, setTheme } = useTheme();
   const { program, availablePrograms, setProgramSlug } = useActiveProgram();
   const [programOpen, setProgramOpen] = useState(false);
   const publicPage = pathname === "/";
   const activeQuiz = /^\/quiz\/[^/]+$/.test(pathname);
-  const route = groups.flatMap((group) => group.items).find((item) => pathname === item.href || pathname.startsWith(item.href + "/"));
+  const adminGroup = { label: "Administration", items: [
+    { href: "/admin/questions", label: "Question imports", icon: ShieldCheck },
+    { href: "/admin/mock-exams", label: "Manage mock exams", icon: ClipboardCheck },
+  ] };
+  const visibleGroups = isAdmin ? [...groups, adminGroup] : groups;
+  const route = visibleGroups.flatMap((group) => group.items).find((item) => pathname === item.href || pathname.startsWith(item.href + "/"));
   const title = route?.label || ({ "/programs": "Programmes", "/profile": "My profile", "/settings": "Settings", "/more": "Your study space" }[pathname] ?? "Study space");
   const subpage = pathname.startsWith("/subjects/") || pathname.startsWith("/programs/") || ["/notes", "/bookmarks", "/mistakes", "/profile", "/settings", "/history", "/review"].includes(pathname);
   const backHref = pathname.startsWith("/subjects/") ? "/subjects" : pathname.startsWith("/programs/") ? "/programs" : "/more";
@@ -54,7 +60,7 @@ export function Navbar() {
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-[244px] flex-col border-r border-border/80 bg-sidebar lg:flex">
       <Link href="/dashboard" className="flex h-22 shrink-0 items-center px-6" aria-label="Bujh overview"><Brand /></Link>
       <button type="button" onClick={() => setProgramOpen(true)} className="mx-4 mb-5 flex items-center gap-3 rounded-2xl border bg-background p-3 text-left hover:border-primary/40"><span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary/10"><GraduationCap className="size-5 text-primary" /></span><span className="min-w-0 flex-1"><span className="block text-[10px] font-bold uppercase tracking-widest text-muted-foreground">My programme</span><span className="mt-0.5 block truncate text-xs font-bold">{program.shortLabel}</span></span><ChevronDown className="size-3.5 text-muted-foreground" /></button>
-      <nav className="flex-1 space-y-5 overflow-y-auto px-3 pb-5" aria-label="Main navigation">{groups.map((group) => <div key={group.label}><p className="mb-2 px-3 text-[10px] font-bold uppercase tracking-[.14em] text-muted-foreground">{group.label}</p><div className="space-y-1">{group.items.map(({ href, label, icon: Icon }) => {
+      <nav className="flex-1 space-y-5 overflow-y-auto px-3 pb-5" aria-label="Main navigation">{visibleGroups.map((group) => <div key={group.label}><p className="mb-2 px-3 text-[10px] font-bold uppercase tracking-[.14em] text-muted-foreground">{group.label}</p><div className="space-y-1">{group.items.map(({ href, label, icon: Icon }) => {
         const active = pathname === href || pathname.startsWith(href + "/");
         return <Link key={href} href={href} aria-current={active ? "page" : undefined} className={cn("flex min-h-10 items-center gap-3 rounded-xl px-3 text-[13px] font-medium transition-colors", active ? "bg-primary/10 font-semibold text-primary" : "text-muted-foreground hover:bg-muted hover:text-foreground")}><Icon className="size-[18px]" strokeWidth={active ? 2.2 : 1.7} /><span>{label}</span>{active && <span className="ml-auto size-1.5 rounded-full bg-primary" />}</Link>;
       })}</div></div>)}</nav>
@@ -68,6 +74,6 @@ export function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3"><Link href="/review" className="hidden min-h-10 items-center gap-3 rounded-xl border bg-card px-4 text-xs text-muted-foreground lg:flex"><Search className="size-4" />Find a question</Link>{themeButton}<Link href={user ? "/profile" : "/auth/login"} aria-label={user ? "My profile" : "Log in"} className="hidden size-9 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-xs font-bold text-primary sm:flex">{user?.name?.slice(0, 2).toUpperCase() || <UserRound className="size-4" />}</Link></div>
       </div>
     </header>
-    <Dialog open={programOpen} onOpenChange={setProgramOpen}><DialogContent className="sm:max-w-md"><DialogHeader><DialogTitle>Choose your programme</DialogTitle><DialogDescription>Your subjects and practice sessions follow this syllabus.</DialogDescription></DialogHeader><div className="space-y-2">{availablePrograms.map((item) => <button type="button" key={item.slug} onClick={() => { setProgramSlug(item.slug); setProgramOpen(false); }} className={cn("flex min-h-16 w-full items-center gap-3 rounded-xl border p-3 text-left", program.slug === item.slug ? "border-primary bg-primary/5" : "hover:bg-muted")}><GraduationCap className="size-5 shrink-0 text-primary" /><span className="min-w-0 flex-1 text-sm font-semibold">{item.name}{item.level && ` · ${item.level}`}</span>{program.slug === item.slug && <Check className="size-5 text-primary" />}</button>)}</div><Link onClick={() => setProgramOpen(false)} href="/programs" className="action-secondary">Explore all programmes <ArrowRight className="size-4" /></Link></DialogContent></Dialog>
+    <Dialog open={programOpen} onOpenChange={setProgramOpen}><DialogContent className="sm:max-w-md"><DialogHeader><DialogTitle>Choose your programme</DialogTitle><DialogDescription>Your subjects and practice sessions follow this syllabus.</DialogDescription></DialogHeader><div className="space-y-2">{availablePrograms.map((item) => <button type="button" key={item.slug} onClick={() => { setProgramSlug(item.slug); setProgramOpen(false); }} className={cn("flex min-h-16 w-full items-center gap-3 rounded-xl border p-3 text-left", program.slug === item.slug ? "border-primary bg-primary/5" : "hover:bg-muted")}><ProgrammeIcon program={item} className="size-9" iconClassName="size-4" /><span className="min-w-0 flex-1 text-sm font-semibold">{item.name}{item.level && ` · ${item.level}`}</span>{program.slug === item.slug && <Check className="size-5 text-primary" />}</button>)}</div><Link onClick={() => setProgramOpen(false)} href="/programs" className="action-secondary">Explore all programmes <ArrowRight className="size-4" /></Link></DialogContent></Dialog>
   </>;
 }

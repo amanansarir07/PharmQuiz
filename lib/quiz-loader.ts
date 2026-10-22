@@ -8,6 +8,7 @@ import {
   resolveBankProgram,
   type RawBankQuestion,
 } from "@/lib/content/banks";
+import { getPublishedQuestions } from "@/lib/bulk-question-import";
 
 /**
  * Question loading for quizzes, mock papers and the review browser.
@@ -37,6 +38,25 @@ export interface QuizLoadOptions {
   numQuestions?: number;
   /** Defaults to the programme that owns the subject's bank. */
   programSlug?: string;
+}
+
+async function loadQuestionPool(subjectSlug: string, programSlug: string): Promise<RawBankQuestion[]> {
+  const [staticBank, imported] = await Promise.all([
+    loadBank(subjectSlug, programSlug),
+    getPublishedQuestions(programSlug, subjectSlug),
+  ]);
+  return [
+    ...staticBank,
+    ...imported.map((question) => ({
+      unit_id: question.unit_id,
+      question_text: question.question_text,
+      options: question.options,
+      correct_index: question.correct_index,
+      explanation: question.explanation,
+      difficulty: question.difficulty,
+      tags: question.tags,
+    })),
+  ];
 }
 
 function normalizeOptions(q: RawBankQuestion): string[] {
@@ -99,10 +119,8 @@ export async function getQuestionsForQuiz({
   numQuestions,
   programSlug,
 }: QuizLoadOptions): Promise<QuizQuestion[]> {
-  const bank = await loadBank(
-    subjectSlug,
-    programSlug ?? resolveBankProgram(subjectSlug)
-  );
+  const resolvedProgram = programSlug ?? resolveBankProgram(subjectSlug);
+  const bank = await loadQuestionPool(subjectSlug, resolvedProgram);
 
   let filtered = [...bank];
 
@@ -175,7 +193,11 @@ function toQuizQuestions(
 export async function getProgramQuestions(
   programSlug: string = DEFAULT_PROGRAM_SLUG
 ): Promise<QuizQuestion[]> {
-  return toQuizQuestions(await loadProgramBanks(programSlug));
+  const staticBanks = await loadProgramBanks(programSlug);
+  return toQuizQuestions(await Promise.all(staticBanks.map(async (bank) => ({
+    subjectSlug: bank.subjectSlug,
+    questions: await loadQuestionPool(bank.subjectSlug, programSlug),
+  }))));
 }
 
 /** A lightweight question-bank preview for one subject. */
@@ -183,7 +205,7 @@ export async function getSubjectQuestions(
   subjectSlug: string,
   programSlug: string = DEFAULT_PROGRAM_SLUG
 ): Promise<QuizQuestion[]> {
-  return toQuizQuestions([{ subjectSlug, questions: await loadBank(subjectSlug, programSlug) }]);
+  return toQuizQuestions([{ subjectSlug, questions: await loadQuestionPool(subjectSlug, programSlug) }]);
 }
 
 /** Every question across every published bank, with options shuffled. */
@@ -227,7 +249,7 @@ export async function getMockQuestions(
   const stamp = Date.now();
 
   for (const s of getSubjectsForProgram(programSlug)) {
-    const bank = await loadBank(s.slug, programSlug);
+    const bank = await loadQuestionPool(s.slug, programSlug);
     if (bank.length === 0) continue;
 
     const unitIds = new Set(s.units.map((u) => u.id));

@@ -26,6 +26,13 @@ export const metadata: Metadata = {
     "Bujh",
   ],
   applicationName: "Bujh",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     type: "website",
     siteName: "Bujh",

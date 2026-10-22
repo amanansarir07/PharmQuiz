@@ -5,6 +5,7 @@ import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { getProgram, isProgramAvailable } from "@/data/registry";
 import { ProgramPicker } from "@/components/program-picker";
+import { ProgrammeIcon } from "@/components/programme-icon";
 import { safeGetItem, safeSetItem } from "@/lib/storage";
 import {
   Dialog,
@@ -84,7 +85,7 @@ export function OnboardingDepartmentModal() {
             <span>Please pick your actual diploma or +2 track:</span>
             {selectedMeta && (
               <span className="font-semibold text-foreground flex items-center gap-1">
-                <span>{selectedMeta.icon}</span>
+                <ProgrammeIcon program={selectedMeta} className="size-5 rounded-md bg-transparent" iconClassName="size-3.5" />
                 <span>{selectedMeta.shortLabel}</span>
               </span>
             )}

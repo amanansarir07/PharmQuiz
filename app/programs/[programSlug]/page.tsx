@@ -17,6 +17,7 @@ import { getCurriculumPreview } from "@/data/curriculum-previews";
 import { CurriculumDevPreview } from "@/components/curriculum-dev-preview";
 import { ProgramSelectAction } from "@/components/program-select-action";
 import { LearningPage, LinkRow, SubjectIcon } from "@/components/learning-ui";
+import { ProgrammeIcon } from "@/components/programme-icon";
 import {
   Award,
   BookOpen,
@@ -39,11 +40,11 @@ export async function generateMetadata({
   if (!program) return { title: "Programme not found" };
   const label = getProgramLabel(programSlug);
   return {
-    // The layout template appends "— Bujh".
+    // The layout template appends "â€” Bujh".
     title: label,
     description: program.description,
     openGraph: {
-      title: `${label} — Bujh`,
+      title: `${label} â€” Bujh`,
       description: program.description,
     },
   };
@@ -65,7 +66,7 @@ export default async function ProgramPage({
     return <LearningPage className="max-w-3xl">
       <Link href="/programs" className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"><ChevronLeft className="size-4" /> All programmes</Link>
       <div className="rounded-2xl border bg-card p-5 sm:p-7">
-        <p className="text-xs font-bold uppercase tracking-wider text-primary">Nepal Pharmacy Council · Past questions</p>
+        <p className="text-xs font-bold uppercase tracking-wider text-primary">Nepal Pharmacy Council Â· Past questions</p>
         <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Pharmacy Assistant Registration Exam</h1>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">This is the Nepal Pharmacy Council name-registration exam for pharmacy assistants after the three-year Diploma in Pharmacy. It is one post-diploma exam, not a Year 1, 2, or 3 course.</p>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">Browse the supplied past-question collection, numbered through 866. The publication combines pharmacist and pharmacy assistant questions and does not provide an answer key, so scored practice is pending verified answers.</p>
@@ -86,7 +87,7 @@ export default async function ProgramPage({
   const questionCount = available ? await getQuestionCount(program.slug) : 0;
 
   const heading = program.level
-    ? `${program.name} · ${program.level}`
+    ? `${program.name} Â· ${program.level}`
     : program.name;
   // Single-level awards have the same name as the programme, so showing both
   // in the breadcrumb just repeats itself.
@@ -148,7 +149,7 @@ export default async function ProgramPage({
 
       <div className="mb-8 rounded-3xl border bg-card p-5 sm:p-8">
         <div className="flex items-start gap-4">
-          <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-3xl">{program.icon}</span>
+          <ProgrammeIcon program={program} className="size-14 rounded-2xl" iconClassName="size-7" />
           <div>
             <h1 className="text-[1.65rem] font-bold tracking-tight sm:text-3xl">{heading}</h1>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
@@ -198,7 +199,7 @@ export default async function ProgramPage({
           </h2>
           <div className="grid gap-2 sm:grid-cols-2">
             {subjects.map((subject) => (
-              <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units · ${subject.examMarks} marks`} /></div>
+              <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units Â· ${subject.examMarks} marks`} /></div>
             ))}
           </div>
         </div>

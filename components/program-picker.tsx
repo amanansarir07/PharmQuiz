@@ -2,7 +2,8 @@
 
 import { getFacultyCatalogue } from "@/data/registry";
 import { cn } from "@/lib/utils";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, GraduationCap } from "lucide-react";
+import { ProgrammeIcon } from "@/components/programme-icon";
 
 /**
  * Lets a student choose their programme.
@@ -29,7 +30,7 @@ export function ProgramPicker({
       {catalogue.map(({ faculty, awards }) => (
         <div key={faculty.slug}>
           <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            {faculty.icon} {faculty.name}
+            <GraduationCap className="mr-1 inline size-3.5 text-primary" aria-hidden="true" /> {faculty.name}
           </p>
           <div className="space-y-3">
             {awards.map((award) => (
@@ -50,7 +51,7 @@ export function ProgramPicker({
                         title={
                           program.hasContent
                             ? program.description
-                            : `${program.name}${program.level ? " " + program.level : ""} — in active development`
+                            : `${program.name}${program.level ? " " + program.level : ""} â€” in active development`
                         }
                         className={cn(
                           "inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm transition-all",
@@ -61,7 +62,7 @@ export function ProgramPicker({
                             "cursor-not-allowed border-dashed text-muted-foreground hover:bg-transparent"
                         )}
                       >
-                        <span>{program.icon}</span>
+                        <ProgrammeIcon program={program} className="size-5 rounded-md bg-transparent" iconClassName="size-3.5" />
                         <span>{program.shortLabel}</span>
                         {program.hasContent ? (
                           <span className="ml-1 rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-medium text-emerald-600 dark:text-emerald-400">

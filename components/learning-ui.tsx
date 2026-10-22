@@ -4,15 +4,15 @@ import { ArrowRight, ChevronLeft, FlaskConical, Pill, Leaf, Microscope, HeartPul
 import { cn } from "@/lib/utils";
 
 export function LearningPage({ children, className }: { children: ReactNode; className?: string }) {
-  return <div className={cn("mx-auto w-full max-w-[1320px] px-4 pb-12 pt-6 sm:px-7 sm:pt-8 lg:px-9 lg:pt-9", className)}>{children}</div>;
+  return <div className={cn("mx-auto w-full max-w-[1320px] px-4 pb-8 pt-6 sm:px-7 sm:pt-8 lg:px-9 lg:pb-12 lg:pt-9", className)}>{children}</div>;
 }
 
 export function PageHeading({ eyebrow, title, description, backHref, hideBackOnMobile, action }: {
   eyebrow?: string; title: string; description?: string; backHref?: string; hideBackOnMobile?: boolean; action?: ReactNode;
 }) {
-  return <header className="mb-6 sm:mb-8">
+  return <header className="mb-6 sm:mb-7">
     {backHref && <Link href={backHref} className={cn("mb-4 min-h-9 items-center gap-1 rounded-lg pr-3 text-sm font-medium text-muted-foreground hover:text-foreground", hideBackOnMobile ? "hidden md:inline-flex" : "inline-flex")}><ChevronLeft className="size-4" /> Back</Link>}
-    <div className="flex flex-wrap items-end justify-between gap-3">
+    <div className="flex flex-wrap items-end justify-between gap-3 sm:gap-4">
       <div className="min-w-0">
         {eyebrow && <p className="mb-2 text-[10px] font-bold uppercase tracking-[.16em] text-primary">{eyebrow}</p>}
         <h1 className="text-[1.7rem] font-bold leading-tight tracking-[-.04em] text-foreground sm:text-[2rem]">{title}</h1>
@@ -38,7 +38,7 @@ export function StatTile({ label, value, tone = "blue", detail }: { label: strin
 }
 
 export function LinkRow({ href, icon, title, detail, end }: { href: string; icon: ReactNode; title: string; detail?: string; end?: ReactNode }) {
-  return <Link href={href} className="flex min-h-16 items-center gap-3 border-b border-border/70 px-4 py-3 last:border-b-0 hover:bg-muted/50">
+  return <Link href={href} className="flex min-h-16 items-center gap-3 border-b border-border/70 px-4 py-3 last:border-b-0 transition-colors hover:bg-muted/50 focus-visible:bg-muted/50">
     <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">{icon}</span>
     <span className="min-w-0 flex-1"><span className="block text-sm font-semibold leading-5">{title}</span>{detail && <span className="mt-1 block text-xs leading-5 text-muted-foreground">{detail}</span>}</span>
     {end || <ArrowRight className="size-4 shrink-0 text-muted-foreground" />}

@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/select";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
+import { ProgrammeIcon } from "@/components/programme-icon";
 import {
   createMockExam,
   deleteMockExam,
@@ -192,7 +193,8 @@ export default function AdminMockExamsPage() {
         Back to Mock Test
       </button>
 
-      <div className="mb-8 flex items-start gap-4">
+      <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
+        <div className="flex items-start gap-4">
         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
           <Megaphone className="h-7 w-7" />
         </div>
@@ -203,6 +205,11 @@ export default function AdminMockExamsPage() {
             goes live and the timer starts.
           </p>
         </div>
+        </div>
+        <Link href="/admin/questions" className="action-secondary">
+          Question bank
+          <ArrowLeft className="size-4 rotate-180" />
+        </Link>
       </div>
 
       {/* Create form */}
@@ -249,7 +256,10 @@ export default function AdminMockExamsPage() {
                 <SelectContent>
                   {availablePrograms.map((p) => (
                     <SelectItem key={p.slug} value={p.slug}>
-                      {p.icon} {p.name}
+                      <span className="flex items-center gap-2">
+                        <ProgrammeIcon program={p} className="size-5 rounded-md bg-transparent" iconClassName="size-3.5" />
+                        {p.name}
+                      </span>
                     </SelectItem>
                   ))}
                 </SelectContent>
