@@ -119,7 +119,8 @@ export default function ActiveQuizPage({
         const stored = safeGetItem(`quiz-config-${sessionId}`);
 
         if (!stored) {
-          const subjectSlug = firstSubjectSlug(getStoredProgramSlug());
+          const programSlug = getStoredProgramSlug();
+          const subjectSlug = firstSubjectSlug(programSlug);
           if (!subjectSlug) {
             if (!cancelled) setLoadError(true);
             return;
@@ -129,6 +130,7 @@ export default function ActiveQuizPage({
             unitIds: [],
             difficulty: "mixed",
             numQuestions: isGuest ? 10 : 12,
+            programSlug,
           });
           if (cancelled) return;
           setQuestions(qs);
@@ -178,6 +180,7 @@ export default function ActiveQuizPage({
             unitIds: config.units || [],
             difficulty: config.difficulty || "mixed",
             numQuestions: config.numQuestions || 20,
+            programSlug: resolveResultProgram(config.program, config.subject || ""),
           });
         }
         if (cancelled) return;
@@ -190,6 +193,7 @@ export default function ActiveQuizPage({
               unitIds: [],
               difficulty: "mixed",
               numQuestions: isGuest ? 10 : 12,
+              programSlug: resolveResultProgram(config.program, subjectSlug),
             });
           }
           if (cancelled) return;
@@ -197,6 +201,10 @@ export default function ActiveQuizPage({
         // Local session config and snapshots are editable. Enforce the guest
         // practice limit where the paper is loaded, including retry sessions.
         if (isGuest) finalQs = finalQs.slice(0, 10);
+        if (finalQs.length === 0) {
+          if (!cancelled) setLoadError(true);
+          return;
+        }
         setQuestions(finalQs);
 
         // Try to restore saved progress (crash recovery)
@@ -501,7 +509,7 @@ export default function ActiveQuizPage({
     if (loadError) {
       return (
         <AppError
-          title="Couldn’t load this quiz"
+          title="Could not load this quiz"
           description="Your quiz setup is still safe. Try loading the questions again or return to practice."
           onRetry={() => {
             setLoadError(false);
