@@ -65,7 +65,6 @@ function RegisterForm() {
     setProgramSlug(slug);
     setError("");
     safeSetItem("bujh-pending-program", slug);
-    safeSetItem("bujh-active-program", slug);
   };
   const validateDetails = () => {
     const trimmedName = name.trim();

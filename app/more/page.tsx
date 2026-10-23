@@ -38,7 +38,6 @@ export default function MorePage() {
       <p className="mt-1 text-sm text-muted-foreground">{program.shortLabel}</p>
       <div className="mt-4 flex flex-wrap gap-3 text-sm font-semibold">
         {user ? <Link href="/profile" className="text-primary">View profile</Link> : <><Link href={`/auth/register?program=${encodeURIComponent(program.slug)}`} className="text-primary">Create account</Link><Link href="/auth/login">Log in</Link></>}
-        <Link href="/programs">Switch programme</Link>
       </div>
     </section>
     <section className="mt-6">
