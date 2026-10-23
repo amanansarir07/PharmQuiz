@@ -15,12 +15,9 @@ export function BottomNav() {
   const pathname = usePathname();
 
   // Hide the bottom navigation bar during active quiz sessions to maintain 100% test immersion
-  const isTakingQuiz =
-    pathname.startsWith("/quiz/") &&
-    pathname.split("/").length === 3 &&
-    !pathname.endsWith("/results");
+  const isQuizFlow = /^\/quiz\/[^/]+(?:\/results)?$/.test(pathname);
 
-  if (isTakingQuiz || pathname === "/" || pathname.startsWith("/auth/")) return null;
+  if (isQuizFlow || pathname === "/" || pathname.startsWith("/auth/")) return null;
 
   const NAV_ITEMS = [
     {

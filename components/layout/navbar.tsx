@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { BookOpen, Check, ChevronDown, ChevronLeft, ClipboardCheck, House, LayoutGrid, Moon, Search, Settings, Sun, Target, UserRound, ChartNoAxesCombined, RotateCcw, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/lib/auth";
@@ -32,6 +32,7 @@ export function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();
   const { program, availablePrograms, setProgramSlug } = useActiveProgram();
   const [programOpen, setProgramOpen] = useState(false);
+  const [themeReady, setThemeReady] = useState(false);
   const publicPage = pathname === "/";
   const dashboardHome = pathname === "/dashboard";
   const activeQuiz = /^\/quiz\/[^/]+$/.test(pathname);
@@ -45,10 +46,15 @@ export function Navbar() {
   const subpage = pathname.startsWith("/subjects/") || pathname.startsWith("/programs/") || ["/notes", "/bookmarks", "/mistakes", "/profile", "/settings", "/history", "/review"].includes(pathname);
   const backHref = pathname.startsWith("/subjects/") ? "/subjects" : pathname.startsWith("/programs/") ? "/programs" : "/more";
 
-  if (activeQuiz || pathname.startsWith("/auth/")) return null;
-
   const themeButton = <button type="button" onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} className="icon-button" aria-label="Switch colour theme"><Sun className="size-[18px] dark:hidden" /><Moon className="hidden size-[18px] dark:block" /></button>;
   const firstName = user?.name?.trim().split(/\s+/)[0];
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setThemeReady(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  if (activeQuiz || pathname.startsWith("/auth/")) return null;
 
   if (publicPage) return <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-xl"><div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-8"><Link href="/" aria-label="Bujh home"><Brand compact /></Link><nav className="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Explore Bujh"><Link href="/programs">Programmes</Link><Link href="/dashboard">Explore the app</Link><a href="#how-it-works">How it works</a></nav><div className="flex items-center gap-2">{themeButton}<Link href="/auth/login" className="hidden px-3 text-sm font-semibold sm:block">Log in</Link><Link href="/auth/register" className="action-primary min-h-10 px-4 text-xs sm:text-sm">Get started</Link></div></div></header>;
 
@@ -87,7 +93,7 @@ export function Navbar() {
           <div className="absolute right-0 top-12 z-50 w-60 rounded-2xl bg-popover p-2 text-popover-foreground shadow-[var(--shadow-floating)] ring-1 ring-border/50">
             <Link href={user ? "/profile" : "/auth/login"} className="block rounded-xl px-3 py-2.5 text-sm font-semibold hover:bg-muted">{user?.name || "Guest learner"}<span className="mt-0.5 block text-xs font-medium text-muted-foreground">{user ? "View profile" : "Sign in to save progress"}</span></Link>
             <Link href="/settings" className="block rounded-xl px-3 py-2.5 text-sm font-semibold hover:bg-muted">Settings</Link>
-            <button type="button" onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} className="flex min-h-10 w-full items-center justify-between rounded-xl px-3 text-sm font-semibold hover:bg-muted"><span>Appearance</span>{resolvedTheme === "dark" ? <Moon className="size-4" /> : <Sun className="size-4" />}</button>
+            <button type="button" onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} className="flex min-h-10 w-full items-center justify-between rounded-xl px-3 text-sm font-semibold hover:bg-muted"><span>Appearance</span>{themeReady && (resolvedTheme === "dark" ? <Moon className="size-4" /> : <Sun className="size-4" />)}</button>
           </div>
         </details>}
       </div>

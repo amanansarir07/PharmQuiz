@@ -1,28 +1,59 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search } from "lucide-react";
+import { BookOpen, Search } from "lucide-react";
 import { useActiveProgram } from "@/lib/program";
+import { useAuth } from "@/lib/auth";
 import { getSubjectsForProgram } from "@/data/registry";
+import { calculateStats, type UserStats } from "@/lib/stats";
 import { AppEmpty } from "@/components/app-state";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
+import { HomeListRow } from "@/components/home/home-components";
 
 export function SubjectsScreen() {
   const { program } = useActiveProgram();
+  const { user } = useAuth();
   const router = useRouter();
   const subjects = getSubjectsForProgram(program.slug);
+  const [stats, setStats] = useState<UserStats | null>(null);
   const [search, setSearch] = useState("");
   const filtered = subjects.filter((subject) => subject.name.toLowerCase().includes(search.toLowerCase()));
+  const unitCount = subjects.reduce((count, subject) => count + subject.units.length, 0);
+
+  useEffect(() => {
+    let active = true;
+    void calculateStats(user?.id, program.slug).then((value) => {
+      if (active) setStats(value);
+    });
+    return () => { active = false; };
+  }, [program.slug, user?.id]);
 
   return <LearningPage>
-    <PageHeading eyebrow={program.shortLabel} title="Subjects" description="Choose a subject to explore its units and topics." action={<Link href="/programs" className="text-xs font-semibold text-primary hover:underline">Switch programme</Link>} />
+    <PageHeading eyebrow={program.shortLabel} title="Subjects" description="Choose a subject to explore its units and topics." action={<Link href="/programs" className="inline-flex min-h-10 items-center text-xs font-semibold text-primary hover:underline">Switch programme</Link>} />
     {subjects.length === 0 ? <AppEmpty title="No subjects published yet" description="Choose another available programme to begin studying." action="Browse programmes" onAction={() => router.push("/programs")} /> : <>
-      <label className="mb-5 flex max-w-xl items-center gap-3 rounded-lg border bg-card px-4"><Search className="size-4 shrink-0 text-muted-foreground" /><input className="h-12 min-w-0 flex-1 bg-transparent text-sm outline-none" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Find a subject…" aria-label="Find a subject" /></label>
-      <div className="grid gap-x-8 sm:grid-cols-2">{filtered.map((subject) => <Link href={`/subjects/${subject.slug}`} key={subject.id} className="flex min-h-16 items-center border-b py-3 transition-colors hover:text-primary"><div className="min-w-0"><h2 className="text-sm font-semibold">{subject.name}</h2><p className="mt-1 text-xs leading-5 text-muted-foreground">{subject.units.length} units · {subject.units.reduce((count, unit) => count + unit.subtopics.length, 0)} topics</p></div></Link>)}</div>
+      <div className="mb-4 flex flex-col gap-2 sm:mb-5 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs text-muted-foreground">{search ? `${filtered.length} of ${subjects.length} subjects` : `${subjects.length} subjects · ${unitCount} units`}</p>
+        <label className="flex min-h-12 w-full items-center gap-3 rounded-full bg-card px-4 shadow-[var(--shadow-card)] transition-colors focus-within:ring-2 focus-within:ring-primary/20 sm:max-w-sm">
+          <Search className="size-4 shrink-0 text-muted-foreground" />
+          <input className="h-12 min-w-0 flex-1 bg-transparent text-sm outline-none" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Find a subject…" aria-label="Find a subject" />
+          {search && <button type="button" onClick={() => setSearch("")} className="min-h-9 px-1 text-xs font-semibold text-primary">Clear</button>}
+        </label>
+      </div>
+      <div className="grid gap-2.5 sm:grid-cols-2 sm:gap-3">
+        {filtered.map((subject, index) => {
+          const performance = stats?.subjectBreakdown[subject.slug];
+          const topicCount = subject.units.reduce((count, unit) => count + unit.subtopics.length, 0);
+          const detail = `${subject.units.length} units · ${topicCount} topics${performance ? ` · ${performance.total} tried` : ""}`;
+          return <HomeListRow key={subject.id} href={`/subjects/${subject.slug}`} icon={<BookOpen />} colorIndex={index} title={subject.name} detail={detail} progress={performance?.accuracy} />;
+        })}
+      </div>
       {filtered.length === 0 && <AppEmpty title="No matching subjects" description="Try another subject name." action="Clear search" onAction={() => setSearch("")} />}
-      <Link href="/quiz" className="action-secondary mt-6 w-full sm:w-auto">Start practice</Link>
+      <div className="mt-6 border-t pt-4 sm:flex sm:items-center sm:justify-between">
+        <p className="text-sm text-muted-foreground">Ready to test what you know?</p>
+        <Link href="/quiz" className="action-secondary mt-3 w-full sm:mt-0 sm:w-auto">Start practice</Link>
+      </div>
     </>}
   </LearningPage>;
 }

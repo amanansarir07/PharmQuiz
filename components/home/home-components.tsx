@@ -75,6 +75,37 @@ export function HomeListRow({
   );
 }
 
+export function HomeActionRow({
+  icon,
+  title,
+  detail,
+  onClick,
+  tone = "brand",
+}: {
+  icon: ReactNode;
+  title: string;
+  detail: string;
+  onClick: () => void;
+  tone?: "brand" | "success" | "warning" | "danger";
+}) {
+  const toneClasses = {
+    brand: "bg-secondary text-primary",
+    success: "bg-[var(--subject-green-bg)] text-[var(--subject-green-fg)]",
+    warning: "bg-[var(--subject-amber-bg)] text-[var(--subject-amber-fg)]",
+    danger: "bg-destructive/10 text-destructive",
+  };
+
+  return (
+    <button type="button" onClick={onClick} className="flex min-h-[72px] w-full items-center gap-3 rounded-2xl bg-card px-3.5 py-3 text-left shadow-[var(--shadow-card)] transition-transform active:scale-[.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+      <span className={cn("flex size-11 shrink-0 items-center justify-center rounded-2xl [&>svg]:size-5", toneClasses[tone])} aria-hidden="true">{icon}</span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-sm font-bold leading-5">{title}</span>
+        <span className="mt-0.5 block text-xs leading-4 text-muted-foreground">{detail}</span>
+      </span>
+    </button>
+  );
+}
+
 export function HomeStatTile({
   icon,
   value,

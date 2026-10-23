@@ -10,7 +10,11 @@ export function AppMain({ children }: { children: React.ReactNode }) {
   const { isLoading, authRestorationTimedOut } = useAuth();
   const publicPage = pathname === "/" || pathname.startsWith("/auth/");
   const activeQuiz = pathname.startsWith("/quiz/") && pathname.split("/").length === 3;
-  const className = `min-w-0 flex-1 ${publicPage || activeQuiz ? "" : "pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] lg:ml-[244px] lg:pb-0"}`;
+  const quizResults = /^\/quiz\/[^/]+\/results$/.test(pathname);
+  const focusedQuizFlow = activeQuiz || quizResults;
+  const mobileBottomClearance = publicPage || focusedQuizFlow ? "" : "pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))]";
+  const desktopSidebarClearance = publicPage || activeQuiz ? "" : "lg:ml-[244px] lg:pb-0";
+  const className = `min-w-0 flex-1 ${mobileBottomClearance} ${desktopSidebarClearance}`;
 
   // Every in-app route waits for the initial session and profile lookup. This
   // prevents a signed-in student from briefly seeing the guest experience on
