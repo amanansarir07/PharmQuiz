@@ -78,6 +78,7 @@ export function BottomNav() {
             <Link
               key={item.label}
               href={item.href}
+              aria-label={item.label}
               aria-current={isActive ? "page" : undefined}
               className={cn("group relative mx-auto flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-full px-2 py-1 transition-colors select-none app-interactive", isActive ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground active:scale-95")}
             >

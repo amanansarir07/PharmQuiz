@@ -1,6 +1,32 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import {
+  BookOpen,
+  ChevronRight,
+  ClipboardCheck,
+  Dna,
+  FlaskConical,
+  HeartPulse,
+  Leaf,
+  Microscope,
+  Pill,
+  Stethoscope,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
+
+export function getSubjectIcon(slug: string, name: string): ReactNode {
+  const subject = `${slug} ${name}`.toLowerCase();
+  if (subject.includes("pharmacognosy") || subject.includes("medicinal plant")) return <Leaf />;
+  if (subject.includes("pharmacology")) return <Pill />;
+  if (subject.includes("pharmaceutics")) return <FlaskConical />;
+  if (subject.includes("chemistry")) return <FlaskConical />;
+  if (subject.includes("microbiology")) return <Microscope />;
+  if (subject.includes("biochemistry")) return <Dna />;
+  if (subject.includes("therapeutics") || subject.includes("clinical pharmacy")) return <Stethoscope />;
+  if (subject.includes("anatomy") || subject.includes("physiology") || subject.includes("public health")) return <HeartPulse />;
+  if (subject.includes("management")) return <ClipboardCheck />;
+  return <BookOpen />;
+}
 
 export function HeroCard({
   title,
@@ -40,6 +66,8 @@ export function HomeListRow({
   progress,
   colorIndex = 0,
   compact = false,
+  showProgress = false,
+  showChevron = false,
 }: {
   href: string;
   icon: ReactNode;
@@ -48,6 +76,8 @@ export function HomeListRow({
   progress?: number;
   colorIndex?: number;
   compact?: boolean;
+  showProgress?: boolean;
+  showChevron?: boolean;
 }) {
   const colorClasses = [
     "bg-[var(--subject-indigo-bg)] text-[var(--subject-indigo-fg)]",
@@ -66,13 +96,27 @@ export function HomeListRow({
       <span className="min-w-0 flex-1">
         <span className="block truncate text-sm font-bold leading-5">{title}</span>
         <span className="mt-0.5 block truncate text-xs leading-4 text-muted-foreground">{detail}</span>
-        {progress !== undefined && (
+        {progress !== undefined && !showProgress && (
           <span className="mt-2 block h-1 overflow-hidden rounded-full bg-muted" aria-label={`${Math.round(progress)}% progress`}>
             <span className="block h-full rounded-full bg-primary" style={{ width: `${Math.min(100, Math.max(0, progress))}%` }} />
           </span>
         )}
       </span>
-      {progress !== undefined && <span className="text-xs font-bold tabular-nums text-primary">{Math.round(progress)}%</span>}
+      {showProgress && (
+        <span className="flex w-10 shrink-0 flex-col items-center gap-1.5">
+          <span className="text-[10px] font-bold tabular-nums text-muted-foreground">
+            {progress !== undefined ? `${Math.round(progress)}%` : "—"}
+          </span>
+          <span className="block h-1 w-8 overflow-hidden rounded-full bg-muted" aria-hidden="true">
+            {progress !== undefined && (
+              <span className="block h-full rounded-full bg-primary" style={{ width: `${Math.min(100, Math.max(0, progress))}%` }} />
+            )}
+          </span>
+          <span className="sr-only">{progress !== undefined ? `${Math.round(progress)}% practice accuracy` : "No practice yet"}</span>
+        </span>
+      )}
+      {progress !== undefined && !showProgress && <span className="text-xs font-bold tabular-nums text-primary">{Math.round(progress)}%</span>}
+      {showChevron && <ChevronRight className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />}
     </Link>
   );
 }

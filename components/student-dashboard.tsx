@@ -12,7 +12,7 @@ import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { createMistakesSession, getMistakesCount } from "@/lib/mistakes";
 import { LearningPage, LinkRow, PageHeading, SectionHeading, WeeklyProgress } from "@/components/learning-ui";
 import { OnboardingDepartmentModal } from "@/components/onboarding-department-modal";
-import { FeatureCard, HeroCard, HomeListRow, HomeStatTile } from "@/components/home/home-components";
+import { FeatureCard, HeroCard, HomeListRow, HomeStatTile, getSubjectIcon } from "@/components/home/home-components";
 
 export function StudentDashboard() {
   const { user } = useAuth();
@@ -40,9 +40,9 @@ export function StudentDashboard() {
     router.push(sessionId ? `/quiz/${sessionId}` : "/mistakes");
   };
 
-  return <LearningPage className="max-w-[980px] pt-4 lg:max-w-[1120px] lg:pt-5">
+  return <LearningPage className="max-w-[980px] pt-4 pb-[calc(5.75rem+env(safe-area-inset-bottom,0px))] lg:max-w-[1120px] lg:pt-5 lg:pb-12">
     <OnboardingDepartmentModal />
-    <div className="space-y-3 [@media(max-height:820px)]:space-y-2 lg:hidden">
+    <div className="space-y-6 lg:hidden">
       <Link href="/review" className="flex min-h-10 items-center gap-3 rounded-full bg-card px-4 text-sm text-muted-foreground shadow-[var(--shadow-card)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
         <Search className="size-4 shrink-0 text-primary" aria-hidden="true" />
         <span className="flex-1">Find a question or topic</span>
@@ -59,13 +59,16 @@ export function StudentDashboard() {
         <HomeStatTile icon={<ChartNoAxesCombined />} value={stats ? `${stats.accuracy}%` : "—"} label="Accuracy" tone="success" />
         <HomeStatTile icon={<Flame />} value={stats?.currentStreak ?? "—"} label="Day streak" tone="warning" />
       </section>
+      {stats && stats.totalAttempted === 0 && stats.accuracy === 0 && stats.currentStreak === 0 && (
+        <p className="-mt-4 text-xs leading-5 text-muted-foreground">Answer 10 questions to start your streak</p>
+      )}
       <section>
         <SectionHeading title="Your subjects" href="/subjects" linkLabel="See all" />
         <div className="space-y-2">
           {subjects.slice(0, 2).map((subject, index) => {
             const performance = stats?.subjectBreakdown[subject.slug];
             const detail = `${subject.units.length} units${performance ? ` · ${performance.total} questions` : ""}`;
-            return <HomeListRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={<BookOpen />} colorIndex={index} title={subject.name} detail={detail} progress={performance?.accuracy} compact />;
+            return <HomeListRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={getSubjectIcon(subject.slug, subject.name)} colorIndex={index} title={subject.name} detail={detail} progress={performance?.accuracy} showProgress showChevron compact />;
           })}
         </div>
       </section>
