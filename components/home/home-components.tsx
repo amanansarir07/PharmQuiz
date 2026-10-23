@@ -16,13 +16,13 @@ export function HeroCard({
   meta: string;
 }) {
   return (
-    <section className="relative isolate overflow-hidden rounded-[var(--radius-hero)] bg-[linear-gradient(135deg,var(--hero-from),var(--hero-to))] p-5 text-white shadow-[var(--shadow-card)] sm:p-6" aria-label={title}>
+    <section className="relative isolate overflow-hidden rounded-[var(--radius-hero)] bg-[linear-gradient(135deg,var(--hero-from),var(--hero-to))] p-4 text-white shadow-[var(--shadow-card)] [@media(max-height:820px)]:p-3 sm:p-6" aria-label={title}>
       <span className="pointer-events-none absolute -right-8 -top-12 -z-10 size-40 rounded-full bg-white/10" aria-hidden="true" />
       <span className="pointer-events-none absolute -bottom-20 right-20 -z-10 size-40 rounded-full bg-white/[0.08]" aria-hidden="true" />
       <p className="text-xs font-semibold text-white/80">{meta}</p>
-      <h2 className="mt-2 max-w-sm text-xl font-extrabold leading-tight tracking-tight sm:text-2xl">{title}</h2>
-      <p className="mt-1.5 max-w-sm text-sm leading-5 text-white/85">{description}</p>
-      <div className="mt-5 flex flex-wrap items-center gap-3">
+      <h2 className="mt-1 max-w-sm text-xl font-extrabold leading-tight tracking-tight [@media(max-height:820px)]:mt-0 sm:text-2xl">{title}</h2>
+      <p className="mt-1 max-w-sm text-sm leading-5 text-white/85">{description}</p>
+      <div className="mt-4 flex flex-wrap items-center gap-3 [@media(max-height:820px)]:mt-3">
         <Link href={href} className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-bold text-primary transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary">
           {actionLabel}
         </Link>
@@ -39,6 +39,7 @@ export function HomeListRow({
   detail,
   progress,
   colorIndex = 0,
+  compact = false,
 }: {
   href: string;
   icon: ReactNode;
@@ -46,6 +47,7 @@ export function HomeListRow({
   detail: string;
   progress?: number;
   colorIndex?: number;
+  compact?: boolean;
 }) {
   const colorClasses = [
     "bg-[var(--subject-indigo-bg)] text-[var(--subject-indigo-fg)]",
@@ -57,8 +59,8 @@ export function HomeListRow({
   ];
 
   return (
-    <Link href={href} className="flex min-h-[72px] items-center gap-3 rounded-2xl bg-card px-3.5 py-3 shadow-[var(--shadow-card)] transition-transform active:scale-[.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-      <span className={cn("flex size-12 shrink-0 items-center justify-center rounded-2xl [&>svg]:size-5", colorClasses[colorIndex % colorClasses.length])} aria-hidden="true">
+    <Link href={href} className={cn("flex items-center gap-3 rounded-2xl bg-card shadow-[var(--shadow-card)] transition-transform active:scale-[.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", compact ? "min-h-16 px-3 py-2.5 [@media(max-height:820px)]:min-h-[60px] [@media(max-height:820px)]:py-2" : "min-h-[72px] px-3.5 py-3")}>
+      <span className={cn("flex shrink-0 items-center justify-center rounded-2xl [&>svg]:size-5", compact ? "size-10" : "size-12", colorClasses[colorIndex % colorClasses.length])} aria-hidden="true">
         {icon}
       </span>
       <span className="min-w-0 flex-1">
@@ -124,8 +126,8 @@ export function HomeStatTile({
   };
 
   return (
-    <div className="min-w-0 rounded-2xl bg-card px-3 py-3.5 shadow-[var(--shadow-card)] sm:p-4">
-      <span className={cn("mb-3 inline-flex size-8 items-center justify-center rounded-xl [&>svg]:size-4", toneClasses[tone])} aria-hidden="true">{icon}</span>
+    <div className="min-w-0 rounded-2xl bg-card px-3 py-2.5 shadow-[var(--shadow-card)] [@media(max-height:820px)]:py-2 sm:p-4">
+      <span className={cn("mb-2 inline-flex size-7 items-center justify-center rounded-xl [&>svg]:size-4 [@media(max-height:820px)]:mb-1 [@media(max-height:820px)]:size-6", toneClasses[tone])} aria-hidden="true">{icon}</span>
       <p className="truncate text-xl font-extrabold leading-none tracking-tight tabular-nums sm:text-2xl">{value}</p>
       <p className="mt-1.5 truncate text-[11px] font-semibold text-muted-foreground sm:text-xs">{label}</p>
     </div>
@@ -138,18 +140,20 @@ export function FeatureCard({
   title,
   description,
   tone = "brand",
+  compact = false,
 }: {
   href: string;
   icon: ReactNode;
   title: string;
   description: string;
   tone?: "brand" | "danger";
+  compact?: boolean;
 }) {
   return (
-    <Link href={href} className="flex min-h-32 flex-col rounded-2xl bg-card p-3.5 shadow-[var(--shadow-card)] transition-transform active:scale-[.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:p-4">
-      <span className={cn("mb-3 flex size-9 items-center justify-center rounded-xl [&>svg]:size-[18px]", tone === "danger" ? "bg-destructive/10 text-destructive" : "bg-secondary text-primary")} aria-hidden="true">{icon}</span>
-      <span className="text-sm font-bold leading-5">{title}</span>
-      <span className="mt-1 text-xs leading-4 text-muted-foreground">{description}</span>
+    <Link href={href} className={cn("flex flex-col rounded-2xl bg-card shadow-[var(--shadow-card)] transition-transform active:scale-[.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", compact ? "min-h-24 p-3" : "min-h-32 p-3.5 sm:p-4")}>
+      <span className={cn("flex items-center justify-center rounded-xl [&>svg]:size-[18px]", compact ? "mb-2 size-8" : "mb-3 size-9", tone === "danger" ? "bg-destructive/10 text-destructive" : "bg-secondary text-primary")} aria-hidden="true">{icon}</span>
+      <span className={cn("text-sm font-bold", compact ? "leading-4" : "leading-5")}>{title}</span>
+      <span className={cn("mt-1 text-xs leading-4 text-muted-foreground", compact && "line-clamp-1")}>{description}</span>
     </Link>
   );
 }

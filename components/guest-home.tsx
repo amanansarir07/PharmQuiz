@@ -38,9 +38,9 @@ export function GuestHome() {
     return () => { active = false; };
   }, [program.slug, subjects]);
 
-  return <LearningPage className="max-w-[980px] lg:max-w-[1120px]">
-    <div className="space-y-5 lg:hidden">
-      <Link href="/review" className="flex min-h-11 items-center gap-3 rounded-full bg-card px-4 text-sm text-muted-foreground shadow-[var(--shadow-card)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+  return <LearningPage className="max-w-[980px] pt-4 lg:max-w-[1120px] lg:pt-5">
+    <div className="space-y-3 [@media(max-height:820px)]:space-y-2 lg:hidden">
+      <Link href="/review" className="flex min-h-10 items-center gap-3 rounded-full bg-card px-4 text-sm text-muted-foreground shadow-[var(--shadow-card)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
         <Search className="size-4 shrink-0 text-primary" aria-hidden="true" />
         <span className="flex-1">Find a question or topic</span>
       </Link>
@@ -64,15 +64,15 @@ export function GuestHome() {
             const attempted = subjectResults.reduce((total, entry) => total + entry.total, 0);
             const correct = subjectResults.reduce((total, entry) => total + entry.correct, 0);
             const accuracy = attempted ? Math.round((correct / attempted) * 100) : undefined;
-            return <HomeListRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={<BookOpen />} colorIndex={index} title={subject.name} detail={`${subject.units.length} units${attempted ? ` · ${attempted} questions` : ""}`} progress={accuracy} />;
+            return <HomeListRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={<BookOpen />} colorIndex={index} title={subject.name} detail={`${subject.units.length} units${attempted ? ` · ${attempted} questions` : ""}`} progress={accuracy} compact />;
           })}
         </div>
       </section>
       <section>
         <SectionHeading title="Boost your score" />
         <div className="grid grid-cols-2 gap-2.5">
-          <FeatureCard href="/mistakes" icon={<RotateCcw />} title="Mistakes bank" description="Review questions you miss" tone="danger" />
-          <FeatureCard href="/mock-test" icon={<ClipboardCheck />} title="Mock tests" description="Build exam confidence" />
+          <FeatureCard href="/mistakes" icon={<RotateCcw />} title="Mistakes bank" description="Missed questions" tone="danger" compact />
+          <FeatureCard href="/mock-test" icon={<ClipboardCheck />} title="Mock tests" description="Timed exam practice" compact />
         </div>
       </section>
     </div>
