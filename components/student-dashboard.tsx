@@ -62,7 +62,7 @@ export function StudentDashboard() {
       <section>
         <SectionHeading title="Your subjects" href="/subjects" linkLabel="See all" />
         <div className="space-y-2">
-          {subjects.slice(0, 3).map((subject, index) => {
+          {subjects.slice(0, 2).map((subject, index) => {
             const performance = stats?.subjectBreakdown[subject.slug];
             const detail = `${subject.units.length} units${performance ? ` · ${performance.total} questions` : ""}`;
             return <HomeListRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={<BookOpen />} colorIndex={index} title={subject.name} detail={detail} progress={performance?.accuracy} />;

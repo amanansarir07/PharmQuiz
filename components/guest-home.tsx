@@ -59,7 +59,7 @@ export function GuestHome() {
       <section>
         <SectionHeading title="Your subjects" href="/subjects" linkLabel="See all" />
         <div className="space-y-2">
-          {subjects.slice(0, 3).map((subject, index) => {
+          {subjects.slice(0, 2).map((subject, index) => {
             const subjectResults = history?.filter((entry) => entry.subject === subject.slug) ?? [];
             const attempted = subjectResults.reduce((total, entry) => total + entry.total, 0);
             const correct = subjectResults.reduce((total, entry) => total + entry.correct, 0);
