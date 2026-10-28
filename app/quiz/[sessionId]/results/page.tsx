@@ -521,7 +521,7 @@ export default function QuizResultsPage({
                           );
                         })}
                       </div>
-                      <div className="mt-3 rounded-lg bg-blue-50 dark:bg-blue-950 p-3 text-sm text-blue-800 dark:text-blue-300">
+                      <div className="mt-3 rounded-lg bg-secondary p-3 text-sm text-secondary-foreground">
                         💡 <strong>Explanation:</strong> {q.explanation}
                       </div>
                     </div>

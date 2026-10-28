@@ -897,7 +897,7 @@ export default function ActiveQuizPage({
                 </p>
               )}
               {markedForReview.size > 0 && (
-                <p className="text-sm text-blue-600 dark:text-blue-400 mb-4">
+                <p className="mb-4 text-sm text-primary">
                   📌 {markedForReview.size} question(s) marked for review.
                 </p>
               )}

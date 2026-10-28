@@ -15,7 +15,7 @@ Bujh is a learning product for students who need a calm, dependable way to move 
 ## Shared building blocks
 
 - `components/brand.tsx`: code-native Bujh mark and wordmark.
-- `components/learning-ui.tsx`: page heading, section heading, stat tile, subject icon, score ring and linked row.
+- `components/learning-ui.tsx`: page heading, section heading, stat tile, subject icon, score ring, weekly practice activity and linked row.
 - `components/library-nav.tsx`: shared revision-library navigation.
 - `components/app-state.tsx`: loading, empty and error states.
 - `components/ui/dialog.tsx`: centered desktop dialog and mobile bottom sheet.
@@ -25,11 +25,11 @@ Bujh is a learning product for students who need a calm, dependable way to move 
 
 The system is centralized in `app/globals.css`.
 
-- Primary: Bujh blue `#315cf5`, with dark-mode `#8ca6ff`.
-- Surfaces: soft slate workspace background and white cards; navy surfaces in dark mode.
+- Primary: Bujh teal `#0ea5a4`, with dark-mode `#2dd4bf`.
+- Surfaces: soft teal-tinted workspace background and white cards; deep teal surfaces in dark mode.
 - Shape: 12–28px radii by component role.
 - Typography: compact, high-contrast headings and 14–16px reading text.
-- Charts: blue, mint, amber, violet and rose palette in both themes.
+- Charts: teal brand color with semantic green, amber and red accents in both themes.
 
 ## Route coverage
 

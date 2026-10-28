@@ -32,7 +32,7 @@ export default function Image() {
             fontSize: 104,
             fontWeight: 700,
             letterSpacing: "-3px",
-            color: "#c4b5fd",
+            color: "#5eead4",
           }}
         >
           Bujh

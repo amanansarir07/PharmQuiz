@@ -2,19 +2,21 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { BookOpen, ChartNoAxesCombined, ClipboardCheck, Flame, LayoutGrid, RotateCcw, Search, Target } from "lucide-react";
+import { BookOpen, ChartNoAxesCombined, ClipboardCheck, LayoutGrid, RotateCcw, Search, Target } from "lucide-react";
 import { useActiveProgram } from "@/lib/program";
 import { getSubjectsForProgram, getSubjectName } from "@/data/registry";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { LearningPage, LinkRow, PageHeading, SectionHeading, WeeklyProgress } from "@/components/learning-ui";
 import { calculateStats, type UserStats } from "@/lib/stats";
-import { FeatureCard, HeroCard, HomeListRow, HomeStatTile, getSubjectIcon } from "@/components/home/home-components";
+import { getCoveredUnitIds } from "@/lib/storage";
+import { FeatureCard, HeroCard, HomeListRow, HomeStatTile, ProfileCard, RecentQuizList, getSubjectIcon } from "@/components/home/home-components";
 
 export function GuestHome() {
   const { program } = useActiveProgram();
   const subjects = useMemo(() => getSubjectsForProgram(program.slug), [program.slug]);
   const [history, setHistory] = useState<HistoryEntry[] | null>(null);
   const [stats, setStats] = useState<UserStats | null>(null);
+  const [coveredUnits, setCoveredUnits] = useState<Record<string, number>>({});
   const recent = history?.find((entry) =>
     entry.program === program.slug &&
     entry.localSessionId &&
@@ -23,6 +25,9 @@ export function GuestHome() {
 
   useEffect(() => {
     let active = true;
+    void Promise.resolve().then(() => {
+      if (active) setCoveredUnits(Object.fromEntries(subjects.map((subject) => [subject.slug, getCoveredUnitIds(subject.slug)?.size ?? 0])));
+    });
     void getQuizHistory().then((history) => {
       if (!active) return;
       setHistory(history.filter((entry) => entry.program === program.slug));
@@ -51,26 +56,25 @@ export function GuestHome() {
         actionLabel={recent ? "Practice this subject" : "Start practice"}
         meta={recent ? "Continue learning" : "Your next step"}
       />
-      <section className="grid grid-cols-3 gap-2.5" aria-label="Your learning progress">
+      <ProfileCard name="Guest learner" points={stats?.totalScore ?? "—"} rank="—" streak={stats?.currentStreak ?? "—"} guest />
+      <section className="grid grid-cols-2 gap-2.5" aria-label="Your learning progress">
         <HomeStatTile icon={<Target />} value={stats?.totalAttempted ?? "—"} label="Questions" />
         <HomeStatTile icon={<ChartNoAxesCombined />} value={stats ? `${stats.accuracy}%` : "—"} label="Accuracy" tone="success" />
-        <HomeStatTile icon={<Flame />} value={stats?.currentStreak ?? "—"} label="Day streak" tone="warning" />
       </section>
       {stats && stats.totalAttempted === 0 && stats.accuracy === 0 && stats.currentStreak === 0 && (
         <p className="-mt-4 text-xs leading-5 text-muted-foreground">Answer 10 questions to start your streak</p>
       )}
       <section>
         <SectionHeading title="Your subjects" href="/subjects" linkLabel="See all" />
-        <div className="space-y-2">
+        <div className="grid grid-cols-2 gap-3">
           {subjects.slice(0, 2).map((subject, index) => {
             const subjectResults = history?.filter((entry) => entry.subject === subject.slug) ?? [];
             const attempted = subjectResults.reduce((total, entry) => total + entry.total, 0);
-            const correct = subjectResults.reduce((total, entry) => total + entry.correct, 0);
-            const accuracy = attempted ? Math.round((correct / attempted) * 100) : undefined;
-            return <HomeListRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={getSubjectIcon(subject.slug, subject.name)} colorIndex={index} title={subject.name} detail={`${subject.units.length} units${attempted ? ` · ${attempted} questions` : ""}`} progress={accuracy} showProgress showChevron compact />;
+            return <HomeListRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={getSubjectIcon(subject.slug, subject.name)} colorIndex={index} title={subject.name} detail={`${subject.units.length} units${attempted ? ` · ${attempted} questions` : ""}`} unitProgress={{ completed: Math.min(coveredUnits[subject.slug] ?? 0, subject.units.length), total: subject.units.length }} showChevron monochrome compact gridCard />;
           })}
         </div>
       </section>
+      <RecentQuizList entries={history?.filter((entry) => subjects.some((subject) => subject.slug === entry.subject)) ?? null} />
       <section>
         <SectionHeading title="Boost your score" />
         <div className="grid grid-cols-2 gap-2.5">

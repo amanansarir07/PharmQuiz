@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BookOpen, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { useActiveProgram } from "@/lib/program";
 import { useAuth } from "@/lib/auth";
 import { getSubjectsForProgram } from "@/data/registry";
 import { calculateStats, type UserStats } from "@/lib/stats";
 import { AppEmpty } from "@/components/app-state";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
-import { HomeListRow } from "@/components/home/home-components";
+import { getSubjectIcon, HomeListRow } from "@/components/home/home-components";
 
 export function SubjectsScreen() {
   const { program } = useActiveProgram();
@@ -41,12 +41,12 @@ export function SubjectsScreen() {
           {search && <button type="button" onClick={() => setSearch("")} className="min-h-9 px-1 text-xs font-semibold text-primary">Clear</button>}
         </label>
       </div>
-      <div className="grid gap-2.5 sm:grid-cols-2 sm:gap-3">
+      <div className="grid grid-cols-2 gap-3">
         {filtered.map((subject, index) => {
           const performance = stats?.subjectBreakdown[subject.slug];
           const topicCount = subject.units.reduce((count, unit) => count + unit.subtopics.length, 0);
           const detail = `${subject.units.length} units · ${topicCount} topics${performance ? ` · ${performance.total} tried` : ""}`;
-          return <HomeListRow key={subject.id} href={`/subjects/${subject.slug}`} icon={<BookOpen />} colorIndex={index} title={subject.name} detail={detail} progress={performance?.accuracy} />;
+          return <HomeListRow key={subject.id} href={`/subjects/${subject.slug}`} icon={getSubjectIcon(subject.slug, subject.name)} colorIndex={index} title={subject.name} detail={detail} progress={performance?.accuracy} monochrome gridCard />;
         })}
       </div>
       {filtered.length === 0 && <AppEmpty title="No matching subjects" description="Try another subject name." action="Clear search" onAction={() => setSearch("")} />}

@@ -26,8 +26,8 @@ const H = 1350;
 const INK = "#fafafa";
 const MUTED = "#9ca3af";
 const FAINT = "#71717a";
-const ACCENT = "#8b5cf6";
-const ACCENT_LIGHT = "#c4b5fd";
+const ACCENT = "#0ea5a4";
+const ACCENT_LIGHT = "#5eead4";
 const GREEN = "#34d399";
 const RED = "#f87171";
 const RING_TRACK = "#20202b";
@@ -147,10 +147,10 @@ export async function generateShareCard(data: ShareCardData): Promise<string> {
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, W, H);
 
-  // Soft violet glow behind the ring (kept subtle — professional, not neon)
+  // Soft teal glow behind the ring (kept subtle — professional, not neon)
   const glow = ctx.createRadialGradient(centerX, 640, 40, centerX, 640, 560);
-  glow.addColorStop(0, "rgba(139, 92, 246, 0.14)");
-  glow.addColorStop(1, "rgba(139, 92, 246, 0)");
+  glow.addColorStop(0, "rgba(14, 165, 164, 0.14)");
+  glow.addColorStop(1, "rgba(14, 165, 164, 0)");
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, W, H);
 
@@ -291,5 +291,5 @@ export function buildShareMessage(
     data.percentage >= 70
       ? "Acing my exam prep! 🔥"
       : "Practice makes perfect — join me!";
-  return `${head}\n${nudge}\nPractice free → ${origin}/quiz`;
+  return `${head}\n${nudge}\nPractice free at ${origin}/quiz`;
 }

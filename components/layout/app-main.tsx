@@ -23,5 +23,5 @@ export function AppMain({ children }: { children: React.ReactNode }) {
   if (!publicPage && isLoading) return <main id="main-content" className={className}><AppLoading label="Opening your learning space" variant={pathname === "/dashboard" ? "dashboard" : pathname === "/subjects" ? "subjects" : pathname === "/review" ? "questions" : pathname === "/leaderboard" ? "leaderboard" : pathname === "/notes" ? "notes" : "page"} /></main>;
   if (!publicPage && authRestorationTimedOut) return <main id="main-content" className={className}><AppError title="Could not check your session" description="Please check your connection and try again." onRetry={() => window.location.reload()} /></main>;
 
-  return <main id="main-content" className={className}><PageTransition>{children}</PageTransition></main>;
+  return <main id="main-content" data-home-screen={dashboardHome ? "true" : undefined} className={className}><PageTransition>{children}</PageTransition></main>;
 }

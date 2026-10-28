@@ -3,16 +3,18 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BookOpen, ChartNoAxesCombined, ClipboardCheck, Flame, RotateCcw, Search, Target } from "lucide-react";
+import { BookOpen, ChartNoAxesCombined, ClipboardCheck, RotateCcw, Search, Target } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { getSubjectsForProgram, getSubjectName } from "@/data/registry";
 import { calculateStats, type UserStats } from "@/lib/stats";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { createMistakesSession, getMistakesCount } from "@/lib/mistakes";
+import { getCoveredUnitIds } from "@/lib/storage";
+import { getUserLeaderboardPosition, type UserLeaderboardPosition } from "@/lib/leaderboard";
 import { LearningPage, LinkRow, PageHeading, SectionHeading, WeeklyProgress } from "@/components/learning-ui";
 import { OnboardingDepartmentModal } from "@/components/onboarding-department-modal";
-import { FeatureCard, HeroCard, HomeListRow, HomeStatTile, getSubjectIcon } from "@/components/home/home-components";
+import { FeatureCard, HeroCard, HomeListRow, HomeStatTile, ProfileCard, RecentQuizList, getSubjectIcon } from "@/components/home/home-components";
 
 export function StudentDashboard() {
   const { user } = useAuth();
@@ -22,15 +24,27 @@ export function StudentDashboard() {
   const [stats, setStats] = useState<UserStats | null>(null);
   const [history, setHistory] = useState<HistoryEntry[] | null>(null);
   const [mistakes, setMistakes] = useState(0);
+  const [leaderboardPosition, setLeaderboardPosition] = useState<UserLeaderboardPosition | null | undefined>(undefined);
+  const [coveredUnits, setCoveredUnits] = useState<Record<string, number>>({});
 
   useEffect(() => {
     if (!user) return;
     let active = true;
+    void Promise.resolve().then(() => {
+      if (!active) return;
+      setCoveredUnits(Object.fromEntries(subjects.map((subject) => [subject.slug, getCoveredUnitIds(subject.slug)?.size ?? 0])));
+    });
     void Promise.resolve().then(() => { if (active) setMistakes(getMistakesCount(programSlug)); });
     void calculateStats(user.id, programSlug).then((value) => { if (active) setStats(value); }).catch(console.error);
     void getQuizHistory(user.id).then((entries) => { if (active) setHistory(entries.filter((entry) => entry.program === programSlug)); }).catch((error) => { console.error("Could not load dashboard history:", error); if (active) setHistory([]); });
+    void getUserLeaderboardPosition(user.id, "all_time", programSlug).then((position) => {
+      if (active) setLeaderboardPosition(position);
+    }).catch((error) => {
+      console.error("Could not load dashboard leaderboard position:", error);
+      if (active) setLeaderboardPosition(null);
+    });
     return () => { active = false; };
-  }, [user, programSlug]);
+  }, [user, programSlug, subjects]);
 
   const recent = history?.find((entry) => subjects.some((subject) => subject.slug === entry.subject));
   const recentSubject = recent && subjects.find((subject) => subject.slug === recent.subject);
@@ -54,24 +68,30 @@ export function StudentDashboard() {
         actionLabel={recent ? "Practice this subject" : "Start practice"}
         meta={recent ? "Continue learning" : "Your next step"}
       />
-      <section className="grid grid-cols-3 gap-2.5" aria-label="Your learning progress">
+      <ProfileCard
+        name={user?.name?.trim() || "Student"}
+        points={stats?.totalScore ?? "—"}
+        rank={leaderboardPosition === undefined ? "—" : leaderboardPosition?.qualified ? `#${leaderboardPosition.rank}` : "—"}
+        streak={stats?.currentStreak ?? "—"}
+      />
+      <section className="grid grid-cols-2 gap-2.5" aria-label="Your learning progress">
         <HomeStatTile icon={<Target />} value={stats?.totalAttempted ?? "—"} label="Questions" />
         <HomeStatTile icon={<ChartNoAxesCombined />} value={stats ? `${stats.accuracy}%` : "—"} label="Accuracy" tone="success" />
-        <HomeStatTile icon={<Flame />} value={stats?.currentStreak ?? "—"} label="Day streak" tone="warning" />
       </section>
       {stats && stats.totalAttempted === 0 && stats.accuracy === 0 && stats.currentStreak === 0 && (
         <p className="-mt-4 text-xs leading-5 text-muted-foreground">Answer 10 questions to start your streak</p>
       )}
       <section>
         <SectionHeading title="Your subjects" href="/subjects" linkLabel="See all" />
-        <div className="space-y-2">
+        <div className="grid grid-cols-2 gap-3">
           {subjects.slice(0, 2).map((subject, index) => {
             const performance = stats?.subjectBreakdown[subject.slug];
             const detail = `${subject.units.length} units${performance ? ` · ${performance.total} questions` : ""}`;
-            return <HomeListRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={getSubjectIcon(subject.slug, subject.name)} colorIndex={index} title={subject.name} detail={detail} progress={performance?.accuracy} showProgress showChevron compact />;
+            return <HomeListRow key={subject.slug} href={`/subjects/${subject.slug}`} icon={getSubjectIcon(subject.slug, subject.name)} colorIndex={index} title={subject.name} detail={detail} unitProgress={{ completed: Math.min(coveredUnits[subject.slug] ?? 0, subject.units.length), total: subject.units.length }} showChevron monochrome compact gridCard />;
           })}
         </div>
       </section>
+      <RecentQuizList entries={history?.filter((entry) => subjects.some((subject) => subject.slug === entry.subject)) ?? null} />
       <section>
         <SectionHeading title="Boost your score" />
         <div className="grid grid-cols-2 gap-2.5">

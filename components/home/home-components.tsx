@@ -6,6 +6,7 @@ import {
   ClipboardCheck,
   Dna,
   FlaskConical,
+  GraduationCap,
   HeartPulse,
   Leaf,
   Microscope,
@@ -13,6 +14,8 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getSubjectName } from "@/data/registry";
+import type { HistoryEntry } from "@/lib/history";
 
 export function getSubjectIcon(slug: string, name: string): ReactNode {
   const subject = `${slug} ${name}`.toLowerCase();
@@ -42,17 +45,17 @@ export function HeroCard({
   meta: string;
 }) {
   return (
-    <section className="relative isolate overflow-hidden rounded-[var(--radius-hero)] bg-[linear-gradient(135deg,var(--hero-from),var(--hero-to))] p-4 text-white shadow-[var(--shadow-card)] [@media(max-height:820px)]:p-3 sm:p-6" aria-label={title}>
-      <span className="pointer-events-none absolute -right-8 -top-12 -z-10 size-40 rounded-full bg-white/10" aria-hidden="true" />
-      <span className="pointer-events-none absolute -bottom-20 right-20 -z-10 size-40 rounded-full bg-white/[0.08]" aria-hidden="true" />
-      <p className="text-xs font-semibold text-white/80">{meta}</p>
-      <h2 className="mt-1 max-w-sm text-xl font-extrabold leading-tight tracking-tight [@media(max-height:820px)]:mt-0 sm:text-2xl">{title}</h2>
-      <p className="mt-1 max-w-sm text-sm leading-5 text-white/85">{description}</p>
-      <div className="mt-4 flex flex-wrap items-center gap-3 [@media(max-height:820px)]:mt-3">
-        <Link href={href} className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-bold text-primary transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary">
+    <section className="relative isolate flex h-[180px] overflow-hidden rounded-[var(--radius-hero)] bg-[linear-gradient(135deg,var(--hero-from),var(--hero-to))] p-4 text-white shadow-[var(--shadow-card)] sm:p-5" aria-label={title}>
+      <div className="relative z-10 flex w-[64%] flex-col items-start justify-center">
+        <p className="text-[11px] font-semibold text-white/85">{meta}</p>
+        <h2 className="mt-1 line-clamp-2 text-lg font-extrabold leading-tight tracking-tight sm:text-xl">{title}</h2>
+        <p className="mt-1 line-clamp-2 text-xs leading-4 text-white/90 sm:text-sm">{description}</p>
+        <Link href={href} className="mt-3 inline-flex min-h-9 items-center justify-center rounded-full bg-white px-4 text-xs font-bold text-[var(--home-pill-foreground)] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--hero-to)] sm:min-h-10 sm:text-sm">
           {actionLabel}
         </Link>
-        <span className="text-xs font-medium text-white/80">Up to 10 questions</span>
+      </div>
+      <div className="pointer-events-none absolute -bottom-8 -right-5 flex size-40 items-center justify-center rounded-full bg-white/15 sm:-right-2 sm:size-44" aria-hidden="true">
+        <GraduationCap className="size-[120px] -rotate-6 text-white/80" strokeWidth={1.25} />
       </div>
     </section>
   );
@@ -68,6 +71,9 @@ export function HomeListRow({
   compact = false,
   showProgress = false,
   showChevron = false,
+  monochrome = false,
+  unitProgress,
+  gridCard = false,
 }: {
   href: string;
   icon: ReactNode;
@@ -78,6 +84,9 @@ export function HomeListRow({
   compact?: boolean;
   showProgress?: boolean;
   showChevron?: boolean;
+  monochrome?: boolean;
+  unitProgress?: { completed: number; total: number };
+  gridCard?: boolean;
 }) {
   const colorClasses = [
     "bg-[var(--subject-indigo-bg)] text-[var(--subject-indigo-fg)]",
@@ -89,20 +98,31 @@ export function HomeListRow({
   ];
 
   return (
-    <Link href={href} className={cn("flex items-center gap-3 rounded-2xl bg-card shadow-[var(--shadow-card)] transition-transform active:scale-[.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", compact ? "min-h-16 px-3 py-2.5 [@media(max-height:820px)]:min-h-[60px] [@media(max-height:820px)]:py-2" : "min-h-[72px] px-3.5 py-3")}>
-      <span className={cn("flex shrink-0 items-center justify-center rounded-2xl [&>svg]:size-5", compact ? "size-10" : "size-12", colorClasses[colorIndex % colorClasses.length])} aria-hidden="true">
+    <Link href={href} className={cn("bg-card shadow-[var(--shadow-card)] transition-transform active:scale-[.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", gridCard ? "relative flex min-h-[148px] flex-col items-stretch gap-2.5 rounded-[var(--radius-card)] p-3.5" : cn("flex items-center gap-3", compact ? "min-h-[72px] rounded-[var(--radius-card)] px-3 py-2.5" : "min-h-[72px] rounded-2xl px-3.5 py-3"))}>
+      <span className={cn("flex shrink-0 items-center justify-center [&>svg]:size-5", gridCard ? "size-10 rounded-xl" : cn("rounded-2xl", compact ? "size-[52px]" : "size-12"), monochrome ? "bg-[var(--home-brand-50)] text-[var(--home-brand-600)]" : colorClasses[colorIndex % colorClasses.length])} aria-hidden="true">
         {icon}
       </span>
-      <span className="min-w-0 flex-1">
-        <span className="block truncate text-sm font-bold leading-5">{title}</span>
-        <span className="mt-0.5 block truncate text-xs leading-4 text-muted-foreground">{detail}</span>
-        {progress !== undefined && !showProgress && (
-          <span className="mt-2 block h-1 overflow-hidden rounded-full bg-muted" aria-label={`${Math.round(progress)}% progress`}>
-            <span className="block h-full rounded-full bg-primary" style={{ width: `${Math.min(100, Math.max(0, progress))}%` }} />
+      <span className={cn("min-w-0", gridCard ? "w-full flex-1" : "flex-1")}>
+        <span className={cn("block text-sm font-bold leading-5", gridCard ? "line-clamp-2" : "truncate")}>{title}</span>
+        <span className={cn("mt-0.5 block text-xs leading-4 text-muted-foreground", gridCard ? "line-clamp-2" : "truncate")}>{detail}</span>
+        {unitProgress && (
+          <span className="mt-1.5 block">
+            <span className="block text-[10px] font-medium leading-3 text-muted-foreground">{unitProgress.completed}/{unitProgress.total} units</span>
+            <span className="mt-1 block h-1 w-full overflow-hidden rounded-full bg-muted" aria-hidden="true">
+              <span className="block h-full rounded-full bg-primary" style={{ width: `${unitProgress.total ? Math.min(100, Math.max(0, (unitProgress.completed / unitProgress.total) * 100)) : 0}%` }} />
+            </span>
+          </span>
+        )}
+        {progress !== undefined && !showProgress && !unitProgress && (
+          <span className="mt-2 block">
+            {gridCard && <span className="mb-1 block text-right text-[10px] font-semibold tabular-nums text-muted-foreground">{Math.round(progress)}%</span>}
+            <span className="block h-1 overflow-hidden rounded-full bg-muted" aria-label={`${Math.round(progress)}% progress`}>
+              <span className="block h-full rounded-full bg-primary" style={{ width: `${Math.min(100, Math.max(0, progress))}%` }} />
+            </span>
           </span>
         )}
       </span>
-      {showProgress && (
+      {showProgress && !unitProgress && (
         <span className="flex w-10 shrink-0 flex-col items-center gap-1.5">
           <span className="text-[10px] font-bold tabular-nums text-muted-foreground">
             {progress !== undefined ? `${Math.round(progress)}%` : "—"}
@@ -115,9 +135,98 @@ export function HomeListRow({
           <span className="sr-only">{progress !== undefined ? `${Math.round(progress)}% practice accuracy` : "No practice yet"}</span>
         </span>
       )}
-      {progress !== undefined && !showProgress && <span className="text-xs font-bold tabular-nums text-primary">{Math.round(progress)}%</span>}
-      {showChevron && <ChevronRight className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />}
+      {progress !== undefined && !showProgress && !gridCard && <span className="text-xs font-bold tabular-nums text-primary">{Math.round(progress)}%</span>}
+      {showChevron && <ChevronRight className={cn("size-4 shrink-0 text-muted-foreground", gridCard && "absolute right-3.5 top-6")} aria-hidden="true" />}
     </Link>
+  );
+}
+
+export function ProfileCard({
+  name,
+  points,
+  rank,
+  streak,
+  guest = false,
+}: {
+  name: string;
+  points: string | number;
+  rank: string | number;
+  streak: string | number;
+  guest?: boolean;
+}) {
+  return (
+    <section className="rounded-[var(--radius-card)] bg-[linear-gradient(120deg,var(--home-profile-from),var(--home-profile-to))] p-4 text-white shadow-[var(--shadow-card)]" aria-label="Learner profile and progress">
+      <div className="flex items-center gap-3">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/20 text-base font-extrabold ring-1 ring-white/30" aria-hidden="true">
+          {name.trim().charAt(0).toUpperCase() || "B"}
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-sm font-bold">{name}</p>
+          {guest && <p className="mt-0.5 text-xs text-white/80">Sign in to track your rank</p>}
+        </div>
+        {guest && (
+          <Link href="/auth/login" className="inline-flex min-h-9 shrink-0 items-center rounded-full bg-white px-3.5 text-xs font-bold text-[var(--home-pill-foreground)] transition-opacity hover:opacity-90">
+            Sign in
+          </Link>
+        )}
+      </div>
+      <div className="mt-4 grid grid-cols-3 divide-x divide-white/25 border-t border-white/20 pt-3">
+        {[
+          { label: "Points", value: points },
+          { label: "Rank", value: rank },
+          { label: "Streak", value: streak },
+        ].map(({ label, value }) => (
+          <div key={label} className="min-w-0 px-2 first:pl-0 last:pr-0">
+            <p className="truncate text-lg font-extrabold leading-5 tabular-nums">{value}</p>
+            <p className="mt-1 text-[10px] font-semibold text-white/75">{label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function RecentQuizList({ entries }: { entries: HistoryEntry[] | null }) {
+  if (entries === null) {
+    return <section aria-label="Recent quizzes"><p className="text-sm text-muted-foreground">Loading recent quizzes…</p></section>;
+  }
+
+  const recent = entries.slice(0, 3);
+  return (
+    <section aria-label="Recent quizzes">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h2 className="text-base font-bold tracking-tight">Recent quizzes</h2>
+        {recent.length > 0 && <Link href="/history" className="text-xs font-semibold text-primary">View all</Link>}
+      </div>
+      {recent.length === 0 ? (
+        <div className="col-span-full rounded-[var(--radius-card)] bg-card p-4 shadow-[var(--shadow-card)]">
+          <p className="text-sm font-semibold">Your quiz history starts here</p>
+          <p className="mt-1 text-xs leading-5 text-muted-foreground">Finish a practice quiz to see your score and review it here.</p>
+          <Link href="/quiz" className="mt-3 inline-flex min-h-9 items-center rounded-full bg-primary px-4 text-xs font-bold text-primary-foreground">Take your first quiz</Link>
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 gap-3">
+          {recent.map((entry) => {
+            const percentage = entry.total ? Math.round((entry.correct / entry.total) * 100) : 0;
+            const passed = percentage >= 70;
+            const subjectName = getSubjectName(entry.subject);
+            return (
+              <Link key={entry.key} href={entry.localSessionId ? `/quiz/${entry.localSessionId}/results` : "/history"} className="flex min-h-[150px] flex-col items-start gap-2.5 rounded-[var(--radius-card)] bg-card p-3.5 shadow-[var(--shadow-card)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <span className="flex w-full items-center justify-between">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-[var(--home-brand-50)] text-[var(--home-brand-600)] [&>svg]:size-5" aria-hidden="true">{getSubjectIcon(entry.subject, subjectName)}</span>
+                  <span className="text-sm font-extrabold tabular-nums">{entry.correct}/{entry.total}</span>
+                </span>
+                <span className="w-full min-w-0 flex-1">
+                  <span className="block line-clamp-2 text-sm font-bold leading-5">{subjectName}</span>
+                  <span className="mt-0.5 block truncate text-xs text-muted-foreground">{entry.total} questions</span>
+                </span>
+                <span className={cn("rounded-full px-2 py-1 text-[10px] font-bold", passed ? "bg-[var(--success)]/10 text-[var(--success)]" : "bg-[var(--warning)]/15 text-[var(--warning)]")}>{passed ? "Passed" : "Needs work"}</span>
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </section>
   );
 }
 

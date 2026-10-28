@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { getSupabase } from "@/lib/supabase/client";
 import { BujhMark } from "@/components/brand";
-import { Mail, ArrowLeft, CheckCircle } from "lucide-react";
+import { Mail, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -55,7 +55,7 @@ export default function ForgotPasswordPage() {
                 <p className="text-sm text-muted-foreground mt-1">We sent a password reset link to {email}</p>
               </div>
               <Link href="/auth/login">
-                <Button variant="outline" className="w-full"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Login</Button>
+                <Button variant="outline" className="w-full">Back to Login</Button>
               </Link>
             </div>
           ) : (
@@ -69,7 +69,7 @@ export default function ForgotPasswordPage() {
                 </div>
               </div>
               <Button type="submit" className="min-h-11 w-full rounded-xl" disabled={loading}>{loading ? "Sending..." : "Send reset link"}</Button>
-              <div className="text-center"><Link href="/auth/login" className="text-sm text-muted-foreground hover:text-foreground hover:underline"><ArrowLeft className="inline h-3 w-3 mr-1" /> Back to login</Link></div>
+              <div className="text-center"><Link href="/auth/login" className="text-sm text-muted-foreground hover:text-foreground hover:underline">Back to login</Link></div>
             </form>
           )}
         </CardContent>
