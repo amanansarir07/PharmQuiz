@@ -271,7 +271,7 @@ export default function ReviewPage() {
                   {showAnswers.has(q.id) ? "Hide answer" : "Reveal answer"}
                 </Button>
                 {showAnswers.has(q.id) && (
-                  <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-950 p-3 text-sm text-blue-800 dark:text-blue-300">
+                  <div className="mt-4 rounded-lg bg-secondary p-3 text-sm text-secondary-foreground">
                     <strong>Explanation:</strong> {q.explanation}
                   </div>
                 )}

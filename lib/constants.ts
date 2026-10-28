@@ -17,7 +17,7 @@ export const DIFFICULTY_OPTIONS = [
     color: "text-yellow-600 bg-yellow-50",
   },
   { label: "Hard", value: "hard" as const, color: "text-red-600 bg-red-50" },
-  { label: "Mixed", value: "mixed" as const, color: "text-purple-600 bg-purple-50" },
+  { label: "Mixed", value: "mixed" as const, color: "text-primary bg-secondary" },
 ] as const;
 
 export const NAV_LINKS = [

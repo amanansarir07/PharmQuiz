@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { getSubjectName } from "@/data/registry";
 import { getQuizHistory, type HistoryEntry } from "@/lib/history";
 import { useAuth } from "@/lib/auth";
@@ -109,7 +109,7 @@ export default function HistoryPage() {
                       </p>
                     </div>
                     {clickable && (
-                      <Link href={`/quiz/${entry.localSessionId}/results`} className="icon-button shrink-0 text-primary" aria-label={`Review ${subjectLabel} attempt from ${formatDate(entry.completedAt)}`}><ArrowRight className="size-4" /></Link>
+                      <Link href={`/quiz/${entry.localSessionId}/results`} className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-lg px-3 text-sm font-semibold text-primary hover:bg-primary/5" aria-label={`Review ${subjectLabel} attempt from ${formatDate(entry.completedAt)}`}>Review</Link>
                     )}
                   </CardContent>
                 </Card>

@@ -158,7 +158,7 @@ export default function BookmarksPage() {
                     </div>
                     <button type="button" onClick={() => toggleAnswer(q.id)} className="mt-3 inline-flex min-h-11 items-center gap-2 text-xs font-semibold text-primary">{showAnswers.has(q.id) ? <EyeOff className="size-4" /> : <Eye className="size-4" />}{showAnswers.has(q.id) ? "Hide explanation" : "Reveal answer & explanation"}</button>
                     {showAnswers.has(q.id) && (
-                      <div className="mt-4 rounded-lg bg-blue-50 dark:bg-blue-950 p-3 text-sm text-blue-800 dark:text-blue-300">
+                      <div className="mt-4 rounded-lg bg-secondary p-3 text-sm text-secondary-foreground">
                         <strong>Explanation:</strong> {q.explanation}
                       </div>
                     )}

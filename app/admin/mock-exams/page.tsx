@@ -34,7 +34,6 @@ import {
   type MockExam,
 } from "@/lib/mock-exams";
 import {
-  ArrowLeft,
   CalendarClock,
   Loader2,
   Megaphone,
@@ -199,7 +198,6 @@ export default function AdminMockExamsPage() {
         onClick={() => router.push("/mock-test")}
         className="mb-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="h-4 w-4" />
         Back to Mock Test
       </button>
 
@@ -218,7 +216,6 @@ export default function AdminMockExamsPage() {
         </div>
         <Link href="/admin/questions" className="action-secondary">
           Question bank
-          <ArrowLeft className="size-4 rotate-180" />
         </Link>
       </div>
 

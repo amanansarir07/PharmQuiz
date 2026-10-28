@@ -16,7 +16,6 @@ import {
   Clock,
   Sparkles,
   BookOpen,
-  ArrowRight,
   ChevronDown,
   ChevronUp,
   Bell,
@@ -408,7 +407,6 @@ export function CurriculumDevPreview({
               className="gap-2 font-medium"
             >
               Try D.Pharm Year 2 (Live)
-              <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
         </div>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Check, ChevronDown, Eye, EyeOff, GraduationCap, Lock, Mail, Pill, User } from "lucide-react";
+import { BadgeCheck, BookOpen, Check, ChevronDown, Eye, EyeOff, GraduationCap, Lock, Mail, Pill, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -125,7 +125,7 @@ function RegisterForm() {
         <ProgrammeGroup group={programmeGroups[0]} selectedSlug={programSlug} onSelect={chooseProgramme} />
         <button type="button" onClick={() => setShowComingSoon((shown) => !shown)} className="mt-5 flex w-full items-center justify-between rounded-xl border border-dashed px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:bg-muted/50"><span>More programmes <span className="font-normal">- coming soon</span></span><ChevronDown className={cn("size-4 transition-transform", showComingSoon && "rotate-180")} /></button>
         {showComingSoon && <div className="mt-3 space-y-3">{programmeGroups.slice(1).map((group) => <ProgrammeGroup key={group.title} group={group} selectedSlug={programSlug} onSelect={chooseProgramme} compact />)}</div>}
-        <ActionBar><Button type="button" onClick={goToDetails} disabled={!programSlug} className="h-12 w-full sm:w-auto sm:min-w-44">Continue <ArrowRight className="size-4" /></Button></ActionBar>
+        <ActionBar><Button type="button" onClick={goToDetails} disabled={!programSlug} className="h-12 w-full sm:w-auto sm:min-w-44">Continue</Button></ActionBar>
       </section>}
       {step === 2 && <form onSubmit={goToFinish} noValidate>
         <div className="mb-6 flex items-center justify-between gap-3"><div><h2 className="text-xl font-bold tracking-[-.025em]">Your account details</h2><p className="mt-1 text-sm text-muted-foreground">Use an email you can access to keep your progress safe.</p></div><button type="button" onClick={() => setStep(1)} className="text-sm font-semibold text-primary hover:underline">Change programme</button></div>
@@ -136,13 +136,13 @@ function RegisterForm() {
           <Field label="Password" htmlFor="password" icon={Lock}><PasswordInput id="password" value={password} onChange={setPassword} show={showPassword} toggle={() => setShowPassword((shown) => !shown)} placeholder="At least 6 characters" /></Field>
           <Field label="Confirm password" htmlFor="confirmPassword" icon={Lock}><Input id="confirmPassword" type={showPassword ? "text" : "password"} value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} placeholder="Repeat your password" autoComplete="new-password" required minLength={6} /></Field>
         </div>
-        <ActionBar><Button type="button" variant="outline" onClick={() => setStep(1)} className="h-12 px-4"><ArrowLeft className="size-4" /><span className="hidden sm:inline">Back</span></Button><Button type="submit" className="h-12 flex-1 sm:flex-none sm:min-w-44">Continue <ArrowRight className="size-4" /></Button></ActionBar>
+        <ActionBar><Button type="button" variant="outline" onClick={() => setStep(1)} className="h-12 px-4">Back</Button><Button type="submit" className="h-12 flex-1 sm:flex-none sm:min-w-44">Continue</Button></ActionBar>
       </form>}
       {step === 3 && <section aria-labelledby="finish-title">
         <div className="mb-6"><h2 id="finish-title" className="text-xl font-bold tracking-[-.025em]">Ready to begin?</h2><p className="mt-1 text-sm text-muted-foreground">Check your details, then create your Bujh account.</p></div>
         {selectedProgram && <SelectedProgramme program={selectedProgram} />}
         <dl className="mt-4 divide-y rounded-2xl border bg-card px-4"><div className="flex items-center justify-between gap-4 py-4"><dt className="text-sm text-muted-foreground">Name</dt><dd className="text-sm font-semibold">{name}</dd></div><div className="flex items-center justify-between gap-4 py-4"><dt className="text-sm text-muted-foreground">Email</dt><dd className="truncate text-sm font-semibold">{email}</dd></div></dl>
-        <ActionBar><div className="w-full space-y-3 sm:w-auto"><Button type="button" onClick={createAccount} disabled={loading} className="h-12 w-full sm:min-w-52">{loading ? "Creating account..." : "Create account"}<ArrowRight className="size-4" /></Button><div className="flex items-center gap-3 text-xs text-muted-foreground before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">or</div><Button type="button" variant="outline" onClick={google} disabled={loading} className="h-12 w-full sm:min-w-52"><GoogleIcon />Continue with Google</Button><Button type="button" variant="ghost" onClick={() => setStep(2)} className="h-10 w-full text-muted-foreground"><ArrowLeft className="size-4" />Edit details</Button></div></ActionBar>
+        <ActionBar><div className="w-full space-y-3 sm:w-auto"><Button type="button" onClick={createAccount} disabled={loading} className="h-12 w-full sm:min-w-52">{loading ? "Creating account..." : "Create account"}</Button><div className="flex items-center gap-3 text-xs text-muted-foreground before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">or</div><Button type="button" variant="outline" onClick={google} disabled={loading} className="h-12 w-full sm:min-w-52"><GoogleIcon />Continue with Google</Button><Button type="button" variant="ghost" onClick={() => setStep(2)} className="h-10 w-full text-muted-foreground">Edit details</Button></div></ActionBar>
       </section>}
       <p className="mt-8 text-center text-sm text-muted-foreground">Already have an account? <Link href="/auth/login" className="font-semibold text-primary hover:underline">Sign in</Link></p>
     </section>

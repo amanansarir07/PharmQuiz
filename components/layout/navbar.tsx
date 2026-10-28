@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { ArrowRight, BookOpen, ChevronLeft, ClipboardCheck, House, LayoutGrid, Moon, Search, Settings, Sun, Target, UserRound, ChartNoAxesCombined, RotateCcw, ShieldCheck } from "lucide-react";
+import { BookOpen, ChevronLeft, ClipboardCheck, House, LayoutGrid, Moon, Search, Settings, Sun, Target, UserRound, ChartNoAxesCombined, RotateCcw, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { cn } from "@/lib/utils";
@@ -28,7 +29,9 @@ export function Navbar() {
   const { user, isAdmin, isLoading } = useAuth();
   const { resolvedTheme, setTheme } = useTheme();
   const { program } = useActiveProgram();
+  const [themeReady, setThemeReady] = useState(false);
   const publicPage = pathname === "/";
+  const dashboardHome = pathname === "/dashboard";
   const activeQuiz = /^\/quiz\/[^/]+$/.test(pathname);
   const adminGroup = { label: "Administration", items: [
     { href: "/admin/questions", label: "Question imports", icon: ShieldCheck },
@@ -40,11 +43,17 @@ export function Navbar() {
   const subpage = pathname.startsWith("/subjects/") || pathname.startsWith("/programs/") || ["/notes", "/bookmarks", "/mistakes", "/profile", "/settings", "/history", "/review"].includes(pathname);
   const backHref = pathname.startsWith("/subjects/") ? "/subjects" : pathname.startsWith("/programs/") ? "/programs" : "/more";
 
+  const themeButton = <button type="button" onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} className="icon-button" aria-label="Switch colour theme"><Sun className="size-[18px] dark:hidden" /><Moon className="hidden size-[18px] dark:block" /></button>;
+  const firstName = user?.name?.trim().split(/\s+/)[0];
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setThemeReady(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   if (activeQuiz || pathname.startsWith("/auth/")) return null;
 
-  const themeButton = <button type="button" onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} className="icon-button" aria-label="Switch colour theme"><Sun className="size-[18px] dark:hidden" /><Moon className="hidden size-[18px] dark:block" /></button>;
-
-  if (publicPage) return <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-xl"><div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-8"><Link href="/" aria-label="Bujh home"><Brand compact /></Link><nav className="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Explore Bujh"><Link href="/programs">Programmes</Link><Link href="/dashboard">Explore the app</Link><a href="#how-it-works">How it works</a></nav><div className="flex items-center gap-2">{themeButton}<Link href="/auth/login" className="hidden px-3 text-sm font-semibold sm:block">Log in</Link><Link href="/auth/register" className="action-primary min-h-10 px-4 text-xs sm:text-sm">Get started <ArrowRight className="size-4" /></Link></div></div></header>;
+  if (publicPage) return <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-xl"><div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-8"><Link href="/" aria-label="Bujh home"><Brand compact /></Link><nav className="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Explore Bujh"><Link href="/programs">Programmes</Link><Link href="/dashboard">Explore the app</Link><a href="#how-it-works">How it works</a></nav><div className="flex items-center gap-2">{themeButton}<Link href="/auth/login" className="hidden px-3 text-sm font-semibold sm:block">Log in</Link><Link href="/auth/register" className="action-primary min-h-10 px-4 text-xs sm:text-sm">Get started</Link></div></div></header>;
 
   return <>
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-[244px] flex-col border-r border-border/80 bg-sidebar lg:flex">
@@ -59,9 +68,31 @@ export function Navbar() {
     <header className="sticky top-0 z-30 border-b border-border/70 bg-background/90 backdrop-blur-xl lg:ml-[244px]">
       <div className="flex h-16 items-center justify-between gap-3 px-4 sm:px-7 lg:h-[76px] lg:px-9">
         <div className="hidden lg:block"><p className="text-[11px] text-muted-foreground">Your learning workspace</p><p className="mt-0.5 text-sm font-semibold">{title}</p></div>
-        <div className="lg:hidden">{subpage ? <Link href={backHref} className="icon-button" aria-label="Go back"><ChevronLeft className="size-5" /></Link> : <Link href="/dashboard"><Brand compact /></Link>}</div>
+        <div className="flex min-w-0 items-center gap-2 lg:hidden">
+          {dashboardHome ? (
+            <div className="min-w-0">
+              <p className="truncate text-[11px] font-semibold text-muted-foreground">{program.shortLabel} · Study home</p>
+              <p className="truncate text-sm font-extrabold leading-5">{user ? `Good morning, ${firstName || "Student"}` : "Welcome back"}</p>
+            </div>
+          ) : (
+            <>
+              {subpage ? <Link href={backHref} className="icon-button -ml-2" aria-label="Go back"><ChevronLeft className="size-5" /></Link> : <Link href="/dashboard" aria-label="Bujh overview"><Brand compact /></Link>}
+              {subpage && <span className="max-w-[10rem] truncate text-sm font-semibold">{title}</span>}
+            </>
+          )}
+        </div>
         <span className="max-w-[142px] truncate text-xs font-semibold text-muted-foreground lg:hidden">{program.shortLabel}</span>
-        <div className="flex items-center gap-2 sm:gap-3"><Link href="/review" className="hidden min-h-10 items-center gap-3 rounded-xl border bg-card px-4 text-xs text-muted-foreground lg:flex"><Search className="size-4" />Find a question</Link>{themeButton}<Link href={user ? "/profile" : "/auth/login"} aria-label={user ? "My profile" : "Log in"} className="hidden size-9 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-xs font-bold text-primary sm:flex">{user?.name?.slice(0, 2).toUpperCase() || <UserRound className="size-4" />}</Link></div>
+        <div className={cn("flex items-center gap-2 sm:gap-3", dashboardHome && "hidden lg:flex")}><Link href="/review" className="hidden min-h-10 items-center gap-3 rounded-xl bg-card px-4 text-xs text-muted-foreground shadow-[var(--shadow-card)] lg:flex"><Search className="size-4" />Find a question</Link>{themeButton}<Link href={user ? "/profile" : "/auth/login"} aria-label={user ? "My profile" : "Log in"} className="hidden size-9 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground sm:flex">{user?.name?.slice(0, 2).toUpperCase() || <UserRound className="size-4" />}</Link></div>
+        {dashboardHome && <details className="relative lg:hidden">
+          <summary aria-label="Open profile menu" className="flex size-10 list-none items-center justify-center rounded-full bg-secondary text-sm font-extrabold text-secondary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+            {user?.name?.slice(0, 2).toUpperCase() || <UserRound className="size-[18px]" />}
+          </summary>
+          <div className="absolute right-0 top-12 z-50 w-60 rounded-2xl bg-popover p-2 text-popover-foreground shadow-[var(--shadow-floating)] ring-1 ring-border/50">
+            <Link href={user ? "/profile" : "/auth/login"} className="block rounded-xl px-3 py-2.5 text-sm font-semibold hover:bg-muted">{user?.name || "Guest learner"}<span className="mt-0.5 block text-xs font-medium text-muted-foreground">{user ? "View profile" : "Sign in to save progress"}</span></Link>
+            <Link href="/settings" className="block rounded-xl px-3 py-2.5 text-sm font-semibold hover:bg-muted">Settings</Link>
+            <button type="button" onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} className="flex min-h-10 w-full items-center justify-between rounded-xl px-3 text-sm font-semibold hover:bg-muted"><span>Appearance</span>{themeReady && (resolvedTheme === "dark" ? <Moon className="size-4" /> : <Sun className="size-4" />)}</button>
+          </div>
+        </details>}
       </div>
     </header>
   </>;

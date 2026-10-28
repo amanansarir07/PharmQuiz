@@ -21,7 +21,6 @@ import { ProgrammeIcon } from "@/components/programme-icon";
 import {
   Award,
   BookOpen,
-  ChevronLeft,
   Clock,
   GraduationCap,
 } from "lucide-react";
@@ -64,7 +63,7 @@ export default async function ProgramPage({
 
   if (program.slug === "c-pharm") {
     return <LearningPage className="max-w-3xl">
-      <Link href="/programs" className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"><ChevronLeft className="size-4" /> All programmes</Link>
+      <Link href="/programs" className="mb-6 inline-flex min-h-10 items-center text-sm text-muted-foreground hover:text-foreground">All programmes</Link>
       <div className="rounded-2xl border bg-card p-5 sm:p-7">
         <p className="text-xs font-bold uppercase tracking-wider text-primary">Nepal Pharmacy Council Â· Past questions</p>
         <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Pharmacy Assistant Registration Exam</h1>
@@ -124,9 +123,8 @@ export default async function ProgramPage({
       />
       <Link
         href="/programs"
-        className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+        className="mb-6 inline-flex min-h-10 items-center text-sm text-muted-foreground hover:text-foreground"
       >
-        <ChevronLeft className="h-4 w-4" />
         All Programs
       </Link>
 

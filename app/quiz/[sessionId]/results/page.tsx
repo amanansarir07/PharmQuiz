@@ -15,6 +15,7 @@ import { getMockSubjectCount, getMockQuestionCount, getMockDurationMinutes } fro
 import { safeSetItem } from "@/lib/storage";
 import { cn } from "@/lib/utils";
 import { ScoreRing } from "@/components/learning-ui";
+import { HomeActionRow, HomeListRow } from "@/components/home/home-components";
 import { AppEmpty, AppLoading } from "@/components/app-state";
 import {
   CheckCircle,
@@ -23,7 +24,6 @@ import {
   RotateCcw,
   BookOpen,
   Share2,
-  ArrowRight,
   Target,
   Timer,
   UserPlus,
@@ -261,8 +261,8 @@ export default function QuizResultsPage({
   return (
     <div className="mx-auto max-w-5xl px-4 pb-12 pt-6 sm:px-7 sm:pt-9">
       {/* Score Card */}
-      <Card className={isMock ? "mb-6 border-0 bg-transparent shadow-none" : "mb-6 overflow-hidden border-primary/20"}>
-        <CardContent className={isMock ? "p-0" : "p-5 sm:p-8"}>
+      <Card className="mb-6 overflow-hidden border-0 bg-card shadow-[var(--shadow-card)]">
+        <CardContent className="p-5 sm:p-8">
           <div className="mb-5 flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
             <ScoreRing value={percentage} label="Accuracy" />
             <div><p className="text-xs font-semibold text-primary">{isMock ? "Mock result" : "Practice result"}</p><h1 className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{percentage >= 80 ? "Great work!" : percentage >= 60 ? "Well done" : "Keep practising"}</h1><p className="mt-1 text-sm text-muted-foreground">Score: {displayScore}/{total}. You answered {answered} of {total} questions.</p></div>
@@ -271,18 +271,18 @@ export default function QuizResultsPage({
           {unattempted > 0 && <p className="mt-1 text-xs font-medium text-muted-foreground">{unattempted} unanswered</p>}
           {isMock && <p className="mt-3 text-xs text-muted-foreground">{results.config?.title ?? "Full mock test"} · {mockSubjectCount} subjects · {results.timeTaken != null ? formatTime(results.timeTaken) : `${total} questions`}</p>}
 
-          <div className="mb-4 mt-5 grid grid-cols-3 divide-x border-y py-3">
-            <div className="text-center">
-              <p className="text-xl font-bold">{correct}</p>
-              <p className="text-xs text-muted-foreground">Correct</p>
+          <div className="mb-4 mt-5 grid grid-cols-3 gap-2">
+            <div className="rounded-2xl bg-[var(--subject-green-bg)] py-3 text-center">
+              <p className="text-xl font-extrabold text-[var(--subject-green-fg)]">{correct}</p>
+              <p className="text-xs font-semibold text-muted-foreground">Correct</p>
             </div>
-            <div className="text-center">
-              <p className="text-xl font-bold">{incorrect}</p>
-              <p className="text-xs text-muted-foreground">Incorrect</p>
+            <div className="rounded-2xl bg-destructive/10 py-3 text-center">
+              <p className="text-xl font-extrabold text-destructive">{incorrect}</p>
+              <p className="text-xs font-semibold text-muted-foreground">Incorrect</p>
             </div>
-            <div className="text-center">
-              <p className="text-xl font-bold">{unattempted}</p>
-              <p className="text-xs text-muted-foreground">Skipped</p>
+            <div className="rounded-2xl bg-[var(--subject-amber-bg)] py-3 text-center">
+              <p className="text-xl font-extrabold text-[var(--subject-amber-fg)]">{unattempted}</p>
+              <p className="text-xs font-semibold text-muted-foreground">Skipped</p>
             </div>
           </div>
 
@@ -344,107 +344,39 @@ export default function QuizResultsPage({
       )}
 
       {/* Personalized Next Practice Card (Feedback Loop) */}
-      {(!isMock || sessionMistakes.length > 0 || weakestUnit) && <Card className="mb-6 border-0 bg-transparent">
-        <CardContent className="p-0">
-          <h2 className="mb-4 text-base font-bold">What to do next</h2>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            {/* Recommendation 1: If user made mistakes */}
-            {sessionMistakes.length > 0 && (
-              <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <Badge variant="secondary" className="text-[11px]">
-                      {sessionMistakes.length} Mistakes
-                    </Badge>
-                    <span className="font-semibold text-sm">Retry Missed Questions</span>
-                  </div>
-                  <p className="mt-1.5 text-xs text-muted-foreground">
-                    Drill only the questions you got wrong to turn weaknesses into strengths before your board exams.
-                  </p>
-                </div>
-                <Button
-                  onClick={handlePracticeSessionMistakes}
-                  size="sm"
-                  className="mt-4 gap-1.5 w-full font-semibold"
-                >
-                  <RotateCcw className="h-3.5 w-3.5" />
-                  Practice {sessionMistakes.length} Missed Questions
-                </Button>
-              </div>
-            )}
-
-            {/* Recommendation 2: If a weak unit is detected */}
-            {weakestUnit && (
-              <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <Badge variant="secondary" className="text-[11px]">
-                      {weakestUnit.accuracy}% Accuracy
-                    </Badge>
-                    <span className="font-semibold text-sm truncate">
-                      Weak Area: {weakestUnit.unitData?.name}
-                    </span>
-                  </div>
-                  <p className="mt-1.5 text-xs text-muted-foreground">
-                    This unit had the lowest score in your test. Practice 10 targeted MCQs to reinforce core concepts.
-                  </p>
-                </div>
-                <Button
-                  onClick={() => handlePracticeWeakUnit(weakestUnit.subjectSlug, weakestUnit.unitId)}
-                  size="sm"
-                  variant="outline"
-                  className="mt-4 gap-1.5 w-full font-semibold border-primary/40 hover:bg-primary/5"
-                >
-                  <Target className="h-3.5 w-3.5 text-primary" />
-                  Practice Unit ({weakestUnit.unitData?.name})
-                </Button>
-              </div>
-            )}
-
-            {/* Recommendation 3: If high score or mock test suggestion */}
-            {!isMock && percentage >= 70 && (
-              <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <Badge variant="secondary" className="text-[11px]">
-                      Exam Ready
-                    </Badge>
-                    <span className="font-semibold text-sm">Full Board Mock Exam</span>
-                  </div>
-                  <p className="mt-1.5 text-xs text-muted-foreground">
-                    Great performance! {user ? "Challenge yourself" : "Create an account to challenge yourself"} with the full {getMockQuestionCount(resolveResultProgram(results.config?.program, results.config?.subject || ""))}-question board paper.
-                  </p>
-                </div>
-                <Link
-                  href={user ? "/mock-test" : `/auth/register?program=${encodeURIComponent(resolveResultProgram(results.config?.program, results.config?.subject || ""))}`}
-                  className={cn(buttonVariants({ variant: "outline", size: "sm" }), "mt-4 gap-1.5 w-full font-semibold")}
-                >
-                  <Timer className="h-3.5 w-3.5 text-emerald-500" />
-                  {user ? "Enter Full Mock Exam" : "Create account for mock exams"}
-                </Link>
-              </div>
-            )}
-
-            {/* Return to Personal Dashboard */}
-            {!isMock && <div className="rounded-xl border bg-card p-4 flex flex-col justify-between">
-              <div>
-                <span className="font-semibold text-sm">{user ? "Your dashboard" : "Keep practising"}</span>
-                <p className="mt-1.5 text-xs text-muted-foreground">
-                  {user ? "Check your progress and explore other subjects." : "Explore subjects and start another short practice session."}
-                </p>
-              </div>
-              <Link
-                href="/dashboard"
-                className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "mt-4 gap-1.5 w-full text-xs font-semibold hover:bg-muted")}
-              >
-                {user ? "Go to dashboard" : "Back to guest home"}
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>}
-          </div>
-        </CardContent>
-      </Card>}
+      {(!isMock || sessionMistakes.length > 0 || weakestUnit) && <section className="mb-6">
+        <h2 className="mb-3 text-base font-extrabold">What to do next</h2>
+        <div className="space-y-2">
+          {sessionMistakes.length > 0 && <HomeActionRow
+            icon={<RotateCcw />}
+            title={`Retry ${sessionMistakes.length} missed ${sessionMistakes.length === 1 ? "question" : "questions"}`}
+            detail="Practise only the answers you got wrong"
+            onClick={handlePracticeSessionMistakes}
+            tone="danger"
+          />}
+          {weakestUnit && <HomeActionRow
+            icon={<Target />}
+            title={weakestUnit.unitData?.name || "Practice your weakest unit"}
+            detail={`${weakestUnit.accuracy}% accuracy · 10 focused questions`}
+            onClick={() => handlePracticeWeakUnit(weakestUnit.subjectSlug, weakestUnit.unitId)}
+            tone="warning"
+          />}
+          {!isMock && percentage >= 70 && <HomeListRow
+            href={user ? "/mock-test" : `/auth/register?program=${encodeURIComponent(resolveResultProgram(results.config?.program, results.config?.subject || ""))}`}
+            icon={<Timer />}
+            title="Try a full board mock"
+            detail={user ? `${getMockQuestionCount(resolveResultProgram(results.config?.program, results.config?.subject || ""))} questions · timed exam practice` : "Create an account to try a full board paper"}
+            colorIndex={0}
+          />}
+          {!isMock && <HomeListRow
+            href="/dashboard"
+            icon={<BookOpen />}
+            title={user ? "Your dashboard" : "Keep practising"}
+            detail={user ? "Check progress and explore other subjects" : "Explore subjects and start another short session"}
+            colorIndex={5}
+          />}
+        </div>
+      </section>}
 
       {/* Action Buttons */}
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -589,7 +521,7 @@ export default function QuizResultsPage({
                           );
                         })}
                       </div>
-                      <div className="mt-3 rounded-lg bg-blue-50 dark:bg-blue-950 p-3 text-sm text-blue-800 dark:text-blue-300">
+                      <div className="mt-3 rounded-lg bg-secondary p-3 text-sm text-secondary-foreground">
                         💡 <strong>Explanation:</strong> {q.explanation}
                       </div>
                     </div>

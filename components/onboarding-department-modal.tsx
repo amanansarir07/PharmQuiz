@@ -15,7 +15,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, CheckCircle2, Clock, ArrowRight } from "lucide-react";
+import { GraduationCap, CheckCircle2, Clock } from "lucide-react";
 
 const ONBOARDING_DISMISSED_KEY = "bujh-onboarding-dept-dismissed";
 
@@ -143,7 +143,6 @@ export function OnboardingDepartmentModal() {
               className="gap-2 bg-primary font-semibold"
             >
               <span>Confirm &amp; Continue</span>
-              <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
         </div>

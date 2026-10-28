@@ -564,13 +564,13 @@ export default function ActiveQuizPage({
       )}
 
       {/* Top Bar */}
-      <div className="sticky top-0 z-30 -mx-4 mb-4 flex items-center justify-between gap-2 border-b bg-background/95 px-4 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/80 sm:static sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-0">
+      <div className="sticky top-0 z-30 -mx-4 mb-4 flex items-center justify-between gap-2 bg-background/95 px-4 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/80 sm:static sm:mx-0 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-0">
         <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
           <Button
             variant="ghost"
             size="sm"
             onClick={() => setShowExitConfirm(true)}
-            className="text-xs text-muted-foreground hover:text-foreground -ml-2 gap-1"
+            className="min-h-10 text-xs text-muted-foreground hover:text-foreground -ml-2 gap-1"
           >
             <ChevronLeft className="h-4 w-4" />
             Exit
@@ -600,7 +600,7 @@ export default function ActiveQuizPage({
           <Button
             variant="outline"
             size="sm"
-            aria-label="Open question navigator" className="lg:hidden text-xs"
+            aria-label="Open question navigator" className="min-h-10 lg:hidden text-xs"
             onClick={() => setShowPalette((s) => !s)}
           >
             <LayoutGrid className="mr-1 h-3.5 w-3.5" />
@@ -609,7 +609,7 @@ export default function ActiveQuizPage({
           <Button
             size="sm"
             variant="default"
-            aria-label="Finish and submit session" className="text-xs font-semibold"
+            aria-label="Finish and submit session" className="min-h-10 text-xs font-semibold"
             onClick={() => setShowSubmitConfirm(true)}
           >
             <Send className="hidden h-3.5 w-3.5 sm:mr-1.5 sm:block" />
@@ -632,7 +632,7 @@ export default function ActiveQuizPage({
       <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
         {/* Question Area */}
         <div>
-          <Card className={isMock ? "overflow-hidden border-border/60 sm:border-t-4 sm:border-t-slate-700 dark:sm:border-t-slate-400" : "overflow-hidden border-border/60 sm:border-t-4 sm:border-t-primary"}>
+          <Card className={isMock ? "overflow-hidden border-0 bg-card shadow-[var(--shadow-card)] sm:border-t-4 sm:border-t-slate-700 dark:sm:border-t-slate-400" : "overflow-hidden border-0 bg-card shadow-[var(--shadow-card)] sm:border-t-4 sm:border-t-primary"}>
             <CardContent className="p-4 sm:p-6">
               <p className="mb-4 text-[10px] font-bold uppercase tracking-[.15em] text-muted-foreground">{isMock ? "Exam question" : quizConfig?.revisionMode ? "Learn as you practise" : "Choose one answer"}</p>
               <p className="text-lg font-semibold leading-8 tracking-tight sm:text-xl sm:leading-9">
@@ -646,18 +646,18 @@ export default function ActiveQuizPage({
                     aria-pressed={answers[currentIndex] === i}
                     aria-label={`Option ${String.fromCharCode(65 + i)}: ${option}`}
                     onClick={() => handleAnswer(i)}
-                    className={`flex min-h-16 w-full items-center rounded-xl border p-3.5 text-left transition-all active:scale-[0.99] sm:p-4 ${
+                    className={`flex min-h-16 w-full items-center rounded-2xl p-3.5 text-left transition-all active:scale-[0.99] sm:p-4 ${
                       answers[currentIndex] === i
-                        ? "border-primary bg-primary/5 ring-2 ring-primary/20"
-                        : "hover:bg-muted/70"
+                        ? "bg-secondary ring-2 ring-primary/35"
+                        : "bg-muted/60 hover:bg-muted"
                     }`}
                   >
                     <div className="flex w-full items-center gap-3">
                       <span
-                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-sm font-semibold ${
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
                           answers[currentIndex] === i
-                            ? "border-primary bg-primary text-primary-foreground"
-                            : "bg-muted/40 text-muted-foreground"
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-card text-muted-foreground"
                         }`}
                       >
                         {String.fromCharCode(65 + i)}
@@ -696,8 +696,8 @@ export default function ActiveQuizPage({
                   </div>
                 </div>
               ) : (
-                <div className="mt-6 rounded-xl bg-muted/40 p-3.5 text-xs text-muted-foreground flex items-center gap-2">
-                  <Lightbulb className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
+                <div className="mt-6 flex items-start gap-2 border-t pt-3 text-xs leading-5 text-muted-foreground">
+                  <Lightbulb className="mt-0.5 h-3.5 w-3.5 shrink-0" />
                   <span>{quizConfig?.revisionMode ? "Select an option to read the explanation." : "Detailed explanations will unlock on the submission results screen."}</span>
                 </div>
               )}
@@ -705,7 +705,7 @@ export default function ActiveQuizPage({
           </Card>
 
           {/* Navigation Controls: Sticky bottom bar on mobile, static on desktop */}
-          <div className="fixed inset-x-0 bottom-0 z-30 border-t bg-background/98 p-3.5 pb-[calc(.875rem+env(safe-area-inset-bottom,0px))] shadow-sm lg:static lg:mt-6 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
+          <div className="fixed inset-x-3 bottom-[calc(.75rem+env(safe-area-inset-bottom,0px))] z-30 rounded-[var(--radius-card)] bg-card/95 p-3 shadow-[var(--shadow-floating)] ring-1 ring-border/50 backdrop-blur-xl lg:static lg:mt-6 lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none lg:ring-0 lg:backdrop-blur-none">
             <div className="mb-2 flex items-center justify-center gap-3 text-[11px] text-muted-foreground sm:hidden">
               <span>{questions.length - answeredCount} unanswered</span>
               {markedForReview.size > 0 && (
@@ -718,6 +718,7 @@ export default function ActiveQuizPage({
             <Button
               variant="outline"
               size="sm"
+              className="min-h-11"
               onClick={() => {
                 setShowExplanation(false);
                 setCurrentIndex((i) => Math.max(0, i - 1));
@@ -728,7 +729,7 @@ export default function ActiveQuizPage({
               <span>Previous</span>
             </Button>
             {answers[currentIndex] !== null && (
-              <Button variant="ghost" size="sm" onClick={handleClear} className="text-xs text-muted-foreground" aria-label="Clear selected answer">
+              <Button variant="ghost" size="sm" onClick={handleClear} className="min-h-11 text-xs text-muted-foreground" aria-label="Clear selected answer">
                 <Eraser className="h-3.5 w-3.5 sm:mr-1" />
                 <span className="hidden sm:inline">Clear</span>
               </Button>
@@ -738,7 +739,7 @@ export default function ActiveQuizPage({
               size="sm"
               aria-label={markedForReview.has(currentIndex) ? "Remove review mark" : "Mark for review"}
               onClick={toggleMark}
-              className={markedForReview.has(currentIndex) ? "border-amber-500 text-amber-600" : ""}
+              className={`min-h-11 ${markedForReview.has(currentIndex) ? "border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-300" : ""}`}
             >
               <Flag className="h-3.5 w-3.5 sm:mr-1" />
               <span className="hidden sm:inline">{markedForReview.has(currentIndex) ? "Marked" : "Review"}</span>
@@ -747,7 +748,7 @@ export default function ActiveQuizPage({
               <Button
                 size="sm"
                 onClick={() => setShowSubmitConfirm(true)}
-                className="flex-1 bg-primary font-semibold sm:flex-none"
+                className="min-h-11 flex-1 bg-primary font-semibold sm:flex-none"
               >
                 <Send className="mr-1.5 h-3.5 w-3.5" />
                 Submit
@@ -759,7 +760,7 @@ export default function ActiveQuizPage({
                   setShowExplanation(false);
                   setCurrentIndex((i) => Math.min(questions.length - 1, i + 1));
                 }}
-                className="flex-1 font-semibold sm:flex-none"
+                className="min-h-11 flex-1 font-semibold sm:flex-none"
               >
                 Next
                 <ChevronRight className="ml-1 h-4 w-4" />
@@ -778,9 +779,9 @@ export default function ActiveQuizPage({
                   <div className="grid grid-cols-5 gap-2 sm:grid-cols-8">
                     {questions.map((_, i) => {
                       let colorClass = "bg-muted hover:bg-muted/80";
-                      if (answers[i] !== null) colorClass = "bg-green-500 text-white";
-                      if (markedForReview.has(i)) colorClass = "bg-yellow-500 text-white";
-                      if (answers[i] !== null && markedForReview.has(i)) colorClass = "bg-blue-500 text-white";
+                      if (answers[i] !== null) colorClass = "bg-primary text-primary-foreground hover:brightness-110";
+                      if (markedForReview.has(i)) colorClass = "bg-amber-500 text-white hover:bg-amber-600";
+                      if (answers[i] !== null && markedForReview.has(i)) colorClass = "border-2 border-amber-500 bg-primary text-primary-foreground hover:brightness-110";
                       return (
                         <button
                           key={i}
@@ -802,15 +803,15 @@ export default function ActiveQuizPage({
                   </div>
                   <div className="mt-4 space-y-2 text-xs text-muted-foreground">
                     <div className="flex items-center gap-2">
-                      <span className="h-3 w-3 rounded bg-green-500" />
+                      <span className="h-3 w-3 rounded bg-primary" />
                       Answered ({answeredCount})
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="h-3 w-3 rounded bg-blue-500" />
+                      <span className="h-3 w-3 rounded border-2 border-amber-500 bg-primary" />
                       Answered &amp; marked ({answeredMarkedCount})
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="h-3 w-3 rounded bg-yellow-500" />
+                      <span className="h-3 w-3 rounded bg-amber-500" />
                       Marked for review ({markedOnlyCount})
                     </div>
                     <div className="flex items-center gap-2">
@@ -830,9 +831,9 @@ export default function ActiveQuizPage({
               <div className="grid grid-cols-5 gap-2">
                 {questions.map((_, i) => {
                   let colorClass = "bg-muted hover:bg-muted/80";
-                  if (answers[i] !== null) colorClass = "bg-green-500 text-white";
-                  if (markedForReview.has(i)) colorClass = "bg-yellow-500 text-white";
-                  if (answers[i] !== null && markedForReview.has(i)) colorClass = "bg-blue-500 text-white";
+                  if (answers[i] !== null) colorClass = "bg-primary text-primary-foreground hover:brightness-110";
+                  if (markedForReview.has(i)) colorClass = "bg-amber-500 text-white hover:bg-amber-600";
+                  if (answers[i] !== null && markedForReview.has(i)) colorClass = "border-2 border-amber-500 bg-primary text-primary-foreground hover:brightness-110";
                   return (
                     <button
                       key={i}
@@ -853,15 +854,15 @@ export default function ActiveQuizPage({
               </div>
               <div className="mt-4 space-y-2 text-xs text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded bg-green-500" />
+                  <span className="h-3 w-3 rounded bg-primary" />
                   Answered ({answeredCount})
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded bg-blue-500" />
+                  <span className="h-3 w-3 rounded border-2 border-amber-500 bg-primary" />
                   Answered &amp; marked ({answeredMarkedCount})
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded bg-yellow-500" />
+                  <span className="h-3 w-3 rounded bg-amber-500" />
                   Marked for review ({markedOnlyCount})
                 </div>
                 <div className="flex items-center gap-2">
@@ -896,7 +897,7 @@ export default function ActiveQuizPage({
                 </p>
               )}
               {markedForReview.size > 0 && (
-                <p className="text-sm text-blue-600 dark:text-blue-400 mb-4">
+                <p className="mb-4 text-sm text-primary">
                   📌 {markedForReview.size} question(s) marked for review.
                 </p>
               )}

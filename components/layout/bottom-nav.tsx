@@ -15,12 +15,9 @@ export function BottomNav() {
   const pathname = usePathname();
 
   // Hide the bottom navigation bar during active quiz sessions to maintain 100% test immersion
-  const isTakingQuiz =
-    pathname.startsWith("/quiz/") &&
-    pathname.split("/").length === 3 &&
-    !pathname.endsWith("/results");
+  const isQuizFlow = /^\/quiz\/[^/]+(?:\/results)?$/.test(pathname);
 
-  if (isTakingQuiz || pathname === "/" || pathname.startsWith("/auth/")) return null;
+  if (isQuizFlow || pathname === "/" || pathname.startsWith("/auth/")) return null;
 
   const NAV_ITEMS = [
     {
@@ -71,10 +68,9 @@ export function BottomNav() {
   return (
     <nav
       aria-label="Mobile Bottom Navigation"
-      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/80 bg-card/95 backdrop-blur-xl lg:hidden"
-      style={{ paddingBottom: "max(0.4rem, env(safe-area-inset-bottom, 0px))" }}
+      className="fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom,0px))] left-3 right-3 z-40 rounded-[20px] bg-card/90 shadow-[var(--shadow-floating)] backdrop-blur-xl ring-1 ring-border/40 lg:hidden"
     >
-      <div className="mx-auto grid h-16 max-w-2xl grid-cols-5 items-center px-2">
+      <div className="mx-auto grid h-16 max-w-2xl grid-cols-5 items-center px-1.5">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isActive = item.match(pathname);
@@ -82,30 +78,18 @@ export function BottomNav() {
             <Link
               key={item.label}
               href={item.href}
+              aria-label={item.label}
               aria-current={isActive ? "page" : undefined}
-              className={cn(
-                "group flex min-h-11 flex-col items-center justify-center gap-1 py-1 text-[10px] font-medium transition-all select-none app-interactive",
-                isActive
-                  ? "text-primary font-semibold"
-                  : "text-muted-foreground hover:text-foreground active:scale-95"
-              )}
+              className={cn("group relative mx-auto flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-full px-2 py-1 transition-colors select-none app-interactive", isActive ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground active:scale-95")}
             >
-              <div
+              <Icon
                 className={cn(
-                  "relative flex h-7 w-12 items-center justify-center rounded-lg transition-colors duration-200",
-                  isActive
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground group-hover:bg-muted/50"
+                  "size-[19px] shrink-0 transition-colors",
+                  isActive ? "stroke-[2.2]" : "stroke-[1.8]"
                 )}
-              >
-                <Icon
-                  className={cn(
-                    "h-5 w-5 transition-transform",
-                    isActive ? "stroke-[2.4]" : "stroke-[1.75]"
-                  )}
-                />
-              </div>
-              <span className="truncate max-w-[56px] text-center leading-none">
+                aria-hidden="true"
+              />
+              <span className={cn("max-w-[56px] truncate text-center text-[10px] font-bold leading-none", !isActive && "sr-only")}>
                 {item.label}
               </span>
             </Link>
