@@ -65,7 +65,6 @@ export default function MorePage() {
             <Link href="/auth/login" className="inline-flex min-h-10 items-center justify-center rounded-xl bg-secondary px-3 text-center text-xs font-semibold text-secondary-foreground">Log in</Link>
           </>
         )}
-        <Link href="/programs" className="col-span-2 inline-flex min-h-10 items-center justify-center rounded-xl bg-muted px-3 text-center text-xs font-semibold text-foreground hover:bg-muted/70">Switch programme</Link>
       </div>
     </section>
     <section className="mt-7">

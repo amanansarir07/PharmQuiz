@@ -31,8 +31,8 @@ export function SubjectsScreen() {
   }, [program.slug, user?.id]);
 
   return <LearningPage>
-    <PageHeading eyebrow={program.shortLabel} title="Subjects" description="Choose a subject to explore its units and topics." action={<Link href="/programs" className="inline-flex min-h-10 items-center text-xs font-semibold text-primary hover:underline">Switch programme</Link>} />
-    {subjects.length === 0 ? <AppEmpty title="No subjects published yet" description="Choose another available programme to begin studying." action="Browse programmes" onAction={() => router.push("/programs")} /> : <>
+    <PageHeading eyebrow={program.shortLabel} title="Subjects" description="Choose a subject to explore its units and topics." />
+    {subjects.length === 0 ? <AppEmpty title="No subjects published yet" description="You can switch to another available programme in Settings." action="Open settings" onAction={() => router.push("/settings")} /> : <>
       <div className="mb-4 flex flex-col gap-2 sm:mb-5 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted-foreground">{search ? `${filtered.length} of ${subjects.length} subjects` : `${subjects.length} subjects · ${unitCount} units`}</p>
         <label className="flex min-h-12 w-full items-center gap-3 rounded-full bg-card px-4 shadow-[var(--shadow-card)] transition-colors focus-within:ring-2 focus-within:ring-primary/20 sm:max-w-sm">

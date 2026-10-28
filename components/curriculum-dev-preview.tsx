@@ -35,17 +35,12 @@ export function CurriculumDevPreview({
   preview,
 }: CurriculumDevPreviewProps) {
   const router = useRouter();
-  const { setProgramSlug } = useActiveProgram();
+  const { isChosen, setProgramSlug } = useActiveProgram();
   const [expandedSubject, setExpandedSubject] = useState<string | null>(
     preview?.subjects[0]?.name || null
   );
   const [notified, setNotified] = useState(false);
   const [activeTab, setActiveTab] = useState<"syllabus" | "pipeline" | "terminal">("syllabus");
-
-  const handleEnrollAsGoal = () => {
-    setProgramSlug(program.slug);
-    router.push("/dashboard");
-  };
 
   const handleLaunchYear3 = () => {
     setProgramSlug("d-pharm-y3");
@@ -127,14 +122,6 @@ export function CurriculumDevPreview({
 
           {/* Quick Actions */}
           <div className="flex flex-col gap-2.5 sm:flex-row lg:flex-col shrink-0">
-            <Button
-              onClick={handleEnrollAsGoal}
-              className="gap-2 bg-primary font-semibold shadow-md"
-            >
-              <GraduationCap className="h-4 w-4" />
-              Set as My Target Curriculum
-            </Button>
-
             <Button
               variant="outline"
               onClick={() => setNotified(true)}
@@ -391,7 +378,7 @@ export function CurriculumDevPreview({
       )}
 
       {/* ================= PRACTICE LIVE CURRICULUMS IN THE MEANTIME ================= */}
-      <div className="rounded-2xl border bg-card p-6 shadow-sm sm:p-8">
+      {!isChosen && <div className="rounded-2xl border bg-card p-6 shadow-sm sm:p-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
@@ -423,7 +410,7 @@ export function CurriculumDevPreview({
             </Button>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 }

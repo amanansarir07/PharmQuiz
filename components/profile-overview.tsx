@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BarChart3, Bookmark, GraduationCap, NotebookPen, RotateCcw, Settings, UserRound } from "lucide-react";
+import { BarChart3, Bookmark, NotebookPen, RotateCcw, Settings, UserRound } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { calculateStats, type UserStats } from "@/lib/stats";
@@ -32,7 +32,6 @@ export function ProfileOverview() {
       <LinkRow href="/bookmarks" icon={<Bookmark className="size-5" />} title="Saved questions" />
       <LinkRow href="/notes" icon={<NotebookPen className="size-5" />} title="Notes" />
       <LinkRow href="/mistakes" icon={<RotateCcw className="size-5" />} title="Mistakes bank" />
-      <LinkRow href="/programs" icon={<GraduationCap className="size-5" />} title="Switch programme" />
       <LinkRow href="/settings" icon={<Settings className="size-5" />} title="Settings" />
     </div>
   </>;

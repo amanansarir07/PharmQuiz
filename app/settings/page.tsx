@@ -4,18 +4,22 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { GraduationCap, LogOut, Monitor, Moon, Sun, UserRound } from "lucide-react";
+import { Check, GraduationCap, LogOut, Monitor, Moon, Sun, UserRound } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { LearningPage, LinkRow, PageHeading, SectionHeading } from "@/components/learning-ui";
 import { toast } from "@/components/ui/toast";
+import { ProgrammeIcon } from "@/components/programme-icon";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
 
 export default function SettingsPage() {
   const { user, logout } = useAuth();
-  const { program } = useActiveProgram();
+  const { program, availablePrograms, setProgramSlug } = useActiveProgram();
   const { theme, setTheme } = useTheme();
   const [themeReady, setThemeReady] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
+  const [programOpen, setProgramOpen] = useState(false);
   useEffect(() => {
     const frame = requestAnimationFrame(() => setThemeReady(true));
     return () => cancelAnimationFrame(frame);
@@ -43,7 +47,13 @@ export default function SettingsPage() {
         <section>
           <SectionHeading title="Programme" />
           <div className="overflow-hidden rounded-2xl border bg-card">
-            <LinkRow href="/programs" icon={<GraduationCap className="size-5" />} title={program.shortLabel} detail="Switch your active programme" />
+            <button type="button" onClick={() => setProgramOpen(true)} className="flex min-h-16 w-full items-center gap-3 px-4 py-3 text-left hover:bg-muted/50">
+              <GraduationCap className="size-5 shrink-0 text-muted-foreground" />
+              <span className="min-w-0">
+                <span className="block text-sm font-semibold">{program.shortLabel}</span>
+                <span className="block text-xs text-muted-foreground">Switch your active programme</span>
+              </span>
+            </button>
           </div>
         </section>
       </div>
@@ -54,5 +64,31 @@ export default function SettingsPage() {
         </div>
       </section>
     </div>
+    <Dialog open={programOpen} onOpenChange={setProgramOpen}>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle>Switch programme</DialogTitle>
+          <DialogDescription>Your subjects and practice sessions follow the selected syllabus.</DialogDescription>
+        </DialogHeader>
+        <div className="space-y-2">
+          {availablePrograms.map((item) => (
+            <button
+              type="button"
+              key={item.slug}
+              aria-current={program.slug === item.slug ? "true" : undefined}
+              onClick={() => {
+                if (item.slug !== program.slug) setProgramSlug(item.slug);
+                setProgramOpen(false);
+              }}
+              className={cn("flex min-h-16 w-full items-center gap-3 rounded-xl border p-3 text-left", program.slug === item.slug ? "border-primary bg-primary/5" : "hover:bg-muted")}
+            >
+              <ProgrammeIcon program={item} className="size-9" iconClassName="size-4" />
+              <span className="min-w-0 flex-1 text-sm font-semibold">{item.name}{item.level && ` · ${item.level}`}</span>
+              {program.slug === item.slug && <Check className="size-5 text-primary" />}
+            </button>
+          ))}
+        </div>
+      </DialogContent>
+    </Dialog>
   </LearningPage>;
 }
