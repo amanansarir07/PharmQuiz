@@ -97,12 +97,14 @@ Bujh is designed around a multi-faculty architecture.
 
 | Programme                | Status         |
 | ------------------------ | -------------- |
-| D. Pharmacy — Year 1     | 🚧 Coming Soon |
+| D. Pharmacy — Year 1     | ✅ Available    |
 | D. Pharmacy — Year 2     | ✅ Available    |
 | D. Pharmacy — Year 3     | ✅ Available    |
 | Pharmacy Assistant Registration Exam (Nepal Pharmacy Council, after D.Pharm) | 📖 Past-question collection; scored practice pending answer verification |
 | PCL Nursing              | 🚧 Coming Soon |
-| Health Assistant (HA)    | 🚧 Coming Soon |
+| Health Assistant (HA) — Year 1 | 🚧 Coming Soon |
+| Health Assistant (HA) — Year 2 | ✅ Available; published question bank |
+| Health Assistant (HA) — Year 3 | ✅ Available; published question bank |
 | Diploma in Physiotherapy | 🚧 Coming Soon |
 | CMLT                     | 🚧 Coming Soon |
 

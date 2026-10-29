@@ -3,6 +3,8 @@ import { DEFAULT_PROGRAM_SLUG, programs } from "@/data/programs";
 import { subjects as dPharmYear1Subjects } from "@/data/programs/d-pharm-y1/subjects";
 import { subjects as dPharmYear2Subjects } from "@/data/programs/d-pharm-y2/subjects";
 import { subjects as dPharmYear3Subjects } from "@/data/programs/d-pharm-y3/subjects";
+import { subjects as healthAssistantYear2Subjects } from "@/data/programs/health-assistant/year-2";
+import { subjects as healthAssistantYear3Subjects } from "@/data/programs/health-assistant/year-3";
 import type { ProgramMeta, SubjectData, UnitData } from "@/data/types";
 
 export { faculties } from "@/data/faculties";
@@ -19,6 +21,8 @@ const CONTENT_BY_PROGRAM: Record<string, SubjectData[]> = {
   "d-pharm-y1": dPharmYear1Subjects,
   "d-pharm-y2": dPharmYear2Subjects,
   "d-pharm-y3": dPharmYear3Subjects,
+  "health-assistant-y2": healthAssistantYear2Subjects,
+  "health-assistant-y3": healthAssistantYear3Subjects,
 };
 
 /** Every subject across every programme that has content, in catalogue order. */

@@ -10,7 +10,7 @@
 - **Purpose**: High-performance MCQ preparation, revision, and mock examination platform for Nepal's technical education boards:
   - **CTEVT** diploma/certificate streams (Diploma in Pharmacy, PCL Nursing, Health Assistant [HA], Physiotherapy, CMLT).
   - **+2** Higher Secondary streams (Science [Bio], Computer Science, Management).
-- **Live curricula**: `d-pharm-y2` and `d-pharm-y3` (Diploma in Pharmacy · Years 2 and 3). Availability comes from `data/programs.ts` (`hasContent`) and `data/registry.ts`; other programmes are marked "Coming Soon".
+- **Live curricula**: `d-pharm-y1`, `d-pharm-y2`, and `d-pharm-y3` (Diploma in Pharmacy), plus `health-assistant-y2` and `health-assistant-y3` (CTEVT PCL in General Medicine / Health Assistant). HA question-bank rows retain legacy unprefixed subject and unit IDs; `lib/bulk-question-import.ts` maps subject slugs and `lib/quiz-loader.ts` maps unit IDs to the canonical HA curriculum. HA Year 1 remains "Coming Soon". Availability comes from `data/programs.ts` (`hasContent`) and `data/registry.ts`.
 - **Post-diploma exam**: The Nepal Pharmacy Council Pharmacy Assistant Name Registration Exam is one exam after the three-year D.Pharm course. Catalogue slug `c-pharm` is retained for link continuity. The supplied Council past-question collection is browsable at `/programs/c-pharm/questions`; it combines pharmacist and assistant questions and has no answer key, so it is deliberately excluded from scored quiz banks until answers are individually verified.
 - **Timezone Standard**: **Asia/Kathmandu (UTC+05:45, no DST)** is the single source of truth for mock exam schedules, daily/weekly leaderboard resets, and timestamp calculations.
 
@@ -35,7 +35,7 @@
 1. **`data/faculties.ts`**: High-level streams (`ctevt`, `plus-two`).
 2. **`data/programs.ts`**: All programmes with `hasContent: boolean`, default `DEFAULT_PROGRAM_SLUG = "d-pharm-y2"`.
 3. **`data/registry.ts`**: Central registry querying faculties, programmes, and subjects.
-4. **`data/programs/<program-slug>/subjects.ts`**: Complete syllabus breakdown for a programme.
+4. **`data/programs/<program-slug>/subjects.ts`** (or year-specific files under the programme folder): Syllabus breakdown for a programme.
 5. **`data/programs/<program-slug>/questions/<subject-slug>.json`**: MCQ question banks.
 
 ### B. Lazy Question Bank Loading (Bundle Optimization)
