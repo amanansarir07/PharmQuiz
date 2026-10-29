@@ -78,6 +78,29 @@ export type PublishedQuestion = {
   tags: string[];
 };
 
+const LEGACY_PUBLISHED_SUBJECT_SLUGS: Record<string, Record<string, string>> = {
+  "health-assistant-y2": {
+    "health-assistant-y2-basic-medical-procedures-first-aid": "basic-medical-procedures-first-aid",
+    "health-assistant-y2-clinical-pathology": "clinical-pathology",
+    "health-assistant-y2-environmental-health": "environmental-health",
+  },
+  "health-assistant-y3": {
+    "health-assistant-y3-epidemiology-community-diagnosis": "epidemiology-community-diagnosis",
+    "health-assistant-y3-health-management": "health-management",
+    "health-assistant-y3-surgery-ii": "surgery-ii",
+  },
+};
+
+export function getLegacyPublishedSubjectSlug(programSlug: string, subjectSlug: string): string {
+  return LEGACY_PUBLISHED_SUBJECT_SLUGS[programSlug]?.[subjectSlug] ?? subjectSlug;
+}
+
+function getCanonicalPublishedSubjectSlug(programSlug: string, subjectSlug: string): string {
+  const mappings = LEGACY_PUBLISHED_SUBJECT_SLUGS[programSlug];
+  if (!mappings) return subjectSlug;
+  return Object.entries(mappings).find(([, legacySlug]) => legacySlug === subjectSlug)?.[0] ?? subjectSlug;
+}
+
 const tidy = (value: unknown) => typeof value === "string" ? value.replace(/\s+/g, " ").trim() : "";
 export const normalizeQuestion = (question: string) => tidy(question).toLowerCase().replace(/[\W_]+/g, " ").trim();
 
@@ -227,7 +250,8 @@ export async function publishQuestionImport(importId: string): Promise<{ inserte
 
 export async function getPublishedQuestions(programSlug: string, subjectSlug: string): Promise<PublishedQuestion[]> {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return [];
-  const { data, error } = await getSupabase().from("published_questions").select("id,unit_id,question_text,options,correct_index,explanation,difficulty,tags").eq("program_slug", getContentSourceProgramSlug(programSlug)).eq("subject_slug", subjectSlug);
+  const subjectSlugs = [...new Set([subjectSlug, getLegacyPublishedSubjectSlug(programSlug, subjectSlug)])];
+  const { data, error } = await getSupabase().from("published_questions").select("id,unit_id,question_text,options,correct_index,explanation,difficulty,tags").eq("program_slug", getContentSourceProgramSlug(programSlug)).in("subject_slug", subjectSlugs);
   if (error) return [];
   return (data ?? []).map((row) => ({ ...row, options: asOptions(row.options), tags: row.tags ?? [] })) as PublishedQuestion[];
 }
@@ -240,7 +264,7 @@ export async function getPublishedSubjectSlugs(programSlug: string): Promise<str
     .select("subject_slug")
     .eq("program_slug", getContentSourceProgramSlug(programSlug));
   if (error) return [];
-  return [...new Set((data ?? []).map((row) => row.subject_slug).filter(Boolean))];
+  return [...new Set((data ?? []).map((row) => getCanonicalPublishedSubjectSlug(programSlug, row.subject_slug)).filter(Boolean))];
 }
 
 /** Count database-published questions without loading their full text. */
@@ -250,5 +274,17 @@ export async function getPublishedQuestionCount(programSlug: string): Promise<nu
     .from("published_questions")
     .select("id", { count: "exact", head: true })
     .eq("program_slug", getContentSourceProgramSlug(programSlug));
+  return error ? 0 : count ?? 0;
+}
+
+/** Count database-published questions for one subject without loading their text. */
+export async function getPublishedSubjectQuestionCount(programSlug: string, subjectSlug: string): Promise<number> {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return 0;
+  const subjectSlugs = [...new Set([subjectSlug, getLegacyPublishedSubjectSlug(programSlug, subjectSlug)])];
+  const { count, error } = await getSupabase()
+    .from("published_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("program_slug", getContentSourceProgramSlug(programSlug))
+    .in("subject_slug", subjectSlugs);
   return error ? 0 : count ?? 0;
 }

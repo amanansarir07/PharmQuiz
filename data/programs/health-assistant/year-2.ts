@@ -1,0 +1,97 @@
+import { haSubject } from "./shared";
+
+/**
+ * CTEVT PCL in General Medicine, third revision (2024), Year II.
+ * https://www.ctevt.org.np/uploads/docs/2024-08-25_CURRICULUM%20for%20General%20Medicine.pdf
+ * Theory units are kept in their published order. Practical work is part of
+ * each subject's total marks, but does not become an MCQ unit.
+ */
+export const subjects = [
+  haSubject(2, "Medicine I and Gynecology", "medicine-i-gynecology", 200, 140, [
+    ["Clinical Methods", 3],
+    ["Hematological and Cardiovascular Conditions", 25],
+    ["Respiratory Disorders", 18],
+    ["Gastrointestinal Disorders", 8],
+    ["Endocrine System Disorders", 7],
+    ["Hepatic Disorders", 9],
+    ["Central Nervous System Disorders", 10],
+    ["Rheumatology", 2],
+    ["Urinary System Disorders", 2],
+    ["Other Disorders", 3],
+    ["Infectious Disorders", 20],
+    ["Gynecological Anatomy and Physiology", 2],
+    ["Gynecological History and Physical Examination", 3],
+    ["Menstruation Disorders", 5],
+    ["Diseases of the Vagina, Vulva and Cervix", 10],
+    ["Disorders of the Uterus, Endometrium, Ovaries and Fallopian Tubes", 4],
+    ["Cancerous Conditions of the Uterus and Ovaries", 2],
+    ["Genital and Pelvic Organ Prolapse", 3],
+    ["Infertility", 4],
+  ]),
+  haSubject(2, "Surgery I", "surgery-i", 200, 105, [
+    ["Introduction to Surgery", 3], ["Wound and Hemorrhage", 4],
+    ["Emergency Treatment", 4], ["Shock", 4],
+    ["Fluid and Electrolyte", 4], ["Surgical Conditions in Children", 6],
+    ["Chest Disorders", 4], ["Abdominal Conditions", 12],
+    ["Rectal and Anal Conditions", 3], ["Genitourinary Conditions", 10],
+    ["Burn and Scald", 3], ["Surgical Breast Diseases", 2],
+    ["Malignant and Benign Disorders", 10], ["Orthopedics and Anesthesia", 10],
+    ["Physiotherapy", 4], ["Antenatal Examination", 6],
+    ["Complications of Pregnancy", 8], ["Normal Labor and Delivery", 4],
+    ["Postpartum Care", 4],
+  ]),
+  haSubject(2, "Basic Medical Procedures and First Aid", "basic-medical-procedures-first-aid", 150, 70, [
+    ["History Taking and Physical Examination", 4],
+    ["Assessment of Vital Signs", 6], ["Infection Prevention", 5],
+    ["Administration of Drugs", 7], ["Invasive Procedures", 6],
+    ["Wound Care", 8], ["Hot and Cold Application", 3],
+    ["First Aid", 30], ["Care of the Dead Body", 1],
+  ]),
+  haSubject(2, "Clinical Pathology", "clinical-pathology", 100, 70, [
+    ["General Introduction to Microbiology", 5],
+    ["Basic Bacteriological Investigations", 5],
+    ["Bacterial Growth and Sterilization", 6], ["Immunology", 5],
+    ["Medical Parasitology", 15], ["Hematology", 9],
+    ["Carbohydrates", 6], ["Proteins", 5], ["Lipids", 5],
+    ["Enzymes", 4], ["Vitamins", 2], ["Hormones", 2],
+    ["Tumor Markers", 1],
+  ]),
+  haSubject(2, "Pharmacology and Pharmacy", "pharmacology-pharmacy", 125, 105, [
+    ["General Pharmacology", 14],
+    ["Drugs Acting on the Autonomic Nervous System", 6],
+    ["Drugs Acting on the Peripheral Nervous System", 2],
+    ["Drugs Acting on the Central Nervous System", 10],
+    ["Drugs Used in the Cardiovascular System", 10],
+    ["Drugs Acting on the Respiratory System", 8],
+    ["Hormones and Related Drugs", 10],
+    ["Drugs Used in the Gastrointestinal System", 6],
+    ["Antimicrobial Drugs", 16],
+    ["Nonsteroidal Anti-inflammatory Drugs", 3],
+    ["Vaccines, Antisera and Immunoglobulin", 5],
+    ["Nutritional Supplements: Vitamins and Minerals", 2],
+    ["Locally Acting Drugs", 4], ["Clinical Pharmacy", 8],
+    ["Drug Regulation", 1],
+  ]),
+  haSubject(2, "Environmental Health", "environmental-health", 125, 105, [
+    ["Environmental Health Concepts", 6], ["Water", 14],
+    ["Waste", 20], ["Food Hygiene", 20], ["Housing", 10],
+    ["Air", 6], ["Noise Pollution", 5], ["Rodentology", 6],
+    ["Entomology", 5], ["Occupational Health", 10],
+  ]),
+  haSubject(2, "Health Education", "health-education", 125, 105, [
+    ["Introduction to Health Education", 18], ["Perception", 3],
+    ["Learning", 8], ["Change Process", 4], ["Motivation", 10],
+    ["Communication", 6], ["Methods of Health Education", 12],
+    ["Media of Health Education", 6],
+    ["Planning of Health Education Programmes", 12],
+    ["Implementation of Health Education Programmes", 4],
+    ["Evaluation of Health Education Programmes", 14],
+    ["Health Promotion", 8],
+  ]),
+  haSubject(2, "Primary Health Care and Family Health", "primary-health-care-family-health", 150, 105, [
+    ["Primary Health Care", 15], ["Nutrition", 20],
+    ["Maternal and Child Health", 10], ["Reproductive Health", 2],
+    ["Immunization", 20], ["Family Planning", 18],
+    ["Demography", 20],
+  ]),
+];

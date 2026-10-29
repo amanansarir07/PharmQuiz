@@ -10,12 +10,13 @@ export const DEFAULT_PROGRAM_SLUG = "d-pharm-y2";
 /**
  * Every programme the college offers, grouped by stream (see `data/faculties.ts`).
  *
- * `hasContent: true` means `data/programs/<slug>/subjects.ts` exists and is
- * wired into `data/registry.ts`. Programmes flagged `false` are scaffolding —
+ * `hasContent: true` means the programme's syllabus modules are wired into
+ * `data/registry.ts`. Programmes flagged `false` are scaffolding —
  * navigation shows them as "coming soon" and they render no subjects.
  *
  * To publish a new programme:
- *   1. Create `data/programs/<slug>/subjects.ts` (+ `questions/*.json`).
+ *   1. Create `data/programs/<slug>/subjects.ts` (or year-specific modules)
+ *      and any local `questions/*.json`.
  *      Prefix its subject slugs with the programme slug to keep them unique.
  *   2. Flip `hasContent` to true here.
  *   3. Register it in `CONTENT_BY_PROGRAM` in `data/registry.ts`.
@@ -134,8 +135,7 @@ export const programs: ProgramMeta[] = [
       "Health assistant programme covering primary health care, health promotion, epidemiology, and basic clinical and diagnostic services.",
     icon: "🌍",
     order: 10,
-    hasContent: true,
-    contentSourceSlug: "d-pharm-y1",
+    hasContent: false,
   },
   {
     id: "program-health-assistant-y2",
@@ -146,10 +146,10 @@ export const programs: ProgramMeta[] = [
     level: "Year 2",
     shortLabel: "HA · Year 2",
     description:
-      "Health assistant programme covering primary health care, health promotion, epidemiology, and basic clinical and diagnostic services.",
+      "Second-year CTEVT PCL in General Medicine curriculum covering medicine, surgery, pathology, pharmacology, environmental health, health education, and family health.",
     icon: "🌍",
     order: 11,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-health-assistant-y3",
@@ -160,10 +160,10 @@ export const programs: ProgramMeta[] = [
     level: "Year 3",
     shortLabel: "HA · Year 3",
     description:
-      "Health assistant programme covering primary health care, health promotion, epidemiology, and basic clinical and diagnostic services.",
+      "Third-year CTEVT PCL in General Medicine curriculum covering pediatrics, psychiatry, dermatology, ENT, dentistry, health management, and community diagnosis.",
     icon: "🌍",
     order: 12,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-d-physiotherapy",
