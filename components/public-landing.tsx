@@ -1,17 +1,14 @@
 import Link from "next/link";
+import { connection } from "next/server";
 import { BookOpen, Check, ClipboardCheck, GraduationCap, RotateCcw, Sparkles, TrendingUp } from "lucide-react";
 import { getPrograms } from "@/data/registry";
-import { loadBank } from "@/lib/content/banks";
+import { getLandingQuestions } from "@/lib/landing-questions";
 import { PracticePreview } from "@/components/practice-preview";
 
 export async function PublicLanding() {
+  await connection();
   const available = getPrograms().filter((program) => program.hasContent);
-  const samples = (await loadBank("pharmacology-i", "d-pharm-y2")).slice(0, 5).map((sample) => ({
-    question: sample.question_text,
-    options: Array.isArray(sample.options) ? sample.options : Object.values(sample.options),
-    correctIndex: sample.correct_index ?? 0,
-    explanation: sample.explanation || "Review the explanation, then continue to the next question.",
-  }));
+  const samples = await getLandingQuestions();
   return <div>
     <section className="relative overflow-hidden"><div className="pointer-events-none absolute -right-32 -top-32 size-[600px] rounded-full bg-primary/[.035]" /><div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-12 sm:px-8 sm:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-20 lg:py-24">
       <div><span className="inline-flex items-center gap-2 rounded-full border bg-card px-3.5 py-2 text-[11px] font-semibold"><span className="size-1.5 rounded-full bg-emerald-500" />Built for the way you learn.</span><h1 className="mt-7 max-w-xl text-[2.75rem] font-bold leading-[1.12] tracking-[-.055em] sm:text-6xl lg:text-[4.25rem]">A little practice.<br /><span className="text-primary">A lot more</span><br />confidence.</h1><p className="mt-6 max-w-md text-base leading-7 text-muted-foreground">Your space to learn, practise and understand. Prepare for CTEVT exams with focused MCQs, clear explanations and progress you can see.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Link href="/auth/register" className="action-primary min-h-13 px-7">Start learning for free</Link><Link href="/dashboard" className="action-secondary min-h-13 px-6">Explore as a guest</Link></div><p className="mt-4 flex items-center gap-2 text-xs text-muted-foreground"><Check className="size-3.5 text-emerald-600" />No card needed. Start with a short practice.</p></div>

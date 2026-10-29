@@ -10,6 +10,7 @@ export type PreviewQuestion = {
   options: string[];
   correctIndex: number;
   explanation: string;
+  subject: string;
 };
 
 export function PracticePreview({ questions }: { questions: PreviewQuestion[] }) {
@@ -24,10 +25,10 @@ export function PracticePreview({ questions }: { questions: PreviewQuestion[] })
 
   if (!question) return null;
 
-  return <div className="relative mx-auto w-full max-w-md">
+  return <div className="relative mx-auto w-full min-w-0 max-w-md">
     <div className="absolute -inset-5 rotate-[-5deg] rounded-[36px] bg-primary/10" />
     <div className="relative rounded-[28px] border border-primary/15 bg-card p-5 shadow-[0_24px_70px_-25px_rgb(15_71_69_/_18%)] sm:p-7">
-      <div className="flex items-center justify-between gap-2"><span className="flex items-center gap-2 text-xs font-semibold text-primary"><Sparkles className="size-4" />Try a question</span><span className="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">Pharmacology</span></div>
+      <div className="flex items-center justify-between gap-2"><span className="flex shrink-0 items-center gap-2 text-xs font-semibold text-primary"><Sparkles className="size-4" />Try a question</span><span title={question.subject} className="max-w-36 truncate rounded-full bg-emerald-500/10 px-2.5 py-1 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">{question.subject}</span></div>
       <div className="mt-5 flex gap-1.5" aria-label={"Question " + (questionIndex + 1) + " of " + questions.length}>{questions.map((_, index) => <span key={index} className={cn("h-1.5 flex-1 rounded-full", index === questionIndex ? "bg-primary" : index < questionIndex ? "bg-primary/45" : "bg-muted")} />)}</div>
       <h2 className="mb-5 mt-6 text-lg font-semibold leading-7 tracking-tight">{question.question}</h2>
       <div className="space-y-2">{question.options.map((option, index) => <button key={questionIndex + "-" + option} type="button" disabled={selected !== null} onClick={() => setSelected(index)} className={cn("flex min-h-12 w-full items-center gap-3 rounded-xl border p-3 text-left text-sm transition-colors", selected !== null && index === question.correctIndex ? "border-emerald-500 bg-emerald-500/10" : selected === index ? "border-rose-400 bg-rose-500/5" : "hover:border-primary/40 hover:bg-primary/5")}><span className="flex size-7 shrink-0 items-center justify-center rounded-lg border bg-card text-xs font-semibold">{selected !== null && index === question.correctIndex ? <Check className="size-4 text-emerald-600" /> : String.fromCharCode(65 + index)}</span>{option}</button>)}</div>
