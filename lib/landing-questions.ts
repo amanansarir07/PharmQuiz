@@ -1,4 +1,4 @@
-import { getSubjectName } from "@/data/registry";
+import { getSubjectName, getSubjectsForProgram } from "@/data/registry";
 import { getBankProgramSlugs, getBankSubjectSlugs, loadBank, type RawBankQuestion } from "@/lib/content/banks";
 import { getSupabase } from "@/lib/supabase/client";
 import type { PreviewQuestion } from "@/components/practice-preview";
@@ -14,7 +14,14 @@ function shuffle<T>(items: T[]): T[] {
   return result;
 }
 
-function preview(question: RawBankQuestion, subjectSlug: string): PreviewQuestion | null {
+function subjectLabel(programSlug: string, subjectSlug: string): string {
+  const matched = getSubjectsForProgram(programSlug).find((subject) =>
+    subject.slug === subjectSlug || subject.slug.endsWith(`-${subjectSlug}`));
+  const label = matched?.name ?? getSubjectName(subjectSlug);
+  return label === subjectSlug ? subjectSlug.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase()) : label;
+}
+
+function preview(question: RawBankQuestion, subjectSlug: string, programSlug: string): PreviewQuestion | null {
   const rawOptions = question.options;
   const options = Array.isArray(rawOptions)
     ? rawOptions
@@ -28,7 +35,7 @@ function preview(question: RawBankQuestion, subjectSlug: string): PreviewQuestio
     options,
     correctIndex,
     explanation: question.explanation,
-    subject: getSubjectName(subjectSlug),
+    subject: subjectLabel(programSlug, subjectSlug),
   };
 }
 
@@ -38,7 +45,7 @@ async function staticSamples(): Promise<PreviewQuestion[]> {
   const sampled = await Promise.all(banks.slice(0, PREVIEW_SIZE).map(async ({ programSlug, subjectSlug }) => {
     const questions = await loadBank(subjectSlug, programSlug);
     for (const question of shuffle(questions)) {
-      const sample = preview(question, subjectSlug);
+      const sample = preview(question, subjectSlug, programSlug);
       if (sample) return sample;
     }
     return null;
@@ -69,7 +76,7 @@ async function publishedSamples(): Promise<PreviewQuestion[]> {
         options: row.options as string[],
         correct_index: row.correct_index,
         explanation: row.explanation,
-      }, subjectSlug);
+      }, subjectSlug, row.program_slug);
       return sample ? [sample] : [];
     });
   } catch {
