@@ -1,0 +1,322 @@
+[
+  {
+    "key": "fundamentals-nursing",
+    "name": "Fundamentals of Nursing",
+    "examMarks": 400,
+    "totalHours": 160,
+    "units": [
+      {
+        "name": "Introduction to Nursing",
+        "hours": 8
+      },
+      {
+        "name": "Introduction to Hospital Nursing",
+        "hours": 10
+      },
+      {
+        "name": "Basic Need of Individual",
+        "hours": 8
+      },
+      {
+        "name": "Nursing Process",
+        "hours": 16
+      },
+      {
+        "name": "Infection Control Measures",
+        "hours": 15
+      },
+      {
+        "name": "Nursing Measures to Assess the Patient",
+        "hours": 18
+      },
+      {
+        "name": "Nursing Measures related to Physical Needs of the Patient",
+        "hours": 10
+      },
+      {
+        "name": "Nursing Measures related to Comfort of the patient",
+        "hours": 10
+      },
+      {
+        "name": "Nursing Measures related to Meeting Nutritional Need of the Patient",
+        "hours": 8
+      },
+      {
+        "name": "Nursing Measures related to Elimination Needs of the patient",
+        "hours": 10
+      },
+      {
+        "name": "Measures to Provide Safety",
+        "hours": 8
+      },
+      {
+        "name": "Dressing and Bandaging",
+        "hours": 5
+      },
+      {
+        "name": "Exercise",
+        "hours": 4
+      },
+      {
+        "name": "Hot and Cold application",
+        "hours": 3
+      },
+      {
+        "name": "Pre and Post-operative Nursing Care of Patient",
+        "hours": 4
+      },
+      {
+        "name": "Pain Management",
+        "hours": 3
+      },
+      {
+        "name": "Client Nurse Interaction",
+        "hours": 4
+      },
+      {
+        "name": "Drug Administration",
+        "hours": 6
+      },
+      {
+        "name": "First Aid Management",
+        "hours": 8
+      },
+      {
+        "name": "Care of Dead Body",
+        "hours": 2
+      }
+    ]
+  },
+  {
+    "key": "community-health-nursing-i",
+    "name": "Community Health Nursing I",
+    "examMarks": 200,
+    "totalHours": 120,
+    "units": [
+      {
+        "name": "Introduction to Health",
+        "hours": 8
+      },
+      {
+        "name": "Primary Health Care",
+        "hours": 6
+      },
+      {
+        "name": "Nursing Practice in the community",
+        "hours": 2
+      },
+      {
+        "name": "Communications",
+        "hours": 8
+      },
+      {
+        "name": "Introduction to Epidemiology",
+        "hours": 10
+      },
+      {
+        "name": "Health indicators and statistics",
+        "hours": 8
+      },
+      {
+        "name": "Community Health Diagnosis",
+        "hours": 10
+      },
+      {
+        "name": "Nutrition",
+        "hours": 10
+      },
+      {
+        "name": "Health Education",
+        "hours": 8
+      },
+      {
+        "name": "Family Planning",
+        "hours": 10
+      },
+      {
+        "name": "Immunization",
+        "hours": 6
+      },
+      {
+        "name": "Environmental Health and Sanitation",
+        "hours": 16
+      },
+      {
+        "name": "Water",
+        "hours": 6
+      },
+      {
+        "name": "Housing",
+        "hours": 8
+      },
+      {
+        "name": "Occupational Health",
+        "hours": 2
+      },
+      {
+        "name": "Pollution Hazards",
+        "hours": 2
+      }
+    ]
+  },
+  {
+    "key": "anatomy-physiology",
+    "name": "Anatomy and Physiology",
+    "examMarks": 100,
+    "totalHours": 100,
+    "units": [
+      {
+        "name": "System Approach to the Human Body",
+        "hours": 6
+      },
+      {
+        "name": "Introduction to cells and tissues",
+        "hours": 6
+      },
+      {
+        "name": "Body Fluid and Electrolyte",
+        "hours": 10
+      },
+      {
+        "name": "Introduction to Circulatory System",
+        "hours": 9
+      },
+      {
+        "name": "Introduction to Lymphatic System",
+        "hours": 6
+      },
+      {
+        "name": "Introduction to Muscular System",
+        "hours": 6
+      },
+      {
+        "name": "Introduction to Skeletal System",
+        "hours": 8
+      },
+      {
+        "name": "Introduction to Respiratory System",
+        "hours": 8
+      },
+      {
+        "name": "Introduction to Digestive System",
+        "hours": 8
+      },
+      {
+        "name": "Introduction to Urinary System",
+        "hours": 4
+      },
+      {
+        "name": "Introduction to Nervous System",
+        "hours": 8
+      },
+      {
+        "name": "Introduction to Reproductive System",
+        "hours": 8
+      },
+      {
+        "name": "Introductions to Endocrine System",
+        "hours": 8
+      },
+      {
+        "name": "Introductions to Special Sensory Organ",
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "key": "basic-science-applied-nursing",
+    "name": "Basic Science Applied to Nursing",
+    "examMarks": 100,
+    "totalHours": 100,
+    "units": [
+      {
+        "name": "Introduction to Biochemistry",
+        "hours": 8
+      },
+      {
+        "name": "Bio-molecules",
+        "hours": 8
+      },
+      {
+        "name": "Enzymes",
+        "hours": 4
+      },
+      {
+        "name": "Blood Coagulation mechanism",
+        "hours": 4
+      },
+      {
+        "name": "Organ Function Test",
+        "hours": 6
+      },
+      {
+        "name": "Introduction of Microbiology",
+        "hours": 6
+      },
+      {
+        "name": "Parasitology",
+        "hours": 6
+      },
+      {
+        "name": "Bacteriology",
+        "hours": 6
+      },
+      {
+        "name": "Virology",
+        "hours": 4
+      },
+      {
+        "name": "Immunology",
+        "hours": 6
+      },
+      {
+        "name": "Mycology",
+        "hours": 2
+      },
+      {
+        "name": "Introduction to Pharmacology",
+        "hours": 2
+      },
+      {
+        "name": "Drug acting on gastrointestinal system",
+        "hours": 6
+      },
+      {
+        "name": "Drug acting on respiratory system",
+        "hours": 6
+      },
+      {
+        "name": "Drug used in cardiovascular system",
+        "hours": 6
+      },
+      {
+        "name": "Drug used in infection",
+        "hours": 6
+      },
+      {
+        "name": "Drug acting on the central nervous system",
+        "hours": 4
+      },
+      {
+        "name": "Endocrine and hormonal drugs",
+        "hours": 3
+      },
+      {
+        "name": "Drugs acting on Kidney",
+        "hours": 2
+      },
+      {
+        "name": "Drugs acting on lymphatic system",
+        "hours": 2
+      },
+      {
+        "name": "Drugs acting on the skin",
+        "hours": 2
+      },
+      {
+        "name": "Essential drugs, emergency drugs, antidotes,",
+        "hours": 1
+      }
+    ]
+  }
+]

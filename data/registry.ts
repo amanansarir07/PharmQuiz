@@ -5,6 +5,15 @@ import { subjects as dPharmYear2Subjects } from "@/data/programs/d-pharm-y2/subj
 import { subjects as dPharmYear3Subjects } from "@/data/programs/d-pharm-y3/subjects";
 import { subjects as healthAssistantYear2Subjects } from "@/data/programs/health-assistant/year-2";
 import { subjects as healthAssistantYear3Subjects } from "@/data/programs/health-assistant/year-3";
+import { officialOutline } from "@/data/programs/official-outline";
+import { scienceBiologySubjects, computerScienceSubjects, managementSubjects } from "@/data/programs/plus-two/subjects";
+import nursingYear1 from "@/data/programs/pcl-nursing/year-1.json";
+import nursingYear2 from "@/data/programs/pcl-nursing/year-2.json";
+import nursingYear3 from "@/data/programs/pcl-nursing/year-3.json";
+import physiotherapyYear2 from "@/data/programs/d-physiotherapy/year-2.json";
+import physiotherapyYear3 from "@/data/programs/d-physiotherapy/year-3.json";
+import cmltYear2 from "@/data/programs/cmlt/year-2.json";
+import cmltYear3 from "@/data/programs/cmlt/year-3.json";
 import type { ProgramMeta, SubjectData, UnitData } from "@/data/types";
 
 export { faculties } from "@/data/faculties";
@@ -23,6 +32,16 @@ const CONTENT_BY_PROGRAM: Record<string, SubjectData[]> = {
   "d-pharm-y3": dPharmYear3Subjects,
   "health-assistant-y2": healthAssistantYear2Subjects,
   "health-assistant-y3": healthAssistantYear3Subjects,
+  "pcl-nursing": officialOutline("pcl-nursing", "CTEVT PCL Nursing, revised 2018, Year 1.", nursingYear1),
+  "pcl-nursing-y2": officialOutline("pcl-nursing-y2", "CTEVT PCL Nursing, revised 2018, Year 2.", nursingYear2),
+  "pcl-nursing-y3": officialOutline("pcl-nursing-y3", "CTEVT PCL Nursing, revised 2018, Year 3.", nursingYear3),
+  "d-physiotherapy-y2": officialOutline("d-physiotherapy-y2", "CTEVT Physiotherapy, revised 2025, Year 2.", physiotherapyYear2),
+  "d-physiotherapy-y3": officialOutline("d-physiotherapy-y3", "CTEVT Physiotherapy, revised 2025, Year 3.", physiotherapyYear3),
+  "cmlt-y2": officialOutline("cmlt-y2", "CTEVT CMLT, revised 2024, Year 2.", cmltYear2),
+  "cmlt-y3": officialOutline("cmlt-y3", "CTEVT CMLT, revised 2024, Year 3.", cmltYear3),
+  "plus-two-science-bio": scienceBiologySubjects,
+  "plus-two-computer": computerScienceSubjects,
+  "plus-two-management": managementSubjects,
 };
 
 /** Every subject across every programme that has content, in catalogue order. */

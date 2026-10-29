@@ -10,8 +10,8 @@
 - **Purpose**: High-performance MCQ preparation, revision, and mock examination platform for Nepal's technical education boards:
   - **CTEVT** diploma/certificate streams (Diploma in Pharmacy, PCL Nursing, Health Assistant [HA], Physiotherapy, CMLT).
   - **+2** Higher Secondary streams (Science [Bio], Computer Science, Management).
-- **Live curricula**: `d-pharm-y2` and `d-pharm-y3` (Diploma in Pharmacy · Years 2 and 3). Availability comes from `data/programs.ts` (`hasContent`) and `data/registry.ts`; other programmes are marked "Coming Soon".
-- **Post-diploma exam**: The Nepal Pharmacy Council Pharmacy Assistant Name Registration Exam is one exam after the three-year D.Pharm course. Catalogue slug `c-pharm` is retained for link continuity. The supplied Council past-question collection is browsable at `/programs/c-pharm/questions`; it combines pharmacist and assistant questions and has no answer key, so it is deliberately excluded from scored quiz banks until answers are individually verified.
+- **Live curricula**: CTEVT D.Pharm, HA, Nursing, Physiotherapy, CMLT, and +2 Science/Computer/Management curricula. Availability comes from `data/programs.ts` (`hasContent`) and `data/registry.ts`.
+- **Post-diploma exam**: The Nepal Pharmacy Council Pharmacy Assistant Name Registration Exam is one exam after the three-year D.Pharm course. Catalogue slug `c-pharm` is retained for link continuity. The former scanned past-question collection has been removed. Council exam practice will use questions added through the app after its exam syllabus is mapped.
 - **Timezone Standard**: **Asia/Kathmandu (UTC+05:45, no DST)** is the single source of truth for mock exam schedules, daily/weekly leaderboard resets, and timestamp calculations.
 
 ---

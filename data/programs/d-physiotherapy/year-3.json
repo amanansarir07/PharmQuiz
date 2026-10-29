@@ -1,0 +1,102 @@
+[
+  {
+    "key": "physiotherapy-conditions-i",
+    "name": "Physiotherapy in Medical and Surgical Conditions I",
+    "examMarks": 100,
+    "totalHours": 58,
+    "units": [
+      {
+        "name": "Orthopedics",
+        "hours": 40
+      },
+      {
+        "name": "Pediatrics",
+        "hours": 10
+      },
+      {
+        "name": "Physiotherapy Management",
+        "hours": 8
+      },
+      {
+        "name": "Geriatrics",
+        "hours": 8
+      }
+    ]
+  },
+  {
+    "key": "physiotherapy-conditions-ii",
+    "name": "Physiotherapy in Medical and Surgical Conditions II",
+    "examMarks": 100,
+    "totalHours": 66,
+    "units": [
+      {
+        "name": "Neurological Conditions",
+        "hours": 25
+      },
+      {
+        "name": "Cardiopulmonary Conditions",
+        "hours": 27
+      },
+      {
+        "name": "Women's Health",
+        "hours": 6
+      },
+      {
+        "name": "General Medical and Surgical Conditions",
+        "hours": 8
+      }
+    ]
+  },
+  {
+    "key": "rehabilitation-healthcare-management",
+    "name": "Rehabilitation and Healthcare Management",
+    "examMarks": 150,
+    "totalHours": 99,
+    "units": [
+      {
+        "name": "Basic Rehabilitation",
+        "hours": 12
+      },
+      {
+        "name": "Transfer Techniques",
+        "hours": 10
+      },
+      {
+        "name": "Wheelchair",
+        "hours": 12
+      },
+      {
+        "name": "Universal Design and Accessible Environment",
+        "hours": 8
+      },
+      {
+        "name": "Vocational Rehabilitation",
+        "hours": 8
+      },
+      {
+        "name": "Counselling",
+        "hours": 4
+      },
+      {
+        "name": "Healthcare Management",
+        "hours": 20
+      },
+      {
+        "name": "Public Health and Epidemiology",
+        "hours": 8
+      },
+      {
+        "name": "Primary Healthcare",
+        "hours": 6
+      },
+      {
+        "name": "Environmental Health and Disaster Management",
+        "hours": 6
+      },
+      {
+        "name": "Health Communication",
+        "hours": 5
+      }
+    ]
+  }
+]

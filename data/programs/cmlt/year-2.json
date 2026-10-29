@@ -1,0 +1,274 @@
+[
+  {
+    "key": "clinical-microbiology-immunology",
+    "name": "Clinical Microbiology and Immunology",
+    "examMarks": 200,
+    "totalHours": 140,
+    "units": [
+      {
+        "name": "General concept of Microbiology",
+        "hours": 5
+      },
+      {
+        "name": "Bacteriology",
+        "hours": 0
+      },
+      {
+        "name": "Morphological classification of bacteria",
+        "hours": 2
+      },
+      {
+        "name": "Arrangements of bacteria",
+        "hours": 2
+      },
+      {
+        "name": "Bacterial Growth",
+        "hours": 2
+      },
+      {
+        "name": "Staining",
+        "hours": 4
+      },
+      {
+        "name": "Normal bacterial flora of human body",
+        "hours": 2
+      },
+      {
+        "name": "Sample collection for the diagnosis of bacterial infections",
+        "hours": 1
+      },
+      {
+        "name": "Media Preparation",
+        "hours": 10
+      },
+      {
+        "name": "Controlling microbial growth in the environment",
+        "hours": 10
+      },
+      {
+        "name": "Controlling bacterial growth in the body",
+        "hours": 4
+      },
+      {
+        "name": "Various methods for the identification of bacteria",
+        "hours": 4
+      },
+      {
+        "name": "Antimicrobial Susceptibility Testing",
+        "hours": 4
+      },
+      {
+        "name": "Quality control in microbiology laboratory",
+        "hours": 18
+      },
+      {
+        "name": "Morphology, cultural characteristics, disease caused and laboratory diagnosis, and",
+        "hours": 0
+      },
+      {
+        "name": "Mycology",
+        "hours": 15
+      },
+      {
+        "name": "Virology",
+        "hours": 20
+      },
+      {
+        "name": "Immunology",
+        "hours": 24
+      },
+      {
+        "name": "Hospital acquired Infection",
+        "hours": 1
+      },
+      {
+        "name": "Quality control in Microbiology",
+        "hours": 2
+      }
+    ]
+  },
+  {
+    "key": "hematology-blood-banking",
+    "name": "Hematology and Blood Banking",
+    "examMarks": 200,
+    "totalHours": 140,
+    "units": [
+      {
+        "name": "Introduction to Hematology",
+        "hours": 6
+      },
+      {
+        "name": "Haematopoiesis",
+        "hours": 10
+      },
+      {
+        "name": "Hemoglobin",
+        "hours": 9
+      },
+      {
+        "name": "Red Cell Disorders",
+        "hours": 13
+      },
+      {
+        "name": "White Blood Cell Disorders",
+        "hours": 8
+      },
+      {
+        "name": "Platelet disorders",
+        "hours": 2
+      },
+      {
+        "name": "Coagulation mechanism",
+        "hours": 6
+      },
+      {
+        "name": "Hematological Techniques",
+        "hours": 55
+      },
+      {
+        "name": "Blood Parasites",
+        "hours": 6
+      },
+      {
+        "name": "Immunohematology and Blood Banking",
+        "hours": 25
+      }
+    ]
+  },
+  {
+    "key": "clinical-biochemistry",
+    "name": "Clinical Biochemistry",
+    "examMarks": 200,
+    "totalHours": 140,
+    "units": [
+      {
+        "name": "Introduction to Biochemistry",
+        "hours": 2
+      },
+      {
+        "name": "Elementary chemistry",
+        "hours": 12
+      },
+      {
+        "name": "Physical chemistry",
+        "hours": 15
+      },
+      {
+        "name": "Biomolecules and Metabolisms",
+        "hours": 0
+      },
+      {
+        "name": "Metabolism of Biomolecules",
+        "hours": 35
+      },
+      {
+        "name": "Estimations of different biochemical analytes",
+        "hours": 30
+      },
+      {
+        "name": "Quality control in clinical chemistry laboratory",
+        "hours": 6
+      }
+    ]
+  },
+  {
+    "key": "medical-parasitology",
+    "name": "Medical Parasitology",
+    "examMarks": 100,
+    "totalHours": 70,
+    "units": [
+      {
+        "name": "Introduction",
+        "hours": 5
+      },
+      {
+        "name": "Protozoa",
+        "hours": 20
+      },
+      {
+        "name": "Helminthes",
+        "hours": 30
+      },
+      {
+        "name": "Laboratory techniques",
+        "hours": 15
+      }
+    ]
+  },
+  {
+    "key": "clinical-pathology",
+    "name": "Clinical Pathology",
+    "examMarks": 150,
+    "totalHours": 140,
+    "units": [
+      {
+        "name": "General Pathology",
+        "hours": 10
+      },
+      {
+        "name": "Cell injury and cellular adaptation",
+        "hours": 35
+      },
+      {
+        "name": "Inflammation",
+        "hours": 15
+      },
+      {
+        "name": "Infection",
+        "hours": 30
+      },
+      {
+        "name": "Neoplasia",
+        "hours": 15
+      },
+      {
+        "name": "Specific specimen examination for Laboratory diagnosis",
+        "hours": 35
+      }
+    ]
+  },
+  {
+    "key": "public-health-first-aid",
+    "name": "Public Health and First Aid",
+    "examMarks": 150,
+    "totalHours": 140,
+    "units": [
+      {
+        "name": "Public Health",
+        "hours": 10
+      },
+      {
+        "name": "Basic Epidemiology",
+        "hours": 15
+      },
+      {
+        "name": "Nutrition",
+        "hours": 15
+      },
+      {
+        "name": "Maternal and Child Health (MCH)",
+        "hours": 20
+      },
+      {
+        "name": "Basic hygiene and sanitation",
+        "hours": 20
+      },
+      {
+        "name": "Health education and health promotion",
+        "hours": 7
+      },
+      {
+        "name": "Primary Health Care",
+        "hours": 8
+      },
+      {
+        "name": "Waste disposal system",
+        "hours": 20
+      },
+      {
+        "name": "First Aid",
+        "hours": 25
+      }
+    ]
+  }
+]

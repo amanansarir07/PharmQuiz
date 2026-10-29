@@ -97,22 +97,22 @@ Bujh is designed around a multi-faculty architecture.
 
 | Programme                | Status         |
 | ------------------------ | -------------- |
-| D. Pharmacy — Year 1     | 🚧 Coming Soon |
+| D. Pharmacy — Year 1     | ✅ Curriculum available |
 | D. Pharmacy — Year 2     | ✅ Available    |
 | D. Pharmacy — Year 3     | ✅ Available    |
-| Pharmacy Assistant Registration Exam (Nepal Pharmacy Council, after D.Pharm) | 📖 Past-question collection; scored practice pending answer verification |
-| PCL Nursing              | 🚧 Coming Soon |
-| Health Assistant (HA)    | 🚧 Coming Soon |
-| Diploma in Physiotherapy | 🚧 Coming Soon |
-| CMLT                     | 🚧 Coming Soon |
+| Pharmacy Assistant Registration Exam (Nepal Pharmacy Council, after D.Pharm) | Council exam syllabus mapping pending; questions can be added in the app afterward |
+| PCL Nursing              | ✅ Curriculum available |
+| Health Assistant (HA)    | ✅ Curriculum available |
+| Diploma in Physiotherapy | ✅ Curriculum available |
+| CMLT                     | ✅ Curriculum available |
 
 ### +2
 
 | Programme            | Status         |
 | -------------------- | -------------- |
-| +2 Science (Biology) | 🚧 Coming Soon |
-| +2 Computer Science  | 🚧 Coming Soon |
-| +2 Management        | 🚧 Coming Soon |
+| +2 Science (Biology) | ✅ Curriculum available |
+| +2 Computer Science  | ✅ Curriculum available |
+| +2 Management        | ✅ Curriculum available |
 
 The architecture is intentionally built so additional programmes can be added without rewriting the core quiz system.
 

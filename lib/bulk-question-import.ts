@@ -1,6 +1,6 @@
 import { getSupabase } from "@/lib/supabase/client";
 import { getContentSourceProgramSlug } from "@/data/registry";
-import { canonicalPublishedSubjectSlug, canonicalPublishedUnitId, publishedSubjectSlugs } from "@/data/programs/health-assistant/question-slugs";
+import { canonicalPublishedSubjectSlug, canonicalPublishedUnitId, publishedSubjectSlugs } from "@/data/question-slugs";
 
 export const DIFFICULTIES = ["easy", "medium", "hard"] as const;
 export const MAX_IMPORT_QUESTIONS = 1000;
@@ -236,7 +236,7 @@ export async function getPublishedQuestions(programSlug: string, subjectSlug: st
   if (error) return [];
   return (data ?? []).map((row) => ({
     ...row,
-    unit_id: canonicalPublishedUnitId(contentProgramSlug, subjectSlug, row.subject_slug, row.unit_id),
+    unit_id: canonicalPublishedUnitId(subjectSlug, row.subject_slug, row.unit_id),
     options: asOptions(row.options),
     tags: row.tags ?? [],
   })) as PublishedQuestion[];

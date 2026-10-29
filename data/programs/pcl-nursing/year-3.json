@@ -1,0 +1,354 @@
+[
+  {
+    "key": "midwifery-i",
+    "name": "Midwifery Nursing I",
+    "examMarks": 200,
+    "totalHours": 100,
+    "units": [
+      {
+        "name": "Midwifery and Reproductive Health",
+        "hours": 8
+      },
+      {
+        "name": "Anatomy and physiology of reproductive system",
+        "hours": 8
+      },
+      {
+        "name": "Menstruation and conception",
+        "hours": 2
+      },
+      {
+        "name": "Anatomy and Physiology of Male Reproductive System",
+        "hours": 2
+      },
+      {
+        "name": "Communication and Couple Counselling",
+        "hours": 2
+      },
+      {
+        "name": "Fetal and placental Development",
+        "hours": 6
+      },
+      {
+        "name": "Fetal circulation and its changes at birth",
+        "hours": 6
+      },
+      {
+        "name": "Fetal skull, its structure and relationship",
+        "hours": 6
+      },
+      {
+        "name": "Physiological, Psychological and Emotional Changes During Pregnancy",
+        "hours": 12
+      },
+      {
+        "name": "Signs, Symptoms and Diagnosis of Pregnancy",
+        "hours": 4
+      },
+      {
+        "name": "Antenatal Examination of Woman and Fetus",
+        "hours": 12
+      },
+      {
+        "name": "Disorders of pregnancy and their management",
+        "hours": 12
+      },
+      {
+        "name": "Explain Disease associated to pregnancy",
+        "hours": 6
+      },
+      {
+        "name": "Explain the Medication related to pregnancy",
+        "hours": 10
+      },
+      {
+        "name": "documentation and Information System in relation of Antenatal",
+        "hours": 4
+      }
+    ]
+  },
+  {
+    "key": "midwifery-ii",
+    "name": "Midwifery Nursing II",
+    "examMarks": 200,
+    "totalHours": 100,
+    "units": [
+      {
+        "name": "Terminologies related to labor",
+        "hours": 2
+      },
+      {
+        "name": "Normal Labour: Expulsive Phase",
+        "hours": 8
+      },
+      {
+        "name": "Mechanism of normal labor",
+        "hours": 6
+      },
+      {
+        "name": "Physiological change during 1st stage of labor",
+        "hours": 4
+      },
+      {
+        "name": "Management of (first stage of labor) normal labor",
+        "hours": 10
+      },
+      {
+        "name": "Physiological Changes during 2nd stage of labor",
+        "hours": 4
+      },
+      {
+        "name": "Management of 2nd stage of labor",
+        "hours": 14
+      },
+      {
+        "name": "Physiological changes during 3rd stage of labor",
+        "hours": 4
+      },
+      {
+        "name": "Management of 3rd stage of labor",
+        "hours": 10
+      },
+      {
+        "name": "Drugs used in labor (Indication, route, action, side effects and its management)",
+        "hours": 4
+      },
+      {
+        "name": "Management of fourth stage of labor",
+        "hours": 2
+      },
+      {
+        "name": "Complication during 1st stage",
+        "hours": 6
+      },
+      {
+        "name": "Complication during 2nd stage of labor",
+        "hours": 6
+      },
+      {
+        "name": "Complication during 3rd stage of labor",
+        "hours": 6
+      },
+      {
+        "name": "Abnormal labor (Definition causes and nursing management)",
+        "hours": 6
+      },
+      {
+        "name": "Surgical intervention during labor",
+        "hours": 6
+      },
+      {
+        "name": "Obstructed and prolonged labor",
+        "hours": 4
+      }
+    ]
+  },
+  {
+    "key": "midwifery-iii",
+    "name": "Midwifery Nursing III",
+    "examMarks": 200,
+    "totalHours": 100,
+    "units": [
+      {
+        "name": "Introduction to Puerperium",
+        "hours": 10
+      },
+      {
+        "name": "Postpartum care",
+        "hours": 12
+      },
+      {
+        "name": "Minor disorder of puerperium",
+        "hours": 6
+      },
+      {
+        "name": "Major disorder of puerperium and their nursing management",
+        "hours": 6
+      },
+      {
+        "name": "Lactation management",
+        "hours": 9
+      },
+      {
+        "name": "Common breast problem and their management",
+        "hours": 4
+      },
+      {
+        "name": "Care of newborn baby",
+        "hours": 10
+      },
+      {
+        "name": "Minor Disorder of newborn and their nursing management",
+        "hours": 4
+      },
+      {
+        "name": "Major disorders and their management",
+        "hours": 14
+      },
+      {
+        "name": "Care of large and small babies",
+        "hours": 5
+      },
+      {
+        "name": "Birth injuries and their management",
+        "hours": 5
+      },
+      {
+        "name": "Congenital anomalies and their management",
+        "hours": 12
+      },
+      {
+        "name": "Discharge Instructions /counseling",
+        "hours": 3
+      }
+    ]
+  },
+  {
+    "key": "gynecological-nursing",
+    "name": "Gynecological Nursing",
+    "examMarks": 100,
+    "totalHours": 50,
+    "units": [
+      {
+        "name": "Human Reproduction",
+        "hours": 2
+      },
+      {
+        "name": "Malformations, female Reproductive Organs and Menstrual irregularities and AUB",
+        "hours": 0
+      },
+      {
+        "name": "Infection of Female Reproductive System",
+        "hours": 6
+      },
+      {
+        "name": "Bleeding in early pregnancy",
+        "hours": 6
+      },
+      {
+        "name": "Bleeding in late pregnancy",
+        "hours": 4
+      },
+      {
+        "name": "Pelvic Organ Prolapsed and Genital Fistula",
+        "hours": 5
+      },
+      {
+        "name": "Menopause",
+        "hours": 4
+      },
+      {
+        "name": "sexually transmitted infections (review)",
+        "hours": 6
+      },
+      {
+        "name": "Reproductive Neoplasm",
+        "hours": 6
+      },
+      {
+        "name": "Sub-fertility /Infertility",
+        "hours": 2
+      },
+      {
+        "name": "Investigations",
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "key": "child-health-nursing",
+    "name": "Child Health Nursing",
+    "examMarks": 200,
+    "totalHours": 100,
+    "units": [
+      {
+        "name": "Introduction to child health nursing",
+        "hours": 3
+      },
+      {
+        "name": "Growth and development",
+        "hours": 15
+      },
+      {
+        "name": "Illness and hospitalization of children",
+        "hours": 4
+      },
+      {
+        "name": "Communication with Children",
+        "hours": 3
+      },
+      {
+        "name": "Physical assessments: History taking and physical examination",
+        "hours": 7
+      },
+      {
+        "name": "Community Based Integrated Management of Neonatal and Childhood Illness",
+        "hours": 0
+      },
+      {
+        "name": "Newborn and Newborn Health Problems",
+        "hours": 6
+      },
+      {
+        "name": "Childhood morbidity condition and their Nursing Management",
+        "hours": 48
+      },
+      {
+        "name": "Common emergency conditions",
+        "hours": 6
+      },
+      {
+        "name": "Child and Family with Special Needs",
+        "hours": 2
+      }
+    ]
+  },
+  {
+    "key": "leadership-management",
+    "name": "Leadership and Management",
+    "examMarks": 200,
+    "totalHours": 100,
+    "units": [
+      {
+        "name": "Introduction to Leadership and Management",
+        "hours": 8
+      },
+      {
+        "name": "Management Process",
+        "hours": 24
+      },
+      {
+        "name": "Nursing Professions",
+        "hours": 10
+      },
+      {
+        "name": "Conflict Management",
+        "hours": 4
+      },
+      {
+        "name": "Management in relation to delivery of health services",
+        "hours": 12
+      },
+      {
+        "name": "National health planning/policy (Latest)",
+        "hours": 24
+      },
+      {
+        "name": "Organizational change and change management",
+        "hours": 4
+      },
+      {
+        "name": "Information and data management: Process and its presentation in health system",
+        "hours": 0
+      },
+      {
+        "name": "Health care social security/ Health insurance",
+        "hours": 2
+      },
+      {
+        "name": "Disaster management",
+        "hours": 6
+      }
+    ]
+  }
+]

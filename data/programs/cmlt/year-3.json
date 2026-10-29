@@ -1,0 +1,126 @@
+[
+  {
+    "key": "histopathology-cytopathology",
+    "name": "Histopathology and Cytopathology",
+    "examMarks": 100,
+    "totalHours": 88,
+    "units": [
+      {
+        "name": "Histopathology",
+        "hours": 8
+      },
+      {
+        "name": "Fixation",
+        "hours": 6
+      },
+      {
+        "name": "Tissue Processing",
+        "hours": 10
+      },
+      {
+        "name": "Decalcification",
+        "hours": 10
+      },
+      {
+        "name": "Microtomy",
+        "hours": 12
+      },
+      {
+        "name": "Frozen Sections / Cryostat",
+        "hours": 6
+      },
+      {
+        "name": "Staining Technique",
+        "hours": 12
+      },
+      {
+        "name": "Mounting Media",
+        "hours": 4
+      },
+      {
+        "name": "Basic concept of Immuno-histochemistry",
+        "hours": 8
+      },
+      {
+        "name": "Cyto-pathology",
+        "hours": 12
+      }
+    ]
+  },
+  {
+    "key": "automation-clinical-laboratory",
+    "name": "Automation in Clinical Laboratory",
+    "examMarks": 100,
+    "totalHours": 66,
+    "units": [
+      {
+        "name": "Instrumentation",
+        "hours": 15
+      },
+      {
+        "name": "Hi-Tech Instruments and Technology",
+        "hours": 10
+      },
+      {
+        "name": "Immunochemical Techniques",
+        "hours": 15
+      },
+      {
+        "name": "Automation",
+        "hours": 26
+      }
+    ]
+  },
+  {
+    "key": "clinical-laboratory-management",
+    "name": "Clinical Laboratory Management",
+    "examMarks": 100,
+    "totalHours": 88,
+    "units": [
+      {
+        "name": "Introduction to clinical laboratory management",
+        "hours": 9
+      },
+      {
+        "name": "Department /section of clinical laboratory",
+        "hours": 7
+      },
+      {
+        "name": "Laboratory design",
+        "hours": 7
+      },
+      {
+        "name": "Laboratory work flow",
+        "hours": 7
+      },
+      {
+        "name": "Personnel management",
+        "hours": 4
+      },
+      {
+        "name": "Standard operating procedures (SOPs)",
+        "hours": 5
+      },
+      {
+        "name": "Clinical laboratory Inventory Management",
+        "hours": 9
+      },
+      {
+        "name": "Lab hazards and lab safety",
+        "hours": 9
+      },
+      {
+        "name": "Total quality management (TQM) and Quality Assurance and QAs",
+        "hours": 15
+      },
+      {
+        "name": "Bio-safety and bio-security",
+        "hours": 10
+      },
+      {
+        "name": "Medical ethics",
+        "hours": 6
+      }
+    ]
+  }
+]

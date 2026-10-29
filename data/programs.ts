@@ -92,7 +92,7 @@ export const programs: ProgramMeta[] = [
       "Proficiency certificate nursing programme covering anatomy, physiology, fundamentals of nursing, medical-surgical nursing, midwifery and community health.",
     icon: "🩺",
     order: 7,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-pcl-nursing-y2",
@@ -106,7 +106,7 @@ export const programs: ProgramMeta[] = [
       "Proficiency certificate nursing programme covering anatomy, physiology, fundamentals of nursing, medical-surgical nursing, midwifery and community health.",
     icon: "🩺",
     order: 8,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-pcl-nursing-y3",
@@ -120,7 +120,7 @@ export const programs: ProgramMeta[] = [
       "Proficiency certificate nursing programme covering anatomy, physiology, fundamentals of nursing, medical-surgical nursing, midwifery and community health.",
     icon: "🩺",
     order: 9,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-health-assistant",
@@ -192,7 +192,7 @@ export const programs: ProgramMeta[] = [
       "Physiotherapy diploma covering anatomy, kinesiology, electrotherapy, exercise therapy and musculoskeletal rehabilitation.",
     icon: "🦴",
     order: 14,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-d-physiotherapy-y3",
@@ -206,7 +206,7 @@ export const programs: ProgramMeta[] = [
       "Physiotherapy diploma covering anatomy, kinesiology, electrotherapy, exercise therapy and musculoskeletal rehabilitation.",
     icon: "🦴",
     order: 15,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-cmlt",
@@ -235,7 +235,7 @@ export const programs: ProgramMeta[] = [
       "Medical laboratory technology programme covering specimen collection, haematology, microbiology, clinical biochemistry and laboratory quality control.",
     icon: "🔬",
     order: 17,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-cmlt-y3",
@@ -249,7 +249,7 @@ export const programs: ProgramMeta[] = [
       "Medical laboratory technology programme covering specimen collection, haematology, microbiology, clinical biochemistry and laboratory quality control.",
     icon: "🔬",
     order: 18,
-    hasContent: false,
+    hasContent: true,
   },
 
   // ------------------------------------------------------------------ +2
@@ -265,7 +265,7 @@ export const programs: ProgramMeta[] = [
       "Higher secondary science stream with biology — the standard route into nursing, pharmacy, and other health-science degrees.",
     icon: "🧬",
     order: 1,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-plus-two-computer",
@@ -279,7 +279,7 @@ export const programs: ProgramMeta[] = [
       "Higher secondary computer science stream covering programming fundamentals, computer architecture and applied mathematics.",
     icon: "💻",
     order: 2,
-    hasContent: false,
+    hasContent: true,
   },
   {
     id: "program-plus-two-management",
@@ -293,6 +293,6 @@ export const programs: ProgramMeta[] = [
       "Higher secondary management stream covering accountancy, economics, business studies and office management.",
     icon: "📊",
     order: 3,
-    hasContent: false,
+    hasContent: true,
   },
 ];

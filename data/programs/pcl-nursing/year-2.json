@@ -1,0 +1,238 @@
+[
+  {
+    "key": "medical-surgical-nursing-i",
+    "name": "Medical and Surgical Nursing I",
+    "examMarks": 300,
+    "totalHours": 150,
+    "units": [
+      {
+        "name": "Introduction to nursing care of adults disorders",
+        "hours": 2
+      },
+      {
+        "name": "Stress and crisis",
+        "hours": 6
+      },
+      {
+        "name": "Rehabilitation",
+        "hours": 6
+      },
+      {
+        "name": "Nursing care of patients with respiratory disorders",
+        "hours": 12
+      },
+      {
+        "name": "Nursing care of patients with Gastrointestinal disorders",
+        "hours": 12
+      },
+      {
+        "name": "Nursing care of patients with the musculo-skeletal disorders",
+        "hours": 15
+      },
+      {
+        "name": "Nursing care of the patients with cardiovascular and hematologic disorders",
+        "hours": 15
+      },
+      {
+        "name": "Nursing care of patients with fluid, electrolyte, urinary and renal system disorders",
+        "hours": 0
+      },
+      {
+        "name": "Nervous systems",
+        "hours": 15
+      },
+      {
+        "name": "nursing care of the patients with skin disorders",
+        "hours": 12
+      },
+      {
+        "name": "Nursing care of patient with endocrine disorder",
+        "hours": 10
+      },
+      {
+        "name": "Communicable disease",
+        "hours": 5
+      },
+      {
+        "name": "Oncology nursing",
+        "hours": 25
+      }
+    ]
+  },
+  {
+    "key": "medical-surgical-nursing-ii",
+    "name": "Medical and Surgical Nursing II",
+    "examMarks": 150,
+    "totalHours": 50,
+    "units": [
+      {
+        "name": "Disorders of Eye",
+        "hours": 9
+      },
+      {
+        "name": "Disorder of Ear",
+        "hours": 8
+      },
+      {
+        "name": "Disorder of nose and throat",
+        "hours": 8
+      },
+      {
+        "name": "Operation Theatres Nursing",
+        "hours": 25
+      }
+    ]
+  },
+  {
+    "key": "geriatric-nursing",
+    "name": "Geriatric Nursing",
+    "examMarks": 100,
+    "totalHours": 50,
+    "units": [
+      {
+        "name": "Introduction of Gerontology and Geriatric Nursing",
+        "hours": 12
+      },
+      {
+        "name": "Ageing population in Nepal",
+        "hours": 3
+      },
+      {
+        "name": "National and International Concern and declaration and aging",
+        "hours": 2
+      },
+      {
+        "name": "Common Geriatric Problems",
+        "hours": 15
+      },
+      {
+        "name": "Nursing care of the terminally ill",
+        "hours": 6
+      },
+      {
+        "name": "The common needs of elderly (health promotion activities)",
+        "hours": 2
+      },
+      {
+        "name": "Safe Medication use for elderly people",
+        "hours": 2
+      },
+      {
+        "name": "Different facilities for Health Care Services: National and international",
+        "hours": 8
+      }
+    ]
+  },
+  {
+    "key": "behavioural-mental-health-nursing",
+    "name": "Behavioural Science and Mental Health Nursing",
+    "examMarks": 150,
+    "totalHours": 100,
+    "units": [
+      {
+        "name": "Intelligence",
+        "hours": 5
+      },
+      {
+        "name": "– Emotion and Feelings-",
+        "hours": 7
+      },
+      {
+        "name": "Introduction to Mental Health",
+        "hours": 7
+      },
+      {
+        "name": "Mental Health Assessment",
+        "hours": 3
+      },
+      {
+        "name": "Psychosis and Schizophrenia related Disorder",
+        "hours": 4
+      },
+      {
+        "name": "Mood (Affective) Disorder",
+        "hours": 3
+      },
+      {
+        "name": "Neurotic, Stress Related Disorder and Somatoform disorders",
+        "hours": 4
+      },
+      {
+        "name": "Adult Personality disorder",
+        "hours": 2
+      },
+      {
+        "name": "Mental and Behavioral Disorder due to Psychoactive Substance Use",
+        "hours": 4
+      },
+      {
+        "name": "Childhood psychiatric disorders",
+        "hours": 6
+      },
+      {
+        "name": "Mental health problem in old age",
+        "hours": 2
+      },
+      {
+        "name": "Psychiatric emergencies",
+        "hours": 3
+      },
+      {
+        "name": "Treatment modalities mental health nursing",
+        "hours": 8
+      },
+      {
+        "name": "Community mental health nursing",
+        "hours": 2
+      },
+      {
+        "name": "Legal aspects of mental health nursing",
+        "hours": 2
+      }
+    ]
+  },
+  {
+    "key": "community-health-nursing-ii",
+    "name": "Community Health Nursing II",
+    "examMarks": 250,
+    "totalHours": 100,
+    "units": [
+      {
+        "name": "Family Health Nursing",
+        "hours": 12
+      },
+      {
+        "name": "Maternal and Child Health Services",
+        "hours": 10
+      },
+      {
+        "name": "Sexual and Reproductive Health and Rights",
+        "hours": 10
+      },
+      {
+        "name": "Sexually transmitted Infections (STIs)",
+        "hours": 10
+      },
+      {
+        "name": "Under Five Clinics",
+        "hours": 10
+      },
+      {
+        "name": "Nutrition of Family and Community",
+        "hours": 12
+      },
+      {
+        "name": "School Health Programme and School Health Nurse",
+        "hours": 16
+      },
+      {
+        "name": "Universal Health Coverage and Sustainable Development Goals",
+        "hours": 8
+      },
+      {
+        "name": "National Health Policy and Health Programme",
+        "hours": 12
+      }
+    ]
+  }
+]

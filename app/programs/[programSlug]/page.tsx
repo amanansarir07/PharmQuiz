@@ -65,12 +65,11 @@ export default async function ProgramPage({
     return <LearningPage className="max-w-3xl">
       <Link href="/programs" className="mb-6 inline-flex min-h-10 items-center text-sm text-muted-foreground hover:text-foreground">All programmes</Link>
       <div className="rounded-2xl border bg-card p-5 sm:p-7">
-        <p className="text-xs font-bold uppercase tracking-wider text-primary">Nepal Pharmacy Council · Past questions</p>
+        <p className="text-xs font-bold uppercase tracking-wider text-primary">Nepal Pharmacy Council</p>
         <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Pharmacy Assistant Registration Exam</h1>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">This is the Nepal Pharmacy Council name-registration exam for pharmacy assistants after the three-year Diploma in Pharmacy. It is one post-diploma exam, not a Year 1, 2, or 3 course.</p>
-        <p className="mt-3 text-sm leading-6 text-muted-foreground">Browse the supplied past-question collection, numbered through 866. The publication combines pharmacist and pharmacy assistant questions and does not provide an answer key, so scored practice is pending verified answers.</p>
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">The Council exam syllabus is linked below. In-app practice will be available once its subjects and units are mapped.</p>
         <div className="mt-6 flex flex-wrap gap-2">
-          <Link href="/programs/c-pharm/questions" className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">Browse past questions</Link>
           <Link href="/programs/d-pharm-y2" className="inline-flex min-h-11 items-center rounded-xl border px-4 text-sm font-semibold">Study D.Pharm Year 2</Link>
           <Link href="/programs/d-pharm-y3" className="inline-flex min-h-11 items-center rounded-xl border px-4 text-sm font-semibold">Study D.Pharm Year 3</Link>
         </div>
@@ -163,14 +162,14 @@ export default async function ProgramPage({
                 <BookOpen className="mr-1 h-3 w-3" />
                 {totals.subjects} Subjects
               </Badge>
-              <Badge variant="secondary">
+              {program.facultySlug !== "plus-two" && <Badge variant="secondary">
                 <Award className="mr-1 h-3 w-3" />
                 {totals.examMarks} Total Marks
-              </Badge>
-              <Badge variant="secondary">
+              </Badge>}
+              {program.facultySlug !== "plus-two" && <Badge variant="secondary">
                 <Clock className="mr-1 h-3 w-3" />
                 {totals.totalHours} Teaching Hours
-              </Badge>
+              </Badge>}
               <Badge variant="outline">{questionCount} Questions</Badge>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
@@ -179,6 +178,7 @@ export default async function ProgramPage({
               {questionCount > 0 && <ProgramSelectAction slug={program.slug} destination="/mock-test" label="Take a mock test" secondary />}
             </div>
             {questionCount === 0 && <p className="mt-3 text-sm text-muted-foreground">The curriculum is ready. MCQs will appear here as they are published.</p>}
+            {program.facultySlug === "plus-two" && <p className="mt-3 text-sm text-muted-foreground">Subject combinations vary by school. Choose the subjects you study.</p>}
           </>
         ) : (
           <div className="mt-6">

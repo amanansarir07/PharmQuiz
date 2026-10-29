@@ -1,0 +1,486 @@
+[
+  {
+    "key": "applied-anatomy-physiology",
+    "name": "Applied Anatomy and Physiology",
+    "examMarks": 150,
+    "totalHours": 105,
+    "units": [
+      {
+        "name": "General Introduction of Anatomy and Physiology",
+        "hours": 1
+      },
+      {
+        "name": "Musculoskeletal System",
+        "hours": 40
+      },
+      {
+        "name": "Muscle and Nerve Physiology",
+        "hours": 12
+      },
+      {
+        "name": "Nervous System",
+        "hours": 15
+      },
+      {
+        "name": "Integumentary System",
+        "hours": 2
+      },
+      {
+        "name": "Cardiovascular System",
+        "hours": 6
+      },
+      {
+        "name": "Respiratory System",
+        "hours": 6
+      },
+      {
+        "name": "Exercise Physiology",
+        "hours": 3
+      },
+      {
+        "name": "Endocrine System",
+        "hours": 6
+      },
+      {
+        "name": "Digestive System",
+        "hours": 4
+      },
+      {
+        "name": "Reproductive System",
+        "hours": 4
+      },
+      {
+        "name": "Urinary System",
+        "hours": 4
+      },
+      {
+        "name": "Lymphatic Systems",
+        "hours": 2
+      }
+    ]
+  },
+  {
+    "key": "basics-physiotherapy",
+    "name": "Basics of Physiotherapy",
+    "examMarks": 250,
+    "totalHours": 140,
+    "units": [
+      {
+        "name": "Introduction to Therapeutic Exercise",
+        "hours": 8
+      },
+      {
+        "name": "Fundamental Position and Derived Position",
+        "hours": 8
+      },
+      {
+        "name": "Stretching",
+        "hours": 7
+      },
+      {
+        "name": "Strength Training",
+        "hours": 8
+      },
+      {
+        "name": "Mat Exercise",
+        "hours": 10
+      },
+      {
+        "name": "Balance and Coordination Exercise",
+        "hours": 10
+      },
+      {
+        "name": "Posture",
+        "hours": 6
+      },
+      {
+        "name": "Breathing Exercises",
+        "hours": 6
+      },
+      {
+        "name": "Therapeutic Massage",
+        "hours": 8
+      },
+      {
+        "name": "Hydrotherapy/ Aqua Therapy",
+        "hours": 3
+      },
+      {
+        "name": "Exercise for Hand Function",
+        "hours": 4
+      },
+      {
+        "name": "Suspension Therapy",
+        "hours": 3
+      },
+      {
+        "name": "Relaxation",
+        "hours": 4
+      },
+      {
+        "name": "Yoga",
+        "hours": 2
+      },
+      {
+        "name": "Group Exercise and Home Exercise",
+        "hours": 3
+      },
+      {
+        "name": "Basic of Electrotherapy",
+        "hours": 5
+      },
+      {
+        "name": "Pain Mechanism",
+        "hours": 3
+      },
+      {
+        "name": "High Frequency Current",
+        "hours": 4
+      },
+      {
+        "name": "Ultrasound Therapy (UST)",
+        "hours": 4
+      },
+      {
+        "name": "Medium Frequency Current",
+        "hours": 3
+      },
+      {
+        "name": "Low Frequency Current",
+        "hours": 5
+      },
+      {
+        "name": "Motor Points",
+        "hours": 2
+      },
+      {
+        "name": "Faradic Foot Bath",
+        "hours": 2
+      },
+      {
+        "name": "Faradism under Pressure",
+        "hours": 2
+      },
+      {
+        "name": "Transcutaneous Electric Nerve Stimulation (TENS)",
+        "hours": 4
+      },
+      {
+        "name": "Paraffin Wax Bath",
+        "hours": 2
+      },
+      {
+        "name": "Hot Packs",
+        "hours": 2
+      },
+      {
+        "name": "Cryotherapy",
+        "hours": 3
+      },
+      {
+        "name": "Traction",
+        "hours": 5
+      },
+      {
+        "name": "Light Amplification by Stimulated Emission of Radiation (LASER)",
+        "hours": 2
+      },
+      {
+        "name": "Contrast Bath",
+        "hours": 1
+      },
+      {
+        "name": "Combination Therapy",
+        "hours": 1
+      }
+    ]
+  },
+  {
+    "key": "biomechanics",
+    "name": "Biomechanics",
+    "examMarks": 100,
+    "totalHours": 70,
+    "units": [
+      {
+        "name": "Introduction",
+        "hours": 2
+      },
+      {
+        "name": "Mechanics and Mechanical Principles",
+        "hours": 10
+      },
+      {
+        "name": "Biomechanics Applied in Human Body",
+        "hours": 10
+      },
+      {
+        "name": "Joint Movements",
+        "hours": 12
+      },
+      {
+        "name": "Goniometer",
+        "hours": 5
+      },
+      {
+        "name": "Posture and Gait",
+        "hours": 15
+      },
+      {
+        "name": "Ergonomics",
+        "hours": 2
+      },
+      {
+        "name": "Walking Aids",
+        "hours": 6
+      },
+      {
+        "name": "Therapeutic Tools",
+        "hours": 5
+      },
+      {
+        "name": "Gymnasium",
+        "hours": 3
+      }
+    ]
+  },
+  {
+    "key": "pathology-pharmacology",
+    "name": "Pathology and Pharmacology",
+    "examMarks": 100,
+    "totalHours": 105,
+    "units": [
+      {
+        "name": "Basic Pathology",
+        "hours": 15
+      },
+      {
+        "name": "Medical Microbiology",
+        "hours": 15
+      },
+      {
+        "name": "Medical Parasitology",
+        "hours": 12
+      },
+      {
+        "name": "Haematology",
+        "hours": 5
+      },
+      {
+        "name": "Biochemistry",
+        "hours": 5
+      },
+      {
+        "name": "Terminology and Definition",
+        "hours": 8
+      },
+      {
+        "name": "Analgesic, Antipyretic and Anti-Inflammatory Drugs",
+        "hours": 3
+      },
+      {
+        "name": "Drugs Used in Common Respiratory Problems",
+        "hours": 5
+      },
+      {
+        "name": "Drugs Used in Common Cardiovascular Problems",
+        "hours": 5
+      },
+      {
+        "name": "Drugs Used in Common Nervous System Problems",
+        "hours": 6
+      },
+      {
+        "name": "Drugs Used for Treatment of Infections and Infestations",
+        "hours": 8
+      },
+      {
+        "name": "Drugs Used Locally",
+        "hours": 6
+      },
+      {
+        "name": "Vaccines and Antisera",
+        "hours": 6
+      },
+      {
+        "name": "Nutritional Supplements",
+        "hours": 4
+      },
+      {
+        "name": "Drug Dependency and Drug Addiction",
+        "hours": 2
+      }
+    ]
+  },
+  {
+    "key": "medicine-surgery-i",
+    "name": "Medicine and Surgery I",
+    "examMarks": 150,
+    "totalHours": 105,
+    "units": [
+      {
+        "name": "Orthopedic Conditions",
+        "hours": 0
+      },
+      {
+        "name": "Pediatric",
+        "hours": 22
+      },
+      {
+        "name": "Geriatric",
+        "hours": 10
+      }
+    ]
+  },
+  {
+    "key": "medicine-surgery-ii",
+    "name": "Medicine and Surgery II",
+    "examMarks": 150,
+    "totalHours": 105,
+    "units": [
+      {
+        "name": "General Medical and Surgical Conditions",
+        "hours": 18
+      },
+      {
+        "name": "Neurological Conditions",
+        "hours": 30
+      },
+      {
+        "name": "Cardiopulmonary Conditions",
+        "hours": 25
+      },
+      {
+        "name": "Women's Health",
+        "hours": 12
+      },
+      {
+        "name": "First Aid",
+        "hours": 20
+      }
+    ]
+  },
+  {
+    "key": "behavioural-science",
+    "name": "Behavioural Science",
+    "examMarks": 50,
+    "totalHours": 70,
+    "units": [
+      {
+        "name": "Introduction to Psychology",
+        "hours": 2
+      },
+      {
+        "name": "Motive",
+        "hours": 4
+      },
+      {
+        "name": "Intelligence",
+        "hours": 4
+      },
+      {
+        "name": "Learning",
+        "hours": 4
+      },
+      {
+        "name": "Emotion",
+        "hours": 4
+      },
+      {
+        "name": "Behavior Communication Skills",
+        "hours": 4
+      },
+      {
+        "name": "Frustration and Mental conflict",
+        "hours": 3
+      },
+      {
+        "name": "Defense and Adjustment Mechanisms",
+        "hours": 6
+      },
+      {
+        "name": "Mental Health, Stigma, Trauma-Informed Care",
+        "hours": 7
+      },
+      {
+        "name": "Mental Illness",
+        "hours": 4
+      },
+      {
+        "name": "Autism and Neurodiversity",
+        "hours": 6
+      },
+      {
+        "name": "Basic Concepts in Sociology",
+        "hours": 2
+      },
+      {
+        "name": "Socialization",
+        "hours": 2
+      },
+      {
+        "name": "Social process",
+        "hours": 2
+      },
+      {
+        "name": "Community",
+        "hours": 2
+      },
+      {
+        "name": "Social Factors in Health and Disease",
+        "hours": 2
+      },
+      {
+        "name": "Culture and Health",
+        "hours": 2
+      },
+      {
+        "name": "Social Problems in Person with Disability",
+        "hours": 6
+      },
+      {
+        "name": "Social security",
+        "hours": 2
+      },
+      {
+        "name": "Social work",
+        "hours": 2
+      }
+    ]
+  },
+  {
+    "key": "rehabilitation-disability-management",
+    "name": "Rehabilitation and Disability Management",
+    "examMarks": 100,
+    "totalHours": 70,
+    "units": [
+      {
+        "name": "Introduction to Physiotherapy",
+        "hours": 6
+      },
+      {
+        "name": "Disability",
+        "hours": 13
+      },
+      {
+        "name": "Rehabilitation",
+        "hours": 10
+      },
+      {
+        "name": "Assistive Product",
+        "hours": 9
+      },
+      {
+        "name": "Community Based Rehabilitation",
+        "hours": 10
+      },
+      {
+        "name": "Activity of Daily Living (ADL)",
+        "hours": 16
+      },
+      {
+        "name": "Professional Ethics",
+        "hours": 6
+      }
+    ]
+  }
+]

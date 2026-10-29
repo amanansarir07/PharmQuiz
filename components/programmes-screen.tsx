@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { BookOpen, CheckCircle2, Clock, GraduationCap } from "lucide-react";
+import { CheckCircle2, Clock, GraduationCap } from "lucide-react";
 import { getFacultyCatalogue } from "@/data/registry";
 import { useActiveProgram } from "@/lib/program";
 import { LearningPage, PageHeading, SectionHeading } from "@/components/learning-ui";
@@ -15,7 +15,7 @@ export function ProgrammesScreen({ questionCounts }: { questionCounts: Record<st
   const available = catalogue.reduce((count, faculty) => count + faculty.availableCount, 0);
 
   return <LearningPage className="max-w-5xl">
-    <PageHeading eyebrow="Find your syllabus" title={isChosen ? "Explore programmes" : "Choose programme"} description={`${available} programmes ready for practice. Explore CTEVT, Pharmacy Council exams and +2 streams.`} />
+    <PageHeading eyebrow="Find your syllabus" title={isChosen ? "Explore programmes" : "Choose programme"} description={`${available} programme syllabi available. Explore CTEVT, Pharmacy Council exams and +2 streams.`} />
     {isChosen && <div className="mb-7 border-b border-primary/20 pb-5">
       <p className="text-xs font-bold uppercase tracking-wider text-primary">Currently selected</p>
       <div className="mt-2 flex items-center gap-3"><ProgrammeIcon program={program} className="size-11" /><div className="min-w-0"><p className="text-sm font-bold">{program.name}{program.level ? ` · ${program.level}` : ""}</p><p className="text-xs text-muted-foreground">Your subjects and quizzes use this syllabus.</p></div></div>
@@ -26,12 +26,11 @@ export function ProgrammesScreen({ questionCounts }: { questionCounts: Record<st
       <div className="space-y-5">{awards.map((award) => <div key={award.award}>
         <h3 className="mb-2 text-xs font-bold uppercase tracking-wide text-muted-foreground">{award.award}</h3>
         <div className="grid gap-2 md:grid-cols-2">{award.programs.map((item) => {
-          const hasCollection = item.slug === "c-pharm";
-          const isAvailable = item.hasContent || hasCollection;
+          const isAvailable = item.hasContent;
           return <Link href={`/programs/${item.slug}`} key={item.slug} className={`flex min-h-20 items-center gap-3 rounded-2xl border bg-card p-4 transition-colors ${isAvailable ? "hover:border-primary/40 hover:bg-primary/[.025]" : "opacity-70 hover:bg-muted/30"} ${isChosen && programSlug === item.slug ? "border-primary/50 bg-primary/5" : ""}`}>
             <ProgrammeIcon program={item} className="size-10" iconClassName="size-5" />
-            <span className="min-w-0 flex-1"><span className="block text-sm font-semibold">{item.name}{item.level ? ` · ${item.level}` : ""}</span><span className="mt-1 block text-xs text-muted-foreground">{item.hasContent ? `${questionCounts[item.slug] || 0} questions` : hasCollection ? "Past questions · answers pending" : "Syllabus preview"}</span></span>
-            <span className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-[10px] font-bold ${item.hasContent ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400" : hasCollection ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"}`}>{item.hasContent ? <CheckCircle2 className="size-3" /> : hasCollection ? <BookOpen className="size-3" /> : <Clock className="size-3" />}{item.hasContent ? "Available now" : hasCollection ? "Study collection" : "Coming soon"}</span>
+            <span className="min-w-0 flex-1"><span className="block text-sm font-semibold">{item.name}{item.level ? ` · ${item.level}` : ""}</span><span className="mt-1 block text-xs text-muted-foreground">{item.hasContent ? `${questionCounts[item.slug] || 0} questions` : "Syllabus preview"}</span></span>
+            <span className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-[10px] font-bold ${item.hasContent ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400" : "bg-muted text-muted-foreground"}`}>{item.hasContent ? <CheckCircle2 className="size-3" /> : <Clock className="size-3" />}{item.hasContent ? "Available now" : "Coming soon"}</span>
           </Link>;
         })}</div>
       </div>)}</div>
