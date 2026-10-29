@@ -24,6 +24,8 @@ const programmeIcons: Record<string, ComponentType<LucideProps>> = {
   "c-pharm": BadgeCheck,
   "pcl-nursing": Stethoscope,
   "health-assistant": HeartPulse,
+  "health-assistant-y2": HeartPulse,
+  "health-assistant-y3": HeartPulse,
   "d-physiotherapy": Accessibility,
   cmlt: Microscope,
   "plus-two-science-bio": Dna,

@@ -17,7 +17,7 @@ import { ProgrammeIcon } from "@/components/programme-icon";
 type Step = 1 | 2 | 3;
 
 const programmeGroups = [
-  { title: "CTEVT", description: "Diploma and certificate programmes", slugs: ["d-pharm-y1", "d-pharm-y2", "d-pharm-y3"] },
+  { title: "CTEVT", description: "Diploma and certificate programmes", slugs: ["d-pharm-y1", "d-pharm-y2", "d-pharm-y3", "health-assistant", "health-assistant-y2", "health-assistant-y3"] },
   { title: "+2", description: "Higher secondary streams", slugs: ["plus-two-science-bio", "plus-two-computer", "plus-two-management"] },
   { title: "Professional exams", description: "Post-study registration preparation", slugs: ["c-pharm"] },
 ] as const;

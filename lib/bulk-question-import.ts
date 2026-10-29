@@ -1,5 +1,6 @@
 import { getSupabase } from "@/lib/supabase/client";
 import { getContentSourceProgramSlug } from "@/data/registry";
+import { canonicalPublishedSubjectSlug, canonicalPublishedUnitId, publishedSubjectSlugs } from "@/data/programs/health-assistant/question-slugs";
 
 export const DIFFICULTIES = ["easy", "medium", "hard"] as const;
 export const MAX_IMPORT_QUESTIONS = 1000;
@@ -227,20 +228,38 @@ export async function publishQuestionImport(importId: string): Promise<{ inserte
 
 export async function getPublishedQuestions(programSlug: string, subjectSlug: string): Promise<PublishedQuestion[]> {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return [];
-  const { data, error } = await getSupabase().from("published_questions").select("id,unit_id,question_text,options,correct_index,explanation,difficulty,tags").eq("program_slug", getContentSourceProgramSlug(programSlug)).eq("subject_slug", subjectSlug);
+  const contentProgramSlug = getContentSourceProgramSlug(programSlug);
+  const slugs = publishedSubjectSlugs(contentProgramSlug, subjectSlug);
+  const { data, error } = await getSupabase().from("published_questions")
+    .select("id,subject_slug,unit_id,question_text,options,correct_index,explanation,difficulty,tags")
+    .eq("program_slug", contentProgramSlug).in("subject_slug", slugs);
   if (error) return [];
-  return (data ?? []).map((row) => ({ ...row, options: asOptions(row.options), tags: row.tags ?? [] })) as PublishedQuestion[];
+  return (data ?? []).map((row) => ({
+    ...row,
+    unit_id: canonicalPublishedUnitId(contentProgramSlug, subjectSlug, row.subject_slug, row.unit_id),
+    options: asOptions(row.options),
+    tags: row.tags ?? [],
+  })) as PublishedQuestion[];
 }
 
 /** Subject slugs that have at least one reviewed and published import. */
 export async function getPublishedSubjectSlugs(programSlug: string): Promise<string[]> {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return [];
-  const { data, error } = await getSupabase()
-    .from("published_questions")
-    .select("subject_slug")
-    .eq("program_slug", getContentSourceProgramSlug(programSlug));
-  if (error) return [];
-  return [...new Set((data ?? []).map((row) => row.subject_slug).filter(Boolean))];
+  const contentProgramSlug = getContentSourceProgramSlug(programSlug);
+  const slugs = new Set<string>();
+  const pageSize = 1000;
+  for (let offset = 0; ; offset += pageSize) {
+    const { data, error } = await getSupabase().from("published_questions")
+      .select("subject_slug")
+      .eq("program_slug", contentProgramSlug)
+      .range(offset, offset + pageSize - 1);
+    if (error) return [];
+    for (const row of data ?? []) {
+      if (row.subject_slug) slugs.add(canonicalPublishedSubjectSlug(contentProgramSlug, row.subject_slug));
+    }
+    if (!data || data.length < pageSize) break;
+  }
+  return [...slugs];
 }
 
 /** Count database-published questions without loading their full text. */

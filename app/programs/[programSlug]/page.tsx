@@ -65,7 +65,7 @@ export default async function ProgramPage({
     return <LearningPage className="max-w-3xl">
       <Link href="/programs" className="mb-6 inline-flex min-h-10 items-center text-sm text-muted-foreground hover:text-foreground">All programmes</Link>
       <div className="rounded-2xl border bg-card p-5 sm:p-7">
-        <p className="text-xs font-bold uppercase tracking-wider text-primary">Nepal Pharmacy Council Â· Past questions</p>
+        <p className="text-xs font-bold uppercase tracking-wider text-primary">Nepal Pharmacy Council · Past questions</p>
         <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Pharmacy Assistant Registration Exam</h1>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">This is the Nepal Pharmacy Council name-registration exam for pharmacy assistants after the three-year Diploma in Pharmacy. It is one post-diploma exam, not a Year 1, 2, or 3 course.</p>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">Browse the supplied past-question collection, numbered through 866. The publication combines pharmacist and pharmacy assistant questions and does not provide an answer key, so scored practice is pending verified answers.</p>
@@ -86,7 +86,7 @@ export default async function ProgramPage({
   const questionCount = available ? await getQuestionCount(program.slug) : 0;
 
   const heading = program.level
-    ? `${program.name} Â· ${program.level}`
+    ? `${program.name} · ${program.level}`
     : program.name;
   // Single-level awards have the same name as the programme, so showing both
   // in the breadcrumb just repeats itself.
@@ -103,7 +103,7 @@ export default async function ProgramPage({
     inLanguage: "en",
     provider: { "@type": "Organization", name: "Bujh", url: SITE_URL },
     ...(program.level ? { educationalLevel: program.level } : {}),
-    ...(available
+    ...(available && questionCount > 0
       ? {
           numberOfCredits: totals.subjects,
           hasCourseInstance: {
@@ -175,9 +175,10 @@ export default async function ProgramPage({
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
               <ProgramSelectAction slug={program.slug} />
-              <ProgramSelectAction slug={program.slug} destination={`/quiz?subject=${encodeURIComponent(subjects[0]?.slug || "")}`} label="Practice MCQs" secondary />
-              <ProgramSelectAction slug={program.slug} destination="/mock-test" label="Take a mock test" secondary />
+              {questionCount > 0 && <ProgramSelectAction slug={program.slug} destination="/quiz" label="Practice MCQs" secondary />}
+              {questionCount > 0 && <ProgramSelectAction slug={program.slug} destination="/mock-test" label="Take a mock test" secondary />}
             </div>
+            {questionCount === 0 && <p className="mt-3 text-sm text-muted-foreground">The curriculum is ready. MCQs will appear here as they are published.</p>}
           </>
         ) : (
           <div className="mt-6">
@@ -197,7 +198,7 @@ export default async function ProgramPage({
           </h2>
           <div className="grid gap-2 sm:grid-cols-2">
             {subjects.map((subject) => (
-              <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units Â· ${subject.examMarks} marks`} /></div>
+              <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units · ${subject.examMarks} marks`} /></div>
             ))}
           </div>
         </div>
