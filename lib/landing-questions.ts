@@ -1,5 +1,4 @@
 import { getSubjectName } from "@/data/registry";
-import { canonicalPublishedSubjectSlug } from "@/data/question-slugs";
 import { getBankProgramSlugs, getBankSubjectSlugs, loadBank, type RawBankQuestion } from "@/lib/content/banks";
 import { getSupabase } from "@/lib/supabase/client";
 import type { PreviewQuestion } from "@/components/practice-preview";
@@ -64,7 +63,7 @@ async function publishedSamples(): Promise<PreviewQuestion[]> {
       .range(offset, offset + PREVIEW_SIZE - 1);
     if (error) return [];
     return (data ?? []).flatMap((row) => {
-      const subjectSlug = canonicalPublishedSubjectSlug(row.program_slug, row.subject_slug);
+      const subjectSlug = row.subject_slug;
       const sample = preview({
         question_text: row.question_text,
         options: row.options as string[],
