@@ -28,7 +28,7 @@ export function Footer() {
           </div>
 
           <p className="max-w-lg text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            MCQ practice, revision and mock exams for D.Pharm Year 2 and Year 3 students in Nepal. More CTEVT and +2 programmes are coming soon.
+            Explore CTEVT and +2 subjects, practise available MCQs and mock exams, and review your progress in one place.
           </p>
 
           {/* Quick Navigation Links */}

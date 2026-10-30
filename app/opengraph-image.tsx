@@ -58,7 +58,7 @@ export default function Image() {
             textAlign: "center",
           }}
         >
-          D.Pharm Year 2 and Year 3 available now · More programmes coming soon
+          CTEVT and +2 programmes · Study by subject and unit
         </div>
       </div>
     ),
