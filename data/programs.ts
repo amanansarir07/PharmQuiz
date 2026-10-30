@@ -76,7 +76,7 @@ export const programs: ProgramMeta[] = [
       "Nepal Pharmacy Council name-registration exam preparation for graduates of the three-year Diploma in Pharmacy.",
     icon: "🧪",
     order: 4,
-    hasContent: false,
+    hasContent: true,
   },
 
   // --------------------------------------------------- CTEVT · other awards

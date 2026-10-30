@@ -3,6 +3,7 @@ import { DEFAULT_PROGRAM_SLUG, programs } from "@/data/programs";
 import { subjects as dPharmYear1Subjects } from "@/data/programs/d-pharm-y1/subjects";
 import { subjects as dPharmYear2Subjects } from "@/data/programs/d-pharm-y2/subjects";
 import { subjects as dPharmYear3Subjects } from "@/data/programs/d-pharm-y3/subjects";
+import { subjects as cPharmSubjects } from "@/data/programs/c-pharm/subjects";
 import { subjects as healthAssistantYear2Subjects } from "@/data/programs/health-assistant/year-2";
 import { subjects as healthAssistantYear3Subjects } from "@/data/programs/health-assistant/year-3";
 import { officialOutline } from "@/data/programs/official-outline";
@@ -30,6 +31,7 @@ const CONTENT_BY_PROGRAM: Record<string, SubjectData[]> = {
   "d-pharm-y1": dPharmYear1Subjects,
   "d-pharm-y2": dPharmYear2Subjects,
   "d-pharm-y3": dPharmYear3Subjects,
+  "c-pharm": cPharmSubjects,
   "health-assistant-y2": healthAssistantYear2Subjects,
   "health-assistant-y3": healthAssistantYear3Subjects,
   "pcl-nursing": officialOutline("pcl-nursing", "CTEVT PCL Nursing, revised 2018, Year 1.", nursingYear1),

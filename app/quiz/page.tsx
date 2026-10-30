@@ -286,7 +286,7 @@ function QuizSetupInner() {
     <div className={`mx-auto max-w-5xl px-4 pt-6 sm:px-6 sm:pb-10 sm:pt-9 ${mobileStep === 2 ? "pb-32" : "pb-10"}`}>
       <div className="mb-6">
         <p className="text-xs font-medium text-muted-foreground">{program.shortLabel} · Practice</p>
-        <h1 className="mt-1 text-[1.65rem] font-bold tracking-tight sm:text-[1.9rem]">{mobileStep === 1 ? "Choose a subject" : mobileStep === 2 ? "Choose units" : "Session settings"}</h1>
+        <h1 className="mt-1 text-[1.65rem] font-bold tracking-tight sm:text-[1.9rem]">{mobileStep === 1 ? "Choose a subject" : mobileStep === 2 ? programSlug === "c-pharm" ? "Question bank" : "Choose units" : "Session settings"}</h1>
         <p className="mt-2 text-sm text-muted-foreground sm:hidden">{mobileStep === 1 ? availableSubjectSlugs === null ? "Checking available questions…" : `${practiceSubjects.length} subjects · ${practiceSubjects.reduce((total, item) => total + item.units.length, 0)} units` : `Step ${mobileStep} of 3`}</p>
         <p className="mt-2 hidden text-sm text-muted-foreground sm:block">Choose a subject, units, and your practice settings.</p>
         <ol className="mt-4 grid grid-cols-3 gap-2 sm:hidden" aria-label="Practice setup progress">
@@ -320,13 +320,13 @@ function QuizSetupInner() {
         <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-sm font-bold text-primary" aria-hidden="true">{subject.name.slice(0, 1)}</div>
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-semibold">{subject.name}</p>
-          <p className="mt-0.5 text-xs text-muted-foreground">{subject.units.length} units · {subject.examMarks} marks</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">{subject.examMarks > 0 ? `${subject.units.length} units · ${subject.examMarks} marks` : "Complete exam question bank"}</p>
         </div>
         <button type="button" onClick={() => setMobileStep(1)} className="min-h-10 shrink-0 rounded-lg px-2 text-xs font-semibold text-primary hover:bg-primary/5">Change</button>
       </section>}
       {mobileStep === 3 && subject && <section className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl bg-secondary/60 px-3 py-2.5 text-xs sm:hidden">
         <span className="font-semibold">{subject.name}</span>
-        <span className="text-muted-foreground">{selectedUnits.length === 0 ? `All ${subject.units.length} units` : `${selectedUnits.length} of ${subject.units.length} units`}</span>
+        <span className="text-muted-foreground">{programSlug === "c-pharm" ? "Full question bank" : selectedUnits.length === 0 ? `All ${subject.units.length} units` : `${selectedUnits.length} of ${subject.units.length} units`}</span>
         <button type="button" onClick={() => setMobileStep(2)} className="ml-auto min-h-8 font-semibold text-primary">Edit</button>
       </section>}
       <div className="space-y-4">
@@ -471,7 +471,7 @@ function QuizSetupInner() {
                   <span className="mt-3 min-w-0">
                     <span className="block line-clamp-2 text-sm font-bold leading-5">{s.name}</span>
                     <span className="mt-1 block text-xs text-muted-foreground">
-                      {s.units.length} units · {s.examMarks} marks
+                      {s.examMarks > 0 ? `${s.units.length} units · ${s.examMarks} marks` : "Complete exam question bank"}
                     </span>
                   </span>
                   {selectedSubject === s.slug && <Check className="absolute right-3 top-3 size-4 text-primary" aria-hidden="true" />}
@@ -513,10 +513,10 @@ function QuizSetupInner() {
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-medium">{unit.name}</p>
                       <p className="text-xs text-muted-foreground">
-                        {unit.subtopics.length} subtopics · {unit.examHours} hours
+                        {unit.examHours > 0 ? `${unit.subtopics.length} subtopics · ${unit.examHours} hours` : "Published MCQs"}
                       </p>
                     </div>
-                    <span className="shrink-0 text-xs text-muted-foreground sm:rounded-full sm:border sm:px-2 sm:py-0.5">{unit.examMarks} marks</span>
+                    {unit.examMarks > 0 && <span className="shrink-0 text-xs text-muted-foreground sm:rounded-full sm:border sm:px-2 sm:py-0.5">{unit.examMarks} marks</span>}
                   </label>
                 ))}
               </div>
@@ -677,7 +677,7 @@ function QuizSetupInner() {
         </Button>
         </div> : <div className="hidden min-h-14 items-center gap-3 border-t pt-5 text-sm text-muted-foreground sm:flex"><span>Select a subject to unlock your practice settings.</span></div>}
       </div>
-      {subject && mobileStep === 2 && <div className="fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] z-30 bg-background/95 px-4 py-3 backdrop-blur-lg sm:hidden"><div className="mx-auto max-w-5xl"><p className="mb-2 text-xs text-muted-foreground">{selectedUnits.length === 0 ? `All ${subject.units.length} units included` : `${selectedUnits.length} of ${subject.units.length} units selected`}</p><Button type="button" className="min-h-11 w-full" onClick={() => setMobileStep(3)}>Continue to settings</Button></div></div>}
+      {subject && mobileStep === 2 && <div className="fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] z-30 bg-background/95 px-4 py-3 backdrop-blur-lg sm:hidden"><div className="mx-auto max-w-5xl"><p className="mb-2 text-xs text-muted-foreground">{programSlug === "c-pharm" ? "Full question bank included" : selectedUnits.length === 0 ? `All ${subject.units.length} units included` : `${selectedUnits.length} of ${subject.units.length} units selected`}</p><Button type="button" className="min-h-11 w-full" onClick={() => setMobileStep(3)}>Continue to settings</Button></div></div>}
     </div>
   );
 }

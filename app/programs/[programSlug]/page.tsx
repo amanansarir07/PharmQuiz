@@ -61,23 +61,6 @@ export default async function ProgramPage({
   const program = getProgram(programSlug);
   if (!program) notFound();
 
-  if (program.slug === "c-pharm") {
-    return <LearningPage className="max-w-3xl">
-      <Link href="/programs" className="mb-6 inline-flex min-h-10 items-center text-sm text-muted-foreground hover:text-foreground">All programmes</Link>
-      <div className="rounded-2xl border bg-card p-5 sm:p-7">
-        <p className="text-xs font-bold uppercase tracking-wider text-primary">Nepal Pharmacy Council</p>
-        <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Pharmacy Assistant Registration Exam</h1>
-        <p className="mt-3 text-sm leading-6 text-muted-foreground">This is the Nepal Pharmacy Council name-registration exam for pharmacy assistants after the three-year Diploma in Pharmacy. It is one post-diploma exam, not a Year 1, 2, or 3 course.</p>
-        <p className="mt-3 text-sm leading-6 text-muted-foreground">The Council exam syllabus is linked below. In-app practice will be available once its subjects and units are mapped.</p>
-        <div className="mt-6 flex flex-wrap gap-2">
-          <Link href="/programs/d-pharm-y2" className="inline-flex min-h-11 items-center rounded-xl border px-4 text-sm font-semibold">Study D.Pharm Year 2</Link>
-          <Link href="/programs/d-pharm-y3" className="inline-flex min-h-11 items-center rounded-xl border px-4 text-sm font-semibold">Study D.Pharm Year 3</Link>
-        </div>
-        <a href="https://nepalpharmacycouncil.org.np/Syllabus.html" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex text-sm font-semibold text-primary underline underline-offset-2">View the official Council exam syllabus</a>
-      </div>
-    </LearningPage>;
-  }
-
   const faculty = getFaculty(program.facultySlug);
   const available = isProgramAvailable(program.slug);
   const subjects = getSubjectsForProgram(program.slug);
@@ -164,13 +147,13 @@ export default async function ProgramPage({
             <div className="mt-5 flex flex-wrap gap-3">
               <Badge variant="secondary">
                 <BookOpen className="mr-1 h-3 w-3" />
-                {totals.subjects} Subjects
+                {totals.subjects} {totals.subjects === 1 ? "Subject" : "Subjects"}
               </Badge>
-              {program.facultySlug !== "plus-two" && <Badge variant="secondary">
+              {program.facultySlug !== "plus-two" && totals.examMarks > 0 && <Badge variant="secondary">
                 <Award className="mr-1 h-3 w-3" />
                 {totals.examMarks} Total Marks
               </Badge>}
-              {program.facultySlug !== "plus-two" && <Badge variant="secondary">
+              {program.facultySlug !== "plus-two" && totals.totalHours > 0 && <Badge variant="secondary">
                 <Clock className="mr-1 h-3 w-3" />
                 {totals.totalHours} Teaching Hours
               </Badge>}
@@ -185,9 +168,10 @@ export default async function ProgramPage({
                 <ProgramSelectAction slug={program.slug} destination="/mock-test" label="Take a mock test" secondary />
               )}
             </div>
-            {questionCount === 0 && <p className="mt-4 text-sm text-muted-foreground">The curriculum is ready. MCQs will appear here as they are published.</p>}
+            {questionCount === 0 && <p className="mt-4 text-sm text-muted-foreground">{program.slug === "c-pharm" ? "No published questions could be loaded right now. Please try again." : "The curriculum is ready. MCQs will appear here as they are published."}</p>}
             {questionCount > 0 && !practiceSubjectSlug && <p className="mt-4 text-sm text-muted-foreground">Published questions are not yet linked to a subject in this syllabus.</p>}
             {program.facultySlug === "plus-two" && <p className="mt-3 text-sm text-muted-foreground">Subject combinations vary by school. Choose the subjects you study.</p>}
+            {program.slug === "c-pharm" && <p className="mt-4 text-sm text-muted-foreground">{questionCount > 0 && "These published questions are ready for practice. "}Topic-by-topic syllabus mapping is still pending. <a href="https://nepalpharmacycouncil.org.np/Syllabus.html" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline underline-offset-2">View the Council syllabus</a>.</p>}
           </>
         ) : (
           <div className="mt-6">
@@ -208,7 +192,7 @@ export default async function ProgramPage({
           <div className="grid gap-2 sm:grid-cols-2">
             {subjects.map((subject) => {
               const hasQuestions = questionSubjectSlugs.has(subject.slug);
-              return <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units · ${subject.examMarks} marks · ${hasQuestions ? "Questions available" : "Question bank coming soon"}`} /></div>;
+              return <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} ${subject.units.length === 1 ? "section" : "units"}${subject.examMarks > 0 ? ` · ${subject.examMarks} marks` : ""} · ${hasQuestions ? "Questions available" : "Question bank coming soon"}`} /></div>;
             })}
           </div>
         </div>
