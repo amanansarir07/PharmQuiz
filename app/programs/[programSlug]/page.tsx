@@ -10,7 +10,7 @@ import {
   getSubjectsForProgram,
   isProgramAvailable,
 } from "@/data/registry";
-import { getQuestionCount } from "@/lib/quiz-loader";
+import { getProgramQuestionSubjectSlugs, getQuestionCount } from "@/lib/quiz-loader";
 import { Badge } from "@/components/ui/badge";
 import { SITE_URL } from "@/lib/site";
 import { getCurriculumPreview } from "@/data/curriculum-previews";
@@ -83,6 +83,10 @@ export default async function ProgramPage({
   const subjects = getSubjectsForProgram(program.slug);
   const totals = getProgramTotals(program.slug);
   const questionCount = available ? await getQuestionCount(program.slug) : 0;
+  const questionSubjectSlugs = questionCount > 0
+    ? new Set(await getProgramQuestionSubjectSlugs(program.slug))
+    : new Set<string>();
+  const practiceSubjectSlug = subjects.find((subject) => questionSubjectSlugs.has(subject.slug))?.slug;
 
   const heading = program.level
     ? `${program.name} · ${program.level}`
@@ -174,10 +178,15 @@ export default async function ProgramPage({
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
               <ProgramSelectAction slug={program.slug} />
-              {questionCount > 0 && <ProgramSelectAction slug={program.slug} destination="/quiz" label="Practice MCQs" secondary />}
-              {questionCount > 0 && <ProgramSelectAction slug={program.slug} destination="/mock-test" label="Take a mock test" secondary />}
+              {practiceSubjectSlug && (
+                <ProgramSelectAction slug={program.slug} destination={`/quiz?subject=${encodeURIComponent(practiceSubjectSlug)}`} label="Practice MCQs" secondary />
+              )}
+              {questionCount > 0 && (
+                <ProgramSelectAction slug={program.slug} destination="/mock-test" label="Take a mock test" secondary />
+              )}
             </div>
-            {questionCount === 0 && <p className="mt-3 text-sm text-muted-foreground">The curriculum is ready. MCQs will appear here as they are published.</p>}
+            {questionCount === 0 && <p className="mt-4 text-sm text-muted-foreground">The curriculum is ready. MCQs will appear here as they are published.</p>}
+            {questionCount > 0 && !practiceSubjectSlug && <p className="mt-4 text-sm text-muted-foreground">Published questions are not yet linked to a subject in this syllabus.</p>}
             {program.facultySlug === "plus-two" && <p className="mt-3 text-sm text-muted-foreground">Subject combinations vary by school. Choose the subjects you study.</p>}
           </>
         ) : (
@@ -197,9 +206,10 @@ export default async function ProgramPage({
             Subjects
           </h2>
           <div className="grid gap-2 sm:grid-cols-2">
-            {subjects.map((subject) => (
-              <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units · ${subject.examMarks} marks`} /></div>
-            ))}
+            {subjects.map((subject) => {
+              const hasQuestions = questionSubjectSlugs.has(subject.slug);
+              return <div key={subject.id} className="overflow-hidden rounded-2xl border bg-card"><LinkRow href={`/subjects/${subject.slug}`} icon={<SubjectIcon slug={subject.slug} />} title={subject.name} detail={`${subject.units.length} units · ${subject.examMarks} marks · ${hasQuestions ? "Questions available" : "Question bank coming soon"}`} /></div>;
+            })}
           </div>
         </div>
       )}

@@ -7,7 +7,13 @@ import {
   resolveBankProgram,
   type RawBankQuestion,
 } from "@/lib/content/banks";
-import { getPublishedQuestionCount, getPublishedQuestions, getPublishedSubjectSlugs } from "@/lib/bulk-question-import";
+import {
+  getLegacyPublishedSubjectSlug,
+  getPublishedQuestionCount,
+  getPublishedQuestions,
+  getPublishedSubjectQuestionCount,
+  getPublishedSubjectSlugs,
+} from "@/lib/bulk-question-import";
 
 /**
  * Question loading for quizzes, mock papers and the review browser.
@@ -46,11 +52,14 @@ async function loadQuestionPool(subjectSlug: string, programSlug: string): Promi
     loadBank(subjectSlug, contentProgramSlug),
     getPublishedQuestions(contentProgramSlug, subjectSlug),
   ]);
+  const legacySubjectSlug = getLegacyPublishedSubjectSlug(programSlug, subjectSlug);
   return [
     ...staticBank,
     ...imported.map((question) => ({
       published_id: question.id,
-      unit_id: question.unit_id,
+      unit_id: legacySubjectSlug !== subjectSlug && question.unit_id.startsWith(`${legacySubjectSlug}-unit-`)
+        ? `${subjectSlug}${question.unit_id.slice(legacySubjectSlug.length)}`
+        : question.unit_id,
       question_text: question.question_text,
       options: question.options,
       correct_index: question.correct_index,
@@ -243,6 +252,29 @@ export async function getQuestionCount(
   return staticCount + importedCount;
 }
 
+/** Question-bank subject slugs available to practice in a programme. */
+export async function getProgramQuestionSubjectSlugs(programSlug: string): Promise<string[]> {
+  const contentProgramSlug = getContentSourceProgramSlug(programSlug);
+  const [publishedSubjectSlugs, staticSubjectSlugs] = await Promise.all([
+    getPublishedSubjectSlugs(programSlug),
+    Promise.resolve(getBankSubjectSlugs(contentProgramSlug)),
+  ]);
+  return [...new Set([...staticSubjectSlugs, ...publishedSubjectSlugs])];
+}
+
+/** Number of questions available for one subject in a programme. */
+export async function getSubjectQuestionCount(
+  subjectSlug: string,
+  programSlug: string = resolveBankProgram(subjectSlug)
+): Promise<number> {
+  const contentProgramSlug = getContentSourceProgramSlug(programSlug);
+  const [staticBank, importedCount] = await Promise.all([
+    loadBank(subjectSlug, contentProgramSlug),
+    getPublishedSubjectQuestionCount(contentProgramSlug, subjectSlug),
+  ]);
+  return staticBank.length + importedCount;
+}
+
 /** Question totals for every programme that has a bank, keyed by programme slug. */
 export async function getProgrammeQuestionCounts(): Promise<
   Record<string, number>
@@ -310,16 +342,23 @@ export async function getMockQuestions(
 }
 
 /**
- * Look up a full question from the local bank by subject + exact text.
+ * Look up a full question from a local or published bank by subject + exact text.
  * Returns the question in natural (file) order — NOT shuffled — with the
  * bank's own correct index. Used to rehydrate slim records like bookmarks.
  */
 export async function findBankQuestion(
   subjectSlug: string | undefined,
-  questionText: string
+  questionText: string,
+  programSlug?: string
 ): Promise<(QuizQuestion & { subjectSlug: string }) | null> {
   const banks = subjectSlug
-    ? [{ subjectSlug, questions: await loadBank(subjectSlug) }]
+    ? [{
+        subjectSlug,
+        questions: await loadQuestionPool(
+          subjectSlug,
+          programSlug ?? resolveBankProgram(subjectSlug)
+        ),
+      }]
     : await loadAllBanks();
 
   for (const bank of banks) {

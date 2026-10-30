@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useBookmarks } from "@/lib/bookmarks";
 import { findBankQuestion } from "@/lib/quiz-loader";
-import { getSubjectBySlug, getSubjectName } from "@/data/registry";
+import { getProgramForSubject, getSubjectBySlug, getSubjectName } from "@/data/registry";
 import { LibraryNav } from "@/components/library-nav";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
 import { AppLoading } from "@/components/app-state";
@@ -34,9 +34,13 @@ export default function BookmarksPage() {
       const enriched = await Promise.all(
         bookmarks.map(async (b) => {
           if (b.options.length > 0) return b;
+          const programSlug = b.subjectSlug
+            ? getProgramForSubject(b.subjectSlug)?.slug
+            : undefined;
           const full = await findBankQuestion(
             b.subjectSlug || undefined,
-            b.questionText
+            b.questionText,
+            programSlug
           );
           if (full) {
             return {

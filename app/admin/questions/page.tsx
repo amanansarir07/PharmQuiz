@@ -235,8 +235,11 @@ export default function AdminQuestionsPage() {
     setSaving(true); setError("");
     try {
       const result = await publishQuestionImport(batch.id);
+      if (result.inserted === 0 && result.skipped === 0) {
+        throw new Error("The saved import contains no approved, valid questions. Nothing was published. Reopen the draft, approve the questions, and try again.");
+      }
       setBatch({ ...batch, status: "published", published_count: result.inserted });
-      setNotice(`${result.inserted} approved question${result.inserted === 1 ? "" : "s"} published.${result.skipped ? ` ${result.skipped} duplicate approval${result.skipped === 1 ? " was" : "s were"} skipped.` : ""}`);
+      setNotice(`${result.inserted} approved question${result.inserted === 1 ? "" : "s"} published.${result.skipped ? ` ${result.skipped} duplicate approval${result.skipped === 1 ? " was" : "s were"} skipped because the question already exists.` : ""}`);
       await loadHistory();
     } catch (publishError) { setError(publishError instanceof Error ? publishError.message : "Could not publish this import."); }
     finally { setSaving(false); }

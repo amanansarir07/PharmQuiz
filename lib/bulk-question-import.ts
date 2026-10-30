@@ -79,6 +79,23 @@ export type PublishedQuestion = {
   tags: string[];
 };
 
+const LEGACY_PUBLISHED_SUBJECT_SLUGS: Record<string, Record<string, string>> = {
+  "health-assistant-y2": {
+    "health-assistant-y2-basic-medical-procedures-first-aid": "basic-medical-procedures-first-aid",
+    "health-assistant-y2-clinical-pathology": "clinical-pathology",
+    "health-assistant-y2-environmental-health": "environmental-health",
+  },
+  "health-assistant-y3": {
+    "health-assistant-y3-epidemiology-community-diagnosis": "epidemiology-community-diagnosis",
+    "health-assistant-y3-health-management": "health-management",
+    "health-assistant-y3-surgery-ii": "surgery-ii",
+  },
+};
+
+export function getLegacyPublishedSubjectSlug(programSlug: string, subjectSlug: string): string {
+  return LEGACY_PUBLISHED_SUBJECT_SLUGS[programSlug]?.[subjectSlug] ?? subjectSlug;
+}
+
 const tidy = (value: unknown) => typeof value === "string" ? value.replace(/\s+/g, " ").trim() : "";
 export const normalizeQuestion = (question: string) => tidy(question).toLowerCase().replace(/[\W_]+/g, " ").trim();
 
@@ -269,5 +286,17 @@ export async function getPublishedQuestionCount(programSlug: string): Promise<nu
     .from("published_questions")
     .select("id", { count: "exact", head: true })
     .eq("program_slug", getContentSourceProgramSlug(programSlug));
+  return error ? 0 : count ?? 0;
+}
+
+/** Count database-published questions for one subject without loading their text. */
+export async function getPublishedSubjectQuestionCount(programSlug: string, subjectSlug: string): Promise<number> {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return 0;
+  const subjectSlugs = publishedSubjectSlugs(getContentSourceProgramSlug(programSlug), subjectSlug);
+  const { count, error } = await getSupabase()
+    .from("published_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("program_slug", getContentSourceProgramSlug(programSlug))
+    .in("subject_slug", subjectSlugs);
   return error ? 0 : count ?? 0;
 }

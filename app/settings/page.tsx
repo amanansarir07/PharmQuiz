@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { Check, GraduationCap, LogOut, Monitor, Moon, Sun, UserRound } from "lucide-react";
+import { Check, GraduationCap, LoaderCircle, LogOut, Monitor, Moon, Sun, UserRound } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { LearningPage, LinkRow, PageHeading, SectionHeading } from "@/components/learning-ui";
@@ -20,12 +20,27 @@ export default function SettingsPage() {
   const [themeReady, setThemeReady] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
   const [programOpen, setProgramOpen] = useState(false);
+  const [pendingProgramSlug, setPendingProgramSlug] = useState<string | null>(null);
+  const [switchingProgram, setSwitchingProgram] = useState(false);
   useEffect(() => {
     const frame = requestAnimationFrame(() => setThemeReady(true));
     return () => cancelAnimationFrame(frame);
   }, []);
   const activeTheme = themeReady ? theme : undefined;
   const router = useRouter();
+  const pendingProgram = availablePrograms.find((item) => item.slug === pendingProgramSlug);
+
+  function confirmProgramSwitch() {
+    if (!pendingProgram || switchingProgram) return;
+
+    setSwitchingProgram(true);
+    setProgramSlug(pendingProgram.slug);
+    window.setTimeout(() => {
+      setProgramOpen(false);
+      setPendingProgramSlug(null);
+      setSwitchingProgram(false);
+    }, 650);
+  }
 
   return <LearningPage className="max-w-4xl">
     <PageHeading eyebrow="Preferences" title="Settings" description="Manage your learning experience." />
@@ -64,30 +79,64 @@ export default function SettingsPage() {
         </div>
       </section>
     </div>
-    <Dialog open={programOpen} onOpenChange={setProgramOpen}>
+    <Dialog open={programOpen} onOpenChange={(open) => {
+      if (switchingProgram) return;
+      setProgramOpen(open);
+      if (open) setPendingProgramSlug(null);
+    }}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Switch programme</DialogTitle>
-          <DialogDescription>Your subjects and practice sessions follow the selected syllabus.</DialogDescription>
+          <DialogTitle>{pendingProgram ? `Switch to ${pendingProgram.shortLabel}?` : "Switch programme"}</DialogTitle>
+          <DialogDescription>{pendingProgram ? "Your study home and practice options will update to this programme." : "Your subjects and practice sessions follow the selected syllabus."}</DialogDescription>
         </DialogHeader>
-        <div className="space-y-2">
-          {availablePrograms.map((item) => (
-            <button
-              type="button"
-              key={item.slug}
-              aria-current={program.slug === item.slug ? "true" : undefined}
-              onClick={() => {
-                if (item.slug !== program.slug) setProgramSlug(item.slug);
-                setProgramOpen(false);
-              }}
-              className={cn("flex min-h-16 w-full items-center gap-3 rounded-xl border p-3 text-left", program.slug === item.slug ? "border-primary bg-primary/5" : "hover:bg-muted")}
-            >
-              <ProgrammeIcon program={item} className="size-9" iconClassName="size-4" />
-              <span className="min-w-0 flex-1 text-sm font-semibold">{item.name}{item.level && ` · ${item.level}`}</span>
-              {program.slug === item.slug && <Check className="size-5 text-primary" />}
-            </button>
-          ))}
-        </div>
+        {pendingProgram ? (
+          switchingProgram ? (
+            <div className="flex min-h-32 flex-col items-center justify-center gap-3 text-center" role="status" aria-live="polite">
+              <LoaderCircle className="size-6 animate-spin text-primary" aria-hidden="true" />
+              <p className="text-sm font-semibold">Switching programme…</p>
+            </div>
+          ) : (
+            <>
+              <div className="space-y-2 rounded-xl border bg-muted/30 p-3">
+                <p className="text-xs font-medium text-muted-foreground">Current programme</p>
+                <p className="text-sm font-semibold">{program.shortLabel}</p>
+                <div className="border-t pt-2">
+                  <p className="text-xs font-medium text-muted-foreground">Switch to</p>
+                  <div className="mt-1.5 flex items-center gap-2">
+                    <ProgrammeIcon program={pendingProgram} className="size-9" iconClassName="size-4" />
+                    <p className="text-sm font-semibold">{pendingProgram.name}{pendingProgram.level && ` · ${pendingProgram.level}`}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+                <button type="button" onClick={() => setPendingProgramSlug(null)} className="min-h-11 rounded-lg border px-4 text-sm font-semibold hover:bg-muted">Keep current</button>
+                <button type="button" onClick={confirmProgramSwitch} className="min-h-11 rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-primary/90">Switch programme</button>
+              </div>
+            </>
+          )
+        ) : (
+          <div className="space-y-2">
+            {availablePrograms.map((item) => (
+              <button
+                type="button"
+                key={item.slug}
+                aria-current={program.slug === item.slug ? "true" : undefined}
+                onClick={() => {
+                  if (item.slug === program.slug) {
+                    setProgramOpen(false);
+                    return;
+                  }
+                  setPendingProgramSlug(item.slug);
+                }}
+                className={cn("flex min-h-16 w-full items-center gap-3 rounded-xl border p-3 text-left", program.slug === item.slug ? "border-primary bg-primary/5" : "hover:bg-muted")}
+              >
+                <ProgrammeIcon program={item} className="size-9" iconClassName="size-4" />
+                <span className="min-w-0 flex-1 text-sm font-semibold">{item.name}{item.level && ` · ${item.level}`}</span>
+                {program.slug === item.slug && <Check className="size-5 text-primary" />}
+              </button>
+            ))}
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   </LearningPage>;

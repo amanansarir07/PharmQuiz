@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, Suspense, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getSubjectsForProgram } from "@/data/registry";
+import { getContentSourceProgramSlug, getSubjectsForProgram } from "@/data/registry";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,7 +15,9 @@ import {
 import { safeSetItem, pruneExpiredScratchKeys } from "@/lib/storage";
 import { useActiveProgram } from "@/lib/program";
 import { useAuth } from "@/lib/auth";
-import { AppError, AppLoading } from "@/components/app-state";
+import { AppEmpty, AppError, AppLoading } from "@/components/app-state";
+import { getBankSubjectSlugs } from "@/lib/content/banks";
+import { getPublishedSubjectSlugs } from "@/lib/bulk-question-import";
 import {
   fetchUpcomingExams,
   formatCountdown,
@@ -41,6 +43,7 @@ import {
   ClipboardCheck,
   Sparkles,
   Check,
+  Loader2,
 } from "lucide-react";
 
 type QuizPreset = "quick" | "chapter" | "subject" | "revision";
@@ -58,6 +61,7 @@ function QuizSetupInner() {
   const [preset, setPreset] = useState<QuizPreset>("quick");
   const [mobileStep, setMobileStep] = useState<1 | 2 | 3>(1);
   const [starting, setStarting] = useState(false);
+  const [subjectAvailability, setSubjectAvailability] = useState<{ programSlug: string; slugs: string[] } | null>(null);
   const unitsRef = useRef<HTMLDivElement>(null);
   const difficultyRef = useRef<HTMLDivElement>(null);
   const questionsRef = useRef<HTMLDivElement>(null);
@@ -74,20 +78,42 @@ function QuizSetupInner() {
     () => getSubjectsForProgram(programSlug),
     [programSlug]
   );
+  const availableSubjectSlugs = subjectAvailability?.programSlug === programSlug
+    ? subjectAvailability.slugs
+    : null;
+  const practiceSubjects = useMemo(
+    () => subjects.filter((item) => availableSubjectSlugs?.includes(item.slug)),
+    [availableSubjectSlugs, subjects]
+  );
+
+  useEffect(() => {
+    let active = true;
+    const staticSubjectSlugs = getBankSubjectSlugs(getContentSourceProgramSlug(programSlug));
+    void getPublishedSubjectSlugs(programSlug).then((publishedSubjectSlugs) => {
+      if (active) {
+        setSubjectAvailability({
+          programSlug,
+          slugs: [...new Set([...staticSubjectSlugs, ...publishedSubjectSlugs])],
+        });
+      }
+    });
+    return () => { active = false; };
+  }, [programSlug]);
 
   useEffect(() => {
     pruneExpiredScratchKeys();
+    if (availableSubjectSlugs === null) return;
     const subjectParam = searchParams.get("subject");
-    if (subjectParam && subjects.find((s) => s.slug === subjectParam)) {
+    if (subjectParam && practiceSubjects.find((s) => s.slug === subjectParam)) {
       const unitParam = searchParams.get("unit");
       const frame = requestAnimationFrame(() => {
         setSelectedSubject(subjectParam);
-        if (unitParam && subjects.find((s) => s.slug === subjectParam)?.units.some((unit) => unit.id === unitParam)) setSelectedUnits([unitParam]);
+        if (unitParam && practiceSubjects.find((s) => s.slug === subjectParam)?.units.some((unit) => unit.id === unitParam)) setSelectedUnits([unitParam]);
         setMobileStep(unitParam ? 3 : 2);
       });
       return () => cancelAnimationFrame(frame);
     }
-  }, [searchParams, subjects]);
+  }, [availableSubjectSlugs, practiceSubjects, searchParams]);
 
   // Scheduled mock announcements use the same rule as the Mock Test page: a
   // scheduled exam only starts at its admin-set time, never before.
@@ -113,6 +139,10 @@ function QuizSetupInner() {
   }, [programSlug]);
 
   const subject = subjects.find((s) => s.slug === selectedSubject);
+  const requestedSubjectSlug = searchParams.get("subject");
+  const requestedSubjectUnavailable = availableSubjectSlugs !== null
+    && Boolean(requestedSubjectSlug)
+    && !practiceSubjects.some((item) => item.slug === requestedSubjectSlug);
 
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
     setTimeout(() => {
@@ -212,7 +242,7 @@ function QuizSetupInner() {
   };
 
   const startQuickPractice = () => {
-    const firstSubject = subjects[0];
+    const firstSubject = practiceSubjects[0];
     if (!firstSubject || starting) return;
     setStarting(true);
     const sessionId = crypto.randomUUID();
@@ -257,7 +287,7 @@ function QuizSetupInner() {
       <div className="mb-6">
         <p className="text-xs font-medium text-muted-foreground">{program.shortLabel} · Practice</p>
         <h1 className="mt-1 text-[1.65rem] font-bold tracking-tight sm:text-[1.9rem]">{mobileStep === 1 ? "Choose a subject" : mobileStep === 2 ? "Choose units" : "Session settings"}</h1>
-        <p className="mt-2 text-sm text-muted-foreground sm:hidden">{mobileStep === 1 ? `${subjects.length} subjects · ${subjects.reduce((total, item) => total + item.units.length, 0)} units` : `Step ${mobileStep} of 3`}</p>
+        <p className="mt-2 text-sm text-muted-foreground sm:hidden">{mobileStep === 1 ? availableSubjectSlugs === null ? "Checking available questions…" : `${practiceSubjects.length} subjects · ${practiceSubjects.reduce((total, item) => total + item.units.length, 0)} units` : `Step ${mobileStep} of 3`}</p>
         <p className="mt-2 hidden text-sm text-muted-foreground sm:block">Choose a subject, units, and your practice settings.</p>
         <ol className="mt-4 grid grid-cols-3 gap-2 sm:hidden" aria-label="Practice setup progress">
           {[
@@ -277,10 +307,11 @@ function QuizSetupInner() {
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
             <p className="text-sm font-semibold">Short on time?</p>
-            <p className="mt-1 text-xs leading-5 text-muted-foreground">Try 5 mixed questions from {subjects[0]?.name || "your first subject"}.</p>
+            <p className="mt-1 text-xs leading-5 text-muted-foreground">Try 5 mixed questions from {practiceSubjects[0]?.name || "an available subject"}.</p>
           </div>
-          <Button type="button" variant="outline" className="min-h-11 shrink-0 px-3" disabled={starting || subjects.length === 0} onClick={startQuickPractice}>
-            {starting ? "Preparing…" : "Quick start"}
+          <Button type="button" variant="outline" className="min-h-11 shrink-0 px-3" disabled={starting || availableSubjectSlugs === null || practiceSubjects.length === 0} onClick={startQuickPractice}>
+            {(starting || availableSubjectSlugs === null) && <Loader2 className="size-4 animate-spin motion-reduce:animate-none" />}
+            {starting ? "Preparing…" : availableSubjectSlugs === null ? "Checking…" : "Quick start"}
           </Button>
         </div>
       </section>}
@@ -299,7 +330,7 @@ function QuizSetupInner() {
         <button type="button" onClick={() => setMobileStep(2)} className="ml-auto min-h-8 font-semibold text-primary">Edit</button>
       </section>}
       <div className="space-y-4">
-        <div className="hidden items-center justify-between gap-3 border-b pb-4 sm:flex"><p className="text-sm text-muted-foreground">Short on time? Start with five mixed questions.</p><Button variant="outline" disabled={starting} onClick={startQuickPractice}>{starting ? "Preparing practice…" : "Start 5-question practice"}</Button></div>
+        <div className="hidden items-center justify-between gap-3 border-b pb-4 sm:flex"><p className="text-sm text-muted-foreground">Short on time? Start with five mixed questions.</p><Button variant="outline" disabled={starting || availableSubjectSlugs === null || practiceSubjects.length === 0} onClick={startQuickPractice}>{(starting || availableSubjectSlugs === null) && <Loader2 className="size-4 animate-spin motion-reduce:animate-none" />}{starting ? "Preparing practice…" : availableSubjectSlugs === null ? "Checking questions…" : "Start 5-question practice"}</Button></div>
 
         <Card className={`border-0 bg-card shadow-[var(--shadow-card)] ${mobileStep === 3 ? "" : "hidden sm:block"}`}>
           <CardHeader className="pb-3">
@@ -409,8 +440,23 @@ function QuizSetupInner() {
             </CardTitle>
           </CardHeader>
           <CardContent className="px-0 sm:px-4">
+            {requestedSubjectUnavailable && (
+              <p className="mb-3 rounded-xl bg-muted/60 p-3 text-sm text-muted-foreground" role="status">
+                Questions for that subject are not available yet. Choose a subject with published questions below.
+              </p>
+            )}
             <div className="grid grid-cols-2 gap-2 sm:gap-2">
-              {subjects.map((s) => (
+              {availableSubjectSlugs === null ? Array.from({ length: 4 }, (_, index) => (
+                <div key={index} className="min-h-28 animate-pulse rounded-2xl bg-muted/60 p-3 motion-reduce:animate-none" aria-hidden="true">
+                  <div className="size-9 rounded-xl bg-muted" />
+                  <div className="mt-4 h-4 w-3/4 rounded bg-muted" />
+                  <div className="mt-2 h-3 w-1/2 rounded bg-muted" />
+                </div>
+              )) : practiceSubjects.length === 0 ? (
+                <div className="col-span-2">
+                  <AppEmpty title="No practice questions available" description="This programme does not have any published question banks yet. Choose another available programme to practice." action="Browse programmes" onAction={() => router.push("/programs")} />
+                </div>
+              ) : practiceSubjects.map((s) => (
                 <button
                   key={s.id}
                   aria-pressed={selectedSubject === s.slug}
