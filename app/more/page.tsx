@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import {
   BookOpen,
+  MessagesSquare,
   Bookmark,
   ChartNoAxesCombined,
   History,
@@ -22,7 +23,9 @@ import { LearningPage, PageHeading, SectionHeading } from "@/components/learning
 import { AppError, AppLoading } from "@/components/app-state";
 
 const libraryLinks = [
+  { href: "/subjects", label: "My subjects", detail: "Choose a subject to study", icon: BookOpen },
   { href: "/review", label: "Question bank", detail: "Questions and explanations", icon: BookOpen },
+  { href: "/community", label: "Community", detail: "Ask and discuss with others", icon: MessagesSquare },
   { href: "/bookmarks", label: "Saved questions", detail: "Your revision list", icon: Bookmark, accountRequired: true },
   { href: "/notes", label: "Study notes", detail: "Notes by subject", icon: NotebookPen, accountRequired: true },
   { href: "/mistakes", label: "Mistakes", detail: "Questions to revisit", icon: RotateCcw, accountRequired: true },

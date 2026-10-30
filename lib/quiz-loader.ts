@@ -19,6 +19,7 @@ import { getPublishedQuestionCount, getPublishedQuestions, getPublishedSubjectSl
 
 export interface QuizQuestion {
   id: string;
+  publishedQuestionId?: string;
   question: string;
   options: string[];
   correctIndex: number;
@@ -48,6 +49,7 @@ async function loadQuestionPool(subjectSlug: string, programSlug: string): Promi
   return [
     ...staticBank,
     ...imported.map((question) => ({
+      published_id: question.id,
       unit_id: question.unit_id,
       question_text: question.question_text,
       options: question.options,
@@ -156,6 +158,7 @@ export async function getQuestionsForQuiz({
     const shuffled = shuffleWithAnswer(normalizeOptions(q), getCorrectIndex(q));
     return {
       id: `quiz-q-${i}-${Date.now()}`,
+      publishedQuestionId: q.published_id,
       question: q.question_text,
       options: shuffled.options,
       correctIndex: shuffled.correctIndex,
@@ -180,6 +183,7 @@ function toQuizQuestions(
       all.push({
         // Bank order is stable; truncated question text can collide.
         id: `${bank.subjectSlug}-${index}`,
+        publishedQuestionId: q.published_id,
         question: q.question_text,
         options: shuffled.options,
         correctIndex: shuffled.correctIndex,

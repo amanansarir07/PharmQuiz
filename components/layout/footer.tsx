@@ -38,6 +38,7 @@ export function Footer() {
             <Link href="/mock-test" className="hover:text-foreground transition-colors">Mock Tests</Link>
             <Link href="/leaderboard" className="hover:text-foreground transition-colors">Leaderboard</Link>
             <Link href="/review" className="hover:text-foreground transition-colors">Question Bank</Link>
+            <Link href="/community" className="hover:text-foreground transition-colors">Community</Link>
             <Link href="/programs" className="hover:text-foreground transition-colors">All Syllabi</Link>
           </nav>
 

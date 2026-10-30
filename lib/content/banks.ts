@@ -12,6 +12,7 @@ import { DEFAULT_PROGRAM_SLUG } from "@/data/registry";
  * only surface in whole-bank views (Review, and mock papers as filler).
  */
 export interface RawBankQuestion {
+  published_id?: string;
   unit_id?: string;
   subject?: string;
   question_text: string;

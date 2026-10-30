@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { BookOpen, ChevronLeft, ClipboardCheck, House, LayoutGrid, Moon, Search, Settings, Sun, Target, UserRound, ChartNoAxesCombined, RotateCcw, ShieldCheck } from "lucide-react";
+import { BookOpen, ChevronLeft, ClipboardCheck, House, LayoutGrid, MessagesSquare, Moon, Search, Settings, Sun, Target, UserRound, ChartNoAxesCombined, RotateCcw, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { cn } from "@/lib/utils";
@@ -19,6 +19,7 @@ const groups = [
   ] },
   { label: "Study", items: [
     { href: "/review", label: "Question bank", icon: LayoutGrid },
+    { href: "/community", label: "Community", icon: MessagesSquare },
     { href: "/mistakes", label: "Mistakes bank", icon: RotateCcw },
     { href: "/analytics", label: "My progress", icon: ChartNoAxesCombined },
   ] },
@@ -40,8 +41,8 @@ export function Navbar() {
   const visibleGroups = isAdmin ? [...groups, adminGroup] : groups;
   const route = visibleGroups.flatMap((group) => group.items).find((item) => pathname === item.href || pathname.startsWith(item.href + "/"));
   const title = route?.label || ({ "/programs": "Programmes", "/profile": "My profile", "/settings": "Settings", "/more": "Your study space" }[pathname] ?? "Study space");
-  const subpage = pathname.startsWith("/subjects/") || pathname.startsWith("/programs/") || ["/notes", "/bookmarks", "/mistakes", "/profile", "/settings", "/history", "/review"].includes(pathname);
-  const backHref = pathname.startsWith("/subjects/") ? "/subjects" : pathname.startsWith("/programs/") ? "/programs" : "/more";
+  const subpage = pathname.startsWith("/subjects/") || pathname.startsWith("/programs/") || pathname.startsWith("/community/") || ["/notes", "/bookmarks", "/mistakes", "/profile", "/settings", "/history", "/review"].includes(pathname);
+  const backHref = pathname.startsWith("/subjects/") ? "/subjects" : pathname.startsWith("/programs/") ? "/programs" : pathname.startsWith("/community/") ? "/community" : "/more";
 
   const themeButton = <button type="button" onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} className="icon-button" aria-label="Switch colour theme"><Sun className="size-[18px] dark:hidden" /><Moon className="hidden size-[18px] dark:block" /></button>;
   const firstName = user?.name?.trim().split(/\s+/)[0];
@@ -53,7 +54,7 @@ export function Navbar() {
 
   if (activeQuiz || pathname.startsWith("/auth/")) return null;
 
-  if (publicPage) return <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-xl"><div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-8"><Link href="/" aria-label="Bujh home"><Brand compact /></Link><nav className="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Explore Bujh"><Link href="/programs">Programmes</Link><Link href="/dashboard">Explore the app</Link><a href="#how-it-works">How it works</a></nav><div className="flex items-center gap-2">{themeButton}<Link href="/auth/login" className="hidden px-3 text-sm font-semibold sm:block">Log in</Link><Link href="/auth/register" className="action-primary min-h-10 px-4 text-xs sm:text-sm">Get started</Link></div></div></header>;
+  if (publicPage) return <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur-xl"><div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-8"><Link href="/" aria-label="Bujh home"><Brand compact /></Link><nav className="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Explore Bujh"><Link href="/programs">Programmes</Link><Link href="/community">Community</Link><a href="#how-it-works">How it works</a></nav><div className="flex items-center gap-2">{themeButton}<Link href="/auth/login" className="hidden px-3 text-sm font-semibold sm:block">Log in</Link><Link href="/auth/register" className="action-primary min-h-10 px-4 text-xs sm:text-sm">Get started</Link></div></div></header>;
 
   return <>
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-[244px] flex-col border-r border-border/80 bg-sidebar lg:flex">

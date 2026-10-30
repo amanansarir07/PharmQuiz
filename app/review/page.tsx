@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Search, Bookmark, BookmarkCheck, Eye, EyeOff } from "lucide-react";
+import { Search, Bookmark, BookmarkCheck, Eye, EyeOff, MessagesSquare } from "lucide-react";
 import { LibraryNav } from "@/components/library-nav";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
 
@@ -270,6 +270,7 @@ export default function ReviewPage() {
                   {showAnswers.has(q.id) ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
                   {showAnswers.has(q.id) ? "Hide answer" : "Reveal answer"}
                 </Button>
+                {q.publishedQuestionId && <Link href={`/community?question=${q.publishedQuestionId}`} className="ml-3 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary"><MessagesSquare className="size-4" />Discuss this question</Link>}
                 {showAnswers.has(q.id) && (
                   <div className="mt-4 rounded-lg bg-secondary p-3 text-sm text-secondary-foreground">
                     <strong>Explanation:</strong> {q.explanation}

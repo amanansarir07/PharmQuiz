@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   House,
-  BookOpen,
+  MessagesSquare,
   Target,
   ClipboardCheck,
   Menu,
@@ -27,15 +27,6 @@ export function BottomNav() {
       match: (p: string) => p === "/" || p === "/dashboard",
     },
     {
-      label: "Subjects",
-      href: "/subjects",
-      icon: BookOpen,
-      match: (p: string) =>
-        p === "/subjects" ||
-        p.startsWith("/subjects/") ||
-        p.startsWith("/programs"),
-    },
-    {
       label: "Practice",
       href: "/quiz",
       icon: Target,
@@ -46,6 +37,12 @@ export function BottomNav() {
       href: "/mock-test",
       icon: ClipboardCheck,
       match: (p: string) => p === "/mock-test",
+    },
+    {
+      label: "Discuss",
+      href: "/community",
+      icon: MessagesSquare,
+      match: (p: string) => p === "/community" || p.startsWith("/community/"),
     },
     {
       label: "More",
@@ -61,7 +58,10 @@ export function BottomNav() {
         p === "/review" ||
         p === "/leaderboard" ||
         p === "/analytics" ||
-        p === "/history",
+        p === "/history" ||
+        p === "/subjects" ||
+        p.startsWith("/subjects/") ||
+        p.startsWith("/programs"),
     },
   ];
 
