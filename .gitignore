@@ -42,3 +42,12 @@ next-env.d.ts
 
 # freebuff
 .freebuff/
+
+# Local MCQ recovery snapshots and correction candidates contain question data.
+/recovery/private/
+/recovery/reports/
+/recovery/test-deps/node_modules/
+
+# Generated local browser checks and temporary Git worktrees.
+/.playwright-mcp/
+/.worktrees/
