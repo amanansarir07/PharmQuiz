@@ -11,6 +11,7 @@ export type CommunityMember = {
 
 export type CommunityPost = {
   id: string;
+  room_slug: string | null;
   author_id: string;
   title: string;
   body: string;
@@ -48,7 +49,7 @@ export async function loadCommunityMembers(ids: string[]): Promise<Record<string
 
 export function communityError(error: unknown): string {
   const value = error as { code?: string; message?: string };
-  if (value?.code === "42P01" || value?.code === "PGRST205")
+  if (value?.code === "42P01" || value?.code === "PGRST205" || value?.code === "PGRST202" || value?.code === "42703")
     return "Community is being prepared. Please try again after the database update.";
   if (value?.code === "23505") return "You've already done this. Refresh to see the latest state.";
   if (value?.code === "42501") return "You don't have permission for that action.";

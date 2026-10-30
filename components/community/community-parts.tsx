@@ -21,15 +21,13 @@ export function MemberIdentity({ id, member, date }: { id: string; member?: Comm
 }
 
 export function PostRow({ post, member }: { post: CommunityPost; member?: CommunityMember }) {
-  return <article className="border-b py-5 last:border-b-0">
-    <div className="mb-2"><MemberIdentity id={post.author_id} member={member} date={post.created_at} /></div>
-    <Link href={`/community/${post.id}`} className="block text-[15px] font-bold leading-6 hover:text-primary sm:text-base">{post.title}</Link>
-    <p className="mt-1 line-clamp-2 text-sm leading-6 text-muted-foreground">{post.body}</p>
-    <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
-      {post.subject_slug && <span className="rounded-full bg-secondary px-2.5 py-1 text-foreground">{communitySubjectLabel(post.subject_slug)}</span>}
-      {post.faculty_slug && <span>{post.faculty_slug === "plus-two" ? "+2" : post.faculty_slug.toUpperCase()}</span>}
-      <span className="inline-flex items-center gap-1"><ThumbsUp className="size-3.5" />{post.helpful_count} helpful</span>
-      <span className="inline-flex items-center gap-1"><MessageCircle className="size-3.5" />{post.reply_count} replies</span>
+  return <article className="py-4">
+    <MemberIdentity id={post.author_id} member={member} date={post.created_at} />
+    <p className="mt-1 whitespace-pre-wrap break-words text-sm leading-6">{post.body}</p>
+    <div className="mt-2 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
+      {post.question_id && <span className="font-semibold text-primary">Linked MCQ</span>}
+      <Link href={`/community/${post.id}`} className="inline-flex min-h-8 items-center gap-1 hover:text-primary"><MessageCircle className="size-3.5" />{post.reply_count ? `${post.reply_count} replies` : "Reply"}</Link>
+      {post.helpful_count > 0 && <span className="inline-flex items-center gap-1"><ThumbsUp className="size-3.5" />{post.helpful_count} helpful</span>}
       {post.accepted_reply_id && <span className="inline-flex items-center gap-1 font-semibold text-emerald-700 dark:text-emerald-400"><CheckCircle2 className="size-3.5" />Answered</span>}
     </div>
   </article>;

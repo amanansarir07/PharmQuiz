@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { CheckCircle2, LockKeyhole, MessageCircle, ThumbsUp } from "lucide-react";
 import { useAuth } from "@/lib/auth";
+import { useCommunityRoom } from "@/lib/community-room";
 import { getSupabase } from "@/lib/supabase/client";
 import { communityError, loadCommunityMembers, type CommunityMember, type CommunityPost, type CommunityReply } from "@/lib/community";
 import { MemberIdentity, communitySubjectLabel } from "@/components/community/community-parts";
@@ -18,6 +19,7 @@ type ReportTarget = { kind: "post" | "reply"; id: string };
 export default function DiscussionPage() {
   const { id } = useParams<{ id: string }>();
   const { user, isAdmin } = useAuth();
+  const room = useCommunityRoom();
   const [post, setPost] = useState<CommunityPost | null>(null);
   const [replies, setReplies] = useState<CommunityReply[]>([]);
   const [members, setMembers] = useState<Record<string, CommunityMember>>({});
@@ -25,7 +27,6 @@ export default function DiscussionPage() {
   const [questionText, setQuestionText] = useState("");
   const [replyBody, setReplyBody] = useState("");
   const [editing, setEditing] = useState<string | null>(null);
-  const [editTitle, setEditTitle] = useState("");
   const [editBody, setEditBody] = useState("");
   const [reportTarget, setReportTarget] = useState<ReportTarget | null>(null);
   const [reportReason, setReportReason] = useState("incorrect");
@@ -35,12 +36,13 @@ export default function DiscussionPage() {
   const [error, setError] = useState("");
 
   const load = useCallback(async () => {
+    if (room.state !== "ready") return;
     setLoading(true); setError("");
     try {
       const client = getSupabase();
       const { data: postData, error: postError } = await client.from("community_posts").select("*").eq("id", id).maybeSingle();
       if (postError) throw postError;
-      if (!postData) { setPost(null); setReplies([]); return; }
+      if (!postData || (postData.room_slug !== room.roomSlug && !isAdmin)) { setPost(null); setReplies([]); return; }
       const currentPost = postData as CommunityPost;
       const { data: replyData, error: repliesError } = await client.from("community_replies").select("*")
         .eq("post_id", id).eq("status", "active").order("created_at", { ascending: true });
@@ -59,7 +61,7 @@ export default function DiscussionPage() {
       }
     } catch (cause) { setError(communityError(cause)); }
     finally { setLoading(false); }
-  }, [id, user]);
+  }, [id, user, room.state, room.roomSlug, isAdmin]);
   useEffect(() => { const frame = requestAnimationFrame(() => { void load(); }); return () => cancelAnimationFrame(frame); }, [load]);
 
   async function act(operation: () => Promise<{ error: { message?: string; code?: string } | null }>, success: string): Promise<boolean> {
@@ -86,14 +88,13 @@ export default function DiscussionPage() {
   }
 
   function startEdit(kind: "post" | "reply", targetId: string, body: string) {
-    setEditing(`${kind}:${targetId}`); setEditBody(body); setEditTitle(post?.title ?? "");
+    setEditing(`${kind}:${targetId}`); setEditBody(body);
   }
   async function saveEdit(kind: "post" | "reply", targetId: string) {
-    if (kind === "post" && (editTitle.trim().length < 12 || editBody.trim().length < 20)) return;
-    if (kind === "reply" && editBody.trim().length < 10) return;
+    if (!editBody.trim()) return;
     const saved = await act(async () => {
       const result = kind === "post"
-        ? await getSupabase().from("community_posts").update({ title: editTitle.trim(), body: editBody.trim() }).eq("id", targetId).select("id").single()
+        ? await getSupabase().from("community_posts").update({ title: editBody.trim().slice(0, 180), body: editBody.trim() }).eq("id", targetId).select("id").single()
         : await getSupabase().from("community_replies").update({ body: editBody.trim() }).eq("id", targetId).select("id").single();
       return { error: result.error };
     }, "Changes saved");
@@ -101,7 +102,7 @@ export default function DiscussionPage() {
   }
   async function submitReply(event: React.FormEvent) {
     event.preventDefault();
-    if (!user || replyBody.trim().length < 10) return;
+    if (!user || !replyBody.trim() || room.state !== "ready") return;
     const saved = await act(async () => {
       const result = await getSupabase().from("community_replies").insert({ post_id: id, author_id: user.id, body: replyBody.trim() });
       return { error: result.error };
@@ -122,17 +123,19 @@ export default function DiscussionPage() {
     if (saved) { setReportTarget(null); setReportDetail(""); }
   }
 
-  if (loading && !post) return <AppLoading label="Loading discussion" variant="questions" />;
-  if (error) return <AppError title="Could not load discussion" description={error} onRetry={() => void load()} />;
-  if (!post) return <AppError title="Discussion unavailable" description="This post may have been removed or the link is incorrect." />;
+  if (room.state === "loading") return <AppLoading label="Opening your group chat" variant="questions" />;
+  if (room.state !== "ready") return <AppError title="Join your group chat" description="Sign in and select your programme to view this message." />;
+  if (loading && !post) return <AppLoading label="Loading message" variant="questions" />;
+  if (error) return <AppError title="Could not load message" description={error} onRetry={() => void load()} />;
+  if (!post) return <AppError title="Message unavailable" description="This message may belong to another programme or may have been removed." />;
   const active = post.status === "active";
   const sortedReplies = [...replies].sort((a, b) => Number(b.id === post.accepted_reply_id) - Number(a.id === post.accepted_reply_id));
   return <LearningPage className="max-w-[820px]">
-    <Link href="/community" className="text-sm font-semibold text-primary">Back to Community</Link>
-    {post.status !== "active" && <p className="mt-5 rounded-lg border bg-card p-3 text-sm text-muted-foreground">This discussion is {post.status}.</p>}
+    <Link href="/community" className="text-sm font-semibold text-primary">Back to group chat</Link>
+    {post.status !== "active" && <p className="mt-5 rounded-lg border bg-card p-3 text-sm text-muted-foreground">This message is {post.status}.</p>}
     <article className="mt-5 border-b pb-6">
       <MemberIdentity id={post.author_id} member={members[post.author_id]} date={post.created_at} />
-      {editing === `post:${post.id}` ? <div className="mt-4 space-y-3"><label className="block text-sm font-semibold">Title<input value={editTitle} onChange={(event) => setEditTitle(event.target.value)} maxLength={180} className="mt-1 h-11 w-full rounded-lg border bg-card px-3" /></label><label className="block text-sm font-semibold">Details<textarea value={editBody} onChange={(event) => setEditBody(event.target.value)} rows={7} maxLength={10000} className="mt-1 w-full rounded-lg border bg-card p-3" /></label><button type="button" disabled={pending} onClick={() => void saveEdit("post", post.id)} className="min-h-11 rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground">Save changes</button><button type="button" onClick={() => setEditing(null)} className="ml-3 text-sm">Cancel</button></div> : <><h1 className="mt-3 text-2xl font-bold leading-tight tracking-tight">{post.title}</h1><p className="mt-4 whitespace-pre-wrap break-words text-[15px] leading-7">{post.body}</p></>}
+      {editing === `post:${post.id}` ? <div className="mt-4 space-y-3"><label className="block text-sm font-semibold">Message<textarea value={editBody} onChange={(event) => setEditBody(event.target.value)} rows={5} maxLength={10000} className="mt-1 w-full rounded-lg border bg-card p-3" /></label><button type="button" disabled={pending || !editBody.trim()} onClick={() => void saveEdit("post", post.id)} className="min-h-11 rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground">Save changes</button><button type="button" onClick={() => setEditing(null)} className="ml-3 text-sm">Cancel</button></div> : <p className="mt-4 whitespace-pre-wrap break-words text-[15px] leading-7">{post.body}</p>}
       {questionText && <div className="mt-5 border-l-2 border-primary bg-primary/5 px-4 py-3"><p className="text-xs font-semibold text-primary">Linked published MCQ</p><p className="mt-1 text-sm">{questionText}</p></div>}
       <div className="mt-5 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
         {post.subject_slug && <span className="rounded-full bg-secondary px-2.5 py-1 text-foreground">{communitySubjectLabel(post.subject_slug)}</span>}
@@ -140,7 +143,7 @@ export default function DiscussionPage() {
         <span className="inline-flex items-center gap-1.5"><MessageCircle className="size-4" />{post.reply_count} replies</span>
         {post.is_locked && <span className="inline-flex items-center gap-1.5"><LockKeyhole className="size-4" />Locked</span>}
         {user && post.author_id !== user.id && active && <button type="button" onClick={() => setReportTarget({ kind: "post", id: post.id })}>Report</button>}
-        {post.author_id === user?.id && active && !post.is_locked && <><button type="button" onClick={() => startEdit("post", post.id, post.body)}>Edit</button><button type="button" disabled={pending} onClick={() => { if (window.confirm("Remove this discussion?")) void act(async () => { const result = await getSupabase().rpc("community_remove", { p_kind: "post", p_id: post.id }); return { error: result.error }; }, "Discussion removed"); }}>Remove</button></>}
+        {post.author_id === user?.id && active && !post.is_locked && <><button type="button" onClick={() => startEdit("post", post.id, post.body)}>Edit</button><button type="button" disabled={pending} onClick={() => { if (window.confirm("Remove this message?")) void act(async () => { const result = await getSupabase().rpc("community_remove", { p_kind: "post", p_id: post.id }); return { error: result.error }; }, "Message removed"); }}>Remove</button></>}
         {isAdmin && <><button type="button" disabled={pending} onClick={() => void act(async () => { const result = await getSupabase().rpc("community_moderate", { p_kind: "post", p_id: post.id, p_action: post.is_locked ? "unlock" : "lock" }); return { error: result.error }; }, post.is_locked ? "Discussion unlocked" : "Discussion locked")}>{post.is_locked ? "Unlock" : "Lock"}</button><button type="button" disabled={pending} onClick={() => void act(async () => { const result = await getSupabase().rpc("community_moderate", { p_kind: "post", p_id: post.id, p_action: active ? "hide" : "restore" }); return { error: result.error }; }, active ? "Discussion hidden" : "Discussion restored")}>{active ? "Hide" : "Restore"}</button></>}
       </div>
     </article>
@@ -156,7 +159,7 @@ export default function DiscussionPage() {
         </div>
       </article>)}</div>}
     </section>
-    {active && !post.is_locked && <section className="mt-7 border-t pt-6"><h2 className="text-base font-bold">Add to the discussion</h2>{user ? <form onSubmit={(event) => void submitReply(event)} className="mt-3"><label htmlFor="community-reply" className="sr-only">Your reply</label><textarea id="community-reply" value={replyBody} onChange={(event) => setReplyBody(event.target.value)} minLength={10} maxLength={5000} required rows={5} placeholder="Explain your reasoning, share a source, or ask a focused follow-up." className="w-full rounded-lg border bg-card p-3 text-sm leading-6" /><button type="submit" disabled={pending || replyBody.trim().length < 10} className="mt-3 min-h-11 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground disabled:opacity-50">{pending ? "Posting…" : "Post reply"}</button></form> : <p className="mt-3 text-sm text-muted-foreground"><Link href="/auth/login" className="font-semibold text-primary">Log in</Link> to reply or mark a response helpful.</p>}</section>}
+    {active && !post.is_locked && <section className="mt-7 border-t pt-6"><h2 className="text-base font-bold">Reply to this message</h2>{user ? <form onSubmit={(event) => void submitReply(event)} className="mt-3"><label htmlFor="community-reply" className="sr-only">Your reply</label><textarea id="community-reply" value={replyBody} onChange={(event) => setReplyBody(event.target.value)} minLength={1} maxLength={5000} required rows={4} placeholder="Write a reply to your group…" className="w-full rounded-lg border bg-card p-3 text-sm leading-6" /><button type="submit" disabled={pending || !replyBody.trim()} className="mt-3 min-h-11 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground disabled:opacity-50">{pending ? "Posting…" : "Post reply"}</button></form> : <p className="mt-3 text-sm text-muted-foreground"><Link href="/auth/login" className="font-semibold text-primary">Log in</Link> to reply.</p>}</section>}
     <Dialog open={!!reportTarget} onOpenChange={(open) => { if (!open) setReportTarget(null); }}>
       <DialogContent>
         <DialogTitle>Report {reportTarget?.kind}</DialogTitle>
