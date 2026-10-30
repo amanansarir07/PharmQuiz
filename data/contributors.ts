@@ -10,15 +10,14 @@ export type Contributor = {
   note?: string;
 };
 
-// Replace the local photo path when Sandesh Sir's approved portrait is ready.
 // Keep contributor details here so the landing section can grow without a database.
 export const contributors: readonly Contributor[] = [
   {
     id: "sandesh-poudel",
     name: "Sandesh Poudel",
     role: "Academic Contributor & Mentor",
-    photo: "/contributors/sandesh-poudel.svg",
-    photoAlt: "Portrait placeholder for Sandesh Poudel",
+    photo: "/contributors/sandesh-poudel.jpg",
+    photoAlt: "Sandesh Poudel",
     contribution:
       "Grateful for his thoughtful feedback, academic guidance, and contribution of pharmacy licence preparation resources that have helped Bujh grow.",
     bio:
