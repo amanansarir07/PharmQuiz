@@ -28,7 +28,7 @@ export function Footer() {
           </div>
 
           <p className="max-w-lg text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            Explore CTEVT and +2 subjects, practise available MCQs and mock exams, and review your progress in one place.
+            Practise CTEVT and +2 subjects, take mock exams, and review your progress in one place.
           </p>
 
           {/* Quick Navigation Links */}
@@ -39,6 +39,7 @@ export function Footer() {
             <Link href="/leaderboard" className="hover:text-foreground transition-colors">Leaderboard</Link>
             <Link href="/review" className="hover:text-foreground transition-colors">Question Bank</Link>
             <Link href="/community" className="hover:text-foreground transition-colors">Community</Link>
+            <a href="#contributors" className="hover:text-foreground transition-colors">Contributors</a>
             <Link href="/programs" className="hover:text-foreground transition-colors">All Syllabi</Link>
           </nav>
 
