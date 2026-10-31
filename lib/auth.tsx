@@ -49,6 +49,10 @@ const OLD_CURRENT_USER_KEY = "pharmquiz_current_user";
 const OLD_USERS_KEY = "pharmquiz_users";
 const LAST_ACCOUNT_KEY = "bujh-last-auth-user";
 
+function hasVerifiedEmail(session: Session): boolean {
+  return !session.user.email || Boolean(session.user.email_confirmed_at);
+}
+
 function rememberAccount(userId: string) {
   if (typeof window === "undefined") return;
   try {
@@ -146,9 +150,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const pendingTasks = new Set<ReturnType<typeof setTimeout>>();
     const showSession = (session: Session | null) => {
       if (disposed) return;
-      if (session?.user) rememberAccount(session.user.id);
-      activeUserId.current = session?.user.id ?? null;
-      setUser(session?.user ? userFromSession(session) : null);
+      const verifiedSession = session && hasVerifiedEmail(session) ? session : null;
+      if (verifiedSession?.user) rememberAccount(verifiedSession.user.id);
+      activeUserId.current = verifiedSession?.user.id ?? null;
+      setUser(verifiedSession?.user ? userFromSession(verifiedSession) : null);
       setAuthRestorationTimedOut(false);
     };
     const finishInitialRestore = async (session: Session | null) => {
@@ -157,7 +162,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       // still being restored. The shell stays in its loading state until this
       // request completes, so the sidebar and account-only controls arrive
       // together with the correct student identity and role.
-      if (session?.user) await loadProfile(session.user.id);
+      if (session?.user && hasVerifiedEmail(session)) {
+        await loadProfile(session.user.id);
+      } else if (session?.user) {
+        defer(async () => { await getSupabase().auth.signOut({ scope: "local" }); });
+      }
       if (disposed) return;
       initialResolved = true;
       setAuthRestorationTimedOut(false);
@@ -197,6 +206,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               setIsLoading(false);
             }
           });
+        } else if (event === "SIGNED_IN" && session?.user && !hasVerifiedEmail(session)) {
+          showSession(null);
+          initialResolved = true;
+          setIsLoading(false);
+          defer(async () => { await getSupabase().auth.signOut({ scope: "local" }); });
         } else if (event === "SIGNED_IN" && session?.user) {
           showSession(session);
           initialResolved = true;
@@ -256,6 +270,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       email,
       password,
       options: {
+        emailRedirectTo: `${window.location.origin}/dashboard`,
         // The signup trigger copies program_slug onto the profile row.
         data: {
           name,
@@ -281,6 +296,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // mode. Let the student confirm the email, then sign in normally.
     if (!data.session) {
       return { emailConfirmationRequired: true };
+    }
+
+    if (!hasVerifiedEmail(data.session)) {
+      await getSupabase().auth.signOut({ scope: "local" });
+      const { error: resendError } = await getSupabase().auth.resend({
+        type: "signup",
+        email,
+        options: { emailRedirectTo: `${window.location.origin}/dashboard` },
+      });
+      return resendError
+        ? { error: "Email verification is unavailable. Please try again later or contact support." }
+        : { emailConfirmationRequired: true };
     }
 
     // Wait briefly for the signup trigger to create the initial profile row
@@ -318,10 +345,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     });
 
     if (error) {
+      if (error.code === "email_not_confirmed") {
+        return { error: "Please confirm your email from the message we sent before signing in." };
+      }
       if (error.message.includes("Invalid login")) {
         return { error: "Incorrect email or password" };
       }
       return { error: error.message };
+    }
+
+    if (data.session && !hasVerifiedEmail(data.session)) {
+      await getSupabase().auth.signOut({ scope: "local" });
+      return { error: "Please confirm your email before signing in." };
     }
 
     if (data.session?.user) {
