@@ -183,13 +183,31 @@ export default function ActiveQuizPage({
             safeSetItem(`quiz-questions-${sessionId}`, JSON.stringify(finalQs));
           }
         } else {
-          finalQs = await getQuestionsForQuiz({
-            subjectSlug: config.subject,
-            unitIds: config.units || [],
-            difficulty: config.difficulty || "mixed",
-            numQuestions: config.numQuestions || 20,
-            programSlug: resolveResultProgram(config.program, config.subject || ""),
-          });
+          // Randomly selected practice questions must be snapshotted too.
+          // Otherwise a refresh can attach restored answer indexes to a new
+          // question set, corrupting a student's in-progress attempt.
+          const snapshot = safeGetItem(`quiz-questions-${sessionId}`);
+          if (snapshot) {
+            try {
+              const parsed = JSON.parse(snapshot);
+              if (Array.isArray(parsed)) finalQs = parsed;
+            } catch {
+              finalQs = [];
+            }
+          }
+          if (finalQs.length === 0) {
+            finalQs = await getQuestionsForQuiz({
+              subjectSlug: config.subject,
+              unitIds: config.units || [],
+              difficulty: config.difficulty || "mixed",
+              numQuestions: config.numQuestions || 20,
+              programSlug: resolveResultProgram(config.program, config.subject || ""),
+            });
+            if (cancelled) return;
+            if (finalQs.length > 0) {
+              safeSetItem(`quiz-questions-${sessionId}`, JSON.stringify(finalQs));
+            }
+          }
         }
         if (cancelled) return;
 

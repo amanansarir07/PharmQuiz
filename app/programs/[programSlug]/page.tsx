@@ -42,6 +42,7 @@ export async function generateMetadata({
     // The layout template appends "- Bujh".
     title: label,
     description: program.description,
+    alternates: { canonical: `${SITE_URL}/programs/${programSlug}` },
     openGraph: {
       title: `${label} - Bujh`,
       description: program.description,

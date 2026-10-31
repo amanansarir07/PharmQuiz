@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: isProgramAvailable(program.slug) ? 0.9 : 0.4,
   }));
 
-  const subjectPages: MetadataRoute.Sitemap = getPrograms()
+  const subjectEntries: MetadataRoute.Sitemap = getPrograms()
     .filter((program) => isProgramAvailable(program.slug))
     .flatMap((program) =>
       getSubjectsForProgram(program.slug).map((subject) => ({
@@ -35,6 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
       }))
     );
+  // Subject routes are shared across programmes with matching subject slugs.
+  // Emit each public URL once instead of duplicating it in the sitemap.
+  const subjectPages = [...new Map(subjectEntries.map((entry) => [entry.url, entry])).values()];
 
   return [...staticPages, ...programPages, ...subjectPages];
 }
