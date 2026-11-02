@@ -104,6 +104,8 @@ function RegisterForm() {
   const google = async () => {
     if (!programSlug) return;
     setLoading(true);
+    setError("");
+    safeSetItem("bujh-pending-program", programSlug);
     const result = await signInWithGoogle();
     if (result.error) { setError(result.error); setLoading(false); }
   };
@@ -137,13 +139,13 @@ function RegisterForm() {
           <Field label="Password" htmlFor="password" icon={Lock}><PasswordInput id="password" value={password} onChange={setPassword} show={showPassword} toggle={() => setShowPassword((shown) => !shown)} placeholder="At least 6 characters" /></Field>
           <Field label="Confirm password" htmlFor="confirmPassword" icon={Lock}><Input id="confirmPassword" type={showPassword ? "text" : "password"} value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} placeholder="Repeat your password" autoComplete="new-password" required minLength={6} /></Field>
         </div>
-        <ActionBar><Button type="button" variant="outline" onClick={() => setStep(1)} className="h-12 px-4">Back</Button><Button type="submit" className="h-12 flex-1 sm:flex-none sm:min-w-44">Continue</Button></ActionBar>
+        <ActionBar><div className="w-full space-y-3 sm:w-auto"><div className="flex gap-3"><Button type="button" variant="outline" onClick={() => setStep(1)} className="h-12 px-4">Back</Button><Button type="submit" disabled={loading} className="h-12 flex-1 sm:min-w-44">Continue</Button></div><div className="flex items-center gap-3 text-xs text-muted-foreground before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">or</div><Button type="button" variant="outline" onClick={google} disabled={loading} className="h-12 w-full"><GoogleIcon />{loading ? "Connecting to Google..." : "Continue with Google"}</Button></div></ActionBar>
       </form>}
       {step === 3 && <section aria-labelledby="finish-title">
         <div className="mb-6"><h2 id="finish-title" className="text-xl font-bold tracking-[-.025em]">Ready to begin?</h2><p className="mt-1 text-sm text-muted-foreground">Check your details, then create your Bujh account.</p></div>
         {selectedProgram && <SelectedProgramme program={selectedProgram} />}
         <dl className="mt-4 divide-y rounded-2xl border bg-card px-4"><div className="flex items-center justify-between gap-4 py-4"><dt className="text-sm text-muted-foreground">Name</dt><dd className="text-sm font-semibold">{name}</dd></div><div className="flex items-center justify-between gap-4 py-4"><dt className="text-sm text-muted-foreground">Email</dt><dd className="truncate text-sm font-semibold">{email}</dd></div></dl>
-        <ActionBar><div className="w-full space-y-3 sm:w-auto"><Button type="button" onClick={createAccount} disabled={loading} className="h-12 w-full sm:min-w-52">{loading ? "Creating account..." : "Create account"}</Button><div className="flex items-center gap-3 text-xs text-muted-foreground before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">or</div><Button type="button" variant="outline" onClick={google} disabled={loading} className="h-12 w-full sm:min-w-52"><GoogleIcon />Continue with Google</Button><Button type="button" variant="ghost" onClick={() => setStep(2)} className="h-10 w-full text-muted-foreground">Edit details</Button></div></ActionBar>
+        <ActionBar><div className="w-full space-y-3 sm:w-auto"><Button type="button" onClick={createAccount} disabled={loading} className="h-12 w-full sm:min-w-52">{loading ? "Creating account..." : "Create account"}</Button><Button type="button" variant="ghost" onClick={() => setStep(2)} className="h-10 w-full text-muted-foreground">Edit details</Button></div></ActionBar>
       </section>}
       <p className="mt-8 text-center text-sm text-muted-foreground">Already have an account? <Link href="/auth/login" className="font-semibold text-primary hover:underline">Sign in</Link></p>
     </section>
