@@ -43,7 +43,6 @@ import {
   ClipboardCheck,
   Sparkles,
   Check,
-  Loader2,
 } from "lucide-react";
 
 type QuizPreset = "quick" | "chapter" | "subject" | "revision";
@@ -108,7 +107,10 @@ function QuizSetupInner() {
       const unitParam = searchParams.get("unit");
       const frame = requestAnimationFrame(() => {
         setSelectedSubject(subjectParam);
-        if (unitParam && practiceSubjects.find((s) => s.slug === subjectParam)?.units.some((unit) => unit.id === unitParam)) setSelectedUnits([unitParam]);
+        const requestedSubject = practiceSubjects.find((s) => s.slug === subjectParam);
+        setSelectedUnits(unitParam && requestedSubject?.units.some((unit) => unit.id === unitParam)
+          ? [unitParam]
+          : requestedSubject?.units.map((unit) => unit.id) ?? []);
         setMobileStep(unitParam ? 3 : 2);
       });
       return () => cancelAnimationFrame(frame);
@@ -158,7 +160,7 @@ function QuizSetupInner() {
     } else if (preset === "subject") {
       setSelectedUnits(nextSubject?.units.map((unit) => unit.id) ?? []);
     } else {
-      setSelectedUnits([]);
+      setSelectedUnits(nextSubject?.units.map((unit) => unit.id) ?? []);
     }
     setMobileStep(2);
     if (window.innerWidth >= 640) scrollTo(unitsRef);
@@ -167,15 +169,15 @@ function QuizSetupInner() {
   const applyPreset = (nextPreset: QuizPreset) => {
     setPreset(nextPreset);
     if (nextPreset === "quick") {
-      setSelectedUnits([]);
+      setSelectedUnits(subject?.units.map((unit) => unit.id) ?? []);
       setDifficulty("mixed");
       setNumQuestions(10);
-      setTimeLimit(10);
+      setTimeLimit(15);
       setNegativeMarking(false);
       setRevisionMode(false);
     } else if (nextPreset === "chapter") {
       setSelectedUnits((current) =>
-        current.length > 0 ? current : subject ? [subject.units[0]?.id].filter(Boolean) : []
+        current.length > 0 ? [current[0]] : subject ? [subject.units[0]?.id].filter(Boolean) : []
       );
       setDifficulty("mixed");
       setNumQuestions(10);
@@ -219,13 +221,13 @@ function QuizSetupInner() {
   };
 
   const startQuiz = () => {
-    if (!subject || starting) return;
+    if (!subject || selectedUnits.length === 0 || starting) return;
     setStarting(true);
     const config = {
       subject: subject.slug,
       subjectId: subject.id,
       program: programSlug,
-      units: selectedUnits.length > 0 ? selectedUnits : subject.units.map((u) => u.id),
+      units: selectedUnits,
       difficulty,
       numQuestions: user ? numQuestions : Math.min(numQuestions, 10),
       timeLimit,
@@ -237,28 +239,6 @@ function QuizSetupInner() {
     safeSetItem(
       `quiz-config-${sessionId}`,
       JSON.stringify(config)
-    );
-    router.push(`/quiz/${sessionId}`);
-  };
-
-  const startQuickPractice = () => {
-    const firstSubject = practiceSubjects[0];
-    if (!firstSubject || starting) return;
-    setStarting(true);
-    const sessionId = crypto.randomUUID();
-    safeSetItem(
-      `quiz-config-${sessionId}`,
-      JSON.stringify({
-        subject: firstSubject.slug,
-        subjectId: firstSubject.id,
-        program: programSlug,
-        units: firstSubject.units.map((unit) => unit.id),
-        difficulty: "mixed",
-        numQuestions: 5,
-        timeLimit: 5,
-        negativeMarking: false,
-        revisionMode: false,
-      })
     );
     router.push(`/quiz/${sessionId}`);
   };
@@ -286,7 +266,8 @@ function QuizSetupInner() {
     <div className={`mx-auto max-w-5xl px-4 pt-6 sm:px-6 sm:pb-10 sm:pt-9 ${mobileStep === 2 ? "pb-32" : "pb-10"}`}>
       <div className="mb-6">
         <p className="text-xs font-medium text-muted-foreground">{program.shortLabel} · Practice</p>
-        <h1 className="mt-1 text-[1.65rem] font-bold tracking-tight sm:text-[1.9rem]">{mobileStep === 1 ? "Choose a subject" : mobileStep === 2 ? programSlug === "c-pharm" ? "Question bank" : "Choose units" : "Session settings"}</h1>
+        <h1 className="mt-1 text-[1.65rem] font-bold tracking-tight sm:hidden">{mobileStep === 1 ? "Choose a subject" : mobileStep === 2 ? programSlug === "c-pharm" ? "Question bank" : "Choose units" : "Session settings"}</h1>
+        <h1 className="mt-1 hidden text-[1.9rem] font-bold tracking-tight sm:block">Set up practice</h1>
         <p className="mt-2 text-sm text-muted-foreground sm:hidden">{mobileStep === 1 ? availableSubjectSlugs === null ? "Checking available questions…" : `${practiceSubjects.length} subjects · ${practiceSubjects.reduce((total, item) => total + item.units.length, 0)} units` : `Step ${mobileStep} of 3`}</p>
         <p className="mt-2 hidden text-sm text-muted-foreground sm:block">Choose a subject, units, and your practice settings.</p>
         <ol className="mt-4 grid grid-cols-3 gap-2 sm:hidden" aria-label="Practice setup progress">
@@ -303,19 +284,6 @@ function QuizSetupInner() {
         </ol>
       </div>
 
-      {mobileStep === 1 && <section className="mb-5 rounded-2xl bg-secondary/70 p-4 shadow-[var(--shadow-card)] sm:hidden">
-        <div className="flex items-center justify-between gap-3">
-          <div className="min-w-0">
-            <p className="text-sm font-semibold">Short on time?</p>
-            <p className="mt-1 text-xs leading-5 text-muted-foreground">Try 5 mixed questions from {practiceSubjects[0]?.name || "an available subject"}.</p>
-          </div>
-          <Button type="button" variant="outline" className="min-h-11 shrink-0 px-3" disabled={starting || availableSubjectSlugs === null || practiceSubjects.length === 0} onClick={startQuickPractice}>
-            {(starting || availableSubjectSlugs === null) && <Loader2 className="size-4 animate-spin motion-reduce:animate-none" />}
-            {starting ? "Preparing…" : availableSubjectSlugs === null ? "Checking…" : "Quick start"}
-          </Button>
-        </div>
-      </section>}
-
       {mobileStep === 2 && subject && <section className="mb-4 flex items-center gap-3 rounded-2xl bg-card p-3 shadow-[var(--shadow-card)] sm:hidden">
         <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-sm font-bold text-primary" aria-hidden="true">{subject.name.slice(0, 1)}</div>
         <div className="min-w-0 flex-1">
@@ -326,48 +294,10 @@ function QuizSetupInner() {
       </section>}
       {mobileStep === 3 && subject && <section className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl bg-secondary/60 px-3 py-2.5 text-xs sm:hidden">
         <span className="font-semibold">{subject.name}</span>
-        <span className="text-muted-foreground">{programSlug === "c-pharm" ? "Full question bank" : selectedUnits.length === 0 ? `All ${subject.units.length} units` : `${selectedUnits.length} of ${subject.units.length} units`}</span>
+        <span className="text-muted-foreground">{selectedUnits.length === 0 ? "No units selected" : programSlug === "c-pharm" ? "Full question bank" : `${selectedUnits.length} of ${subject.units.length} units`}</span>
         <button type="button" onClick={() => setMobileStep(2)} className="ml-auto min-h-8 font-semibold text-primary">Edit</button>
       </section>}
       <div className="space-y-4">
-        <div className="hidden items-center justify-between gap-3 border-b pb-4 sm:flex"><p className="text-sm text-muted-foreground">Short on time? Start with five mixed questions.</p><Button variant="outline" disabled={starting || availableSubjectSlugs === null || practiceSubjects.length === 0} onClick={startQuickPractice}>{(starting || availableSubjectSlugs === null) && <Loader2 className="size-4 animate-spin motion-reduce:animate-none" />}{starting ? "Preparing practice…" : availableSubjectSlugs === null ? "Checking questions…" : "Start 5-question practice"}</Button></div>
-
-        <Card className={`border-0 bg-card shadow-[var(--shadow-card)] ${mobileStep === 3 ? "" : "hidden sm:block"}`}>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-lg">Choose how you want to practise</CardTitle>
-            <p className="text-sm text-muted-foreground">
-              Pick a mode and only change the details when you need to.
-            </p>
-          </CardHeader>
-          <CardContent className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-            {[
-              { value: "quick" as const, label: "Quick practice", detail: "10 mixed MCQs", icon: Zap },
-              { value: "chapter" as const, label: "Chapter practice", detail: "Focus on one unit", icon: Layers3 },
-              { value: "subject" as const, label: "Full subject", detail: "Cover every unit", icon: ClipboardCheck },
-              { value: "revision" as const, label: "Revision mode", detail: "See explanations", icon: Sparkles },
-            ].map((option) => {
-              const Icon = option.icon;
-              return (
-                <button
-                  key={option.value}
-                  type="button"
-                  onClick={() => applyPreset(option.value)}
-                  aria-pressed={preset === option.value}
-                  className={`min-h-24 rounded-2xl p-3 text-left transition-all ${
-                    preset === option.value
-                      ? "bg-secondary ring-2 ring-primary/40"
-                      : "bg-muted/60 hover:bg-muted"
-                  }`}
-                >
-                  <span className="mb-2 flex size-8 items-center justify-center rounded-xl bg-secondary text-primary"><Icon className="h-4 w-4" /></span>
-                  <p className="text-sm font-semibold">{option.label}</p>
-                  <p className="mt-0.5 text-[11px] text-muted-foreground">{option.detail}</p>
-                </button>
-              );
-            })}
-          </CardContent>
-        </Card>
-
         {/* Mock Test Banner: schedule-aware */}
         {(liveExam || upcomingExam) && <Card
           className={
@@ -522,37 +452,62 @@ function QuizSetupInner() {
               </div>
               <p className="mt-3 hidden text-xs text-muted-foreground sm:block">
                 {selectedUnits.length === 0
-                  ? "No units selected - all units will be included"
+                  ? "Select at least one unit to start practice"
                   : `${selectedUnits.length} unit(s) selected`}
               </p>
             </CardContent>
           </Card>
         )}
-        <details className={`group rounded-2xl bg-card shadow-[var(--shadow-card)] ${mobileStep === 3 ? "" : "hidden sm:block"}`}>
-          <summary className="flex cursor-pointer list-none items-center justify-between p-4 font-semibold [&::-webkit-details-marker]:hidden">
-            <span className="flex items-center gap-2">
-              <Settings className="h-4 w-4 text-primary" />
-              Session preferences
-            </span>
-            <span className="text-xs text-muted-foreground group-open:hidden">Optional</span>
-          </summary>
-          <div className="grid gap-4 p-4 sm:grid-cols-2 [&>[data-slot=card]]:shadow-none">
+        {subject && <section aria-labelledby="session-settings-title" className={`rounded-xl bg-card p-4 shadow-[var(--shadow-card)] ${mobileStep === 3 ? "" : "hidden sm:block"}`}>
+          <h2 id="session-settings-title" className="flex items-center gap-2 text-lg font-semibold">
+            <Settings className="h-4 w-4 text-primary" />
+            Session settings
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">Choose how you want to practise, then review your session details.</p>
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {[
+              { value: "quick" as const, label: "Quick practice", detail: "10 mixed MCQs", icon: Zap },
+              { value: "chapter" as const, label: "Chapter practice", detail: "Focus on one unit", icon: Layers3 },
+              { value: "subject" as const, label: "Full subject", detail: "Cover every unit", icon: ClipboardCheck },
+              { value: "revision" as const, label: "Revision mode", detail: "See explanations", icon: Sparkles },
+            ].map((option) => {
+              const Icon = option.icon;
+              return (
+                <button
+                  key={option.value}
+                  type="button"
+                  onClick={() => applyPreset(option.value)}
+                  aria-pressed={preset === option.value}
+                  className={`min-h-24 rounded-xl p-3 text-left transition-colors ${
+                    preset === option.value
+                      ? "bg-secondary ring-2 ring-primary/40"
+                      : "bg-muted/60 hover:bg-muted"
+                  }`}
+                >
+                  <Icon className="mb-2 size-4 text-primary" aria-hidden="true" />
+                  <span className="block text-sm font-semibold">{option.label}</span>
+                  <span className="mt-0.5 block text-[11px] text-muted-foreground">{option.detail}</span>
+                </button>
+              );
+            })}
+          </div>
+          <div className="mt-5 grid gap-x-6 gap-y-4 sm:grid-cols-2">
         {/* Difficulty */}
-        <Card ref={difficultyRef}>
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
+        <div ref={difficultyRef} className="border-t pt-4">
+          <div className="mb-3">
+            <h3 className="flex items-center gap-2 text-base font-semibold">
               <Gauge className="h-5 w-5" />
               Difficulty
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </h3>
+          </div>
+          <div>
             <div className="grid grid-cols-2 gap-2">
               {DIFFICULTY_OPTIONS.map((opt) => (
                 <button
                   key={opt.value}
                   aria-pressed={difficulty === opt.value}
                   onClick={() => setDifficulty(opt.value)}
-                  className={`rounded-xl p-3 text-center transition-all ${
+                  className={`min-h-11 rounded-lg p-2 text-center transition-all ${
                     difficulty === opt.value
                       ? "bg-secondary ring-2 ring-primary/40"
                       : "bg-muted/60 hover:bg-muted"
@@ -562,18 +517,18 @@ function QuizSetupInner() {
                 </button>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Number of Questions */}
-        <Card ref={questionsRef}>
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
+        <div ref={questionsRef} className="border-t pt-4">
+          <div className="mb-3">
+            <h3 className="flex items-center gap-2 text-base font-semibold">
               <Hash className="h-5 w-5" />
               Number of Questions
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </h3>
+          </div>
+          <div>
             <div className="flex flex-wrap gap-2">
               {QUIZ_QUESTION_OPTIONS.map((num) => (
                 <button
@@ -583,7 +538,7 @@ function QuizSetupInner() {
                   title={!user && num > 10 ? "Create a free account for longer sessions" : undefined}
                   aria-pressed={numQuestions === num}
                   onClick={() => setNumQuestions(num)}
-                  className={`flex-1 rounded-xl p-3 text-center transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
+                  className={`flex-1 min-h-11 rounded-lg p-2 text-center transition-all disabled:cursor-not-allowed disabled:opacity-40 ${
                     numQuestions === num
                       ? "bg-secondary ring-2 ring-primary/40"
                       : "bg-muted/60 hover:bg-muted"
@@ -594,25 +549,25 @@ function QuizSetupInner() {
               ))}
             </div>
             {!user && <p className="mt-3 text-xs text-muted-foreground">Guest sessions include up to 10 questions. <a href="/auth/register" className="font-semibold text-primary underline underline-offset-2">Create a free account</a> for longer practice.</p>}
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Time Limit */}
-        <Card ref={timeRef}>
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
+        <div ref={timeRef} className="border-t pt-4">
+          <div className="mb-3">
+            <h3 className="flex items-center gap-2 text-base font-semibold">
               <Clock className="h-5 w-5" />
               Time Limit
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </h3>
+          </div>
+          <div>
             <div className="grid grid-cols-2 gap-2">
               {QUIZ_TIME_OPTIONS.map((opt) => (
                 <button
                   key={String(opt.value)}
                   aria-pressed={timeLimit === opt.value}
                   onClick={() => setTimeLimit(opt.value)}
-                  className={`rounded-xl p-3 text-center transition-all ${
+                  className={`min-h-11 rounded-lg p-2 text-center transition-all ${
                     timeLimit === opt.value
                       ? "bg-secondary ring-2 ring-primary/40"
                       : "bg-muted/60 hover:bg-muted"
@@ -622,13 +577,13 @@ function QuizSetupInner() {
                 </button>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Negative Marking */}
-        <Card ref={optionsRef}>
-          <CardContent className="pt-6">
-            <label className="flex cursor-pointer items-center gap-3 rounded-2xl bg-muted/60 p-4">
+        <div ref={optionsRef} className="border-t pt-4">
+          <div>
+            <label className="flex min-h-14 cursor-pointer items-center gap-3 rounded-lg bg-muted/60 p-3">
               <Checkbox
                 checked={negativeMarking}
                 onCheckedChange={(v) => setNegativeMarking(v === true)}
@@ -640,13 +595,13 @@ function QuizSetupInner() {
                 </p>
               </div>
             </label>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Revision Mode */}
-        <Card>
-          <CardContent className="pt-6">
-            <label className="flex cursor-pointer items-center gap-3 rounded-2xl bg-muted/60 p-4">
+        <div className="border-t pt-4">
+          <div>
+            <label className="flex min-h-14 cursor-pointer items-center gap-3 rounded-lg bg-muted/60 p-3">
               <Checkbox
                 checked={revisionMode}
                 onCheckedChange={(v) => setRevisionMode(v === true)}
@@ -658,18 +613,18 @@ function QuizSetupInner() {
                 </p>
               </div>
             </label>
-          </CardContent>
-        </Card>
           </div>
-        </details>
+        </div>
+          </div>
+        </section>}
 
         {/* Start Quiz Button */}
         <div ref={startRef} />
-        {subject ? <div className={`sticky bottom-[calc(5rem+env(safe-area-inset-bottom))] z-20 rounded-2xl bg-card/95 p-3 shadow-[var(--shadow-floating)] backdrop-blur-lg ring-1 ring-border/50 lg:bottom-4 ${mobileStep === 3 ? "" : "hidden sm:block"}`}><div className="mb-2 flex items-center justify-between gap-3 px-1 text-xs"><span className="min-w-0 truncate font-semibold">{subject.name}</span><span className="shrink-0 text-muted-foreground">{numQuestions} questions · {timeLimit ? `${timeLimit} min` : "Untimed"}</span></div>
+        {subject ? <div className={`rounded-xl bg-card p-3 ring-1 ring-border/50 ${mobileStep === 3 ? "" : "hidden sm:block"}`}><div className="mb-2 flex items-center justify-between gap-3 px-1 text-xs"><span className="min-w-0 truncate font-semibold">{subject.name}</span><span className="shrink-0 text-muted-foreground">{numQuestions} questions · {timeLimit ? `${timeLimit} min` : "Untimed"}</span></div>
         <Button
           size="lg"
           className="min-h-12 w-full font-semibold"
-          disabled={starting}
+          disabled={starting || selectedUnits.length === 0}
           onClick={startQuiz}
         >
           {starting ? <span className="mr-2 size-4 animate-spin rounded-full border-2 border-current border-t-transparent" /> : <Play className="mr-2 h-5 w-5" />}
@@ -677,7 +632,7 @@ function QuizSetupInner() {
         </Button>
         </div> : <div className="hidden min-h-14 items-center gap-3 border-t pt-5 text-sm text-muted-foreground sm:flex"><span>Select a subject to unlock your practice settings.</span></div>}
       </div>
-      {subject && mobileStep === 2 && <div className="fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] z-30 bg-background/95 px-4 py-3 backdrop-blur-lg sm:hidden"><div className="mx-auto max-w-5xl"><p className="mb-2 text-xs text-muted-foreground">{programSlug === "c-pharm" ? "Full question bank included" : selectedUnits.length === 0 ? `All ${subject.units.length} units included` : `${selectedUnits.length} of ${subject.units.length} units selected`}</p><Button type="button" className="min-h-11 w-full" onClick={() => setMobileStep(3)}>Continue to settings</Button></div></div>}
+      {subject && mobileStep === 2 && <div className="fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] z-30 bg-background/95 px-4 py-3 backdrop-blur-lg sm:hidden"><div className="mx-auto max-w-5xl"><p className="mb-2 text-xs text-muted-foreground">{selectedUnits.length === 0 ? "Select at least one unit" : programSlug === "c-pharm" ? "Full question bank included" : `${selectedUnits.length} of ${subject.units.length} units selected`}</p><Button type="button" className="min-h-11 w-full" disabled={selectedUnits.length === 0} onClick={() => setMobileStep(3)}>Continue to settings</Button></div></div>}
     </div>
   );
 }
