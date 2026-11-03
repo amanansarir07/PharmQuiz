@@ -34,8 +34,7 @@ export function InstallAppPrompt() {
     });
 
     const onBeforeInstall = (event: Event) => {
-      if (installed || window.matchMedia("(min-width: 1024px)").matches
-        || Number(safeGetItem(DISMISSED_UNTIL_KEY) || 0) > Date.now()) return;
+      if (installed || Number(safeGetItem(DISMISSED_UNTIL_KEY) || 0) > Date.now()) return;
       event.preventDefault();
       setInstallEvent(event as InstallPromptEvent);
     };
@@ -80,12 +79,12 @@ export function InstallAppPrompt() {
   if (!visible) return null;
 
   return <>
-    <div className="h-24 lg:hidden" aria-hidden="true" />
-    <aside aria-label="Add Bujh to your home screen" className="fixed inset-x-3 bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))] z-30 mx-auto flex max-w-md items-center gap-2.5 rounded-xl border bg-card p-3 text-card-foreground shadow-[var(--shadow-floating)] lg:hidden">
+    <div className="h-24" aria-hidden="true" />
+    <aside aria-label="Add Bujh to your home screen" className="fixed inset-x-3 bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))] z-30 mx-auto flex max-w-md items-center gap-2.5 rounded-xl border bg-card p-3 text-card-foreground shadow-[var(--shadow-floating)] lg:inset-x-auto lg:bottom-6 lg:right-6 lg:mx-0 lg:w-[420px]">
       <Image src="/icons/icon-192.png" alt="" width={44} height={44} className="size-11 shrink-0 rounded-lg border object-cover" />
       <div className="min-w-0 flex-1">
         <p className="text-sm font-semibold leading-5">Install Bujh</p>
-        <p className="text-xs leading-4 text-muted-foreground">Open practice in one tap.</p>
+        <p className="text-xs leading-4 text-muted-foreground"><span className="lg:hidden">Open practice in one tap.</span><span className="hidden lg:inline">Open practice in one click.</span></p>
       </div>
       <Button type="button" size="sm" className="min-h-10 shrink-0 gap-1.5 rounded-lg px-2.5 text-xs" disabled={installing} onClick={install}>
         <Download className="size-4" aria-hidden="true" />
