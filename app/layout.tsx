@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -73,6 +74,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`h-full ${manrope.variable}`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">
+        <Script id="bujh-light-theme-reset" strategy="beforeInteractive">
+          {`try {
+            if (localStorage.getItem("bujh-light-theme-reset-v1") !== "done") {
+              localStorage.setItem("theme", "light");
+              localStorage.setItem("bujh-light-theme-reset-v1", "done");
+            }
+          } catch {}`}
+        </Script>
         <Providers>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-primary focus:p-3 focus:text-primary-foreground">Skip to content</a>
           <Navbar />
