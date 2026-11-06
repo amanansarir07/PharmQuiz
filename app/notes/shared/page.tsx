@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { FileText, Search } from "lucide-react";
+import { Download, FileText, Search } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { getSubjectsForProgram, getProgramLabel } from "@/data/registry";
@@ -34,10 +34,11 @@ const FILE_LIMIT = 10 * 1024 * 1024;
 type View = "published" | "mine" | "review";
 type ShareMode = "write" | "upload";
 
-function NoteRow({ note, mine, onOpenFile, busy, review }: {
+function NoteRow({ note, mine, onFileAction, fileBusy, busy, review }: {
   note: SharedNote;
   mine: boolean;
-  onOpenFile: (note: SharedNote) => void;
+  onFileAction: (note: SharedNote, action: "view" | "download") => void;
+  fileBusy?: "view" | "download" | null;
   busy?: boolean;
   review?: (note: SharedNote, status: "published" | "rejected") => void;
 }) {
@@ -55,7 +56,13 @@ function NoteRow({ note, mine, onOpenFile, busy, review }: {
       {note.status !== "published" && <span className="rounded-full border px-2 py-1 text-xs font-medium text-muted-foreground">{note.status === "pending" ? "Awaiting review" : "Not approved"}</span>}
     </div>
     {note.body && <><p className={`mt-3 whitespace-pre-wrap break-words text-sm leading-6 ${longBody && !expanded ? "line-clamp-4" : ""}`}>{note.body}</p>{longBody && <button type="button" onClick={() => setExpanded(!expanded)} aria-expanded={expanded} className="mt-1 min-h-10 text-sm font-semibold text-primary">{expanded ? "Show less" : "Read full note"}</button>}</>}
-    {note.file_path && <button type="button" onClick={() => onOpenFile(note)} className="mt-2 flex min-h-11 max-w-full items-center gap-2 text-left text-sm font-semibold text-primary hover:underline"><FileText className="size-4 shrink-0" /><span className="truncate">Open {note.file_name}</span></button>}
+    {note.file_path && <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+      <p className="flex min-w-0 items-center gap-2 text-sm text-muted-foreground"><FileText className="size-4 shrink-0" /><span className="truncate">{note.file_name}</span></p>
+      <div className="grid grid-cols-2 gap-2 sm:flex sm:shrink-0">
+        <Button type="button" variant="outline" size="sm" className="min-h-11" disabled={Boolean(fileBusy)} onClick={() => onFileAction(note, "view")}>{fileBusy === "view" ? "Opening…" : "View file"}</Button>
+        <Button type="button" variant="outline" size="sm" className="min-h-11" disabled={Boolean(fileBusy)} onClick={() => onFileAction(note, "download")}><Download className="size-4" />{fileBusy === "download" ? "Preparing…" : "Download"}</Button>
+      </div>
+    </div>}
     {review && <div className="mt-3 flex gap-2"><Button disabled={busy} size="sm" onClick={() => review(note, "published")}>{busy ? "Saving…" : "Approve"}</Button><Button disabled={busy} variant="outline" size="sm" onClick={() => review(note, "rejected")}>Reject</Button></div>}
   </article>;
 }
@@ -80,6 +87,7 @@ export default function SharedNotesPage() {
   const [formError, setFormError] = useState("");
   const [saving, setSaving] = useState(false);
   const [reviewing, setReviewing] = useState<string | null>(null);
+  const [fileAction, setFileAction] = useState<{ id: string; action: "view" | "download" } | null>(null);
 
   const load = useCallback(async () => {
     if (!user) return;
@@ -147,11 +155,25 @@ export default function SharedNotesPage() {
     finally { setReviewing(null); }
   }
 
-  async function openFile(note: SharedNote) {
+  async function handleFileAction(note: SharedNote, action: "view" | "download") {
     if (!note.file_path) return;
-    const { data, error: linkError } = await getSupabase().storage.from("program-notes").createSignedUrl(note.file_path, 60);
-    if (linkError || !data) { toast("Could not open file", "error", "Try again."); return; }
-    window.location.assign(data.signedUrl);
+    setFileAction({ id: note.id, action });
+    try {
+      const { data, error: linkError } = await getSupabase().storage.from("program-notes")
+        .createSignedUrl(note.file_path, 60, action === "download" ? { download: note.file_name || true } : undefined);
+      if (linkError || !data) throw linkError ?? new Error("No file link");
+      if (action === "view") {
+        window.location.assign(data.signedUrl);
+      } else {
+        const link = document.createElement("a");
+        link.href = data.signedUrl;
+        link.download = note.file_name || "note";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      }
+    } catch { toast(action === "download" ? "Could not download file" : "Could not open file", "error", "Try again."); }
+    finally { setFileAction(null); }
   }
 
   const activeSubjectFilter = subjects.some((item) => item.name === subjectFilter) ? subjectFilter : "";
@@ -180,15 +202,15 @@ export default function SharedNotesPage() {
           <label className="flex items-center gap-2 rounded-lg border px-3"><Search className="size-4 shrink-0 text-muted-foreground" /><Input aria-label="Search published notes" placeholder="Search published notes" value={search} onChange={(event) => setSearch(event.target.value)} className="h-11 rounded-none border-0 bg-transparent px-0 shadow-none focus-visible:bg-transparent focus-visible:ring-0" /></label>
           <select aria-label="Filter by subject" value={activeSubjectFilter} onChange={(event) => setSubjectFilter(event.target.value)} className="min-h-11 w-full rounded-lg border bg-background px-3 text-sm"><option value="">All subjects</option>{subjects.map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}</select>
         </div>}
-        <div className="mt-5 divide-y border-t">{published.length ? published.map((note) => <NoteRow key={note.id} note={note} mine={note.author_id === user?.id} onOpenFile={(item) => void openFile(item)} />) : <p className="py-8 text-sm text-muted-foreground">{search || activeSubjectFilter ? "No notes match these filters." : `No published notes for ${program.shortLabel} yet.`}</p>}</div>
+        <div className="mt-5 divide-y border-t">{published.length ? published.map((note) => <NoteRow key={note.id} note={note} mine={note.author_id === user?.id} onFileAction={(item, action) => void handleFileAction(item, action)} fileBusy={fileAction?.id === note.id ? fileAction.action : null} />) : <p className="py-8 text-sm text-muted-foreground">{search || activeSubjectFilter ? "No notes match these filters." : `No published notes for ${program.shortLabel} yet.`}</p>}</div>
       </section>}
       {view === "mine" && <section aria-label="My shared notes" className="mt-6">
         <p className="text-sm text-muted-foreground">Notes you shared for {program.shortLabel}. Pending notes are only visible to you and admins.</p>
-        <div className="mt-4 divide-y border-t">{mine.length ? mine.map((note) => <NoteRow key={note.id} note={note} mine onOpenFile={(item) => void openFile(item)} />) : <p className="py-8 text-sm text-muted-foreground">You haven’t shared a note for this programme yet.</p>}</div>
+        <div className="mt-4 divide-y border-t">{mine.length ? mine.map((note) => <NoteRow key={note.id} note={note} mine onFileAction={(item, action) => void handleFileAction(item, action)} fileBusy={fileAction?.id === note.id ? fileAction.action : null} />) : <p className="py-8 text-sm text-muted-foreground">You haven’t shared a note for this programme yet.</p>}</div>
       </section>}
       {isAdmin && view === "review" && <section aria-label="Notes to review" className="mt-6">
         <p className="text-sm text-muted-foreground">Pending notes from all programmes. Read each note and open its file before approving.</p>
-        <div className="mt-4 divide-y border-t">{queue.length ? queue.map((note) => <NoteRow key={note.id} note={note} mine={note.author_id === user?.id} onOpenFile={(item) => void openFile(item)} busy={reviewing === note.id} review={review} />) : <p className="py-8 text-sm text-muted-foreground">No notes need review.</p>}</div>
+        <div className="mt-4 divide-y border-t">{queue.length ? queue.map((note) => <NoteRow key={note.id} note={note} mine={note.author_id === user?.id} onFileAction={(item, action) => void handleFileAction(item, action)} fileBusy={fileAction?.id === note.id ? fileAction.action : null} busy={reviewing === note.id} review={review} />) : <p className="py-8 text-sm text-muted-foreground">No notes need review.</p>}</div>
       </section>}
     </>}
 
