@@ -1,13 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
 import { FileText, Search } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { useActiveProgram } from "@/lib/program";
 import { getSubjectsForProgram, getProgramLabel } from "@/data/registry";
 import { getSupabase } from "@/lib/supabase/client";
 import { LibraryNav } from "@/components/library-nav";
+import { NotesNav } from "@/components/notes-nav";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
 import { AppError, AppLoading } from "@/components/app-state";
 import { Button } from "@/components/ui/button";
@@ -31,6 +31,8 @@ type SharedNote = {
 
 const FILE_TYPES = ["application/pdf", "image/png", "image/jpeg", "image/webp"];
 const FILE_LIMIT = 10 * 1024 * 1024;
+type View = "published" | "mine" | "review";
+type ShareMode = "write" | "upload";
 
 function NoteRow({ note, mine, onOpenFile, busy, review }: {
   note: SharedNote;
@@ -39,6 +41,8 @@ function NoteRow({ note, mine, onOpenFile, busy, review }: {
   busy?: boolean;
   review?: (note: SharedNote, status: "published" | "rejected") => void;
 }) {
+  const [expanded, setExpanded] = useState(false);
+  const longBody = note.body.length > 280;
   return <article className="border-b py-5 first:pt-0">
     <div className="flex flex-wrap items-start justify-between gap-2">
       <div className="min-w-0">
@@ -50,8 +54,8 @@ function NoteRow({ note, mine, onOpenFile, busy, review }: {
       </div>
       {note.status !== "published" && <span className="rounded-full border px-2 py-1 text-xs font-medium text-muted-foreground">{note.status === "pending" ? "Awaiting review" : "Not approved"}</span>}
     </div>
-    {note.body && <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-6">{note.body}</p>}
-    {note.file_path && <button type="button" onClick={() => onOpenFile(note)} className="mt-3 inline-flex min-h-11 max-w-full items-center gap-2 text-left text-sm font-semibold text-primary hover:underline"><FileText className="size-4 shrink-0" /><span className="truncate">Open {note.file_name}</span></button>}
+    {note.body && <><p className={`mt-3 whitespace-pre-wrap break-words text-sm leading-6 ${longBody && !expanded ? "line-clamp-4" : ""}`}>{note.body}</p>{longBody && <button type="button" onClick={() => setExpanded(!expanded)} aria-expanded={expanded} className="mt-1 min-h-10 text-sm font-semibold text-primary">{expanded ? "Show less" : "Read full note"}</button>}</>}
+    {note.file_path && <button type="button" onClick={() => onOpenFile(note)} className="mt-2 flex min-h-11 max-w-full items-center gap-2 text-left text-sm font-semibold text-primary hover:underline"><FileText className="size-4 shrink-0" /><span className="truncate">Open {note.file_name}</span></button>}
     {review && <div className="mt-3 flex gap-2"><Button disabled={busy} size="sm" onClick={() => review(note, "published")}>{busy ? "Saving…" : "Approve"}</Button><Button disabled={busy} variant="outline" size="sm" onClick={() => review(note, "rejected")}>Reject</Button></div>}
   </article>;
 }
@@ -65,7 +69,10 @@ export default function SharedNotesPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
+  const [subjectFilter, setSubjectFilter] = useState("");
+  const [view, setView] = useState<View>("published");
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [shareMode, setShareMode] = useState<ShareMode>("write");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [subject, setSubject] = useState("");
@@ -99,26 +106,27 @@ export default function SharedNotesPage() {
     event.preventDefault();
     if (!user || saving) return;
     setFormError("");
-    if (!title.trim() || (!body.trim() && !file)) { setFormError("Add a title and either note text or a file."); return; }
+    if (!title.trim() || (shareMode === "write" && !body.trim()) || (shareMode === "upload" && !file)) { setFormError(shareMode === "write" ? "Add a title and note text." : "Add a title and a PDF or image."); return; }
     if (file && (!FILE_TYPES.includes(file.type) || file.size > FILE_LIMIT)) { setFormError("Choose a PDF or image under 10 MB."); return; }
     setSaving(true);
     try {
       const client = getSupabase();
       let filePath: string | null = null;
-      if (file) {
+      if (shareMode === "upload" && file) {
         filePath = `${user.id}/${crypto.randomUUID()}`;
         const { error: uploadError } = await client.storage.from("program-notes").upload(filePath, file, { contentType: file.type, upsert: false });
         if (uploadError) throw uploadError;
       }
       const { error: saveError } = await client.from("shared_program_notes").insert({
         author_id: user.id, program_slug: programSlug, subject, title: title.trim(), body: body.trim(),
-        file_path: filePath, file_name: file?.name ?? null, status: isAdmin ? "published" : "pending",
+        file_path: filePath, file_name: shareMode === "upload" ? file?.name ?? null : null, status: isAdmin ? "published" : "pending",
       });
       if (saveError) {
         if (filePath) await client.storage.from("program-notes").remove([filePath]);
         throw saveError;
       }
-      setDialogOpen(false); setTitle(""); setBody(""); setSubject(""); setFile(null);
+      setDialogOpen(false); setTitle(""); setBody(""); setSubject(""); setFile(null); setShareMode("write");
+      if (!isAdmin) setView("mine");
       toast(isAdmin ? "Note published" : "Note submitted for review", "success");
       await load();
     } catch { setFormError("Could not submit the note. Check your connection and try again."); }
@@ -146,18 +154,57 @@ export default function SharedNotesPage() {
     window.location.assign(data.signedUrl);
   }
 
-  const published = notes.filter((note) => note.status === "published" && `${note.title} ${note.body} ${note.subject}`.toLowerCase().includes(search.toLowerCase()));
-  const mine = notes.filter((note) => note.author_id === user?.id && note.status !== "published" && !(isAdmin && note.status === "pending"));
+  const activeSubjectFilter = subjects.some((item) => item.name === subjectFilter) ? subjectFilter : "";
+  const published = notes.filter((note) => note.status === "published" && (!activeSubjectFilter || note.subject === activeSubjectFilter) && `${note.title} ${note.body} ${note.subject}`.toLowerCase().includes(search.toLowerCase()));
+  const mine = notes.filter((note) => note.author_id === user?.id);
+  const showFilters = notes.filter((note) => note.status === "published").length >= 6 || Boolean(search || activeSubjectFilter);
+  const views: { id: View; label: string; count?: number }[] = [
+    { id: "published", label: "Published" },
+    { id: "mine", label: "My shares" },
+    ...(isAdmin ? [{ id: "review" as View, label: "Review", count: queue.length }] : []),
+  ];
 
   return <LearningPage className="max-w-[900px]">
-    <PageHeading eyebrow="Study library" title="Shared notes" description={`Notes for ${program.shortLabel}, shared by learners and reviewed before publication.`} action={<Button onClick={() => setDialogOpen(true)} className="min-h-11">Share a note</Button>} />
-    <LibraryNav />
-    <div className="mb-6 flex gap-4 border-b text-sm font-semibold" aria-label="Notes sections"><Link href="/notes" className="pb-3 text-muted-foreground hover:text-foreground">My notes</Link><span className="border-b-2 border-primary pb-3 text-primary" aria-current="page">Shared notes</span></div>
-    {loading ? <AppLoading label="Loading shared notes" variant="questions" /> : error ? <AppError title="Shared notes unavailable" description={error} onRetry={() => void load()} /> : <>
-      {isAdmin && <section className="mb-8" aria-label="Notes awaiting review"><h2 className="text-base font-semibold">Awaiting review ({queue.length})</h2><p className="mt-1 text-sm text-muted-foreground">Submissions from all programmes. Open attachments before approving.</p><div className="mt-4 divide-y border-t">{queue.length ? queue.map((note) => <NoteRow key={note.id} note={note} mine={note.author_id === user?.id} onOpenFile={(item) => void openFile(item)} busy={reviewing === note.id} review={review} />) : <p className="py-5 text-sm text-muted-foreground">No notes need review.</p>}</div></section>}
-      {mine.length > 0 && <section className="mb-8"><h2 className="text-base font-semibold">Your submissions</h2><div className="mt-4 divide-y border-t">{mine.map((note) => <NoteRow key={note.id} note={note} mine onOpenFile={(item) => void openFile(item)} />)}</div></section>}
-      <section><h2 className="text-base font-semibold">Published notes</h2><label className="mt-4 flex items-center gap-2 rounded-lg border px-3"><Search className="size-4 text-muted-foreground" /><Input aria-label="Search shared notes" placeholder="Search notes" value={search} onChange={(event) => setSearch(event.target.value)} className="h-11 border-0 shadow-none" /></label><div className="mt-5 divide-y border-t">{published.length ? published.map((note) => <NoteRow key={note.id} note={note} mine={note.author_id === user?.id} onOpenFile={(item) => void openFile(item)} />) : <p className="py-8 text-sm text-muted-foreground">{search ? "No notes match your search." : `No published notes for ${program.shortLabel} yet. Share one to help other learners.`}</p>}</div></section>
+    <PageHeading eyebrow="Study library" title="Shared notes" description={`For ${program.shortLabel}`} action={<Button onClick={() => setDialogOpen(true)} className="hidden min-h-11 sm:inline-flex">Share a note</Button>} />
+    <div className="hidden sm:block"><LibraryNav /></div>
+    <NotesNav />
+    <Button onClick={() => setDialogOpen(true)} className="mb-6 min-h-11 w-full sm:hidden">Share a note</Button>
+
+    <div role="group" aria-label="Shared notes views" className="grid grid-cols-2 rounded-lg bg-muted p-1 sm:inline-grid sm:min-w-[300px] sm:grid-flow-col sm:auto-cols-fr" style={isAdmin ? { gridTemplateColumns: "repeat(3, minmax(0, 1fr))" } : undefined}>
+      {views.map((item) => <button key={item.id} type="button" aria-pressed={view === item.id} onClick={() => setView(item.id)} className={`min-h-11 rounded-md px-2 text-xs font-semibold sm:px-4 sm:text-sm ${view === item.id ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>{item.label}{item.count ? ` (${item.count})` : ""}</button>)}
+    </div>
+
+    {loading ? <div className="mt-6"><AppLoading label="Loading shared notes" variant="questions" /></div> : error ? <div className="mt-6"><AppError title="Shared notes unavailable" description={error} onRetry={() => void load()} /></div> : <>
+      {view === "published" && <section aria-label="Published notes" className="mt-6">
+        {showFilters && <div className="grid gap-2 sm:grid-cols-[1fr_210px]">
+          <label className="flex items-center gap-2 rounded-lg border px-3"><Search className="size-4 shrink-0 text-muted-foreground" /><Input aria-label="Search published notes" placeholder="Search published notes" value={search} onChange={(event) => setSearch(event.target.value)} className="h-11 rounded-none border-0 bg-transparent px-0 shadow-none focus-visible:bg-transparent focus-visible:ring-0" /></label>
+          <select aria-label="Filter by subject" value={activeSubjectFilter} onChange={(event) => setSubjectFilter(event.target.value)} className="min-h-11 w-full rounded-lg border bg-background px-3 text-sm"><option value="">All subjects</option>{subjects.map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}</select>
+        </div>}
+        <div className="mt-5 divide-y border-t">{published.length ? published.map((note) => <NoteRow key={note.id} note={note} mine={note.author_id === user?.id} onOpenFile={(item) => void openFile(item)} />) : <p className="py-8 text-sm text-muted-foreground">{search || activeSubjectFilter ? "No notes match these filters." : `No published notes for ${program.shortLabel} yet.`}</p>}</div>
+      </section>}
+      {view === "mine" && <section aria-label="My shared notes" className="mt-6">
+        <p className="text-sm text-muted-foreground">Notes you shared for {program.shortLabel}. Pending notes are only visible to you and admins.</p>
+        <div className="mt-4 divide-y border-t">{mine.length ? mine.map((note) => <NoteRow key={note.id} note={note} mine onOpenFile={(item) => void openFile(item)} />) : <p className="py-8 text-sm text-muted-foreground">You haven’t shared a note for this programme yet.</p>}</div>
+      </section>}
+      {isAdmin && view === "review" && <section aria-label="Notes to review" className="mt-6">
+        <p className="text-sm text-muted-foreground">Pending notes from all programmes. Read each note and open its file before approving.</p>
+        <div className="mt-4 divide-y border-t">{queue.length ? queue.map((note) => <NoteRow key={note.id} note={note} mine={note.author_id === user?.id} onOpenFile={(item) => void openFile(item)} busy={reviewing === note.id} review={review} />) : <p className="py-8 text-sm text-muted-foreground">No notes need review.</p>}</div>
+      </section>}
     </>}
-    <Dialog open={dialogOpen} onOpenChange={(open) => { if (!saving) setDialogOpen(open); }}><DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-lg"><DialogHeader><DialogTitle>Share a note</DialogTitle></DialogHeader><form onSubmit={(event) => void submit(event)} className="space-y-4"><p className="text-sm text-muted-foreground">For {program.shortLabel}. {isAdmin ? "Your note will publish immediately." : "An admin will review it before others can see it."}</p>{formError && <p role="alert" className="text-sm text-destructive">{formError}</p>}<div><label htmlFor="shared-note-title" className="mb-1.5 block text-sm font-medium">Title</label><Input id="shared-note-title" value={title} onChange={(event) => setTitle(event.target.value)} maxLength={160} required /></div><div><label htmlFor="shared-note-subject" className="mb-1.5 block text-sm font-medium">Subject (optional)</label><select id="shared-note-subject" value={subject} onChange={(event) => setSubject(event.target.value)} className="h-11 w-full rounded-lg border bg-background px-3 text-sm"><option value="">All subjects</option>{subjects.map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}</select></div><div><label htmlFor="shared-note-body" className="mb-1.5 block text-sm font-medium">Note text (optional if attaching a file)</label><Textarea id="shared-note-body" value={body} onChange={(event) => setBody(event.target.value)} maxLength={20000} rows={6} placeholder="Write what other learners should know…" /></div><div><label htmlFor="shared-note-file" className="mb-1.5 block text-sm font-medium">PDF or image (optional)</label><Input id="shared-note-file" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp" onChange={(event) => setFile(event.target.files?.[0] ?? null)} className="h-auto min-h-11 py-2" /><p className="mt-1 text-xs text-muted-foreground">Maximum 10 MB.</p></div><DialogFooter><Button type="button" variant="outline" disabled={saving} onClick={() => setDialogOpen(false)}>Cancel</Button><Button type="submit" disabled={saving || !title.trim() || (!body.trim() && !file)}>{saving ? "Submitting…" : isAdmin ? "Publish note" : "Submit for review"}</Button></DialogFooter></form></DialogContent></Dialog>
+
+    <Dialog open={dialogOpen} onOpenChange={(open) => { if (!saving) setDialogOpen(open); }}>
+      <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-lg">
+        <DialogHeader><DialogTitle>Share a note</DialogTitle></DialogHeader>
+        <form onSubmit={(event) => void submit(event)} className="space-y-4">
+          <p className="text-sm text-muted-foreground">{program.shortLabel} · {isAdmin ? "Publishes immediately" : "Reviewed by an admin before publication"}</p>
+          {formError && <p role="alert" className="text-sm text-destructive">{formError}</p>}
+          <div><label htmlFor="shared-note-title" className="mb-1.5 block text-sm font-medium">Title</label><Input id="shared-note-title" value={title} onChange={(event) => setTitle(event.target.value)} maxLength={160} required /></div>
+          <div><label htmlFor="shared-note-subject" className="mb-1.5 block text-sm font-medium">Subject (optional)</label><select id="shared-note-subject" value={subject} onChange={(event) => setSubject(event.target.value)} className="h-11 w-full rounded-lg border bg-background px-3 text-sm"><option value="">All subjects</option>{subjects.map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}</select></div>
+          <fieldset><legend className="mb-2 text-sm font-medium">What are you sharing?</legend><div className="grid grid-cols-2 gap-2"><button type="button" aria-pressed={shareMode === "write"} onClick={() => { setShareMode("write"); setFile(null); setFormError(""); }} className={`min-h-11 rounded-lg border px-3 text-sm font-medium ${shareMode === "write" ? "border-primary bg-primary/5 text-primary" : "hover:bg-muted"}`}>Written note</button><button type="button" aria-pressed={shareMode === "upload"} onClick={() => { setShareMode("upload"); setFormError(""); }} className={`min-h-11 rounded-lg border px-3 text-sm font-medium ${shareMode === "upload" ? "border-primary bg-primary/5 text-primary" : "hover:bg-muted"}`}>PDF or image</button></div></fieldset>
+          {shareMode === "write" ? <div><label htmlFor="shared-note-body" className="mb-1.5 block text-sm font-medium">Note</label><Textarea id="shared-note-body" value={body} onChange={(event) => setBody(event.target.value)} maxLength={20000} rows={6} placeholder="Write what other learners should know…" required /></div> : <><div><label htmlFor="shared-note-file" className="mb-1.5 block text-sm font-medium">Choose a PDF or image</label><Input id="shared-note-file" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp" onChange={(event) => setFile(event.target.files?.[0] ?? null)} className="h-auto min-h-11 py-2" required /><p className="mt-1 text-xs text-muted-foreground">One file, up to 10 MB.</p></div><div><label htmlFor="shared-note-description" className="mb-1.5 block text-sm font-medium">Description (optional)</label><Textarea id="shared-note-description" value={body} onChange={(event) => setBody(event.target.value)} maxLength={20000} rows={3} placeholder="What does this file cover?" /></div></>}
+          <DialogFooter><Button type="button" variant="outline" disabled={saving} onClick={() => setDialogOpen(false)}>Cancel</Button><Button type="submit" disabled={saving || !title.trim() || (shareMode === "write" ? !body.trim() : !file)}>{saving ? "Submitting…" : isAdmin ? "Publish note" : "Submit for review"}</Button></DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
   </LearningPage>;
 }

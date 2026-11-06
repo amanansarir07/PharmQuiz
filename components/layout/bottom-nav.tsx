@@ -54,7 +54,7 @@ export function BottomNav() {
         p.startsWith("/settings") ||
         p.startsWith("/mistakes") ||
         p === "/bookmarks" ||
-        p === "/notes" ||
+        p.startsWith("/notes") ||
         p === "/review" ||
         p === "/leaderboard" ||
         p === "/analytics" ||

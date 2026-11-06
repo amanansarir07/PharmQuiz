@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Plus, Pencil, Trash2, Search } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +19,7 @@ import { useNotes } from "@/lib/notes";
 import { useActiveProgram } from "@/lib/program";
 import { getSubjectsForProgram } from "@/data/registry";
 import { LibraryNav } from "@/components/library-nav";
+import { NotesNav } from "@/components/notes-nav";
 import { LearningPage, PageHeading } from "@/components/learning-ui";
 import { AppEmpty, AppLoading } from "@/components/app-state";
 import { toast } from "@/components/ui/toast";
@@ -84,12 +84,9 @@ export default function NotesPage() {
 
   return (
     <LearningPage className="max-w-[1200px]">
-      <PageHeading eyebrow="Study library" title="Notes" description="Keep ideas, mnemonics and reminders close to your practice." action={notes.length > 0 && <Button onClick={openNewNote} className="min-h-10"><Plus className="mr-1.5 size-4" /> New note</Button>} />
-      <LibraryNav />
-      <div className="mb-5 flex gap-4 border-b text-sm font-semibold" aria-label="Notes sections">
-        <span className="border-b-2 border-primary pb-3 text-primary" aria-current="page">My notes</span>
-        <Link href="/notes/shared" className="pb-3 text-muted-foreground hover:text-foreground">Shared notes</Link>
-      </div>
+      <PageHeading eyebrow="Study library" title="My notes" description="Private notes only you can see." action={notes.length > 0 && <Button onClick={openNewNote} className="min-h-11 w-full sm:w-auto"><Plus className="mr-1.5 size-4" /> New note</Button>} />
+      <div className="hidden sm:block"><LibraryNav /></div>
+      <NotesNav />
       {notes.length > 0 && <label className="mb-5 flex items-center gap-3 rounded-xl border bg-card px-4"><Search className="size-4 text-muted-foreground" /><Input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Find a note or mnemonic…" aria-label="Search notes" className="h-12 border-0 bg-transparent shadow-none" /></label>}
 
       {error && <p role="alert" className="mb-4 rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">{error}</p>}
